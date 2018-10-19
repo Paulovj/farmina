@@ -5,7 +5,7 @@ export default (function () {
   //var table = $('#dataTable').DataTable(); 
   var lDemographicItems ="";
   //$.ajax({url: "https://app-farmina.herokuapp.com/api/service_booking_resources", success: function(result){
-  $.ajax({url: "http://localhost:3001/api/Farmina-1-Service-Booking-Resources", success: function(result){
+  $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources", success: function(result){
     
 
     var jsonString = result //for testing  
@@ -113,7 +113,7 @@ export default (function () {
 
           if($(this).attr('action') == "starting"){
             //$.ajax({url: "https://app-farmina.herokuapp.com/api/service_booking_resources/"+id, success: function(result){
-              $.ajax({url: "http://localhost:3001/api/Farmina-1-Service-Booking-Resources/"+id, success: function(result){
+              $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/"+id, success: function(result){
               
               $('#start_customer_name').val(result['Customer-Name']);  
               $('#start_resource_no').val(result['Resource-No_']);
@@ -149,7 +149,7 @@ export default (function () {
 
           if($(this).attr('action') == "finished"){
               //$.ajax({url: "https://app-farmina.herokuapp.com/api/service_booking_resources/"+id, success: function(result){
-                $.ajax({url: "http://localhost:3001/api/Farmina-1-Service-Booking-Resources/"+id, success: function(result){
+                $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/"+id, success: function(result){
                 $('#finish_customer_name').val(result['Customer-Name']);  
                 $('#finish_resource_no').val(result['Resource-No_']);
                 $('#finish_function').val(FunctionX(result['Function']));//no
