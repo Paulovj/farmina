@@ -5,14 +5,11 @@ export default (function () {
   //var table = $('#dataTable').DataTable(); 
   var lDemographicItems ="";
 
-  $//("#btn_starting_booking .testedediv").on( 'click', 'button', function () {
-  //$(".btn_starting_booking body").delegate("body", "click", function () {
     $("#btn_starting_booking").click(function(){
-    console.log('clicou');
-    // $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getNewPrice?Resource-No=R0010&Service-Invoice-No=NFSR00003&Service-Invoice-Line-No=10000&status=1"+id, success: function(result){
-    //     console.log('result;:');
-    //     console.log(result);
-    // }});
+    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getNewPrice?Resource-No=R0010&Service-Invoice-No=NFSR00003&Service-Invoice-Line-No=10000&status=1"+id, success: function(result){
+        console.log('result;:');
+        console.log(result);
+    }});
 
   });
   
