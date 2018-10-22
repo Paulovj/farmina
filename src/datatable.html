@@ -56,6 +56,7 @@
     </style>
   </head>
   <body class="app">
+     
     <!-- @TOC -->
     <!-- =================================================== -->
     <!--
@@ -257,17 +258,20 @@
                         <thead>
                           <tr>
                             <th>Resource No</th>
-                            <!-- <th>Resource Name</th> -->
                             <th>Customer Name</th>
                             <th>Service Invoice No</th>
-                            <th>Service</th>
-                            <th>Estimated Total Time</th>
+                            <th>Service Type</th>
+                            
+                            <th>Estimated Finish Date </th>
+                            <th>Starting Date</th>
+                            <th>Finish Date</th>
+                            <!-- <th>Estimated Total Time</th> -->
                             <th>Estimated Starting Date</th>
                             
                             <th>Customer No</th>
                             <th>Customer Address</th>
                             <th>Salesperson Code</th>
-                            <th>Trainning Answer</th>
+                            <!-- <th>Trainning Answer</th> -->
                             <th>Status</th>
                             
                             <th> -Actions- </th>
@@ -310,216 +314,280 @@
         </footer>
       </div>
     </div>
-  </body>
-</html>
-
-
-<div class="modal fade" id="starting-service-booking" data-backdrop="static">
-    <div class="modal-dialog modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="m-0">Starting Booking Services </h5>          
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-        
-        <div class="modal-body">
-          <form>
-
-              <div class="row">
-                  <div class="col-md-6 mb-3">
-                      <label class="fw-500">Customer Name</label>
-                    <input type="text" class="form-control" id="start_customer_name" placeholder="" value="" required disabled>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                      <label class="fw-500">Resource No</label>
-                    <input type="text" class="form-control" id="start_resource_no" placeholder="" value="" required disabled>
-                  </div>
-              </div>
-
-
-              <div class="row">
-                  <div class="col-md-6 mb-3">
-                      <label class="fw-500">Function</label>
-                    <input type="text" class="form-control" id="start_function" placeholder="" value="" required disabled>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                      <label class="fw-500">Service Type</label>
-                    <input type="text" class="form-control" id="start_service_type" placeholder="" value="" required disabled>
-                  </div>
-              </div>
-
-
-            
-            
-
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label class="fw-500">Salesperson Code</label>
-                  <input type="text" class="form-control" id="start_Salesperson_code" placeholder="" value="" required disabled>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label class="fw-500">Training for which line</label>
-                  <input type="text" class="form-control" id="start_training_for_which_line" placeholder="" value="" required disabled>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label class="fw-500">Estimated starting date</label>
-                  <div class="timepicker-input input-icon form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon bgc-white bd bdwR-0">
-                        <i class="ti-calendar"></i>
-                      </div>
-                      <input type="text" id="start_estimated_starting_date" class="form-control bdc-grey-200 start-date" placeholder="Date Start" data-provide="datepicker"  data-date-format='yyyy-mm-dd'>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label class="fw-500">Estimated Total Time</label>
-                    <!-- <input type="number" class="form-control" id="start_estimated_total_time" placeholder="" maxlength="3" required> -->
-                    <input type="time" id="appt-time" name="appt-time"
-                    min="9:00" max="18:00" class="form-control" id="" placeholder="" value="" required  />
-             <span class="hours">Office hours: 9AM to 6PM</span>
-                </div>
-            </div>
-            
-            
-
-            <div class="form-group">
-              <label class="fw-500">Starting Observation</label>
-              <textarea class="form-control bdc-grey-200"> </textarea>
-            </div>
-
-              <!-- <div class="form-group">
-                  <label class="fw-500">Function</label>
-                  <select class="form-control bdc-grey-200">
-                    <option>SOS</option>
-                    <option>SOS 2</option>
-                    <option>SOS 3</option>
-                  </select>
-
-                </div>
-                 -->
-            <div class="text-right">
-              <button class="btn btn-danger cur-p" data-dismiss="modal">Cancel </button>
-              <button class="btn btn-primary cur-p" data-dismiss="modal">Starting Booking </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
 
-  <div class="modal fade" id="finish-service-booking" data-backdrop="static">
+
+
+
+
+
+
+
+
+
+    <div class="modal fade" id="starting-service-booking" data-backdrop="static">
       <div class="modal-dialog modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="m-0">Finish Booking Services </h5>          
+                <h5 class="m-0">Starting Booking Services </h5>          
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               </div>
-        <div class="modal-body">
-          <form>
-
+          
+          <div class="modal-body">
+            <!-- <form> -->
+  
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-500">Customer Name</label>
+                      <input type="text" class="form-control" id="start_customer_name" placeholder="" value="" required disabled>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-500">Resource No</label>
+                      <input type="text" class="form-control" id="start_resource_no" placeholder="" value="" required disabled>
+                    </div>
+                </div>
+  
+  
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-500">Function</label>
+                      <input type="text" class="form-control" id="start_function" placeholder="" value="" required disabled>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-500">Service Type</label>
+                      <input type="text" class="form-control" id="start_service_type" placeholder="" value="" required disabled>
+                    </div>
+                </div>
+  
+  
+              
+              
+  
               <div class="row">
                   <div class="col-md-6 mb-3">
-                      <label class="fw-500">Customer Name</label>       
-                    <input type="text" class="form-control" id="finish_customer_name" placeholder="" value="" required disabled>
+                      <label class="fw-500">Salesperson Code</label>
+                    <input type="text" class="form-control" id="start_Salesperson_code" placeholder="" value="" required disabled>
+                  </div>
+                  <!-- <div class="col-md-6 mb-3">
+                      <label class="fw-500">Training for which line</label>
+                    <input type="text" class="form-control" id="start_training_for_which_line" placeholder="" value="" required disabled>
+                  </div> -->
+              </div>
+  
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="fw-500">Start date</label>
+                    <div class="timepicker-input input-icon form-group">
+                      <div class="input-group">
+                        <div class="input-group-addon bgc-white bd bdwR-0">
+                          <i class="ti-calendar"></i>
+                        </div>
+                        <input type="text" id="start_date" class="form-control bdc-grey-200 start-date" placeholder="Start Date" data-provide="datepicker"  data-date-format='yyyy-mm-dd'>
+                      </div>
+                    </div>
+                </div>
+                 <div class="col-md-6 mb-3">
+                    <label class="fw-500">Start Time</label>
+                  <input type="text" class="form-control" id="start_time" placeholder="" value="" required >
+                </div>
+            </div>
+  
+  
+              <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500">Estimated starting date</label>
+                    <div class="timepicker-input input-icon form-group">
+                      <div class="input-group">
+                        <div class="input-group-addon bgc-white bd bdwR-0">
+                          <i class="ti-calendar"></i>
+                        </div>
+                        <input type="text" id="start_estimated_starting_date" class="form-control bdc-grey-200 start-date" placeholder="Date Start" data-provide="datepicker"  data-date-format='yyyy-mm-dd'>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="col-md-6 mb-3">
+                      <label class="fw-500">Estimated Total Time</label>
+                      <-- <input type="number" class="form-control" id="start_estimated_total_time" placeholder="" maxlength="3" required> --
+                      <input type="time" id="appt-time" name="appt-time"
+                      min="9:00" max="18:00" class="form-control" id="" placeholder="" value="" required  />
+               <span class="hours">Office hours: 9AM to 6PM</span>
+                  </div> -->
+              </div>
+              
+              
+  
+              <div class="form-group">
+                <label class="fw-500">Starting Observation</label>
+                <textarea class="form-control bdc-grey-200"> </textarea>
+              </div>
+  
+                <!-- <div class="form-group">
+                    <label class="fw-500">Function</label>
+                    <select class="form-control bdc-grey-200">
+                      <option>SOS</option>
+                      <option>SOS 2</option>
+                      <option>SOS 3</option>
+                    </select>
+  
+                  </div>
+                   -->
+              <div class="text-right testedediv">
+                <button class="btn btn-danger cur-p" data-dismiss="modal" id="btn_starting_booking_cancel">Cancel </button>
+                <button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-primary' id="btn_starting_booking"> Starting Booking</button>
+                <!-- <button class="btn btn-primary cur-p" id="btn_starting_booking">Starting Booking </button> -->
+              </div>
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+    <div class="modal fade" id="finish-service-booking" data-backdrop="static">
+        <div class="modal-dialog modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="m-0">Finish Booking Services </h5>          
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+          <div class="modal-body">
+            <form>
+  
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-500">Customer Name</label>       
+                      <input type="text" class="form-control" id="finish_customer_name" placeholder="" value="" required disabled>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-500">Resource No</label>
+                      <input type="text" class="form-control" id="finish_resource_no" placeholder="" value="" required disabled>
+                    </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500">Function</label>     
+                    <input type="text" class="form-control" id="finish_function" placeholder="" value="" required disabled>
                   </div>
                   <div class="col-md-6 mb-3">
-                      <label class="fw-500">Resource No</label>
-                    <input type="text" class="form-control" id="finish_resource_no" placeholder="" value="" required disabled>
+                      <label class="fw-500">Service Type</label>     
+                    <input type="text" class="form-control" id="finish_service_type" placeholder="" value="" required disabled>
                   </div>
               </div>
-
+  
+              
+              <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500">Salesperson Code</label>
+                    <input type="text" class="form-control" id="finish_salesperson_code" placeholder="" value="" required disabled>
+                  </div>
+                  <!-- <div class="col-md-6 mb-3">
+                      <label class="fw-500">Training for which line</label>     
+                    <input type="text" class="form-control" id="finish_training_for_which_line" placeholder="" value="" required disabled>
+                  </div> -->
+              </div>
+  
+              <!-- <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500">Estimated starting date</label>
+                    <div class="timepicker-input input-icon form-group">
+                      <div class="input-group">
+                        <div class="input-group-addon bgc-white bd bdwR-0">
+                          <i class="ti-calendar"></i>
+                        </div>
+                        <input type="text" id="finish_estimated_starting_date" class="form-control bdc-grey-200 start-date" placeholder="Date Start" data-provide="datepicker"  data-date-format='yyyy-mm-dd' disabled>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500">Estimated Total Time</label>
+                      <input type="time" id="appt-time" name="appt-time"
+                      min="9:00" max="18:00" class="form-control" id="" placeholder="" value="" required disabled />
+               <span class="hours">Office hours: 9AM to 6PM</span>
+                  </div>
+              </div> -->
+  
               <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label class="fw-500">Function</label>     
-                  <input type="text" class="form-control" id="finish_function" placeholder="" value="" required disabled>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label class="fw-500">Service Type</label>     
-                  <input type="text" class="form-control" id="finish_service_type" placeholder="" value="" required disabled>
-                </div>
-            </div>
-
-            
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label class="fw-500">Salesperson Code</label>
-                  <input type="text" class="form-control" id="finish_salesperson_code" placeholder="" value="" required disabled>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label class="fw-500">Training for which line</label>     
-                  <input type="text" class="form-control" id="finish_training_for_which_line" placeholder="" value="" required disabled>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label class="fw-500">Estimated starting date</label>
+                    <label class="fw-500">Finish Date</label>
                   <div class="timepicker-input input-icon form-group">
                     <div class="input-group">
                       <div class="input-group-addon bgc-white bd bdwR-0">
                         <i class="ti-calendar"></i>
                       </div>
-                      <input type="text" id="finish_estimated_starting_date" class="form-control bdc-grey-200 start-date" placeholder="Date Start" data-provide="datepicker"  data-date-format='yyyy-mm-dd' disabled>
+                      <input type="text" id="finish_date" class="form-control bdc-grey-200 start-date" placeholder="Finish Date" data-provide="datepicker"  data-date-format='yyyy-mm-dd' disabled>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <label class="fw-500">Estimated Total Time</label>
-                    <input type="time" id="appt-time" name="appt-time"
-                    min="9:00" max="18:00" class="form-control" id="" placeholder="" value="" required disabled />
-             <span class="hours">Office hours: 9AM to 6PM</span>
+                    <label class="fw-500">Finish Time</label>
+                    <div class="timepicker-input input-icon form-group">
+                      <div class="input-group">
+                        <div class="input-group-addon bgc-white bd bdwR-0">
+                          <i class="ti-calendar"></i>
+                        </div>
+                        <input type="text" id="finish_time" class="form-control bdc-grey-200 start-date" placeholder="Finish Time" data-provide="datepicker"  data-date-format='yyyy-mm-dd' disabled>
+                      </div>
+                    </div>
+                    
                 </div>
             </div>
-
-            <div class="form-group">
-              <label class="fw-500">Starting Observation</label>
-              <textarea class="form-control bdc-grey-200"> </textarea>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label class="fw-500">How many customers entered on store? </label>      
-                  <input type="text" class="form-control" id="finish_how_many_customers_entered_on_store" placeholder="" value="" required >
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label class="fw-500">How many voucher was delivered? </label>
-                  <input type="text" class="form-control" id="finish_how_many_voucher_was_delivered" placeholder="" value="" required >
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label class="fw-500">How many products eas sold ? </label>
-                  <input type="text" class="form-control" id="finish_how_many_products_eas_sold" placeholder="" value="" required >
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label class="fw-500">How many kits was  delivered? </label>
-                  <input type="text" class="form-control" id="finish_how_many_kits_was_delivered" placeholder="" value="" required >
-                </div>
-            </div>
-
-            <div class="form-group">
-              <label class="fw-500">How many national plans was generated ? </label>
-              <input type="text" class="form-control bdc-grey-200" name="" id="finish_how_many_national_plans_was_generated">
-            </div>
-
-
-            <div class="text-right">
-              <button class="btn btn-danger cur-p" data-dismiss="modal">Cancel </button>
-              <button class="btn btn-success cur-p" data-dismiss="modal">Upload photo </button>
-              <button class="btn btn-primary cur-p" data-dismiss="modal">Finish Booking </button>
-            </div>
-          </form>
+  
+              <div class="form-group">
+                <label class="fw-500">Starting Observation</label>
+                <textarea class="form-control bdc-grey-200"> </textarea>
+              </div>
+  
+  
+              <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500">How many customers entered on store? </label>      
+                    <input type="text" class="form-control" id="finish_how_many_customers_entered_on_store" placeholder="" value="" required >
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500">How many voucher was delivered? </label>
+                    <input type="text" class="form-control" id="finish_how_many_voucher_was_delivered" placeholder="" value="" required >
+                  </div>
+              </div>
+  
+  
+              <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500">How many products eas sold ? </label>
+                    <input type="text" class="form-control" id="finish_how_many_products_eas_sold" placeholder="" value="" required >
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500">How many kits was  delivered? </label>
+                    <input type="text" class="form-control" id="finish_how_many_kits_was_delivered" placeholder="" value="" required >
+                  </div>
+              </div>
+  
+              <div class="form-group">
+                <label class="fw-500">How many national plans was generated ? </label>
+                <input type="text" class="form-control bdc-grey-200" name="" id="finish_how_many_national_plans_was_generated">
+              </div>
+  
+  
+              <div class="text-right">
+                <button class="btn btn-danger cur-p" data-dismiss="modal" id="btn_finish_booking_cancel">Cancel </button>
+                <button class="btn btn-success cur-p" data-dismiss="modal" id="btn_finish_booking_upload">Upload photo </button>
+                <button class="btn btn-primary cur-p" data-dismiss="modal" id="btn_finish_booking_finish">Finish Booking </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+
+
+
+
+
+  </body>
+</html>
+
+<script>
+
+</script>

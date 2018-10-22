@@ -4,6 +4,19 @@ import 'datatables';
 export default (function () {
   //var table = $('#dataTable').DataTable(); 
   var lDemographicItems ="";
+
+  $//("#btn_starting_booking .testedediv").on( 'click', 'button', function () {
+  //$(".btn_starting_booking body").delegate("body", "click", function () {
+    $("#btn_starting_booking").click(function(){
+    console.log('clicou');
+    // $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getNewPrice?Resource-No=R0010&Service-Invoice-No=NFSR00003&Service-Invoice-Line-No=10000&status=1"+id, success: function(result){
+    //     console.log('result;:');
+    //     console.log(result);
+    // }});
+
+  });
+  
+
   //$.ajax({url: "https://app-farmina.herokuapp.com/api/service_booking_resources", success: function(result){
   $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources", success: function(result){
     
@@ -19,24 +32,38 @@ export default (function () {
           "columns" : [
             
             { "data" : "Resource-No_" },
-            // { "data" : "Resource-Name" },
             { "data" : "Customer-Name" },
             { "data" : "Service-Invoice-No_" },
             { "data" : "Service-Type" , "render": function ( data) {
                       return ServiceType(data);                
               } 
             },
-            { "data" : "Estimated-Total-Time" },
-            { "data" : "Estimated-Starting-Date" },
-
-
+            // { "data" : "Estimated-Total-Time" },
+            
+            { "data" : "Estimated-Finish-Date" , "render": function ( data) {
+              return formatDate(data);
+              } 
+            },
+            { "data" : "Starting-Date" , "render": function ( data) {
+              return formatDate(data);
+              } 
+            },
+            { "data" : "Finish-Date" , "render": function ( data) {
+              return formatDate(data);
+              } 
+            },
+            
+            { "data" : "Estimated-Starting-Date" , "render": function ( data) {
+              return formatDate(data);
+              } 
+            },
             { "data" : "Customer-No_" },            
             { "data" : "Customer-Address" },
             { "data" : "Salesperson-Code" },
-            { "data" : "Trainning-Answer-Type", "render": function ( data) {
-                  return TrainingAnswer(data);              
-              }  
-            },
+            // { "data" : "Trainning-Answer-Type", "render": function ( data) {
+            //       return TrainingAnswer(data);              
+            //   }  
+            // },
 
             { "data" : "Status", "render": function ( data) {
               if (data == 0){
@@ -54,6 +81,18 @@ export default (function () {
           ]
           
         });
+
+        function formatDate(date) {
+          var d = new Date(date),
+              month = '' + (d.getMonth() + 1),
+              day = '' + d.getDate(),
+              year = d.getFullYear();
+      
+          if (month.length < 2) month = '0' + month;
+          if (day.length < 2) day = '0' + day;
+      
+          return [year, month, day].join('-');
+      }
         
         function FunctionX(value){
           var functionX = "";
@@ -105,6 +144,9 @@ export default (function () {
               }
               return Trainning_AnswerX;
         }
+
+
+        
         
         $('#dataTable tbody').on( 'click', 'button', function () {
           var data = $("#dataTable").DataTable().row( $(this).parents('tr') ).data();
@@ -121,9 +163,14 @@ export default (function () {
               $('#start_service_type').val(ServiceType(result['Service-Type']));
               $('#start_Salesperson_code').val(result['Salesperson-Code']);
               //$('#start_training_for_which_line').val(result['Trainning-Answer-Type']);//no
-              $('#start_training_for_which_line').val(TrainingAnswer(result['Trainning-Answer-Type']));//no
-              $('#start_estimated_starting_date').val(result['Estimated-Starting-Date']);
-              $('#start_estimated_total_time').val(result['Estimated-Total-Time']);
+              //$('#start_training_for_which_line').val(TrainingAnswer(result['Trainning-Answer-Type']));//no
+              
+
+              $('#start_date').val(formatDate(result['Starting-Date']));
+              $('#start_time').val(formatDate(result['Starting-Time']));
+
+              $('#start_estimated_starting_date').val(formatDate(result['Estimated-Starting-Date']));
+              //$('#start_estimated_total_time').val(result['Estimated-Total-Time']);
               $('#start_starting_observation').val(result['Starting-Observation']);//no
               
               
@@ -161,6 +208,10 @@ export default (function () {
                 $('#finish_estimated_total_time').val(result['Estimated-Total-Time']);
                 $('#finish_starting_observation').val(result['Starting-Observation']);//no
 
+                $('#finish_date').val(formatDate(result['Finish-Date']));
+                $('#finish_time').val(formatDate(result['Finish-Time']));
+  
+
                 $('finish_how_many_customers_entered_on_store').val(result['Many-Customers'])//no
                 $('finish_how_many_voucher_was_delivered').val(result['Many-Voucher'])//no
                 $('finish_how_many_products_eas_sold').val(result['Many-Products'])//no
@@ -173,11 +224,10 @@ export default (function () {
             $('#finish-service-booking').modal('toggle')
           }  
       });
-
   }});
 
   
- 
+  
   
 }());
 
