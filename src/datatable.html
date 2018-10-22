@@ -262,11 +262,12 @@
                             <th>Service Invoice No</th>
                             <th>Service Type</th>
                             
+                            <th>Estimated Starting Date</th>
+
                             <th>Estimated Finish Date </th>
                             <th>Starting Date</th>
                             <th>Finish Date</th>
                             <!-- <th>Estimated Total Time</th> -->
-                            <th>Estimated Starting Date</th>
                             
                             <th>Customer No</th>
                             <th>Customer Address</th>
@@ -371,11 +372,29 @@
                       <label class="fw-500">Salesperson Code</label>
                     <input type="text" class="form-control" id="start_Salesperson_code" placeholder="" value="" required disabled>
                   </div>
-                  <!-- <div class="col-md-6 mb-3">
-                      <label class="fw-500">Training for which line</label>
-                    <input type="text" class="form-control" id="start_training_for_which_line" placeholder="" value="" required disabled>
-                  </div> -->
+                  <div class="col-md-6 mb-3">
+                    <label class="fw-500">Estimated starting date</label>
+                  <div class="timepicker-input input-icon form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon bgc-white bd bdwR-0">
+                        <i class="ti-calendar"></i>
+                      </div>
+                      <input type="text" id="start_estimated_starting_date" class="form-control bdc-grey-200 start-date" placeholder="Date Start" data-provide="datepicker"  data-date-format='yyyy-mm-dd'>
+                    </div>
+                  </div>
+                </div>
+                
               </div>
+
+              <!-- <div class="row"> -->
+                <!-- <div class="col-md-6 mb-3">
+                    <label class="fw-500">Estimated Total Time</label>
+                    <-- <input type="number" class="form-control" id="start_estimated_total_time" placeholder="" maxlength="3" required> --
+                    <input type="time" id="appt-time" name="appt-time"
+                    min="9:00" max="18:00" class="form-control" id="" placeholder="" value="" required  />
+             <span class="hours">Office hours: 9AM to 6PM</span>
+                </div> -->
+            <!-- </div> -->
   
               <div class="row">
                 <div class="col-md-6 mb-3">
@@ -391,37 +410,24 @@
                 </div>
                  <div class="col-md-6 mb-3">
                     <label class="fw-500">Start Time</label>
-                  <input type="text" class="form-control" id="start_time" placeholder="" value="" required >
+                  <!-- <input type="text" class="form-control" id="start_time" placeholder="" value="" required > -->
+                  <div class="col-md-6 mb-3">
+                    <!-- <label class="fw-500">Estimated Total Time</label> -->
+                    <input type="time" id="start_time" name="appt-time"
+                    min="9:00" max="18:00" class="form-control" placeholder="" value="" required  />
+             <!-- <span class="hours">Office hours: 9AM to 6PM</span> -->
+                </div>
                 </div>
             </div>
   
   
-              <div class="row">
-                  <div class="col-md-6 mb-3">
-                      <label class="fw-500">Estimated starting date</label>
-                    <div class="timepicker-input input-icon form-group">
-                      <div class="input-group">
-                        <div class="input-group-addon bgc-white bd bdwR-0">
-                          <i class="ti-calendar"></i>
-                        </div>
-                        <input type="text" id="start_estimated_starting_date" class="form-control bdc-grey-200 start-date" placeholder="Date Start" data-provide="datepicker"  data-date-format='yyyy-mm-dd'>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- <div class="col-md-6 mb-3">
-                      <label class="fw-500">Estimated Total Time</label>
-                      <-- <input type="number" class="form-control" id="start_estimated_total_time" placeholder="" maxlength="3" required> --
-                      <input type="time" id="appt-time" name="appt-time"
-                      min="9:00" max="18:00" class="form-control" id="" placeholder="" value="" required  />
-               <span class="hours">Office hours: 9AM to 6PM</span>
-                  </div> -->
-              </div>
+
               
               
   
               <div class="form-group">
                 <label class="fw-500">Starting Observation</label>
-                <textarea class="form-control bdc-grey-200"> </textarea>
+                <textarea id='start_observation' class="form-control bdc-grey-200" > </textarea>
               </div>
   
                 <!-- <div class="form-group">
@@ -520,27 +526,29 @@
                       <div class="input-group-addon bgc-white bd bdwR-0">
                         <i class="ti-calendar"></i>
                       </div>
-                      <input type="text" id="finish_date" class="form-control bdc-grey-200 start-date" placeholder="Finish Date" data-provide="datepicker"  data-date-format='yyyy-mm-dd' disabled>
+                      <input type="text" id="finish_date" class="form-control bdc-grey-200 start-date" placeholder="Finish Date" data-provide="datepicker"  data-date-format='yyyy-mm-dd'>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label class="fw-500">Finish Time</label>
-                    <div class="timepicker-input input-icon form-group">
+                    <input type="time" id="finish_time" name="appt-time"
+                    min="9:00" max="18:00" class="form-control" placeholder="" value="" required  />
+                    <!-- <div class="timepicker-input input-icon form-group">
                       <div class="input-group">
                         <div class="input-group-addon bgc-white bd bdwR-0">
                           <i class="ti-calendar"></i>
                         </div>
-                        <input type="text" id="finish_time" class="form-control bdc-grey-200 start-date" placeholder="Finish Time" data-provide="datepicker"  data-date-format='yyyy-mm-dd' disabled>
-                      </div>
-                    </div>
+                        <input type="text" id="finish_time" class="form-control bdc-grey-200 start-date" placeholder="Finish Time" data-provide="datepicker"  data-date-format='yyyy-mm-dd'>
+                      </div> 
+                    </div>-->
                     
                 </div>
             </div>
   
               <div class="form-group">
                 <label class="fw-500">Starting Observation</label>
-                <textarea class="form-control bdc-grey-200"> </textarea>
+                <textarea class="form-control bdc-grey-200" id="finish_starting_observation" disabled> </textarea>
               </div>
   
   
@@ -567,7 +575,7 @@
                   </div>
               </div>
   
-              <div class="form-group">
+              <div class="col-md-6 mb-3">
                 <label class="fw-500">How many national plans was generated ? </label>
                 <input type="text" class="form-control bdc-grey-200" name="" id="finish_how_many_national_plans_was_generated">
               </div>

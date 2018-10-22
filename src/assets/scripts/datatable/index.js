@@ -15,6 +15,21 @@ export default (function () {
 
     return [year, month, day].join('-');
 }
+function checkZero(data){
+  if(data.length == 1){
+    data = "0" + data;
+  }
+  return data;
+}
+function formatHora(date) {
+  var d = new Date(date);
+  var hour = d.getHours() + "";
+  var minutes = d.getMinutes() + "";
+
+  var hours = checkZero(hour);
+  var mintues = checkZero(minutes);
+  return hours +':'+ mintues;
+}
   
   function FunctionX(value){
     var functionX = "";
@@ -86,12 +101,13 @@ export default (function () {
               $('#start_Salesperson_code').val(result['Salesperson-Code']);
               //$('#start_training_for_which_line').val(result['Trainning-Answer-Type']);//no
               //$('#start_training_for_which_line').val(TrainingAnswer(result['Trainning-Answer-Type']));//no
+              console.log('hora:' + formatHora(result['Starting-Time']));
               $('#start_date').val(formatDate(result['Starting-Date']));
-              $('#start_time').val(formatDate(result['Starting-Time']));
+              $('#start_time').val(formatHora(result['Starting-Time']));
 
               $('#start_estimated_starting_date').val(formatDate(result['Estimated-Starting-Date']));
               //$('#start_estimated_total_time').val(result['Estimated-Total-Time']);
-              $('#start_starting_observation').val(result['Starting-Observation']);//no
+              $('#start_observation').val(result['Starting-Observation']);//no
             }});
           
             $('#starting-service-booking').modal('toggle')
@@ -115,7 +131,7 @@ export default (function () {
                 $('#finish_starting_observation').val(result['Starting-Observation']);//no
 
                 $('#finish_date').val(formatDate(result['Finish-Date']));
-                $('#finish_time').val(formatDate(result['Finish-Time']));
+                $('#finish_time').val(formatHora(result['Finish-Time']));
   
 
                 $('finish_how_many_customers_entered_on_store').val(result['Many-Customers'])//no
@@ -151,7 +167,11 @@ export default (function () {
                 } 
               },
               // { "data" : "Estimated-Total-Time" },
-              
+              { "data" : "Estimated-Starting-Date" , "render": function ( data) {
+                return formatDate(data);
+                } 
+              },
+
               { "data" : "Estimated-Finish-Date" , "render": function ( data) {
                 return formatDate(data);
                 } 
@@ -165,11 +185,7 @@ export default (function () {
                 } 
               },
               
-              { "data" : "Estimated-Starting-Date" , "render": function ( data) {
-                return formatDate(data);
-                } 
-              },
-              { "data" : "Customer-No_" },            
+                            { "data" : "Customer-No_" },            
               { "data" : "Customer-Address" },
               { "data" : "Salesperson-Code" },
               // { "data" : "Trainning-Answer-Type", "render": function ( data) {
@@ -204,7 +220,11 @@ $("#btn_starting_booking").click(function(){
   var resource_no = $('#start_resource_no').val();
   var service_invoice_no = $('#start_service_invoice_no').val();
   var service_invoice_line_no = $('#start_service_invoice_line_no').val();
-    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getUpdateStart?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no, success: function(result){
+  var start_date = $('#start_date').val();
+  var start_time = $('#start_time').val();
+  var start_observation = $('#start_observation').val();
+  console.log('entrou var: '+ start_observation)
+    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getUpdateStart?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no+"&Start-Date="+start_date+"&Start-Time="+start_time+"&Start-Observation="+start_observation, success: function(result){
       $('#starting-service-booking').modal('toggle');
       var oTblReport = $('#dataTable').DataTable().destroy();
 
@@ -218,7 +238,10 @@ $("#btn_finish_booking").click(function(){
   var resource_no = $('#finish_resource_no').val();
   var service_invoice_no = $('#finish_service_invoice_no').val();
   var service_invoice_line_no = $('#finish_service_invoice_line_no').val();
-  $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getUpdateFinish?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no, success: function(result){
+  var finish_date = $('#finish_date').val();
+  var finish_time = $('#finish_time').val();
+  
+  $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getUpdateFinish?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no+"&Finish-Date="+finish_date+"&Finish-Time="+finish_time, success: function(result){
     $('#finish-service-booking').modal('toggle');
     var oTblReport = $('#dataTable').DataTable().destroy();
 
