@@ -6,13 +6,27 @@ export default (function () {
   var lDemographicItems ="";
 
     $("#btn_starting_booking").click(function(){
-    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getNewPrice?Resource-No=R0010&Service-Invoice-No=NFSR00003&Service-Invoice-Line-No=10000&status=1"+id, success: function(result){
-        console.log('result;:');
-        console.log(result);
+      var resource_no = $('#start_resource_no').val();
+      var service_invoice_no = $('#start_service_invoice_no').val();
+      var service_invoice_line_no = $('#start_service_invoice_line_no').val();
+      $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getNewPrice?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no, success: function(result){
+        //console.log(result);
+        $('#starting-service-booking').modal('toggle')
     }});
 
   });
   
+
+  $("#btn_finish_booking").click(function(){
+    var resource_no = $('#finish_resource_no').val();
+    var service_invoice_no = $('#finish_service_invoice_no').val();
+    var service_invoice_line_no = $('#finish_service_invoice_line_no').val();
+    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getNewPrice?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no, success: function(result){
+      $('#finish-service-booking').modal('toggle')
+  }});
+
+});
+
 
   //$.ajax({url: "https://app-farmina.herokuapp.com/api/service_booking_resources", success: function(result){
   $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources", success: function(result){
@@ -153,7 +167,12 @@ export default (function () {
           if($(this).attr('action') == "starting"){
             //$.ajax({url: "https://app-farmina.herokuapp.com/api/service_booking_resources/"+id, success: function(result){
               $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/"+id, success: function(result){
+              console.log(result)
+
               
+              $('#start_service_invoice_no').val(result['Service-Invoice-No_']);  
+              $('#start_service_invoice_line_no').val(result['Service-Invoice-Line-No_']);
+
               $('#start_customer_name').val(result['Customer-Name']);  
               $('#start_resource_no').val(result['Resource-No_']);
               $('#start_function').val(FunctionX(result['Function']));//no
@@ -194,6 +213,9 @@ export default (function () {
           if($(this).attr('action') == "finished"){
               //$.ajax({url: "https://app-farmina.herokuapp.com/api/service_booking_resources/"+id, success: function(result){
                 $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/"+id, success: function(result){
+                  $('#finish_service_invoice_no').val(result['Service-Invoice-No_']);  
+                  $('#finish_service_invoice_line_no').val(result['Service-Invoice-Line-No_']);
+    
                 $('#finish_customer_name').val(result['Customer-Name']);  
                 $('#finish_resource_no').val(result['Resource-No_']);
                 $('#finish_function').val(FunctionX(result['Function']));//no

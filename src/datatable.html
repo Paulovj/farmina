@@ -340,6 +340,8 @@
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label class="fw-500">Customer Name</label>
+                      <input type="text" class="form-control" id="start_service_invoice_no" placeholder="" value="" required disabled style="display:none;">
+                      <input type="text" class="form-control" id="start_service_invoice_line_no" placeholder="" value="" required disabled style="display:none;">
                       <input type="text" class="form-control" id="start_customer_name" placeholder="" value="" required disabled>
                     </div>
                     <div class="col-md-6 mb-3">
@@ -434,8 +436,7 @@
                    -->
               <div class="text-right testedediv">
                 <button class="btn btn-danger cur-p" data-dismiss="modal" id="btn_starting_booking_cancel">Cancel </button>
-                <button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-primary' id="btn_starting_booking"> Starting Booking</button>
-                <!-- <button class="btn btn-primary cur-p" id="btn_starting_booking">Starting Booking </button> -->
+                <button class="btn btn-primary cur-p" id="btn_starting_booking">Starting Booking </button>
               </div>
             <!-- </form> -->
           </div>
@@ -458,7 +459,9 @@
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label class="fw-500">Customer Name</label>       
-                      <input type="text" class="form-control" id="finish_customer_name" placeholder="" value="" required disabled>
+                        <input type="text" class="form-control" id="finish_service_invoice_no" placeholder="" value="" required disabled style="display:none;">
+                        <input type="text" class="form-control" id="finish_service_invoice_line_no" placeholder="" value="" required disabled style="display:none;">
+                        <input type="text" class="form-control" id="finish_customer_name" placeholder="" value="" required disabled>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label class="fw-500">Resource No</label>
@@ -573,7 +576,7 @@
               <div class="text-right">
                 <button class="btn btn-danger cur-p" data-dismiss="modal" id="btn_finish_booking_cancel">Cancel </button>
                 <button class="btn btn-success cur-p" data-dismiss="modal" id="btn_finish_booking_upload">Upload photo </button>
-                <button class="btn btn-primary cur-p" data-dismiss="modal" id="btn_finish_booking_finish">Finish Booking </button>
+                <button class="btn btn-primary cur-p" data-dismiss="modal" id="btn_finish_booking">Finish Booking </button>
               </div>
             </form>
           </div>
