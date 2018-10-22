@@ -9,7 +9,7 @@ export default (function () {
       var resource_no = $('#start_resource_no').val();
       var service_invoice_no = $('#start_service_invoice_no').val();
       var service_invoice_line_no = $('#start_service_invoice_line_no').val();
-      $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getNewPrice?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no, success: function(result){
+      $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getUpdateStart?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no, success: function(result){
         //console.log(result);
         $('#starting-service-booking').modal('toggle')
     }});
@@ -21,7 +21,7 @@ export default (function () {
     var resource_no = $('#finish_resource_no').val();
     var service_invoice_no = $('#finish_service_invoice_no').val();
     var service_invoice_line_no = $('#finish_service_invoice_line_no').val();
-    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getNewPrice?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no, success: function(result){
+    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getUpdateStart?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no, success: function(result){
       $('#finish-service-booking').modal('toggle')
   }});
 
