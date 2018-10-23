@@ -1,20 +1,23 @@
 import * as $ from 'jquery';
 import 'datatables';
+import moment from 'moment/src/moment';
 
 export default (function () {
   //var table = $('#dataTable').DataTable(); 
   var lDemographicItems ="";
   function formatDate(date) {
-    var d = new Date(date),
-        month = '' + (d.getMonth() + 1),
-        day = '' + d.getDate(),
-        year = d.getFullYear();
+    var data =  moment(date).utc().format("DD/MM/Y")
+    return data;
+    }
+  
+    function formatDateSql(date) {
+      var data = moment(date, 'DD/MM/YYYY').toDate();
+      data =  moment(data).utc().format("Y-MM-DD")
+      return data;
+      }
+  
 
-    if (month.length < 2) month = '0' + month;
-    if (day.length < 2) day = '0' + day;
 
-    return [year, month, day].join('-');
-}
 function checkZero(data){
   if(data.length == 1){
     data = "0" + data;
@@ -22,13 +25,16 @@ function checkZero(data){
   return data;
 }
 function formatHora(date) {
-  var d = new Date(date);
-  var hour = d.getHours() + "";
-  var minutes = d.getMinutes() + "";
+  var data =  moment(date).utc().format("H:mm")
+    return data;
+    
+  // var d = new Date(date);
+  // var hour = d.getHours() + "";
+  // var minutes = d.getMinutes() + "";
 
-  var hours = checkZero(hour);
-  var mintues = checkZero(minutes);
-  return hours +':'+ mintues;
+  // var hours = checkZero(hour);
+  // var mintues = checkZero(minutes);
+  // return hours +':'+ mintues;
 }
   
   function FunctionX(value){
@@ -176,8 +182,8 @@ function formatHora(date) {
                 return formatDate(data);
                 } 
               },
-              { "data" : "Starting-Date" , "render": function ( data) {
-                return formatDate(data);
+              { "data" : "Starting-Date" , "render": function (data) {
+                return formatDate(data);                
                 } 
               },
               { "data" : "Finish-Date" , "render": function ( data) {
@@ -220,11 +226,15 @@ $("#btn_starting_booking").click(function(){
   var resource_no = $('#start_resource_no').val();
   var service_invoice_no = $('#start_service_invoice_no').val();
   var service_invoice_line_no = $('#start_service_invoice_line_no').val();
-  var start_date = $('#start_date').val();
+  var start_date = formatDateSql($('#start_date').val());
   var start_time = $('#start_time').val();
   var start_observation = $('#start_observation').val();
-  console.log('entrou var: '+ start_observation)
+      
+    
     $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getUpdateStart?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no+"&Start-Date="+start_date+"&Start-Time="+start_time+"&Start-Observation="+start_observation, success: function(result){
+    //$.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/TesteSql?Finish-Date="+start_date+"&Finish-time="+start_time, success: function(result){
+      
+
       $('#starting-service-booking').modal('toggle');
       var oTblReport = $('#dataTable').DataTable().destroy();
 
