@@ -40,7 +40,7 @@ function formatHora(date) {
   function FunctionX(value){
     var functionX = "";
         if (value == 0){
-          functionX =  '-';
+          functionX =  '';
         }else if(value==1){
           functionX =  'SOS';
         }else if(value==2){
@@ -51,7 +51,7 @@ function formatHora(date) {
   function ServiceType(value){
     var Service_TypeX = "";
         if (value == 0){
-          Service_TypeX =  '-';
+          Service_TypeX = '';
         }else if(value==1){
           Service_TypeX =  'Training';
         }else if(value==2){
@@ -69,7 +69,7 @@ function formatHora(date) {
   function TrainingAnswer(value){
     var Trainning_AnswerX ="";
         if (value == 0){
-          Trainning_AnswerX =  '-';
+          Trainning_AnswerX =  '';
         }else if(value==1){
           Trainning_AnswerX = 'ND';
         }else if(value==2){
@@ -140,11 +140,11 @@ function formatHora(date) {
                 $('#finish_time').val(formatHora(result['Finish-Time']));
   
 
-                $('finish_how_many_customers_entered_on_store').val(result['Many-Customers'])//no
-                $('finish_how_many_voucher_was_delivered').val(result['Many-Voucher'])//no
-                $('finish_how_many_products_eas_sold').val(result['Many-Products'])//no
-                $('finish_how_many_kits_was_delivered').val(result['Many-Kits'])//no
-                $('finish_how_many_national_plans_was_generated').val(result['Many-Nutrional-Plans'])//no
+                $('#finish_how_many_customers_entered_on_store').val(result['Many-Customers'])//no
+                $('#finish_how_many_voucher_was_delivered').val(result['Many-Voucher'])//no
+                $('#finish_how_many_products_eas_sold').val(result['Many-Products'])//no
+                $('#finish_how_many_kits_was_delivered').val(result['Many-Kits'])//no
+                $('#finish_how_many_national_plans_was_generated').val(result['Many-Nutrional-Plans'])//no
               }});
 
             $('#finish-service-booking').modal('toggle')
@@ -174,20 +174,40 @@ function formatHora(date) {
               },
               // { "data" : "Estimated-Total-Time" },
               { "data" : "Estimated-Starting-Date" , "render": function ( data) {
-                return formatDate(data);
+                var dataX = formatDate(data); 
+                        if ( dataX =='01/01/1753'){
+                            return '<center> - - </center>'
+                        }else{
+                          return dataX
+                        }
                 } 
               },
 
               { "data" : "Estimated-Finish-Date" , "render": function ( data) {
-                return formatDate(data);
+                      var dataX = formatDate(data); 
+                        if ( dataX =='01/01/1753'){
+                            return '<center> - - </center>'
+                        }else{
+                          return dataX
+                        }
                 } 
               },
               { "data" : "Starting-Date" , "render": function (data) {
-                return formatDate(data);                
+                var dataX = formatDate(data); 
+                if ( dataX =='01/01/1753'){
+                    return '<center> - - </center>'
+                }else{
+                  return dataX
+                }
                 } 
               },
               { "data" : "Finish-Date" , "render": function ( data) {
-                return formatDate(data);
+                var dataX = formatDate(data); 
+                if ( dataX =='01/01/1753'){
+                  return '<center> - - </center>'
+              }else{
+                return dataX
+              }
                 } 
               },
               
@@ -201,7 +221,7 @@ function formatHora(date) {
 
               { "data" : "Status", "render": function ( data) {
                 if (data == 0){
-                      return '-';
+                  return '<center> - - </center>'
                 }else if(data==1){
                     return 'To Do';
                 }else if(data==2){
@@ -250,8 +270,16 @@ $("#btn_finish_booking").click(function(){
   var service_invoice_line_no = $('#finish_service_invoice_line_no').val();
   var finish_date = formatDateSql($('#finish_date').val());
   var finish_time = $('#finish_time').val();
+
   
-  $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getUpdateFinish?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no+"&Finish-Date="+finish_date+"&Finish-Time="+finish_time, success: function(result){
+  var Many_Customers = $("#finish_how_many_customers_entered_on_store").val();
+  var Many_Voucher = $("#finish_how_many_voucher_was_delivered").val();
+  var Many_Products = $("#finish_how_many_products_eas_sold").val();
+  var Many_Kits = $("#finish_how_many_kits_was_delivered").val();
+  var Many_Nutrional_Plans = $("#finish_how_many_national_plans_was_generated").val();
+
+  
+  $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getUpdateFinish?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no+"&Finish-Date="+finish_date+"&Finish-Time="+finish_time+"&Many-Customers=" + Many_Customers + "&Many-Voucher=" + Many_Voucher + "&Many-Products=" + Many_Products + "&Many-Kits=" + Many_Kits + "&Many-Nutrional-Plans=" + Many_Nutrional_Plans, success: function(result){
     $('#finish-service-booking').modal('toggle');
     var oTblReport = $('#dataTable').DataTable().destroy();
 
