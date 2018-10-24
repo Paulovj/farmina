@@ -7,6 +7,11 @@ export default (function () {
   var lDemographicItems ="";
   function formatDate(date) {
     var data =  moment(date).utc().format("DD/MM/Y")
+      if (data=='01/01/1753'){
+          return ''
+      }else{
+        return data
+      }
     return data;
     }
   
@@ -105,14 +110,9 @@ function formatHora(date) {
               $('#start_function').val(FunctionX(result['Function']));//no
               $('#start_service_type').val(ServiceType(result['Service-Type']));
               $('#start_Salesperson_code').val(result['Salesperson-Code']);
-              //$('#start_training_for_which_line').val(result['Trainning-Answer-Type']);//no
-              //$('#start_training_for_which_line').val(TrainingAnswer(result['Trainning-Answer-Type']));//no
-              console.log('hora:' + formatHora(result['Starting-Time']));
               $('#start_date').val(formatDate(result['Starting-Date']));
               $('#start_time').val(formatHora(result['Starting-Time']));
-
               $('#start_estimated_starting_date').val(formatDate(result['Estimated-Starting-Date']));
-              //$('#start_estimated_total_time').val(result['Estimated-Total-Time']);
               $('#start_observation').val(result['Starting-Observation']);//no
             }});
           
@@ -174,40 +174,28 @@ function formatHora(date) {
               },
               // { "data" : "Estimated-Total-Time" },
               { "data" : "Estimated-Starting-Date" , "render": function ( data) {
-                var dataX = formatDate(data); 
-                        if ( dataX =='01/01/1753'){
-                            return '<center> - - </center>'
-                        }else{
-                          return dataX
-                        }
+                return formatDate(data);
                 } 
               },
 
               { "data" : "Estimated-Finish-Date" , "render": function ( data) {
-                      var dataX = formatDate(data); 
-                        if ( dataX =='01/01/1753'){
-                            return '<center> - - </center>'
-                        }else{
-                          return dataX
-                        }
+                return formatDate(data);
                 } 
               },
               { "data" : "Starting-Date" , "render": function (data) {
-                var dataX = formatDate(data); 
-                if ( dataX =='01/01/1753'){
-                    return '<center> - - </center>'
-                }else{
-                  return dataX
-                }
+                return formatDate(data);
+                } 
+              },
+              { "data" : "Starting-Time" , "render": function (data) {
+                return formatHora(data);
                 } 
               },
               { "data" : "Finish-Date" , "render": function ( data) {
-                var dataX = formatDate(data); 
-                if ( dataX =='01/01/1753'){
-                  return '<center> - - </center>'
-              }else{
-                return dataX
-              }
+                return formatDate(data);
+                } 
+              },
+              { "data" : "Finish-Time" , "render": function ( data) {
+                return formatHora(data);
                 } 
               },
               
@@ -231,8 +219,17 @@ function formatHora(date) {
                 }
               } 
             },
-              { "targets": -1, "data": null, "defaultContent": "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Start</button> <button action='finished' type='button' class='btn cur-p btn-info'>Finish</button>" }
-            ]
+              { "targets": -1, "data": null, 
+              "render": function (a,d){
+                if (a['Status']==3){
+                  return "<button action='finished' type='button' class='btn cur-p btn-info'>Finish</button>";
+                }else{
+                  return "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Start</button> <button action='finished' type='button' class='btn cur-p btn-info'>Finish</button>" ;
+                }
+
+              }
+              //"defaultContent": "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Start</button> <button action='finished' type='button' class='btn cur-p btn-info'>Finish</button>" 
+            }]
             
           });
         }        
