@@ -102,6 +102,7 @@ function formatHora(date) {
               console.log(result)
 
               
+              
               $('#start_service_invoice_no').val(result['Service-Invoice-No_']);  
               $('#start_service_invoice_line_no').val(result['Service-Invoice-Line-No_']);
 
@@ -122,6 +123,9 @@ function formatHora(date) {
           if($(this).attr('action') == "finished"){
               //$.ajax({url: "https://app-farmina.herokuapp.com/api/service_booking_resources/"+id, success: function(result){
                 $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/"+id, success: function(result){
+                  
+                $("#btn_finish_booking_upload").attr("code",result['Service-Invoice-No_']);
+
                   $('#finish_service_invoice_no').val(result['Service-Invoice-No_']);  
                   $('#finish_service_invoice_line_no').val(result['Service-Invoice-Line-No_']);
     
@@ -284,6 +288,44 @@ $("#btn_finish_booking").click(function(){
     }
   });
 });
+
+
+
+  $("#btn_finish_booking_upload").click(function(data){
+    
+        var x = $(this).attr('code');
+        console.log("tete:" + x)
+        $('#photo_service_invoice_no').val(x);  
+        $('#photo-service-booking').modal('toggle');  
+  });
+
+  $("#btn_save_photo").click(function(){
+    var pasta = $('#photo_service_invoice_no').val();
+    var data = new FormData();
+    data.append('file', $('#fileimagem')[0].files[0]);
+    //data.append('destino', './teste.png');
+    
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://www.nav.farmina.com.br:3001/api/Containers/"+ pasta +"/upload",
+        "method": "POST",
+        "headers": {
+          "cache-control": "no-cache",
+          "postman-token": "d754895d-5909-8ac8-1e61-b09a9bab5a2b"
+        },
+        "processData": false,
+        "contentType": false,
+        "mimeType": "multipart/form-data",
+        "data": data
+      }
+
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+        $('#photo-service-booking').modal('toggle');  
+      });    
+
+  });
   
 }());
 
