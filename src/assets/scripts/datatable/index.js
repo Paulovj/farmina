@@ -25,7 +25,7 @@ function checkZero(data){
   return data;
 }
 function formatHora(date) {
-  var data =  moment(date).utc().format("H:mm")
+  var data =  moment(date).utc().format("HH:mm")
     return data;
     
   // var d = new Date(date);
@@ -135,7 +135,7 @@ function formatHora(date) {
                 $('#finish_estimated_starting_date').val(result['Estimated-Starting-Date']);
                 $('#finish_estimated_total_time').val(result['Estimated-Total-Time']);
                 $('#finish_starting_observation').val(result['Starting-Observation']);//no
-
+                console.log('time> '+formatHora(result['Finish-Time']))
                 $('#finish_date').val(formatDate(result['Finish-Date']));
                 $('#finish_time').val(formatHora(result['Finish-Time']));
   
@@ -248,7 +248,7 @@ $("#btn_finish_booking").click(function(){
   var resource_no = $('#finish_resource_no').val();
   var service_invoice_no = $('#finish_service_invoice_no').val();
   var service_invoice_line_no = $('#finish_service_invoice_line_no').val();
-  var finish_date = $('#finish_date').val();
+  var finish_date = formatDateSql($('#finish_date').val());
   var finish_time = $('#finish_time').val();
   
   $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getUpdateFinish?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no+"&Finish-Date="+finish_date+"&Finish-Time="+finish_time, success: function(result){
