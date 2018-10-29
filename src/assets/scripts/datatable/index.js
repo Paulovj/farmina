@@ -95,8 +95,8 @@ function formatHora(date) {
 
   $('#dataTable tbody').on( 'click', 'button', function () {
           var data = $("#dataTable").DataTable().row( $(this).parents('tr') ).data();
-          var id = data['Service-Invoice-No_']
-
+          var id = data['Service-Invoice-No_'];
+                
           if($(this).attr('action') == "starting"){
               $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/"+id, success: function(result){
               console.log(result)
@@ -124,7 +124,7 @@ function formatHora(date) {
               //$.ajax({url: "https://app-farmina.herokuapp.com/api/service_booking_resources/"+id, success: function(result){
                 $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/"+id, success: function(result){
                   
-                $("#btn_finish_booking_upload").attr("code",result['Service-Invoice-No_']);
+                // $("#btn_finish_booking_upload").attr("code",result['Service-Invoice-No_']);
 
                   $('#finish_service_invoice_no').val(result['Service-Invoice-No_']);  
                   $('#finish_service_invoice_line_no').val(result['Service-Invoice-Line-No_']);
@@ -153,6 +153,13 @@ function formatHora(date) {
 
             $('#finish-service-booking').modal('toggle')
           } 
+
+            if ($(this).attr('action')=="save_photo"){
+                //var x = $(this).attr(id);
+                //console.log("tete:" + id)
+                $('#photo_service_invoice_no').val(id);  
+                $('#photo-service-booking').modal('toggle');  
+            }
 
         });
 
@@ -226,7 +233,50 @@ function formatHora(date) {
               { "targets": -1, "data": null, 
               "render": function (a,d){
                 if (a['Status']==3){
-                  return "<button action='finished' type='button' class='btn cur-p btn-info'>Finish</button>";
+                  var btn = "<button action='finished' type='button' class='btn cur-p btn-info'>Finish</button>";
+                  btn += "<button action='save_photo' code="+a['Service-Invoice-No_']+" type='button' class='btn cur-p btn-success' id='btn_finish_booking_upload'>Upload Photo</button>";
+                  return btn;
+
+                  // var btn = "";
+                  // btn += '<div class="peer">';
+                  // btn += '<div class="btn-group" role="group">';
+                  // btn += '<button type="button" class="email-side-toggle d-n@md+ btn bgc-white bdrs-2 mR-3 cur-p">';
+                  //           btn += '<i class="ti-menu"></i>';
+                  //           btn += '</button>';
+                  //         btn += '<button type="button" class="btn bgc-white bdrs-2 mR-3 cur-p">';
+                  //           btn += '<i class="ti-folder"></i>';
+                  //           btn += '</button>';
+                  //         btn += '<button type="button" class="btn bgc-white bdrs-2 mR-3 cur-p">';
+                  //         btn +=   '<i class="ti-tag"></i>';
+                  //         btn += '</button>';
+                  //         btn += '<div class="btn-group" role="group">';
+                  //           btn += '<button id="btnGroupDrop1" type="button" class="btn cur-p bgc-white no-after dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+                  //           btn += '<i class="ti-more-alt"></i>';
+                  //           btn += '</button>';
+                  //           btn += '<ul class="dropdown-menu fsz-sm" aria-labelledby="btnGroupDrop1">';
+                  //           btn += '<li>';
+                  //           btn += '<a href="" class="d-b td-n pY-5 pX-10 bgcH-grey-100 c-grey-700">';
+                  //           btn += '<i class="ti-trash mR-10"></i>';
+                  //           btn += '<span>Delete</span>';
+                  //           btn += '</a>';
+                  //           btn += '</li>';
+                  //           btn += '<li>';
+                  //           btn += '<a href="" class="d-b td-n pY-5 pX-10 bgcH-grey-100 c-grey-700">';
+                  //           btn += '<i class="ti-alert mR-10"></i>';
+                  //           btn += '<span>Mark as Spam</span>';
+                  //           btn += '</a>';
+                  //           btn += '</li>';
+                  //           btn += '<li>';
+                  //           btn += '"<a href="" class="d-b td-n pY-5 pX-10 bgcH-grey-100 c-grey-700">';
+                  //           btn += '<i class="ti-star mR-10"></i>';
+                  //           btn += '<span>Star</span>';
+                  //           btn += '</a>';
+                  //           btn += '</li>';
+                  //           btn += '</ul>';
+                  //           btn += '</div>';
+                  //           btn += '</div>';
+                  //           btn += '</div>';
+                  //     return btn ;
                 }else{
                   return "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Start</button> <button action='finished' type='button' class='btn cur-p btn-info'>Finish</button>" ;
                 }
@@ -291,13 +341,7 @@ $("#btn_finish_booking").click(function(){
 
 
 
-  $("#btn_finish_booking_upload").click(function(data){
-    
-        var x = $(this).attr('code');
-        console.log("tete:" + x)
-        $('#photo_service_invoice_no').val(x);  
-        $('#photo-service-booking').modal('toggle');  
-  });
+
 
   $("#btn_save_photo").click(function(){
     var pasta = $('#photo_service_invoice_no').val();
