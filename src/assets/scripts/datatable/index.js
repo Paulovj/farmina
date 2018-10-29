@@ -156,7 +156,7 @@ function formatHora(date) {
 
             if ($(this).attr('action')=="save_photo"){
                 //var x = $(this).attr(id);
-                //console.log("tete:" + id)
+                console.log("tete:" + id)
                 $('#photo_service_invoice_no').val(id);  
                 $('#photo-service-booking').modal('toggle');  
             }
@@ -178,7 +178,7 @@ function formatHora(date) {
               
               { "data" : "Resource-No_" },
               { "data" : "Customer-Name" },
-              { "data" : "Service-Invoice-No_" },
+              { "data" : "Service-Invoice-No_","visible": false },
               { "data" : "Service-Type" , "render": function ( data) {
                         return ServiceType(data);                
                 } 
@@ -189,10 +189,10 @@ function formatHora(date) {
                 } 
               },
 
-              { "data" : "Estimated-Finish-Date" , "render": function ( data) {
-                return formatDate(data);
-                } 
-              },
+              // { "data" : "Estimated-Finish-Date" , "render": function ( data) {
+              //   return formatDate(data);
+              //   } 
+              // },
               { "data" : "Starting-Date" , "render": function (data) {
                 return formatDate(data);
                 } 
@@ -210,9 +210,9 @@ function formatHora(date) {
                 } 
               },
               
-                            { "data" : "Customer-No_" },            
-              { "data" : "Customer-Address" },
-              { "data" : "Salesperson-Code" },
+              // { "data" : "Customer-No_" },            
+              // { "data" : "Customer-Address" },
+              // { "data" : "Salesperson-Code" },
               // { "data" : "Trainning-Answer-Type", "render": function ( data) {
               //       return TrainingAnswer(data);              
               //   }  
