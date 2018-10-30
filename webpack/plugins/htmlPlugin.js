@@ -12,6 +12,7 @@ const titles = {
   'chat': 'Chat',
   'compose': 'Compose',
   'datatable': 'Datatable',
+  'ordem': 'ordem',
   'email': 'Email',
   'forms': 'Forms',
   'google-maps': 'Google Maps',

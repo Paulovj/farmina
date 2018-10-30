@@ -193,11 +193,11 @@ function formatHora(date) {
               //   return formatDate(data);
               //   } 
               // },
-              { "data" : "Starting-Date" , "render": function (data) {
+              { "data" : "Starting-Date" ,"visible": false , "render": function (data) {
                 return formatDate(data);
                 } 
               },
-              { "data" : "Starting-Time" , "render": function (data) {
+              { "data" : "Starting-Time" ,"visible": false , "render": function (data) {
                 return formatHora(data);
                 } 
               },
@@ -205,7 +205,7 @@ function formatHora(date) {
                 return formatDate(data);
                 } 
               },
-              { "data" : "Finish-Time" , "render": function ( data) {
+              { "data" : "Finish-Time" ,"visible": false , "render": function ( data) {
                 return formatHora(data);
                 } 
               },
@@ -232,11 +232,11 @@ function formatHora(date) {
             },
               { "targets": -1, "data": null, 
               "render": function (a,d){
+                var btn =""
+                
                 if (a['Status']==3){
-                  var btn = "<button action='finished' type='button' class='btn cur-p btn-info'>Finish</button>";
-                  btn += "<button action='save_photo' code="+a['Service-Invoice-No_']+" type='button' class='btn cur-p btn-success' id='btn_finish_booking_upload'>Upload Photo</button>";
-                  return btn;
-
+                  btn += "<button action='finished' type='button' class='btn cur-p btn-info'>Finish</button>";
+                  
                   // var btn = "";
                   // btn += '<div class="peer">';
                   // btn += '<div class="btn-group" role="group">';
@@ -278,11 +278,13 @@ function formatHora(date) {
                   //           btn += '</div>';
                   //     return btn ;
                 }else{
-                  return "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Start</button> <button action='finished' type='button' class='btn cur-p btn-info'>Finish</button>" ;
+                  btn += "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Start</button> <button action='finished' type='button' class='btn cur-p btn-info'>Finish</button>" ;
                 }
+                btn += "<button action='save_photo' code="+a['Service-Invoice-No_']+" type='button' class='btn cur-p btn-success' id='btn_finish_booking_upload'>Upload Photo</button>";
+              return btn;
 
               }
-              //"defaultContent": "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Start</button> <button action='finished' type='button' class='btn cur-p btn-info'>Finish</button>" 
+              
             }]
             
           });
