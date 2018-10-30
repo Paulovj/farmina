@@ -326,13 +326,33 @@
                     <div class="col-md-6 mb-3">
                         <label class="fw-500">Nº</label>
                       <!-- <input type="text" class="form-control" id="start_service_invoice_no" placeholder="" value="" required disabled style="display:none;"> -->
-                      <input type="text" class="form-control" id="add_agendamento_N" placeholder="" value="" required disabled>
+                      <input type="text" class="form-control" id="add_agendamento_N" placeholder="" value="" required >
                     </div>
+
                     <div class="col-md-6 mb-3">
-                        <label class="fw-500">Nº Cliente</label>
-                      <input type="text" class="form-control" id="add_agendamento_N_Cliente" placeholder="" value="" required disabled>
-                    </div>
+                      <label class="fw-500">Fatura-para Endereço Complemento</label>
+                    <input type="text" class="form-control" id="add_agendamento_fatura_endereco_complemento" placeholder="" value="" required disabled>
+                  </div>
+                    
+                  
                 </div>
+
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500">Nº Cliente</label>
+                    <select id="add_agendamento_N_Cliente" class="form-control">
+                      <option selected>Selecione...</option>                      
+                    </select>
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label class="fw-500">Fatura-para Cidade</label>
+                  <input type="text" class="form-control" id="add_agendamento_fatura_cidade" placeholder="" value="" required disabled>
+                </div>
+
+              </div>
+
   
   
                 <div class="row">
@@ -340,24 +360,49 @@
                         <label class="fw-500">Nome</label>
                       <input type="text" class="form-control" id="add_agendamento_nome" placeholder="" value="" required disabled>
                     </div>
+
                     <div class="col-md-6 mb-3">
-                        <label class="fw-500">Faturar-para Endereço</label>
-                      <input type="text" class="form-control" id="add_agendamento_fatura_endereco" placeholder="" value="" required disabled>
-                    </div>
-                </div>
-  
-  
-              
-              
-  
-              <div class="row">
-                  <div class="col-md-6 mb-3">
-                      <label class="fw-500">Fatura-para Endereço Completo</label>
-                    <input type="text" class="form-control" id="add_agendamento_fatura_endereco_completo" placeholder="" value="" required disabled>
+                      <label class="fw-500">Fatura-para Cep</label>
+                    <input type="text" class="form-control" id="add_agendamento_fatura_cep" placeholder="" value="" required disabled>
                   </div>
+                </div>
+
+
+                <div class="row">
                   
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500">Faturar-para Endereço</label>
+                    <input type="text" class="form-control" id="add_agendamento_fatura_endereco" placeholder="" value="" required disabled>
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label class="fw-500">Cód Vendedor</label>
+                  <input type="text" class="form-control" id="add_agendamento_cod_vendendor" placeholder="" value="" required >
+                </div>
               </div>
 
+              <div class="modal-header">
+                <h5 class="m-0">Promoter 1</h5>                          
+              </div>
+
+              <div class="row">
+                  
+                <div class="col-md-6 mb-3">
+                    <label class="fw-500">Faturar-para Endereço</label>
+                  <input type="text" class="form-control" id="add_agendamento_fatura_endereco2" placeholder="" value="" required >
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label class="fw-500">Cód Vendedor</label>
+                <input type="text" class="form-control" id="add_agendamento_cod_vendendor2" placeholder="" value="" required >
+              </div>
+            </div>
+  
+  
+              
+              
+  
+              
               
               
               <div class="text-right testedediv">

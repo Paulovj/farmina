@@ -12,25 +12,24 @@ export default (function () {
         return data
       }
     return data;
-    }
-  
-    function formatDateSql(date) {
-      var data = moment(date, 'DD/MM/YYYY').toDate();
-      data =  moment(data).utc().format("Y-MM-DD")
-      return data;
-      }
-  
-
-
-function checkZero(data){
-  if(data.length == 1){
-    data = "0" + data;
-  }
-  return data;
-}
+    }    
 function formatHora(date) {
   var data =  moment(date).utc().format("HH:mm")
     return data; 
+}
+
+function StatusX(value){
+  var valueX = "";
+      if (value == 0){
+        valueX =  'Pendente';
+      }else if(value==1){
+        valueX =  'To Do';
+      }else if(value==2){
+        valueX =  'Started';
+      }else if(value==3){
+      valueX =  'Accomplished';            
+      }
+      return valueX;
 }
   
   function FunctionX(value){
@@ -167,7 +166,10 @@ function formatHora(date) {
             "columns" : [
               { "data" : "Document Type","visible": false},
               { "data" : "No_" },
-              { "data" : "Status" },
+              { "data" : "Status", "render": function (data) {
+                  return StatusX(data);
+                }
+              },  
               { "data" : "Order Date", "render": function ( data) {
                 return formatDate(data);
                 } 
@@ -179,9 +181,9 @@ function formatHora(date) {
               { "data" : "Customer No_" },
               { "data" : "Ship-to Name" },
               { "data" : "Name" },
-              { "data" : "Name" },//Codigo deposito
-              { "data" : "Priority" },
-              { "data" : "Assigned User ID" },
+              { "data" : "Name" ,"visible": false},//Codigo deposito
+              { "data" : "Priority" ,"visible": false},
+              { "data" : "Assigned User ID" ,"visible": false},
               { "data" : "Professional 1" },
                { "targets": -1, "data": null, 
                 "render": function (a,d){
@@ -201,9 +203,52 @@ function formatHora(date) {
 load();
   
 
+$("#add_agendamento_N_Cliente").change(function(){
+  var id      = $(this).val();
+  var name    = $('option:selected', this).attr("optName");
+  var address = $('option:selected', this).attr("optAddress");
+  var post    = $('option:selected', this).attr("optPost");
+  var phone   = $('option:selected', this).attr("optPhone");
+  var contact = $('option:selected', this).attr("optContact");
+  var city    = $('option:selected', this).attr("optCity");
+  var address2= $('option:selected', this).attr("optAddress2");
+  
+  
+  $('#add_agendamento_fatura_endereco_complemento').val(address2)
+  $('#add_agendamento_fatura_cidade').val(city)
+  $('#add_agendamento_nome').val(name)
+  $('#add_agendamento_fatura_cep').val(post)
+  $('#add_agendamento_fatura_endereco').val(address)
+  
 
+  console.log('resultado combo on change: ' + name + ' id '+ id )
+});
 
 $("#btn_add_agendamento").click(function(){
+  var length = $('#add_agendamento_N_Cliente > option').length;
+  console.log('quandadide de pop: ',length)
+
+  if (length == 1){
+    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Customers/", success: function(result){
+      //add_agendamento_N_Cliente
+      var contX = "";
+        $.each(result, function(index, value){
+          var val = value.No_ + ' | ' + value.Name +' | '+ value.Address + ' | ' + value['Post Code']  + ' | ' + value['Phone No_'] + ' | '+ value.Contact;
+          var optName     = 'optName = "'+value.Name+'"';
+          var optAddress  = 'optAddress = "'+value.Address+'"';
+          var optPost     = 'optPost = "'+value['Post Code']+'"';
+          var optPhone    = 'optPhone = "'+value['Phone No_']+'"';
+          var optContact  = 'optContact = "'+value.Contact+'"';
+          var optCity     = 'optCity = "'+value.City+'"';
+          var optAddress2 = 'optCity = "'+value['Address 2']+'"';
+
+            contX +='<option value='+ value.No_ +' '+ optCity +' '+ optName +' '+ optAddress +' '+ optPost +' '+ optPhone +' '+ optContact +' > '+val+' </option>';
+        })
+        $("#add_agendamento_N_Cliente").append(contX)
+
+      }
+    });
+  }  
   $('#add-agendamento').modal('toggle');  
 })
 
