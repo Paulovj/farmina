@@ -17,6 +17,11 @@ function formatHora(date) {
   var data =  moment(date).utc().format("HH:mm")
     return data; 
 }
+function formatDateSql(date) {
+  var data = moment(date, 'DD/MM/YYYY').toDate();
+  data =  moment(data).utc().format("Y-MM-DD")
+  return data;
+  }
 
 function StatusX(value){
   var valueX = "";
@@ -385,7 +390,7 @@ $("#add_agendamento_service_type6").change(function(){
        "YourReference"            : "",
        
         "Professional1"           :$("#add_agendamento_busca_professional1").val(),
-        "PlannedDate1"            :$("#add_agendamento_planned_date1").val(),
+        "PlannedDate1"            :formatDateSql($("#add_agendamento_planned_date1").val()),
         "PlannedHours1"           :$("#add_agendamento_planned_hour1").val(),
         "ServiceType1"            :$("#add_agendamento_service_type1").val(),
         "ProfessionalFunction1"   :$("#add_agendamento_service_result1").val(),
