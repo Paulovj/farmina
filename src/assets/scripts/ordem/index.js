@@ -203,7 +203,7 @@ function StatusX(value){
 load();
   
 
-$("#add_agendamento_N_Cliente").change(function(){
+$("#add_agendamento_busca_cliente").change(function(){
   var id      = $(this).val();
   var name    = $('option:selected', this).attr("optName");
   var address = $('option:selected', this).attr("optAddress");
@@ -212,72 +212,214 @@ $("#add_agendamento_N_Cliente").change(function(){
   var contact = $('option:selected', this).attr("optContact");
   var city    = $('option:selected', this).attr("optCity");
   var address2= $('option:selected', this).attr("optAddress2");
+  var salespersonCode= $('option:selected', this).attr("optSalespersonCode");
   
   
+  
+  $('#add_agendamento_n_cliente').val(id)
   $('#add_agendamento_fatura_endereco_complemento').val(address2)
   $('#add_agendamento_fatura_cidade').val(city)
   $('#add_agendamento_nome').val(name)
   $('#add_agendamento_fatura_cep').val(post)
   $('#add_agendamento_fatura_endereco').val(address)
+  $('#add_agendamento_cod_vendendor').val(salespersonCode)
   
 
   console.log('resultado combo on change: ' + name + ' id '+ id )
 });
 
 $("#btn_add_agendamento").click(function(){
-  var length = $('#add_agendamento_N_Cliente > option').length;
+  var length = $('#add_agendamento_busca_cliente > option').length;
   console.log('quandadide de pop: ',length)
-
   if (length == 1){
     $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Customers/", success: function(result){
-      //add_agendamento_N_Cliente
+      //add_agendamento_busca_cliente
       var contX = "";
         $.each(result, function(index, value){
-          var val = value.No_ + ' | ' + value.Name +' | '+ value.Address + ' | ' + value['Post Code']  + ' | ' + value['Phone No_'] + ' | '+ value.Contact;
+          var val = value.No_ + ' | ' + value.Name +' | '+ value.Address + ' | ' + value['City']  + ' | ' + value['Post Code']  + ' | ' + value['Phone No_'] + ' | '+ value.Contact;
           var optName     = 'optName = "'+value.Name+'"';
           var optAddress  = 'optAddress = "'+value.Address+'"';
           var optPost     = 'optPost = "'+value['Post Code']+'"';
           var optPhone    = 'optPhone = "'+value['Phone No_']+'"';
           var optContact  = 'optContact = "'+value.Contact+'"';
           var optCity     = 'optCity = "'+value.City+'"';
-          var optAddress2 = 'optCity = "'+value['Address 2']+'"';
+          var optAddress2 = 'optAddress2 = "'+value['Address 2']+'"';
+          var optSalespersonCode = 'optSalespersonCode = "'+value['Salesperson Code']+'"';
+          
 
-            contX +='<option value='+ value.No_ +' '+ optCity +' '+ optName +' '+ optAddress +' '+ optPost +' '+ optPhone +' '+ optContact +' > '+val+' </option>';
+            contX +='<option value='+ value.No_ +' '+ optSalespersonCode + ' '+ optCity +' '+ optName +' '+ optAddress2 +' '+ optAddress +' '+ optPost +' '+ optPhone +' '+ optContact +' > '+val+' </option>';
         })
-        $("#add_agendamento_N_Cliente").append(contX)
+        $("#add_agendamento_busca_cliente").append(contX)
 
       }
     });
-  }  
+  }
+  
+  var length1 = $('#add_agendamento_busca_professional1 > option').length;
+  console.log('quandadide PROFESSIONAL: ',length)
+  if (length1 == 1){
+    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/resourses/getResourseQuery", success: function(obj){
+      var contX = "";
+        $.each(obj.result, function(index, value){
+          var val = value.No_ + ' | ' + value.Name;
+          var optName     = 'optName = "'+value.Name+'"';
+          contX +='<option value='+ value.No_ +' '+ optName + ' > '+val+' </option>';
+        })
+        $("#add_agendamento_busca_professional1").append(contX)
+        $("#add_agendamento_busca_professional2").append(contX)
+        $("#add_agendamento_busca_professional3").append(contX)
+        $("#add_agendamento_busca_professional4").append(contX)
+        $("#add_agendamento_busca_professional5").append(contX)
+        $("#add_agendamento_busca_professional6").append(contX)
+
+
+      }
+    });
+  }
+
   $('#add-agendamento').modal('toggle');  
 })
 
-  $("#btn_add_agendamento222222").click(function(){
+
+function PromoterServiceTypeX(promoter,value){
+  var contX ="";
+  var lblCont ="";
+  $("#add_agendamento_service_result"+promoter+ " option").remove();
+  if(value==1){
+    //traning
+    lblCont =" Tranning for which line?";
+    contX +='<option value="0">  </option>';
+    contX +='<option value="1"> Traning2 </option>';
+    contX +='<option value="2"> Traning3 </option>';
+    contX +='<option value="3"> Traning4 </option>';
+    contX +='<option value="4"> Traning5 </option>';
+  }else if(value==2){
+    lblCont =" For which line would your like welcome kit?";
+    contX +='<option value="0">  </option>';
+    contX +='<option value="1"> ND QUINOA </option>';
+    contX +='<option value="2"> ND PUMPKIN </option>';
+    contX +='<option value="3"> ND ANCESTRAL </option>';
+    contX +='<option value="4"> ND PRIME </option>';
+  }else if(value==3){
+    lblCont =" Why you are doing this ISP? ";
+    contX +='<option value="0">  </option>';
+    contX +='<option value="1"> PUSH NEW LINE </option>';
+    contX +='<option value="2"> LINE SLOW </option>';
+    contX +='<option value="3"> GENERIC </option>';
+  }else if(value==4){
+    lblCont =" What kind of mechandissing do you want? ";
+    contX +='<option value="0">  </option>';
+    contX +='<option value="1"> SHELF ORGANIZATION </option>';
+    contX +='<option value="2"> STICKER DECOR </option>';
+    contX +='<option value="3"> NEW SHELF </option>';
+  }else if(value==5){
+    lblCont ="  MERCHANNNNN ? ";
+    contX +='<option value="0">  </option>';
+    contX +='<option value="1"> 1 </option>';
+    contX +='<option value="2"> 2 </option>';
+    contX +='<option value="3"> 3 </option>';
+  }  
+  $('#div_add_agendamento_service_result'+promoter).show()
+  $("#lbl_add_agendamento_service_result"+promoter).html(lblCont)
+  $("#add_agendamento_service_result"+promoter).append(contX)
+}
+
+$("#add_agendamento_service_type1").change(function(){
+  var promoter = 1;
+  var value = $(this).val();
+  PromoterServiceTypeX(promoter,value)
+});
+$("#add_agendamento_service_type2").change(function(){
+  var promoter = 2;
+  var value = $(this).val();
+  PromoterServiceTypeX(promoter,value)
+});
+$("#add_agendamento_service_type3").change(function(){
+  var promoter = 3;
+  var value = $(this).val();
+  PromoterServiceTypeX(promoter,value)
+});
+$("#add_agendamento_service_type4").change(function(){
+  var promoter = 4;
+  var value = $(this).val();
+  PromoterServiceTypeX(promoter,value)
+});
+$("#add_agendamento_service_type5").change(function(){
+  var promoter = 5;
+  var value = $(this).val();
+  PromoterServiceTypeX(promoter,value)
+});
+$("#add_agendamento_service_type6").change(function(){
+  var promoter = 6;
+  var value = $(this).val();
+  PromoterServiceTypeX(promoter,value)
+});
+
+
+  $("#btn_add_ordem_agendamento").click(function(){
     console.log('entrou na janela');
 
-
-    var pasta = $('#photo_service_invoice_no').val();
     var data = new FormData();
-    data.append('file', $('#fileimagem')[0].files[0]);
     
-      var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "http://www.nav.farmina.com.br:3001/api/Containers/"+ pasta +"/upload",
-        "method": "POST",
-        "headers": {
-          "cache-control": "no-cache",
-          "postman-token": "d754895d-5909-8ac8-1e61-b09a9bab5a2b"
-        },
-        "processData": false,
-        "contentType": false,
-        "mimeType": "multipart/form-data",
-        "data": data
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "http://www.nav.farmina.com.br:3001/api/ServiceHeaders/getServiceHeaderInsert",
+      "method": "POST",
+      "headers": {
+        "content-type": "application/x-www-form-urlencoded",
+        "cache-control": "no-cache",
+        "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
+      },
+      "data": {        
+       "DocumentType"             : "0",
+       "No_"                      : $("#add_agendamento_n").val(),
+       "CustomerNo_"              : $("#add_agendamento_n_cliente").val(),
+       "Bill_toCustomerNo_"       : $("#add_agendamento_n_cliente").val(),
+       "Bill_toName"              : $("#add_agendamento_nome").val(),
+       "Bill_toName2"             : "",
+       "Bill_toAddress"           : $("#add_agendamento_fatura_endereco").val(),
+       "Bill_toAddress2"          : "",
+       "Bill_toCity"              : $("#add_agendamento_fatura_cidade").val(),
+       "Bill_toContact"           : $("#add_agendamento_nome").val(),
+       "YourReference"            : "",
+       
+        "Professional1"           :$("#add_agendamento_busca_professional1").val(),
+        "PlannedDate1"            :$("#add_agendamento_planned_date1").val(),
+        "PlannedHours1"           :$("#add_agendamento_planned_hour1").val(),
+        "ServiceType1"            :$("#add_agendamento_service_type1").val(),
+        "ProfessionalFunction1"   :$("#add_agendamento_service_result1").val(),
+        
+        "Professional2"           :$("#add_agendamento_busca_professional2").val(),
+        "PlannedDate2"           :$("#add_agendamento_planned_date2").val(),
+        "PlannedHours2"           :$("#add_agendamento_planned_hour2").val(),
+        "ServiceType2"            :$("#add_agendamento_service_type2").val(),
+        "ProfessionalFunction2"   :$("#add_agendamento_service_result2").val(),
+        
+        "Professiona3"            :$("#add_agendamento_busca_professional3").val(),
+        "PlannedDate3"            :$("#add_agendamento_planned_date3").val(),
+        "PlannedHours3"           :$("#add_agendamento_planned_hour3").val(),
+        "ServiceType3"            :$("#add_agendamento_service_type3").val(),
+        "ProfessionalFunction3"   :$("#add_agendamento_service_result3").val(),
+        
+        "Professional4"           :$("#add_agendamento_busca_professional4").val(),
+        "PlannedDate4"            :$("#add_agendamento_planned_date4").val(),
+        "PlannedHours4"           :$("#add_agendamento_planned_hour4").val(),
+        "ServiceType4"            :$("#add_agendamento_service_type4").val(),
+        "ProfessionalFunction4"   :$("#add_agendamento_service_result4").val(),
+        
+        "Professional5"           :$("#add_agendamento_busca_professional5").val(),
+        "PlannedDate5"            :$("#add_agendamento_planned_date5").val(),
+        "PlannedHours5"           :$("#add_agendamento_planned_hour5").val(),
+        "ServiceType5"            :$("#add_agendamento_service_type5").val(),
+        "ProfessionalFunction5"   :$("#add_agendamento_service_result5").val(),
+        
       }
+    }
 
       $.ajax(settings).done(function (response) {
         console.log(response);
-        $('#photo-service-booking').modal('toggle');  
+        //$('#photo-service-booking').modal('toggle');  
       });    
 
   });
