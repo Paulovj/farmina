@@ -378,7 +378,7 @@ $("#add_agendamento_service_type6").change(function(){
       },
       "data": {        
        "DocumentType"             : "0",
-       "No_"                      : $("#add_agendamento_n").val(),
+       //"No_"                      : $("#add_agendamento_n").val(),
        "CustomerNo_"              : $("#add_agendamento_n_cliente").val(),
        "Bill_toCustomerNo_"       : $("#add_agendamento_n_cliente").val(),
        "Bill_toName"              : $("#add_agendamento_nome").val(),
