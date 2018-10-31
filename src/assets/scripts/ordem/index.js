@@ -387,6 +387,8 @@ $("#add_agendamento_service_type6").change(function(){
        "Bill_toAddress2"          : "",
        "Bill_toCity"              : $("#add_agendamento_fatura_cidade").val(),
        "Bill_toContact"           : $("#add_agendamento_nome").val(),
+       "Bill-to Post Code"           : $("#add_agendamento_fatura_cep").val(),
+       
        "YourReference"            : "",
        
         "Professional1"           :$("#add_agendamento_busca_professional1").val(),
@@ -396,25 +398,25 @@ $("#add_agendamento_service_type6").change(function(){
         "ProfessionalFunction1"   :$("#add_agendamento_service_result1").val(),
         
         "Professional2"           :$("#add_agendamento_busca_professional2").val(),
-        "PlannedDate2"           :$("#add_agendamento_planned_date2").val(),
+        "PlannedDate2"            :formatDateSql($("#add_agendamento_planned_date2").val()),
         "PlannedHours2"           :$("#add_agendamento_planned_hour2").val(),
         "ServiceType2"            :$("#add_agendamento_service_type2").val(),
         "ProfessionalFunction2"   :$("#add_agendamento_service_result2").val(),
         
-        "Professiona3"            :$("#add_agendamento_busca_professional3").val(),
-        "PlannedDate3"            :$("#add_agendamento_planned_date3").val(),
+        "Professional3"            :$("#add_agendamento_busca_professional3").val(),
+        "PlannedDate3"            :formatDateSql($("#add_agendamento_planned_date3").val()),
         "PlannedHours3"           :$("#add_agendamento_planned_hour3").val(),
         "ServiceType3"            :$("#add_agendamento_service_type3").val(),
         "ProfessionalFunction3"   :$("#add_agendamento_service_result3").val(),
         
         "Professional4"           :$("#add_agendamento_busca_professional4").val(),
-        "PlannedDate4"            :$("#add_agendamento_planned_date4").val(),
+        "PlannedDate4"            :formatDateSql($("#add_agendamento_planned_date4").val()),
         "PlannedHours4"           :$("#add_agendamento_planned_hour4").val(),
         "ServiceType4"            :$("#add_agendamento_service_type4").val(),
         "ProfessionalFunction4"   :$("#add_agendamento_service_result4").val(),
         
         "Professional5"           :$("#add_agendamento_busca_professional5").val(),
-        "PlannedDate5"            :$("#add_agendamento_planned_date5").val(),
+        "PlannedDate5"            :formatDateSql($("#add_agendamento_planned_date5").val()),
         "PlannedHours5"           :$("#add_agendamento_planned_hour5").val(),
         "ServiceType5"            :$("#add_agendamento_service_type5").val(),
         "ProfessionalFunction5"   :$("#add_agendamento_service_result5").val(),
