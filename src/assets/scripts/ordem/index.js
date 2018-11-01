@@ -120,8 +120,8 @@ function StatusX(value){
                { "targets": -1, "data": null, 
                 "render": function (a,d){
                   var btn =""
-                    //btn += "<button action='finished' type='button' class='btn cur-p btn-info'>Edit</button>";                  
                     btn += "<button action='postando_agendamento' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Post</button>" ;                  
+                    btn += "<button action='finished' type='button' class='btn cur-p btn-info'>Edit</button>";                  
                     return btn;
               }
             }]
@@ -222,17 +222,19 @@ function PromoterServiceTypeX(promoter,value){
     //traning
     lblCont =" Tranning for which line?";
     contX +='<option value="0">  </option>';
-    contX +='<option value="1"> Traning2 </option>';
-    contX +='<option value="2"> Traning3 </option>';
-    contX +='<option value="3"> Traning4 </option>';
-    contX +='<option value="4"> Traning5 </option>';
+    contX +='<option value="1"> ND </option>';
+    contX +='<option value="2"> ND PUMPKIN </option>';
+    contX +='<option value="3"> ND QUINOA </option>';
+    contX +='<option value="4"> ND ANCESTRAL</option>';
+    contX +='<option value="4"> ND PRIME VET LIFE</option>';
+    contX +='<option value="4"> INSTITUCIONAL</option>';
   }else if(value==2){
     lblCont =" For which line would your like welcome kit?";
     contX +='<option value="0">  </option>';
     contX +='<option value="1"> ND QUINOA </option>';
     contX +='<option value="2"> ND PUMPKIN </option>';
     contX +='<option value="3"> ND ANCESTRAL </option>';
-    contX +='<option value="4"> ND PRIME </option>';
+    contX +='<option value="4"> ND PRIME </option>';    
   }else if(value==3){
     lblCont =" Why you are doing this ISP? ";
     contX +='<option value="0">  </option>';
@@ -246,11 +248,8 @@ function PromoterServiceTypeX(promoter,value){
     contX +='<option value="2"> STICKER DECOR </option>';
     contX +='<option value="3"> NEW SHELF </option>';
   }else if(value==5){
-    lblCont ="  MERCHANNNNN ? ";
-    contX +='<option value="0">  </option>';
-    contX +='<option value="1"> 1 </option>';
-    contX +='<option value="2"> 2 </option>';
-    contX +='<option value="3"> 3 </option>';
+    lblCont =" Army ? ";
+    contX +='<option value="0">  </option>';    
   }  
   $('#div_add_agendamento_service_result'+promoter).show()
   $("#lbl_add_agendamento_service_result"+promoter).html(lblCont)
