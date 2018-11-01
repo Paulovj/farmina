@@ -74,8 +74,132 @@ function StatusX(value){
   $('#dataTableOrdemAgendamento tbody').on( 'click', 'button', function () {
           var data = $("#dataTableOrdemAgendamento").DataTable().row( $(this).parents('tr') ).data();
           var id = data['No_'];
+          console.log(data)
+          var service_invoce_no = data['No_'].replace('WEB','WEBSO');
+          var service_invoce_line_no1 = id.replace('WEB000','') +100;
+          var service_invoce_line_no2 = id.replace('WEB000','') +200;
+          var service_invoce_line_no3 = id.replace('WEB000','') +300;
+          var service_invoce_line_no4 = id.replace('WEB000','') +400;
+          var service_invoce_line_no5 = id.replace('WEB000','') +500;
+          var path = '\\Srv-propay\\fotos\\'+id;
+          var customer_no = data['Customer No_'];
+          var Salesperson = data['Salesperson Code'];
+          var Billto_Address = data['Bill-to Address'];
+          var name = data['Name'];
+          
+          var Professional1 = data['Professional 1'];
+          var ServiceType1 = data['Service Type 1'];
+          
+          var ISPAnswerType1        = data['ISP Answer Type 1'];
+          var MerchanAnswerType1    = data['Merchan Answer Type 1'];
+          var TrainningAnswerType1  = data['Trainning Answer Type 1'];
+          var WelcomeKitType1       = data['Welcome Kit Answer Type 1'];
+
+
+          var Professional2 = data['Professional 2'];
+          var ServiceType2 = data['Service Type 2'];
+
+          var ISPAnswerType2        = data['ISP Answer Type 2'];
+          var MerchanAnswerType2    = data['Merchan Answer Type 2'];
+          var TrainningAnswerType2  = data['Trainning Answer Type 2'];
+          var WelcomeKitType2       = data['Welcome Kit Answer Type 2'];
+
+
+          var Professional3 = data['Professional 3'];
+          var ServiceType3 = data['Service Type 3'];
+
+          var ISPAnswerType3        = data['ISP Answer Type 3'];
+          var MerchanAnswerType3    = data['Merchan Answer Type 3'];
+          var TrainningAnswerType3  = data['Trainning Answer Type 3'];
+          var WelcomeKitType3       = data['Welcome Kit Answer Type 3'];
+
+          var Professional4 = data['Professional 4'];
+          var ServiceType4 = data['Service Type 4'];
+
+          var ISPAnswerType4        = data['ISP Answer Type 4'];
+          var MerchanAnswerType4    = data['Merchan Answer Type 4'];
+          var TrainningAnswerType4  = data['Trainning Answer Type 4'];
+          var WelcomeKitType4       = data['Welcome Kit Answer Type 4'];
+
+          var Professional5 = data['Professional 5'];
+          var ServiceType5 = data['Service Type 5'];
+
+          var ISPAnswerType5        = data['ISP Answer Type 5'];
+          var MerchanAnswerType5    = data['Merchan Answer Type 5'];
+          var TrainningAnswerType5  = data['Trainning Answer Type 5'];
+          var WelcomeKitType5       = data['Welcome Kit Answer Type 5'];
+
+          
+
+          
           if ($(this).attr('action')=="postando_agendamento"){
-            $('#postando_agendamento').val(id)
+            $('#post_agendamento_no').val(id)
+            $('#post_service_invoce_no').val(service_invoce_no)
+            $('#post_service_invoce_line_no1').val(service_invoce_line_no1)
+            $('#post_service_invoce_line_no2').val(service_invoce_line_no2)
+            $('#post_service_invoce_line_no3').val(service_invoce_line_no3)
+            $('#post_service_invoce_line_no4').val(service_invoce_line_no4)
+            $('#post_service_invoce_line_no5').val(service_invoce_line_no5)
+            $('#post_customer_no').val(customer_no)
+            $('#post_customer_name').val(name)
+            $('#post_customer_address').val(Billto_Address)
+            $('#post_salesperson_code').val(Salesperson)
+            
+            $('#post_resource_no1').val(Professional1)
+            $('#post_service_type1').val(ServiceType1)
+            $('#post_isp1').val(ISPAnswerType1)
+            $('#post_merchan1').val(MerchanAnswerType1)
+            $('#post_trainning1').val(TrainningAnswerType1)
+            $('#post_welcome1').val(WelcomeKitType1)
+            
+            $('#post_resource_no2').val(Professional2)
+            $('#post_service_type2').val(ServiceType2)
+
+            $('#post_resource_no2').val(Professional2)
+            $('#post_service_type2').val(ServiceType2)
+            $('#post_isp2').val(ISPAnswerType2)
+            $('#post_merchan2').val(MerchanAnswerType2)
+            $('#post_trainning2').val(TrainningAnswerType2)
+            $('#post_welcome2').val(WelcomeKitType2)
+            
+
+            $('#post_resource_no3').val(Professional3)
+            $('#post_service_type3').val(ServiceType3)
+
+            $('#post_resource_no3').val(Professional3)
+            $('#post_service_type3').val(ServiceType3)
+            $('#post_isp3').val(ISPAnswerType3)
+            $('#post_merchan3').val(MerchanAnswerType3)
+            $('#post_trainning3').val(TrainningAnswerType3)
+            $('#post_welcome3').val(WelcomeKitType3)
+            
+
+
+            $('#post_resource_no4').val(Professional4)
+            $('#post_service_type4').val(ServiceType4)
+
+            $('#post_resource_no4').val(Professional4)
+            $('#post_service_type4').val(ServiceType4)
+            $('#post_isp4').val(ISPAnswerType4)
+            $('#post_merchan4').val(MerchanAnswerType4)
+            $('#post_trainning4').val(TrainningAnswerType4)
+            $('#post_welcome4').val(WelcomeKitType4)
+            
+
+            $('#post_resource_no5').val(Professional5)
+            $('#post_service_type5').val(ServiceType5)
+
+            $('#post_resource_no5').val(Professional5)
+            $('#post_service_type5').val(ServiceType5)
+            $('#post_isp5').val(ISPAnswerType5)
+            $('#post_merchan5').val(MerchanAnswerType5)
+            $('#post_trainning5').val(TrainningAnswerType5)
+            $('#post_welcome5').val(WelcomeKitType5)
+            
+            
+            $('#post_photo_path').val(path)
+
+            
             $('#lbl_post_agendamento').text('Deseja postar esse agendamento '+ id + ' ?');
             $('#post-agendamento-modal').modal('toggle')
           } 
@@ -94,6 +218,17 @@ function StatusX(value){
             "scrollX": true,
             "columns" : [
               { "data" : "Document Type","visible": false},
+              { "data" : "Salesperson Code","visible": false},
+              { "data" : "Bill-to Address","visible": false},
+
+              /*{ "data" : "ISP Answer Type 1","visible": false},
+              { "data" : "Merchan Answer Type 1","visible": false},
+              { "data" : "Trainning Answer Type 1","visible": false},
+              { "data" : "Welcome Kit Answer Type 1","visible": false},*/
+
+
+
+        
               { "data" : "No_" },
               { "data" : "Document Status", "render": function (data) {
                 return StatusX(data);
@@ -307,14 +442,14 @@ $("#add_agendamento_service_type6").change(function(){
        "DocumentType"             : "0",
        //"No_"                      : $("#add_agendamento_n").val(),
        "CustomerNo_"              : $("#add_agendamento_n_cliente").val(),
-       "Bill_toCustomerNo_"       : $("#add_agendamento_n_cliente").val(),
+       "Bill_toCustomerNo_"       : $("#add_agendamento_cod_vendendor").val(),
        "Bill_toName"              : $("#add_agendamento_nome").val(),
        "Bill_toName2"             : "",
        "Bill_toAddress"           : $("#add_agendamento_fatura_endereco").val(),
        "Bill_toAddress2"          : "",
        "Bill_toCity"              : $("#add_agendamento_fatura_cidade").val(),
        "Bill_toContact"           : $("#add_agendamento_nome").val(),
-       "Bill-to Post Code"           : $("#add_agendamento_fatura_cep").val(),
+       "Bill-to Post Code"         : $("#add_agendamento_fatura_cep").val(),
        
        "YourReference"            : "",
        
@@ -382,19 +517,56 @@ $("#add_agendamento_service_type6").change(function(){
       },
       "data": {        
         "No_"   :$("#post_agendamento_no").val(),
-        
       }
     }
 
       $.ajax(settings).done(function (response) {
         console.log(response);
-        $('#dataTableOrdemAgendamento').DataTable().destroy();
-        loadAgendamento();
-        $('#post-agendamento-modal').modal('toggle');  
+        //$('#dataTableOrdemAgendamento').DataTable().destroy();
+        //loadAgendamento();
+        SalvaBookingX()
+       // $('#post-agendamento-modal').modal('toggle');  
         
       });    
 
   });
   
+  function SalvaBookingX(){
+
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getInsertBooking",
+      "method": "POST",
+      "headers": {
+        "content-type": "application/x-www-form-urlencoded",
+        "cache-control": "no-cache",
+        "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
+      },
+      "data": {
+        "photo_path":$('#post_photo_path').val(),
+        "service_invoce_no":$('#post_service_invoce_no').val(),
+        "service_invoce_line_no1":$('#post_service_invoce_line_no1').val(),
+        "customer_no":$('#post_customer_no').val(),
+        "customer_name":$('#post_customer_name').val(),
+        "customer_address":$('#post_customer_address').val(),
+        "salesperson_code":$('#post_salesperson_code').val(),
+        "resource_no1":$('#post_resource_no1').val(),
+        "service_type1":$('#post_service_type1').val(),
+        "isp1":$('#post_isp1').val(),
+        "merchan1":$('#post_merchan1').val(),
+        "trainning1":$('#post_trainning1').val(),
+        "welcome1":$('#post_welcome1').val(),
+        }
+  }
+
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+    $('#dataTableOrdemAgendamento').DataTable().destroy();
+    loadAgendamento();
+    $('#post-agendamento-modal').modal('toggle');  
+    
+  });  
+  }
 }());
 
