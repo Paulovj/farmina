@@ -74,10 +74,11 @@ function StatusX(value){
   $('#dataTableOrdemAgendamento tbody').on( 'click', 'button', function () {
           var data = $("#dataTableOrdemAgendamento").DataTable().row( $(this).parents('tr') ).data();
           var id = data['No_'];
-          
-          $('#post_agendamento_no').val(id)
-          $('#lbl_post_agendamento').text('Deseja postar esse agendamento '+ id + ' ?');
-          $('#post-agendamento-modal').modal('toggle')
+          if ($(this).attr('action')=="postando_agendamento"){
+            $('#postando_agendamento').val(id)
+            $('#lbl_post_agendamento').text('Deseja postar esse agendamento '+ id + ' ?');
+            $('#post-agendamento-modal').modal('toggle')
+          } 
             
         });
 
