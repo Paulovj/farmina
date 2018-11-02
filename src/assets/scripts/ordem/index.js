@@ -89,6 +89,8 @@ function StatusX(value){
           
           var Professional1 = data['Professional 1'];
           var ServiceType1 = data['Service Type 1'];
+          var PlannedDate1 = data['Planned Date 1'];
+          
           
           var ISPAnswerType1        = data['ISP Answer Type 1'];
           var MerchanAnswerType1    = data['Merchan Answer Type 1'];
@@ -98,6 +100,7 @@ function StatusX(value){
 
           var Professional2 = data['Professional 2'];
           var ServiceType2 = data['Service Type 2'];
+          var PlannedDate2 = data['Planned Date 2'];
 
           var ISPAnswerType2        = data['ISP Answer Type 2'];
           var MerchanAnswerType2    = data['Merchan Answer Type 2'];
@@ -107,6 +110,7 @@ function StatusX(value){
 
           var Professional3 = data['Professional 3'];
           var ServiceType3 = data['Service Type 3'];
+          var PlannedDate3 = data['Planned Date 3'];
 
           var ISPAnswerType3        = data['ISP Answer Type 3'];
           var MerchanAnswerType3    = data['Merchan Answer Type 3'];
@@ -115,6 +119,7 @@ function StatusX(value){
 
           var Professional4 = data['Professional 4'];
           var ServiceType4 = data['Service Type 4'];
+          var PlannedDate4 = data['Planned Date 4'];
 
           var ISPAnswerType4        = data['ISP Answer Type 4'];
           var MerchanAnswerType4    = data['Merchan Answer Type 4'];
@@ -123,6 +128,7 @@ function StatusX(value){
 
           var Professional5 = data['Professional 5'];
           var ServiceType5 = data['Service Type 5'];
+          var PlannedDate5 = data['Planned Date 5'];
 
           var ISPAnswerType5        = data['ISP Answer Type 5'];
           var MerchanAnswerType5    = data['Merchan Answer Type 5'];
@@ -147,6 +153,9 @@ function StatusX(value){
             
             $('#post_resource_no1').val(Professional1)
             $('#post_service_type1').val(ServiceType1)
+            $('#post_planned_date1').val(PlannedDate1)
+            
+            
             $('#post_isp1').val(ISPAnswerType1)
             $('#post_merchan1').val(MerchanAnswerType1)
             $('#post_trainning1').val(TrainningAnswerType1)
@@ -154,6 +163,7 @@ function StatusX(value){
             
             $('#post_resource_no2').val(Professional2)
             $('#post_service_type2').val(ServiceType2)
+            $('#post_planned_date2').val(PlannedDate2)
 
             $('#post_resource_no2').val(Professional2)
             $('#post_service_type2').val(ServiceType2)
@@ -165,6 +175,7 @@ function StatusX(value){
 
             $('#post_resource_no3').val(Professional3)
             $('#post_service_type3').val(ServiceType3)
+            $('#post_planned_date3').val(PlannedDate3)
 
             $('#post_resource_no3').val(Professional3)
             $('#post_service_type3').val(ServiceType3)
@@ -173,10 +184,9 @@ function StatusX(value){
             $('#post_trainning3').val(TrainningAnswerType3)
             $('#post_welcome3').val(WelcomeKitType3)
             
-
-
             $('#post_resource_no4').val(Professional4)
             $('#post_service_type4').val(ServiceType4)
+            $('#post_planned_date4').val(PlannedDate4)
 
             $('#post_resource_no4').val(Professional4)
             $('#post_service_type4').val(ServiceType4)
@@ -185,9 +195,9 @@ function StatusX(value){
             $('#post_trainning4').val(TrainningAnswerType4)
             $('#post_welcome4').val(WelcomeKitType4)
             
-
             $('#post_resource_no5').val(Professional5)
             $('#post_service_type5').val(ServiceType5)
+            $('#post_planned_date5').val(PlannedDate5)
 
             $('#post_resource_no5').val(Professional5)
             $('#post_service_type5').val(ServiceType5)
@@ -202,6 +212,7 @@ function StatusX(value){
             
             $('#lbl_post_agendamento').text(' '+ id + ' ?');
             $('#post-agendamento-modal').modal('toggle')
+            
           } 
             
         });
@@ -525,20 +536,27 @@ $("#add_agendamento_service_type6").change(function(){
         //$('#dataTableOrdemAgendamento').DataTable().destroy();
         //loadAgendamento();
         if (($('#post_resource_no1').val() != '0') ){
-          SalvaBookingProfissonalX(1)
+          SalvaBookingProfissonalX(1);
+          EnviaEmailX(1);
         }
         if (($('#post_resource_no2').val() != '0')){
-          SalvaBookingProfissonalX(2)
+          SalvaBookingProfissonalX(2);
+          EnviaEmailX(2);
         }
         if (($('#post_resource_no3').val() != '0')){
-          SalvaBookingProfissonalX(3)
+          SalvaBookingProfissonalX(3);
+          EnviaEmailX(3);
         }
         if (($('#post_resource_no4').val() != '0')){
-          SalvaBookingProfissonalX(4)
+          SalvaBookingProfissonalX(4);
+          EnviaEmailX(4);
         }
         if (($('#post_resource_no5').val() != '0')){
-          SalvaBookingProfissonalX(5)
+          SalvaBookingProfissonalX(5);
+          EnviaEmailX(5);
         }
+        //cria pasta
+        SalvaBookingCriaPastaX()
         $('#dataTableOrdemAgendamento').DataTable().destroy();
         loadAgendamento();
         $('#post-agendamento-modal').modal('toggle');  
@@ -549,6 +567,7 @@ $("#add_agendamento_service_type6").change(function(){
       });    
 
   });
+  
   function SalvaBookingProfissonalX(Profissional1){
 
     var settings1 = {
@@ -575,9 +594,59 @@ $("#add_agendamento_service_type6").change(function(){
         "merchan1":$('#post_merchan'+Profissional1).val(),
         "trainning1":$('#post_trainning'+Profissional1).val(),
         "welcome1":$('#post_welcome'+Profissional1).val(),
+        "planned_date1":$('#post_planned_date'+Profissional1).val(),
         }
   }
 
+  $.ajax(settings1).done(function (response) {
+    console.log(response);   
+  });  
+  }
+
+  function SalvaBookingCriaPastaX(){
+    var settings1 = {
+      "async": true,
+      "crossDomain": true,
+      "url": "http://www.nav.farmina.com.br:3001/api/Containers",
+      "method": "POST",
+      "headers": {
+        "content-type": "application/x-www-form-urlencoded",
+        "cache-control": "no-cache",
+        "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
+      },
+      "data": {
+        "name"   :$("#post_agendamento_no").val(),
+        }
+  }
+  $.ajax(settings1).done(function (response) {
+    console.log(response);   
+  });  
+  }
+
+
+  
+  function EnviaEmailX(prof){
+    var settings1 = {
+      "async": true,
+      "crossDomain": true,
+      "url": "http://www.nav.farmina.com.br:3001/api/resourses/getResourseEnviaEmail",
+      "method": "POST",
+      "headers": {
+        "content-type": "application/x-www-form-urlencoded",
+        "cache-control": "no-cache",
+        "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
+      },
+      "data": {
+        "nome_so":$('#post_service_invoce_no').val(),
+        "nome_servico":$('#post_agendamento_no').val(),
+        "nome_loja":$('#post_customer_name').val(),
+        "data_estimada":$('#post_planned_date'+prof).val(),
+        "endereco_loja":$('#post_customer_address').val(),
+        "profissional1":$('#post_resource_no'+prof).val(),
+        
+        
+        }
+  }
   $.ajax(settings1).done(function (response) {
     console.log(response);   
   });  

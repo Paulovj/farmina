@@ -166,8 +166,10 @@ function formatHora(date) {
 
     
     function load() {       
-      $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources", success: function(result){    
-        var jsonString = result //for testing  
+      $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/ServiceQueryStatus", success: function(result){    
+       // $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources", success: function(result){    
+        
+        var jsonString = result.rowDataPacket //for testing  
         console.log(jsonString)    
       //Load  datatable
       var oTblReport = $("#dataTable")
