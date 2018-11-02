@@ -200,7 +200,7 @@ function StatusX(value){
             $('#post_photo_path').val(path)
 
             
-            $('#lbl_post_agendamento').text('Deseja postar esse agendamento '+ id + ' ?');
+            $('#lbl_post_agendamento').text(' '+ id + ' ?');
             $('#post-agendamento-modal').modal('toggle')
           } 
             
@@ -524,16 +524,34 @@ $("#add_agendamento_service_type6").change(function(){
         console.log(response);
         //$('#dataTableOrdemAgendamento').DataTable().destroy();
         //loadAgendamento();
-        SalvaBookingX()
+        if (($('#post_resource_no1').val() != '0') ){
+          SalvaBookingProfissonalX(1)
+        }
+        if (($('#post_resource_no2').val() != '0')){
+          SalvaBookingProfissonalX(2)
+        }
+        if (($('#post_resource_no3').val() != '0')){
+          SalvaBookingProfissonalX(3)
+        }
+        if (($('#post_resource_no4').val() != '0')){
+          SalvaBookingProfissonalX(4)
+        }
+        if (($('#post_resource_no5').val() != '0')){
+          SalvaBookingProfissonalX(5)
+        }
+        $('#dataTableOrdemAgendamento').DataTable().destroy();
+        loadAgendamento();
+        $('#post-agendamento-modal').modal('toggle');  
+
+
        // $('#post-agendamento-modal').modal('toggle');  
         
       });    
 
   });
-  
-  function SalvaBookingX(){
+  function SalvaBookingProfissonalX(Profissional1){
 
-    var settings = {
+    var settings1 = {
       "async": true,
       "crossDomain": true,
       "url": "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getInsertBooking",
@@ -546,27 +564,25 @@ $("#add_agendamento_service_type6").change(function(){
       "data": {
         "photo_path":$('#post_photo_path').val(),
         "service_invoce_no":$('#post_service_invoce_no').val(),
-        "service_invoce_line_no1":$('#post_service_invoce_line_no1').val(),
+        "service_invoce_line_no1":$('#post_service_invoce_line_no'+Profissional1).val(),
         "customer_no":$('#post_customer_no').val(),
         "customer_name":$('#post_customer_name').val(),
         "customer_address":$('#post_customer_address').val(),
         "salesperson_code":$('#post_salesperson_code').val(),
-        "resource_no1":$('#post_resource_no1').val(),
-        "service_type1":$('#post_service_type1').val(),
-        "isp1":$('#post_isp1').val(),
-        "merchan1":$('#post_merchan1').val(),
-        "trainning1":$('#post_trainning1').val(),
-        "welcome1":$('#post_welcome1').val(),
+        "resource_no1":$('#post_resource_no'+Profissional1).val(),
+        "service_type1":$('#post_service_type'+Profissional1).val(),
+        "isp1":$('#post_isp'+Profissional1).val(),
+        "merchan1":$('#post_merchan'+Profissional1).val(),
+        "trainning1":$('#post_trainning'+Profissional1).val(),
+        "welcome1":$('#post_welcome'+Profissional1).val(),
         }
   }
 
-  $.ajax(settings).done(function (response) {
-    console.log(response);
-    $('#dataTableOrdemAgendamento').DataTable().destroy();
-    loadAgendamento();
-    $('#post-agendamento-modal').modal('toggle');  
-    
+  $.ajax(settings1).done(function (response) {
+    console.log(response);   
   });  
   }
+
+ 
 }());
 
