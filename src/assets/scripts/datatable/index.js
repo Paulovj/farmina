@@ -7,7 +7,7 @@ export default (function () {
   var lDemographicItems ="";
   function formatDate(date) {
     var data =  moment(date).utc().format("DD/MM/Y")
-      if (data=='01/01/1753'){
+      if ((data=='01/01/1753') || (data =='01/01/1900')){
           return ''
       }else{
         return data

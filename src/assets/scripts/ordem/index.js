@@ -365,6 +365,7 @@ function PromoterServiceTypeX(promoter,value){
   var contX ="";
   var lblCont ="";
   $("#add_agendamento_service_result"+promoter+ " option").remove();
+  $('#div_add_agendamento_service_result'+promoter).show()
   if(value==1){
     //traning
     lblCont =" Tranning for which line?";
@@ -396,9 +397,10 @@ function PromoterServiceTypeX(promoter,value){
     contX +='<option value="3"> NEW SHELF </option>';
   }else if(value==5){
     lblCont =" Army ? ";
-    contX +='<option value="0">  </option>';    
+    contX +='<option value="0">  </option>';
+    $('#div_add_agendamento_service_result'+promoter).hide()    
   }  
-  $('#div_add_agendamento_service_result'+promoter).show()
+  
   $("#lbl_add_agendamento_service_result"+promoter).html(lblCont)
   $("#add_agendamento_service_result"+promoter).append(contX)
 }
