@@ -1,5 +1,6 @@
 import * as $ from 'jquery';
 import 'datatables';
+import 'bootstrap-notify'
 import moment from 'moment/src/moment';
 
 export default (function () {
@@ -219,7 +220,8 @@ function StatusX(value){
 
 
     
-    function loadAgendamento() {       
+    function loadAgendamento() {  
+      
       $.ajax({url: "http://www.nav.farmina.com.br:3001/api/ServiceHeaders/getServiceHeaderQuery", success: function(result){    
         var jsonString = result.result //for testing  
         console.log('retorno agendamento: ', jsonString)
@@ -264,6 +266,7 @@ function StatusX(value){
               //{ "data" : "Priority" ,"visible": false},
               //{ "data" : "Assigned User ID" ,"visible": false},
               { "data" : "Professional 1" },
+              { "data" : "NameProfissional" },
                { "targets": -1, "data": null, 
                 "render": function (a,d){
                   var btn =""
@@ -534,43 +537,51 @@ $("#add_agendamento_service_type6").change(function(){
     }
 
       $.ajax(settings).done(function (response) {
+        var notify = $.notify('<strong>Transferindo</strong> Registro...', {
+          type: 'success',
+          allow_dismiss: false,
+          showProgressbar: true
+        });
+        
         console.log(response);
         //$('#dataTableOrdemAgendamento').DataTable().destroy();
         //loadAgendamento();
         if (($('#post_resource_no1').val() != '0') ){
-          SalvaBookingProfissonalX(1);
-          EnviaEmailX(1);
+          SalvaBookingProfissonalX(1,notify);
+          EnviaEmailX(1,notify);
         }
         if (($('#post_resource_no2').val() != '0')){
-          SalvaBookingProfissonalX(2);
-          EnviaEmailX(2);
+          SalvaBookingProfissonalX(2,notify);
+          EnviaEmailX(2,notify);
         }
         if (($('#post_resource_no3').val() != '0')){
-          SalvaBookingProfissonalX(3);
-          EnviaEmailX(3);
+          SalvaBookingProfissonalX(3,notify);
+          EnviaEmailX(3,notify);
         }
         if (($('#post_resource_no4').val() != '0')){
-          SalvaBookingProfissonalX(4);
-          EnviaEmailX(4);
+          SalvaBookingProfissonalX(4,notify);
+          EnviaEmailX(4,notify);
         }
         if (($('#post_resource_no5').val() != '0')){
-          SalvaBookingProfissonalX(5);
-          EnviaEmailX(5);
+          SalvaBookingProfissonalX(5,notify);
+          EnviaEmailX(5,notify);
         }
         //cria pasta
-        SalvaBookingCriaPastaX()
+        SalvaBookingCriaPastaX(notify)
         $('#dataTableOrdemAgendamento').DataTable().destroy();
         loadAgendamento();
         $('#post-agendamento-modal').modal('toggle');  
 
 
        // $('#post-agendamento-modal').modal('toggle');  
-        
-      });    
+       
+
+      });
+      
 
   });
   
-  function SalvaBookingProfissonalX(Profissional1){
+  function SalvaBookingProfissonalX(Profissional1,notify){
 
     var settings1 = {
       "async": true,
@@ -599,13 +610,16 @@ $("#add_agendamento_service_type6").change(function(){
         "planned_date1":$('#post_planned_date'+Profissional1).val(),
         }
   }
-
   $.ajax(settings1).done(function (response) {
     console.log(response);   
+    setTimeout(function() {
+      notify.update('message', '<strong>Salvando</strong> Profissional '+ $('#post_resource_no'+Profissional1).val());
+    }, 2000);
+        
   });  
   }
 
-  function SalvaBookingCriaPastaX(){
+  function SalvaBookingCriaPastaX(notify){
     var settings1 = {
       "async": true,
       "crossDomain": true,
@@ -617,17 +631,21 @@ $("#add_agendamento_service_type6").change(function(){
         "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
       },
       "data": {
-        "name"   :$("#post_agendamento_no").val(),
+        "name"   :$("#post_service_invoce_no").val(),
         }
   }
   $.ajax(settings1).done(function (response) {
     console.log(response);   
+    setTimeout(function() {
+      notify.update('message', '<strong>Salvando</strong> Pasta.');
+    }, 3000);
+        
   });  
   }
 
 
   
-  function EnviaEmailX(prof){
+  function EnviaEmailX(prof,notify){
     var settings1 = {
       "async": true,
       "crossDomain": true,
@@ -651,6 +669,13 @@ $("#add_agendamento_service_type6").change(function(){
   }
   $.ajax(settings1).done(function (response) {
     console.log(response);   
+    setTimeout(function() {
+      notify.update('message', '<strong>Enviando</strong> emails.');
+    }, 4000);
+
+    setTimeout(function() {
+      notify.update('message', '<strong>Serviço</strong> Ordem de agendamento '+$('#post_service_invoce_no').val() + ', criada com sucesso');
+    }, 4000);  
   });  
   }
 
