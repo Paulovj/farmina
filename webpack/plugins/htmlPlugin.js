@@ -13,7 +13,6 @@ const titles = {
   'compose': 'Compose',
   'datatable': 'Datatable',
   'ordem': 'ordem',
-  'login': 'login',
   'email': 'Email',
   'forms': 'Forms',
   'google-maps': 'Google Maps',
