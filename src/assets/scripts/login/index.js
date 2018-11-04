@@ -45,9 +45,16 @@ $("#btn_login").click(function(){
 
     if (sessionStorage.length > 0) {
       $('.lbl_login').text(sessionStorage.Name)
-      console.log('Nome login' + sessionStorage)
-      console.log('Nome login' + sessionStorage.Name)
-      console.log('Logado********************************')
+      //$('.lbl_login').text(sessionStorage.Type)
+      console.log('Nome login:' + sessionStorage.Name)
+      if (sessionStorage.Type ==0){
+        $('#menu_index').hide();
+        $('#menu_ordem_agendameno').hide();
+        if(window.location.pathname == '/index.html' || window.location.pathname == '/datatable.html'){
+          window.location = "ordem.html"; 
+        }
+      }
+      
       } else {
        if(window.location.pathname != '/signin.html'){
          window.location = "signin.html"; 
