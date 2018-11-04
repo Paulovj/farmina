@@ -50,8 +50,8 @@ $("#btn_login").click(function(){
       if (sessionStorage.Type ==0){
         $('#menu_index').hide();
         $('#menu_ordem_agendameno').hide();
-        if(window.location.pathname == '/index.html' || window.location.pathname == '/datatable.html'){
-          window.location = "ordem.html"; 
+        if(window.location.pathname == '/index.html' || window.location.pathname == '/ordem.html'){
+          window.location = "datatable.html"; 
         }
       }
       
