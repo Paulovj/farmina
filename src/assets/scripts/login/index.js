@@ -33,7 +33,7 @@ $("#btn_login").click(function(){
         sessionStorage.setItem("Type", result['Resource Type']);
 
         if (result['Resource Type'] == 0){
-          window.location = "ordem.html"; 
+          window.location = "datatable.html"; 
         }else if(result['Resource Type'] == 1){
           window.location = "index.html"; 
         }
