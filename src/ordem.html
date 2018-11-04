@@ -200,7 +200,7 @@
                         </div>
                         <div class="peer peer-greed">
                           <span>
-                            <span class="fw-500">Klauber</span>
+                            <span class="fw-500 lbl_login">Klauber</span>
                             <span class="c-grey-600">liked your <span class="text-dark">post</span>
                             </span>
                           </span>
@@ -225,7 +225,7 @@
                   <img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
                 </div>
                 <div class="peer">
-                  <span class="fsz-sm c-grey-900">Klauber</span>
+                  <span class="fsz-sm c-grey-900 lbl_login" >Klauber</span>
                 </div>
               </a>
               <ul class="dropdown-menu fsz-sm">
@@ -840,11 +840,20 @@
                 </div>
               <div class="col-md-4 mb-3">
                   <label class="fw-500">Service Type 1 </label>
-                <input type="text" class="form-control" id="post_service_type1" placeholder="" value="" required disabled>
+                      <select id="post_service_type1_exibir" class="form-control" disabled>
+                          <option selected value="0">Selecione service Type ...</option>
+                          <option value="1">Trainning</option>
+                          <option value="2">Welcome Kit</option>
+                          <option value="3">ISP</option>
+                          <option value="4">Merchan</option>
+                          <option value="5">Army</option>
+                        </select>
+                <input type="text" class="form-control" id="post_service_type1" placeholder="" value="" required disabled style="display:none">
               </div>
               <div class="col-md-4 mb-3">
                 <label class="fw-500">Planned Date 1 </label>
-              <input type="text" class="form-control" id="post_planned_date1" placeholder="" value="" required disabled>
+              <input type="text" class="form-control" id="post_planned_date1_exibir" placeholder="" value="" required disabled>
+              <input type="text" class="form-control" id="post_planned_date1" placeholder="" value="" required disabled style="display:none">
             </div>
             </div>
 
@@ -1030,6 +1039,508 @@
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="modal fade" id="edit-agendamento" data-backdrop="static">
+    <div class="modal-dialog modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="m-0">Alterar Ordem de Agendamento</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+
+        <div class="modal-body">
+          <!-- <form> -->
+
+              <div class="row">
+                  <!-- <div class="col-md-6 mb-3"> -->
+                      <!-- <label class="fw-500">Nº</label> -->
+                    <!-- <input type="text" class="form-control" id="start_service_invoice_no" placeholder="" value="" required disabled style="display:none;"> -->
+                    <!-- <input type="text" class="form-control" id="add_agendamento_n" placeholder="" value="" required > -->
+
+                  <!-- </div> -->
+                  <div class="col-md-6 mb-3">
+                      <input type="text" class="form-control" id="edit_agendamento_n" placeholder="" value="" required disabled>
+                    <label class="fw-500">Busca Cliente</label>
+                  <select id="edit_agendamento_busca_cliente" class="form-control">
+                    <option selected value="0">Selecione o cliente...</option>
+                  </select>
+                </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label class="fw-500">Fatura-para Endereço Complemento</label>
+                  <input type="text" class="form-control" id="edit_agendamento_fatura_endereco_complemento" placeholder="" value="" required disabled>
+                </div>
+
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="fw-500">Nº Cliente</label>
+                    <input type="text" class="form-control" id="edit_agendamento_n_cliente" placeholder="" value="" required disabled>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label class="fw-500">Fatura-para Cidade</label>
+                <input type="text" class="form-control" id="edit_agendamento_fatura_cidade" placeholder="" value="" required disabled>
+              </div>
+
+            </div>
+
+
+
+              <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500">Nome</label>
+                    <input type="text" class="form-control" id="edit_agendamento_nome" placeholder="" value="" required disabled>
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label class="fw-500">Fatura-para Cep</label>
+                  <input type="text" class="form-control" id="edit_agendamento_fatura_cep" placeholder="" value="" required disabled>
+                </div>
+              </div>
+
+
+              <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <label class="fw-500">Faturar-para Endereço</label>
+                  <input type="text" class="form-control" id="edit_agendamento_fatura_endereco" placeholder="" value="" required disabled>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label class="fw-500">Cód Vendedor</label>
+                <input type="text" class="form-control" id="edit_agendamento_cod_vendendor" placeholder="" value="" required disabled>
+              </div>
+            </div>
+
+
+
+          <div id="accordion">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Promoter 1
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+
+
+                      <div class="row">
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500">Profssional 1</label>
+                              <select id="edit_agendamento_busca_professional1" class="form-control">
+                                  <option selected value="0">Selecione o Professional 1...</option>
+                                </select>
+                          </div>
+
+                          <div class="col-md-6 mb-3">
+                            <label class="fw-500">Planned Hour</label>
+                          <input type="text" class="form-control" id="edit_agendamento_planned_hour1" placeholder="" value="" required >
+                          <!-- <input type="time" id="edit_agendamento_planned_hour1" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                        </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500">Planned Date</label>
+                            <!-- <input type="text" class="form-control" id="edit_agendamento_planned_date1" placeholder="" value="" required > -->
+                            <div class="timepicker-input input-icon form-group">
+                                <div class="input-group">
+                                  <div class="input-group-addon bgc-white bd bdwR-0">
+                                    <i class="ti-calendar"></i>
+                                  </div>
+                                  <input type="text" id="edit_agendamento_planned_date1" class="form-control bdc-grey-200 start-date" placeholder="Planned Date" data-provide="datepicker"  data-date-format='dd/mm/yyyy'>
+                                </div>
+                              </div>
+                          </div>
+
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500">Service Type</label>
+                              <select id="edit_agendamento_service_type1" class="form-control">
+                                  <option selected value="0">Selecione service Type ...</option>
+                                  <option value="1">Trainning</option>
+                                  <option value="2">Welcome Kit</option>
+                                  <option value="3">ISP</option>
+                                  <option value="4">Merchan</option>
+                                  <option value="5">Army</option>
+                                </select>
+                          </div>
+                      </div>
+
+                      <div class="row" id="div_edit_agendamento_service_result1" style="display:none">
+                          <div class="col-md-12 mb-3">
+                              <label class="fw-500" id="lbl_edit_agendamento_service_result1"> </label>
+                              <select id="edit_agendamento_service_result1" class="form-control">
+                                  <option selected value="0">Selecione ...</option>
+                              </select>
+                          </div>
+                      </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Promoter 2
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+
+
+
+
+                      <div class="row">
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500">Profssional 2</label>
+                              <select id="edit_agendamento_busca_professional2" class="form-control">
+                                  <option selected value="0">Selecione o Professional 2...</option>
+                                </select>
+                          </div>
+
+                          <div class="col-md-6 mb-3">
+                            <label class="fw-500">Planned Hour</label>
+                          <input type="text" class="form-control" id="edit_agendamento_planned_hour2" placeholder="" value="" required >
+                          <!-- <input type="time" id="edit_agendamento_planned_hour2" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                        </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500">Planned Date</label>
+                            <!-- <input type="text" class="form-control" id="edit_agendamento_planned_date2" placeholder="" value="" required > -->
+                            <div class="timepicker-input input-icon form-group">
+                                <div class="input-group">
+                                  <div class="input-group-addon bgc-white bd bdwR-0">
+                                    <i class="ti-calendar"></i>
+                                  </div>
+                                  <input type="text" id="edit_agendamento_planned_date2" class="form-control bdc-grey-200 start-date" placeholder="Planned Date" data-provide="datepicker"  data-date-format='dd/mm/yyyy'>
+                                </div>
+                              </div>
+                          </div>
+
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500">Service Type</label>
+                              <select id="edit_agendamento_service_type2" class="form-control">
+                                  <option selected value="0">Selecione service Type ...</option>
+                                  <option value="1">Trainning</option>
+                                  <option value="2">Welcome Kit</option>
+                                  <option value="3">ISP</option>
+                                  <option value="4">Merchan</option>
+                                  <option value="5">Army</option>
+                                </select>
+                          </div>
+                      </div>
+
+                      <div class="row" id="div_edit_agendamento_service_result2" style="display:none">
+                          <div class="col-md-12 mb-3">
+                              <label class="fw-500" id="lbl_edit_agendamento_service_result2"> </label>
+                              <select id="edit_agendamento_service_result2" class="form-control">
+                                  <option selected value="0">Selecione ...</option>
+                              </select>
+                          </div>
+                      </div>
+
+
+
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Promoter 3
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+
+
+
+                  <div class="card-body">
+
+                      <div class="row">
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500">Profssional 3</label>
+                              <select id="edit_agendamento_busca_professional3" class="form-control">
+                                  <option selected value="0">Selecione o Professional 3...</option>
+                                </select>
+                          </div>
+
+                          <div class="col-md-6 mb-3">
+                            <label class="fw-500">Planned Hour</label>
+                          <input type="text" class="form-control" id="edit_agendamento_planned_hour3" placeholder="" value="" required >
+                          <!-- <input type="time" id="edit_agendamento_planned_hour3" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                        </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500">Planned Date</label>
+                            <!-- <input type="text" class="form-control" id="edit_agendamento_planned_date3" placeholder="" value="" required > -->
+                            <div class="timepicker-input input-icon form-group">
+                                <div class="input-group">
+                                  <div class="input-group-addon bgc-white bd bdwR-0">
+                                    <i class="ti-calendar"></i>
+                                  </div>
+                                  <input type="text" id="edit_agendamento_planned_date3" class="form-control bdc-grey-200 start-date" placeholder="Planned Date" data-provide="datepicker"  data-date-format='dd/mm/yyyy'>
+                                </div>
+                              </div>
+                          </div>
+
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500">Service Type</label>
+                              <select id="edit_agendamento_service_type3" class="form-control">
+                                  <option selected value="0">Selecione service Type ...</option>
+                                  <option value="1">Trainning</option>
+                                  <option value="2">Welcome Kit</option>
+                                  <option value="3">ISP</option>
+                                  <option value="4">Merchan</option>
+                                  <option value="5">Army</option>
+                                </select>
+                          </div>
+                      </div>
+
+                      <div class="row" id="div_edit_agendamento_service_result3" style="display:none">
+                          <div class="col-md-12 mb-3">
+                              <label class="fw-500" id="lbl_edit_agendamento_service_result3"> </label>
+                              <select id="edit_agendamento_service_result3" class="form-control">
+                                  <option selected value="0">Selecione ...</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+              <div class="card">
+                  <div class="card-header" id="headingFor">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFor" aria-expanded="false" aria-controls="collapseThree">
+                        Promoter 4
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseFor" class="collapse" aria-labelledby="headingFor" data-parent="#accordion">
+
+
+
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-500">Profssional 4</label>
+                                <select id="edit_agendamento_busca_professional4" class="form-control">
+                                    <option selected value="0">Selecione o Professional 4...</option>
+                                  </select>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                              <label class="fw-500">Planned Hour</label>
+                            <input type="text" class="form-control" id="edit_agendamento_planned_hour4" placeholder="" value="" required >
+                            <!-- <input type="time" id="edit_agendamento_planned_hour4" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                          </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-500">Planned Date</label>
+                              <!-- <input type="text" class="form-control" id="edit_agendamento_planned_date4" placeholder="" value="" required > -->
+                              <div class="timepicker-input input-icon form-group">
+                                  <div class="input-group">
+                                    <div class="input-group-addon bgc-white bd bdwR-0">
+                                      <i class="ti-calendar"></i>
+                                    </div>
+                                    <input type="text" id="edit_agendamento_planned_date4" class="form-control bdc-grey-200 start-date" placeholder="Planned Date" data-provide="datepicker"  data-date-format='dd/mm/yyyy'>
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-500">Service Type</label>
+                                <select id="edit_agendamento_service_type4" class="form-control">
+                                    <option selected value="0">Selecione service Type ...</option>
+                                    <option value="1">Trainning</option>
+                                    <option value="2">Welcome Kit</option>
+                                    <option value="3">ISP</option>
+                                    <option value="4">Merchan</option>
+                                    <option value="5">Army</option>
+                                  </select>
+                            </div>
+                        </div>
+
+                        <div class="row" id="div_edit_agendamento_service_result4" style="display:none">
+                            <div class="col-md-12 mb-3">
+                                <label class="fw-500" id="lbl_edit_agendamento_service_result4"> </label>
+                                <select id="edit_agendamento_service_result4" class="form-control">
+                                    <option selected value="0">Selecione ...</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="card">
+                    <div class="card-header" id="headingFive">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
+                          Promoter 5
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+
+
+
+                      <div class="card-body">
+
+                          <div class="row">
+                              <div class="col-md-6 mb-3">
+                                  <label class="fw-500">Profssional 5</label>
+                                  <select id="edit_agendamento_busca_professional5" class="form-control">
+                                      <option selected value="0">Selecione o Professional 5...</option>
+                                    </select>
+                              </div>
+
+                              <div class="col-md-6 mb-3">
+                                <label class="fw-500">Planned Hour</label>
+                              <input type="text" class="form-control" id="edit_agendamento_planned_hour5" placeholder="" value="" required >
+                              <!-- <input type="time" id="edit_agendamento_planned_hour5" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                            </div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col-md-6 mb-3">
+                                  <label class="fw-500">Planned Date</label>
+                                <!-- <input type="text" class="form-control" id="edit_agendamento_planned_date5" placeholder="" value="" required > -->
+                                <div class="timepicker-input input-icon form-group">
+                                    <div class="input-group">
+                                      <div class="input-group-addon bgc-white bd bdwR-0">
+                                        <i class="ti-calendar"></i>
+                                      </div>
+                                      <input type="text" id="edit_agendamento_planned_date5" class="form-control bdc-grey-200 start-date" placeholder="Planned Date" data-provide="datepicker"  data-date-format='dd/mm/yyyy'>
+                                    </div>
+                                  </div>
+                              </div>
+
+                              <div class="col-md-6 mb-3">
+                                  <label class="fw-500">Service Type</label>
+                                  <select id="edit_agendamento_service_type5" class="form-control">
+                                      <option selected value="0">Selecione service Type ...</option>
+                                      <option value="1">Trainning</option>
+                                      <option value="2">Welcome Kit</option>
+                                      <option value="3">ISP</option>
+                                      <option value="4">Merchan</option>
+                                      <option value="5">Army</option>
+                                    </select>
+                              </div>
+                          </div>
+
+                          <div class="row" id="div_edit_agendamento_service_result5" style="display:none">
+                              <div class="col-md-12 mb-3">
+                                  <label class="fw-500" id="lbl_edit_agendamento_service_result5"> </label>
+                                  <select id="edit_agendamento_service_result5" class="form-control">
+                                      <option selected value="0">Selecione ...</option>
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <div class="text-right testedediv">
+              <button class="btn btn-danger cur-p" data-dismiss="modal" id="btn_starting_booking_cancel">Cancel </button>
+              <button class="btn btn-primary cur-p" id="btn_edit_ordem_agendamento">Registrar </button>
+            </div>
+          <!-- </form> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

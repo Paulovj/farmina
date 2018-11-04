@@ -91,6 +91,8 @@ function StatusX(value){
           var Professional1 = data['Professional 1'];
           var ServiceType1 = data['Service Type 1'];
           var PlannedDate1 = data['Planned Date 1'];
+          var PlannedHour1 = data['Planned Hours 1'];
+          
           
           
           var ISPAnswerType1        = data['ISP Answer Type 1'];
@@ -98,46 +100,330 @@ function StatusX(value){
           var TrainningAnswerType1  = data['Trainning Answer Type 1'];
           var WelcomeKitType1       = data['Welcome Kit Answer Type 1'];
 
+          var ServicetypeResult1 =""
+          if (ISPAnswerType1!=0 ){
+            ServicetypeResult1 = ISPAnswerType1
+          }else if(MerchanAnswerType1!=0){
+            ServicetypeResult1 = MerchanAnswerType1
+          }else if(TrainningAnswerType1!=0 ){
+            ServicetypeResult1 = TrainningAnswerType1
+          }else if(WelcomeKitType1!=0){
+            ServicetypeResult1 = WelcomeKitType1
+          }
+                  console.log('type result com max nao esque  = '+ WelcomeKitType1 + ' - ' + ServicetypeResult1)
+
 
           var Professional2 = data['Professional 2'];
           var ServiceType2 = data['Service Type 2'];
           var PlannedDate2 = data['Planned Date 2'];
+          var PlannedHour2 = data['Planned Hours 2'];
 
           var ISPAnswerType2        = data['ISP Answer Type 2'];
           var MerchanAnswerType2    = data['Merchan Answer Type 2'];
           var TrainningAnswerType2  = data['Trainning Answer Type 2'];
           var WelcomeKitType2       = data['Welcome Kit Answer Type 2'];
 
+          var ServicetypeResult2 =0
+          if (ISPAnswerType2!=0 ){
+            ServicetypeResult2 = ISPAnswerType2
+          }else if(MerchanAnswerType2!=0){
+            ServicetypeResult2 = MerchanAnswerType2
+          }else if(TrainningAnswerType2!=0 ){
+            ServicetypeResult2 = TrainningAnswerType2
+          }else if(WelcomeKitType2!=0){
+            ServicetypeResult2 = WelcomeKitType2
+          }
+
+
 
           var Professional3 = data['Professional 3'];
           var ServiceType3 = data['Service Type 3'];
           var PlannedDate3 = data['Planned Date 3'];
+          var PlannedHour3 = data['Planned Hours 3'];
 
           var ISPAnswerType3        = data['ISP Answer Type 3'];
           var MerchanAnswerType3    = data['Merchan Answer Type 3'];
           var TrainningAnswerType3  = data['Trainning Answer Type 3'];
           var WelcomeKitType3       = data['Welcome Kit Answer Type 3'];
 
+          var ServicetypeResult3 =0
+          if (ISPAnswerType3!=0 ){
+            ServicetypeResult3 = ISPAnswerType3
+          }else if(MerchanAnswerType3!=0){
+            ServicetypeResult3 = MerchanAnswerType3
+          }else if(TrainningAnswerType3!=0 ){
+            ServicetypeResult3 = TrainningAnswerType3
+          }else if(WelcomeKitType3!=0){
+            ServicetypeResult3 = WelcomeKitType3
+          }
+
           var Professional4 = data['Professional 4'];
           var ServiceType4 = data['Service Type 4'];
           var PlannedDate4 = data['Planned Date 4'];
+          var PlannedHour4 = data['Planned Hours 4'];
 
           var ISPAnswerType4        = data['ISP Answer Type 4'];
           var MerchanAnswerType4    = data['Merchan Answer Type 4'];
           var TrainningAnswerType4  = data['Trainning Answer Type 4'];
           var WelcomeKitType4       = data['Welcome Kit Answer Type 4'];
 
+          var ServicetypeResult4 =0
+          if (ISPAnswerType4!=0 ){
+            ServicetypeResult4 = ISPAnswerType4
+          }else if(MerchanAnswerType4!=0){
+            ServicetypeResult4 = MerchanAnswerType4
+          }else if(TrainningAnswerType4!=0 ){
+            ServicetypeResult4 = TrainningAnswerType4
+          }else if(WelcomeKitType4!=0){
+            ServicetypeResult4 = WelcomeKitType4
+          }
+
           var Professional5 = data['Professional 5'];
           var ServiceType5 = data['Service Type 5'];
           var PlannedDate5 = data['Planned Date 5'];
+          var PlannedHour5 = data['Planned Hours 5'];
 
           var ISPAnswerType5        = data['ISP Answer Type 5'];
           var MerchanAnswerType5    = data['Merchan Answer Type 5'];
           var TrainningAnswerType5  = data['Trainning Answer Type 5'];
           var WelcomeKitType5       = data['Welcome Kit Answer Type 5'];
 
+          var ServicetypeResult5 =0
+          if (ISPAnswerType5!=0 ){
+            ServicetypeResult5 = ISPAnswerType5
+          }else if(MerchanAnswerType5!=0){
+            ServicetypeResult5 = MerchanAnswerType5
+          }else if(TrainningAnswerType5!=0 ){
+            ServicetypeResult5 = TrainningAnswerType5
+          }else if(WelcomeKitType5!=0){
+            ServicetypeResult5 = WelcomeKitType5
+          }
+
+          
+          if ($(this).attr('action')=="edit"){
+
+            var length = $('#edit_agendamento_busca_cliente > option').length;
+            console.log('Edit ',length)
+            //No_
+            $('#edit_agendamento_n').val(id)
+            if (length == 1){
+              $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Customers/", success: function(result){
+                //add_agendamento_busca_cliente
+                var contX = "";
+                  $.each(result, function(index, value){
+                    var val = value.No_ + ' | ' + value.Name +' | '+ value.Address + ' | ' + value['City']  + ' | ' + value['Post Code']  + ' | ' + value['Phone No_'] + ' | '+ value.Contact;
+                    var optName     = 'optName = "'+value.Name+'"';
+                    var optAddress  = 'optAddress = "'+value.Address+'"';
+                    var optPost     = 'optPost = "'+value['Post Code']+'"';
+                    var optPhone    = 'optPhone = "'+value['Phone No_']+'"';
+                    var optContact  = 'optContact = "'+value.Contact+'"';
+                    var optCity     = 'optCity = "'+value.City+'"';
+                    var optAddress2 = 'optAddress2 = "'+value['Address 2']+'"';
+                    var optSalespersonCode = 'optSalespersonCode = "'+value['Salesperson Code']+'"';
+                    
+          
+                      contX +='<option value='+ value.No_ +' '+ optSalespersonCode + ' '+ optCity +' '+ optName +' '+ optAddress2 +' '+ optAddress +' '+ optPost +' '+ optPhone +' '+ optContact +' > '+val+' </option>';
+                  })
+                  $("#edit_agendamento_busca_cliente").append(contX)
+                  // Customer No_
+                  $('#edit_agendamento_busca_cliente option[value='+customer_no+']').attr('selected','selected');
+                  var id      = $('#edit_agendamento_busca_cliente').val();
+                  var name    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optName");
+                  var address = $('option:selected', '#edit_agendamento_busca_cliente').attr("optAddress");
+                  var post    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optPost");
+                  var phone   = $('option:selected', '#edit_agendamento_busca_cliente').attr("optPhone");
+                  var contact = $('option:selected', '#edit_agendamento_busca_cliente').attr("optContact");
+                  var city    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optCity");
+                  var address2= $('option:selected', '#edit_agendamento_busca_cliente').attr("optAddress2");
+                  var salespersonCode= $('option:selected', '#edit_agendamento_busca_cliente').attr("optSalespersonCode");                  
+                                
+                  $('#edit_agendamento_n_cliente').val(id)
+                  $('#edit_agendamento_fatura_endereco_complemento').val(address2)
+                  $('#edit_agendamento_fatura_cidade').val(city)
+                  $('#edit_agendamento_nome').val(name)
+                  $('#edit_agendamento_fatura_cep').val(post)
+                  $('#edit_agendamento_fatura_endereco').val(address)
+                  $('#edit_agendamento_cod_vendendor').val(salespersonCode)
+                  
+                
+                  console.log('resultado combo on change: ' + customer_no + ' id '+ id )
+                  
+          
+                }
+              });
+            }else{
+
+            $('#edit_agendamento_busca_cliente option[value='+customer_no+']').attr('selected','selected');
+                  var id      = $('#edit_agendamento_busca_cliente').val();
+                  var name    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optName");
+                  var address = $('option:selected', '#edit_agendamento_busca_cliente').attr("optAddress");
+                  var post    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optPost");
+                  var phone   = $('option:selected', '#edit_agendamento_busca_cliente').attr("optPhone");
+                  var contact = $('option:selected', '#edit_agendamento_busca_cliente').attr("optContact");
+                  var city    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optCity");
+                  var address2= $('option:selected', '#edit_agendamento_busca_cliente').attr("optAddress2");
+                  var salespersonCode= $('option:selected', '#edit_agendamento_busca_cliente').attr("optSalespersonCode");                  
+                                
+                  $('#edit_agendamento_n_cliente').val(id)
+                  $('#edit_agendamento_fatura_endereco_complemento').val(address2)
+                  $('#edit_agendamento_fatura_cidade').val(city)
+                  $('#edit_agendamento_nome').val(name)
+                  $('#edit_agendamento_fatura_cep').val(post)
+                  $('#edit_agendamento_fatura_endereco').val(address)
+                  $('#edit_agendamento_cod_vendendor').val(salespersonCode)
+                  
+                
+                  console.log('resultado combo on change: ' + customer_no + ' id '+ id )
+                  
+            }
+            var length1 = $('#edit_agendamento_busca_professional1 > option').length;
+            console.log('Edit quandadide PROFESSIONAL: ',length)
+            if (length1 == 1){
+              $.ajax({url: "http://www.nav.farmina.com.br:3001/api/resourses/getResourseQuery", success: function(obj){
+                var contX = "";
+                  $.each(obj.result, function(index, value){
+                    var val = value.No_ + ' | ' + value.Name;
+                    var optName     = 'optName = "'+value.Name+'"';
+                    contX +='<option value='+ value.No_ +' '+ optName + ' > '+val+' </option>';
+                  })
+                  $("#edit_agendamento_busca_professional1").append(contX)
+                  $("#edit_agendamento_busca_professional2").append(contX)
+                  $("#edit_agendamento_busca_professional3").append(contX)
+                  $("#edit_agendamento_busca_professional4").append(contX)
+                  $("#edit_agendamento_busca_professional5").append(contX)
+                  $("#edit_agendamento_busca_professional6").append(contX)
+
+                  //Profissional 1
+              console.log('teste profissional 1' + Professional1)
+              $('#edit_agendamento_busca_professional1 option[value='+Professional1+']').attr('selected','selected');
+              $('#edit_agendamento_planned_hour1').val(PlannedHour1);
+              $('#edit_agendamento_service_type1').val(ServiceType1);
+              $('#edit_agendamento_planned_date1').val(formatDate(PlannedDate1));
+              var action ='edit'
+              PromoterServiceTypeX(1,ServiceType1,action)
+              // $('#edit_agendamento_service_result1').val(ServicetypeResult1);
+              $('#edit_agendamento_service_result1 option[value='+ServicetypeResult1+']').attr('selected','selected');
+              
+              //Profissional 2
+              console.log('teste profissional 2 ' + Professional2)
+              $('#edit_agendamento_busca_professional2 option[value='+Professional2+']').attr('selected','selected');
+              $('#edit_agendamento_planned_hour2').val(PlannedHour2);
+              $('#edit_agendamento_service_type2').val(ServiceType2);
+              $('#edit_agendamento_planned_date2').val(formatDate(PlannedDate2));
+              var action ='edit'
+              PromoterServiceTypeX(2,ServiceType2,action)
+              //$('#edit_agendamento_service_result2').val(ServicetypeResult2);
+              $('#edit_agendamento_service_result2 option[value='+ServicetypeResult2+']').attr('selected','selected');
+
+              //Profissional 3
+              console.log('teste profissional 3 ' + Professional3)
+              $('#edit_agendamento_busca_professional3 option[value='+Professional3+']').attr('selected','selected');
+              $('#edit_agendamento_planned_hour3').val(PlannedHour3);
+              $('#edit_agendamento_service_type3').val(ServiceType3);
+              $('#edit_agendamento_planned_date3').val(formatDate(PlannedDate3));
+              var action ='edit'
+              PromoterServiceTypeX(3,ServiceType3,action)
+              //$('#edit_agendamento_service_result3').val(ServicetypeResult3);
+              $('#edit_agendamento_service_result3 option[value='+ServicetypeResult3+']').attr('selected','selected');
+
+              
+
+              //Profissional 4
+              console.log('teste profissional' + Professional4)
+              $('#edit_agendamento_busca_professional4 option[value='+Professional4+']').attr('selected','selected');
+              $('#edit_agendamento_planned_hour4').val(PlannedHour4);
+              $('#edit_agendamento_service_type4').val(ServiceType4);
+              $('#edit_agendamento_planned_date4').val(formatDate(PlannedDate4));
+              var action ='edit'
+              PromoterServiceTypeX(4,ServiceType4,action)
+              //$('#edit_agendamento_service_result4').val(ServicetypeResult3);
+              $('#edit_agendamento_service_result4 option[value='+ServicetypeResult4+']').attr('selected','selected');
+
+
+              //Profissional 5
+              console.log('teste profissional' + Professional5)
+              $('#edit_agendamento_busca_professional5 option[value='+Professional5+']').attr('selected','selected');
+              $('#edit_agendamento_planned_hour5').val(PlannedHour5);
+              $('#edit_agendamento_service_type5').val(ServiceType5);
+              $('#edit_agendamento_planned_date5').val(formatDate(PlannedDate5));
+              var action ='edit'
+              PromoterServiceTypeX(5,ServiceType5,action)
+              //$('#edit_agendamento_service_result5').val(ServicetypeResult5);
+              $('#edit_agendamento_service_result5 option[value='+ServicetypeResult5+']').attr('selected','selected');
+                  
+
+                 
+                }
+              });
+            }else{
+             
+              //Profissional 1
+              console.log('teste profissional 1' + Professional1)
+              $('#edit_agendamento_busca_professional1 option[value='+Professional1+']').attr('selected','selected');
+              $('#edit_agendamento_planned_hour1').val(PlannedHour1);
+              $('#edit_agendamento_service_type1').val(ServiceType1);
+              $('#edit_agendamento_planned_date1').val(formatDate(PlannedDate1));
+              var action ='edit'
+              PromoterServiceTypeX(1,ServiceType1,action)
+              // $('#edit_agendamento_service_result1').val(ServicetypeResult1);
+              $('#edit_agendamento_service_result1 option[value='+ServicetypeResult1+']').attr('selected','selected');
+              
+              //Profissional 2
+              console.log('teste profissional 2 ' + Professional2)
+              $('#edit_agendamento_busca_professional2 option[value='+Professional2+']').attr('selected','selected');
+              $('#edit_agendamento_planned_hour2').val(PlannedHour2);
+              $('#edit_agendamento_service_type2').val(ServiceType2);
+              $('#edit_agendamento_planned_date2').val(formatDate(PlannedDate2));
+              var action ='edit'
+              PromoterServiceTypeX(2,ServiceType2,action)
+              //$('#edit_agendamento_service_result2').val(ServicetypeResult2);
+              $('#edit_agendamento_service_result2 option[value='+ServicetypeResult2+']').attr('selected','selected');
+
+              //Profissional 3
+              console.log('teste profissional 3 ' + Professional3)
+              $('#edit_agendamento_busca_professional3 option[value='+Professional3+']').attr('selected','selected');
+              $('#edit_agendamento_planned_hour3').val(PlannedHour3);
+              $('#edit_agendamento_service_type3').val(ServiceType3);
+              $('#edit_agendamento_planned_date3').val(formatDate(PlannedDate3));
+              var action ='edit'
+              PromoterServiceTypeX(3,ServiceType3,action)
+              //$('#edit_agendamento_service_result3').val(ServicetypeResult3);
+              $('#edit_agendamento_service_result3 option[value='+ServicetypeResult3+']').attr('selected','selected');
+
+              
+
+              //Profissional 4
+              console.log('teste profissional' + Professional4)
+              $('#edit_agendamento_busca_professional4 option[value='+Professional4+']').attr('selected','selected');
+              $('#edit_agendamento_planned_hour4').val(PlannedHour4);
+              $('#edit_agendamento_service_type4').val(ServiceType4);
+              $('#edit_agendamento_planned_date4').val(formatDate(PlannedDate4));
+              var action ='edit'
+              PromoterServiceTypeX(4,ServiceType4,action)
+              //$('#edit_agendamento_service_result4').val(ServicetypeResult3);
+              $('#edit_agendamento_service_result4 option[value='+ServicetypeResult4+']').attr('selected','selected');
+
+
+              //Profissional 5
+              console.log('teste profissional' + Professional5)
+              $('#edit_agendamento_busca_professional5 option[value='+Professional5+']').attr('selected','selected');
+              $('#edit_agendamento_planned_hour5').val(PlannedHour5);
+              $('#edit_agendamento_service_type5').val(ServiceType5);
+              $('#edit_agendamento_planned_date5').val(formatDate(PlannedDate5));
+              var action ='edit'
+              PromoterServiceTypeX(5,ServiceType5,action)
+              //$('#edit_agendamento_service_result5').val(ServicetypeResult5);
+              $('#edit_agendamento_service_result5 option[value='+ServicetypeResult5+']').attr('selected','selected');
+              
+            }
+            $('#edit-agendamento').modal('toggle');  
+          }
+
+
+
           
 
+          
           
           if ($(this).attr('action')=="postando_agendamento"){
             $('#post_agendamento_no').val(id)
@@ -154,6 +440,8 @@ function StatusX(value){
             
             $('#post_resource_no1').val(Professional1)
             $('#post_service_type1').val(ServiceType1)
+            $('#post_service_type1_exibir option[value='+ServiceType1+']').attr('selected','selected');
+            $('#post_planned_date1_exibir').val(formatDate(PlannedDate1))
             $('#post_planned_date1').val(PlannedDate1)
             
             
@@ -271,7 +559,7 @@ function StatusX(value){
                 "render": function (a,d){
                   var btn =""
                     btn += "<button action='postando_agendamento' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Post</button>" ;                  
-                    btn += "<button action='finished' type='button' class='btn cur-p btn-info'>Edit</button>";                  
+                    btn += "<button action='edit' type='button' class='btn cur-p btn-info'>Edit</button>";                  
                     return btn;
               }
             }]
@@ -296,8 +584,7 @@ $("#add_agendamento_busca_cliente").change(function(){
   var address2= $('option:selected', this).attr("optAddress2");
   var salespersonCode= $('option:selected', this).attr("optSalespersonCode");
   
-  
-  
+
   $('#add_agendamento_n_cliente').val(id)
   $('#add_agendamento_fatura_endereco_complemento').val(address2)
   $('#add_agendamento_fatura_cidade').val(city)
@@ -305,6 +592,31 @@ $("#add_agendamento_busca_cliente").change(function(){
   $('#add_agendamento_fatura_cep').val(post)
   $('#add_agendamento_fatura_endereco').val(address)
   $('#add_agendamento_cod_vendendor').val(salespersonCode)
+  
+
+  console.log('resultado combo on change: ' + name + ' id '+ id )
+});
+
+
+$("#edit_agendamento_busca_cliente").change(function(){
+  var id      = $(this).val();
+  var name    = $('option:selected', this).attr("optName");
+  var address = $('option:selected', this).attr("optAddress");
+  var post    = $('option:selected', this).attr("optPost");
+  var phone   = $('option:selected', this).attr("optPhone");
+  var contact = $('option:selected', this).attr("optContact");
+  var city    = $('option:selected', this).attr("optCity");
+  var address2= $('option:selected', this).attr("optAddress2");
+  var salespersonCode= $('option:selected', this).attr("optSalespersonCode");
+  
+
+  $('#edit_agendamento_n_cliente').val(id)
+  $('#edit_agendamento_fatura_endereco_complemento').val(address2)
+  $('#edit_agendamento_fatura_cidade').val(city)
+  $('#edit_agendamento_nome').val(name)
+  $('#edit_agendamento_fatura_cep').val(post)
+  $('#edit_agendamento_fatura_endereco').val(address)
+  $('#edit_agendamento_cod_vendendor').val(salespersonCode)
   
 
   console.log('resultado combo on change: ' + name + ' id '+ id )
@@ -364,11 +676,11 @@ $("#btn_add_agendamento").click(function(){
 })
 
 
-function PromoterServiceTypeX(promoter,value){
+function PromoterServiceTypeX(promoter,value,action){
   var contX ="";
   var lblCont ="";
-  $("#add_agendamento_service_result"+promoter+ " option").remove();
-  $('#div_add_agendamento_service_result'+promoter).show()
+  $("#"+action+"_agendamento_service_result"+promoter+ " option").remove();
+  $("#div_"+action+"_agendamento_service_result"+promoter).show()
   if(value==1){
     //traning
     lblCont =" Tranning for which line?";
@@ -401,42 +713,42 @@ function PromoterServiceTypeX(promoter,value){
   }else if(value==5){
     lblCont =" Army ? ";
     contX +='<option value="0">  </option>';
-    $('#div_add_agendamento_service_result'+promoter).hide()    
+    $("#div_"+action+"_agendamento_service_result"+promoter).hide()    
   }  
   
-  $("#lbl_add_agendamento_service_result"+promoter).html(lblCont)
-  $("#add_agendamento_service_result"+promoter).append(contX)
+  $("#lbl_"+action+"_agendamento_service_result"+promoter).html(lblCont)
+  $("#"+action+"_agendamento_service_result"+promoter).append(contX)
 }
 
 $("#add_agendamento_service_type1").change(function(){
   var promoter = 1;
   var value = $(this).val();
-  PromoterServiceTypeX(promoter,value)
+  var action = 'add'
+  PromoterServiceTypeX(promoter,value,action)
 });
 $("#add_agendamento_service_type2").change(function(){
   var promoter = 2;
   var value = $(this).val();
-  PromoterServiceTypeX(promoter,value)
+  var action = 'add'
+  PromoterServiceTypeX(promoter,value,action)
 });
 $("#add_agendamento_service_type3").change(function(){
   var promoter = 3;
   var value = $(this).val();
-  PromoterServiceTypeX(promoter,value)
+  var action = 'add'
+  PromoterServiceTypeX(promoter,value,action)
 });
 $("#add_agendamento_service_type4").change(function(){
   var promoter = 4;
   var value = $(this).val();
-  PromoterServiceTypeX(promoter,value)
+  var action = 'add'
+  PromoterServiceTypeX(promoter,value,action)
 });
 $("#add_agendamento_service_type5").change(function(){
   var promoter = 5;
   var value = $(this).val();
-  PromoterServiceTypeX(promoter,value)
-});
-$("#add_agendamento_service_type6").change(function(){
-  var promoter = 6;
-  var value = $(this).val();
-  PromoterServiceTypeX(promoter,value)
+  var action = 'add'
+  PromoterServiceTypeX(promoter,value,action)
 });
 
 
@@ -508,7 +820,82 @@ $("#add_agendamento_service_type6").change(function(){
         loadAgendamento();
         $('#add-agendamento').modal('toggle');  
         
-      });    
+      });
+
+    });
+      
+      
+
+
+      $("#btn_edit_ordem_agendamento").click(function(){
+        console.log('entrou na janela');
+        var data = new FormData();
+        
+        var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "http://www.nav.farmina.com.br:3001/api/ServiceHeaders/getServiceHeaderUpdate",
+          "method": "POST",
+          "headers": {
+            "content-type": "application/x-www-form-urlencoded",
+            "cache-control": "no-cache",
+            "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
+          },
+          "data": {        
+           "DocumentType"             : "0",
+           "No_"                      : $("#edit_agendamento_n").val(),
+           "CustomerNo_"              : $("#edit_agendamento_n_cliente").val(),
+           "Bill_toCustomerNo_"       : $("#edit_agendamento_cod_vendendor").val(),
+           "Bill_toName"              : $("#edit_agendamento_nome").val(),
+           "Bill_toName2"             : "",
+           "Bill_toAddress"           : $("#edit_agendamento_fatura_endereco").val(),
+           "Bill_toAddress2"          : "",
+           "Bill_toCity"              : $("#edit_agendamento_fatura_cidade").val(),
+           "Bill_toContact"           : $("#edit_agendamento_nome").val(),
+           "Bill-to Post Code"         : $("#edit_agendamento_fatura_cep").val(),
+           
+           "YourReference"            : "",
+           
+            "Professional1"           :$("#edit_agendamento_busca_professional1").val(),
+            "PlannedDate1"            :formatDateSql($("#edit_agendamento_planned_date1").val()),
+            "PlannedHours1"           :$("#edit_agendamento_planned_hour1").val(),
+            "ServiceType1"            :$("#edit_agendamento_service_type1").val(),
+            "ProfessionalFunction1"   :$("#edit_agendamento_service_result1").val(),
+            
+            "Professional2"           :$("#edit_agendamento_busca_professional2").val(),
+            "PlannedDate2"            :formatDateSql($("#edit_agendamento_planned_date2").val()),
+            "PlannedHours2"           :$("#edit_agendamento_planned_hour2").val(),
+            "ServiceType2"            :$("#edit_agendamento_service_type2").val(),
+            "ProfessionalFunction2"   :$("#edit_agendamento_service_result2").val(),
+            
+            "Professional3"            :$("#edit_agendamento_busca_professional3").val(),
+            "PlannedDate3"            :formatDateSql($("#edit_agendamento_planned_date3").val()),
+            "PlannedHours3"           :$("#edit_agendamento_planned_hour3").val(),
+            "ServiceType3"            :$("#edit_agendamento_service_type3").val(),
+            "ProfessionalFunction3"   :$("#edit_agendamento_service_result3").val(),
+            
+            "Professional4"           :$("#edit_agendamento_busca_professional4").val(),
+            "PlannedDate4"            :formatDateSql($("#edit_agendamento_planned_date4").val()),
+            "PlannedHours4"           :$("#edit_agendamento_planned_hour4").val(),
+            "ServiceType4"            :$("#edit_agendamento_service_type4").val(),
+            "ProfessionalFunction4"   :$("#edit_agendamento_service_result4").val(),
+            
+            "Professional5"           :$("#edit_agendamento_busca_professional5").val(),
+            "PlannedDate5"            :formatDateSql($("#edit_agendamento_planned_date5").val()),
+            "PlannedHours5"           :$("#edit_agendamento_planned_hour5").val(),
+            "ServiceType5"            :$("#edit_agendamento_service_type5").val(),
+            "ProfessionalFunction5"   :$("#edit_agendamento_service_result5").val(),
+            
+          }
+        }
+    
+          $.ajax(settings).done(function (response) {
+            console.log(response);
+            $('#dataTableOrdemAgendamento').DataTable().destroy();
+            loadAgendamento();
+            $('#edit-agendamento').modal('toggle');  
+            
+          });
 
   });
 

@@ -16,3 +16,4 @@ import './fullcalendar';
 import './googleMaps';
 import './utils';
 import './ordem';
+import './login';
