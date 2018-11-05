@@ -4,6 +4,10 @@ import 'bootstrap-notify'
 import moment from 'moment/src/moment';
 
 export default (function () {
+
+  if(window.location.pathname == '/ordem.html'){
+
+
   var lDemographicItems ="";
   function formatDate(date) {
     var data =  moment(date).utc().format("DD/MM/Y")
@@ -1086,6 +1090,7 @@ $("#add_agendamento_service_type5").change(function(){
   });  
   }
 
- 
+}
+
 }());
 

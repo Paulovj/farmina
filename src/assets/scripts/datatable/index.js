@@ -3,6 +3,9 @@ import 'datatables';
 import moment from 'moment/src/moment';
 
 export default (function () {
+
+  if(window.location.pathname == '/datatable.html'){
+
   //var table = $('#dataTable').DataTable(); 
   var lDemographicItems ="";
   function formatDate(date) {
@@ -373,6 +376,6 @@ $("#btn_finish_booking").click(function(){
       });    
 
   });
-  
+  }  
 }());
 
