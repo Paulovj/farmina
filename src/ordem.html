@@ -332,44 +332,51 @@
                       <!-- <input type="text" class="form-control" id="add_agendamento_n" placeholder="" value="" required > -->
 
                     <!-- </div> -->
-                    <div class="col-md-6 mb-3">
+                    <div class="col-md-12 mb-3">
                       <label class="fw-500">Busca Cliente</label>
                     <select id="add_agendamento_busca_cliente" class="form-control">
                       <option selected value="0">Selecione o cliente...</option>
                     </select>
                   </div>
 
-                    <div class="col-md-6 mb-3">
-                      <label class="fw-500">Fatura para Endereço Complemento</label>
-                    <input type="text" class="form-control" id="add_agendamento_fatura_endereco_complemento" placeholder="" value="" required disabled>
-                  </div>
+                    
 
                 </div>
 
 
                 <div class="row">
-                  <div class="col-md-6 mb-3">
+
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-500">Nome Cliente</label>
+                      <input type="text" class="form-control" id="add_agendamento_nome" placeholder="" value="" required disabled>
+                    </div>
+
+                    
+                  <div class="col-md-3 mb-2">
                       <label class="fw-500">Nº Cliente</label>
                       <input type="text" class="form-control" id="add_agendamento_n_cliente" placeholder="" value="" required disabled>
                   </div>
 
-                  <div class="col-md-6 mb-3">
-                    <label class="fw-500">Fatura para Cidade</label>
-                  <input type="text" class="form-control" id="add_agendamento_fatura_cidade" placeholder="" value="" required disabled>
-                </div>
+                  <div class="col-md-3 mb-2">
+                      <label class="fw-500">Cód Vendedor</label>
+                    <input type="text" class="form-control" id="add_agendamento_cod_vendendor" placeholder="" value="" required disabled>
+                  </div>
+
+                  
 
               </div>
 
 
 
                 <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label class="fw-500">Nome Cliente</label>
-                      <input type="text" class="form-control" id="add_agendamento_nome" placeholder="" value="" required disabled>
-                    </div>
 
                     <div class="col-md-6 mb-3">
-                      <label class="fw-500">Fatura para Cep</label>
+                        <label class="fw-500">Cidade</label>
+                      <input type="text" class="form-control" id="add_agendamento_fatura_cidade" placeholder="" value="" required disabled>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                      <label class="fw-500">Cep</label>
                     <input type="text" class="form-control" id="add_agendamento_fatura_cep" placeholder="" value="" required disabled>
                   </div>
                 </div>
@@ -378,14 +385,16 @@
                 <div class="row">
 
                   <div class="col-md-6 mb-3">
-                      <label class="fw-500">Faturar para Endereço</label>
+                      <label class="fw-500">Endereço</label>
                     <input type="text" class="form-control" id="add_agendamento_fatura_endereco" placeholder="" value="" required disabled>
                   </div>
 
                   <div class="col-md-6 mb-3">
-                    <label class="fw-500">Cód Vendedor</label>
-                  <input type="text" class="form-control" id="add_agendamento_cod_vendendor" placeholder="" value="" required disabled>
-                </div>
+                      <label class="fw-500">Endereço Complemento</label>
+                    <input type="text" class="form-control" id="add_agendamento_fatura_endereco_complemento" placeholder="" value="" required disabled>
+                  </div>
+
+                  
               </div>
 
 
@@ -412,14 +421,7 @@
                                   </select>
                             </div>
 
-                            <div class="col-md-6 mb-3">
-                              <label class="fw-500">Hora Planejada</label>
-                            <input type="text" class="form-control" id="add_agendamento_planned_hour1" placeholder="" value="" required >
-                            <!-- <input type="time" id="add_agendamento_planned_hour1" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
-                          </div>
-                        </div>
 
-                        <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label class="fw-500">Data Planejada</label>
                               <!-- <input type="text" class="form-control" id="add_agendamento_planned_date1" placeholder="" value="" required > -->
@@ -433,6 +435,18 @@
                                 </div>
                             </div>
 
+
+                            
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-500">Hora Planejada</label>
+                              <input type="text" class="form-control" id="add_agendamento_planned_hour1" placeholder="" value="" required >
+                              <!-- <input type="time" id="add_agendamento_planned_hour1" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                            </div>
+                            
                             <div class="col-md-6 mb-3">
                                 <label class="fw-500">Tipo Serviço</label>
                                 <select id="add_agendamento_service_type1" class="form-control">
@@ -481,14 +495,6 @@
                             </div>
 
                             <div class="col-md-6 mb-3">
-                              <label class="fw-500">Hora Planejada</label>
-                            <input type="text" class="form-control" id="add_agendamento_planned_hour2" placeholder="" value="" required >
-                            <!-- <input type="time" id="add_agendamento_planned_hour2" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
-                          </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
                                 <label class="fw-500">Data Planejada</label>
                               <!-- <input type="text" class="form-control" id="add_agendamento_planned_date2" placeholder="" value="" required > -->
                               <div class="timepicker-input input-icon form-group">
@@ -501,6 +507,19 @@
                                 </div>
                             </div>
 
+
+                            
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-500">Hora Planejada</label>
+                              <input type="text" class="form-control" id="add_agendamento_planned_hour2" placeholder="" value="" required >
+                              <!-- <input type="time" id="add_agendamento_planned_hour2" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                            </div>
+
+                            
                             <div class="col-md-6 mb-3">
                                 <label class="fw-500">Tipo Serviço</label>
                                 <select id="add_agendamento_service_type2" class="form-control">
@@ -556,14 +575,6 @@
                             </div>
 
                             <div class="col-md-6 mb-3">
-                              <label class="fw-500">Hora Planejada</label>
-                            <input type="text" class="form-control" id="add_agendamento_planned_hour3" placeholder="" value="" required >
-                            <!-- <input type="time" id="add_agendamento_planned_hour3" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
-                          </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
                                 <label class="fw-500">Data Planejada</label>
                               <!-- <input type="text" class="form-control" id="add_agendamento_planned_date3" placeholder="" value="" required > -->
                               <div class="timepicker-input input-icon form-group">
@@ -576,6 +587,18 @@
                                 </div>
                             </div>
 
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-500">Hora Planejada</label>
+                              <input type="text" class="form-control" id="add_agendamento_planned_hour3" placeholder="" value="" required >
+                              <!-- <input type="time" id="add_agendamento_planned_hour3" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                            </div>
+
+
+                            
                             <div class="col-md-6 mb-3">
                                 <label class="fw-500">Tipo Serviço</label>
                                 <select id="add_agendamento_service_type3" class="form-control">
@@ -628,14 +651,6 @@
                               </div>
 
                               <div class="col-md-6 mb-3">
-                                <label class="fw-500">Hora Planejada</label>
-                              <input type="text" class="form-control" id="add_agendamento_planned_hour4" placeholder="" value="" required >
-                              <!-- <input type="time" id="add_agendamento_planned_hour4" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
-                            </div>
-                          </div>
-
-                          <div class="row">
-                              <div class="col-md-6 mb-3">
                                   <label class="fw-500">Data Planejada</label>
                                 <!-- <input type="text" class="form-control" id="add_agendamento_planned_date4" placeholder="" value="" required > -->
                                 <div class="timepicker-input input-icon form-group">
@@ -648,6 +663,18 @@
                                   </div>
                               </div>
 
+
+                              
+                          </div>
+
+                          <div class="row">
+                              <div class="col-md-6 mb-3">
+                                  <label class="fw-500">Hora Planejada</label>
+                                <input type="text" class="form-control" id="add_agendamento_planned_hour4" placeholder="" value="" required >
+                                <!-- <input type="time" id="add_agendamento_planned_hour4" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                              </div>
+
+                              
                               <div class="col-md-6 mb-3">
                                   <label class="fw-500">Tipo Serviço</label>
                                   <select id="add_agendamento_service_type4" class="form-control">
@@ -698,14 +725,6 @@
                                 </div>
 
                                 <div class="col-md-6 mb-3">
-                                  <label class="fw-500">Hora Planejada</label>
-                                <input type="text" class="form-control" id="add_agendamento_planned_hour5" placeholder="" value="" required >
-                                <!-- <input type="time" id="add_agendamento_planned_hour5" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
-                              </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
                                     <label class="fw-500">Data Planejada</label>
                                   <!-- <input type="text" class="form-control" id="add_agendamento_planned_date5" placeholder="" value="" required > -->
                                   <div class="timepicker-input input-icon form-group">
@@ -718,6 +737,19 @@
                                     </div>
                                 </div>
 
+
+                                
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="fw-500">Hora Planejada</label>
+                                  <input type="text" class="form-control" id="add_agendamento_planned_hour5" placeholder="" value="" required >
+                                  <!-- <input type="time" id="add_agendamento_planned_hour5" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                                </div>
+                                
+                                
                                 <div class="col-md-6 mb-3">
                                     <label class="fw-500">Tipo Serviço</label>
                                     <select id="add_agendamento_service_type5" class="form-control">
@@ -794,13 +826,10 @@
 
 
             <div class="row">
-              <div class="col-md-6 mb-3">
-                  <label class="fw-500"> Nº. serviço Registrado</label>        
-                      <input type="text" class="form-control" id="post_service_invoce_no" placeholder="" value="" required disabled>
-                </div>
-              <div class="col-md-6 mb-3">
+              
+              <div class="col-md-6 mb-3" style="display:none">
                   <label class="fw-500">Nº Linha Fatura de Serviço </label>
-                <input type="text" class="form-control" id="post_service_invoce_line_no1" placeholder="" value="" required disabled>
+                <input type="text" class="form-control" id="post_service_invoce_line_no1" placeholder="" value="" required disabled style="display:none">
                 <input type="text" class="form-control" id="post_service_invoce_line_no2" placeholder="" value="" required disabled style="display:none">
                 <input type="text" class="form-control" id="post_service_invoce_line_no3" placeholder="" value="" required disabled style="display:none">
                 <input type="text" class="form-control" id="post_service_invoce_line_no4" placeholder="" value="" required disabled style="display:none">
@@ -810,7 +839,11 @@
 
             
             <div class="row">
-              <div class="col-md-6 mb-3">
+                <div class="col-md-3 mb-3">
+                    <label class="fw-500"> Nº. serviço Registrado</label>        
+                        <input type="text" class="form-control" id="post_service_invoce_no" placeholder="" value="" required disabled>
+                  </div>
+              <div class="col-md-3 mb-3">
                   <label class="fw-500"> Nº Cliente</label>        
                       <input type="text" class="form-control" id="post_customer_no" placeholder="" value="" required disabled>
                 </div>
@@ -826,7 +859,13 @@
                   <label class="fw-500"> Endereço Cliente</label>        
                       <input type="text" class="form-control" id="post_customer_address" placeholder="" value="" required disabled>
                 </div>
-              <div class="col-md-6 mb-3">
+
+                <div class="col-md-3 mb-3">
+                    <label class="fw-500"> Número</label>        
+                        <input type="text" class="form-control" id="post_customer_number" placeholder="" value="" required disabled>
+                  </div>
+
+              <div class="col-md-3 mb-3">
                   <label class="fw-500">Cód. Vendedor </label>
                 <input type="text" class="form-control" id="post_salesperson_code" placeholder="" value="" required disabled>
               </div>
@@ -850,6 +889,7 @@
                         </select>
                 <input type="text" class="form-control" id="post_service_type1" placeholder="" value="" required disabled style="display:none">
               </div>
+
               <div class="col-md-4 mb-3">
                 <label class="fw-500">Data Planejada  </label>
               <input type="text" class="form-control" id="post_planned_date1_exibir" placeholder="" value="" required disabled>
@@ -1029,7 +1069,6 @@
 
             
 
-
             <div class="text-right">
               <button class="btn btn-danger cur-p" data-dismiss="modal" id="btn_post_agendamento">Cancel </button>
               <button type="button" class="btn btn-primary cur-p"  id="btn_save_post_agendamento">Registrar </button>
@@ -1089,7 +1128,7 @@
                     <!-- <input type="text" class="form-control" id="add_agendamento_n" placeholder="" value="" required > -->
 
                   <!-- </div> -->
-                  <div class="col-md-6 mb-3">
+                  <div class="col-md-12 mb-6">
                       <input type="text" class="form-control" id="edit_agendamento_n" placeholder="" value="" required disabled style="display: none;">
                     <label class="fw-500">Busca Cliente</label>
                   <select id="edit_agendamento_busca_cliente" class="form-control">
@@ -1097,27 +1136,9 @@
                   </select>
                 </div>
 
-                  <div class="col-md-6 mb-3">
-                    <label class="fw-500">Faturar para Endereço Complemento</label>
-                  <input type="text" class="form-control" id="edit_agendamento_fatura_endereco_complemento" placeholder="" value="" required disabled>
-                </div>
+                  
 
               </div>
-
-
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label class="fw-500">Nº Cliente</label>
-                    <input type="text" class="form-control" id="edit_agendamento_n_cliente" placeholder="" value="" required disabled>
-                </div>
-
-                <div class="col-md-6 mb-3">
-                  <label class="fw-500">Fatura Para Cidade</label>
-                <input type="text" class="form-control" id="edit_agendamento_fatura_cidade" placeholder="" value="" required disabled>
-              </div>
-
-            </div>
-
 
 
               <div class="row">
@@ -1126,8 +1147,31 @@
                     <input type="text" class="form-control" id="edit_agendamento_nome" placeholder="" value="" required disabled>
                   </div>
 
+                <div class="col-md-3 mb-2">
+                    <label class="fw-500">Nº Cliente</label>
+                    <input type="text" class="form-control" id="edit_agendamento_n_cliente" placeholder="" value="" required disabled>
+                </div>
+
+                <div class="col-md-3 mb-2">
+                  <label class="fw-500">Cód Vendedor</label>
+                <input type="text" class="form-control" id="edit_agendamento_cod_vendendor" placeholder="" value="" required disabled>
+              </div>
+
+
+            </div>
+
+
+
+              <div class="row">
+                  
+
+                <div class="col-md-6 mb-3">
+                  <label class="fw-500">Cidade</label>
+                <input type="text" class="form-control" id="edit_agendamento_fatura_cidade" placeholder="" value="" required disabled>
+              </div>
+
                   <div class="col-md-6 mb-3">
-                    <label class="fw-500">Fatura Para Cep</label>
+                    <label class="fw-500">Cep</label>
                   <input type="text" class="form-control" id="edit_agendamento_fatura_cep" placeholder="" value="" required disabled>
                 </div>
               </div>
@@ -1136,15 +1180,17 @@
               <div class="row">
 
                 <div class="col-md-6 mb-3">
-                    <label class="fw-500">Fatura Para Endereço</label>
+                    <label class="fw-500">Endereço</label>
                   <input type="text" class="form-control" id="edit_agendamento_fatura_endereco" placeholder="" value="" required disabled>
                 </div>
 
                 <div class="col-md-6 mb-3">
-                  <label class="fw-500">Cód Vendedor</label>
-                <input type="text" class="form-control" id="edit_agendamento_cod_vendendor" placeholder="" value="" required disabled>
+                  <label class="fw-500">Endereço Complemento</label>
+                <input type="text" class="form-control" id="edit_agendamento_fatura_endereco_complemento" placeholder="" value="" required disabled>
               </div>
+
             </div>
+
 
 
 
@@ -1171,14 +1217,6 @@
                           </div>
 
                           <div class="col-md-6 mb-3">
-                            <label class="fw-500">Hora Planejada</label>
-                          <input type="text" class="form-control" id="edit_agendamento_planned_hour1" placeholder="" value="" required >
-                          <!-- <input type="time" id="edit_agendamento_planned_hour1" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
-                        </div>
-                      </div>
-
-                      <div class="row">
-                          <div class="col-md-6 mb-3">
                               <label class="fw-500">Data Planejada</label>
                             <!-- <input type="text" class="form-control" id="edit_agendamento_planned_date1" placeholder="" value="" required > -->
                             <div class="timepicker-input input-icon form-group">
@@ -1191,6 +1229,19 @@
                               </div>
                           </div>
 
+
+                          
+                      </div>
+
+                      <div class="row">
+
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500">Hora Planejada</label>
+                            <input type="text" class="form-control" id="edit_agendamento_planned_hour1" placeholder="" value="" required >
+                            <!-- <input type="time" id="edit_agendamento_planned_hour1" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                          </div>
+
+                          
                           <div class="col-md-6 mb-3">
                               <label class="fw-500">Tipo Serviço</label>
                               <select id="edit_agendamento_service_type1" class="form-control">
@@ -1239,14 +1290,6 @@
                           </div>
 
                           <div class="col-md-6 mb-3">
-                            <label class="fw-500">Hora Planejada</label>
-                          <input type="text" class="form-control" id="edit_agendamento_planned_hour2" placeholder="" value="" required >
-                          <!-- <input type="time" id="edit_agendamento_planned_hour2" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
-                        </div>
-                      </div>
-
-                      <div class="row">
-                          <div class="col-md-6 mb-3">
                               <label class="fw-500">Data Planejada</label>
                             <!-- <input type="text" class="form-control" id="edit_agendamento_planned_date2" placeholder="" value="" required > -->
                             <div class="timepicker-input input-icon form-group">
@@ -1258,6 +1301,18 @@
                                 </div>
                               </div>
                           </div>
+
+                          
+                      </div>
+
+                      <div class="row">
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500">Hora Planejada</label>
+                            <input type="text" class="form-control" id="edit_agendamento_planned_hour2" placeholder="" value="" required >
+                            <!-- <input type="time" id="edit_agendamento_planned_hour2" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                          </div>
+
+                          
 
                           <div class="col-md-6 mb-3">
                               <label class="fw-500">Tipo Serviço</label>
@@ -1314,14 +1369,6 @@
                           </div>
 
                           <div class="col-md-6 mb-3">
-                            <label class="fw-500">Hora Planejada</label>
-                          <input type="text" class="form-control" id="edit_agendamento_planned_hour3" placeholder="" value="" required >
-                          <!-- <input type="time" id="edit_agendamento_planned_hour3" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
-                        </div>
-                      </div>
-
-                      <div class="row">
-                          <div class="col-md-6 mb-3">
                               <label class="fw-500">Data Planejada</label>
                             <!-- <input type="text" class="form-control" id="edit_agendamento_planned_date3" placeholder="" value="" required > -->
                             <div class="timepicker-input input-icon form-group">
@@ -1333,6 +1380,18 @@
                                 </div>
                               </div>
                           </div>
+
+                          
+                      </div>
+
+                      <div class="row">
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500">Hora Planejada</label>
+                            <input type="text" class="form-control" id="edit_agendamento_planned_hour3" placeholder="" value="" required >
+                            <!-- <input type="time" id="edit_agendamento_planned_hour3" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                          </div>
+
+                          
 
                           <div class="col-md-6 mb-3">
                               <label class="fw-500">Tipo Serviço</label>
@@ -1386,14 +1445,6 @@
                             </div>
 
                             <div class="col-md-6 mb-3">
-                              <label class="fw-500">Hora Planejada</label>
-                            <input type="text" class="form-control" id="edit_agendamento_planned_hour4" placeholder="" value="" required >
-                            <!-- <input type="time" id="edit_agendamento_planned_hour4" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
-                          </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
                                 <label class="fw-500">Data Planejada</label>
                               <!-- <input type="text" class="form-control" id="edit_agendamento_planned_date4" placeholder="" value="" required > -->
                               <div class="timepicker-input input-icon form-group">
@@ -1405,6 +1456,19 @@
                                   </div>
                                 </div>
                             </div>
+
+                            
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-500">Hora Planejada</label>
+                              <input type="text" class="form-control" id="edit_agendamento_planned_hour4" placeholder="" value="" required >
+                              <!-- <input type="time" id="edit_agendamento_planned_hour4" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                            </div>
+
+                            
 
                             <div class="col-md-6 mb-3">
                                 <label class="fw-500">Tipo Serviço</label>
@@ -1454,15 +1518,7 @@
                                       <option selected value="0">Selecione o Profissional 5...</option>
                                     </select>
                               </div>
-
-                              <div class="col-md-6 mb-3">
-                                <label class="fw-500">Hora Planejada</label>
-                              <input type="text" class="form-control" id="edit_agendamento_planned_hour5" placeholder="" value="" required >
-                              <!-- <input type="time" id="edit_agendamento_planned_hour5" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
-                            </div>
-                          </div>
-
-                          <div class="row">
+                              
                               <div class="col-md-6 mb-3">
                                   <label class="fw-500">Data Planejada</label>
                                 <!-- <input type="text" class="form-control" id="edit_agendamento_planned_date5" placeholder="" value="" required > -->
@@ -1474,6 +1530,15 @@
                                       <input type="text" id="edit_agendamento_planned_date5" class="form-control bdc-grey-200 start-date" placeholder="Data Planejada" data-provide="datepicker"  data-date-format='dd/mm/yyyy'>
                                     </div>
                                   </div>
+                              </div>
+                              
+                          </div>
+
+                          <div class="row">
+                              <div class="col-md-6 mb-3">
+                                  <label class="fw-500">Hora Planejada</label>
+                                <input type="text" class="form-control" id="edit_agendamento_planned_hour5" placeholder="" value="" required >
+                                <!-- <input type="time" id="edit_agendamento_planned_hour5" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
                               </div>
 
                               <div class="col-md-6 mb-3">

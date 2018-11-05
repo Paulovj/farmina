@@ -86,6 +86,7 @@ function StatusX(value){
           var customer_no = data['Customer No_'];
           var Salesperson = data['Salesperson Code'];
           var Billto_Address = data['Bill-to Address'];
+          var Billto_Number = data['Number'];
           var name = data['Name'];
           
           var Professional1 = data['Professional 1'];
@@ -436,6 +437,8 @@ function StatusX(value){
             $('#post_customer_no').val(customer_no)
             $('#post_customer_name').val(name)
             $('#post_customer_address').val(Billto_Address)
+            $('#post_customer_number').val(Billto_Number)
+          
             $('#post_salesperson_code').val(Salesperson)
             
             $('#post_resource_no1').val(Professional1)
@@ -1033,6 +1036,24 @@ $("#add_agendamento_service_type5").change(function(){
 
   
   function EnviaEmailX(prof,notify){
+    var typeX = $('#post_service_type'+prof).val()
+    var res = "";
+    if(typeX == 1){
+      res = 'Treinamento';
+    }
+    if(typeX == 2){
+      res = 'Kit de boas-vindas'
+    }
+    if(typeX == 3){
+      res = 'ISP'
+    }
+    if(typeX == 4){
+      res = 'Merchandising'
+    }
+    if(typeX == 5){
+      res = 'Army'
+    }  
+
     var settings1 = {
       "async": true,
       "crossDomain": true,
@@ -1048,10 +1069,9 @@ $("#add_agendamento_service_type5").change(function(){
         "nome_servico":$('#post_agendamento_no').val(),
         "nome_loja":$('#post_customer_name').val(),
         "data_estimada":formatDate($('#post_planned_date'+prof).val()),
-        "endereco_loja":$('#post_customer_address').val(),
+        "endereco_loja":$('#post_customer_address').val() + ', '+ $('#post_customer_number').val(),
         "profissional1":$('#post_resource_no'+prof).val(),
-        
-        
+        "type_service": res                
         }
   }
   $.ajax(settings1).done(function (response) {
