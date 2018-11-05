@@ -558,8 +558,8 @@ function StatusX(value){
                { "targets": -1, "data": null, 
                 "render": function (a,d){
                   var btn =""
-                    btn += "<button action='postando_agendamento' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Post</button>" ;                  
-                    btn += "<button action='edit' type='button' class='btn cur-p btn-info'>Edit</button>";                  
+                    btn += "<button action='postando_agendamento' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Registrar</button>" ;
+                    btn += "<button action='edit' type='button' class='btn cur-p btn-info'>Editar</button>";
                     return btn;
               }
             }]
@@ -683,7 +683,7 @@ function PromoterServiceTypeX(promoter,value,action){
   $("#div_"+action+"_agendamento_service_result"+promoter).show()
   if(value==1){
     //traning
-    lblCont =" Tranning for which line?";
+    lblCont =" Treinamento para qual linha?";
     contX +='<option value="0">  </option>';
     contX +='<option value="1"> ND </option>';
     contX +='<option value="2"> ND PUMPKIN </option>';
@@ -692,20 +692,20 @@ function PromoterServiceTypeX(promoter,value,action){
     contX +='<option value="4"> ND PRIME VET LIFE</option>';
     contX +='<option value="4"> INSTITUCIONAL</option>';
   }else if(value==2){
-    lblCont =" For which line would your like welcome kit?";
+    lblCont =" Para qual linha você gostaria kit de boas vindas?";
     contX +='<option value="0">  </option>';
     contX +='<option value="1"> ND QUINOA </option>';
     contX +='<option value="2"> ND PUMPKIN </option>';
     contX +='<option value="3"> ND ANCESTRAL </option>';
     contX +='<option value="4"> ND PRIME </option>';    
   }else if(value==3){
-    lblCont =" Why you are doing this ISP? ";
+    lblCont =" Por que você está fazendo isso ISP? ";
     contX +='<option value="0">  </option>';
     contX +='<option value="1"> PUSH NEW LINE </option>';
     contX +='<option value="2"> LINE SLOW </option>';
     contX +='<option value="3"> GENERIC </option>';
   }else if(value==4){
-    lblCont =" What kind of mechandissing do you want? ";
+    lblCont =" Que tipo de merchandising você quer? ";
     contX +='<option value="0">  </option>';
     contX +='<option value="1"> SHELF ORGANIZATION </option>';
     contX +='<option value="2"> STICKER DECOR </option>';
@@ -1047,7 +1047,7 @@ $("#add_agendamento_service_type5").change(function(){
         "nome_so":$('#post_service_invoce_no').val(),
         "nome_servico":$('#post_agendamento_no').val(),
         "nome_loja":$('#post_customer_name').val(),
-        "data_estimada":$('#post_planned_date'+prof).val(),
+        "data_estimada":formatDate($('#post_planned_date'+prof).val()),
         "endereco_loja":$('#post_customer_address').val(),
         "profissional1":$('#post_resource_no'+prof).val(),
         
