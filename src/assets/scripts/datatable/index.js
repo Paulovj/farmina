@@ -284,7 +284,7 @@ function formatHora(date) {
                 }else{
                   btn += "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Iniciar</button> <button action='finished' type='button' class='btn cur-p btn-info'>Finalizar</button>" ;
                 }
-                btn += "<button action='save_photo' code="+a['Service-Invoice-No_']+" type='button' class='btn cur-p btn-success' id='btn_finish_booking_upload'>Upload Photo</button>";
+                btn += "<button action='save_photo' code="+a['Service-Invoice-No_']+" type='button' class='btn cur-p btn-success' id='btn_finish_booking_upload'>Enviar Fotos</button>";
               return btn;
 
               }
