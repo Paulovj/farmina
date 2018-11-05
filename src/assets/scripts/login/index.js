@@ -31,6 +31,8 @@ $("#btn_login").click(function(){
         sessionStorage.setItem("Name", result['Name']);
         sessionStorage.setItem("Email", result['e-Mail']);
         sessionStorage.setItem("Type", result['Resource Type']);
+        sessionStorage.setItem("No", result['No_']);
+
 
         if (result['Resource Type'] == 0){
           window.location = "datatable.html"; 
