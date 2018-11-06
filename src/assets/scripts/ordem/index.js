@@ -1142,7 +1142,7 @@ $("#add_agendamento_service_type5").change(function(){
   $('#add_busca_cliente_agendamento').click(function(){
     $('#add-agendamento').modal('toggle');
     $('#action_cliente_agendamento').val('i')
-    setTimeout(chamaCliente, 600);
+    setTimeout(chamaCliente, 1000);
   })
 
   $('#edit_busca_cliente_agendamento').click(function(){
@@ -1150,7 +1150,7 @@ $("#add_agendamento_service_type5").change(function(){
     var length = table.column(0).data().length;
     $('#edit-agendamento').modal('toggle');
     $('#action_cliente_agendamento').val('u')
-    setTimeout(chamaCliente, 600);
+    setTimeout(chamaCliente, 1000);
     if (length == 0){
       table.destroy();
       loadClienteX();
@@ -1190,7 +1190,7 @@ $("#add_agendamento_service_type5").change(function(){
       $('#add_agendamento_fatura_endereco').val(address)
       $('#add_agendamento_cod_vendendor').val(salespersonCode)
       
-      setTimeout(chamaAddAgendamento, 600);
+      setTimeout(chamaAddAgendamento, 1000);
     } else if (action == 'u')  {
       $('#edit_agendamento_n_cliente').val(id)
       $('#edit_agendamento_fatura_endereco_complemento').val(address2)
@@ -1199,7 +1199,7 @@ $("#add_agendamento_service_type5").change(function(){
       $('#edit_agendamento_fatura_cep').val(post)
       $('#edit_agendamento_fatura_endereco').val(address)
       $('#edit_agendamento_cod_vendendor').val(salespersonCode)
-      setTimeout(chamaEditAgendamento, 600);
+      setTimeout(chamaEditAgendamento, 1000);
     }
   
   
