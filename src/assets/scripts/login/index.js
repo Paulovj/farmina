@@ -32,11 +32,13 @@ $("#btn_login").click(function(){
         sessionStorage.setItem("Email", result['e-Mail']);
         sessionStorage.setItem("Type", result['Resource Type']);
         sessionStorage.setItem("No", result['No_']);
+        sessionStorage.setItem("UF", result['Territory Code']);
+        
 
 
         if (result['Resource Type'] == 0){
           window.location = "datatable.html"; 
-        }else if(result['Resource Type'] == 1){
+        }else if(result['Resource Type'] == 1 || result['Resource Type'] == 2){
           window.location = "index.html"; 
         }
 

@@ -90,7 +90,11 @@ function StatusX(value){
           var customer_no = data['Customer No_'];
           var Salesperson = data['Salesperson Code'];
           var Billto_Address = data['Bill-to Address'];
+          var Billto_Address2 = data['Bill-to Address 2'];
+          var Billto_City     = data['Bill-to City'];
+          var Billto_PostCode = data['Bill-to Post Code'];
           var Billto_Number = data['Number'];
+          
           var name = data['Name'];
           
           var Professional1 = data['Professional 1'];
@@ -206,81 +210,91 @@ function StatusX(value){
 
           
           if ($(this).attr('action')=="edit"){
-
-            var length = $('#edit_agendamento_busca_cliente > option').length;
-            console.log('Edit ',length)
-            //No_
+            
+            $('#edit_agendamento_n_cliente').val(customer_no)
+            $('#edit_agendamento_fatura_endereco_complemento').val(Billto_Address2)
+            $('#edit_agendamento_fatura_cidade').val(Billto_City)
+            $('#edit_agendamento_nome').val(name)
+            $('#edit_agendamento_fatura_cep').val(Billto_PostCode)
+            $('#edit_agendamento_fatura_endereco').val(Billto_Address)
             $('#edit_agendamento_n').val(id)
-            if (length == 1){
-              $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Customers/", success: function(result){
-                //add_agendamento_busca_cliente
-                var contX = "";
-                  $.each(result, function(index, value){
-                    var val = value.No_ + ' | ' + value.Name +' | '+ value.Address + ' | ' + value['City']  + ' | ' + value['Post Code']  + ' | ' + value['Phone No_'] + ' | '+ value.Contact;
-                    var optName     = 'optName = "'+value.Name+'"';
-                    var optAddress  = 'optAddress = "'+value.Address+'"';
-                    var optPost     = 'optPost = "'+value['Post Code']+'"';
-                    var optPhone    = 'optPhone = "'+value['Phone No_']+'"';
-                    var optContact  = 'optContact = "'+value.Contact+'"';
-                    var optCity     = 'optCity = "'+value.City+'"';
-                    var optAddress2 = 'optAddress2 = "'+value['Address 2']+'"';
-                    var optSalespersonCode = 'optSalespersonCode = "'+value['Salesperson Code']+'"';
+            
+            $('#edit_agendamento_cod_vendendor').val(Salesperson)
+
+            // var length = $('#edit_agendamento_busca_cliente > option').length;
+            // console.log('Edit ',length)
+            // //No_
+            // $('#edit_agendamento_n').val(id)
+            // if (length == 1){
+            //   $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Customers/", success: function(result){
+            //     //add_agendamento_busca_cliente
+            //     var contX = "";
+            //       $.each(result, function(index, value){
+            //         var val = value.No_ + ' | ' + value.Name +' | '+ value.Address + ' | ' + value['City']  + ' | ' + value['Post Code']  + ' | ' + value['Phone No_'] + ' | '+ value.Contact;
+            //         var optName     = 'optName = "'+value.Name+'"';
+            //         var optAddress  = 'optAddress = "'+value.Address+'"';
+            //         var optPost     = 'optPost = "'+value['Post Code']+'"';
+            //         var optPhone    = 'optPhone = "'+value['Phone No_']+'"';
+            //         var optContact  = 'optContact = "'+value.Contact+'"';
+            //         var optCity     = 'optCity = "'+value.City+'"';
+            //         var optAddress2 = 'optAddress2 = "'+value['Address 2']+'"';
+            //         var optSalespersonCode = 'optSalespersonCode = "'+value['Salesperson Code']+'"';
                     
           
-                      contX +='<option value='+ value.No_ +' '+ optSalespersonCode + ' '+ optCity +' '+ optName +' '+ optAddress2 +' '+ optAddress +' '+ optPost +' '+ optPhone +' '+ optContact +' > '+val+' </option>';
-                  })
-                  $("#edit_agendamento_busca_cliente").append(contX)
-                  // Customer No_
-                  $('#edit_agendamento_busca_cliente option[value='+customer_no+']').attr('selected','selected');
-                  var id      = $('#edit_agendamento_busca_cliente').val();
-                  var name    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optName");
-                  var address = $('option:selected', '#edit_agendamento_busca_cliente').attr("optAddress");
-                  var post    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optPost");
-                  var phone   = $('option:selected', '#edit_agendamento_busca_cliente').attr("optPhone");
-                  var contact = $('option:selected', '#edit_agendamento_busca_cliente').attr("optContact");
-                  var city    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optCity");
-                  var address2= $('option:selected', '#edit_agendamento_busca_cliente').attr("optAddress2");
-                  var salespersonCode= $('option:selected', '#edit_agendamento_busca_cliente').attr("optSalespersonCode");                  
+            //           contX +='<option value='+ value.No_ +' '+ optSalespersonCode + ' '+ optCity +' '+ optName +' '+ optAddress2 +' '+ optAddress +' '+ optPost +' '+ optPhone +' '+ optContact +' > '+val+' </option>';
+            //       })
+            //       $("#edit_agendamento_busca_cliente").append(contX)
+            //       // Customer No_
+            //       $('#edit_agendamento_busca_cliente option[value='+customer_no+']').attr('selected','selected');
+            //       var id      = $('#edit_agendamento_busca_cliente').val();
+            //       var name    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optName");
+            //       var address = $('option:selected', '#edit_agendamento_busca_cliente').attr("optAddress");
+            //       var post    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optPost");
+            //       var phone   = $('option:selected', '#edit_agendamento_busca_cliente').attr("optPhone");
+            //       var contact = $('option:selected', '#edit_agendamento_busca_cliente').attr("optContact");
+            //       var city    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optCity");
+            //       var address2= $('option:selected', '#edit_agendamento_busca_cliente').attr("optAddress2");
+            //       var salespersonCode= $('option:selected', '#edit_agendamento_busca_cliente').attr("optSalespersonCode");                  
                                 
-                  $('#edit_agendamento_n_cliente').val(id)
-                  $('#edit_agendamento_fatura_endereco_complemento').val(address2)
-                  $('#edit_agendamento_fatura_cidade').val(city)
-                  $('#edit_agendamento_nome').val(name)
-                  $('#edit_agendamento_fatura_cep').val(post)
-                  $('#edit_agendamento_fatura_endereco').val(address)
-                  $('#edit_agendamento_cod_vendendor').val(salespersonCode)
+            //       $('#edit_agendamento_n_cliente').val(id)
+            //       $('#edit_agendamento_fatura_endereco_complemento').val(address2)
+            //       $('#edit_agendamento_fatura_cidade').val(city)
+            //       $('#edit_agendamento_nome').val(name)
+            //       $('#edit_agendamento_fatura_cep').val(post)
+            //       $('#edit_agendamento_fatura_endereco').val(address)
+            //       $('#edit_agendamento_cod_vendendor').val(salespersonCode)
                   
                 
-                  console.log('resultado combo on change: ' + customer_no + ' id '+ id )
+            //       console.log('resultado combo on change: ' + customer_no + ' id '+ id )
                   
           
-                }
-              });
-            }else{
+            //     }
+            //   });
+            // }else{
 
-            $('#edit_agendamento_busca_cliente option[value='+customer_no+']').attr('selected','selected');
-                  var id      = $('#edit_agendamento_busca_cliente').val();
-                  var name    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optName");
-                  var address = $('option:selected', '#edit_agendamento_busca_cliente').attr("optAddress");
-                  var post    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optPost");
-                  var phone   = $('option:selected', '#edit_agendamento_busca_cliente').attr("optPhone");
-                  var contact = $('option:selected', '#edit_agendamento_busca_cliente').attr("optContact");
-                  var city    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optCity");
-                  var address2= $('option:selected', '#edit_agendamento_busca_cliente').attr("optAddress2");
-                  var salespersonCode= $('option:selected', '#edit_agendamento_busca_cliente').attr("optSalespersonCode");                  
+            // $('#edit_agendamento_busca_cliente option[value='+customer_no+']').attr('selected','selected');
+            //       var id      = $('#edit_agendamento_busca_cliente').val();
+            //       var name    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optName");
+            //       var address = $('option:selected', '#edit_agendamento_busca_cliente').attr("optAddress");
+            //       var post    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optPost");
+            //       var phone   = $('option:selected', '#edit_agendamento_busca_cliente').attr("optPhone");
+            //       var contact = $('option:selected', '#edit_agendamento_busca_cliente').attr("optContact");
+            //       var city    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optCity");
+            //       var address2= $('option:selected', '#edit_agendamento_busca_cliente').attr("optAddress2");
+            //       var salespersonCode= $('option:selected', '#edit_agendamento_busca_cliente').attr("optSalespersonCode");                  
                                 
-                  $('#edit_agendamento_n_cliente').val(id)
-                  $('#edit_agendamento_fatura_endereco_complemento').val(address2)
-                  $('#edit_agendamento_fatura_cidade').val(city)
-                  $('#edit_agendamento_nome').val(name)
-                  $('#edit_agendamento_fatura_cep').val(post)
-                  $('#edit_agendamento_fatura_endereco').val(address)
-                  $('#edit_agendamento_cod_vendendor').val(salespersonCode)
+            //       $('#edit_agendamento_n_cliente').val(id)
+            //       $('#edit_agendamento_fatura_endereco_complemento').val(address2)
+            //       $('#edit_agendamento_fatura_cidade').val(city)
+            //       $('#edit_agendamento_nome').val(name)
+            //       $('#edit_agendamento_fatura_cep').val(post)
+            //       $('#edit_agendamento_fatura_endereco').val(address)
+            //       $('#edit_agendamento_cod_vendendor').val(salespersonCode)
                   
                 
-                  console.log('resultado combo on change: ' + customer_no + ' id '+ id )
+            //       console.log('resultado combo on change: ' + customer_no + ' id '+ id )
                   
-            }
+            // }
             var length1 = $('#edit_agendamento_busca_professional1 > option').length;
             console.log('Edit quandadide PROFESSIONAL: ',length)
             if (length1 == 1){
@@ -1089,6 +1103,149 @@ $("#add_agendamento_service_type5").change(function(){
     }, 4000);  
   });  
   }
+
+
+  $("#btn_cliente_agendamento").click(function(){
+    var table = $('#dataTableClienteAgendamento').DataTable();
+    var length = table.column(0).data().length;
+    $('#action_cliente_agendamento').val('i')
+    $('#cliente-agendamento').modal('toggle');  
+    
+    if (length == 0){
+      table.destroy();
+      loadClienteX();
+     }
+
+     var length1 = $('#add_agendamento_busca_professional1 > option').length;
+     console.log('quandadide PROFESSIONAL: ',length)
+     if (length1 == 1){
+       $.ajax({url: "http://www.nav.farmina.com.br:3001/api/resourses/getResourseQuery", success: function(obj){
+         var contX = "";
+           $.each(obj.result, function(index, value){
+             var val = value.No_ + ' | ' + value.Name;
+             var optName     = 'optName = "'+value.Name+'"';
+             contX +='<option value='+ value.No_ +' '+ optName + ' > '+val+' </option>';
+           })
+           $("#add_agendamento_busca_professional1").append(contX)
+           $("#add_agendamento_busca_professional2").append(contX)
+           $("#add_agendamento_busca_professional3").append(contX)
+           $("#add_agendamento_busca_professional4").append(contX)
+           $("#add_agendamento_busca_professional5").append(contX)
+           $("#add_agendamento_busca_professional6").append(contX)
+   
+   
+         }
+       });
+     }
+  })
+
+  $('#add_busca_cliente_agendamento').click(function(){
+    $('#add-agendamento').modal('toggle');
+    $('#action_cliente_agendamento').val('i')
+    setTimeout(chamaCliente, 600);
+  })
+
+  $('#edit_busca_cliente_agendamento').click(function(){
+    var table = $('#dataTableClienteAgendamento').DataTable();
+    var length = table.column(0).data().length;
+    $('#edit-agendamento').modal('toggle');
+    $('#action_cliente_agendamento').val('u')
+    setTimeout(chamaCliente, 600);
+    if (length == 0){
+      table.destroy();
+      loadClienteX();
+     }
+  })
+
+  
+
+  var chamaCliente = function(){
+    $('#cliente-agendamento').modal('toggle');  
+  };
+
+
+  $('#dataTableClienteAgendamento tbody').on( 'click', 'td', function () {
+    $('#cliente-agendamento').modal('toggle');
+    var data = $("#dataTableClienteAgendamento").DataTable().row( $(this).parents('tr') ).data();
+     
+    console.log(data)
+    var id      = data['No_'];
+    var name    = data['Name'];
+    var address = data['Address'];
+    var post    = data['Post Code'];
+    var phone   = data['Phone No_'];
+    var contact = data['Contact'];
+    var city    = data['City'];
+    var address2= data['Adrress 2'];
+    var salespersonCode= data['Salesperson Code'];
+    
+    var action = $('#action_cliente_agendamento').val()
+    
+    if (action == 'i'){
+      $('#add_agendamento_n_cliente').val(id)
+      $('#add_agendamento_fatura_endereco_complemento').val(address2)
+      $('#add_agendamento_fatura_cidade').val(city)
+      $('#add_agendamento_nome').val(name)
+      $('#add_agendamento_fatura_cep').val(post)
+      $('#add_agendamento_fatura_endereco').val(address)
+      $('#add_agendamento_cod_vendendor').val(salespersonCode)
+      
+      setTimeout(chamaAddAgendamento, 600);
+    } else if (action == 'u')  {
+      $('#edit_agendamento_n_cliente').val(id)
+      $('#edit_agendamento_fatura_endereco_complemento').val(address2)
+      $('#edit_agendamento_fatura_cidade').val(city)
+      $('#edit_agendamento_nome').val(name)
+      $('#edit_agendamento_fatura_cep').val(post)
+      $('#edit_agendamento_fatura_endereco').val(address)
+      $('#edit_agendamento_cod_vendendor').val(salespersonCode)
+      setTimeout(chamaEditAgendamento, 600);
+    }
+  
+  
+  })
+  var chamaAddAgendamento = function(){
+    $('#add-agendamento').modal('toggle');  
+  };
+  var chamaEditAgendamento = function(){
+    $('#edit-agendamento').modal('toggle');  
+  };
+
+  
+  
+  function loadClienteX() {  
+    // $('#dataKTableClienteAgendamento').DataTable().destroy();
+    var query = "";
+    if(sessionStorage.Type =='0'){
+      query = '{"where":{"Territory Code": "' + sessionStorage.UF + '"}}';
+      //query = '{"where":{"Territory Code": "RJ"}}';
+    }
+    
+    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Customers?filter="+query, success: function(result){    
+    var jsonString = result //for testing  
+    var tableClienteAgendamento = $("#dataTableClienteAgendamento")
+    tableClienteAgendamento.DataTable ({
+          "data" : jsonString,
+          "scrollX": true,
+          "columns" : [
+            { "data" : "No_"},
+            { "data" : "Name"},
+            { "data" : "Phone No_" },
+            { "data" : "Contact" },
+            { "data" : "Address",},
+            { "data" : "City" },
+            { "data" : "Post Code" },
+            { "data" : "Address 2" },
+            { "data" : "Salesperson Code" },
+          ]
+          
+        });
+      }        
+       
+    });
+
+};
+
 
 }
 
