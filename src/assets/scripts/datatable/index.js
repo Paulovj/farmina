@@ -99,6 +99,7 @@ function formatHora(date) {
   $('#dataTable tbody').on( 'click', 'button', function () {
           var data = $("#dataTable").DataTable().row( $(this).parents('tr') ).data();
           var id = data['Service-Invoice-No_'];
+          var Service_Invoice_Line_No = data['Service-Invoice-Line-No_'];
                 
           if($(this).attr('action') == "starting"){
               $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/"+id, success: function(result){
@@ -162,7 +163,8 @@ function formatHora(date) {
 
             if ($(this).attr('action')=="save_photo"){
                 //var x = $(this).attr(id);
-                console.log("tete:" + id)
+                console.log(data )
+                $('#photo_service_invoice_line_no').val(Service_Invoice_Line_No);
                 $('#photo_service_invoice_no').val(id);
                 $('#dataTableImagens').DataTable().destroy();
                 loadImagensX(id);
@@ -320,8 +322,14 @@ $("#btn_finish_booking").click(function(){
   $("#finished").click(function(){
   $('#photo-service-booking').modal('toggle')
   var id  = $("#photo_service_invoice_no").val();
-    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/"+id, success: function(result){
-      console.log(result)
+  var line_no  = $("#photo_service_invoice_line_no").val();
+  
+  //http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources?filter=%7B%22where%22%20%3A%20%7B%22Service-Invoice-No_%22%3A%22WEBSO00025%22%2C%22Service-Invoice-Line-No_%22%3A%20%2225300%22%7D%7D
+  var query = '{"where" : {"Service-Invoice-No_":"' + id + '","Service-Invoice-Line-No_": "' + line_no + '"}}'
+
+    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources?filter="+query, success: function(result){
+      var result = result[0] ;
+      console.log(result[0])
     // $("#btn_finish_booking_upload").attr("code",result['Service-Invoice-No_']);
 
       $('#finish_service_invoice_no').val(result['Service-Invoice-No_']);  
