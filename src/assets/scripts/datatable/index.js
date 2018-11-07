@@ -126,7 +126,7 @@ function formatHora(date) {
           if($(this).attr('action') == "finished"){
               //$.ajax({url: "https://app-farmina.herokuapp.com/api/service_booking_resources/"+id, success: function(result){
                 $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/"+id, success: function(result){
-                  
+                  console.log(result)
                 // $("#btn_finish_booking_upload").attr("code",result['Service-Invoice-No_']);
 
                   $('#finish_service_invoice_no').val(result['Service-Invoice-No_']);  
@@ -139,8 +139,11 @@ function formatHora(date) {
                 $('#finish_salesperson_code').val(result['Salesperson-Code']);
 
                 $('#finish_training_for_which_line').val(TrainingAnswer(result['Trainning-Answer-Type']));//no
-                $('#finish_estimated_starting_date').val(result['Estimated-Starting-Date']);
-                $('#finish_estimated_total_time').val(result['Estimated-Total-Time']);
+                $('#finish_estimated_starting_date').val(formatDate(result['Estimated-Starting-Date']));
+                $('#finish_starting_date').val(formatDate(result['Starting-Date']));
+                $('#finish_starting_hour').val(formatHora(result['Starting-Time']));
+                
+                $('#finish_estimated_total_time').val(formatHora(result['Estimated-Total-Time']));
                 $('#finish_starting_observation').val(result['Starting-Observation']);//no
                 console.log('time> '+formatHora(result['Finish-Time']))
                 $('#finish_date').val(formatDate(result['Finish-Date']));
@@ -237,14 +240,12 @@ function formatHora(date) {
               { "targets": -1, "data": null, 
               "render": function (a,d){
                 var btn =""
-                
-                if (a['Status']==2){
+
+                if (a['Status']==1 || a['Status']==2){
                   btn += "<button action='finished' type='button' class='btn cur-p btn-info'>Finalizar</button>";
-                  //btn += "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Iniciar</button> <button action='finished' type='button' class='btn cur-p btn-info'>Finalizar</button>";
-                 }else if(a['Status']==1){
-                  btn += "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Iniciar</button> " ;
-                }
-                btn += "<button action='save_photo' code="+a['Service-Invoice-No_']+" type='button' class='btn cur-p btn-success' id='btn_finish_booking_upload'>Enviar Fotos</button>";
+                }  
+                  //btn += "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Iniciar</button>";
+                  btn += "<button action='save_photo' code="+a['Service-Invoice-No_']+" type='button' class='btn cur-p btn-success' id='btn_finish_booking_upload'>Enviar Fotos</button>";
               return btn;
 
               }
@@ -287,8 +288,11 @@ $("#btn_finish_booking").click(function(){
   var service_invoice_line_no = $('#finish_service_invoice_line_no').val();
   var finish_date = formatDateSql($('#finish_date').val());
   var finish_time = $('#finish_time').val();
-
   
+  var starting_date = formatDateSql($('#finish_starting_date').val());
+  var starting_hour = $('#finish_starting_hour').val();
+  var starting_observation = $('#finish_starting_observation').val();
+
   var Many_Customers = $("#finish_how_many_customers_entered_on_store").val();
   var Many_Voucher = $("#finish_how_many_voucher_was_delivered").val();
   var Many_Products = $("#finish_how_many_products_eas_sold").val();
@@ -296,7 +300,7 @@ $("#btn_finish_booking").click(function(){
   var Many_Nutrional_Plans = $("#finish_how_many_national_plans_was_generated").val();
 
   
-  $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getUpdateFinish?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no+"&Finish-Date="+finish_date+"&Finish-Time="+finish_time+"&Many-Customers=" + Many_Customers + "&Many-Voucher=" + Many_Voucher + "&Many-Products=" + Many_Products + "&Many-Kits=" + Many_Kits + "&Many-Nutrional-Plans=" + Many_Nutrional_Plans, success: function(result){
+  $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getUpdateFinish?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no+"&Finish-Date="+finish_date+"&Finish-Time="+finish_time+"&Many-Customers=" + Many_Customers + "&Many-Voucher=" + Many_Voucher + "&Many-Products=" + Many_Products + "&Many-Kits=" + Many_Kits + "&Many-Nutrional-Plans=" + Many_Nutrional_Plans + "&starting_date="+ starting_date + "&starting_hour=" + starting_hour + "&starting_observation=" + starting_observation, success: function(result){
     $('#finish-service-booking').modal('toggle');
     var oTblReport = $('#dataTable').DataTable().destroy();
 

@@ -506,27 +506,40 @@
                       <label class="fw-500">Training for which line</label>     
                     <input type="text" class="form-control" id="finish_training_for_which_line" placeholder="" value="" required disabled>
                   </div> -->
+
+                  <div class="col-md-6 mb-3">
+                    <label class="fw-500">Data Inicio Estimativa</label>
+                  <div class="timepicker-input input-icon form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon bgc-white bd bdwR-0">
+                        <i class="ti-calendar"></i>
+                      </div>
+                      <input type="text" id="finish_estimated_starting_date" class="form-control bdc-grey-200 start-date" placeholder="Date Start" data-provide="datepicker"   data-date-format='dd/mm/yyyy' disabled>
+                      
+                    </div>
+                  </div>
+                </div>
               </div>
   
-              <!-- <div class="row">
+               <div class="row">
                   <div class="col-md-6 mb-3">
-                      <label class="fw-500">Estimated starting date</label>
+                      <label class="fw-500">Data Início</label>
                     <div class="timepicker-input input-icon form-group">
                       <div class="input-group">
                         <div class="input-group-addon bgc-white bd bdwR-0">
                           <i class="ti-calendar"></i>
                         </div>
-                        <input type="text" id="finish_estimated_starting_date" class="form-control bdc-grey-200 start-date" placeholder="Date Start" data-provide="datepicker"  data-date-format='yyyy-mm-dd' disabled>
+                        <input type="text" id="finish_starting_date" class="form-control bdc-grey-200 start-date" placeholder="Date Start" data-provide="datepicker"   data-date-format='dd/mm/yyyy' >
+                        
                       </div>
                     </div>
                   </div>
                   <div class="col-md-6 mb-3">
-                      <label class="fw-500">Estimated Total Time</label>
-                      <input type="time" id="appt-time" name="appt-time"
-                      min="9:00" max="18:00" class="form-control" id="" placeholder="" value="" required disabled />
-               <span class="hours">Office hours: 9AM to 6PM</span>
+                      <label class="fw-500">Hora Início</label>
+                      <input type="time" id="finish_starting_hour" name="appt-time2" min="9:00" max="18:00" class="form-control" placeholder="" value="" required/>
+               <!-- <span class="hours">Office hours: 9AM to 6PM</span> -->
                   </div>
-              </div> -->
+              </div> 
   
               <div class="row">
                 <div class="col-md-6 mb-3">
@@ -550,7 +563,7 @@
   
               <div class="form-group">
                 <label class="fw-500">Observação Inicial</label>
-                <textarea class="form-control bdc-grey-200" id="finish_starting_observation" disabled> </textarea>
+                <textarea class="form-control bdc-grey-200" id="finish_starting_observation"> </textarea>
               </div>
   
   
