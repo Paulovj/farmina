@@ -163,8 +163,11 @@ function formatHora(date) {
             if ($(this).attr('action')=="save_photo"){
                 //var x = $(this).attr(id);
                 console.log("tete:" + id)
-                $('#photo_service_invoice_no').val(id);  
-                $('#photo-service-booking').modal('toggle');  
+                $('#photo_service_invoice_no').val(id);
+                $('#dataTableImagens').DataTable().destroy();
+                loadImagensX(id);
+                $('#photo-service-booking').modal('toggle'); 
+
             }
 
         });
@@ -241,11 +244,13 @@ function formatHora(date) {
               "render": function (a,d){
                 var btn =""
 
-                if (a['Status']==1 || a['Status']==2){
-                  btn += "<button action='finished' type='button' class='btn cur-p btn-info'>Finalizar</button>";
-                }  
+                // if (a['Status']==1 || a['Status']==2){
+                //   btn += "<button action='finished' type='button' class='btn cur-p btn-info'>Finalizar</button>";
+                // }  
                   //btn += "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Iniciar</button>";
-                  btn += "<button action='save_photo' code="+a['Service-Invoice-No_']+" type='button' class='btn cur-p btn-success' id='btn_finish_booking_upload'>Enviar Fotos</button>";
+                  if (a['Status']==1){
+                    btn += "<button action='save_photo' code="+a['Service-Invoice-No_']+" type='button' class='btn cur-p btn-success' id='btn_finish_booking_upload'>Enviar Fotos / Finalizar </button>";
+                  }
               return btn;
 
               }
@@ -312,10 +317,59 @@ $("#btn_finish_booking").click(function(){
 
 
 
+  $("#finished").click(function(){
+  $('#photo-service-booking').modal('toggle')
+  var id  = $("#photo_service_invoice_no").val();
+    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/"+id, success: function(result){
+      console.log(result)
+    // $("#btn_finish_booking_upload").attr("code",result['Service-Invoice-No_']);
+
+      $('#finish_service_invoice_no').val(result['Service-Invoice-No_']);  
+      $('#finish_service_invoice_line_no').val(result['Service-Invoice-Line-No_']);
+
+    $('#finish_customer_name').val(result['Customer-Name']);  
+    $('#finish_resource_no').val(result['Resource-No_']);
+    $('#finish_function').val(FunctionX(result['Function']));//no
+    $('#finish_service_type').val(ServiceType(result['Service-Type']));
+    $('#finish_salesperson_code').val(result['Salesperson-Code']);
+
+    $('#finish_training_for_which_line').val(TrainingAnswer(result['Trainning-Answer-Type']));//no
+    $('#finish_estimated_starting_date').val(formatDate(result['Estimated-Starting-Date']));
+    $('#finish_starting_date').val(formatDate(result['Starting-Date']));
+    $('#finish_starting_hour').val(formatHora(result['Starting-Time']));
+    
+    $('#finish_estimated_total_time').val(formatHora(result['Estimated-Total-Time']));
+    $('#finish_starting_observation').val(result['Starting-Observation']);//no
+    console.log('time> '+formatHora(result['Finish-Time']))
+    $('#finish_date').val(formatDate(result['Finish-Date']));
+    $('#finish_time').val(formatHora(result['Finish-Time']));
+
+
+    $('#finish_how_many_customers_entered_on_store').val(result['Many-Customers'])//no
+    $('#finish_how_many_voucher_was_delivered').val(result['Many-Voucher'])//no
+    $('#finish_how_many_products_eas_sold').val(result['Many-Products'])//no
+    $('#finish_how_many_kits_was_delivered').val(result['Many-Kits'])//no
+    $('#finish_how_many_national_plans_was_generated').val(result['Many-Nutrional-Plans'])//no
+  }});
+  setTimeout(chamaFinaliza, 1000);
+
+}) 
+
+var chamaFinaliza = function(){
+  $('#finish-service-booking').modal('toggle')
+};
+
+
+
 
   $("#btn_save_photo").click(function(){
     var pasta = $('#photo_service_invoice_no').val();
     var data = new FormData();
+    var file = $('#fileimagem').val();
+    if (file == ""){
+      alert('Por favor, ecolher arquivo!');
+      return false;
+    }
     data.append('file', $('#fileimagem')[0].files[0]);
     //data.append('destino', './teste.png');
     
@@ -336,10 +390,54 @@ $("#btn_finish_booking").click(function(){
 
       $.ajax(settings).done(function (response) {
         console.log(response);
-        $('#photo-service-booking').modal('toggle');  
+        $('#fileimagem').val('');
+        $('#dataTableImagens').DataTable().destroy();
+        loadImagensX(pasta);
       });    
+      //console.log(pasta)
+      //loadImagensX(pasta);
 
   });
+
+
+
+
+
+
+
+
+
+
+  function loadImagensX(id) {
+    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Containers/"+id+"/files", success: function(result){
+    console.log('result ' + result.length)  
+    if (result.length > 0 ){
+        $("#finished").attr("disabled",false);
+      }else{
+        $("#finished").attr("disabled",true);
+       }  
+    var jsonString = result 
+
+      console.log(jsonString)    
+      var datatableImages = $("#dataTableImagens")
+      datatableImages.DataTable ({
+          "data" : jsonString,
+          "scrollX": true,
+          "columns" : [
+            
+            { "data" : "name" , "render": function ( data) { 
+              return "<img src='http://nav.farmina.com.br:3002/"+id+"/"+data+"'/ heigth='50px' width='50px'>" 
+              }
+            },
+            { "data" : "name" }
+            ]
+          
+        });
+      }        
+       
+    });
+    
+};
   }  
 }());
 
