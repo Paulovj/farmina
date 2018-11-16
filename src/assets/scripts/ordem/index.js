@@ -36,44 +36,19 @@ function StatusX(value){
       if (value == 0){
         valueX =  'Pendente';
       }else if(value==1){
-        valueX =  'To Do';
+        // valueX =  'To Do';
+        valueX =  'Iniciado';
       }else if(value==2){
-        valueX =  'Started';
+        // valueX =  'Started';
+        valueX =  'Iniciado';
       }else if(value==3){
-      valueX =  'Accomplished';            
+      // valueX =  'Accomplished';            
+      valueX =  'Finalizado';            
       }
       return valueX;
 }
   
-  function FunctionX(value){
-    var functionX = "";
-        if (value == 0){
-          functionX =  '';
-        }else if(value==1){
-          functionX =  'SOS';
-        }else if(value==2){
-          functionX =  'Army';            
-        }
-        return functionX;
-  }
-  function ServiceType(value){
-    var Service_TypeX = "";
-        if (value == 0){
-          Service_TypeX = '';
-        }else if(value==1){
-          Service_TypeX =  'Training';
-        }else if(value==2){
-          Service_TypeX =  'Welcome Kit';            
-        }else if(value==3){
-          Service_TypeX =  'ISP';
-        }else if(value==4){
-          Service_TypeX =  'Merchan';
-        }else if(value==5){
-          Service_TypeX =  'Army';
-        }
-        return Service_TypeX
-  }
-
+  
 
 
   $('#dataTableOrdemAgendamento tbody').on( 'click', 'button', function () {
@@ -221,80 +196,7 @@ function StatusX(value){
             
             $('#edit_agendamento_cod_vendendor').val(Salesperson)
 
-            // var length = $('#edit_agendamento_busca_cliente > option').length;
-            // console.log('Edit ',length)
-            // //No_
-            // $('#edit_agendamento_n').val(id)
-            // if (length == 1){
-            //   $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Customers/", success: function(result){
-            //     //add_agendamento_busca_cliente
-            //     var contX = "";
-            //       $.each(result, function(index, value){
-            //         var val = value.No_ + ' | ' + value.Name +' | '+ value.Address + ' | ' + value['City']  + ' | ' + value['Post Code']  + ' | ' + value['Phone No_'] + ' | '+ value.Contact;
-            //         var optName     = 'optName = "'+value.Name+'"';
-            //         var optAddress  = 'optAddress = "'+value.Address+'"';
-            //         var optPost     = 'optPost = "'+value['Post Code']+'"';
-            //         var optPhone    = 'optPhone = "'+value['Phone No_']+'"';
-            //         var optContact  = 'optContact = "'+value.Contact+'"';
-            //         var optCity     = 'optCity = "'+value.City+'"';
-            //         var optAddress2 = 'optAddress2 = "'+value['Address 2']+'"';
-            //         var optSalespersonCode = 'optSalespersonCode = "'+value['Salesperson Code']+'"';
-                    
-          
-            //           contX +='<option value='+ value.No_ +' '+ optSalespersonCode + ' '+ optCity +' '+ optName +' '+ optAddress2 +' '+ optAddress +' '+ optPost +' '+ optPhone +' '+ optContact +' > '+val+' </option>';
-            //       })
-            //       $("#edit_agendamento_busca_cliente").append(contX)
-            //       // Customer No_
-            //       $('#edit_agendamento_busca_cliente option[value='+customer_no+']').attr('selected','selected');
-            //       var id      = $('#edit_agendamento_busca_cliente').val();
-            //       var name    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optName");
-            //       var address = $('option:selected', '#edit_agendamento_busca_cliente').attr("optAddress");
-            //       var post    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optPost");
-            //       var phone   = $('option:selected', '#edit_agendamento_busca_cliente').attr("optPhone");
-            //       var contact = $('option:selected', '#edit_agendamento_busca_cliente').attr("optContact");
-            //       var city    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optCity");
-            //       var address2= $('option:selected', '#edit_agendamento_busca_cliente').attr("optAddress2");
-            //       var salespersonCode= $('option:selected', '#edit_agendamento_busca_cliente').attr("optSalespersonCode");                  
-                                
-            //       $('#edit_agendamento_n_cliente').val(id)
-            //       $('#edit_agendamento_fatura_endereco_complemento').val(address2)
-            //       $('#edit_agendamento_fatura_cidade').val(city)
-            //       $('#edit_agendamento_nome').val(name)
-            //       $('#edit_agendamento_fatura_cep').val(post)
-            //       $('#edit_agendamento_fatura_endereco').val(address)
-            //       $('#edit_agendamento_cod_vendendor').val(salespersonCode)
-                  
-                
-            //       console.log('resultado combo on change: ' + customer_no + ' id '+ id )
-                  
-          
-            //     }
-            //   });
-            // }else{
-
-            // $('#edit_agendamento_busca_cliente option[value='+customer_no+']').attr('selected','selected');
-            //       var id      = $('#edit_agendamento_busca_cliente').val();
-            //       var name    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optName");
-            //       var address = $('option:selected', '#edit_agendamento_busca_cliente').attr("optAddress");
-            //       var post    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optPost");
-            //       var phone   = $('option:selected', '#edit_agendamento_busca_cliente').attr("optPhone");
-            //       var contact = $('option:selected', '#edit_agendamento_busca_cliente').attr("optContact");
-            //       var city    = $('option:selected', '#edit_agendamento_busca_cliente').attr("optCity");
-            //       var address2= $('option:selected', '#edit_agendamento_busca_cliente').attr("optAddress2");
-            //       var salespersonCode= $('option:selected', '#edit_agendamento_busca_cliente').attr("optSalespersonCode");                  
-                                
-            //       $('#edit_agendamento_n_cliente').val(id)
-            //       $('#edit_agendamento_fatura_endereco_complemento').val(address2)
-            //       $('#edit_agendamento_fatura_cidade').val(city)
-            //       $('#edit_agendamento_nome').val(name)
-            //       $('#edit_agendamento_fatura_cep').val(post)
-            //       $('#edit_agendamento_fatura_endereco').val(address)
-            //       $('#edit_agendamento_cod_vendendor').val(salespersonCode)
-                  
-                
-            //       console.log('resultado combo on change: ' + customer_no + ' id '+ id )
-                  
-            // }
+            
             var length1 = $('#edit_agendamento_busca_professional1 > option').length;
             console.log('Edit quandadide PROFESSIONAL: ',length)
             if (length1 == 1){
@@ -579,8 +481,8 @@ function StatusX(value){
                { "targets": -1, "data": null, 
                 "render": function (a,d){
                   var btn =""
-                    btn += "<button action='postando_agendamento' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Registrar</button>" ;
-                    btn += "<button action='edit' type='button' class='btn cur-p btn-info'>Editar</button>";
+                    //btn += "<button action='postando_agendamento' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Registrar</button>" ;
+                    //btn += "<button action='edit' type='button' class='btn cur-p btn-info'>Editar</button>";
                     return btn;
               }
             }]
@@ -780,7 +682,7 @@ $("#add_agendamento_service_type5").change(function(){
     var settings = {
       "async": true,
       "crossDomain": true,
-      "url": "http://www.nav.farmina.com.br:3001/api/ServiceHeaders/getServiceHeaderInsert",
+      "url": "http://www.nav.farmina.com.br:3001/api/funcoes/FunctionNewOrdem",
       "method": "POST",
       "headers": {
         "content-type": "application/x-www-form-urlencoded",
