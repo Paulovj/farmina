@@ -459,7 +459,7 @@ var chamaFinaliza = function(){
 
 
 function salvaEndereco(InvoiceNo_,PhotoFile){
-  alert('ewntrrou' + InvoiceNo_ + ' - ' +PhotoFile )
+  // alert('ewntrrou' + InvoiceNo_ + ' - ' +PhotoFile )
     var settings = {
       "async": true,
       "crossDomain": true,
