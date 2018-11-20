@@ -55,6 +55,7 @@ const
 
 const
   outputFiles = {
+    //bundle : 'Messages_fr.properties.js',
     bundle : 'bundle.js',
     vendor : 'vendor.js',
     css    : 'style.css',

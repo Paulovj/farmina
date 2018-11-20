@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Booking Service</title>
+    <title class="lOrdemAgendamento">Booking Service</title>
     <style>
       #loader {
         transition: all 0.3s ease-in-out;
@@ -127,7 +127,7 @@
               <span class="icon-holder">
                 <i class="c-blue-500 ti-home"></i>
               </span>
-              <span class="title">Dashboard</span>
+              <span class="title lDashboard">Dashboard</span>
             </a>
           </li>
           <li class="nav-item" id="menu_ordem_agendameno">
@@ -135,7 +135,7 @@
               <span class="icon-holder">
                 <i class="c-deep-orange-500 ti-calendar"></i>
               </span>
-              <span class="title">Ordem Agendamento</span>
+              <span class="title lOrdemAgendamento">Ordem Agendamento </span>
             </a>
           </li>
           <li class="nav-item" id="menu_servico_agendado">
@@ -143,7 +143,7 @@
               <span class="icon-holder">
                 <i class="c-orange-500 ti-layout-list-thumb"></i>
               </span>
-              <span class="title">Serviços Agendados</span>
+              <span class="title lServicoAgendado">Serviços Agendados</span>
             </a>
           </li>
           <!-- <li class="nav-item">
@@ -230,16 +230,16 @@
               </a>
               <ul class="dropdown-menu fsz-sm">
                 <li>
-                  <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                  <a href="setting.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
                     <i class="ti-settings mR-10"></i>
-                    <span>Setting</span>
+                    <span class="lSetting">Setting</span>
                   </a>
                 </li>
                 <li role="separator" class="divider"></li>
                 <li>
                   <a href="signin.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
                     <i class="ti-power-off mR-10"></i>
-                    <span>Logout</span>
+                    <span class="lLogout">Logout</span>
                   </a>
                 </li>
               </ul>
@@ -252,7 +252,7 @@
         <main class='main-content bgc-grey-100'>
           <div id='mainContent'>
             <div class="container-fluid">
-              <h4 class="c-grey-900 mT-10 mB-30">Ordem de Agendamento</h4>
+              <h4 class="c-grey-900 mT-10 mB-30 lOrdemAgendamento">Ordem de Agendamento</h4>
 
               <div class="row">
                 <div class="col-md-12">
@@ -260,30 +260,24 @@
                     <!-- <h4 class="c-grey-900 mB-20">Calendar</h4> -->
                     <div class="text-right mrg-top-30" style="margin-bottom:10px;">
                         <!-- <button type="button" class="btn cur-p btn-success" id="btn_add_agendamento">Nova Ordem Agendamento</button> -->
-                        <button type="button" class="btn cur-p btn-success" id="btn_cliente_agendamento">Nova Ordem Agendamento</button>
+                        <button type="button" class="btn cur-p btn-success lNovaOrdemAgendamento" id="btn_cliente_agendamento">Nova Ordem Agendamento</button>
                       </div>
                     <table id="dataTableOrdemAgendamento" class="table table-striped table-bordered" cellspacing="0" width="100%">
 
                         <thead>
                           <tr>
-                            <th>Document Type</th>
-                            <th>Salesperson Code</th>
-                            <th>Bill-to Address</th>
-                            <th>Nº Serviço</th>
-                            <th>Status</th>
-                            <th>Data Pedido</th>
-                            <th>Hora Pedido</th>
-                            <th>Nº Cliente</th>
-                            <!-- <th>Envio Codigo</th> --> 
-                            <th>Nome</th>
-                            <!-- <th>Cod Deposito</th> -->
-                            <!-- <th>Prioridade</th>
-                            <th>Id Usuario Atribuido</th> -->
-                            <th>Profissional</th>
-                            <th>Nome Profissional</th>
-                            <th> -Funções- </th>
-
-                          </tr>
+                            <th class="lDocumenttType">Document Type</th>
+                            <th class="lSalespersonCode">Salesperson Code</th>
+                            <th class="lBillToAddress">Bill-to Address</th>
+                            <th class="lNServico">Nº Serviço</th>
+                            <th class="lStatus">Status</th>
+                            <th class="lDataPedido">Data Pedido</th>
+                            <th class="lHoraPedido">Hora Pedido</th>
+                            <th class="lNCliente">Nº Cliente</th>
+                            <th class="lName">Nome</th>
+                            <th class="lProfissional">Profissional</th>
+                            <th class="lNomeProfissional">Nome Profissional</th>
+                            </tr>
                         </thead>
 
                         <tbody>

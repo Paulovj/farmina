@@ -15,6 +15,7 @@ const titles = {
    'ordem': 'ordem',
   // 'email': 'Email',
   // 'forms': 'Forms',
+   'setting': 'setting',
   // 'google-maps': 'Google Maps',
    'signin': 'Signin',
   // 'signup': 'Signup',
@@ -22,6 +23,7 @@ const titles = {
   // 'vector-maps': 'Vector Maps',
   // '404': '404',
   // '500': '500',
+  // 'basic-table': 'Basic Table',
   // 'basic-table': 'Basic Table',
 };
 

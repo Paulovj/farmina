@@ -378,6 +378,7 @@ var chamaFinaliza = function(){
       alert('Por favor, ecolher arquivo!');
       return false;
     }
+    var extensao = 'C:/MKT/FOTOS/'+pasta+'/'+$('#fileimagem')[0].files[0].name
     data.append('file', $('#fileimagem')[0].files[0]);
     //data.append('destino', './teste.png');
     
@@ -401,6 +402,7 @@ var chamaFinaliza = function(){
         $('#fileimagem').val('');
         $('#dataTableImagens').DataTable().destroy();
         loadImagensX(pasta);
+        salvaEndereco(pasta,extensao)
       });    
       //console.log(pasta)
       //loadImagensX(pasta);
@@ -446,6 +448,47 @@ var chamaFinaliza = function(){
     });
     
 };
+
+
+
+
+
+
+
+
+
+
+function salvaEndereco(InvoiceNo_,PhotoFile){
+  alert('ewntrrou' + InvoiceNo_ + ' - ' +PhotoFile )
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "http://www.nav.farmina.com.br:3001/api/ServiceHeaders/getInsertImages",
+      "method": "POST",
+      "headers": {
+        "content-type": "application/x-www-form-urlencoded",
+        "cache-control": "no-cache",
+        "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
+      },
+      "data": {        
+      "InvoiceNo_"  : InvoiceNo_,
+        "PhotoFile" : PhotoFile
+      }
+    }
+
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+
+        //$('#dataTableOrdemAgendamento').DataTable().destroy();
+        //loadAgendamento();
+        //$('#add-agendamento').modal('toggle');  
+        
+      });
+    }
+
+
+
+
   }  
 }());
 

@@ -17,3 +17,4 @@ import './datepicker';
 import './utils';
 import './ordem';
 import './login';
+import './setting';
