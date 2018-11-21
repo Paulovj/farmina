@@ -258,59 +258,45 @@
                 <div class="bgc-white p-20 bd">
                   <h6 class="c-grey-900 lSetting">Perfil do Usuário</h6>
                   <div class="mT-30">
-                    <form class="container" id="needs-validation" novalidate>
-                      
-                        <!-- <fieldset disabled> -->
-
-                            
-
-
+                    <!-- <form class="container" id="needs-validation" novalidate> -->
                       <div class="row">
                         <div class="col-md-6 mb-3">
-                          <label for="validationCustom01">First name</label>
-                          <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
+                          <label for="validationCustom01" class="lName">Name</label>
+                          <input type="text" class="form-control" id="NRecurso" placeholder="Name" value="" required disabled style="display:none">
+                          <input type="text" class="form-control" id="validationCustom01" placeholder="Name" value="" required disabled>
                         </div>
                         <div class="col-md-6 mb-3">
-                          <label for="validationCustom02">Last name</label>
-                          <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
+                          <label for="validationCustom02" class="lEmail">Email</label>
+                          <input type="text" class="form-control" id="validationCustom02" placeholder="Email" value="" required disabled>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-md-6 mb-3">
-                          <label for="validationCustom03">City</label>
-                          <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+                          <label for="validationCustom03" class="lCidade">Cidade</label>
+                          <input type="text" class="form-control" id="validationCustom03" placeholder="" required disabled>
                           <div class="invalid-feedback">
                             Please provide a valid city.
                           </div>
                         </div>
-                        <div class="col-md-3 mb-3">
-                          <label for="validationCustom04">State</label>
-                          <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
-                          <div class="invalid-feedback">
-                            Please provide a valid state.
-                          </div>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                          <label for="validationCustom05">Zip</label>
-                          <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
-                          <div class="invalid-feedback">
-                            Please provide a valid zip.
-                          </div>
-                        </div>
+                      
 
                         <div class="col-md-6 mb-3">
-                            <label for="validationCustom06">Idioma</label>
-                            <select id="validationCustom06" class="form-control" required>
+                            <label for="validationCustom04" class="lIdioma">Idioma</label>
+                            <select id="validationCustom04" class="form-control" required>
                               <option value=""> Selecione o Idioma </option>
-                              <option value="br"> Portugues</option>
-                              <option value="in"> Inglês</option>
+                              <option value="pt"> Portugues</option>
+                              <option value="en"> Inglês</option>
                             </select>
+                            <div class="invalid-feedback">
+                              Preenche o idioma
+                            </div>
                           </div>
 
                       </div>
-                      <button class="btn btn-primary" type="submit">Salvar Alteração</button>
-                      <!-- </fieldset> -->
-                    </form>
+                      <button class="btn btn-primary lRegistrar" id="perfilRegistrar">Registrar</button>
+                      <!-- <button class="btn btn-primary lRegistrar" type="submit">Registrar</button> -->
+                      <!--  -->
+                    <!-- </form> -->
                     
                   </div>
                 </div>
@@ -344,7 +330,7 @@
 
         <!-- ### $App Screen Footer ### -->
         <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
-          <span>Copyright © 2017 Designed by <a href="https://colorlib.com" target='_blank' title="Colorlib">Colorlib</a>. All rights reserved.</span>
+          
         </footer>
       </div>
     </div>

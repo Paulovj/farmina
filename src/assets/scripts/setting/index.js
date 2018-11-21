@@ -4,20 +4,49 @@ import 'bootstrap-notify'
 import 'jquery-i18n-properties'
 
 export default (function () {
-// Example starter JavaScript for disabling form submissions if there are invalid fields
- 
-    'use strict';
 
-    window.addEventListener('load', function() {
-      var form = document.getElementById('needs-validation');
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
+  $('#NRecurso').val(sessionStorage.No)
+  $('#validationCustom01').val(sessionStorage.Name)
+  $('#validationCustom02').val(sessionStorage.Email)
+  $('#validationCustom03').val(sessionStorage.UF)
+  $('#validationCustom04').val(sessionStorage.Language)
+
+
+    $("#perfilRegistrar").click(function(){
+      console.log('entrou na janela');
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://www.nav.farmina.com.br:3001/api/resourses/getUpdateLanguage",
+        "method": "POST",
+        "headers": {
+          "content-type": "application/x-www-form-urlencoded",
+          "cache-control": "no-cache",
+          "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
+        },
+        "data": {        
+          "NRecurso" :$("#NRecurso").val(),
+          "Idioma"   :$("#validationCustom04").val()
         }
-        form.classList.add('was-validated');
-      }, false);
-    }, false);
+      }
+  
+        $.ajax(settings).done(function (response) {
+          console.log(response)
+          var notify = $.notify('<strong>Carregando idioma ....</strong>', {
+            type: 'success',
+            allow_dismiss: false,
+            showProgressbar: true
+          });
+          sessionStorage.setItem("Language", $("#validationCustom04").val());
+          setTimeout(Carregando, 5000);
+
+        });
+  
+      });
+      
+      var Carregando = function(){
+        window.location = "setting.html"; 
+      };
   
 
 }());    

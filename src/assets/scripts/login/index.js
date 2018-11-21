@@ -30,13 +30,16 @@ $("#btn_login").click(function(){
 
       $.ajax(settings).done(function (response) {
         var result = response.result[0];
-        console.log(response.result[0]);        
+        console.log(response.result[0]);  
         sessionStorage.setItem("Name", result['Name']);
         sessionStorage.setItem("Email", result['e-Mail']);
         sessionStorage.setItem("Type", result['Resource Type']);
         sessionStorage.setItem("No", result['No_']);
         sessionStorage.setItem("UF", result['Territory Code']);
-        
+        sessionStorage.setItem("Language", result['Language Code']);
+        //console.log(sessionStorage);
+        //return
+        //$.cookie("Lang", sessionStorage.Lang);
 
 
         if (result['Resource Type'] == 0){
@@ -70,9 +73,12 @@ $("#btn_login").click(function(){
       }
     
     console.log(sessionStorage)
-    //$('#lLogin').html('TESTE 45454')
-
-    var lang ='';
+    var lang = "en";
+    if (sessionStorage.Language != ""){
+      lang = sessionStorage.Language
+    }
+    
+    
     $.i18n.properties({
        name: 'Messages',
        path: './',
@@ -107,6 +113,65 @@ $("#btn_login").click(function(){
         $('.lName').html($.i18n.prop('lName',lang));
         $('.lProfissional').html($.i18n.prop('lProfissional',lang));
         $('.lNomeProfissional').html($.i18n.prop('lNomeProfissional',lang));
+
+        $('.lConsultaCliente').html($.i18n.prop('lConsultaCliente',lang))
+        $('.lNomeCliente').html($.i18n.prop('lNomeCliente',lang))
+        $('.lPhone').html($.i18n.prop('lPhone',lang))
+        $('.lContato').html($.i18n.prop('lContato',lang))
+        $('.lAddress').html($.i18n.prop('lAddress',lang))
+        $('.lCidade').html($.i18n.prop('lCidade',lang))
+        $('.lCep').html($.i18n.prop('lCep',lang))
+        $('.lAddress2').html($.i18n.prop('lAddress2',lang))
+        $('.lEnderecoCompleto').html($.i18n.prop('lEnderecoCompleto',lang))
+        
+        $('.lPromotor1').html($.i18n.prop('lPromotor1',lang))
+        $('.lProfissional1').html($.i18n.prop('lProfissional1',lang))
+        $('.lPromotor2').html($.i18n.prop('lPromotor2',lang))
+        $('.lProfissional2').html($.i18n.prop('lProfissional2',lang))
+        $('.lPromotor3').html($.i18n.prop('lPromotor3',lang))
+        $('.lProfissional3').html($.i18n.prop('lProfissional3',lang))
+        $('.lPromotor4').html($.i18n.prop('lPromotor4',lang))
+        $('.lProfissional4').html($.i18n.prop('lProfissional4',lang))
+        $('.lPromotor5').html($.i18n.prop('lPromotor5',lang))
+        $('.lProfissional5').html($.i18n.prop('lProfissional5',lang))
+
+        $('.lDataPlanejada').html($.i18n.prop('lDataPlanejada',lang))
+        $('.lHoraPlanejada').html($.i18n.prop('lHoraPlanejada',lang))
+        $('.lTipoServico').html($.i18n.prop('lTipoServico',lang))
+        $('.lRegistrar').html($.i18n.prop('lRegistrar',lang))
+        $('.lCancelar').html($.i18n.prop('lCancelar',lang))
+
+
+        /* Datatable */
+        $('.lDataInicioEstimativa').html($.i18n.prop('lDataInicioEstimativa',lang))
+        $('.lDataInicio').html($.i18n.prop('lDataInicio',lang))
+        $('.lHoraInicio').html($.i18n.prop('lHoraInicio',lang))
+        $('.lDataFinal').html($.i18n.prop('lDatafinal',lang))
+        $('.lHoraFinal').html($.i18n.prop('lHoraFinal',lang))
+        $('.lFuncoes').html($.i18n.prop('lFuncoes',lang))
+        
+        $('.lEnviarFoto').html($.i18n.prop('lEnviarFoto',lang))
+        $('.lImages').html($.i18n.prop('lImages',lang))
+        $('.lFinalzarServico').html($.i18n.prop('lFinalzarServico',lang))
+        
+        $('.lFinalzarServicoAgendado').html($.i18n.prop('lFinalzarServicoAgendado',lang))
+        $('.lFuncao').html($.i18n.prop('lFuncao',lang))
+        $('.lNRecurso').html($.i18n.prop('lNRecurso',lang))
+        $('.lObservacaoInicial').html($.i18n.prop('lObservacaoInicial',lang))
+
+        $('.lQuantosClientesEntraramNaLoja').html($.i18n.prop('lQuantosClientesEntraramNaLoja',lang))
+        $('.lQuantosComprovantesForamEntregues').html($.i18n.prop('lQuantosComprovantesForamEntregues',lang))
+        $('.lQuantosProdutosForamVendidos').html($.i18n.prop('lQuantosProdutosForamVendidos',lang))
+        $('.lQuantosPlanosNacionaisForamGerados').html($.i18n.prop('lQuantosPlanosNacionaisForamGerados',lang))
+        $('.lQuantosKitsForamEntregues').html($.i18n.prop('lQuantosKitsForamEntregues',lang))
+        $('.lFinalizar').html($.i18n.prop('lFinalizar',lang))
+        $('.lIdioma').html($.i18n.prop('lIdioma',lang))
+        
+        
+        
+
+        
+        
         
       }
     });

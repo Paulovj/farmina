@@ -1,6 +1,7 @@
 import * as $ from 'jquery';
 import 'datatables';
 import moment from 'moment/src/moment';
+import { lang } from 'moment';
 
 export default (function () {
 
@@ -251,8 +252,12 @@ function formatHora(date) {
                 // }  
                   //btn += "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Iniciar</button>";
                   if (a['Status']==1){
-                    btn += "<button action='save_photo' code="+a['Service-Invoice-No_']+" type='button' class='btn cur-p btn-success' id='btn_finish_booking_upload'>Enviar Fotos / Finalizar </button>";
+                    btn += "<button action='save_photo' code="+a['Service-Invoice-No_']+" type='button' class='btn cur-p btn-success lEnviarFotosFinalizar' id='btn_finish_booking_upload'>Enviar Fotos / Finalizar </button>";
+
+                    
                   }
+                  var lang ='';
+                  $('.lEnviarFotosFinalizar').html($.i18n.prop('lEnviarFotosFinalizar',lang))
               return btn;
 
               }
@@ -263,7 +268,8 @@ function formatHora(date) {
         }        
          
       });
-
+      
+      
   };
 load();
   

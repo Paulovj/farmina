@@ -100,7 +100,7 @@
                 <div class="peers ai-c fxw-nw">
                   <div class="peer">
                     <div class="logo">
-                      <img class="img-fluid" src="assets/static/images/logo.png" alt="">
+                      <img src="assets/static/images/logo.png" alt="" width="70px">
                     </div>
                   </div>
                   <div class="peer peer-greed">
@@ -127,7 +127,7 @@
               <span class="icon-holder">
                 <i class="c-blue-500 ti-home"></i>
               </span>
-              <span class="title">Dashboard</span>
+              <span class="title lDashboard">Dashboard</span>
             </a>
           </li>
           <li class="nav-item" id="menu_ordem_agendameno">
@@ -135,7 +135,7 @@
               <span class="icon-holder">
                 <i class="c-deep-orange-500 ti-calendar"></i>
               </span>
-              <span class="title">Ordem Agendamento</span>
+              <span class="title lOrdemAgendamento">Ordem Agendamento </span>
             </a>
           </li>
           <li class="nav-item" id="menu_servico_agendado">
@@ -143,7 +143,7 @@
               <span class="icon-holder">
                 <i class="c-orange-500 ti-layout-list-thumb"></i>
               </span>
-              <span class="title">Serviços Agendados</span>
+              <span class="title lServicoAgendado">Serviços Agendados</span>
             </a>
           </li>
           <!-- <li class="nav-item">
@@ -232,14 +232,14 @@
                 <li>
                   <a href="setting.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
                     <i class="ti-settings mR-10"></i>
-                    <span>Setting</span>
+                    <span class="lSetting">Setting</span>
                   </a>
                 </li>
                 <li role="separator" class="divider"></li>
                 <li>
                   <a href="signin.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
                     <i class="ti-power-off mR-10"></i>
-                    <span>Logout</span>
+                    <span class="lLogout">Logout</span>
                   </a>
                 </li>
               </ul>
@@ -252,7 +252,7 @@
         <main class='main-content bgc-grey-100'>
           <div id='mainContent'>
             <div class="container-fluid">                
-              <h4 class="c-grey-900 mT-10 mB-30">Serviços Agendados</h4>
+              <h4 class="c-grey-900 mT-10 mB-30 lServicoAgendado">Serviços Agendados</h4>
                 
               <div class="row">
                 <div class="col-md-12">
@@ -265,28 +265,17 @@
                       
                         <thead>
                           <tr>
-                            <th>Nº. Recurso</th><!--  Resource No-->
-                            <th>Nome Cliente</th><!-- Customer Name -->
-                            <th>Nº. Serviço</th><!--  Service Invoice No -->
-                            <th>Tipo Serviço</th><!--  Service Type-->
-                            
-                            <th>Data Inicio Estimativa</th><!-- Estimated Starting Date -->
-
-                            <!-- <th>Estimated Finish Date </th> -->
-                            <th>Data Início</th><!-- Start Date -->
-                            <th>Hora Início</th><!--  Start Time-->
-                            <th>Data Final</th><!-- Finish Date -->
-                            <th>Hora Final</th><!--  Finish Time-->
-                            <!-- <th>Estimated Total Time</th> -->
-                            
-                            <!-- <th>Customer No</th>
-                            <th>Customer Address</th>
-                            <th>Salesperson Code</th> -->
-                            <!-- <th>Trainning Answer</th> -->
-                            <th>Status</th>
-                            
-                            <th> -Funções- </th>
-                            
+                            <th class="lNCliente">Nº. Recurso</th><!--  Resource No-->
+                            <th class="lNomeCliente">Nome Cliente</th><!-- Customer Name -->
+                            <th class="lNServico">Nº. Serviço</th><!--  Service Invoice No -->
+                            <th class="lTipoServico">Tipo Serviço</th><!--  Service Type-->                            
+                            <th class="lDataInicioEstimativa">Data Inicio Estimativa</th><!-- Estimated Starting Date -->
+                            <th class="lDataInicio">Data Início</th><!-- Start Date -->
+                            <th class="lHoraInicio">Hora Início</th><!--  Start Time-->
+                            <th class="lDataFinal">Data Final</th><!-- Finish Date -->
+                            <th class="lHoraFinal">Hora Final</th><!--  Finish Time-->
+                            <th class="lStatus">Status</th>
+                            <th class="lFuncoes"> -Funções- </th>
                           </tr>
                         </thead>
                         <!-- <tfoot>
@@ -466,7 +455,7 @@
         <div class="modal-dialog modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
           <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="m-0">Finalizar Serviço Agendamento</h5>          
+                  <h5 class="m-0 lFinalzarServicoAgendado">Finalizar Serviço Agendamento</h5>          
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
           <div class="modal-body">
@@ -474,24 +463,24 @@
   
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label class="fw-500">Nome Cliente</label>       
+                        <label class="fw-500 lNomeCliente">Nome Cliente</label>       
                         <input type="text" class="form-control" id="finish_service_invoice_no" placeholder="" value="" required disabled style="display:none;">
                         <input type="text" class="form-control" id="finish_service_invoice_line_no" placeholder="" value="" required disabled style="display:none;">
                         <input type="text" class="form-control" id="finish_customer_name" placeholder="" value="" required disabled>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label class="fw-500">Nº. Recurso</label>
+                        <label class="fw-500 lNRecurso">Nº. Recurso</label>
                       <input type="text" class="form-control" id="finish_resource_no" placeholder="" value="" required disabled>
                     </div>
                 </div>
   
                 <div class="row">
                   <div class="col-md-6 mb-3">
-                      <label class="fw-500">Função</label>     
+                      <label class="fw-500 lFuncao">Função</label>     
                     <input type="text" class="form-control" id="finish_function" placeholder="" value="" required disabled>
                   </div>
                   <div class="col-md-6 mb-3">
-                      <label class="fw-500">Tipo Serviço</label>     
+                      <label class="fw-500 lTipoServico">Tipo Serviço</label>     
                     <input type="text" class="form-control" id="finish_service_type" placeholder="" value="" required disabled>
                   </div>
               </div>
@@ -499,7 +488,7 @@
               
               <div class="row">
                   <div class="col-md-6 mb-3">
-                      <label class="fw-500">Cód. Vendendor</label>
+                      <label class="fw-500 lSalespersonCode">Cód. Vendendor</label>
                     <input type="text" class="form-control" id="finish_salesperson_code" placeholder="" value="" required disabled>
                   </div>
                   <!-- <div class="col-md-6 mb-3">
@@ -508,7 +497,7 @@
                   </div> -->
 
                   <div class="col-md-6 mb-3">
-                    <label class="fw-500">Data Inicio Estimativa</label>
+                    <label class="fw-500 lDataInicioEstimativa">Data Inicio Estimativa</label>
                   <div class="timepicker-input input-icon form-group">
                     <div class="input-group">
                       <div class="input-group-addon bgc-white bd bdwR-0">
@@ -523,7 +512,7 @@
   
                <div class="row">
                   <div class="col-md-6 mb-3">
-                      <label class="fw-500">Data Início</label>
+                      <label class="fw-500 lDataInicio">Data Início</label>
                     <div class="timepicker-input input-icon form-group">
                       <div class="input-group">
                         <div class="input-group-addon bgc-white bd bdwR-0">
@@ -535,7 +524,7 @@
                     </div>
                   </div>
                   <div class="col-md-6 mb-3">
-                      <label class="fw-500">Hora Início</label>
+                      <label class="fw-500 lHoraInicio">Hora Início</label>
                       <input type="time" id="finish_starting_hour" name="appt-time2" min="9:00" max="18:00" class="form-control" placeholder="" value="" required/>
                <!-- <span class="hours">Office hours: 9AM to 6PM</span> -->
                   </div>
@@ -543,7 +532,7 @@
   
               <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label class="fw-500">Data Final</label>
+                    <label class="fw-500 lDataFinal">Data Final</label>
                   <div class="timepicker-input input-icon form-group">
                     <div class="input-group">
                       <div class="input-group-addon bgc-white bd bdwR-0">
@@ -554,7 +543,7 @@
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <label class="fw-500">Hora Final</label>
+                    <label class="fw-500 lHoraFinal">Hora Final</label>
                     <input type="time" id="finish_time" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  />
                     
                     
@@ -562,18 +551,18 @@
             </div>
   
               <div class="form-group">
-                <label class="fw-500">Observação Inicial</label>
+                <label class="fw-500 lObservacaoInicial">Observação Inicial</label>
                 <textarea class="form-control bdc-grey-200" id="finish_starting_observation"> </textarea>
               </div>
   
   
               <div class="row">
                   <div class="col-md-6 mb-3">
-                      <label class="fw-500">Quantos clientes entraram na loja? </label>      
+                      <label class="fw-500 lQuantosClientesEntraramNaLoja">Quantos clientes entraram na loja? </label>      
                     <input type="text" class="form-control" id="finish_how_many_customers_entered_on_store" placeholder="" value="" required >
                   </div>
                   <div class="col-md-6 mb-3">
-                      <label class="fw-500">Quantos comprovantes foram entregues? </label>
+                      <label class="fw-500 lQuantosComprovantesForamEntregues">Quantos comprovantes foram entregues? </label>
                     <input type="text" class="form-control" id="finish_how_many_voucher_was_delivered" placeholder="" value="" required >
                   </div>
               </div>
@@ -581,25 +570,29 @@
   
               <div class="row">
                   <div class="col-md-6 mb-3">
-                      <label class="fw-500">Quantos produtos foram vendidos? </label>
+                      <label class="fw-500 lQuantosProdutosForamVendidos">Quantos produtos foram vendidos? </label>
                     <input type="text" class="form-control" id="finish_how_many_products_eas_sold" placeholder="" value="" required >
                   </div>
                   <div class="col-md-6 mb-3">
-                      <label class="fw-500">Quantos kits foram entregues? </label>
+                      <label class="fw-500 lQuantosKitsForamEntregues">Quantos kits foram entregues? </label>
                     <input type="text" class="form-control" id="finish_how_many_kits_was_delivered" placeholder="" value="" required >
                   </div>
               </div>
-  
+              <div class="row">
+
+
+              
               <div class="col-md-6 mb-3">
-                <label class="fw-500">Quantos planos nacionais foram gerados? </label>
+                <label class="fw-500 lQuantosPlanosNacionaisForamGerados">Quantos planos nacionais foram gerados? </label>
                 <input type="text" class="form-control bdc-grey-200" name="" id="finish_how_many_national_plans_was_generated">
               </div>
+            </div>
   
   
               <div class="text-right">
-                <button class="btn btn-danger cur-p" data-dismiss="modal" id="btn_finish_booking_cancel">Cancelar </button>
+                <button class="btn btn-danger cur-p lCancelar" data-dismiss="modal" id="btn_finish_booking_cancel">Cancelar </button>
                 <!-- <button class="btn btn-success cur-p" data-dismiss="modal" id="btn_finish_booking_upload">Upload photo </button> -->
-                <button class="btn btn-primary cur-p" id="btn_finish_booking">Finalizar </button>
+                <button class="btn btn-primary cur-p lFinalizar" id="btn_finish_booking">Finalizar </button>
               </div>
             </form>
           </div>
@@ -613,7 +606,7 @@
       <div class="modal-dialog modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="m-0">Enviar Foto</h5>          
+                <h5 class="m-0 lEnviarFoto">Enviar Foto</h5>          
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               </div>
         <div class="modal-body">
@@ -638,8 +631,8 @@
             <table id="dataTableImagens" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                   <tr>
-                    <th>Imagens</th>
-                    <th>Nome</th>
+                    <th class="lImages">Imagens</th>
+                    <th class="lNome">Nome</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -650,9 +643,9 @@
 
 
             <div class="text-right">
-              <button class="btn btn-danger cur-p" data-dismiss="modal" id="btn_finish_booking_cancel">Cancelar </button>
-              <button type="button" class="btn btn-primary cur-p"  id="btn_save_photo">Enviar Foto</button>
-              <button type="button" class="btn btn-success cur-p"  id="finished" >Finalizar Serviço</button>
+              <button class="btn btn-danger cur-p lCancelar" data-dismiss="modal" id="btn_finish_booking_cancel">Cancelar </button>
+              <button type="button" class="btn btn-primary cur-p lEnviarFoto"  id="btn_save_photo">Enviar Foto</button>
+              <button type="button" class="btn btn-success cur-p lFinalzarServico"  id="finished" >Finalizar Serviço</button>
             </div>
           </form>
         </div>
