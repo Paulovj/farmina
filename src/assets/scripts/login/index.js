@@ -166,6 +166,7 @@ $("#btn_login").click(function(){
         $('.lQuantosKitsForamEntregues').html($.i18n.prop('lQuantosKitsForamEntregues',lang))
         $('.lFinalizar').html($.i18n.prop('lFinalizar',lang))
         $('.lIdioma').html($.i18n.prop('lIdioma',lang))
+        $('.lBuscaCliente').html($.i18n.prop('lBuscaCliente',lang))
         
         
         
