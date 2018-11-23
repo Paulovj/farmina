@@ -37,7 +37,8 @@ function StatusX(value){
         valueX =  'Pendente';
       }else if(value==1){
         // valueX =  'To Do';
-        valueX =  'Iniciado';
+        // valueX =  'Iniciado';
+        valueX = '<span class="badge badge-pill fl-r badge-success lh-0 p-10">Iniciado</span>';
       }else if(value==2){
         // valueX =  'Started';
         valueX =  'Iniciado';

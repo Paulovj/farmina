@@ -2,13 +2,46 @@ import * as $ from 'jquery';
 import 'datatables';
 import moment from 'moment/src/moment';
 import { lang } from 'moment';
-
+import 'easy-pie-chart/dist/jquery.easypiechart.min.js';
 export default (function () {
+
+  
 
   if(window.location.pathname == '/datatable.html'){
 
   //var table = $('#dataTable').DataTable(); 
   var lDemographicItems ="";
+  
+  function formatDateStatus(data) {
+    //var data = '2018/11/22'
+    var falta = (new Date(data).getTime() - new Date().getTime()) / 1000;
+    var dias = Math.round(falta / 60 / 60 / 24);
+    var horas = Math.round(falta / 60 / 60 % 24);
+    var result =''
+    if (dias > 2 ){
+      result =  '<span class="badge badge-pill fl-r badge-info lh-0 p-10">faltam ' + dias + ' dia(s)</span>'
+    }else if (dias > 0 && dias <= 2){
+      result =  '<span class="badge badge-pill fl-r badge-warning lh-0 p-10">faltam ' + dias + ' dia(s)</span>'
+      //result = 'faltam ' + dias + ' dias'
+    }else if(dias == 0){
+      result =  '<span class="badge badge-pill fl-r badge-success lh-0 p-10">Chegou o dia</span>'
+      //result = ' chegou o dia'
+    }else if(dias < 0){
+      result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">atrasado ' + dias + ' dia(s)</span>'
+      //result = 'atrasdo ' + dias + ' dias'
+    }
+    return result
+
+    // var data =  moment(date).utc().format("DD/MM/Y")
+    //   if ((data=='01/01/1753') || (data =='01/01/1900')){
+    //       return ''
+    //   }else{
+    //     return data
+    //   }
+    // return data;
+    }
+
+
   function formatDate(date) {
     var data =  moment(date).utc().format("DD/MM/Y")
       if ((data=='01/01/1753') || (data =='01/01/1900')){
@@ -226,23 +259,27 @@ function formatHora(date) {
               // { "data" : "Customer-No_" },            
               // { "data" : "Customer-Address" },
               // { "data" : "Salesperson-Code" },
-              // { "data" : "Trainning-Answer-Type", "render": function ( data) {
-              //       return TrainingAnswer(data);              
-              //   }  
+               
               // },
 
               { "data" : "Status", "render": function ( data) {
                 if (data == 0){
                   return '<center> - - </center>'
                 }else if(data==1){
-                    return 'To Do';
+                    //return 'To Do';
+                    return '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">To Do</span>'
                 }else if(data==2){
                     return 'Started';            
                 }else if(data==3){
-                    return 'Accomplished';
-                }
-              } 
-            },
+                    ///return 'Accomplished';
+                    return '<span class="badge badge-pill fl-r badge-info lh-0 p-10">Accomplished</span>'
+                  }
+                } 
+              },
+              { "data" : "Estimated-Starting-Date", "render": function ( data) {
+                     return formatDateStatus(data);              
+                 },
+              },
               { "targets": -1, "data": null, 
               "render": function (a,d){
                 var btn =""
@@ -260,11 +297,16 @@ function formatHora(date) {
                   $('.lEnviarFotosFinalizar').html($.i18n.prop('lEnviarFotosFinalizar',lang))
               return btn;
 
+              
+
               }
+              
               
             }]
             
           });
+
+          
         }        
          
       });
