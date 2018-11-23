@@ -1,8 +1,6 @@
 import * as $ from 'jquery';
 import 'datatables';
 import moment from 'moment/src/moment';
-import { lang } from 'moment';
-import 'easy-pie-chart/dist/jquery.easypiechart.min.js';
 export default (function () {
 
   
@@ -12,24 +10,26 @@ export default (function () {
   //var table = $('#dataTable').DataTable(); 
   var lDemographicItems ="";
   
-  function formatDateStatus(data) {
+  function formatDateStatus(data,status) {
     //var data = '2018/11/22'
     var falta = (new Date(data).getTime() - new Date().getTime()) / 1000;
     var dias = Math.round(falta / 60 / 60 / 24);
     var horas = Math.round(falta / 60 / 60 % 24);
     var result =''
-    if (dias > 2 ){
-      result =  '<span class="badge badge-pill fl-r badge-info lh-0 p-10">faltam ' + dias + ' dia(s)</span>'
-    }else if (dias > 0 && dias <= 2){
-      result =  '<span class="badge badge-pill fl-r badge-warning lh-0 p-10">faltam ' + dias + ' dia(s)</span>'
-      //result = 'faltam ' + dias + ' dias'
-    }else if(dias == 0){
-      result =  '<span class="badge badge-pill fl-r badge-success lh-0 p-10">Chegou o dia</span>'
-      //result = ' chegou o dia'
-    }else if(dias < 0){
-      result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">atrasado ' + dias + ' dia(s)</span>'
-      //result = 'atrasdo ' + dias + ' dias'
-    }
+    if(status != 3){
+      if (dias > 2 ){
+        result =  '<span class="badge badge-pill fl-r badge-info lh-0 p-10">faltam ' + dias + ' dia(s)</span>'
+      }else if (dias > 0 && dias <= 2){
+        result =  '<span class="badge badge-pill fl-r badge-warning lh-0 p-10">faltam ' + dias + ' dia(s)</span>'
+        //result = 'faltam ' + dias + ' dias'
+      }else if(dias == 0){
+        result =  '<span class="badge badge-pill fl-r badge-success lh-0 p-10">Chegou o dia</span>'
+        //result = ' chegou o dia'
+      }else if(dias < 0){
+        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">atrasado ' + dias + ' dia(s)</span>'
+        //result = 'atrasdo ' + dias + ' dias'
+      }
+    }  
     return result
 
     // var data =  moment(date).utc().format("DD/MM/Y")
@@ -276,8 +276,8 @@ function formatHora(date) {
                   }
                 } 
               },
-              { "data" : "Estimated-Starting-Date", "render": function ( data) {
-                     return formatDateStatus(data);              
+              { "data" : -1 , "data":null, "render": function (data,d) {
+                     return formatDateStatus(data['Estimated-Starting-Date'],data['Status'])              
                  },
               },
               { "targets": -1, "data": null, 
