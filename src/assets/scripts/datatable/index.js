@@ -23,7 +23,7 @@ export default (function () {
         result =  '<span class="badge badge-pill fl-r badge-warning lh-0 p-10">faltam ' + dias + ' dia(s)</span>'
         //result = 'faltam ' + dias + ' dias'
       }else if(dias == 0){
-        result =  '<span class="badge badge-pill fl-r badge-success lh-0 p-10">Chegou o dia</span>'
+        result =  '<span class="badge badge-pill fl-r badge-success lh-0 p-10">Tarefa do dia</span>'
         //result = ' chegou o dia'
       }else if(dias < 0){
         result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">atrasado ' + dias + ' dia(s)</span>'

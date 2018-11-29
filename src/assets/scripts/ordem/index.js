@@ -8,6 +8,17 @@ export default (function () {
   if(window.location.pathname == '/ordem.html'){
 
 
+   
+
+  //   $("#add_agendamento_planned_date1").datepicker({
+  //     dateFormat: 'dd/mm/yy',
+  //     beforeShowDay: function(dateText, inst) {
+
+  //     }
+  // });
+
+  //$('.day').attr('data-toggle="tooltip"')
+  
   var lDemographicItems ="";
   function formatDate(date) {
     var data =  moment(date).utc().format("DD/MM/Y")
