@@ -1,9 +1,13 @@
 import * as $ from 'jquery';
 import 'datatables';
 import moment from 'moment/src/moment';
+import 'jquery-i18n-properties'
 export default (function () {
 
-  
+  var lang = "en";
+    if (sessionStorage.Language != ""){
+      lang = sessionStorage.Language
+    }
 
   if(window.location.pathname == '/datatable.html'){
 
@@ -16,17 +20,22 @@ export default (function () {
     var dias = Math.round(falta / 60 / 60 / 24);
     var horas = Math.round(falta / 60 / 60 % 24);
     var result =''
+    var texto = ''
     if(status != 3){
       if (dias > 2 ){
-        result =  '<span class="badge badge-pill fl-r badge-info lh-0 p-10">faltam ' + dias + ' dia(s)</span>'
+        texto  = $.i18n.prop('lDiasRestante',lang)
+        result =  '<span class="badge badge-pill fl-r badge-info lh-0 p-10">' + dias + ' ' +texto +'</span>'
       }else if (dias > 0 && dias <= 2){
-        result =  '<span class="badge badge-pill fl-r badge-warning lh-0 p-10">faltam ' + dias + ' dia(s)</span>'
+        texto  = $.i18n.prop('lDiasRestante',lang)
+        result =  '<span class="badge badge-pill fl-r badge-warning lh-0 p-10">' + dias + ' - ' + texto + ' </span>'
         //result = 'faltam ' + dias + ' dias'
       }else if(dias == 0){
-        result =  '<span class="badge badge-pill fl-r badge-success lh-0 p-10">Tarefa do dia</span>'
+        texto  = $.i18n.prop('lTarefaDia',lang)
+        result =  '<span class="badge badge-pill fl-r badge-success lh-0 p-10">' + texto + '</span>'
         //result = ' chegou o dia'
       }else if(dias < 0){
-        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">atrasado ' + dias + ' dia(s)</span>'
+        texto  = $.i18n.prop('lAtrasado',lang)
+        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">' + dias + ' ' + texto +'</span>'
         //result = 'atrasdo ' + dias + ' dias'
       }
     }  
@@ -101,7 +110,7 @@ function formatHora(date) {
         }else if(value==3){
           Service_TypeX =  'ISP';
         }else if(value==4){
-          Service_TypeX =  'Merchan';
+          Service_TypeX =  'Merchandising';
         }else if(value==5){
           Service_TypeX =  'Army';
         }
@@ -134,6 +143,7 @@ function formatHora(date) {
           var data = $("#dataTable").DataTable().row( $(this).parents('tr') ).data();
           var id = data['Service-Invoice-No_'];
           var Service_Invoice_Line_No = data['Service-Invoice-Line-No_'];
+          var Service_type = data['Service-Type'];
                 
           if($(this).attr('action') == "starting"){
               $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/"+id, success: function(result){
@@ -197,7 +207,23 @@ function formatHora(date) {
 
             if ($(this).attr('action')=="save_photo"){
                 //var x = $(this).attr(id);
+                $('#photo_service_merchadising_menssage').hide();
+                $('#photo_service_army_menssage').hide();
+                $('#photo_service_isp_menssage').hide();
+                $('#photo_service_trainning_menssage').hide();
                 console.log(data )
+                if(Service_type == 4 ){
+                  $('#photo_service_merchadising_menssage').show();
+                }
+                if(Service_type == 5 ){
+                  $('#photo_service_army_menssage').show();
+                }
+                if(Service_type == 3 ){
+                  $('#photo_service_isp_menssage').show();
+                }
+                if(Service_type == 1 ){
+                  $('#photo_service_trainning_menssage').show();
+                }
                 $('#photo_service_invoice_line_no').val(Service_Invoice_Line_No);
                 $('#photo_service_invoice_no').val(id);
                 $('#dataTableImagens').DataTable().destroy();
@@ -263,16 +289,20 @@ function formatHora(date) {
               // },
 
               { "data" : "Status", "render": function ( data) {
+                var texto = ''
                 if (data == 0){
                   return '<center> - - </center>'
                 }else if(data==1){
+                  texto = $.i18n.prop('lToDo',lang)
                     //return 'To Do';
-                    return '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">To Do</span>'
+                    return '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">'+texto+'</span>'
                 }else if(data==2){
-                    return 'Started';            
+                   texto = $.i18n.prop('lStarted',lang)
+                    return texto;
                 }else if(data==3){
+                  texto = $.i18n.prop('lAccomplished',lang)
                     ///return 'Accomplished';
-                    return '<span class="badge badge-pill fl-r badge-info lh-0 p-10">Accomplished</span>'
+                    return '<span class="badge badge-pill fl-r badge-info lh-0 p-10">'+ texto+'</span>'
                   }
                 } 
               },
@@ -288,11 +318,11 @@ function formatHora(date) {
                 //   btn += "<button action='finished' type='button' class='btn cur-p btn-info'>Finalizar</button>";
                 // }  
                   //btn += "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Iniciar</button>";
-                  if (a['Status']==1){
+                  if (a['Status']==1 || a['Service-Type']==4){
                     btn += "<button action='save_photo' code="+a['Service-Invoice-No_']+" type='button' class='btn cur-p btn-success lEnviarFotosFinalizar' id='btn_finish_booking_upload'>Enviar Fotos / Finalizar </button>";
-
-                    
                   }
+
+                  
                   var lang ='';
                   $('.lEnviarFotosFinalizar').html($.i18n.prop('lEnviarFotosFinalizar',lang))
               return btn;

@@ -140,6 +140,15 @@ $("#btn_login").click(function(){
         $('.lTipoServico').html($.i18n.prop('lTipoServico',lang))
         $('.lRegistrar').html($.i18n.prop('lRegistrar',lang))
         $('.lCancelar').html($.i18n.prop('lCancelar',lang))
+        $('.lSelecione').html($.i18n.prop('lSelecione',lang))
+        $('.lTreinamento').html($.i18n.prop('lTreinamento',lang))
+        $('.lKitBoasVindas').html($.i18n.prop('lKitBoasVindas',lang))
+        $('.lISP').html($.i18n.prop('lISP',lang))
+        $('.lMerchandising').html($.i18n.prop('lMerchandising',lang))
+        $('.lArmy').html($.i18n.prop('lArmy',lang))
+        
+        
+
 
 
         /* Datatable */
@@ -167,6 +176,26 @@ $("#btn_login").click(function(){
         $('.lFinalizar').html($.i18n.prop('lFinalizar',lang))
         $('.lIdioma').html($.i18n.prop('lIdioma',lang))
         $('.lBuscaCliente').html($.i18n.prop('lBuscaCliente',lang))
+        $('.lStatusControle').html($.i18n.prop('lStatusControle',lang))
+
+
+        $('.lMerchadisingMenssage').html($.i18n.prop('lMerchadisingMenssage',lang))
+        $('.larmyMenssage').html($.i18n.prop('larmyMenssage',lang))
+        $('.lISPMenssage').html($.i18n.prop('lISPMenssage',lang))
+        $('.ltrainningMenssage').html($.i18n.prop('ltrainningMenssage',lang))
+        $('.lFood').html($.i18n.prop('lFood',lang))
+        $('.lTrainningType').html($.i18n.prop('lTrainningType',lang))
+        $('.lTrainningComments').html($.i18n.prop('lTrainningComments',lang))
+        $('.lPushNewLine').html($.i18n.prop('lPushNewLine',lang))
+        $('.lLineSlowComments').html($.i18n.prop('lLineSlowComments',lang))
+
+        $('.lDry').html($.i18n.prop('lDry',lang))
+        $('.lWet').html($.i18n.prop('lWet',lang))
+        $('.lRefreshment').html($.i18n.prop('lRefreshment',lang))
+        $('.lNewlineStore').html($.i18n.prop('lNewlineStore',lang))
+        
+        //$('.lMerchadisingMenssage').html($.i18n.prop('lMerchadisingMenssage',lang))
+        
         
         
         

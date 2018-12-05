@@ -617,6 +617,15 @@ function PromoterServiceTypeX(promoter,value,action){
   var lblCont ="";
   $("#"+action+"_agendamento_service_result"+promoter+ " option").remove();
   $("#div_"+action+"_agendamento_service_result"+promoter).show()
+  $("#add_agendamento_food"+promoter).val("0");
+  $("#add_agendamento_push_new_line"+promoter).val("");
+  $("#add_agendamento_line_slow_comments"+promoter).val("");  
+  
+  $("#add_agendamento_trainning_type"+promoter).val("0");
+  $("#add_agendamento_trainning_comments"+promoter).val("");
+
+
+  
   if(value==1){
     //traning
     lblCont =" Treinamento para qual linha?";
@@ -625,31 +634,74 @@ function PromoterServiceTypeX(promoter,value,action){
     contX +='<option value="2"> ND PUMPKIN </option>';
     contX +='<option value="3"> ND QUINOA </option>';
     contX +='<option value="4"> ND ANCESTRAL</option>';
-    contX +='<option value="4"> ND PRIME VET LIFE</option>';
-    contX +='<option value="4"> INSTITUCIONAL</option>';
+    contX +='<option value="5"> ND PRIME</option>';
+    contX +='<option value="6"> ND VET LIFE</option>';
+    contX +='<option value="7"> INSTITUCIONAL</option>';
+    contX +='<option value="8"> OCEAN LINE</option>';
+    contX +='<option value="9"> GENERAL NUTRITION</option>';
+    contX +='<option value="10"> WET PRODUCTS</option>';
+    $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
+    $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
+    
+    $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).show();
+    $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).show();
+
+    
   }else if(value==2){
+    //KITS
     lblCont =" Para qual linha você gostaria kit de boas vindas?";
     contX +='<option value="0">  </option>';
     contX +='<option value="1"> ND QUINOA </option>';
     contX +='<option value="2"> ND PUMPKIN </option>';
     contX +='<option value="3"> ND ANCESTRAL </option>';
     contX +='<option value="4"> ND PRIME </option>';    
+    contX +='<option value="5"> ND VET LIFE</option>';    
+    contX +='<option value="6"> OCEAN LINE</option>';
+    
+    $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
+    $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
+
+    
   }else if(value==3){
+    //ISP
     lblCont =" Por que você está fazendo isso ISP? ";
     contX +='<option value="0">  </option>';
     contX +='<option value="1"> PUSH NEW LINE </option>';
     contX +='<option value="2"> LINE SLOW </option>';
     contX +='<option value="3"> GENERIC </option>';
+    $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
+    $("#div_"+action+"_agendamento_service_result_push"+promoter).show();
+    $("#div_"+action+"_agendamento_service_result_line"+promoter).show();
+    $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
+
+    
   }else if(value==4){
+    //MERCHANDISSING
     lblCont =" Que tipo de merchandising você quer? ";
     contX +='<option value="0">  </option>';
     contX +='<option value="1"> SHELF ORGANIZATION </option>';
     contX +='<option value="2"> STICKER DECOR </option>';
     contX +='<option value="3"> NEW SHELF </option>';
+    $("#div_"+action+"_agendamento_service_result_food"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
+    
   }else if(value==5){
     lblCont =" Army ? ";
     contX +='<option value="0">  </option>';
-    $("#div_"+action+"_agendamento_service_result"+promoter).hide()    
+    $("#div_"+action+"_agendamento_service_result"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
+    
   }  
   
   $("#lbl_"+action+"_agendamento_service_result"+promoter).html(lblCont)
@@ -688,6 +740,7 @@ $("#add_agendamento_service_type5").change(function(){
 });
 
 
+
   $("#btn_add_ordem_agendamento").click(function(){
     console.log('entrou na janela');
     var data = new FormData();
@@ -722,30 +775,60 @@ $("#add_agendamento_service_type5").change(function(){
         "PlannedHours1"           :$("#add_agendamento_planned_hour1").val(),
         "ServiceType1"            :$("#add_agendamento_service_type1").val(),
         "ProfessionalFunction1"   :$("#add_agendamento_service_result1").val(),
+
+        "Food1"                    :$("#add_agendamento_food1").val(),
+        "TrainningType1"           :$("#add_agendamento_trainning_type1").val(),
+        "TrainningComments1"       :$("#add_agendamento_trainning_comments1").val(),
+        "PushNewLine1"             :$("#add_agendamento_push_new_line1").val(),
+        "LineSlowComments1"        :$("#add_agendamento_line_slow_comments1").val(),
         
         "Professional2"           :$("#add_agendamento_busca_professional2").val(),
         "PlannedDate2"            :formatDateSql($("#add_agendamento_planned_date2").val()),
         "PlannedHours2"           :$("#add_agendamento_planned_hour2").val(),
         "ServiceType2"            :$("#add_agendamento_service_type2").val(),
         "ProfessionalFunction2"   :$("#add_agendamento_service_result2").val(),
+
+        "Food2"                    :$("#add_agendamento_food2").val(),
+        "TrainningType2"           :$("#add_agendamento_trainning_type2").val(),
+        "TrainningComments2"       :$("#add_agendamento_trainning_comments2").val(),
+        "PushNewLine2"             :$("#add_agendamento_push_new_line2").val(),
+        "LineSlowComments2"        :$("#add_agendamento_line_slow_comments2").val(),
         
         "Professional3"            :$("#add_agendamento_busca_professional3").val(),
         "PlannedDate3"            :formatDateSql($("#add_agendamento_planned_date3").val()),
         "PlannedHours3"           :$("#add_agendamento_planned_hour3").val(),
         "ServiceType3"            :$("#add_agendamento_service_type3").val(),
         "ProfessionalFunction3"   :$("#add_agendamento_service_result3").val(),
+
+        "Food3"                    :$("#add_agendamento_food3").val(),
+        "TrainningType3"           :$("#add_agendamento_trainning_type3").val(),
+        "TrainningComments3"       :$("#add_agendamento_trainning_comments3").val(),
+        "PushNewLine3"             :$("#add_agendamento_push_new_line3").val(),
+        "LineSlowComments3"        :$("#add_agendamento_line_slow_comments3").val(),
         
         "Professional4"           :$("#add_agendamento_busca_professional4").val(),
         "PlannedDate4"            :formatDateSql($("#add_agendamento_planned_date4").val()),
         "PlannedHours4"           :$("#add_agendamento_planned_hour4").val(),
         "ServiceType4"            :$("#add_agendamento_service_type4").val(),
         "ProfessionalFunction4"   :$("#add_agendamento_service_result4").val(),
+
+        "Food4"                    :$("#add_agendamento_food4").val(),
+        "TrainningType4"           :$("#add_agendamento_trainning_type4").val(),
+        "TrainningComments4"       :$("#add_agendamento_trainning_comments4").val(),
+        "PushNewLine4"             :$("#add_agendamento_push_new_line4").val(),
+        "LineSlowComments4"        :$("#add_agendamento_line_slow_comments4").val(),
         
         "Professional5"           :$("#add_agendamento_busca_professional5").val(),
         "PlannedDate5"            :formatDateSql($("#add_agendamento_planned_date5").val()),
         "PlannedHours5"           :$("#add_agendamento_planned_hour5").val(),
         "ServiceType5"            :$("#add_agendamento_service_type5").val(),
         "ProfessionalFunction5"   :$("#add_agendamento_service_result5").val(),
+
+        "Food5"                    :$("#add_agendamento_food5").val(),
+        "TrainningType5"           :$("#add_agendamento_trainning_type5").val(),
+        "TrainningComments5"       :$("#add_agendamento_trainning_comments5").val(),
+        "PushNewLine5"             :$("#add_agendamento_push_new_line5").val(),
+        "LineSlowComments5"        :$("#add_agendamento_line_slow_comments5").val(),
         
       }
     }
@@ -1021,6 +1104,12 @@ $("#add_agendamento_service_type5").change(function(){
 
 
   $("#btn_cliente_agendamento").click(function(){
+    $('.start-date1').val('').datepicker('destroy')
+    $('.start-date2').val('').datepicker('destroy')
+    $('.start-date3').val('').datepicker('destroy')
+    $('.start-date4').val('').datepicker('destroy')
+    $('.start-date5').val('').datepicker('destroy')
+
     var table = $('#dataTableClienteAgendamento').DataTable();
     var length = table.column(0).data().length;
     $('#action_cliente_agendamento').val('i')
