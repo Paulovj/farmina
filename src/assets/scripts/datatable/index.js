@@ -234,6 +234,48 @@ function formatHora(date) {
 
         });
 
+        $("#finish_able_to_get_more_space").change(function(){
+          var valor      = $(this).val();
+          $('#finish_many_additional_meters').val('0');
+          if(valor == 1){
+            $('#finish_many_additional_meters_sim').show();
+          }else{
+            $('#finish_many_additional_meters_sim').hide();
+          }
+        });
+
+        $("#finish_get_additional_space_out").change(function(){
+          var valor      = $(this).val();
+          $('#finish_type_space_out_of_shelves').val('0');
+          if(valor == 1){
+            $('#finish_type_space_out_of_shelves_sim').show();
+          }else{
+            $('#finish_type_space_out_of_shelves_sim').hide();
+          }
+        });
+
+
+        $("#finish_implemented_seasonal_sticker").change(function(){
+          var valor      = $(this).val();
+          $('#finish_type_seasonal_sticker').val('0');
+          if(valor == 1){
+            $('#finish_type_seasonal_sticker_sim').show();
+          }else{
+            $('#finish_type_seasonal_sticker_sim').hide();
+          }
+        });
+
+        $("#finish_implemented_branding").change(function(){
+          var valor      = $(this).val();
+          $('#finish_type_branding').val('0');
+          if(valor == 1){
+            $('#finish_type_branding_sim').show();
+          }else{
+            $('#finish_type_branding_sim').hide();
+          }
+        });
+        
+
 
     
     function load() {       
@@ -383,9 +425,30 @@ $("#btn_finish_booking").click(function(){
   var Many_Products = $("#finish_how_many_products_eas_sold").val();
   var Many_Kits = $("#finish_how_many_kits_was_delivered").val();
   var Many_Nutrional_Plans = $("#finish_how_many_national_plans_was_generated").val();
+  
+  var Many_Bags = $("#finish_how_many_bags").val();
+  var Many_Cans = $("#finish_how_many_cans").val();
+  var Many_Kg = $("#finish_how_many_kg").val();
+
+  var Delivered = $("#finish_delivered").val();
+
+  var Trainning_Type = $('#finish_trainning_type').val()
+  var Trainning_Comments = $('#finish_trainning_comments').val()
+
+  var finish_number_shelves                   = $('#finish_number_shelves').val()
+  var finish_able_to_place_on_better_position = $('#finish_able_to_place_on_better_position').val()
+  var finish_able_to_get_more_space           = $('#finish_able_to_get_more_space').val()
+  var finish_get_additional_space_out         = $('#finish_get_additional_space_out').val()
+  var finish_many_additional_meters           = $('#finish_many_additional_meters').val()
+  var finish_type_space_out_of_shelves        = $('#finish_type_space_out_of_shelves').val()
+  var finish_implemented_seasonal_sticker     = $('#finish_implemented_seasonal_sticker').val()
+  var finish_implemented_branding             = $('#finish_implemented_branding').val()
+  var finish_type_seasonal_sticker            = $('#finish_type_seasonal_sticker').val()
+  var finish_type_branding                    = $('#finish_type_branding').val()
 
   
-  $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getUpdateFinish?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no+"&Finish-Date="+finish_date+"&Finish-Time="+finish_time+"&Many-Customers=" + Many_Customers + "&Many-Voucher=" + Many_Voucher + "&Many-Products=" + Many_Products + "&Many-Kits=" + Many_Kits + "&Many-Nutrional-Plans=" + Many_Nutrional_Plans + "&starting_date="+ starting_date + "&starting_hour=" + starting_hour + "&starting_observation=" + starting_observation, success: function(result){
+
+  $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getUpdateFinish?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no+"&Finish-Date="+finish_date+"&Finish-Time="+finish_time+"&Many-Customers=" + Many_Customers + "&Many-Voucher=" + Many_Voucher + "&Many-Products=" + Many_Products + "&Many-Kits=" + Many_Kits + "&Many-Nutrional-Plans=" + Many_Nutrional_Plans + "&starting_date="+ starting_date + "&starting_hour=" + starting_hour + "&starting_observation=" + starting_observation + "&Many-Bags="+Many_Bags+ "&Many-Cans="+Many_Cans+ "&Many-Kg="+Many_Kg + "&Delivered="+Delivered+ "&Trainning-Type="+Trainning_Type+ "&Trainning-Comments="+Trainning_Comments+"&finish-number-shelves="+finish_number_shelves+"&finish-able-to-place-on-better-position="+finish_able_to_place_on_better_position+"&finish-able-to-get-more-space="+finish_able_to_get_more_space+"&finish-get-additional-space-out="+finish_get_additional_space_out+"&finish-many-additional-meters="+finish_many_additional_meters+"&finish-type-space-out-of-shelves="+finish_type_space_out_of_shelves+"&finish-implemented-seasonal-sticker="+finish_implemented_seasonal_sticker+"&finish-implemented-branding="+finish_implemented_branding+"&finish-type-seasonal-sticker="+finish_type_seasonal_sticker+"&finish-type-branding="+finish_type_branding   , success: function(result){
     $('#finish-service-booking').modal('toggle');
     var oTblReport = $('#dataTable').DataTable().destroy();
 
@@ -402,40 +465,84 @@ $("#btn_finish_booking").click(function(){
   var id  = $("#photo_service_invoice_no").val();
   var line_no  = $("#photo_service_invoice_line_no").val();
   
-  //http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources?filter=%7B%22where%22%20%3A%20%7B%22Service-Invoice-No_%22%3A%22WEBSO00025%22%2C%22Service-Invoice-Line-No_%22%3A%20%2225300%22%7D%7D
-  var query = '{"where" : {"Service-Invoice-No_":"' + id + '","Service-Invoice-Line-No_": "' + line_no + '"}}'
-
-    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources?filter="+query, success: function(result){
-      var result = result[0] ;
-      console.log(result[0])
+    //var query = '{"where" : {"Service-Invoice-No_":"' + id + '","Service-Invoice-Line-No_": "' + line_no + '"}}'
+    //$.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources?filter="+query, success: function(result){
+    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/QueryBookingResourseRelatorio?service_invoice_no="+ id +"&service_invoce_line_no="+line_no, success: function(result){
+      var result = result.result[0] ;
+      console.log('Enmtroou no formmmmmm')
+      console.log(result)
     // $("#btn_finish_booking_upload").attr("code",result['Service-Invoice-No_']);
-
-      $('#finish_service_invoice_no').val(result['Service-Invoice-No_']);  
-      $('#finish_service_invoice_line_no').val(result['Service-Invoice-Line-No_']);
-
-    $('#finish_customer_name').val(result['Customer-Name']);  
-    $('#finish_resource_no').val(result['Resource-No_']);
-    $('#finish_function').val(FunctionX(result['Function']));//no
-    $('#finish_service_type').val(ServiceType(result['Service-Type']));
-    $('#finish_salesperson_code').val(result['Salesperson-Code']);
-
-    $('#finish_training_for_which_line').val(TrainingAnswer(result['Trainning-Answer-Type']));//no
-    $('#finish_estimated_starting_date').val(formatDate(result['Estimated-Starting-Date']));
-    $('#finish_starting_date').val(formatDate(result['Starting-Date']));
-    $('#finish_starting_hour').val(formatHora(result['Starting-Time']));
+    $('#finish_question_Isp').hide();
+    $('#finish_question_Kit').hide();
+    $('#finish_question_trainning').hide();
+    $('#finish_question_merchandising').hide();
     
-    $('#finish_estimated_total_time').val(formatHora(result['Estimated-Total-Time']));
-    $('#finish_starting_observation').val(result['Starting-Observation']);//no
-    console.log('time> '+formatHora(result['Finish-Time']))
-    $('#finish_date').val(formatDate(result['Finish-Date']));
-    $('#finish_time').val(formatHora(result['Finish-Time']));
+    $('#finish_many_additional_meters_sim').hide();
+    $('#finish_type_space_out_of_shelves_sim').hide();
+    $('#finish_type_seasonal_sticker_sim').hide();
+    $('#finish_type_branding_sim').hide();
+    
+
+    if(result['Service Type'] == 1){
+      $('#finish_question_trainning').show();
+    }
+    if(result['Service Type'] == 2){
+      $('#finish_question_Kit').show();
+    }
+    if(result['Service Type'] == 3){
+      $('#finish_question_Isp').show();
+    }
+    if(result['Service Type'] == 4){
+      $('#finish_question_merchandising').show();
+    }
+    
+      $('#finish_service_invoice_no').val(result['Service Invoice No_']);  
+      $('#finish_service_invoice_line_no').val(result['Service Invoice Line No_']);
+
+    $('#finish_customer_name').val(result['Customer Name']);  
+    $('#finish_resource_no').val(result['Resource No_']);
+    $('#finish_function').val(FunctionX(result['Function']));//no
+    $('#finish_service_type').val(ServiceType(result['Service Type']));
+    $('#finish_salesperson_code').val(result['Salesperson Code']);
+
+    $('#finish_training_for_which_line').val(TrainingAnswer(result['Trainning Answer Type']));//no
+    $('#finish_estimated_starting_date').val(formatDate(result['Estimated Starting Date']));
+    $('#finish_starting_date').val(formatDate(result['Starting Date']));
+    $('#finish_starting_hour').val(formatHora(result['Starting Time']));
+    
+    $('#finish_estimated_total_time').val(formatHora(result['Estimated Total Time']));
+    $('#finish_starting_observation').val(result['Starting Observation']);//no
+    console.log('time> '+formatHora(result['Finish Time']))
+    $('#finish_date').val(formatDate(result['Finish Date']));
+    $('#finish_time').val(formatHora(result['Finish Time']));
 
 
-    $('#finish_how_many_customers_entered_on_store').val(result['Many-Customers'])//no
-    $('#finish_how_many_voucher_was_delivered').val(result['Many-Voucher'])//no
-    $('#finish_how_many_products_eas_sold').val(result['Many-Products'])//no
-    $('#finish_how_many_kits_was_delivered').val(result['Many-Kits'])//no
-    $('#finish_how_many_national_plans_was_generated').val(result['Many-Nutrional-Plans'])//no
+    $('#finish_how_many_customers_entered_on_store').val(result['Many Customers'])//no
+    $('#finish_how_many_voucher_was_delivered').val(result['Many Voucher'])//no
+    $('#finish_how_many_products_eas_sold').val(result['Many Products'])//no
+    $('#finish_how_many_kits_was_delivered').val(result['Many Kits'])//no
+    $('#finish_how_many_national_plans_was_generated').val(result['Many Nutrional Plans'])//no
+    $('#finish_how_many_bags').val(result['Many Bags'])
+    $('#finish_how_many_cans').val(result['Many Cans'])
+    $('#finish_how_many_kg').val(result['Many KG'])
+    
+    $('#finish_delivered').val(result['Delivered'])
+
+    $('#finish_trainning_type').val(result['Trainning Type'])
+    $('#finish_trainning_comments').val(result['Trainning Comments'])
+   
+   
+    $('#finish_number_shelves').val(result['Number of Shelves'])
+    $('#finish_able_to_place_on_better_position').val(result['Able to Place Better Position'])
+    $('#finish_able_to_get_more_space').val(result['Able to get more space'])
+    $('#finish_get_additional_space_out').val(result['Get Additional space out'])
+    $('#finish_many_additional_meters').val(result['Many Additional Meters'])
+    $('#finish_type_space_out_of_shelves').val(result['Type Space out of shelves'])
+    $('#finish_implemented_seasonal_sticker').val(result['Implemented seasonal sticker'])
+    $('#finish_implemented_branding').val(result['Implemented Branding'])
+    $('#finish_type_seasonal_sticker').val(result['Type Seasonal Sticker'])
+    $('#finish_type_branding').val(result['Type Branding'])
+    
   }});
   setTimeout(chamaFinaliza, 1000);
 

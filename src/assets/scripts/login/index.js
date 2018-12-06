@@ -194,8 +194,9 @@ $("#btn_login").click(function(){
         $('.lRefreshment').html($.i18n.prop('lRefreshment',lang))
         $('.lNewlineStore').html($.i18n.prop('lNewlineStore',lang))
         
-        //$('.lMerchadisingMenssage').html($.i18n.prop('lMerchadisingMenssage',lang))
-        
+        $('.lQuantasSacolasdeComidaSecaVoceVendeu').html($.i18n.prop('lQuantasSacolasdeComidaSecaVoceVendeu',lang));
+        $('.lQuantasLatasVoceVendeu').html($.i18n.prop('lQuantasLatasVoceVendeu',lang));
+        $('.lQuantosKhVendeuAberto').html($.i18n.prop('lQuantosKhVendeuAberto',lang));
         
         
         

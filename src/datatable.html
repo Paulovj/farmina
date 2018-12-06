@@ -460,7 +460,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
           <div class="modal-body">
-            <form>
+            <!-- <form> -->
   
                 <div class="row">
                     <div class="col-md-6 mb-3">
@@ -555,7 +555,45 @@
                 <label class="fw-500 lObservacaoInicial">Observação Inicial</label>
                 <textarea class="form-control bdc-grey-200" id="finish_starting_observation"> </textarea>
               </div>
-  
+              <!-- TRAINNING 1**************************************************************************************************************************-->
+              <fieldset id="finish_question_trainning" style="display:none;">
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label class="fw-500 lTrainningType">Trainning Type</label>
+                          <select id="finish_trainning_type" class="form-control">
+                            <option selected value="0" class="lSelecione">Selecione</option>
+                            <option value="1" class="lRefreshment">Refreshment</option>
+                            <option value="2" class="lNewlineStore">New line in the store</option>
+                          </select>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 mb-6">
+                          <label class="fw-500 lTrainningComments">Trainning Comments</label>
+                          <textarea id='finish_trainning_comments' class="form-control bdc-grey-200" > </textarea>
+                        </div>
+                      </div>  
+
+                </fieldset>
+               <!-- TRAINNING 1 **************************************************************************************************************************--> 
+
+              <!-- WELCOME KIT 2**************************************************************************************************************************-->
+              <fieldset id="finish_question_Kit" style="display:none;">
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                          <label class="fw-500 lEntregue">Entregue? </label>      
+                        <select id="finish_delivered" class="form-control">
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
+                            </select>
+                      </div>                      
+                  </div>
+                </fieldset>
+               <!-- FIM WELCOME KIT **************************************************************************************************************************--> 
+
+              <!-- ISP 3**************************************************************************************************************************-->
+              <fieldset id="finish_question_Isp" style="display:none;">
   
               <div class="row">
                   <div class="col-md-6 mb-3">
@@ -579,23 +617,154 @@
                     <input type="text" class="form-control" id="finish_how_many_kits_was_delivered" placeholder="" value="" required >
                   </div>
               </div>
-              <div class="row">
-
-
               
+              <div class="row">
               <div class="col-md-6 mb-3">
                 <label class="fw-500 lQuantosPlanosNacionaisForamGerados">Quantos planos nacionais foram gerados? </label>
                 <input type="text" class="form-control bdc-grey-200" name="" id="finish_how_many_national_plans_was_generated">
               </div>
             </div>
-  
+
+
+            
+
+
+                <div class="row">
+                    
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-500 lQuantasSacolasdeComidaSecaVoceVendeu">Quantas sacolas de comida seca você vendeu? </label>
+                        <input type="text" class="form-control bdc-grey-200" name="" id="finish_how_many_bags">
+                      </div>
+    
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label class="fw-500 lQuantasLatasVoceVendeu">Quantas latas você vendeu? </label>
+                        <input type="text" class="form-control bdc-grey-200" name="" id="finish_how_many_cans">
+                      </div>
+      
+                      <div class="col-md-6 mb-3">
+                          <label class="fw-500 lQuantosKhVendeuAberto">Quantos KG vendeu dos sacos abertos? </label>
+                          <input type="text" class="form-control bdc-grey-200" name="" id="finish_how_many_kg">
+                        </div>
+      
+                    </div>
+                  </fieldset>
+                   <!-- FIM ISP **************************************************************************************************************************--> 
+
+                    <!-- MERCHANDISING 4**************************************************************************************************************************-->
+              <fieldset id="finish_question_merchandising" style="display:none;">
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                          <label class="fw-500 lNumeroPrateleirasProdutosFarmina">Número de prateleiras com produtos Farmina? </label>      
+                          <input type="text" class="form-control bdc-grey-200" name="" id="finish_number_shelves">
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                          <label class="fw-500 lConseguiuColocarProdutoFarminaPosicaoMelhor">Você conseguiu colocar os produtos Farmina em uma posição melhor? </label>      
+                        <select id="finish_able_to_place_on_better_position" class="form-control">
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
+                            </select>
+                      </div>
+                  </div>
+
+                
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                          <label class="fw-500 lConseguiuEspacoProduto">Você conseguiu mais espaço para produtos? </label>      
+                        <select id="finish_able_to_get_more_space" class="form-control">
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
+                            </select>
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                          <label class="fw-500 lConseguiuEspacoAdicionalForaPrateleira">Você conseguiu espaço adicional fora das prateleiras? </label>      
+                        <select id="finish_get_additional_space_out" class="form-control">
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
+                            </select>
+                      </div>
+                  </div>
+                  
+                  <!--DISPLAY NONE-->
+                  <div class="row" id="finish_many_additional_meters_sim" style="display:none;">
+                      <div class="col-md-12 mb-3">
+                        <label class="fw-500 lQuantosMedidoresAdicionais">Quantos medidores adicionais?</label>
+                        <input type="text" class="form-control bdc-grey-200" name="" id="finish_many_additional_meters">
+                      </div>
+                    </div>
+                  <!--DISPLAY NONE-->  
+                    <div class="row" id="finish_type_space_out_of_shelves_sim" style="display:none;">
+                        <div class="col-md-12 mb-3">
+                          <label class="fw-500 lEspacoAdicionalPara">o espaço adicional é para?</label>
+                          <select id="finish_type_space_out_of_shelves" class="form-control">
+                              <option value="0">Selecione</option>
+                              <option value="1">pallet space</option>
+                              <option value="2">carton shelf</option>
+                              <option value="3">other display</option>
+                              </select>
+                        </div>
+                      </div>
+
+
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                          <label class="fw-500 lImplementouCampanhaAdesivoSazonal">Você já implementou campanha de adesivo sazonal?  </label>      
+                        <select id="finish_implemented_seasonal_sticker" class="form-control">
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
+                            </select>
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                          <label class="fw-500 lImplementouMarca">Você implementou a marca? </label>      
+                        <select id="finish_implemented_branding" class="form-control">
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
+                            </select>
+                      </div>
+                  </div>
+
+                  <!--DISPLAY NONE-->
+                  <div class="row" id="finish_type_seasonal_sticker_sim" style="display:none;">
+                      <div class="col-md-12 mb-3">
+                        <label class="fw-500 lCampanhaAdesivoSazonal">A campanha de adesivo sazonal?</label>
+                        <select id="finish_type_seasonal_sticker" class="form-control">
+                            <option value="0">Selecione</option>
+                            <option value="1">Winter</option>
+                            <option value="2">Christmas</option>
+                            <option value="3">Valentine Day</option>
+                            <option value="3">Spring</option>
+                            <option value="3">Woman’s Day</option>
+                            <option value="3">Halloween</option>
+                            </select>
+                      </div>
+                    </div>
+
+                    <!--DISPLAY NONE-->
+                    <div class="row" id="finish_type_branding_sim" style="display:none;">
+                        <div class="col-md-12 mb-3">
+                          <label class="fw-500 lQuantasLatasVoceVendeu">Você implementou a marca qual tipo?</label>
+                          <select id="finish_type_branding" class="form-control">
+                              <option value="0">Selecione</option>
+                              <option value="1">Full branding</option>
+                              <option value="2">Open branding</option>                              
+                              </select>
+                        </div>
+                      </div>
+
+                </fieldset>
+               <!-- Fim MERCHANDISING 4**************************************************************************************************************************--> 
+
   
               <div class="text-right">
                 <button class="btn btn-danger cur-p lCancelar" data-dismiss="modal" id="btn_finish_booking_cancel">Cancelar </button>
                 <!-- <button class="btn btn-success cur-p" data-dismiss="modal" id="btn_finish_booking_upload">Upload photo </button> -->
                 <button class="btn btn-primary cur-p lFinalizar" id="btn_finish_booking">Finalizar </button>
               </div>
-            </form>
+            <!-- </form> -->
           </div>
         </div>
       </div>
