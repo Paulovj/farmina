@@ -4,6 +4,16 @@ import 'bootstrap-notify'
 import 'jquery-i18n-properties'
 
 export default (function () {
+  var paisX = sessionStorage.Pais
+  var urlX = "";
+  var urlImgX = ""
+  if(paisX == "Brasil"){
+    urlX = "http://www.nav.farmina.com.br:3001/api/";
+    
+  }else{
+    urlX = "http://mkt.farmina.com:3001/api/"
+  }
+ 
 
   $('#NRecurso').val(sessionStorage.No)
   $('#validationCustom01').val(sessionStorage.Name)
@@ -17,7 +27,8 @@ export default (function () {
       var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://www.nav.farmina.com.br:3001/api/resourses/getUpdateLanguage",
+        // "url": "http://www.nav.farmina.com.br:3001/api/resourses/getUpdateLanguage",
+        "url": urlX+"resourses/getUpdateLanguage",
         "method": "POST",
         "headers": {
           "content-type": "application/x-www-form-urlencoded",
@@ -25,6 +36,7 @@ export default (function () {
           "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
         },
         "data": {        
+          "Pais" : paisX,
           "NRecurso" :$("#NRecurso").val(),
           "Idioma"   :$("#validationCustom04").val()
         }

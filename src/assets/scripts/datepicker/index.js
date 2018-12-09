@@ -6,7 +6,16 @@ import moment from 'moment/src/moment';
 
 
 export default (function () {
-
+  var paisX = sessionStorage.Pais
+  var urlX = "";
+  var urlImgX = ""
+  if(paisX == "Brasil"){
+    urlX = "http://www.nav.farmina.com.br:3001/api/";
+    
+  }else{
+    urlX = "http://mkt.farmina.com:3001/api/"
+  }
+ 
   $( "#add_agendamento_busca_professional1" ).change(function() {
     agendamentoX(this.value,1);
   });
@@ -18,7 +27,8 @@ export default (function () {
   function agendamentoX(recurso,number){
     // $('.start-date').val('').datepicker('update','');
     $('.start-date'+number).val('').datepicker('destroy')
-    $.getJSON("http://www.nav.farmina.com.br:3001/api/resourses/getRecursoAgendamento?recurso="+recurso, function(result) { 
+    // $.getJSON("http://www.nav.farmina.com.br:3001/api/resourses/getRecursoAgendamento?recurso="+recurso, function(result) { 
+      $.getJSON(urlX+"resourses/getRecursoAgendamento?Pais="+paisX+"&recurso="+recurso, function(result) { 
         // success: function(result){
         if(result.result.length > 0){
           console.log('entrou ' + result.result.length)

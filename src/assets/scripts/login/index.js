@@ -6,15 +6,21 @@ import 'jquery-i18n-properties'
 
 export default (function () {
 
-
 $("#btn_login").click(function(){
     console.log('entrou na janela');
     var data = new FormData();
-    
+    var pais = $("#login_pais").val();
+    var url = "";
+    if(pais == "Brasil"){
+      url = "http://www.nav.farmina.com.br:3001/api/"
+    }else{
+      url = "http://mkt.farmina.com:3001/api/"
+    }
+
     var settings = {
       "async": true,
       "crossDomain": true,
-      "url": "http://www.nav.farmina.com.br:3001/api/resourses/getResourseLogin",
+      "url": url+"resourses/getResourseLogin",
       "method": "POST",
       "headers": {
         "content-type": "application/x-www-form-urlencoded",
@@ -22,6 +28,7 @@ $("#btn_login").click(function(){
         "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
       },
       "data": {        
+        "Pais"   :pais,
         "Email"   :$("#login_email").val(),
         "Senha"   :$("#loginPassword").val(),
         
@@ -31,6 +38,7 @@ $("#btn_login").click(function(){
       $.ajax(settings).done(function (response) {
         var result = response.result[0];
         console.log(response.result[0]);  
+        sessionStorage.setItem("Pais", pais);
         sessionStorage.setItem("Name", result['Name']);
         sessionStorage.setItem("Email", result['e-Mail']);
         sessionStorage.setItem("Type", result['Resource Type']);
@@ -197,6 +205,25 @@ $("#btn_login").click(function(){
         $('.lQuantasSacolasdeComidaSecaVoceVendeu').html($.i18n.prop('lQuantasSacolasdeComidaSecaVoceVendeu',lang));
         $('.lQuantasLatasVoceVendeu').html($.i18n.prop('lQuantasLatasVoceVendeu',lang));
         $('.lQuantosKhVendeuAberto').html($.i18n.prop('lQuantosKhVendeuAberto',lang));
+
+        $('.lEntregue').html($.i18n.prop('lEntregue',lang))
+        $('.lQuantosClientesEntraramNaLoja').html($.i18n.prop('lQuantosClientesEntraramNaLoja',lang))
+        $('.lQuantosComprovantesForamEntregues').html($.i18n.prop('lQuantosComprovantesForamEntregues',lang))
+        $('.lQuantosProdutosForamVendidos').html($.i18n.prop('lQuantosProdutosForamVendidos',lang))
+        $('.lQuantosKitsForamEntregues').html($.i18n.prop('lQuantosKitsForamEntregues',lang))
+        $('.lQuantosPlanosNacionaisForamGerados').html($.i18n.prop('lQuantosPlanosNacionaisForamGerados',lang))
+        $('.lQuantasSacolasdeComidaSecaVoceVendeu').html($.i18n.prop('lQuantasSacolasdeComidaSecaVoceVendeu',lang))
+        $('.lQuantasLatasVoceVendeu').html($.i18n.prop('lQuantasLatasVoceVendeu',lang))
+        $('.lQuantosKhVendeuAberto').html($.i18n.prop('lQuantosKhVendeuAberto',lang))
+        $('.lNumeroPrateleirasProdutosFarmina').html($.i18n.prop('lNumeroPrateleirasProdutosFarmina',lang))
+        $('.lConseguiuColocarProdutoFarminaPosicaoMelhor').html($.i18n.prop('lConseguiuColocarProdutoFarminaPosicaoMelhor',lang))
+        $('.lConseguiuEspacoProduto').html($.i18n.prop('lConseguiuEspacoProduto',lang))
+        $('.lConseguiuEspacoAdicionalForaPrateleira').html($.i18n.prop('lConseguiuEspacoAdicionalForaPrateleira',lang))
+        $('.lQuantosMedidoresAdicionais').html($.i18n.prop('lQuantosMedidoresAdicionais',lang))
+        $('.lImplementouCampanhaAdesivoSazonal').html($.i18n.prop('lImplementouCampanhaAdesivoSazonal',lang))
+        $('.lImplementouMarca').html($.i18n.prop('lImplementouMarca',lang))
+        $('.lCampanhaAdesivoSazonal').html($.i18n.prop('lCampanhaAdesivoSazonal',lang))
+        $('.lQuantasLatasVoceVendeu').html($.i18n.prop('lQuantasLatasVoceVendeu',lang))
         
         
         

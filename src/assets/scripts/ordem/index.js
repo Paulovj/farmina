@@ -7,7 +7,13 @@ export default (function () {
 
   if(window.location.pathname == '/ordem.html'){
 
-
+    var paisX = sessionStorage.Pais
+    var urlX = "";
+    if(paisX == "Brasil"){
+      urlX = "http://www.nav.farmina.com.br:3001/api/";
+    }else{
+      urlX = "http://mkt.farmina.com:3001/api/"
+    }
    
 
   //   $("#add_agendamento_planned_date1").datepicker({
@@ -212,7 +218,7 @@ function StatusX(value){
             var length1 = $('#edit_agendamento_busca_professional1 > option').length;
             console.log('Edit quandadide PROFESSIONAL: ',length)
             if (length1 == 1){
-              $.ajax({url: "http://www.nav.farmina.com.br:3001/api/resourses/getResourseQuery", success: function(obj){
+              $.ajax({url: urlX+"resourses/getResourseQuery?Pais="+paisX, success: function(obj){
                 var contX = "";
                   $.each(obj.result, function(index, value){
                     var val = value.No_ + ' | ' + value.Name;
@@ -445,7 +451,7 @@ function StatusX(value){
     
     function loadAgendamento() {  
       
-      $.ajax({url: "http://www.nav.farmina.com.br:3001/api/ServiceHeaders/getServiceHeaderQuery", success: function(result){    
+      $.ajax({url: urlX+"ServiceHeaders/getServiceHeaderQuery?Pais="+paisX, success: function(result){    
         var jsonString = result.result //for testing  
         console.log('retorno agendamento: ', jsonString)
       var oTblReportAgendamento = $("#dataTableOrdemAgendamento")
@@ -558,58 +564,58 @@ $("#edit_agendamento_busca_cliente").change(function(){
   console.log('resultado combo on change: ' + name + ' id '+ id )
 });
 
-$("#btn_add_agendamento").click(function(){
+// $("#btn_add_agendamento").click(function(){
 
-  var length = $('#add_agendamento_busca_cliente > option').length;
-  console.log('quandadide de pop: ',length)
-  if (length == 1){
-    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Customers/", success: function(result){
-      //add_agendamento_busca_cliente
-      var contX = "";
-        $.each(result, function(index, value){
-          var val = value.No_ + ' | ' + value.Name +' | '+ value.Address + ' | ' + value['City']  + ' | ' + value['Post Code']  + ' | ' + value['Phone No_'] + ' | '+ value.Contact;
-          var optName     = 'optName = "'+value.Name+'"';
-          var optAddress  = 'optAddress = "'+value.Address+'"';
-          var optPost     = 'optPost = "'+value['Post Code']+'"';
-          var optPhone    = 'optPhone = "'+value['Phone No_']+'"';
-          var optContact  = 'optContact = "'+value.Contact+'"';
-          var optCity     = 'optCity = "'+value.City+'"';
-          var optAddress2 = 'optAddress2 = "'+value['Address 2']+'"';
-          var optSalespersonCode = 'optSalespersonCode = "'+value['Salesperson Code']+'"';
+//   var length = $('#add_agendamento_busca_cliente > option').length;
+//   console.log('quandadide de pop: ',length)
+//   if (length == 1){
+//     $.ajax({url: urlX+"http://www.nav.farmina.com.br:3001/api/Customers/", success: function(result){
+//       //add_agendamento_busca_cliente
+//       var contX = "";
+//         $.each(result, function(index, value){
+//           var val = value.No_ + ' | ' + value.Name +' | '+ value.Address + ' | ' + value['City']  + ' | ' + value['Post Code']  + ' | ' + value['Phone No_'] + ' | '+ value.Contact;
+//           var optName     = 'optName = "'+value.Name+'"';
+//           var optAddress  = 'optAddress = "'+value.Address+'"';
+//           var optPost     = 'optPost = "'+value['Post Code']+'"';
+//           var optPhone    = 'optPhone = "'+value['Phone No_']+'"';
+//           var optContact  = 'optContact = "'+value.Contact+'"';
+//           var optCity     = 'optCity = "'+value.City+'"';
+//           var optAddress2 = 'optAddress2 = "'+value['Address 2']+'"';
+//           var optSalespersonCode = 'optSalespersonCode = "'+value['Salesperson Code']+'"';
           
 
-            contX +='<option value='+ value.No_ +' '+ optSalespersonCode + ' '+ optCity +' '+ optName +' '+ optAddress2 +' '+ optAddress +' '+ optPost +' '+ optPhone +' '+ optContact +' > '+val+' </option>';
-        })
-        $("#add_agendamento_busca_cliente").append(contX)
+//             contX +='<option value='+ value.No_ +' '+ optSalespersonCode + ' '+ optCity +' '+ optName +' '+ optAddress2 +' '+ optAddress +' '+ optPost +' '+ optPhone +' '+ optContact +' > '+val+' </option>';
+//         })
+//         $("#add_agendamento_busca_cliente").append(contX)
 
-      }
-    });
-  }
+//       }
+//     });
+//   }
   
-  var length1 = $('#add_agendamento_busca_professional1 > option').length;
-  console.log('quandadide PROFESSIONAL: ',length)
-  if (length1 == 1){
-    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/resourses/getResourseQuery", success: function(obj){
-      var contX = "";
-        $.each(obj.result, function(index, value){
-          var val = value.No_ + ' | ' + value.Name;
-          var optName     = 'optName = "'+value.Name+'"';
-          contX +='<option value='+ value.No_ +' '+ optName + ' > '+val+' </option>';
-        })
-        $("#add_agendamento_busca_professional1").append(contX)
-        $("#add_agendamento_busca_professional2").append(contX)
-        $("#add_agendamento_busca_professional3").append(contX)
-        $("#add_agendamento_busca_professional4").append(contX)
-        $("#add_agendamento_busca_professional5").append(contX)
-        $("#add_agendamento_busca_professional6").append(contX)
+//   var length1 = $('#add_agendamento_busca_professional1 > option').length;
+//   console.log('quandadide PROFESSIONAL: ',length)
+//   if (length1 == 1){
+//     $.ajax({url: "http://www.nav.farmina.com.br:3001/api/resourses/getResourseQuery", success: function(obj){
+//       var contX = "";
+//         $.each(obj.result, function(index, value){
+//           var val = value.No_ + ' | ' + value.Name;
+//           var optName     = 'optName = "'+value.Name+'"';
+//           contX +='<option value='+ value.No_ +' '+ optName + ' > '+val+' </option>';
+//         })
+//         $("#add_agendamento_busca_professional1").append(contX)
+//         $("#add_agendamento_busca_professional2").append(contX)
+//         $("#add_agendamento_busca_professional3").append(contX)
+//         $("#add_agendamento_busca_professional4").append(contX)
+//         $("#add_agendamento_busca_professional5").append(contX)
+//         $("#add_agendamento_busca_professional6").append(contX)
 
 
-      }
-    });
-  }
+//       }
+//     });
+//   }
 
-  $('#add-agendamento').modal('toggle');  
-})
+//   $('#add-agendamento').modal('toggle');  
+// })
 
 
 function PromoterServiceTypeX(promoter,value,action){
@@ -748,7 +754,9 @@ $("#add_agendamento_service_type5").change(function(){
     var settings = {
       "async": true,
       "crossDomain": true,
-      "url": "http://www.nav.farmina.com.br:3001/api/funcoes/FunctionNewOrdem",
+      // "url": "http://www.nav.farmina.com.br:3001/api/funcoes/FunctionNewOrdem",
+       "url": urlX+"funcoes/FunctionNewOrdem",
+      
       "method": "POST",
       "headers": {
         "content-type": "application/x-www-form-urlencoded",
@@ -756,6 +764,7 @@ $("#add_agendamento_service_type5").change(function(){
         "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
       },
       "data": {        
+       "Pais"             : paisX,
        "DocumentType"             : "0",
        //"No_"                      : $("#add_agendamento_n").val(),
        "CustomerNo_"              : $("#add_agendamento_n_cliente").val(),
@@ -853,7 +862,8 @@ $("#add_agendamento_service_type5").change(function(){
         var settings = {
           "async": true,
           "crossDomain": true,
-          "url": "http://www.nav.farmina.com.br:3001/api/ServiceHeaders/getServiceHeaderUpdate",
+          // "url": "http://www.nav.farmina.com.br:3001/api/ServiceHeaders/getServiceHeaderUpdate",
+          "url": urlX+"ServiceHeaders/getServiceHeaderUpdate",
           "method": "POST",
           "headers": {
             "content-type": "application/x-www-form-urlencoded",
@@ -861,6 +871,7 @@ $("#add_agendamento_service_type5").change(function(){
             "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
           },
           "data": {        
+           "Pais"             : paisX,
            "DocumentType"             : "0",
            "No_"                      : $("#edit_agendamento_n").val(),
            "CustomerNo_"              : $("#edit_agendamento_n_cliente").val(),
@@ -930,7 +941,8 @@ $("#add_agendamento_service_type5").change(function(){
     var settings = {
       "async": true,
       "crossDomain": true,
-      "url": "http://www.nav.farmina.com.br:3001/api/ServiceHeaders/getServiceHeaderPost",
+      // "url": "http://www.nav.farmina.com.br:3001/api/ServiceHeaders/getServiceHeaderPost",
+       "url": urlX+"ServiceHeaders/getServiceHeaderPost",
       "method": "POST",
       "headers": {
         "content-type": "application/x-www-form-urlencoded",
@@ -938,6 +950,7 @@ $("#add_agendamento_service_type5").change(function(){
         "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
       },
       "data": {        
+        "Pais"   :paisX,
         "No_"   :$("#post_agendamento_no").val(),
       }
     }
@@ -992,7 +1005,8 @@ $("#add_agendamento_service_type5").change(function(){
     var settings1 = {
       "async": true,
       "crossDomain": true,
-      "url": "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getInsertBooking",
+      // "url": "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getInsertBooking",
+       "url": urlX+"Farmina-1-Service-Booking-Resources/getInsertBooking",
       "method": "POST",
       "headers": {
         "content-type": "application/x-www-form-urlencoded",
@@ -1000,6 +1014,7 @@ $("#add_agendamento_service_type5").change(function(){
         "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
       },
       "data": {
+        "Pais":paisX,
         "photo_path":$('#post_photo_path').val(),
         "service_invoce_no":$('#post_service_invoce_no').val(),
         "service_invoce_line_no1":$('#post_service_invoce_line_no'+Profissional1).val(),
@@ -1029,7 +1044,8 @@ $("#add_agendamento_service_type5").change(function(){
     var settings1 = {
       "async": true,
       "crossDomain": true,
-      "url": "http://www.nav.farmina.com.br:3001/api/Containers",
+      // "url": "http://www.nav.farmina.com.br:3001/api/Containers",
+       "url": urlX+"Containers",
       "method": "POST",
       "headers": {
         "content-type": "application/x-www-form-urlencoded",
@@ -1073,7 +1089,8 @@ $("#add_agendamento_service_type5").change(function(){
     var settings1 = {
       "async": true,
       "crossDomain": true,
-      "url": "http://www.nav.farmina.com.br:3001/api/resourses/getResourseEnviaEmail",
+      // "url": "http://www.nav.farmina.com.br:3001/api/resourses/getResourseEnviaEmail",
+      "url": urlX+"resourses/getResourseEnviaEmail",
       "method": "POST",
       "headers": {
         "content-type": "application/x-www-form-urlencoded",
@@ -1081,6 +1098,7 @@ $("#add_agendamento_service_type5").change(function(){
         "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
       },
       "data": {
+        "Pais":paisX,
         "nome_so":$('#post_service_invoce_no').val(),
         "nome_servico":$('#post_agendamento_no').val(),
         "nome_loja":$('#post_customer_name').val(),
@@ -1123,7 +1141,7 @@ $("#add_agendamento_service_type5").change(function(){
      var length1 = $('#add_agendamento_busca_professional1 > option').length;
      console.log('quandadide PROFESSIONAL: ',length)
      if (length1 == 1){
-       $.ajax({url: "http://www.nav.farmina.com.br:3001/api/resourses/getResourseQuery", success: function(obj){
+       $.ajax({url: urlX+"resourses/getResourseQuery?Pais="+paisX, success: function(obj){
          var contX = "";
            $.each(obj.result, function(index, value){
              var val = value.No_ + ' | ' + value.Name;
@@ -1220,13 +1238,17 @@ $("#add_agendamento_service_type5").change(function(){
   function loadClienteX() {  
     // $('#dataKTableClienteAgendamento').DataTable().destroy();
     var query = "";
+    var queryTerritory =""
     if(sessionStorage.Type =='0'){
-      query = '{"where":{"Territory Code": "' + sessionStorage.UF + '"}}';
-      //query = '{"where":{"Territory Code": "RJ"}}';
+      //query = '{"where":{"Territory Code": "' + sessionStorage.UF + '"}}';
+      queryTerritory = '&Territory='+sessionStorage.UF;
     }
     
-    $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Customers?filter="+query, success: function(result){    
-    var jsonString = result //for testing  
+    // $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Customers?filter="+query, success: function(result){
+    $.ajax({url: urlX+"Customers/getCustomerQuery?Pais="+paisX+queryTerritory, success: function(result){
+      
+
+    var jsonString = result.result //for testing  
     var tableClienteAgendamento = $("#dataTableClienteAgendamento")
     tableClienteAgendamento.DataTable ({
           "data" : jsonString,
