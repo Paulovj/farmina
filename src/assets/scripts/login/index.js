@@ -7,9 +7,39 @@ import 'jquery-i18n-properties'
 export default (function () {
 
 $("#btn_login").click(function(){
+  var pais = $("#login_pais").val();
+  var email = $("#login_email").val()
+  var password = $("#loginPassword").val()
+  var texto = "";
+  var valid = 0
+
+  if(pais =='0'){
+    valid = '1';
+    texto += 'Por favor selecione o <b>Pais</b> <br>'
+  }
+  if(email ==''){
+    valid = '1';
+    texto += 'Por favor preencha o <b>E-mail</b> <br>'
+  }
+  if(password ==''){
+    valid = '1';
+    texto += 'Por favor preencha a <b>Senha</b> <br>'
+  }
+
+  if(valid == 1){
+    var notify = $.notify(texto, {
+      type: 'warning',
+      allow_dismiss: false,
+      //showProgressbar: true
+    });
+    return false
+  }
+
+
+
     console.log('entrou na janela');
     var data = new FormData();
-    var pais = $("#login_pais").val();
+    
     var url = "";
     if(pais == "Brasil"){
       url = "http://www.nav.farmina.com.br:3001/api/"
@@ -28,33 +58,39 @@ $("#btn_login").click(function(){
         "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
       },
       "data": {        
-        "Pais"   :pais,
-        "Email"   :$("#login_email").val(),
-        "Senha"   :$("#loginPassword").val(),
+        "Pais" :pais,
+        "Email":email,
+        "Senha":password,
         
       }
     }
 
       $.ajax(settings).done(function (response) {
+        
+
         var result = response.result[0];
-        console.log(response.result[0]);  
-        sessionStorage.setItem("Pais", pais);
-        sessionStorage.setItem("Name", result['Name']);
-        sessionStorage.setItem("Email", result['e-Mail']);
-        sessionStorage.setItem("Type", result['Resource Type']);
-        sessionStorage.setItem("No", result['No_']);
-        sessionStorage.setItem("UF", result['Territory Code']);
-        sessionStorage.setItem("Language", result['Language Code']);
-        //console.log(sessionStorage);
-        //return
-        //$.cookie("Lang", sessionStorage.Lang);
+        if(response.result.length > 0){  
+          sessionStorage.setItem("Pais", pais);
+          sessionStorage.setItem("Name", result['Name']);
+          sessionStorage.setItem("Email", result['e-Mail']);
+          sessionStorage.setItem("Type", result['Resource Type']);
+          sessionStorage.setItem("No", result['No_']);
+          sessionStorage.setItem("UF", result['Territory Code']);
+          sessionStorage.setItem("Language", result['Language Code']);
 
+          if (result['Resource Type'] == 0){
+            window.location = "datatable.html"; 
+          }else if(result['Resource Type'] == 1 || result['Resource Type'] == 2){
+            window.location = "index.html"; 
+          }
+        }else if(response.result.length < 1){
+          var notify = $.notify('Usuário ou Senha Inválido', {
+            type: 'danger',
+            allow_dismiss: false,
+            //showProgressbar: true
+          });
 
-        if (result['Resource Type'] == 0){
-          window.location = "datatable.html"; 
-        }else if(result['Resource Type'] == 1 || result['Resource Type'] == 2){
-          window.location = "index.html"; 
-        }
+        }  
 
         
       });
