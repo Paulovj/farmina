@@ -592,10 +592,15 @@ $("#btn_finish_booking").click(function(){
     $('#finish_people_spoke').val(result['Army How Many People Spoke']);
     $('#finish_dry_samples').val(result['Army How Many Dry Samples']);
     $('#finish_wet_Samples').val(result['Army How Many Wet Samples']);
-    $('#finish_bags_dry_food').val(result['Army How Print Voruchers']);
     $('#finish_print_voruchers').val(result['Army How Many Bags Dry Food']);
-    $('#finish_cans_sold').val(result['Army How Many Cans Sold']);
-    $('#finish_kg_Sold').val(result['Army How Many KG Sold']);
+    
+
+    
+    $('#finish_kits_delivered').val(result['Many Kits Delivered']);
+    $('#finish_people_refused').val(result['Many People Refused']);
+    $('#finish_location_activity').val(result['Location Activity']);
+
+
 
 
     

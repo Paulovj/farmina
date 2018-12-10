@@ -212,11 +212,6 @@ $("#btn_login").click(function(){
         $('.lNRecurso').html($.i18n.prop('lNRecurso',lang))
         $('.lObservacaoInicial').html($.i18n.prop('lObservacaoInicial',lang))
 
-        $('.lQuantosClientesEntraramNaLoja').html($.i18n.prop('lQuantosClientesEntraramNaLoja',lang))
-        $('.lQuantosComprovantesForamEntregues').html($.i18n.prop('lQuantosComprovantesForamEntregues',lang))
-        $('.lQuantosProdutosForamVendidos').html($.i18n.prop('lQuantosProdutosForamVendidos',lang))
-        $('.lQuantosPlanosNacionaisForamGerados').html($.i18n.prop('lQuantosPlanosNacionaisForamGerados',lang))
-        $('.lQuantosKitsForamEntregues').html($.i18n.prop('lQuantosKitsForamEntregues',lang))
         $('.lFinalizar').html($.i18n.prop('lFinalizar',lang))
         $('.lIdioma').html($.i18n.prop('lIdioma',lang))
         $('.lBuscaCliente').html($.i18n.prop('lBuscaCliente',lang))
@@ -238,10 +233,7 @@ $("#btn_login").click(function(){
         $('.lRefreshment').html($.i18n.prop('lRefreshment',lang))
         $('.lNewlineStore').html($.i18n.prop('lNewlineStore',lang))
         
-        $('.lQuantasSacolasdeComidaSecaVoceVendeu').html($.i18n.prop('lQuantasSacolasdeComidaSecaVoceVendeu',lang));
-        $('.lQuantasLatasVoceVendeu').html($.i18n.prop('lQuantasLatasVoceVendeu',lang));
-        $('.lQuantosKhVendeuAberto').html($.i18n.prop('lQuantosKhVendeuAberto',lang));
-
+        
         $('.lEntregue').html($.i18n.prop('lEntregue',lang))
         $('.lQuantosClientesEntraramNaLoja').html($.i18n.prop('lQuantosClientesEntraramNaLoja',lang))
         $('.lQuantosComprovantesForamEntregues').html($.i18n.prop('lQuantosComprovantesForamEntregues',lang))
@@ -259,7 +251,15 @@ $("#btn_login").click(function(){
         $('.lImplementouCampanhaAdesivoSazonal').html($.i18n.prop('lImplementouCampanhaAdesivoSazonal',lang))
         $('.lImplementouMarca').html($.i18n.prop('lImplementouMarca',lang))
         $('.lCampanhaAdesivoSazonal').html($.i18n.prop('lCampanhaAdesivoSazonal',lang))
-        $('.lQuantasLatasVoceVendeu').html($.i18n.prop('lQuantasLatasVoceVendeu',lang))
+
+        $('.lHowManyPeopleSpoke').html($.i18n.prop('lHowManyPeopleSpoke',lang))
+        $('.lHowManyDrySamples').html($.i18n.prop('lHowManyDrySamples',lang))
+        $('.lHowManyWetSamples').html($.i18n.prop('lHowManyWetSamples',lang))
+        $('.lHowManyKitDelivered').html($.i18n.prop('lHowManyKitDelivered',lang))
+        $('.lPrintVoruchers').html($.i18n.prop('lPrintVoruchers',lang))
+        $('.lHowManyPeopleRefused').html($.i18n.prop('lHowManyPeopleRefused',lang))
+        $('.lLocationOfActivity').html($.i18n.prop('lLocationOfActivity',lang))
+        
         
         
         
