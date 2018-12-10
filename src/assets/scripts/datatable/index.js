@@ -27,10 +27,11 @@ export default (function () {
   
   function formatDateStatus(data,status) {
     //var data = '2018/11/22'
-    console.log('data da base: ' + new Date(data))
-    console.log('data Atual: ' + new Date())
-    var falta = (new Date(data).getTime() - new Date().getTime()) / 1000;
-    var dias = Math.round(falta / 60 / 60 / 24);
+    //var dataMarcarda      = moment(new Date(data).getTime()).format("DDMMY")
+    //var dataAtual = moment(new Date().getTime()).format("DDMMY")
+    
+    var falta = (moment(new Date(data).getTime()) - moment(new Date().getTime())) / 1000;
+    var dias = Math.round(falta / 60 / 60 / 24) +1;
     var horas = Math.round(falta / 60 / 60 % 24);
     var result =''
     var texto = ''
