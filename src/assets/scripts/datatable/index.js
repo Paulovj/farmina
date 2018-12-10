@@ -462,10 +462,21 @@ $("#btn_finish_booking").click(function(){
   var finish_type_seasonal_sticker            = $('#finish_type_seasonal_sticker').val()
   var finish_type_branding                    = $('#finish_type_branding').val()
 
+
+  var finish_people_spoke     = $('#finish_people_spoke').val();
+  var finish_dry_samples      = $('#finish_dry_samples').val();
+  var finish_wet_Samples      = $('#finish_wet_Samples').val();
+  var finish_bags_dry_food    = $('#finish_bags_dry_food').val();
+  var finish_print_voruchers  = $('#finish_print_voruchers').val();
+  var finish_cans_sold        = $('#finish_cans_sold').val();
+  var finish_kg_Sold          = $('#finish_kg_Sold').val();
+
+  
+
   
 
   // $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getUpdateFinish?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no+"&Finish-Date="+finish_date+"&Finish-Time="+finish_time+"&Many-Customers=" + Many_Customers + "&Many-Voucher=" + Many_Voucher + "&Many-Products=" + Many_Products + "&Many-Kits=" + Many_Kits + "&Many-Nutrional-Plans=" + Many_Nutrional_Plans + "&starting_date="+ starting_date + "&starting_hour=" + starting_hour + "&starting_observation=" + starting_observation + "&Many-Bags="+Many_Bags+ "&Many-Cans="+Many_Cans+ "&Many-Kg="+Many_Kg + "&Delivered="+Delivered+ "&Trainning-Type="+Trainning_Type+ "&Trainning-Comments="+Trainning_Comments+"&finish-number-shelves="+finish_number_shelves+"&finish-able-to-place-on-better-position="+finish_able_to_place_on_better_position+"&finish-able-to-get-more-space="+finish_able_to_get_more_space+"&finish-get-additional-space-out="+finish_get_additional_space_out+"&finish-many-additional-meters="+finish_many_additional_meters+"&finish-type-space-out-of-shelves="+finish_type_space_out_of_shelves+"&finish-implemented-seasonal-sticker="+finish_implemented_seasonal_sticker+"&finish-implemented-branding="+finish_implemented_branding+"&finish-type-seasonal-sticker="+finish_type_seasonal_sticker+"&finish-type-branding="+finish_type_branding   , success: function(result){
-    $.ajax({url: urlX+"Farmina-1-Service-Booking-Resources/getUpdateFinish?Pais="+paisX+"&Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no+"&Finish-Date="+finish_date+"&Finish-Time="+finish_time+"&Many-Customers=" + Many_Customers + "&Many-Voucher=" + Many_Voucher + "&Many-Products=" + Many_Products + "&Many-Kits=" + Many_Kits + "&Many-Nutrional-Plans=" + Many_Nutrional_Plans + "&starting_date="+ starting_date + "&starting_hour=" + starting_hour + "&starting_observation=" + starting_observation + "&Many-Bags="+Many_Bags+ "&Many-Cans="+Many_Cans+ "&Many-Kg="+Many_Kg + "&Delivered="+Delivered+ "&Trainning-Type="+Trainning_Type+ "&Trainning-Comments="+Trainning_Comments+"&finish-number-shelves="+finish_number_shelves+"&finish-able-to-place-on-better-position="+finish_able_to_place_on_better_position+"&finish-able-to-get-more-space="+finish_able_to_get_more_space+"&finish-get-additional-space-out="+finish_get_additional_space_out+"&finish-many-additional-meters="+finish_many_additional_meters+"&finish-type-space-out-of-shelves="+finish_type_space_out_of_shelves+"&finish-implemented-seasonal-sticker="+finish_implemented_seasonal_sticker+"&finish-implemented-branding="+finish_implemented_branding+"&finish-type-seasonal-sticker="+finish_type_seasonal_sticker+"&finish-type-branding="+finish_type_branding   , success: function(result){
+    $.ajax({url: urlX+"Farmina-1-Service-Booking-Resources/getUpdateFinish?Pais="+paisX+"&Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no+"&Finish-Date="+finish_date+"&Finish-Time="+finish_time+"&Many-Customers=" + Many_Customers + "&Many-Voucher=" + Many_Voucher + "&Many-Products=" + Many_Products + "&Many-Kits=" + Many_Kits + "&Many-Nutrional-Plans=" + Many_Nutrional_Plans + "&starting_date="+ starting_date + "&starting_hour=" + starting_hour + "&starting_observation=" + starting_observation + "&Many-Bags="+Many_Bags+ "&Many-Cans="+Many_Cans+ "&Many-Kg="+Many_Kg + "&Delivered="+Delivered+ "&Trainning-Type="+Trainning_Type+ "&Trainning-Comments="+Trainning_Comments+"&finish-number-shelves="+finish_number_shelves+"&finish-able-to-place-on-better-position="+finish_able_to_place_on_better_position+"&finish-able-to-get-more-space="+finish_able_to_get_more_space+"&finish-get-additional-space-out="+finish_get_additional_space_out+"&finish-many-additional-meters="+finish_many_additional_meters+"&finish-type-space-out-of-shelves="+finish_type_space_out_of_shelves+"&finish-implemented-seasonal-sticker="+finish_implemented_seasonal_sticker+"&finish-implemented-branding="+finish_implemented_branding+"&finish-type-seasonal-sticker="+finish_type_seasonal_sticker+"&finish-type-branding="+finish_type_branding +"&People-Spoke="+finish_people_spoke+"&Dry-Samples="+finish_dry_samples+"&Wet-Samples="+finish_wet_Samples+"&Bags-Dry-Food="+finish_bags_dry_food+"&Print-Voruchers="+finish_print_voruchers+"&Cans-Sold="+finish_cans_sold+"&Kg-Sold="+finish_kg_Sold  , success: function(result){
     $('#finish-service-booking').modal('toggle');
     var oTblReport = $('#dataTable').DataTable().destroy();
 
@@ -493,6 +504,8 @@ $("#btn_finish_booking").click(function(){
     $('#finish_question_Kit').hide();
     $('#finish_question_trainning').hide();
     $('#finish_question_merchandising').hide();
+    $('#finish_question_army').hide();
+    
     
     $('#finish_many_additional_meters_sim').hide();
     $('#finish_type_space_out_of_shelves_sim').hide();
@@ -511,6 +524,9 @@ $("#btn_finish_booking").click(function(){
     }
     if(result['Service Type'] == 4){
       $('#finish_question_merchandising').show();
+    }
+    if(result['Service Type'] == 5){
+      $('#finish_question_army').show();
     }
     
       $('#finish_service_invoice_no').val(result['Service Invoice No_']);  
@@ -559,6 +575,16 @@ $("#btn_finish_booking").click(function(){
     $('#finish_implemented_branding').val(result['Implemented Branding'])
     $('#finish_type_seasonal_sticker').val(result['Type Seasonal Sticker'])
     $('#finish_type_branding').val(result['Type Branding'])
+
+    $('#finish_people_spoke').val(result['Army How Many People Spoke']);
+    $('#finish_dry_samples').val(result['Army How Many Dry Samples']);
+    $('#finish_wet_Samples').val(result['Army How Many Wet Samples']);
+    $('#finish_bags_dry_food').val(result['Army How Print Voruchers']);
+    $('#finish_print_voruchers').val(result['Army How Many Bags Dry Food']);
+    $('#finish_cans_sold').val(result['Army How Many Cans Sold']);
+    $('#finish_kg_Sold').val(result['Army How Many KG Sold']);
+
+
     
   }});
   setTimeout(chamaFinaliza, 1000);
