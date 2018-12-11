@@ -1,11 +1,18 @@
 import * as $ from 'jquery';
 import 'datatables';
 import 'bootstrap-notify'
+import 'jquery-i18n-properties'
 import moment from 'moment/src/moment';
 
 export default (function () {
 
   if(window.location.pathname == '/ordem.html'){
+
+    var lang = "en";
+    if ((sessionStorage.Language != "") && (sessionStorage.Language != 'undefined')){
+      lang = sessionStorage.Language
+    }
+
 
     var paisX = sessionStorage.Pais
     var urlX = "";
@@ -629,12 +636,15 @@ function PromoterServiceTypeX(promoter,value,action){
   
   $("#add_agendamento_trainning_type"+promoter).val("0");
   $("#add_agendamento_trainning_comments"+promoter).val("");
+  $("#add_agendamento_Promoting"+promoter).val("0");
+  $("#add_agendamento_open_bags"+promoter).val("0");
 
 
   
   if(value==1){
     //traning
-    lblCont =" Treinamento para qual linha?";
+    
+    lblCont = $.i18n.prop('TreinamentoParaQualLinha',lang);
     contX +='<option value="0">  </option>';
     contX +='<option value="1"> ND </option>';
     contX +='<option value="2"> ND PUMPKIN </option>';
@@ -652,43 +662,58 @@ function PromoterServiceTypeX(promoter,value,action){
     
     $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).show();
+    $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
+   
 
     
   }else if(value==2){
     //KITS
-    lblCont =" Para qual linha você gostaria kit de boas vindas?";
+    lblCont =$.i18n.prop('ParaQualLinhaVoceGostariaKitDeBoasVindas',lang);
+    
     contX +='<option value="0">  </option>';
-    contX +='<option value="1"> ND QUINOA </option>';
-    contX +='<option value="2"> ND PUMPKIN </option>';
-    contX +='<option value="3"> ND ANCESTRAL </option>';
-    contX +='<option value="4"> ND PRIME </option>';    
-    contX +='<option value="5"> ND VET LIFE</option>';    
-    contX +='<option value="6"> OCEAN LINE</option>';
+    contX +='<option value="1"> ND Prime cat </option>';
+    contX +='<option value="2"> ND Ancestral cat </option>';
+    contX +='<option value="3"> ND Pumpkin cat </option>';
+    contX +='<option value="4"> ND Quinoa cat </option>';    
+    contX +='<option value="5"> ND Ocean cat </option>';    
+    contX +='<option value="6"> ND Prime dog </option>';
+    contX +='<option value="7"> ND Ancestral dog </option>';
+    contX +='<option value="8"> ND Pumpkin dog </option>';
+    contX +='<option value="9"> ND Quinoa dog </option>';
+    contX +='<option value="10">ND Ocean dog </option>';
+
     
     $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
+
 
     
   }else if(value==3){
     //ISP
-    lblCont =" Por que você está fazendo isso ISP? ";
+    lblCont =$.i18n.prop('PorQueVoceEstaFazendoIssoISP',lang);
     contX +='<option value="0">  </option>';
     contX +='<option value="1"> PUSH NEW LINE </option>';
     contX +='<option value="2"> LINE SLOW </option>';
     contX +='<option value="3"> GENERIC </option>';
     $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
-    $("#div_"+action+"_agendamento_service_result_push"+promoter).show();
-    $("#div_"+action+"_agendamento_service_result_line"+promoter).show();
+    $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_promoting"+promoter).show();
+    $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).show();
+
 
     
   }else if(value==4){
     //MERCHANDISSING
-    lblCont =" Que tipo de merchandising você quer? ";
+    lblCont =$.i18n.prop('QueTipoMmerchandisingVoceQuer',lang);
     contX +='<option value="0">  </option>';
     contX +='<option value="1"> SHELF ORGANIZATION </option>';
     contX +='<option value="2"> STICKER DECOR </option>';
@@ -698,6 +723,10 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
+    
+
     
   }else if(value==5){
     lblCont =" Army ? ";
@@ -707,6 +736,10 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
+
+
     
   }  
   
@@ -791,6 +824,9 @@ $("#add_agendamento_service_type5").change(function(){
         "PushNewLine1"             :$("#add_agendamento_push_new_line1").val(),
         "LineSlowComments1"        :$("#add_agendamento_line_slow_comments1").val(),
         
+        "Promoting1"              :$("#add_agendamento_Promoting1").val(),
+        "Open-Bags1"              :$("#add_agendamento_open_bags1").val(),
+        
         "Professional2"           :$("#add_agendamento_busca_professional2").val(),
         "PlannedDate2"            :formatDateSql($("#add_agendamento_planned_date2").val()),
         "PlannedHours2"           :$("#add_agendamento_planned_hour2").val(),
@@ -802,6 +838,9 @@ $("#add_agendamento_service_type5").change(function(){
         "TrainningComments2"       :$("#add_agendamento_trainning_comments2").val(),
         "PushNewLine2"             :$("#add_agendamento_push_new_line2").val(),
         "LineSlowComments2"        :$("#add_agendamento_line_slow_comments2").val(),
+
+        "Promoting2"              :$("#add_agendamento_Promoting2").val(),
+        "Open-Bags2"              :$("#add_agendamento_open_bags2").val(),
         
         "Professional3"            :$("#add_agendamento_busca_professional3").val(),
         "PlannedDate3"            :formatDateSql($("#add_agendamento_planned_date3").val()),
@@ -814,6 +853,9 @@ $("#add_agendamento_service_type5").change(function(){
         "TrainningComments3"       :$("#add_agendamento_trainning_comments3").val(),
         "PushNewLine3"             :$("#add_agendamento_push_new_line3").val(),
         "LineSlowComments3"        :$("#add_agendamento_line_slow_comments3").val(),
+
+        "Promoting3"              :$("#add_agendamento_Promoting3").val(),
+        "Open-Bags3"              :$("#add_agendamento_open_bags3").val(),
         
         "Professional4"           :$("#add_agendamento_busca_professional4").val(),
         "PlannedDate4"            :formatDateSql($("#add_agendamento_planned_date4").val()),
@@ -826,6 +868,9 @@ $("#add_agendamento_service_type5").change(function(){
         "TrainningComments4"       :$("#add_agendamento_trainning_comments4").val(),
         "PushNewLine4"             :$("#add_agendamento_push_new_line4").val(),
         "LineSlowComments4"        :$("#add_agendamento_line_slow_comments4").val(),
+
+        "Promoting4"              :$("#add_agendamento_Promoting4").val(),
+        "Open-Bags4"              :$("#add_agendamento_open_bags4").val(),
         
         "Professional5"           :$("#add_agendamento_busca_professional5").val(),
         "PlannedDate5"            :formatDateSql($("#add_agendamento_planned_date5").val()),
@@ -838,6 +883,9 @@ $("#add_agendamento_service_type5").change(function(){
         "TrainningComments5"       :$("#add_agendamento_trainning_comments5").val(),
         "PushNewLine5"             :$("#add_agendamento_push_new_line5").val(),
         "LineSlowComments5"        :$("#add_agendamento_line_slow_comments5").val(),
+
+        "Promoting5"              :$("#add_agendamento_Promoting5").val(),
+        "Open-Bags5"              :$("#add_agendamento_open_bags5").val(),
         
       }
     }

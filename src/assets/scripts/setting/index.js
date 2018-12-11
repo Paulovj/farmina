@@ -4,6 +4,13 @@ import 'bootstrap-notify'
 import 'jquery-i18n-properties'
 
 export default (function () {
+
+  var lang = "en";
+  if ((sessionStorage.Language != "") && (sessionStorage.Language != 'undefined')){
+      lang = sessionStorage.Language
+    }
+
+
   var paisX = sessionStorage.Pais
   var urlX = "";
   var urlImgX = ""

@@ -116,9 +116,8 @@ $("#btn_login").click(function(){
         console.log('Nao Logado********************************')
       }
     
-    console.log(sessionStorage)
     var lang = "en";
-    if (sessionStorage.Language != ""){
+    if ((sessionStorage.Language != "") && (sessionStorage.Language != 'undefined')){
       lang = sessionStorage.Language
     }
     
@@ -254,6 +253,8 @@ $("#btn_login").click(function(){
         
         $('.lSim').html($.i18n.prop('lSim',lang))
         $('.lNao').html($.i18n.prop('lNao',lang))
+        $('.lYes').html($.i18n.prop('lYes',lang))
+        $('.lNo').html($.i18n.prop('lNo',lang))
         $('.lPalletSpace').html($.i18n.prop('lPalletSpace',lang))
         $('.lCartonShelf').html($.i18n.prop('lCartonShelf',lang))
         $('.lOtherDisplay').html($.i18n.prop('lOtherDisplay',lang))
@@ -276,7 +277,16 @@ $("#btn_login").click(function(){
         $('.lBrazil').html($.i18n.prop('lBrazil',lang))
         $('.lItaly').html($.i18n.prop('lItaly',lang))
         $('.lUnitedState').html($.i18n.prop('lUnitedState',lang))
+        $('.lPromoting').html($.i18n.prop('lPromoting',lang))
+        $('.lPromotingNewLine').html($.i18n.prop('lPromotingNewLine',lang))
+        $('.lPromotingExistingLine').html($.i18n.prop('lPromotingExistingLine',lang))
+        $('.lThisStoreIsSellingOpenBags').html($.i18n.prop('lThisStoreIsSellingOpenBags',lang))
+
+
         
+        
+
+
         
         
 
