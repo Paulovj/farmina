@@ -584,8 +584,8 @@
                       <div class="col-md-6 mb-3">
                           <label class="fw-500 lEntregue">Entregue? </label>      
                         <select id="finish_delivered" class="form-control">
-                            <option value="1">Sim</option>
-                            <option value="0">Não</option>
+                            <option value="1" class="lSim">Sim</option>
+                            <option value="0" class="lNo">Não</option>
                             </select>
                       </div>                      
                   </div>
@@ -648,8 +648,8 @@
                       <div class="col-md-6 mb-3">
                           <label class="fw-500 lSoldOpenBags">Sold open bags? </label>
                           <select id="finish_open_bags" class="form-control">
-                              <option value="1">Sim</option>
-                              <option value="0">Não</option>
+                              <option value="1" class="lSim">Sim</option>
+                              <option value="0" class="lNao">Não</option>
                               </select>
                         </div>
       
@@ -673,8 +673,8 @@
                       <div class="col-md-6 mb-3">
                           <label class="fw-500 lConseguiuColocarProdutoFarminaPosicaoMelhor">Você conseguiu colocar os produtos Farmina em uma posição melhor? </label>      
                         <select id="finish_able_to_place_on_better_position" class="form-control">
-                            <option value="1">Sim</option>
-                            <option value="0">Não</option>
+                            <option value="1" class="lSim">Sim</option>
+                            <option value="0" class="lNao">Não</option>
                             </select>
                       </div>
                   </div>
@@ -684,16 +684,16 @@
                       <div class="col-md-6 mb-3">
                           <label class="fw-500 lConseguiuEspacoProduto">Você conseguiu mais espaço para produtos? </label>      
                         <select id="finish_able_to_get_more_space" class="form-control">
-                            <option value="1">Sim</option>
-                            <option value="0">Não</option>
+                            <option value="1" class="lSim">Sim</option>
+                            <option value="0" class="lNao">Não</option>
                             </select>
                       </div>
 
                       <div class="col-md-6 mb-3">
                           <label class="fw-500 lConseguiuEspacoAdicionalForaPrateleira">Você conseguiu espaço adicional fora das prateleiras? </label>      
                         <select id="finish_get_additional_space_out" class="form-control">
-                            <option value="1">Sim</option>
-                            <option value="0">Não</option>
+                            <option value="1" class="lSim">Sim</option>
+                            <option value="0" class="lNao">Não</option>
                             </select>
                       </div>
                   </div>
@@ -710,10 +710,10 @@
                         <div class="col-md-12 mb-3">
                           <label class="fw-500 lEspacoAdicionalPara">o espaço adicional é para?</label>
                           <select id="finish_type_space_out_of_shelves" class="form-control">
-                              <option value="0">Selecione</option>
-                              <option value="1">pallet space</option>
-                              <option value="2">carton shelf</option>
-                              <option value="3">other display</option>
+                              <option value="0" class="lSelecione">Selecione</option>
+                              <option value="1" class="lPalletSpace">pallet space</option>
+                              <option value="2" class="lCartonShelf">carton shelf</option>
+                              <option value="3" class="lOtherDisplay">other display</option>
                               </select>
                         </div>
                       </div>
@@ -723,16 +723,16 @@
                       <div class="col-md-6 mb-3">
                           <label class="fw-500 lImplementouCampanhaAdesivoSazonal">Você já implementou campanha de adesivo sazonal?  </label>      
                         <select id="finish_implemented_seasonal_sticker" class="form-control">
-                            <option value="1">Sim</option>
-                            <option value="0">Não</option>
+                            <option value="1" class="lSim">Sim</option>
+                            <option value="0" class="lNao">Não</option>
                             </select>
                       </div>
 
                       <div class="col-md-6 mb-3">
                           <label class="fw-500 lImplementouMarca">Você implementou a marca? </label>      
                         <select id="finish_implemented_branding" class="form-control">
-                            <option value="1">Sim</option>
-                            <option value="0">Não</option>
+                            <option value="1" class="lSim">Sim</option>
+                            <option value="0" class="lNao">Não</option>
                             </select>
                       </div>
                   </div>
@@ -742,13 +742,13 @@
                       <div class="col-md-12 mb-3">
                         <label class="fw-500 lCampanhaAdesivoSazonal">A campanha de adesivo sazonal?</label>
                         <select id="finish_type_seasonal_sticker" class="form-control">
-                            <option value="0">Selecione</option>
-                            <option value="1">Winter</option>
-                            <option value="2">Christmas</option>
-                            <option value="3">Valentine Day</option>
-                            <option value="3">Spring</option>
-                            <option value="3">Woman’s Day</option>
-                            <option value="3">Halloween</option>
+                            <option value="0" class="lSelecione">Selecione</option>
+                            <option value="1" class="lWinter">Winter</option>
+                            <option value="2" class="lChristmas">Christmas</option>
+                            <option value="3" class="lValentineDay">Valentine Day</option>
+                            <option value="3" class="lSpring">Spring</option>
+                            <option value="3" class="lWomansDay">Woman’s Day</option>
+                            <option value="3" class="lHalloween">Halloween</option>
                             </select>
                       </div>
                     </div>
@@ -758,9 +758,9 @@
                         <div class="col-md-12 mb-3">
                           <label class="fw-500 lQuantasLatasVoceVendeu">Você implementou a marca qual tipo?</label>
                           <select id="finish_type_branding" class="form-control">
-                              <option value="0">Selecione</option>
-                              <option value="1">Full branding</option>
-                              <option value="2">Open branding</option>                              
+                              <option value="0" class="lSelecione">Selecione</option>
+                              <option value="1" class="FullBranding">Full branding</option>
+                              <option value="2" class="OpenBranding">Open branding</option>                              
                               </select>
                         </div>
                       </div>
@@ -777,12 +777,12 @@
               <fieldset id="finish_question_army" style="display:none;">
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label class="fw-500 lHowManyPeopleSpoke">With how many people you spoke? </label>      
+                        <label class="fw-500 lWithHowManyPeopleYouSpoke">With how many people you spoke? </label>      
                         <input type="text" class="form-control bdc-grey-200" name="" id="finish_people_spoke">
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label class="fw-500 lHowManyDrySamples">How many dry samples you gave? </label>      
+                        <label class="fw-500 lHowManyDrySamplesYouGave">How many dry samples you gave? </label>      
                         <input type="text" class="form-control bdc-grey-200" name="" id="finish_dry_samples">
                     </div>
                 </div>
@@ -790,12 +790,12 @@
               
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label class="fw-500 lHowManyWetSamples">How many wet samples you gave? </label>      
+                        <label class="fw-500 lHowManyWetSamplesYouGave">How many wet samples you gave? </label>      
                         <input type="text" class="form-control bdc-grey-200" name="" id="finish_wet_Samples">
                     </div>
 
                     <div class="col-md-6 mb-3">
-                      <label class="fw-500 lHowManyKitDelivered">How many kits you delivered? </label>      
+                      <label class="fw-500 lHowManyKitsYouDelivered">How many kits you delivered? </label>      
                       <input type="text" class="form-control bdc-grey-200" name="" id="finish_kits_delivered">
                   </div>
                     
@@ -806,13 +806,13 @@
                 <div class="row">
 
                     <div class="col-md-6 mb-3">
-                        <label class="fw-500 lPrintVoruchers">How many print vouchers you gave? </label>      
+                        <label class="fw-500 lHowManyPrintVouchersYouGave">How many print vouchers you gave? </label>      
                         <input type="text" class="form-control bdc-grey-200" name="" id="finish_print_voruchers">
                     </div>
 
 
                     <div class="col-md-6 mb-3">
-                        <label class="fw-500 lHowManyPeopleRefused">ow many people refused to speak with you?  </label>      
+                        <label class="fw-500 lHowManyPeopleRefusedToSpeakWithYou">How many people refused to speak with you?  </label>      
                         <input type="text" class="form-control bdc-grey-200" name="" id="finish_people_refused">
                     </div>
 
@@ -868,8 +868,8 @@
                 <div class="col-md-6 mb-3">
                     
                       
-                        <input type="text" class="form-control" id="photo_service_invoice_line_no" placeholder="" value="" required disabled >
-                        <input type="text" class="form-control" id="photo_service_invoice_no" placeholder="" value="" required disabled >
+                        <input type="text" class="form-control" id="photo_service_invoice_line_no" placeholder="" value="" required disabled style="display:none;">
+                        <input type="text" class="form-control" id="photo_service_invoice_no" placeholder="" value="" required disabled style="display:none;">
                         
                         <input type="file" name="fileimagem" id="fileimagem" />
                         <!-- <button type="button" id="btn">Enviar</button> -->
