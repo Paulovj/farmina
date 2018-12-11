@@ -281,8 +281,9 @@ $("#btn_login").click(function(){
         $('.lPromotingNewLine').html($.i18n.prop('lPromotingNewLine',lang))
         $('.lPromotingExistingLine').html($.i18n.prop('lPromotingExistingLine',lang))
         $('.lThisStoreIsSellingOpenBags').html($.i18n.prop('lThisStoreIsSellingOpenBags',lang))
+        $('.lGeneralNutrition').html($.i18n.prop('lGeneralNutrition',lang))
 
-
+        
         
         
 

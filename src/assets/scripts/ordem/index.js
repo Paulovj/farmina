@@ -646,17 +646,16 @@ function PromoterServiceTypeX(promoter,value,action){
     //traning
     
     lblCont = $.i18n.prop('TreinamentoParaQualLinha',lang);
+
     contX +='<option value="0">  </option>';
-    contX +='<option value="1"> ND </option>';
-    contX +='<option value="2"> ND PUMPKIN </option>';
-    contX +='<option value="3"> ND QUINOA </option>';
-    contX +='<option value="4"> ND ANCESTRAL</option>';
-    contX +='<option value="5"> ND PRIME</option>';
-    contX +='<option value="6"> ND VET LIFE</option>';
-    contX +='<option value="7"> INSTITUCIONAL</option>';
-    contX +='<option value="8"> OCEAN LINE</option>';
-    contX +='<option value="9"> GENERAL NUTRITION</option>';
-    contX +='<option value="10"> WET PRODUCTS</option>';
+    contX +='<option value="1">All ND lines </option>';
+    contX +='<option value="2">ND Prime </option>';
+    contX +='<option value="3">ND Ancestral </option>';
+    contX +='<option value="4">ND Pumpkin </option>';
+    contX +='<option value="5">ND Quinoa </option>';
+    contX +='<option value="6">ND Ocean </option>';
+    contX +='<option value="7">Vet Life </option>';
+    
     $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
