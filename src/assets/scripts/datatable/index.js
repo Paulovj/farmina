@@ -1,6 +1,7 @@
 import * as $ from 'jquery';
 import 'datatables';
 import moment from 'moment/src/moment';
+import 'bootstrap-notify'
 import 'jquery-i18n-properties'
 export default (function () {
 
@@ -41,18 +42,23 @@ export default (function () {
       if (dias > 2 ){
         texto  = $.i18n.prop('lDiasRestante',lang)
         result =  '<span class="badge badge-pill fl-r badge-info lh-0 p-10">' + dias + ' ' +texto +'</span>'
+      }else if (dias > 0 && dias <= 1){
+        texto  = $.i18n.prop('lDiaRestante',lang)
+        result =  '<span class="badge badge-pill fl-r badge-warning lh-0 p-10">' + dias + ' ' + texto + ' </span>'
+        //result = 'faltam ' + dias + ' dias'
       }else if (dias > 0 && dias <= 2){
         texto  = $.i18n.prop('lDiasRestante',lang)
-        result =  '<span class="badge badge-pill fl-r badge-warning lh-0 p-10">' + dias + ' - ' + texto + ' </span>'
-        //result = 'faltam ' + dias + ' dias'
+        result =  '<span class="badge badge-pill fl-r badge-warning lh-0 p-10">' + dias + ' ' + texto + ' </span>'
+        //result = 'faltam ' + dias + ' dias'  
       }else if(dias == 0){
         texto  = $.i18n.prop('lTarefaDia',lang)
         result =  '<span class="badge badge-pill fl-r badge-success lh-0 p-10">' + texto + '</span>'
         //result = ' chegou o dia'
       }else if(dias < 0){
         texto  = $.i18n.prop('lAtrasado',lang)
+        var delay  = $.i18n.prop('lDelay',lang)
         // result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">' + dias + ' ' + texto +'</span>'
-        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">' + texto +'</span>'
+        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">'+ texto +' ' + ((dias-dias-dias)) +' '+ delay + '</span>'
         //result = 'atrasdo ' + dias + ' dias'
       }
     }  
@@ -247,8 +253,9 @@ function formatHora(date) {
                 }
                 $('#photo_service_invoice_line_no').val(Service_Invoice_Line_No);
                 $('#photo_service_invoice_no').val(id);
+                $('#photo_service_type').val(Service_type);
                 $('#dataTableImagens').DataTable().destroy();
-                loadImagensX(id);
+                loadImagensX(id,Service_type);
                 $('#photo-service-booking').modal('toggle'); 
 
             }
@@ -634,10 +641,25 @@ var chamaFinaliza = function(){
 
   $("#btn_save_photo").click(function(){
     var pasta = $('#photo_service_invoice_no').val();
+    var service_type  = $("#photo_service_type").val();
+  
     var data = new FormData();
     var file = $('#fileimagem').val();
     if (file == ""){
-      alert('Por favor, ecolher arquivo!');
+      var atencao = $.i18n.prop('lAtencao',lang)
+      var msg = $.i18n.prop('lParaEnviarFoto',lang)
+      $.notify({
+        title: atencao,
+        message: msg
+      },{
+        type: 'pastel-danger',
+        delay: 5000,
+        z_index: 10000,
+        template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+          '<span data-notify="title">{1}</span>' +
+          '<span data-notify="message">{2}</span>' +
+        '</div>'
+      });
       return false;
     }
     var extensao = 'C:/MKT/FOTOS/'+pasta+'/'+$('#fileimagem')[0].files[0].name
@@ -661,10 +683,23 @@ var chamaFinaliza = function(){
       }
 
       $.ajax(settings).done(function (response) {
+        console.log('retorno do respose');
         console.log(response);
+        // $.notify({
+        //   title: atencao,
+        //   message: msg
+        // },{
+        //   type: 'pastel-danger',
+        //   delay: 5000,
+        //   z_index: 10000,
+        //   template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+        //     '<span data-notify="title">{1}</span>' +
+        //     '<span data-notify="message">{2}</span>' +
+        //   '</div>'
+        // });
         $('#fileimagem').val('');
         $('#dataTableImagens').DataTable().destroy();
-        loadImagensX(pasta);
+        loadImagensX(pasta,service_type);
         salvaEndereco(pasta,extensao)
       });    
       //console.log(pasta)
@@ -681,7 +716,7 @@ var chamaFinaliza = function(){
 
 
 
-  function loadImagensX(id) {
+  function loadImagensX(id,service_type) {
     $.ajax({url: urlX+"Containers/"+id+"/files", success: function(result){
     console.log('result ' + result.length)  
     if (result.length > 0 ){
@@ -689,13 +724,17 @@ var chamaFinaliza = function(){
       }else{
         $("#finished").attr("disabled",true);
        }  
+       console.log('welcome kit:'+service_type)
+       if (service_type==2 ){
+        $("#finished").attr("disabled",false);
+      }
     var jsonString = result 
 
       console.log(jsonString)    
       var datatableImages = $("#dataTableImagens")
       datatableImages.DataTable ({
           "data" : jsonString,
-          "scrollX": true,
+          //"scrollX": true,
           "columns" : [
             
             { "data" : "name" , "render": function ( data) { 
@@ -741,11 +780,42 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
     }
 
       $.ajax(settings).done(function (response) {
+        console.log('entrou  get insert images response');
         console.log(response);
 
-        //$('#dataTableOrdemAgendamento').DataTable().destroy();
-        //loadAgendamento();
-        //$('#add-agendamento').modal('toggle');  
+        var header = $.i18n.prop('lSuccess',lang)
+        var msg = $.i18n.prop('lImagenSuccess',lang)
+        
+        $.notify({
+          title: header,
+          message: msg
+        },{
+          type: 'pastel-success',
+          delay: 5000,
+          z_index: 10000,
+          template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+            '<span data-notify="title">{1}</span>' +
+            '<span data-notify="message">{2}</span>' +
+          '</div>'
+        });
+
+        
+      }).fail(function() {
+        var atencao = $.i18n.prop('lAtencao',lang)
+        var msg = $.i18n.prop('lPareceQueImagemJaExisteNaNossaBaseDeDados',lang)
+        
+        $.notify({
+          title: atencao,
+          message: msg
+        },{
+          type: 'pastel-warning',
+          delay: 5000,
+          z_index: 10000,
+          template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+            '<span data-notify="title">{1}</span>' +
+            '<span data-notify="message">{2}</span>' +
+          '</div>'
+        });
         
       });
     }
