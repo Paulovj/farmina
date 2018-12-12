@@ -32,7 +32,7 @@ export default (function () {
     console.log((moment(new Date(data).getTime()).format("DDMMY") - moment(new Date().getTime()).format("DDMMY"))/1000)
     console.log((moment(new Date(data).getTime()).format("DDMMY") +'-'+ moment(new Date().getTime()).format("DDMMY")))
     
-    var falta = (moment(new Date(data).getTime()).format("DDMMY") - moment(new Date().getTime()).format("DDMMY")) / 1000;
+    var falta = (moment(new Date(data).getTime()) - moment(new Date().getTime())) / 1000;
     var dias = Math.round(falta / 60 / 60 / 24);
     var horas = Math.round(falta / 60 / 60 % 24);
     var result =''
