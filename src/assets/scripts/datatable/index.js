@@ -29,9 +29,11 @@ export default (function () {
     //var data = '2018/11/22'
     //var dataMarcarda      = moment(new Date(data).getTime()).format("DDMMY")
     //var dataAtual = moment(new Date().getTime()).format("DDMMY")
+    console.log((moment(new Date(data).getTime()).format("DDMMY") - moment(new Date().getTime()).format("DDMMY"))/1000)
+    console.log((moment(new Date(data).getTime()).format("DDMMY") +'-'+ moment(new Date().getTime()).format("DDMMY")))
     
-    var falta = (moment(new Date(data).getTime()) - moment(new Date().getTime())) / 1000;
-    var dias = Math.round(falta / 60 / 60 / 24) +1;
+    var falta = (moment(new Date(data).getTime()).format("DDMMY") - moment(new Date().getTime()).format("DDMMY")) / 1000;
+    var dias = Math.round(falta / 60 / 60 / 24);
     var horas = Math.round(falta / 60 / 60 % 24);
     var result =''
     var texto = ''
@@ -49,7 +51,8 @@ export default (function () {
         //result = ' chegou o dia'
       }else if(dias < 0){
         texto  = $.i18n.prop('lAtrasado',lang)
-        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">' + dias + ' ' + texto +'</span>'
+        // result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">' + dias + ' ' + texto +'</span>'
+        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">' + texto +'</span>'
         //result = 'atrasdo ' + dias + ' dias'
       }
     }  
@@ -317,6 +320,9 @@ function formatHora(date) {
         oTblReport.DataTable ({
             "data" : jsonString,
             "scrollX": true,
+            "columnDefs": [
+              { "sType": "date", "targets": 1 , "name":"sadsad" }
+          ],
             "columns" : [
               
               { "data" : "Resource No_" },
@@ -408,6 +414,8 @@ function formatHora(date) {
           });
 
           
+
+          
         }        
          
       });
@@ -431,8 +439,8 @@ $("#btn_starting_booking").click(function(){
 
       $('#starting-service-booking').modal('toggle');
       var oTblReport = $('#dataTable').DataTable().destroy();
-
       load();
+      
       }
     });
 });

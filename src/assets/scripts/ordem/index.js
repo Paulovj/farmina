@@ -633,7 +633,9 @@ function PromoterServiceTypeX(promoter,value,action){
   $("#add_agendamento_food"+promoter).val("0");
   $("#add_agendamento_push_new_line"+promoter).val("");
   $("#add_agendamento_line_slow_comments"+promoter).val("");  
+  $("#add_agendamento_how_meter"+promoter).val("");  
   
+
   $("#add_agendamento_trainning_type"+promoter).val("0");
   $("#add_agendamento_trainning_comments"+promoter).val("");
   $("#add_agendamento_Promoting"+promoter).val("0");
@@ -664,6 +666,7 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
    
 
     
@@ -693,6 +696,7 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_planned_hour"+promoter).hide();
     $("#add_agendamento_planned_hour"+promoter).val("0");
+    $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
 
     
 
@@ -712,16 +716,23 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_promoting"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).show();
+    $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
 
 
     
   }else if(value==4){
     //MERCHANDISSING
+
+    
+    var PlacingOfProducts = $.i18n.prop('lPlacingOfProducts',lang)
+    var NewShelf = $.i18n.prop('lNewShelf',lang)
+    var PlacingOfFarminaMaterials = $.i18n.prop('lPlacingOfFarminaMaterials',lang)
+
     lblCont =$.i18n.prop('QueTipoMmerchandisingVoceQuer',lang);
     contX +='<option value="0">  </option>';
-    contX +='<option value="1"> SHELF ORGANIZATION </option>';
-    contX +='<option value="2"> STICKER DECOR </option>';
-    contX +='<option value="3"> NEW SHELF </option>';
+    contX +='<option value="1"> '+PlacingOfProducts+'</option>';
+    contX +='<option value="2"> '+NewShelf+'</option>';
+    contX +='<option value="3"> '+PlacingOfFarminaMaterials+'</option>';
     $("#div_"+action+"_agendamento_service_result_food"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
@@ -729,6 +740,7 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_many_meters"+promoter).show();
     
 
     
@@ -742,6 +754,7 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
 
 
     
@@ -831,6 +844,9 @@ $("#add_agendamento_service_type5").change(function(){
         "Promoting1"              :$("#add_agendamento_Promoting1").val(),
         "Open-Bags1"              :$("#add_agendamento_open_bags1").val(),
         
+        "How-Meter1"              :$("#add_agendamento_how_meter1").val(),
+        
+        
         "Professional2"           :$("#add_agendamento_busca_professional2").val(),
         "PlannedDate2"            :formatDateSql($("#add_agendamento_planned_date2").val()),
         "PlannedHours2"           :$("#add_agendamento_planned_hour2").val(),
@@ -845,6 +861,8 @@ $("#add_agendamento_service_type5").change(function(){
 
         "Promoting2"              :$("#add_agendamento_Promoting2").val(),
         "Open-Bags2"              :$("#add_agendamento_open_bags2").val(),
+
+        "How-Meter2"              :$("#add_agendamento_how_meter2").val(),
         
         "Professional3"            :$("#add_agendamento_busca_professional3").val(),
         "PlannedDate3"            :formatDateSql($("#add_agendamento_planned_date3").val()),
@@ -860,6 +878,8 @@ $("#add_agendamento_service_type5").change(function(){
 
         "Promoting3"              :$("#add_agendamento_Promoting3").val(),
         "Open-Bags3"              :$("#add_agendamento_open_bags3").val(),
+
+        "How-Meter3"              :$("#add_agendamento_how_meter3").val(),
         
         "Professional4"           :$("#add_agendamento_busca_professional4").val(),
         "PlannedDate4"            :formatDateSql($("#add_agendamento_planned_date4").val()),
@@ -875,6 +895,8 @@ $("#add_agendamento_service_type5").change(function(){
 
         "Promoting4"              :$("#add_agendamento_Promoting4").val(),
         "Open-Bags4"              :$("#add_agendamento_open_bags4").val(),
+
+        "How-Meter4"              :$("#add_agendamento_how_meter4").val(),
         
         "Professional5"           :$("#add_agendamento_busca_professional5").val(),
         "PlannedDate5"            :formatDateSql($("#add_agendamento_planned_date5").val()),
@@ -887,6 +909,8 @@ $("#add_agendamento_service_type5").change(function(){
         "TrainningComments5"       :$("#add_agendamento_trainning_comments5").val(),
         "PushNewLine5"             :$("#add_agendamento_push_new_line5").val(),
         "LineSlowComments5"        :$("#add_agendamento_line_slow_comments5").val(),
+
+        "How-Meter5"              :$("#add_agendamento_how_meter5").val(),
 
         "Promoting5"              :$("#add_agendamento_Promoting5").val(),
         "Open-Bags5"              :$("#add_agendamento_open_bags5").val(),
