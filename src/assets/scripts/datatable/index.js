@@ -310,19 +310,15 @@ function formatHora(date) {
 
     
     function load() {       
-      // $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/ServiceQueryStatus?type="+ sessionStorage.Type +"&no="+ sessionStorage.No, success: function(result){    
       $.ajax({url: urlX+"Farmina-1-Service-Booking-Resources/ServiceQueryStatus?Pais="+paisX+"&type="+ sessionStorage.Type +"&no="+ sessionStorage.No, success: function(result){    
-        
         var jsonString = result.rowDataPacket //for testing  
         console.log(jsonString)    
-      //Load  datatable
-      var oTblReport = $("#dataTable")
+        //Load  datatable
+        var oTblReport = $("#dataTable")
         oTblReport.DataTable ({
             "data" : jsonString,
-            "scrollX": true,
-            "columnDefs": [
-              { "sType": "date", "targets": 1 , "name":"sadsad" }
-          ],
+            responsive: true,
+            // "scrollX": true,
             "columns" : [
               
               { "data" : "Resource No_" },
@@ -412,9 +408,13 @@ function formatHora(date) {
             }]
             
           });
+          //  var oTblReport = $('#dataTable').DataTable().destroy();
+          //  var oTblReport = $('#dataTable').DataTable();
 
-          
-
+          // $('#dataTableOrdemAgendamento').DataTable().destroy();
+          // $('#dataTableOrdemAgendamento').DataTable({
+          //   "scrollX": true
+          // }).init();
           
         }        
          
@@ -423,6 +423,7 @@ function formatHora(date) {
       
   };
 load();
+
   
 $("#btn_starting_booking").click(function(){
   var resource_no = $('#start_resource_no').val();

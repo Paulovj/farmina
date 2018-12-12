@@ -456,37 +456,33 @@ function StatusX(value){
 
 
     
-    function loadAgendamento() {  
-      
+    function loadAgendamento() {
+
       $.ajax({url: urlX+"ServiceHeaders/getServiceHeaderQuery?Pais="+paisX, success: function(result){    
         var jsonString = result.result //for testing  
         console.log('retorno agendamento: ', jsonString)
-      var oTblReportAgendamento = $("#dataTableOrdemAgendamento")
+        var oTblReportAgendamento = $("#dataTableOrdemAgendamento")
+        
         oTblReportAgendamento.DataTable ({
             "data" : jsonString,
-            "scrollX": true,
+            // "scrollX": true,
+            responsive: {
+              details: true
+          },
+             columnDefs: [
+              { responsivePriority: 1, targets: 0 },
+              { responsivePriority: 2, targets: -1 }
+          ],
             "columns" : [
               { "data" : "Document Type","visible": false},
               { "data" : "Salesperson Code","visible": false},
               { "data" : "Bill-to Address","visible": false},
-
-              /*{ "data" : "ISP Answer Type 1","visible": false},
-              { "data" : "Merchan Answer Type 1","visible": false},
-              { "data" : "Trainning Answer Type 1","visible": false},
-              { "data" : "Welcome Kit Answer Type 1","visible": false},*/
-
-
-
         
               { "data" : "No_" },
               { "data" : "Document Status", "render": function (data) {
                 return StatusX(data);
               }
             }, 
-              // { "data" : "Status", "render": function (data) {
-              //     return StatusX(data);
-              //   }
-              // },  
               { "data" : "Order Date", "render": function ( data) {
                 return formatDate(data);
                 } 
@@ -496,11 +492,7 @@ function StatusX(value){
                 } 
               },
               { "data" : "Customer No_" },
-              // { "data" : "Ship-to Name" },
               { "data" : "Name" },
-              // { "data" : "Name" ,"visible": false},//Codigo deposito
-              //{ "data" : "Priority" ,"visible": false},
-              //{ "data" : "Assigned User ID" ,"visible": false},
               { "data" : "Professional 1" },
               { "data" : "NameProfissional" },
             //    { "targets": -1, "data": null, 
@@ -514,9 +506,16 @@ function StatusX(value){
           ]
             
           });
-        }        
+          
+
+          
+          
+        } 
          
       });
+
+      
+     
 
   };
   loadAgendamento();
