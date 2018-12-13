@@ -31,11 +31,11 @@ export default (function () {
     //var dataMarcarda      = moment(new Date(data).getTime()).format("DDMMY")
     //var dataAtual = moment(new Date().getTime()).format("DDMMY")
     //console.log((moment(new Date(data).getTime()).format("DDMMY") - moment(new Date().getTime()).format("DDMMY"))/1000)
-     
     
     var falta = (moment(new Date(data).getTime()).utc() - moment(new Date().getTime()).utc()) / 1000;
     var dias = Math.round(falta / 60 / 60 / 24);
     var horas = Math.round(falta / 60 / 60 % 24);
+    
     //console.log((status + ' data da base:'+moment(new Date(data).getTime()).utc().format("DD-MM-Y") +'- data do servidor:'+ moment(new Date().getTime()).format("DD-MM-Y")))
     //console.log('quantos dias faltando:' +dias)
     var result =''
@@ -575,7 +575,6 @@ function formatHora(date) {
                   }
 
                   
-                  var lang ='';
                   $('.lEnviarFotosFinalizar').html($.i18n.prop('lEnviarFotosFinalizar',lang))
                   $('.lViews').html($.i18n.prop('lViews',lang))
               return btn;
@@ -1055,6 +1054,7 @@ var chamaFinaliza = function(){
       }
       if (service_type==4 ){
         $("#btn_save_photo").html($.i18n.prop('lEnviarFotoMerchandising',lang));
+        maxImg = 10
       }
       if (service_type==5 ){
         //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));

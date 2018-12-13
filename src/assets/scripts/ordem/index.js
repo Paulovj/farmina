@@ -56,19 +56,23 @@ function formatDateSql(date) {
   }
 
 function StatusX(value){
+  var StatusPendente = $.i18n.prop('lStatusPendente',lang)
+  var StatusIniciado = $.i18n.prop('lStatusIniciado',lang)
+var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
+  
   var valueX = "";
       if (value == 0){
-        valueX =  'Pendente';
+        valueX =  StatusPendente;
       }else if(value==1){
         // valueX =  'To Do';
         // valueX =  'Iniciado';
-        valueX = '<span class="badge badge-pill fl-r badge-success lh-0 p-10">Iniciado</span>';
+        valueX = '<span class="badge badge-pill fl-r badge-success lh-0 p-10">'+ StatusIniciado +'</span>';
       }else if(value==2){
         // valueX =  'Started';
         valueX =  'Iniciado';
       }else if(value==3){
       // valueX =  'Accomplished';            
-      valueX =  'Finalizado';            
+      valueX =  StatusFinalizado;            
       }
       return valueX;
 }
@@ -1385,7 +1389,7 @@ $("#add_agendamento_service_type5").change(function(){
     var tableClienteAgendamento = $("#dataTableClienteAgendamento")
     tableClienteAgendamento.DataTable ({
           "data" : jsonString,
-          "scrollX": true,
+          //"scrollX": true,
           "columns" : [
             { "data" : "No_"},
             { "data" : "Name"},
