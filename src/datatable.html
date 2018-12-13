@@ -543,14 +543,14 @@
               </div>
   
                <div class="row">
-                  <div class="col-md-6 mb-3">
-                      <label class="fw-500 lDataInicio">Data Início</label>
+                  <div class="col-md-6 mb-3" id="finish_date_inicio_label">
+                      <label class="fw-500 lDataInicio labelDataInicio">Data Início</label>
                     <div class="timepicker-input input-icon form-group">
                       <div class="input-group">
                         <div class="input-group-addon bgc-white bd bdwR-0">
                           <i class="ti-calendar"></i>
                         </div>
-                        <input type="text" id="finish_starting_date" class="form-control bdc-grey-200 start-date" placeholder="Date Start" data-provide="datepicker"   data-date-format='dd/mm/yyyy' >
+                        <input type="text" id="finish_starting_date" class="form-control bdc-grey-200 start-date" placeholder="Date" data-provide="datepicker"   data-date-format='dd/mm/yyyy' >
                         
                       </div>
                     </div>
@@ -563,14 +563,14 @@
               </div> 
   
               <div class="row">
-                <div class="col-md-6 mb-3">
+                <div class="col-md-6 mb-3" id="finish_date_final_label">
                     <label class="fw-500 lDataFinal">Data Final</label>
                   <div class="timepicker-input input-icon form-group">
                     <div class="input-group">
                       <div class="input-group-addon bgc-white bd bdwR-0">
                         <i class="ti-calendar"></i>
                       </div>
-                      <input type="text" id="finish_date" class="form-control bdc-grey-200 start-date" placeholder="Data Final" data-provide="datepicker"  data-date-format='dd/mm/yyyy'>
+                      <input type="text" id="finish_date" class="form-control bdc-grey-200 start-date" placeholder="Date" data-provide="datepicker"  data-date-format='dd/mm/yyyy'>
                     </div>
                   </div>
                 </div>
@@ -744,7 +744,7 @@
                       <div class="col-md-12 mb-3">
                         <label class="fw-500 lQuantosMedidoresAdicionais">Quantos metros adicionais?</label>
                         <!-- <input type="text" class="form-control bdc-grey-200" name="" id="finish_many_additional_meters"> -->
-                        <input type="number" class="form-control" id="finish_many_additional_meter" placeholder="" value="" required min="1" max="100000">
+                        <input type="number" class="form-control" id="finish_many_additional_meters" placeholder="" value="" required min="1" max="100000">
 
                       </div>
                     </div>

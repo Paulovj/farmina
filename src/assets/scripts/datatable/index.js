@@ -460,13 +460,16 @@ $("#btn_starting_booking").click(function(){
 
 
 $("#btn_finish_booking").click(function(){
+  var valida_finish_date = $('#finish_date').val();
+  var valida_starting_date = $('#starting_date').val();
+
   var resource_no = $('#finish_resource_no').val();
   var service_invoice_no = $('#finish_service_invoice_no').val();
   var service_invoice_line_no = $('#finish_service_invoice_line_no').val();
-  var finish_date = formatDateSql($('#finish_date').val());
+  var finish_date = ((!valida_finish_date)? '' :formatDateSql($('#finish_date').val()));
   var finish_time = $('#finish_time').val();
   
-  var starting_date = formatDateSql($('#finish_starting_date').val());
+  var starting_date = ((!valida_starting_date)? '' : formatDateSql($('#finish_starting_date').val()));
   var starting_hour = $('#finish_starting_hour').val();
   var starting_observation = $('#finish_starting_observation').val();
 
@@ -614,22 +617,41 @@ $("#btn_finish_booking").click(function(){
     $('#finish_type_seasonal_sticker_sim').hide();
     $('#finish_type_branding_sim').hide();
     
-
+    
+    if($('.lDate').length > 0){
+      $('.lDate').removeClass('lDate').addClass('lDataInicio');
+      $('.lDataInicio').html($.i18n.prop('lDataInicio',lang))
+    }
+    
     if(result['Service Type'] == 1){
       $('#finish_question_trainning').show();
+      $('#finish_date_final_label').hide();
+      $('#finish_date_inicio_label').show();
+      $('.labelDataInicio').removeClass('lDataInicio').addClass('lDate');
+      $('.lDate').html($.i18n.prop('lDate',lang))
     }
     if(result['Service Type'] == 2){
       $('#finish_question_Kit').show();
+      $('#finish_date_final_label').show();
+      $('#finish_date_inicio_label').show();
     }
     if(result['Service Type'] == 3){
       $('#finish_question_Isp').show();
+      $('#finish_date_final_label').show();
+      $('#finish_date_inicio_label').show();
     }
     if(result['Service Type'] == 4){
       $('#finish_question_merchandising').show();
+      $('#finish_date_inicio_label').hide();
+      $('#finish_date_final_label').hide();
     }
     if(result['Service Type'] == 5){
       $('#finish_question_army').show();
+      $('#finish_date_inicio_label').show();
+      $('#finish_date_final_label').show();
     }
+    
+    
     
       $('#finish_service_invoice_no').val(result['Service Invoice No_']);  
       $('#finish_service_invoice_line_no').val(result['Service Invoice Line No_']);
@@ -752,8 +774,6 @@ $("#btn_finish_booking").click(function(){
     $('#finish_people_refused').val('');
     $('#finish_location_activity').val('');
 
-
-finish_how_many_voucher_was_delivered
 
     
   }});
