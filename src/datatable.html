@@ -918,6 +918,505 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="modal fade" id="views-service-booking" data-backdrop="static">
+        <div class="modal-dialog modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="m-0 lViewServiceScheduling">view service scheduling</h5>          
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+          <div class="modal-body">
+            <!-- <form> -->
+  
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-500 lNomeCliente">Nome Cliente</label>       
+                        <input type="text" class="form-control" id="view_service_invoice_no" placeholder="" value="" required disabled style="display:none;">
+                        <input type="text" class="form-control" id="view_service_invoice_line_no" placeholder="" value="" required disabled style="display:none;">
+                        <input type="text" class="form-control" id="view_customer_name" placeholder="" value="" required disabled>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-500 lNRecurso">Nº. Recurso</label>
+                      <input type="text" class="form-control" id="view_resource_no" placeholder="" value="" required disabled>
+                    </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500 lFuncao">Função</label>     
+                    <input type="text" class="form-control" id="view_function" placeholder="" value="" required disabled>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500 lTipoServico">Tipo Serviço</label>     
+                    <input type="text" class="form-control" id="view_service_type" placeholder="" value="" required disabled>
+                  </div>
+              </div>
+  
+              
+              <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500 lSalespersonCode">Cód. Vendendor</label>
+                    <input type="text" class="form-control" id="view_salesperson_code" placeholder="" value="" required disabled>
+                  </div>
+                  <!-- <div class="col-md-6 mb-3">
+                      <label class="fw-500">Training for which line</label>     
+                    <input type="text" class="form-control" id="view_training_for_which_line" placeholder="" value="" required disabled>
+                  </div> -->
+
+                  <div class="col-md-6 mb-3">
+                    <label class="fw-500 lDataInicioEstimativa">Data Inicio Estimativa</label>
+                  <div class="timepicker-input input-icon form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon bgc-white bd bdwR-0">
+                        <i class="ti-calendar"></i>
+                      </div>
+                      <input type="text" id="view_estimated_starting_date" class="form-control bdc-grey-200 start-date" placeholder="Date Start" data-provide="datepicker"   data-date-format='dd/mm/yyyy' disabled>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+               <div class="row">
+                  <div class="col-md-6 mb-3" id="view_date_inicio_label">
+                      <label class="fw-500 lDataInicio labelDataInicio">Data Início</label>
+                    <div class="timepicker-input input-icon form-group">
+                      <div class="input-group">
+                        <div class="input-group-addon bgc-white bd bdwR-0">
+                          <i class="ti-calendar"></i>
+                        </div>
+                        <input type="text" id="view_starting_date" class="form-control bdc-grey-200 start-date" placeholder="Date" data-provide="datepicker"   data-date-format='dd/mm/yyyy' disabled>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500 lHoraInicio">Hora Início</label>
+                      <input type="time" id="view_starting_hour" name="appt-time2" min="9:00" max="18:00" class="form-control" placeholder="" value="" required disabled/>
+               <!-- <span class="hours">Office hours: 9AM to 6PM</span> -->
+                  </div>
+              </div> 
+  
+              <div class="row">
+                <div class="col-md-6 mb-3" id="view_date_final_label">
+                    <label class="fw-500 lDataFinal">Data Final</label>
+                  <div class="timepicker-input input-icon form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon bgc-white bd bdwR-0">
+                        <i class="ti-calendar"></i>
+                      </div>
+                      <input type="text" id="view_date" class="form-control bdc-grey-200 start-date" placeholder="Date" data-provide="datepicker"  data-date-format='dd/mm/yyyy' disabled>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="fw-500 lHoraFinal">Hora Final</label>
+                    <input type="time" id="view_time" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  disabled />
+                    
+                    
+                </div>
+            </div>
+  
+              
+              <!-- TRAINNING 1**************************************************************************************************************************-->
+              <fieldset id="view_question_trainning" style="display:none;">
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label class="fw-500 lTrainningType">Trainning Type</label>
+                          <select id="view_trainning_type" class="form-control" disabled>
+                            <option selected value="0" class="lSelecione" >Selecione</option>
+                              <option value="1" class="lGeneralNutrition">General Nutrition</option>
+                              <option value="2" class="lRefreshment">Refreshment</option>
+                              <option value="3" class="lNewlineStore">New line in the store</option>
+                          </select>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 mb-6">
+                          <label class="fw-500 lTrainningComments">Trainning Comments</label>
+                          <textarea id='view_trainning_comments' class="form-control bdc-grey-200" disabled > </textarea>
+                        </div>
+                      </div>  
+
+                </fieldset>
+               <!-- TRAINNING 1 **************************************************************************************************************************--> 
+
+              <!-- WELCOME KIT 2**************************************************************************************************************************-->
+              <fieldset id="view_question_Kit" style="display:none;">
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                          <label class="fw-500 lEntregue">Entregue? </label>      
+                        <select id="view_delivered" class="form-control" disabled>
+                            <option value="1" class="lSim">Sim</option>
+                            <option value="0" class="lNo">Não</option>
+                            </select>
+                      </div>                      
+                  </div>
+                </fieldset>
+               <!-- FIM WELCOME KIT **************************************************************************************************************************--> 
+
+              <!-- ISP 3**************************************************************************************************************************-->
+              <fieldset id="view_question_Isp" style="display:none;">
+
+                
+  
+              <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500 lQuantosClientesEntraramNaLoja">Quantos clientes entraram na loja? </label>      
+                    <!-- <input type="text" class="form-control" id="view_how_many_customers_entered_on_store" placeholder="" value="" required > -->
+                  <input type="number" class="form-control" id="view_how_many_customers_entered_on_store" placeholder="" value="" required min="1" max="100000" disabled>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500 lQuantosComprovantesForamEntregues">Quantos comprovantes foram entregues? </label>
+                    <!-- <input type="text" class="form-control" id="view_how_many_voucher_was_delivered" placeholder="" value="" required > -->
+                    <input type="number" class="form-control" id="view_how_many_voucher_was_delivered" placeholder="" value="" required min="1" max="100000" disabled>
+                  </div>
+              </div>
+  
+  
+              <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500 lQuantosProdutosForamVendidos">Quantos produtos foram vendidos? </label>
+                    <!-- <input type="text" class="form-control" id="view_how_many_products_eas_sold" placeholder="" value="" required > -->
+                    <input type="number" class="form-control" id="view_how_many_products_eas_sold" placeholder="" value="" required min="1" max="100000" disabled>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500 lQuantosKitsForamEntregues">Quantos kits foram entregues? </label>
+                    <!-- <input type="text" class="form-control" id="view_how_many_kits_was_delivered" placeholder="" value="" required > -->
+                    <input type="number" class="form-control" id="view_how_many_kits_was_delivered" placeholder="" value="" required min="1" max="100000" disabled>
+                  </div>
+              </div>
+              
+              <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="fw-500 lQuantosPlanosNacionaisForamGerados">Quantos planos nacionais foram gerados? </label>
+                <!-- <input type="text" class="form-control bdc-grey-200" name="" id="view_how_many_national_plans_was_generated"> -->
+                <input type="number" class="form-control" id="view_how_many_national_plans_was_generated" placeholder="" value="" required min="1" max="100000" disabled>
+              </div>
+            </div>
+
+
+            
+
+
+                <div class="row">
+                    
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-500 lQuantasSacolasdeComidaSecaVoceVendeu">Quantas sacolas de comida seca você vendeu? </label>
+                        <!-- <input type="text" class="form-control bdc-grey-200" name="" id="view_how_many_bags"> -->
+                        <input type="number" class="form-control" id="view_how_many_bags" placeholder="" value="" required min="1" max="100000" disabled>
+                      </div>
+    
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label class="fw-500 lQuantasLatasVoceVendeu">Quantas latas você vendeu? </label>
+                        <!-- <input type="text" class="form-control bdc-grey-200" name="" id="view_how_many_cans"> -->
+                        <input type="number" class="form-control" id="view_how_many_cans" placeholder="" value="" required min="1" max="100000" disabled>
+
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                          <label class="fw-500 lSoldOpenBags">Sold open bags? </label>
+                          <select id="view_open_bags" class="form-control" disabled>
+                              <option value="1" class="lSim">Sim</option>
+                              <option value="2" class="lNao">Não</option>
+                              </select>
+                        </div>
+      
+                      <div class="col-md-6 mb-3" id="view_open_bags_sim" style="display:none;">
+                          <label class="fw-500 lQuantosKhVendeuAberto">Quantos KG vendeu dos sacos abertos? </label>
+                          <!-- <input type="text" class="form-control bdc-grey-200" name="" id="view_how_many_kg"> -->
+                        <input type="number" class="form-control" id="view_how_many_kg" placeholder="" value="" required min="1" max="100000" disabled>
+
+                        </div>
+      
+                    </div>
+                  </fieldset>
+                   <!-- FIM ISP **************************************************************************************************************************--> 
+
+                    <!-- MERCHANDISING 4**************************************************************************************************************************-->
+              <fieldset id="view_question_merchandising" style="display:none;">
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                          <label class="fw-500 lNumeroPrateleirasProdutosFarmina">Número de prateleiras com produtos Farmina? </label>      
+                          <!-- <input type="text" class="form-control bdc-grey-200" name="" id="view_number_shelves"> -->
+                        <input type="number" class="form-control" id="view_number_shelves" placeholder="" value="" required min="1" max="100000" disabled>
+
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                          <label class="fw-500 lConseguiuColocarProdutoFarminaPosicaoMelhor">Você conseguiu colocar os produtos Farmina em uma posição melhor? </label>      
+                        <select id="view_able_to_place_on_better_position" class="form-control" disabled>
+                            <option value="1" class="lSim">Sim</option>
+                            <option value="0" class="lNao">Não</option>
+                            </select>
+                      </div>
+                  </div>
+
+                
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                          <label class="fw-500 lConseguiuEspacoProduto">Você conseguiu mais espaço para produtos? </label>      
+                        <select id="view_able_to_get_more_space" class="form-control" disabled>
+                            <option value="1" class="lSim">Sim</option>
+                            <option value="0" class="lNao">Não</option>
+                            </select>
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                          <label class="fw-500 lConseguiuEspacoAdicionalForaPrateleira">Você conseguiu espaço adicional fora das prateleiras? </label>      
+                        <select id="view_get_additional_space_out" class="form-control" disabled>
+                            <option value="1" class="lSim">Sim</option>
+                            <option value="0" class="lNao">Não</option>
+                            </select>
+                      </div>
+                  </div>
+                  
+                  <!--DISPLAY NONE-->
+                  <div class="row" id="view_many_additional_meters_sim" style="display:none;">
+                      <div class="col-md-12 mb-3">
+                        <label class="fw-500 lQuantosMedidoresAdicionais">Quantos metros adicionais?</label>
+                        <!-- <input type="text" class="form-control bdc-grey-200" name="" id="view_many_additional_meters"> -->
+                        <input type="number" class="form-control" id="view_many_additional_meters" placeholder="" value="" required min="1" max="100000" disabled>
+
+                      </div>
+                    </div>
+                  <!--DISPLAY NONE-->  
+                    <div class="row" id="view_type_space_out_of_shelves_sim" style="display:none;">
+                        <div class="col-md-12 mb-3">
+                          <label class="fw-500 lEspacoAdicionalPara">o espaço adicional é para?</label>
+                          <select id="view_type_space_out_of_shelves" class="form-control" disabled>
+                              <option value="0" class="lSelecione">Selecione</option>
+                              <option value="1" class="lPalletSpace">pallet space</option>
+                              <option value="2" class="lCartonShelf">carton shelf</option>
+                              <option value="3" class="lOtherDisplay">other display</option>
+                              </select>
+                        </div>
+                      </div>
+
+
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                          <label class="fw-500 lImplementouCampanhaAdesivoSazonal">Você já implementou campanha de adesivo sazonal?  </label>      
+                        <select id="view_implemented_seasonal_sticker" class="form-control" disabled>
+                            <option value="1" class="lSim">Sim</option>
+                            <option value="0" class="lNao">Não</option>
+                            </select>
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                          <label class="fw-500 lImplementouMarca">Você implementou a marca? </label>      
+                        <select id="view_implemented_branding" class="form-control" disabled>
+                            <option value="1" class="lSim">Sim</option>
+                            <option value="0" class="lNao">Não</option>
+                            </select>
+                      </div>
+                  </div>
+
+                  <!--DISPLAY NONE-->
+                  <div class="row" id="view_type_seasonal_sticker_sim" style="display:none;">
+                      <div class="col-md-12 mb-3">
+                        <label class="fw-500 lCampanhaAdesivoSazonal">A campanha de adesivo sazonal?</label>
+                        <select id="view_type_seasonal_sticker" class="form-control" disabled>
+                            <option value="0" class="lSelecione">Selecione</option>
+                            <option value="1" class="lWinter">Winter</option>
+                            <option value="2" class="lChristmas">Christmas</option>
+                            <option value="3" class="lValentineDay">Valentine Day</option>
+                            <option value="3" class="lSpring">Spring</option>
+                            <option value="3" class="lWomansDay">Woman’s Day</option>
+                            <option value="3" class="lHalloween">Halloween</option>
+                            </select>
+                      </div>
+                    </div>
+
+                    <!--DISPLAY NONE-->
+                    <div class="row" id="view_type_branding_sim" style="display:none;">
+                        <div class="col-md-12 mb-3">
+                          <label class="fw-500 lQuantasLatasVoceVendeu">Você implementou a marca qual tipo?</label>
+                          <select id="view_type_branding" class="form-control" disabled>
+                              <option value="0" class="lSelecione">Selecione</option>
+                              <option value="1" class="FullBranding">Full branding</option>
+                              <option value="2" class="OpenBranding">Open branding</option>                              
+                              </select>
+                        </div>
+                      </div>
+
+                </fieldset>
+               <!-- Fim MERCHANDISING 4**************************************************************************************************************************--> 
+
+
+
+
+
+                <!-- ARMY 5**************************************************************************************************************************-->
+                
+              <fieldset id="view_question_army" style="display:none;">
+
+                <div class="row">
+
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500 lLocationOfActivity">Location of activity? </label>      
+                      <input type="text" class="form-control bdc-grey-200" name="" id="view_location_activity" disabled>
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label class="fw-500 lWithHowManyPeopleYouSpoke">With how many people you spoke? </label>      
+                    <!-- <input type="text" class="form-control bdc-grey-200" name="" id="view_people_spoke"> -->
+                    <input type="number" class="form-control" id="view_people_spoke" placeholder="" value="" required min="1" max="100000" disabled>
+                </div>
+                
+                </div>
+                
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-500 lHowManyKitsYouDelivered">How many kits you delivered? </label>      
+                        <!-- <input type="text" class="form-control bdc-grey-200" name="" id="view_kits_delivered"> -->
+                        <input type="number" class="form-control" id="view_kits_delivered" placeholder="" value="" required min="1" max="100000" disabled>
+  
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-500 lHowManyPrintVouchersYouGave">How many print vouchers you gave? </label>      
+                        <!-- <input type="text" class="form-control bdc-grey-200" name="" id="view_print_voruchers"> -->
+                      <input type="number" class="form-control" id="view_print_voruchers" placeholder="" value="" required min="1" max="100000" disabled>
+
+                    </div>
+                    
+
+                   
+                </div>
+
+              
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-500 lHowManyDrySamplesYouGave">How many dry samples you gave? </label>      
+                        <!-- <input type="text" class="form-control bdc-grey-200" name="" id="view_dry_samples"> -->
+                        <input type="number" class="form-control" id="view_dry_samples" placeholder="" value="" required min="1" max="100000" disabled>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-500 lHowManyWetSamplesYouGave">How many wet samples you gave? </label>      
+                        <!-- <input type="text" class="form-control bdc-grey-200" name="" id="view_wet_Samples"> -->
+                        <input type="number" class="form-control" id="view_wet_Samples" placeholder="" value="" required min="1" max="100000" disabled>
+
+                    </div>
+
+                    
+                    
+                </div>
+                
+               
+
+                <div class="row">
+
+
+
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-500 lHowManyPeopleRefusedToSpeakWithYou">How many people refused to speak with you?  </label>      
+                        <!-- <input type="text" class="form-control bdc-grey-200" name="" id="view_people_refused"> -->
+                      <input type="number" class="form-control" id="view_people_refused" placeholder="" value="" required min="1" max="100000" disabled>
+
+                    </div>
+
+              </div>
+
+              
+
+
+                      
+
+
+              
+              </fieldset>
+             <!-- Fim ARMY 5**************************************************************************************************************************--> 
+
+             <div class="form-group">
+                <label class="fw-500 lObservacaoInicial">Observação Inicial</label>
+                <textarea class="form-control bdc-grey-200" id="view_starting_observation" disabled> </textarea>
+              </div>
+
+  
+              <div class="text-right">
+                <button class="btn btn-danger cur-p lCancelar" data-dismiss="modal" id="btn_view_booking_cancel">Cancelar </button>                
+              </div>
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="modal fade" id="photo-service-booking" data-backdrop="static">
       <div class="modal-dialog modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
         <div class="modal-content">

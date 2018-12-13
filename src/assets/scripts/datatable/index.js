@@ -234,6 +234,161 @@ function formatHora(date) {
             $('#finish-service-booking').modal('toggle')
           } 
 
+          if($(this).attr('action') == "views"){
+            console.log(data);
+            var service_invoice_no = data['Service Invoice No_']
+            var service_invoce_line_no = data['Service Invoice Line No_']
+            $.ajax({url: urlX+"Farmina-1-Service-Booking-Resources/QueryBookingResourseRelatorio?Pais="+paisX+"&service_invoice_no="+ service_invoice_no +"&service_invoce_line_no="+service_invoce_line_no, success: function(result){
+              var result = result.result[0] ;
+              console.log('Enmtroou no formmmmmm')
+              console.log(result)
+            // $("#btn_finish_booking_upload").attr("code",result['Service-Invoice-No_']);
+            $('#view_question_Isp').hide();
+            $('#view_question_Kit').hide();
+            $('#view_question_trainning').hide();
+            $('#view_question_merchandising').hide();
+            $('#view_question_army').hide();
+            
+            
+            $('#view_many_additional_meters_sim').hide();
+            $('#view_type_space_out_of_shelves_sim').hide();
+            $('#view_type_seasonal_sticker_sim').hide();
+            $('#view_type_branding_sim').hide();
+            
+            
+            if($('.lDate').length > 0){
+              $('.lDate').removeClass('lDate').addClass('lDataInicio');
+              $('.lDataInicio').html($.i18n.prop('lDataInicio',lang))
+            }
+            
+            if(result['Service Type'] == 1){
+              $('#view_question_trainning').show();
+              $('#view_date_final_label').hide();
+              $('#view_date_inicio_label').show();
+              $('.labelDataInicio').removeClass('lDataInicio').addClass('lDate');
+              $('.lDate').html($.i18n.prop('lDate',lang))
+            }
+            if(result['Service Type'] == 2){
+              $('#view_question_Kit').show();
+              $('#view_date_final_label').show();
+              $('#view_date_inicio_label').show();
+            }
+            if(result['Service Type'] == 3){
+              $('#view_question_Isp').show();
+              $('#view_date_final_label').show();
+              $('#view_date_inicio_label').show();
+            }
+            if(result['Service Type'] == 4){
+              $('#view_question_merchandising').show();
+              $('#view_date_inicio_label').hide();
+              $('#view_date_final_label').hide();
+            }
+            if(result['Service Type'] == 5){
+              $('#view_question_army').show();
+              $('#view_date_inicio_label').show();
+              $('#view_date_final_label').show();
+            }
+            
+            
+            
+              $('#view_service_invoice_no').val(result['Service Invoice No_']);  
+              $('#view_service_invoice_line_no').val(result['Service Invoice Line No_']);
+        
+            $('#view_customer_name').val(result['Customer Name']);  
+            $('#view_resource_no').val(result['Resource No_']);
+            $('#view_function').val(FunctionX(result['Function']));//no
+            $('#view_service_type').val(ServiceType(result['Service Type']));
+            $('#view_salesperson_code').val(result['Salesperson Code']);
+        
+            $('#view_training_for_which_line').val(TrainingAnswer(result['Trainning Answer Type']));//no
+            $('#view_estimated_starting_date').val(formatDate(result['Estimated Starting Date']));
+            $('#view_starting_date').val(formatDate(result['Starting Date']));
+            $('#view_starting_hour').val(formatHora(result['Starting Time']));
+            
+            $('#view_estimated_total_time').val(formatHora(result['Estimated Total Time']));
+            $('#view_starting_observation').val(result['Starting Observation']);//no
+            // console.log('time> '+formatHora(result['Finish Time']))
+            $('#view_date').val(formatDate(result['Finish Date']));
+            $('#view_time').val(formatHora(result['Finish Time']));
+        
+        
+            $('#view_how_many_customers_entered_on_store').val(result['Many Customers'])//no
+            $('#view_how_many_voucher_was_delivered').val(result['Many Voucher'])//no
+            $('#view_how_many_products_eas_sold').val(result['Many Products'])//no
+            $('#view_how_many_kits_was_delivered').val(result['Many Kits'])//no
+            $('#view_how_many_national_plans_was_generated').val(result['Many Nutrional Plans'])//no
+            $('#view_how_many_bags').val(result['Many Bags'])
+            $('#view_open_bags').val(result['Open Bags'])
+            $('#view_how_many_cans').val(result['Many Cans'])
+            $('#view_how_many_kg').val(result['Many KG'])
+            
+            $('#view_delivered').val(result['Delivered'])
+             $('#view_trainning_type').val(result['Trainning Type'])
+             $('#view_trainning_comments').val(result['Trainnig Comments'])   
+             $('#view_number_shelves').val(result['Number of Shelves'])
+             $('#view_able_to_place_on_better_position').val(result['Able to Place Better Position'])
+             $('#view_able_to_get_more_space').val(result['Able to get more space'])
+              if(result['Able to get more space'] == 1){
+                $('#view_many_additional_meters_sim').show();
+              }else{
+                $('#view_many_additional_meters_sim').hide();
+              }
+            
+             $('#view_get_additional_space_out').val(result['Get Additional space out'])
+              if(result['Get Additional space out'] == 1){
+                $('#view_type_space_out_of_shelves_sim').show();
+              }else{
+                $('#view_type_space_out_of_shelves_sim').hide();
+              }
+             $('#view_many_additional_meters').val(result['Many Additional Meters'])
+             $('#view_type_space_out_of_shelves').val(result['Type Space out of shelves'])
+             $('#view_implemented_seasonal_sticker').val(result['Implemented seasonal sticker'])
+              if(result['Implemented seasonal sticker'] == 1){
+                $('#view_type_seasonal_sticker_sim').show();
+              }else{
+                $('#view_type_seasonal_sticker_sim').hide();
+              }
+             $('#view_implemented_branding').val(result['Implemented Branding'])
+              if(result['Implemented Branding'] == 1){
+                $('#view_type_branding_sim').show();
+              }else{
+                $('#view_type_branding_sim').hide();
+              }
+             $('#view_type_seasonal_sticker').val(result['Type Seasonal Sticker'])
+             $('#view_type_branding').val(result['Type Branding'])
+        
+             
+        
+            
+        
+        
+            
+        
+            
+            $('#view_people_spoke').val(result['Army How Many People Spoke']);
+            $('#view_dry_samples').val(result['Army How Many Dry Samples']);
+            $('#view_wet_Samples').val(result['Army How Many Wet Samples']);
+            $('#view_print_voruchers').val(result['Army How Many Bags Dry Food']);
+            $('#view_kits_delivered').val(result['Many Kits Delivered']);
+            $('#view_people_refused').val(result['Many People Refused']);
+            $('#view_location_activity').val(result['Location Activity']);
+        
+        
+
+            $('#view_open_bags').val(result['Open Bags']);
+            if(result['Open Bags'] == 1){
+              $('#view_open_bags_sim').show()
+            }else{
+              $('#view_open_bags_sim').hide()
+            }
+        
+
+
+              }});
+
+          $('#views-service-booking').modal('toggle')
+        } 
+
             if ($(this).attr('action')=="save_photo"){
                 //var x = $(this).attr(id);
                 $('#photo_service_merchadising_menssage').hide();
@@ -412,6 +567,9 @@ function formatHora(date) {
                 //   btn += "<button action='finished' type='button' class='btn cur-p btn-info'>Finalizar</button>";
                 // }  
                   //btn += "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Iniciar</button>";
+                  if (a['Status']==3){
+                    btn += "<button action='views' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-info lViews' id='btn_finish_booking_upload'>Views</button>";
+                  }
                   if (a['Status']==1 || a['Service Type']==4){
                     btn += "<button action='save_photo' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-success lEnviarFotosFinalizar' id='btn_finish_booking_upload'>Enviar Fotos / Finalizar </button>";
                   }
@@ -419,6 +577,7 @@ function formatHora(date) {
                   
                   var lang ='';
                   $('.lEnviarFotosFinalizar').html($.i18n.prop('lEnviarFotosFinalizar',lang))
+                  $('.lViews').html($.i18n.prop('lViews',lang))
               return btn;
 
               
