@@ -15,15 +15,15 @@ $("#btn_login").click(function(){
 
   if(pais =='0'){
     valid = '1';
-    texto += 'Por favor selecione o <b>Pais</b> <br>'
+    texto += $.i18n.prop('lPais',lang)  + ' ' + $.i18n.prop('lCampoObrigatorio',lang) +' <br>' 
   }
   if(email ==''){
     valid = '1';
-    texto += 'Por favor preencha o <b>E-mail</b> <br>'
+    texto += $.i18n.prop('lEmail',lang) + ' ' + $.i18n.prop('lCampoObrigatorio',lang) +' <br>' 
   }
   if(password ==''){
     valid = '1';
-    texto += 'Por favor preencha a <b>Senha</b> <br>'
+    texto += $.i18n.prop('lPassword',lang) + ' ' + $.i18n.prop('lCampoObrigatorio',lang) +' <br>' 
   }
 
   if(valid == 1){
