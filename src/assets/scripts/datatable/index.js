@@ -241,23 +241,32 @@ function formatHora(date) {
                 $('#photo_service_isp_menssage').hide();
                 $('#photo_service_trainning_menssage').hide();
                 console.log(data )
+                var textoService = "";
                 if(Service_type == 4 ){
                   $('#photo_service_merchadising_menssage').show();
+                  textoService = $.i18n.prop('lEnviarFotoMerchandising',lang);
                 }
                 if(Service_type == 5 ){
                   $('#photo_service_army_menssage').show();
+                  textoService = $.i18n.prop('lEnviarFotoArmy',lang);
                 }
                 if(Service_type == 3 ){
                   $('#photo_service_isp_menssage').show();
+                  textoService = $.i18n.prop('lEnviarFotoISP',lang);
                 }
                 if(Service_type == 1 ){
                   $('#photo_service_trainning_menssage').show();
+                  textoService = $.i18n.prop('lEnviarFotoTranning',lang);
                 }
+                if (Service_type==2 ){
+                  textoService = $.i18n.prop('lEnviarFotoWelcomeKit',lang);
+                }
+                
                 $('#photo_service_invoice_line_no').val(Service_Invoice_Line_No);
                 $('#photo_service_invoice_no').val(id);
                 $('#photo_service_type').val(Service_type);
                 $('#dataTableImagens').DataTable().destroy();
-                $('#msg_service_line').html(' ( '+ id +' ) ');
+                $('#msg_service_line').html(' '+ textoService +' '+ id +'  ');
 
                 
                 loadImagensX(id,Service_type);
@@ -788,7 +797,9 @@ var chamaFinaliza = function(){
 
 
 
-  $("#btn_save_photo").click(function(){
+  // $("#btn_save_photo").click(function(){
+  $("#fileimagem").change(function(){
+    //alert('entrou  no change ')
     var pasta = $('#photo_service_invoice_no').val();
     var service_type  = $("#photo_service_type").val();
   
@@ -868,25 +879,26 @@ var chamaFinaliza = function(){
   function loadImagensX(id,service_type) {
     $.ajax({url: urlX+"Containers/"+id+"/files", success: function(result){
     console.log('result ' + result.length)  
+
        //console.log('welcome kit:'+service_type)
       var maxImg = 0
       if (service_type==1 ){
-        $("#btn_save_photo").html($.i18n.prop('lEnviarFotoTranning',lang));
+        //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoTranning',lang));
         maxImg = 3
       }
       if (service_type==2 ){
         //$("#finished").attr("disabled",false);
-        $("#btn_save_photo").html($.i18n.prop('lEnviarFotoWelcomeKit',lang));
+       //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoWelcomeKit',lang));
       }
       if (service_type==3 ){
-        $("#btn_save_photo").html($.i18n.prop('lEnviarFotoISP',lang));
+        //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoISP',lang));
         maxImg = 5
       }
       if (service_type==4 ){
         $("#btn_save_photo").html($.i18n.prop('lEnviarFotoMerchandising',lang));
       }
       if (service_type==5 ){
-        $("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
+        //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
         maxImg = 5
       }
       if (service_type !=2){
@@ -896,12 +908,12 @@ var chamaFinaliza = function(){
           $("#finished").attr("disabled",true);
         }  
         if (result.length < maxImg ){
-          $("#btn_save_photo").attr("disabled",false);
+          $("#fileimagem").attr("disabled",false);
         }else{
-          $("#btn_save_photo").attr("disabled",true);
+          $("#fileimagem").attr("disabled",true);
         }  
       }else{
-        $("#btn_save_photo").attr("disabled",true);
+        $("#fileimagem").attr("disabled",true);
       } 
 
 
