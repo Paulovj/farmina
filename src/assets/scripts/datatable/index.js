@@ -33,11 +33,11 @@ export default (function () {
     //console.log((moment(new Date(data).getTime()).format("DDMMY") - moment(new Date().getTime()).format("DDMMY"))/1000)
      
     
-    var falta = (moment(new Date(data).getTime()).utc() - moment(new Date().getTime())) / 1000;
+    var falta = (moment(new Date(data).getTime()).utc() - moment(new Date().getTime()).utc()) / 1000;
     var dias = Math.round(falta / 60 / 60 / 24);
     var horas = Math.round(falta / 60 / 60 % 24);
-    console.log((status + ' data da base:'+moment(new Date(data).getTime()).utc().format("DD-MM-Y") +'- data do servidor:'+ moment(new Date().getTime()).format("DD-MM-Y")))
-    console.log('quantos dias faltando:' +dias)
+    //console.log((status + ' data da base:'+moment(new Date(data).getTime()).utc().format("DD-MM-Y") +'- data do servidor:'+ moment(new Date().getTime()).format("DD-MM-Y")))
+    //console.log('quantos dias faltando:' +dias)
     var result =''
     var texto = ''
     if(status != 3){
