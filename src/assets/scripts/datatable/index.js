@@ -30,12 +30,14 @@ export default (function () {
     //var data = '2018/11/22'
     //var dataMarcarda      = moment(new Date(data).getTime()).format("DDMMY")
     //var dataAtual = moment(new Date().getTime()).format("DDMMY")
-    console.log((moment(new Date(data).getTime()).format("DDMMY") - moment(new Date().getTime()).format("DDMMY"))/1000)
-    console.log((moment(new Date(data).getTime()).format("DDMMY") +'-'+ moment(new Date().getTime()).format("DDMMY")))
+    //console.log((moment(new Date(data).getTime()).format("DDMMY") - moment(new Date().getTime()).format("DDMMY"))/1000)
+     
     
-    var falta = (moment(new Date(data).getTime()) - moment(new Date().getTime())) / 1000;
+    var falta = (moment(new Date(data).getTime()).utc() - moment(new Date().getTime())) / 1000;
     var dias = Math.round(falta / 60 / 60 / 24);
     var horas = Math.round(falta / 60 / 60 % 24);
+    console.log((status + ' data da base:'+moment(new Date(data).getTime()).utc().format("DD-MM-Y") +'- data do servidor:'+ moment(new Date().getTime()).format("DD-MM-Y")))
+    console.log('quantos dias faltando:' +dias)
     var result =''
     var texto = ''
     if(status != 3){
@@ -255,6 +257,9 @@ function formatHora(date) {
                 $('#photo_service_invoice_no').val(id);
                 $('#photo_service_type').val(Service_type);
                 $('#dataTableImagens').DataTable().destroy();
+                $('#msg_service_line').html(' ( '+ id +' ) ');
+
+                
                 loadImagensX(id,Service_type);
                 $('#photo-service-booking').modal('toggle'); 
 
@@ -510,14 +515,76 @@ $("#btn_finish_booking").click(function(){
 
   
 
-  // $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Farmina-1-Service-Booking-Resources/getUpdateFinish?Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no+"&Finish-Date="+finish_date+"&Finish-Time="+finish_time+"&Many-Customers=" + Many_Customers + "&Many-Voucher=" + Many_Voucher + "&Many-Products=" + Many_Products + "&Many-Kits=" + Many_Kits + "&Many-Nutrional-Plans=" + Many_Nutrional_Plans + "&starting_date="+ starting_date + "&starting_hour=" + starting_hour + "&starting_observation=" + starting_observation + "&Many-Bags="+Many_Bags+ "&Many-Cans="+Many_Cans+ "&Many-Kg="+Many_Kg + "&Delivered="+Delivered+ "&Trainning-Type="+Trainning_Type+ "&Trainning-Comments="+Trainning_Comments+"&finish-number-shelves="+finish_number_shelves+"&finish-able-to-place-on-better-position="+finish_able_to_place_on_better_position+"&finish-able-to-get-more-space="+finish_able_to_get_more_space+"&finish-get-additional-space-out="+finish_get_additional_space_out+"&finish-many-additional-meters="+finish_many_additional_meters+"&finish-type-space-out-of-shelves="+finish_type_space_out_of_shelves+"&finish-implemented-seasonal-sticker="+finish_implemented_seasonal_sticker+"&finish-implemented-branding="+finish_implemented_branding+"&finish-type-seasonal-sticker="+finish_type_seasonal_sticker+"&finish-type-branding="+finish_type_branding   , success: function(result){
-    $.ajax({url: urlX+"Farmina-1-Service-Booking-Resources/getUpdateFinish?Pais="+paisX+"&Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no+"&Finish-Date="+finish_date+"&Finish-Time="+finish_time+"&Many-Customers=" + Many_Customers + "&Many-Voucher=" + Many_Voucher + "&Many-Products=" + Many_Products + "&Many-Kits=" + Many_Kits + "&Many-Nutrional-Plans=" + Many_Nutrional_Plans + "&starting_date="+ starting_date + "&starting_hour=" + starting_hour + "&starting_observation=" + starting_observation + "&Many-Bags="+Many_Bags+ "&Open-Bags="+ Open_Bags +"&Many-Cans="+Many_Cans+ "&Many-Kg="+Many_Kg + "&Delivered="+Delivered+ "&Trainning-Type="+Trainning_Type+ "&Trainning-Comments="+Trainning_Comments+"&finish-number-shelves="+finish_number_shelves+"&finish-able-to-place-on-better-position="+finish_able_to_place_on_better_position+"&finish-able-to-get-more-space="+finish_able_to_get_more_space+"&finish-get-additional-space-out="+finish_get_additional_space_out+"&finish-many-additional-meters="+finish_many_additional_meters+"&finish-type-space-out-of-shelves="+finish_type_space_out_of_shelves+"&finish-implemented-seasonal-sticker="+finish_implemented_seasonal_sticker+"&finish-implemented-branding="+finish_implemented_branding+"&finish-type-seasonal-sticker="+finish_type_seasonal_sticker+"&finish-type-branding="+finish_type_branding +"&People-Spoke="+finish_people_spoke+"&Dry-Samples="+finish_dry_samples+"&Wet-Samples="+finish_wet_Samples+"&Kits-Delivered="+finish_kits_delivered+"&Print-Voruchers="+finish_print_voruchers+"&People-Refused="+finish_people_refused+"&Location-Activity="+finish_location_activity  , success: function(result){
+  //   $.ajax({url: urlX+"Farmina-1-Service-Booking-Resources/getUpdateFinish?Pais="+paisX+"&Resource-No="+resource_no+"&Service-Invoice-No="+service_invoice_no+"&Service-Invoice-Line-No="+service_invoice_line_no+"&Finish-Date="+finish_date+"&Finish-Time="+finish_time+"&Many-Customers=" + Many_Customers + "&Many-Voucher=" + Many_Voucher + "&Many-Products=" + Many_Products + "&Many-Kits=" + Many_Kits + "&Many-Nutrional-Plans=" + Many_Nutrional_Plans + "&starting_date="+ starting_date + "&starting_hour=" + starting_hour + "&starting_observation=" + starting_observation + "&Many-Bags="+Many_Bags+ "&Open-Bags="+ Open_Bags +"&Many-Cans="+Many_Cans+ "&Many-Kg="+Many_Kg + "&Delivered="+Delivered+ "&Trainning-Type="+Trainning_Type+ "&Trainning-Comments="+Trainning_Comments+"&finish-number-shelves="+finish_number_shelves+"&finish-able-to-place-on-better-position="+finish_able_to_place_on_better_position+"&finish-able-to-get-more-space="+finish_able_to_get_more_space+"&finish-get-additional-space-out="+finish_get_additional_space_out+"&finish-many-additional-meters="+finish_many_additional_meters+"&finish-type-space-out-of-shelves="+finish_type_space_out_of_shelves+"&finish-implemented-seasonal-sticker="+finish_implemented_seasonal_sticker+"&finish-implemented-branding="+finish_implemented_branding+"&finish-type-seasonal-sticker="+finish_type_seasonal_sticker+"&finish-type-branding="+finish_type_branding +"&People-Spoke="+finish_people_spoke+"&Dry-Samples="+finish_dry_samples+"&Wet-Samples="+finish_wet_Samples+"&Kits-Delivered="+finish_kits_delivered+"&Print-Voruchers="+finish_print_voruchers+"&People-Refused="+finish_people_refused+"&Location-Activity="+finish_location_activity  , success: function(result){
+  //   $('#finish-service-booking').modal('toggle');
+  //   var oTblReport = $('#dataTable').DataTable().destroy();
+
+  //   load();
+  //   }
+  // });
+
+
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+     "url": urlX+"Farmina-1-Service-Booking-Resources/getUpdateFinish",
+    "method": "POST",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded",
+      "cache-control": "no-cache",
+      "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
+    },
+    "data": {       
+      "Pais"  : paisX,
+      "Resource-No":((!resource_no)? '': resource_no),
+      "Service-Invoice-No":((!service_invoice_no)? '': service_invoice_no),
+      "Service-Invoice-Line-No":((!service_invoice_line_no)? '': service_invoice_line_no),
+      "Finish-Date":((!finish_date)? '': finish_date),
+      "Finish-Time":((!finish_time)? '': finish_time),
+      "Many-Customers":((!Many_Customers)? '': Many_Customers),
+      "Many-Voucher":((!Many_Voucher)? '': Many_Voucher),
+      "Many-Products":((!Many_Products)? '': Many_Products),
+      "Many-Kits": ((!Many_Kits)? '': Many_Kits),
+      "Many-Nutrional-Plans":((!Many_Nutrional_Plans)? '': Many_Nutrional_Plans),
+      "starting_date": ((!starting_date)? '': starting_date),
+      "starting_hour": ((!starting_hour)? '': starting_hour),
+      "starting_observation":((!starting_observation)? '': starting_observation),
+      "Many-Bags":((!Many_Bags)? '': Many_Bags),
+      "Open-Bags": ((!Open_Bags)? '': Open_Bags),
+      "Many-Cans":((!Many_Cans)? '': Many_Cans),
+      "Many-Kg":((!Many_Kg)? '': Many_Kg),
+      "Delivered":((!Delivered)? '': Delivered),
+      "Trainning-Type":((!Trainning_Type)? '': Trainning_Type),
+      "Trainning-Comments":((!Trainning_Comments)? '': Trainning_Comments),
+      "finish-number-shelves":((!finish_number_shelves)? '': finish_number_shelves),
+      "finish-able-to-place-on-better-position":((!finish_able_to_place_on_better_position)? '': finish_able_to_place_on_better_position),
+      "finish-able-to-get-more-space":((!finish_able_to_get_more_space)? '': finish_able_to_get_more_space),
+      "finish-get-additional-space-out":((!finish_get_additional_space_out)? '': finish_get_additional_space_out),
+      "finish-many-additional-meters":((!finish_many_additional_meters)? '': finish_many_additional_meters),
+      "finish-type-space-out-of-shelves":((!finish_type_space_out_of_shelves)? '': finish_type_space_out_of_shelves),
+      "finish-implemented-seasonal-sticker":((!finish_implemented_seasonal_sticker)? '': finish_implemented_seasonal_sticker),
+      "finish-implemented-branding":((!finish_implemented_branding)? '': finish_implemented_branding),
+      "finish-type-seasonal-sticker":((!finish_type_seasonal_sticker)? '': finish_type_seasonal_sticker),
+      "finish-type-branding":((!finish_type_branding)? '': finish_type_branding ) ,
+      "People-Spoke":((!finish_people_spoke)? '': finish_people_spoke),
+      "Dry-Samples":((!finish_dry_samples)? '': finish_dry_samples),
+      "Wet-Samples":((!finish_wet_Samples)? '': finish_wet_Samples),
+      "Kits-Delivered":((!finish_kits_delivered)? '': finish_kits_delivered),
+      "Print-Voruchers":((!finish_print_voruchers)? '': finish_print_voruchers),
+      "People-Refused":((!finish_people_refused)? '': finish_people_refused),
+      "Location-Activity":((!finish_location_activity)? '': finish_location_activity) 
+      }
+  }
+
+  $.ajax(settings).done(function (response) {
     $('#finish-service-booking').modal('toggle');
     var oTblReport = $('#dataTable').DataTable().destroy();
 
     load();
-    }
-  });
+  }); 
+
+
+
 });
 
 
@@ -580,51 +647,113 @@ $("#btn_finish_booking").click(function(){
     
     $('#finish_estimated_total_time').val(formatHora(result['Estimated Total Time']));
     $('#finish_starting_observation').val(result['Starting Observation']);//no
-    console.log('time> '+formatHora(result['Finish Time']))
+    // console.log('time> '+formatHora(result['Finish Time']))
     $('#finish_date').val(formatDate(result['Finish Date']));
     $('#finish_time').val(formatHora(result['Finish Time']));
 
 
-    $('#finish_how_many_customers_entered_on_store').val(result['Many Customers'])//no
-    $('#finish_how_many_voucher_was_delivered').val(result['Many Voucher'])//no
-    $('#finish_how_many_products_eas_sold').val(result['Many Products'])//no
-    $('#finish_how_many_kits_was_delivered').val(result['Many Kits'])//no
-    $('#finish_how_many_national_plans_was_generated').val(result['Many Nutrional Plans'])//no
-    $('#finish_how_many_bags').val(result['Many Bags'])
-    $('#finish_open_bags').val(result['Open Bags'])
-    $('#finish_how_many_cans').val(result['Many Cans'])
-    $('#finish_how_many_kg').val(result['Many KG'])
+    // $('#finish_how_many_customers_entered_on_store').val(result['Many Customers'])//no
+    // $('#finish_how_many_voucher_was_delivered').val(result['Many Voucher'])//no
+    // $('#finish_how_many_products_eas_sold').val(result['Many Products'])//no
+    // $('#finish_how_many_kits_was_delivered').val(result['Many Kits'])//no
+    // $('#finish_how_many_national_plans_was_generated').val(result['Many Nutrional Plans'])//no
+    // $('#finish_how_many_bags').val(result['Many Bags'])
+    // $('#finish_open_bags').val(result['Open Bags'])
+    // $('#finish_how_many_cans').val(result['Many Cans'])
+    // $('#finish_how_many_kg').val(result['Many KG'])
     
-    $('#finish_delivered').val(result['Delivered'])
+    // $('#finish_delivered').val(result['Delivered'])
+     $('#finish_trainning_type').val(result['Trainning Type'])
+     $('#finish_trainning_comments').val(result['Trainnig Comments'])   
+     $('#finish_number_shelves').val(result['Number of Shelves'])
+     $('#finish_able_to_place_on_better_position').val(result['Able to Place Better Position'])
+     $('#finish_able_to_get_more_space').val(result['Able to get more space'])
+      if(result['Able to get more space'] == 1){
+        $('#finish_many_additional_meters_sim').show();
+      }else{
+        $('#finish_many_additional_meters_sim').hide();
+      }
+    
+     $('#finish_get_additional_space_out').val(result['Get Additional space out'])
+      if(result['Get Additional space out'] == 1){
+        $('#finish_type_space_out_of_shelves_sim').show();
+      }else{
+        $('#finish_type_space_out_of_shelves_sim').hide();
+      }
+     $('#finish_many_additional_meters').val(result['Many Additional Meters'])
+     $('#finish_type_space_out_of_shelves').val(result['Type Space out of shelves'])
+     $('#finish_implemented_seasonal_sticker').val(result['Implemented seasonal sticker'])
+      if(result['Implemented seasonal sticker'] == 1){
+        $('#finish_type_seasonal_sticker_sim').show();
+      }else{
+        $('#finish_type_seasonal_sticker_sim').hide();
+      }
+     $('#finish_implemented_branding').val(result['Implemented Branding'])
+      if(result['Implemented Branding'] == 1){
+        $('#finish_type_branding_sim').show();
+      }else{
+        $('#finish_type_branding_sim').hide();
+      }
+     $('#finish_type_seasonal_sticker').val(result['Type Seasonal Sticker'])
+     $('#finish_type_branding').val(result['Type Branding'])
 
-    $('#finish_trainning_type').val(result['Trainning Type'])
-    $('#finish_trainning_comments').val(result['Trainning Comments'])
-   
-   
-    $('#finish_number_shelves').val(result['Number of Shelves'])
-    $('#finish_able_to_place_on_better_position').val(result['Able to Place Better Position'])
-    $('#finish_able_to_get_more_space').val(result['Able to get more space'])
-    $('#finish_get_additional_space_out').val(result['Get Additional space out'])
-    $('#finish_many_additional_meters').val(result['Many Additional Meters'])
-    $('#finish_type_space_out_of_shelves').val(result['Type Space out of shelves'])
-    $('#finish_implemented_seasonal_sticker').val(result['Implemented seasonal sticker'])
-    $('#finish_implemented_branding').val(result['Implemented Branding'])
-    $('#finish_type_seasonal_sticker').val(result['Type Seasonal Sticker'])
-    $('#finish_type_branding').val(result['Type Branding'])
+     
 
-    $('#finish_people_spoke').val(result['Army How Many People Spoke']);
-    $('#finish_dry_samples').val(result['Army How Many Dry Samples']);
-    $('#finish_wet_Samples').val(result['Army How Many Wet Samples']);
-    $('#finish_print_voruchers').val(result['Army How Many Bags Dry Food']);
+    
+
+
     
 
     
-    $('#finish_kits_delivered').val(result['Many Kits Delivered']);
-    $('#finish_people_refused').val(result['Many People Refused']);
-    $('#finish_location_activity').val(result['Location Activity']);
+    // $('#finish_people_spoke').val(result['Army How Many People Spoke']);
+    // $('#finish_dry_samples').val(result['Army How Many Dry Samples']);
+    // $('#finish_wet_Samples').val(result['Army How Many Wet Samples']);
+    // $('#finish_print_voruchers').val(result['Army How Many Bags Dry Food']);
+    // $('#finish_kits_delivered').val(result['Many Kits Delivered']);
+    // $('#finish_people_refused').val(result['Many People Refused']);
+    // $('#finish_location_activity').val(result['Location Activity']);
 
 
+    $('#finish_how_many_customers_entered_on_store').val('');
+    $('#finish_how_many_voucher_was_delivered').val('');
+    $('#finish_how_many_products_eas_sold').val('');
+    $('#finish_how_many_kits_was_delivered').val('');
+    $('#finish_how_many_national_plans_was_generated').val('');
+    $('#finish_how_many_bags').val('');
+    $('#finish_open_bags').val(result['Open Bags']);
+    if(result['Open Bags'] == 1){
+      $('#finish_open_bags_sim').show()
+    }else{
+      $('#finish_open_bags_sim').hide()
+    }
 
+    $('#finish_how_many_cans').val('');
+    $('#finish_how_many_kg').val('');
+
+
+    $('#finish_delivered').val('');
+    //$('#finish_trainning_type').val('');
+    //$('#finish_trainning_comments').val('');
+    // $('#finish_number_shelves').val('');
+    // $('#finish_able_to_place_on_better_position').val('');
+    // $('#finish_able_to_get_more_space').val('');
+    // $('#finish_get_additional_space_out').val('');
+    // $('#finish_many_additional_meters').val('');
+    // $('#finish_type_space_out_of_shelves').val('');
+    // $('#finish_implemented_seasonal_sticker').val('');
+    // $('#finish_implemented_branding').val('');
+    //$('#finish_type_seasonal_sticker').val('');
+    //$('#finish_type_branding').val('');
+    $('#finish_people_spoke').val('');
+    $('#finish_dry_samples').val('');
+    $('#finish_wet_Samples').val('');
+    $('#finish_print_voruchers').val('');
+    $('#finish_kits_delivered').val('');
+    $('#finish_people_refused').val('');
+    $('#finish_location_activity').val('');
+
+
+finish_how_many_voucher_was_delivered
 
     
   }});
@@ -724,10 +853,32 @@ var chamaFinaliza = function(){
       }else{
         $("#finished").attr("disabled",true);
        }  
+
        console.log('welcome kit:'+service_type)
+       if (service_type==1 ){
+        $("#btn_save_photo").html($.i18n.prop('lEnviarFotoTranning',lang));
+        
+      }
+      
        if (service_type==2 ){
         $("#finished").attr("disabled",false);
+        $("#btn_save_photo").html($.i18n.prop('lEnviarFotoWelcomeKit',lang));
+
       }
+      console.log('welcome kit:'+service_type)
+       if (service_type==3 ){
+        $("#btn_save_photo").html($.i18n.prop('lEnviarFotoISP',lang));
+      }
+      console.log('welcome kit:'+service_type)
+       if (service_type==4 ){
+        $("#btn_save_photo").html($.i18n.prop('lEnviarFotoMerchandising',lang));
+      }
+      console.log('welcome kit:'+service_type)
+       if (service_type==5 ){
+        $("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
+      }
+
+
     var jsonString = result 
 
       console.log(jsonString)    
@@ -735,13 +886,28 @@ var chamaFinaliza = function(){
       datatableImages.DataTable ({
           "data" : jsonString,
           //"scrollX": true,
+          "paging": false,
+          "info": false,
+          "searching": false,
           "columns" : [
             
             { "data" : "name" , "render": function ( data) { 
               return "<img src='http://nav.farmina.com.br:3002/"+id+"/"+data+"'/ heigth='50px' width='50px'>" 
               }
             },
-            { "data" : "name" }
+            { "data" : "name" },
+
+            { "targets": -1, "data": null, 
+              "render": function (a,d){
+                var btn =""
+                var textoDelete = $.i18n.prop('lDelete',lang);
+                    btn += "<button action='delete_photo' code="+a['name']+" type='button' class='btn cur-p btn-danger lDelete' id='btn_photo_delete'> "+textoDelete+" </button>";
+              return btn;
+
+              
+
+              }
+            }
             ]
           
         });
@@ -821,6 +987,50 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
     }
 
 
+    $('#dataTableImagens tbody').on( 'click', 'button', function () {
+      var data = $("#dataTableImagens").DataTable().row( $(this).parents('tr') ).data();
+      var pasta = $('#photo_service_invoice_no').val();
+      var service_type  = $("#photo_service_type").val();
+      var  file =  data.name
+      if($(this).attr('action') == "delete_photo"){
+       
+        var settings = {
+          "async": true,
+          "crossDomain": true,
+           "url": urlX+"Containers/"+ pasta +"/files/"+file,
+          "method": "DELETE",
+          "headers": {
+            "cache-control": "no-cache",
+            "postman-token": "d754895d-5909-8ac8-1e61-b09a9bab5a2b"
+          },
+          "processData": false,
+          "contentType": false,
+          "mimeType": "multipart/form-data",
+          "data": data
+        }
+  
+        $.ajax(settings).done(function (response) {
+          var header = $.i18n.prop('lSuccess',lang)
+          var msg = $.i18n.prop('lImagenExcluidaComSucesso',lang)
+          $.notify({
+            title: header,
+            message: msg
+          },{
+            type: 'pastel-success',
+            delay: 5000,
+            z_index: 10000,
+            template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+              '<span data-notify="title">{1}</span>' +
+              '<span data-notify="message">{2}</span>' +
+            '</div>'
+          });
+          $('#dataTableImagens').DataTable().destroy();
+          loadImagensX(pasta,service_type);
+          
+        });    
+    }
+  });
+    
 
 
   }  
