@@ -512,7 +512,9 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
           });
           
 
-          
+        //new $.fn.dataTable.FixedHeader( oTblReportAgendamento );
+      $('#dataTableOrdemAgendamento').DataTable.FixedHeader();
+              
           
         } 
          
@@ -643,8 +645,10 @@ function PromoterServiceTypeX(promoter,value,action){
   $("#add_agendamento_trainning_comments"+promoter).val("");
   $("#add_agendamento_Promoting"+promoter).val("0");
   $("#add_agendamento_open_bags"+promoter).val("0");
-  $("#add_agendamento_planned_hour"+promoter).val("");
+  // $("#add_agendamento_planned_hour"+promoter).val("");
   $("#div_"+action+"_agendamento_service_result_planned_hour"+promoter).show();
+  $("#add_agendamento_ISP_comments"+promoter).val("");
+  
 
   
   if(value==1){
@@ -670,6 +674,9 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
     $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
+    
+
    
 
     
@@ -700,6 +707,8 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_planned_hour"+promoter).hide();
     $("#add_agendamento_planned_hour"+promoter).val("0");
     $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
+
 
     
 
@@ -720,6 +729,7 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_promoting"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).show();
     $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).show();
 
 
     
@@ -744,6 +754,8 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
     $("#div_"+action+"_agendamento_service_many_meters"+promoter).show();
+    $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
+
     
 
     
@@ -758,6 +770,8 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
     $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
+
 
 
     
@@ -1389,6 +1403,10 @@ $("#add_agendamento_service_type5").change(function(){
     var tableClienteAgendamento = $("#dataTableClienteAgendamento")
     tableClienteAgendamento.DataTable ({
           "data" : jsonString,
+          rowReorder: {
+            selector: 'td:nth-child(2)'
+        },
+        responsive: true,
           //"scrollX": true,
           "columns" : [
             { "data" : "No_"},

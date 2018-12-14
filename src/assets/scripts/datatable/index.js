@@ -27,19 +27,25 @@ export default (function () {
   var lDemographicItems ="";
   
   function formatDateStatus(data,status) {
-    var data = new Date(data)
     //var data = '2018/11/22'
     //var dataMarcarda      = moment(new Date(data).getTime()).format("DDMMY")
     //var dataAtual = moment(new Date().getTime()).format("DDMMY")
     //console.log((moment(new Date(data).getTime()).format("DDMMY") - moment(new Date().getTime()).format("DDMMY"))/1000)
+
+    var data = moment(new Date(data).getTime()).utc()//.format("DD-MM-Y:HH:mm")
+    var dataAtual = moment(new Date().getTime()).utc()//.format("DD-MM-Y:HH:mm")
     
-    var falta = (moment(new Date(data).getTime()+ (23.59*1000*60*60)).utc() - moment(new Date().getTime()+ (23.59*1000*60*60)).utc()) / 1000;
+    var falta = ( data - dataAtual) / 1000;
+
     var dias = Math.round(falta / 60 / 60 / 24);
     var horas = Math.round(falta / 60 / 60 % 24);
+    if(horas<12){
+      dias = dias  + 1
+    }
     
-    
-    //console.log((status + ' data da base:'+moment(new Date(data).getTime()).utc().format("DD-MM-Y") +'- data do servidor:'+ moment(new Date().getTime()).format("DD-MM-Y")))
-    //console.log('quantos dias faltando:' +dias+' - horas: '+ horas)
+    //console.log((status + ' data da base:'+moment(new Date(data).getTime()+ (23.59*1000*60*60)).utc().format("DD-MM-Y") +'- data do servidor:'+ moment(new Date().getTime()).format("DD-MM-Y")))
+    //console.log((status + ' data da base:'+moment(new Date(data)).utc().format("DD-MM-Y") +'- data do servidor:'+ moment(new Date())))
+    console.log('data do sistema: '+ data.format("DD-MM-Y:HH:mm") +' data atual :'+ dataAtual.format("DD-MM-Y:HH:mm") +'quantos dias faltando:' +dias+' - horas: '+ horas)
     //console.log('Moment: ' + (moment("20181214", "YYYYMMDD").fromNow()));
     var result =''
     var texto = ''
@@ -57,9 +63,9 @@ export default (function () {
         //result = 'faltam ' + dias + ' dias'  
       }else if(dias == 0){
         texto  = $.i18n.prop('lTarefaDia',lang)
-        result =  '<span class="badge badge-pill fl-r badge-success lh-0 p-10">' + texto + '</span>'
+        result =  '<span class="badge badge-pill fl-r badge-success lh-0 p-10">' + texto +'</span>'
         //result = ' chegou o dia'
-      }else if(dias < 0){
+      }else if(dias < -1){
         texto  = $.i18n.prop('lAtrasado',lang)
         var delay  = $.i18n.prop('lDelay',lang)
         // result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">' + dias + ' ' + texto +'</span>'

@@ -292,6 +292,7 @@
                         <!-- <button type="button" class="btn cur-p btn-success" id="btn_add_agendamento">Nova Ordem Agendamento</button> -->
                         <button type="button" class="btn cur-p btn-success lNovaOrdemAgendamento" id="btn_cliente_agendamento">Nova Ordem Agendamento</button>
                       </div>
+                      <div class="table-responsive"></div>
                     <table id="dataTableOrdemAgendamento" class="table table-striped table-bordered responsive" cellspacing="0" width="100%" >
 
                         <thead>
@@ -315,6 +316,7 @@
                         </tbody>
                       </table>
                   </div>
+                </div>
                 </div>
               </div>
             </div>
@@ -568,9 +570,16 @@
                         <div class="row" id="div_add_agendamento_service_result_tranning_comments1" style="display:none">
                             <div class="col-md-12 mb-6">
                               <label class="fw-500 lTrainningComments">Trainning Comments</label>
-                              <textarea id='add_agendamento_trainning_comments1' class="form-control bdc-grey-200" > </textarea>
+                              <textarea id='add_agendamento_trainning_comments1' maxlength="100" class="form-control bdc-grey-200" > </textarea>
                             </div>
-                          </div>  
+                          </div>
+                          
+                          <div class="row" id="div_add_agendamento_service_result_ISP_comments12" style="display:none">
+                            <div class="col-md-12 mb-6">
+                              <label class="fw-500 lISPComments">ISP Comments</label>
+                              <textarea id='add_agendamento_ISP_comments1' maxlength="100"  class="form-control bdc-grey-200" > </textarea>
+                            </div>
+                          </div>
 
 
                     </div>
