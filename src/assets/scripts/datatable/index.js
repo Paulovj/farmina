@@ -504,7 +504,7 @@ function formatHora(date) {
         oTblReport.DataTable ({
             "data" : jsonString,
             responsive: true,
-            // "scrollX": true,
+             "scrollX": true,
             "columns" : [
               
               { "data" : "Resource No_" },
@@ -597,13 +597,7 @@ function formatHora(date) {
             }]
             
           });
-          //  var oTblReport = $('#dataTable').DataTable().destroy();
-          //  var oTblReport = $('#dataTable').DataTable();
-
-          // $('#dataTableOrdemAgendamento').DataTable().destroy();
-          // $('#dataTableOrdemAgendamento').DataTable({
-          //   "scrollX": true
-          // }).init();
+          $('#dataTable').DataTable().draw();        
           
         }        
          
@@ -1093,7 +1087,7 @@ var chamaFinaliza = function(){
       var datatableImages = $("#dataTableImagens")
       datatableImages.DataTable ({
           "data" : jsonString,
-          //"scrollX": true,
+          "scrollX": true,
           "paging": false,
           "info": false,
           "searching": false,
@@ -1119,6 +1113,8 @@ var chamaFinaliza = function(){
             ]
           
         });
+
+        $('#dataTableImagens').DataTable().draw();        
       }        
        
     });

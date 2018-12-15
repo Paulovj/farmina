@@ -462,23 +462,38 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
     
     function loadAgendamento() {
 
+      
+
       $.ajax({url: urlX+"ServiceHeaders/getServiceHeaderQuery?Pais="+paisX, success: function(result){    
-        var jsonString = result.result //for testing  
-        console.log('retorno agendamento: ', jsonString)
+        var jsonString = result.data //for testing  
+        // console.log('retorno agendamento: ', jsonString)
         var oTblReportAgendamento = $("#dataTableOrdemAgendamento")
         
         oTblReportAgendamento.DataTable ({
             "data" : jsonString,
-            // "scrollX": true,
-            responsive: {
-              details: true
+            "scrollX": true,
+            //"ajax":jsonString,
+            fixedHeader: {
+              header: true,
+              footer: true
           },
-             columnDefs: [
-              { responsivePriority: 1, targets: 0 },
-              { responsivePriority: 2, targets: -1 }
-          ],
+
+          //    columnDefs: [
+          //     { "title": $.i18n.prop('lDocumenttType',lang), "targets": 0 },
+          //     { "title": $.i18n.prop('lDocumenttType',lang), "targets": 1 },
+          //     { "title": $.i18n.prop('lDocumenttType',lang), "targets": 2 },
+          //     { "title": $.i18n.prop('lDocumenttType',lang), "targets": 3 },
+          //     { "title": $.i18n.prop('lDocumenttType',lang), "targets": 4 },
+          //     { "title": $.i18n.prop('lDocumenttType',lang), "targets": 5 },
+          //     { "title": $.i18n.prop('lDocumenttType',lang), "targets": 6 },
+          //     { "title": $.i18n.prop('lDocumenttType',lang), "targets": 7 },
+          //     { "title": $.i18n.prop('lDocumenttType',lang), "targets": 8 },
+          //     { "title": $.i18n.prop('lDocumenttType',lang), "targets": 9 },
+          //     { "title": $.i18n.prop('lDocumenttType',lang), "targets": 10 }
+              
+          // ],
             "columns" : [
-              { "data" : "Document Type","visible": false},
+              { "data" : "Document Type", "title" : "teste","visible": false},
               { "data" : "Salesperson Code","visible": false},
               { "data" : "Bill-to Address","visible": false},
         
@@ -510,21 +525,19 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
           ]
             
           });
-          
+          $('#dataTableOrdemAgendamento').DataTable().draw();        
 
-        //new $.fn.dataTable.FixedHeader( oTblReportAgendamento );
-      //$('#dataTableOrdemAgendamento').DataTable.FixedHeader();
-              
           
         } 
          
       });
 
       
-     
+       
 
   };
   loadAgendamento();
+
   
 
 $("#add_agendamento_busca_cliente").change(function(){
@@ -1406,7 +1419,7 @@ $("#add_agendamento_service_type5").change(function(){
             selector: 'td:nth-child(2)'
         },
         responsive: true,
-          //"scrollX": true,
+          "scrollX": true,
           "columns" : [
             { "data" : "No_"},
             { "data" : "Name"},
@@ -1420,6 +1433,8 @@ $("#add_agendamento_service_type5").change(function(){
           ]
           
         });
+
+        $('#dataTableClienteAgendamento').DataTable().draw();        
       }        
        
     });
