@@ -41,6 +41,8 @@ export default (function () {
     var horas = Math.round(falta / 60 / 60 % 24);
     if(horas<12 &&  horas > 0){
       dias = dias  + 1
+    }else if( dias < 0 && horas < 0){
+      dias = (dias  + 1)
     }
       
     
@@ -66,11 +68,11 @@ export default (function () {
         texto  = $.i18n.prop('lTarefaDia',lang)
         result =  '<span class="badge badge-pill fl-r badge-success lh-0 p-10">' + texto +'</span>'
         //result = ' chegou o dia'
-      }else if(dias < -1){
+      }else if(dias <= 0 && horas < 0){
         texto  = $.i18n.prop('lAtrasado',lang)
         var delay  = $.i18n.prop('lDelay',lang)
         // result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">' + dias + ' ' + texto +'</span>'
-        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">'+ texto +' ' + ((dias-dias-dias)) +' '+ delay + '</span>'
+        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">'+ texto +' ' + ((dias)) +' '+ delay + '</span>'
         //result = 'atrasdo ' + dias + ' dias'
       }
     }  
