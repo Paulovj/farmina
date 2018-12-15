@@ -515,14 +515,14 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               { "data" : "Name" },
               { "data" : "Professional 1" },
               { "data" : "NameProfissional" },
-            //    { "targets": -1, "data": null, 
-            //     "render": function (a,d){
-            //       var btn =""
-            //         //btn += "<button action='postando_agendamento' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Registrar</button>" ;
-            //         //btn += "<button action='edit' type='button' class='btn cur-p btn-info'>Editar</button>";
-            //         return btn;
-            //   }
-            // }
+               { "targets": -1, "data": null, 
+                "render": function (a,d){
+                  var btn =""
+                    //btn += "<button action='postando_agendamento' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Registrar</button>" ;
+                    //btn += "<button action='edit' type='button' class='btn cur-p btn-info'>Editar</button>";
+                    return btn;
+              }
+            }
           ]
             
           });

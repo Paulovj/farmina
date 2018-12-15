@@ -574,6 +574,7 @@ function formatHora(date) {
               { "targets": -1, "data": null, 
               "render": function (a,d){
                 var btn =""
+                var textoEnviarFoto = $.i18n.prop('lEnviarFotosFinalizar',lang)
 
                 // if (a['Status']==1 || a['Status']==2){
                 //   btn += "<button action='finished' type='button' class='btn cur-p btn-info'>Finalizar</button>";
@@ -582,8 +583,8 @@ function formatHora(date) {
                   if (a['Status']==3){
                     btn += "<button action='views' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-info lViews' id='btn_finish_booking_upload'>Views</button>";
                   }
-                  if (a['Status']==1 || a['Service Type']==4){
-                    btn += "<button action='save_photo' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-success lEnviarFotosFinalizar' id='btn_finish_booking_upload'>Enviar Fotos / Finalizar </button>";
+                  if (a['Status']==1 /*|| a['Service Type']==4*/){
+                    btn += "<button action='save_photo' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-success lEnviarFotosFinalizar' id='btn_finish_booking_upload'>"+textoEnviarFoto+"</button>";
                   }
 
                   
