@@ -472,6 +472,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
         oTblReportAgendamento.DataTable ({
             "data" : jsonString,
             "scrollX": true,
+            "responsive":true,
             //"ajax":jsonString,
             fixedHeader: {
               header: true,
@@ -525,18 +526,23 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
           ]
             
           });
-          $('#dataTableOrdemAgendamento').DataTable().draw();        
 
+          setTimeout(function(){
+             $('#dataTableOrdemAgendamento').DataTable().draw();
+            }, 3000);
+
+          
           
         } 
          
       });
 
       
-       
+      
 
   };
   loadAgendamento();
+  
 
   
 

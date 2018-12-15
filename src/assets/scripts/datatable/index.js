@@ -597,7 +597,11 @@ function formatHora(date) {
             }]
             
           });
-          $('#dataTable').DataTable().draw();        
+          
+          setTimeout(function(){
+            $('#dataTable').DataTable().draw();        
+           }, 3000);
+        
           
         }        
          
@@ -1114,8 +1118,12 @@ var chamaFinaliza = function(){
           
         });
 
-        $('#dataTableImagens').DataTable().draw();        
-      }        
+        
+
+        setTimeout(function(){
+          $('#dataTableImagens').DataTable().draw();        
+         }, 3000);
+      }
        
     });
     
