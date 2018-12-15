@@ -739,6 +739,12 @@ function PromoterServiceTypeX(promoter,value,action){
     contX +='<option value="1"> PUSH NEW LINE </option>';
     contX +='<option value="2"> LINE SLOW </option>';
     contX +='<option value="3"> GENERIC </option>';
+
+    contX +='<option value="4"> ND Prime</option>';
+    contX +='<option value="5"> ND Ancestral</option>';
+    contX +='<option value="6"> ND Pumpkin</option>';
+    contX +='<option value="7"> ND Quinoa</option>';
+    contX +='<option value="8"> ND Ocean</option>';
     $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
