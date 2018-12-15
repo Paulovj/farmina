@@ -433,7 +433,7 @@ function formatHora(date) {
                 $('#photo_service_invoice_no').val(id);
                 $('#photo_service_type').val(Service_type);
                 $('#dataTableImagens').DataTable().destroy();
-                $('#msg_service_line').html(' '+ textoService +' '+ id +'  ');
+                $('#msg_service_line').html(' '+ textoService);
 
                 
                 loadImagensX(id,Service_type);
@@ -581,7 +581,7 @@ function formatHora(date) {
                 // }  
                   //btn += "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Iniciar</button>";
                   if (a['Status']==3){
-                    btn += "<button action='views' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-info lViews' id='btn_finish_booking_upload'>Views</button>";
+                    btn += "<button action='views' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-info lViews' id='btn_finish_booking_upload'>View</button>";
                   }
                   if (a['Status']==1 /*|| a['Service Type']==4*/){
                     btn += "<button action='save_photo' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-success lEnviarFotosFinalizar' id='btn_finish_booking_upload'>"+textoEnviarFoto+"</button>";
