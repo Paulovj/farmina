@@ -483,7 +483,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               { "data" : "Bill-to Address","visible": false},
         
               { "data" : "No_" },
-              { "data" : "Document Status", "render": function (data) {
+              { "data" : "Document Status", "visible": false, "render": function (data) {
                 return StatusX(data);
               }
             }, 
@@ -513,7 +513,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
           
 
         //new $.fn.dataTable.FixedHeader( oTblReportAgendamento );
-      $('#dataTableOrdemAgendamento').DataTable.FixedHeader();
+      //$('#dataTableOrdemAgendamento').DataTable.FixedHeader();
               
           
         } 
@@ -649,7 +649,6 @@ function PromoterServiceTypeX(promoter,value,action){
   $("#div_"+action+"_agendamento_service_result_planned_hour"+promoter).show();
   $("#add_agendamento_ISP_comments"+promoter).val("");
   
-
   
   if(value==1){
     //traning
@@ -705,7 +704,7 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_planned_hour"+promoter).hide();
-    $("#add_agendamento_planned_hour"+promoter).val("0");
+    $("#add_agendamento_planned_hour"+promoter).val("");
     $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
 

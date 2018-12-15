@@ -39,9 +39,10 @@ export default (function () {
 
     var dias = Math.round(falta / 60 / 60 / 24);
     var horas = Math.round(falta / 60 / 60 % 24);
-    if(horas<12){
+    if(horas<12 &&  horas > 0){
       dias = dias  + 1
     }
+      
     
     //console.log((status + ' data da base:'+moment(new Date(data).getTime()+ (23.59*1000*60*60)).utc().format("DD-MM-Y") +'- data do servidor:'+ moment(new Date().getTime()).format("DD-MM-Y")))
     //console.log((status + ' data da base:'+moment(new Date(data)).utc().format("DD-MM-Y") +'- data do servidor:'+ moment(new Date())))

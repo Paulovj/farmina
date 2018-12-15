@@ -221,7 +221,7 @@ $("#btn_login").click(function(){
         $('.larmyMenssage').html($.i18n.prop('larmyMenssage',lang))
         $('.lISPMenssage').html($.i18n.prop('lISPMenssage',lang))
         $('.ltrainningMenssage').html($.i18n.prop('ltrainningMenssage',lang))
-        $('.lFood').html($.i18n.prop('lFood',lang))
+        $('.lTypeFood').html($.i18n.prop('lTypeFood',lang))
         $('.lTrainningType').html($.i18n.prop('lTrainningType',lang))
         $('.lTrainningComments').html($.i18n.prop('lTrainningComments',lang))
         $('.lPushNewLine').html($.i18n.prop('lPushNewLine',lang))
