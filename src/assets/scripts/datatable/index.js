@@ -72,7 +72,7 @@ export default (function () {
         texto  = $.i18n.prop('lAtrasado',lang)
         var delay  = $.i18n.prop('lDelay',lang)
         // result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">' + dias + ' ' + texto +'</span>'
-        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">'+ texto +' ' + ((dias)) +' '+ delay + '</span>'
+        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">'+ texto +' ' + ((dias-dias-dias)) +' '+ delay + '</span>'
         //result = 'atrasdo ' + dias + ' dias'
       }
     }  
