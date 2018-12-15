@@ -868,11 +868,11 @@ $("#btn_finish_booking").click(function(){
      $('#finish_number_shelves').val(result['Number of Shelves'])
      $('#finish_able_to_place_on_better_position').val(result['Able to Place Better Position'])
      $('#finish_able_to_get_more_space').val(result['Able to get more space'])
-      if(result['Able to get more space'] == 1){
-        $('#finish_many_additional_meters_sim').show();
-      }else{
-        $('#finish_many_additional_meters_sim').hide();
-      }
+      // if(result['Able to get more space'] == 1){
+      //   $('#finish_many_additional_meters_sim').show();
+      // }else{
+      //   $('#finish_many_additional_meters_sim').hide();
+      // }
     
      $('#finish_get_additional_space_out').val(result['Get Additional space out'])
       if(result['Get Additional space out'] == 1){
@@ -932,18 +932,20 @@ $("#btn_finish_booking").click(function(){
 
 
     $('#finish_delivered').val('');
-    //$('#finish_trainning_type').val('');
-    //$('#finish_trainning_comments').val('');
-    // $('#finish_number_shelves').val('');
-    // $('#finish_able_to_place_on_better_position').val('');
-    // $('#finish_able_to_get_more_space').val('');
-    // $('#finish_get_additional_space_out').val('');
-    // $('#finish_many_additional_meters').val('');
-    // $('#finish_type_space_out_of_shelves').val('');
-    // $('#finish_implemented_seasonal_sticker').val('');
-    // $('#finish_implemented_branding').val('');
-    //$('#finish_type_seasonal_sticker').val('');
-    //$('#finish_type_branding').val('');
+
+    $('#finish_trainning_type').val('');
+    $('#finish_trainning_comments').val('');
+    $('#finish_number_shelves').val('');
+    $('#finish_able_to_place_on_better_position').val('');
+    $('#finish_able_to_get_more_space').val('');
+    $('#finish_get_additional_space_out').val('');
+    $('#finish_many_additional_meters').val('');
+    $('#finish_type_space_out_of_shelves').val('');
+    $('#finish_implemented_seasonal_sticker').val('');
+    $('#finish_implemented_branding').val('');
+    $('#finish_type_seasonal_sticker').val('');
+    $('#finish_type_branding').val('');
+
     $('#finish_people_spoke').val('');
     $('#finish_dry_samples').val('');
     $('#finish_wet_Samples').val('');

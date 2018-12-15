@@ -283,6 +283,7 @@ $("#btn_login").click(function(){
         $('.lThisStoreIsSellingOpenBags').html($.i18n.prop('lThisStoreIsSellingOpenBags',lang))
         $('.lGeneralNutrition').html($.i18n.prop('lGeneralNutrition',lang))
         $('.lHowManyMetersOfFarminaShelves').html($.i18n.prop('lHowManyMetersOfFarminaShelves',lang))
+        $('.lQualTipoMarca').html($.i18n.prop('lQualTipoMarca',lang))
 
         
         
