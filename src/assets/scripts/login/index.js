@@ -284,6 +284,9 @@ $("#btn_login").click(function(){
         $('.lGeneralNutrition').html($.i18n.prop('lGeneralNutrition',lang))
         $('.lHowManyMetersOfFarminaShelves').html($.i18n.prop('lHowManyMetersOfFarminaShelves',lang))
         $('.lQualTipoMarca').html($.i18n.prop('lQualTipoMarca',lang))
+        $('.lViewReportActivity').html($.i18n.prop('lViewReportActivity',lang))
+
+        
 
         
         

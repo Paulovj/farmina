@@ -26,65 +26,32 @@ export default (function () {
   //var table = $('#dataTable').DataTable(); 
   var lDemographicItems ="";
   
-  function formatDateStatus(data,status) {
-    //var data = '2018/11/22'
-    //var dataMarcarda      = moment(new Date(data).getTime()).format("DDMMY")
-    //var dataAtual = moment(new Date().getTime()).format("DDMMY")
-    //console.log((moment(new Date(data).getTime()).format("DDMMY") - moment(new Date().getTime()).format("DDMMY"))/1000)
+  function formatDateStatus(falta,status) {
+    var texto =''
+    var result = ''
 
-    var data = moment(new Date(data).getTime()).utc()//.format("DD-MM-Y:HH:mm")
-    var dataAtual = moment(new Date().getTime()).utc()//.format("DD-MM-Y:HH:mm")
-    
-    var falta = ( data - dataAtual) / 1000;
-
-    var dias = Math.round(falta / 60 / 60 / 24);
-    var horas = Math.round(falta / 60 / 60 % 24);
-    if(horas<12 &&  horas > 0){
-      dias = dias  + 1
-    }else if( dias < 0 && horas < 0){
-      dias = (dias  + 1)
-    }
-      
-    
-    //console.log((status + ' data da base:'+moment(new Date(data).getTime()+ (23.59*1000*60*60)).utc().format("DD-MM-Y") +'- data do servidor:'+ moment(new Date().getTime()).format("DD-MM-Y")))
-    //console.log((status + ' data da base:'+moment(new Date(data)).utc().format("DD-MM-Y") +'- data do servidor:'+ moment(new Date())))
-    console.log('data do sistema: '+ data.format("DD-MM-Y:HH:mm") +' data atual :'+ dataAtual.format("DD-MM-Y:HH:mm") +'quantos dias faltando:' +dias+' - horas: '+ horas)
-    //console.log('Moment: ' + (moment("20181214", "YYYYMMDD").fromNow()));
-    var result =''
-    var texto = ''
     if(status != 3){
-      if (dias > 2 ){
+      if (falta > 2 ){
         texto  = $.i18n.prop('lDiasRestante',lang)
-        result =  '<span class="badge badge-pill fl-r badge-info lh-0 p-10">' + dias + ' ' +texto +'</span>'
-      }else if (dias > 0 && dias <= 1){
+        result =  '<span class="badge badge-pill fl-r badge-info lh-0 p-10">' + falta + ' ' +texto +'</span>'
+      }else if (falta == 1 ){
         texto  = $.i18n.prop('lDiaRestante',lang)
-        result =  '<span class="badge badge-pill fl-r badge-warning lh-0 p-10">' + dias + ' ' + texto + ' </span>'
-        //result = 'faltam ' + dias + ' dias'
-      }else if (dias > 0 && dias <= 2){
+        result =  '<span class="badge badge-pill fl-r badge-warning lh-0 p-10">' + falta + ' ' + texto + ' </span>'
+        }else if (falta > 1 ){
         texto  = $.i18n.prop('lDiasRestante',lang)
-        result =  '<span class="badge badge-pill fl-r badge-warning lh-0 p-10">' + dias + ' ' + texto + ' </span>'
-        //result = 'faltam ' + dias + ' dias'  
-      }else if(dias == 0){
+        result =  '<span class="badge badge-pill fl-r badge-warning lh-0 p-10">' + falta + ' ' + texto + ' </span>'
+      }else if(falta == 0){
         texto  = $.i18n.prop('lTarefaDia',lang)
         result =  '<span class="badge badge-pill fl-r badge-success lh-0 p-10">' + texto +'</span>'
         //result = ' chegou o dia'
-      }else if(dias <= 0 && horas < 0){
+      }else if(falta < 0 ){
         texto  = $.i18n.prop('lAtrasado',lang)
         var delay  = $.i18n.prop('lDelay',lang)
-        // result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">' + dias + ' ' + texto +'</span>'
-        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">'+ texto +' ' + ((dias-dias-dias)) +' '+ delay + '</span>'
-        //result = 'atrasdo ' + dias + ' dias'
+        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">'+ texto +' ' + ((falta-falta-falta)) +' '+ delay + '</span>'
       }
     }  
     return result
 
-    // var data =  moment(date).utc().format("DD/MM/Y")
-    //   if ((data=='01/01/1753') || (data =='01/01/1900')){
-    //       return ''
-    //   }else{
-    //     return data
-    //   }
-    // return data;
     }
 
 
@@ -568,7 +535,7 @@ function formatHora(date) {
                 } 
               },
               { "data" : -1 , "data":null, "render": function (data,d) {
-                     return formatDateStatus(data['Estimated Starting Date'],data['Status'])              
+                     return formatDateStatus(data['Falta'],data['Status'])              
                  },
               },
               { "targets": -1, "data": null, 
