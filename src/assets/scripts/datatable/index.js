@@ -281,7 +281,7 @@ function formatHora(date) {
         
             $('#view_training_for_which_line').val(TrainingAnswer(result['Trainning Answer Type']));//no
             $('#view_estimated_starting_date').val(formatDate(result['Estimated Starting Date']));
-            alert('dkdsjfkdsfjsdkjf')
+            //alert('dkdsjfkdsfjsdkjf'+ result['Starting Date'])
             $('#view_starting_date').val(formatDate(result['Starting Date']));
             $('#view_starting_hour').val(formatHora(result['Starting Time']));
             
@@ -607,7 +607,7 @@ $("#btn_starting_booking").click(function(){
 
 $("#btn_finish_booking").click(function(){
   var valida_finish_date = $('#finish_date').val();
-  var valida_starting_date = $('#starting_date').val();
+  var valida_starting_date = $('#finish_starting_date').val();
 
   var resource_no = $('#finish_resource_no').val();
   var service_invoice_no = $('#finish_service_invoice_no').val();
@@ -810,13 +810,47 @@ $("#btn_finish_booking").click(function(){
 
     $('#finish_training_for_which_line').val(TrainingAnswer(result['Trainning Answer Type']));//no
     $('#finish_estimated_starting_date').val(formatDate(result['Estimated Starting Date']));
-    $('#finish_starting_date').val(formatDate(result['Starting Date']));
+    //alert('Data:'+result['Estimated Starting Date'])
+
+    //$('#finish_starting_date').val(formatDate(result['Starting Date']));
+    $('#finish_starting_date').datepicker({
+      format: 'dd/mm/yyyy', 
+      startDate: moment(new Date(result['Estimated Starting Date'])).utc().format("DD/MM/Y"),
+      todayBtn: true,
+      language: "pt-BR",
+      //orientation: "auto left",
+      keyboardNavigation: false,
+      //daysOfWeekDisabled: "6",
+      // daysOfWeekHighlighted: "6",
+      //calendarWeeks: true,
+      autoclose: true,
+      todayHighlight: true,
+      toggleActive: true
+    });
+    $('#finish_starting_date').datepicker('update');
+
     $('#finish_starting_hour').val(formatHora(result['Starting Time']));
     
     $('#finish_estimated_total_time').val(formatHora(result['Estimated Total Time']));
     $('#finish_starting_observation').val(result['Starting Observation']);//no
     // console.log('time> '+formatHora(result['Finish Time']))
-    $('#finish_date').val(formatDate(result['Finish Date']));
+    // $('#finish_date').val(formatDate(result['Finish Date']));
+    $('#finish_date').datepicker({
+      format: 'dd/mm/yyyy', 
+      startDate: moment(new Date(result['Estimated Starting Date'])).utc().format("DD/MM/Y"),
+      todayBtn: true,
+      language: "pt-BR",
+      //orientation: "auto left",
+      keyboardNavigation: false,
+      //daysOfWeekDisabled: "6",
+      // daysOfWeekHighlighted: "6",
+      //calendarWeeks: true,
+      autoclose: true,
+      todayHighlight: true,
+      toggleActive: true
+    });
+    $('#finish_date').datepicker('update');
+
     $('#finish_time').val(formatHora(result['Finish Time']));
 
 
