@@ -281,6 +281,7 @@ function formatHora(date) {
         
             $('#view_training_for_which_line').val(TrainingAnswer(result['Trainning Answer Type']));//no
             $('#view_estimated_starting_date').val(formatDate(result['Estimated Starting Date']));
+            alert('dkdsjfkdsfjsdkjf')
             $('#view_starting_date').val(formatDate(result['Starting Date']));
             $('#view_starting_hour').val(formatHora(result['Starting Time']));
             

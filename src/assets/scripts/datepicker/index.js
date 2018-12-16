@@ -1,11 +1,19 @@
 import * as $ from 'jquery';
 import 'bootstrap-datepicker/dist/js/bootstrap-datepicker';
 import 'bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css';
+import 'jquery-i18n-properties'
 import moment from 'moment/src/moment';
 // import { Array } from 'core-js';
 
 
 export default (function () {
+
+  var lang = "en";
+  if ((sessionStorage.Language != "") && (sessionStorage.Language != 'undefined')){
+      lang = sessionStorage.Language
+    }
+
+
   var paisX = sessionStorage.Pais
   var urlX = "";
   var urlImgX = ""
@@ -37,8 +45,21 @@ export default (function () {
   
           $.each( result.result, function( index, value ){
               var objDatas = {}
+              var service_type =''
+              var PlannedHours = $.i18n.prop('PlannedHours',lang)
+              if(value['Service Type'] == 1){
+                service_type =  $.i18n.prop('lTreinamento',lang)
+              }else if(value['Service Type'] == 2){
+                service_type =  $.i18n.prop('lKitBoasVindas',lang)
+              }else if(value['Service Type'] == 3){
+                service_type =  $.i18n.prop('lISP',lang)
+              }else if(value['Service Type'] == 4){
+                service_type =  $.i18n.prop('lMerchandising',lang)
+              }else if(value['Service Type'] == 5){
+                service_type =  $.i18n.prop('lArmy',lang)
+              }
               var estimatedDate  =  moment(value['Estimated Starting Date']).utc().format("DD/MM/Y")
-              arrayData.push(estimatedDate + ' - '+ value['Service Invoice No_'])
+              arrayData.push(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+PlannedHours+': ' + value['Horas'] + ' - '+ service_type)
               objDatas = estimatedDate;
               arrayDias.push(objDatas)
 
