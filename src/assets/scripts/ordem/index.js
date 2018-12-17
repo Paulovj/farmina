@@ -668,6 +668,9 @@ function PromoterServiceTypeX(promoter,value,action){
   $("#div_"+action+"_agendamento_service_result_planned_hour"+promoter).show();
   $("#add_agendamento_ISP_comments"+promoter).val("");
   
+  $("#add_agendamento_army_specific_store"+promoter).val("");
+  $("#add_agendamento_army_which_park"+promoter).val("");
+  
   
   if(value==1){
     //traning
@@ -693,6 +696,10 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
     $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
+
+    $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_army_which_park"+promoter).hide();
+
     
 
    
@@ -727,6 +734,10 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
 
+    $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_army_which_park"+promoter).hide();
+
+
 
     
 
@@ -755,6 +766,10 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).show();
 
+    $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_army_which_park"+promoter).hide();
+
+
 
     
   }else if(value==4){
@@ -779,6 +794,12 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
     $("#div_"+action+"_agendamento_service_many_meters"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
+    
+    
+    $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_army_which_park"+promoter).hide();
+
+    
 
     
 
@@ -795,7 +816,8 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
     $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
-
+    $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).show();
+    
 
 
     
@@ -804,6 +826,70 @@ function PromoterServiceTypeX(promoter,value,action){
   $("#lbl_"+action+"_agendamento_service_result"+promoter).html(lblCont)
   $("#"+action+"_agendamento_service_result"+promoter).append(contX)
 }
+
+$("#add_agendamento_army_specific_store1").change(function(){
+  var value = $(this).val();
+  $("#add_agendamento_army_which_park1").val("");
+  if(value == 1 ){
+    $("#div_add_agendamento_service_result_army_which_park1").hide();
+  }else if(value == 2){
+    $("#div_add_agendamento_service_result_army_which_park1").show();
+
+  }
+});
+
+
+$("#add_agendamento_army_specific_store2").change(function(){
+  var value = $(this).val();
+  $("#add_agendamento_army_which_park2").val("");
+  if(value == 1 ){
+    $("#div_add_agendamento_service_result_army_which_park2").hide();
+  }else if(value == 2){
+    $("#div_add_agendamento_service_result_army_which_park2").show();
+
+  }
+});
+
+
+$("#add_agendamento_army_specific_store3").change(function(){
+  var promoter = 1;
+  var value = $(this).val();
+  $("#add_agendamento_army_which_park3").val("");
+  if(value == 1 ){
+    $("#div_add_agendamento_service_result_army_which_park3").hide();
+  }else if(value == 2){
+    $("#div_add_agendamento_service_result_army_which_park3").show();
+
+  }
+});
+
+
+$("#add_agendamento_army_specific_store4").change(function(){
+  var promoter = 1;
+  var value = $(this).val();
+  $("#add_agendamento_army_which_park4").val("");
+  if(value == 1 ){
+    $("#div_add_agendamento_service_result_army_which_park4").hide();
+  }else if(value == 2){
+    $("#div_add_agendamento_service_result_army_which_park4").show();
+
+  }
+});
+
+
+$("#add_agendamento_army_specific_store5").change(function(){
+  var promoter = 1;
+  var value = $(this).val();
+  $("#add_agendamento_army_which_park5").val("");
+  if(value == 1 ){
+    $("#div_add_agendamento_service_result_army_which_park5").hide();
+  }else if(value == 2){
+    $("#div_add_agendamento_service_result_army_which_park5").show();
+
+  }
+});
+
+
 
 $("#add_agendamento_service_type1").change(function(){
   var promoter = 1;
@@ -887,6 +973,9 @@ $("#add_agendamento_service_type5").change(function(){
         
         "How-Meter1"              :$("#add_agendamento_how_meter1").val(),
         
+        "Specific-Store1"         :$("#add_agendamento_army_specific_store1").val(),
+        "Which-Park1"              :$("#add_agendamento_army_which_park1").val(),
+        
         
         "Professional2"           :$("#add_agendamento_busca_professional2").val(),
         "PlannedDate2"            :formatDateSql($("#add_agendamento_planned_date2").val()),
@@ -904,6 +993,9 @@ $("#add_agendamento_service_type5").change(function(){
         "Open-Bags2"              :$("#add_agendamento_open_bags2").val(),
 
         "How-Meter2"              :$("#add_agendamento_how_meter2").val(),
+
+        "Specific-Store2"         :$("#add_agendamento_army_specific_store2").val(),
+        "Which-Park2"              :$("#add_agendamento_army_which_park2").val(),
         
         "Professional3"            :$("#add_agendamento_busca_professional3").val(),
         "PlannedDate3"            :formatDateSql($("#add_agendamento_planned_date3").val()),
@@ -921,6 +1013,9 @@ $("#add_agendamento_service_type5").change(function(){
         "Open-Bags3"              :$("#add_agendamento_open_bags3").val(),
 
         "How-Meter3"              :$("#add_agendamento_how_meter3").val(),
+
+        "Specific-Store4"         :$("#add_agendamento_army_specific_store4").val(),
+        "Which-Park4"              :$("#add_agendamento_army_which_park4").val(),
         
         "Professional4"           :$("#add_agendamento_busca_professional4").val(),
         "PlannedDate4"            :formatDateSql($("#add_agendamento_planned_date4").val()),
@@ -955,6 +1050,9 @@ $("#add_agendamento_service_type5").change(function(){
 
         "Promoting5"              :$("#add_agendamento_Promoting5").val(),
         "Open-Bags5"              :$("#add_agendamento_open_bags5").val(),
+
+        "Specific-Store5"         :$("#add_agendamento_army_specific_store5").val(),
+        "Which-Park5"              :$("#add_agendamento_army_which_park5").val(),
         
       }
     }

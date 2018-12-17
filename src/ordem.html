@@ -470,7 +470,8 @@
 
                             <div class="col-md-6 mb-3" id="div_add_agendamento_service_result_planned_hour1">
                                 <label class="fw-500 lHoraPlanejada">Hora Planejada</label>
-                              <input type="text" class="form-control" id="add_agendamento_planned_hour1" placeholder="" value="" required >
+                              <!-- <input type="text" class="form-control" id="add_agendamento_planned_hour1" placeholder="" value="" required > -->
+                              <input type="number" id="add_agendamento_planned_hour1" class="form-control bdc-grey-200 NumberPositivo" min="1" max="10000">
                               <!-- <input type="time" id="add_agendamento_planned_hour1" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
                             </div>
                             
@@ -585,6 +586,27 @@
                           </div>
 
 
+                          <div class="row" id="div_add_agendamento_service_result_army_specific_store1" style="display:none">
+                            <div class="col-md-12 mb-3">
+                              <label class="fw-500 lForSpecificStore"> For a specific store</label>
+                                <select id="add_agendamento_army_specific_store1" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lYes">Yes</option>
+                                  <option value="2" class="lNo">No</option>
+                                </select>
+                            </div>
+                          </div>
+
+
+                          
+                          <div class="row" id="div_add_agendamento_service_result_army_which_park1" style="display:none">
+                            <div class="col-md-12 mb-6">
+                              <label class="fw-500 lInWhicPark">In which park?</label>
+                              <textarea id='add_agendamento_army_which_park1' maxlength="100" class="form-control bdc-grey-200" > </textarea>
+                            </div>
+                          </div>
+
+
                     </div>
                   </div>
                 </div>
@@ -631,7 +653,8 @@
 
                             <div class="col-md-6 mb-3">
                                 <label class="fw-500 lHoraPlanejada">Hora Planejada</label>
-                              <input type="text" class="form-control" id="add_agendamento_planned_hour2" placeholder="" value="" required >
+                              <!-- <input type="text" class="form-control" id="add_agendamento_planned_hour2" placeholder="" value="" required > -->
+                              <input type="number" id="add_agendamento_planned_hour2" class="form-control bdc-grey-200 NumberPositivo" min="1" max="10000">
                               <!-- <input type="time" id="add_agendamento_planned_hour2" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
                             </div>
 
@@ -739,6 +762,31 @@
                             </div>
                           </div>  
 
+                          <div class="row" id="div_add_agendamento_service_result_army_specific_store2" style="display:none">
+                            <div class="col-md-12 mb-3">
+                              <label class="fw-500 lForSpecificStore"> For a specific store</label>
+                                <select id="add_agendamento_army_specific_store2" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lYes">Yes</option>
+                                  <option value="2" class="lNo">No</option>
+                                </select>
+                            </div>
+                          </div>
+
+
+                          
+                          <div class="row" id="div_add_agendamento_service_result_army_which_park2" style="display:none">
+                            <div class="col-md-12 mb-6">
+                              <label class="fw-500 lInWhicPark">In which park?</label>
+                              <textarea id='add_agendamento_army_which_park2' maxlength="100" class="form-control bdc-grey-200" > </textarea>
+                            </div>
+                          </div>
+
+
+
+
+
+
 
 
                     </div>
@@ -790,7 +838,8 @@
 
                             <div class="col-md-6 mb-3">
                                 <label class="fw-500 lHoraPlanejada">Hora Planejada</label>
-                              <input type="text" class="form-control" id="add_agendamento_planned_hour3" placeholder="" value="" required >
+                              <!-- <input type="text" class="form-control" id="add_agendamento_planned_hour3" placeholder="" value="" required > -->
+                              <input type="number" id="add_agendamento_planned_hour3" class="form-control bdc-grey-200 NumberPositivo" min="1" max="10000">
                               <!-- <input type="time" id="add_agendamento_planned_hour3" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
                             </div>
 
@@ -904,6 +953,28 @@
                           </div>  
 
 
+                          <div class="row" id="div_add_agendamento_service_result_army_specific_store3" style="display:none">
+                            <div class="col-md-12 mb-3">
+                              <label class="fw-500 lForSpecificStore"> For a specific store</label>
+                                <select id="add_agendamento_army_specific_store3" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lYes">Yes</option>
+                                  <option value="2" class="lNo">No</option>
+                                </select>
+                            </div>
+                          </div>
+
+
+                          
+                          <div class="row" id="div_add_agendamento_service_result_army_which_park3" style="display:none">
+                            <div class="col-md-12 mb-6">
+                              <label class="fw-500 lInWhicPark">In which park?</label>
+                              <textarea id='add_agendamento_army_which_park3' maxlength="100" class="form-control bdc-grey-200" > </textarea>
+                            </div>
+                          </div>
+
+
+
                     </div>
                   </div>
                 </div>
@@ -954,7 +1025,8 @@
                           <div class="row">
                               <div class="col-md-6 mb-3">
                                   <label class="fw-500 lHoraPlanejada">Hora Planejada</label>
-                                <input type="text" class="form-control" id="add_agendamento_planned_hour4" placeholder="" value="" required >
+                                <!-- <input type="text" class="form-control" id="add_agendamento_planned_hour4" placeholder="" value="" required > -->
+                                <input type="number" id="add_agendamento_planned_hour4" class="form-control bdc-grey-200 NumberPositivo" min="1" max="10000">
                                 <!-- <input type="time" id="add_agendamento_planned_hour4" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
                               </div>
 
@@ -1062,6 +1134,29 @@
                                 <textarea id='add_agendamento_trainning_comments4' class="form-control bdc-grey-200" > </textarea>
                               </div>
                             </div>  
+
+
+
+                            <div class="row" id="div_add_agendamento_service_result_army_specific_store4" style="display:none">
+                              <div class="col-md-12 mb-3">
+                                <label class="fw-500 lForSpecificStore"> For a specific store</label>
+                                  <select id="add_agendamento_army_specific_store4" class="form-control">
+                                    <option selected value="0" class="lSelecione">Selecione</option>
+                                    <option value="1" class="lYes">Yes</option>
+                                    <option value="2" class="lNo">No</option>
+                                  </select>
+                              </div>
+                            </div>
+  
+  
+                            
+                            <div class="row" id="div_add_agendamento_service_result_army_which_park4" style="display:none">
+                              <div class="col-md-12 mb-6">
+                                <label class="fw-500 lInWhicPark">In which park?</label>
+                                <textarea id='add_agendamento_army_which_park4' maxlength="100" class="form-control bdc-grey-200" > </textarea>
+                              </div>
+                            </div>
+  
   
                       </div>
                     </div>
@@ -1112,7 +1207,8 @@
 
                                 <div class="col-md-6 mb-3">
                                     <label class="fw-500 lHoraPlanejada">Hora Planejada</label>
-                                  <input type="text" class="form-control" id="add_agendamento_planned_hour5" placeholder="" value="" required >
+                                  <!-- <input type="text" class="form-control" id="add_agendamento_planned_hour5" placeholder="" value="" required > -->
+                                  <input type="number" id="add_agendamento_planned_hour5" class="form-control bdc-grey-200 NumberPositivo" min="1" max="10000">
                                   <!-- <input type="time" id="add_agendamento_planned_hour5" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
                                 </div>
                                 
@@ -1219,6 +1315,29 @@
                                   <textarea id='add_agendamento_trainning_comments5' class="form-control bdc-grey-200" > </textarea>
                                 </div>
                               </div>  
+
+                              
+
+                              <div class="row" id="div_add_agendamento_service_result_army_specific_store5" style="display:none">
+                                <div class="col-md-12 mb-3">
+                                  <label class="fw-500 lForSpecificStore"> For a specific store</label>
+                                    <select id="add_agendamento_army_specific_store5" class="form-control">
+                                      <option selected value="0" class="lSelecione">Selecione</option>
+                                      <option value="1" class="lYes">Yes</option>
+                                      <option value="2" class="lNo">No</option>
+                                    </select>
+                                </div>
+                              </div>
+    
+    
+                              
+                              <div class="row" id="div_add_agendamento_service_result_army_which_park5" style="display:none">
+                                <div class="col-md-12 mb-6">
+                                  <label class="fw-500 lInWhicPark">In which park?</label>
+                                  <textarea id='add_agendamento_army_which_park5' maxlength="100" class="form-control bdc-grey-200" > </textarea>
+                                </div>
+                              </div>
+    
 
                               
                         </div>
