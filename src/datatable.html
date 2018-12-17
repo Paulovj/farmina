@@ -1105,6 +1105,14 @@
               
               <!-- TRAINNING 1**************************************************************************************************************************-->
               <fieldset id="view_question_trainning" style="display:none;">
+
+                <div class="row">
+                <div class="col-md-6 mb-3">
+                      <label class="fw-500 lHowManyPeopleParticipate">How Many People Participate? </label>      
+                      <input type="number" class="form-control NumberPositivo" id="view_how_many_people_participe" placeholder="" value="" required min="1" max="100000" disabled>
+                  </div>
+                </div>
+
                   <div class="row">
                       <div class="col-md-6 mb-3">
                         <label class="fw-500 lTrainningType">Trainning Type</label>
@@ -1339,6 +1347,32 @@
                 <!-- ARMY 5**************************************************************************************************************************-->
                 
               <fieldset id="view_question_army" style="display:none;">
+
+
+                <div class="row">
+
+                  <div class="col-md-6 mb-3">
+                    <label class="fw-500 lForSpecificStore"> For a specific store</label>
+                                    <select id="view_specific_store" class="form-control" disabled>
+                                      <option selected value="0" class="lSelecione">Selecione</option>
+                                      <option value="1" class="lYes">Yes</option>
+                                      <option value="2" class="lNo">No</option>
+                                    </select>
+                  </div>
+
+                  </div>
+
+                  <div class="row">
+
+
+                  <div class="col-md-12 mb-3" id="view_army_which_park_no" style="display:none;">
+                    <label class="fw-500 lInWhicPark">In which park?</label>                    
+                    <textarea id='view_army_which_park' maxlength="100" class="form-control bdc-grey-200" disabled> </textarea>
+                </div>
+                
+                </div>
+
+
 
                 <div class="row">
 

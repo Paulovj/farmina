@@ -364,7 +364,19 @@ function formatHora(date) {
             }else{
               $('#view_open_bags_sim').hide()
             }
+
+
+            $('#view_specific_store').val(result['For Specific Store'])
+            if(result['For Specific Store'] == 2){
+              $('#view_army_which_park_no').show();
+            }else{
+              $('#view_army_which_park_no').hide();
+            }
+
+            $('#view_army_which_park').val(result['In Wich Park'])
         
+            $('#view_how_many_people_participe').val(result['How Many People Participate']);
+            
 
 
               }});
@@ -918,7 +930,9 @@ $("#btn_finish_booking").click(function(){
       $('#finish_army_which_park_no').hide();
     }
 
-     $('#finish_army_which_park').val(result['In Wich Park'])
+    $('#finish_army_which_park').val(result['In Wich Park'])
+    $('#finish_trainning_type').val(result['In Wich Park'])
+     
 
      
 
