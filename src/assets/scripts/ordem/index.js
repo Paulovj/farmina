@@ -747,9 +747,9 @@ function PromoterServiceTypeX(promoter,value,action){
     //ISP
     lblCont =$.i18n.prop('PorQueVoceEstaFazendoIssoISP',lang);
     contX +='<option value="0">  </option>';
-    contX +='<option value="1"> PUSH NEW LINE </option>';
-    contX +='<option value="2"> LINE SLOW </option>';
-    contX +='<option value="3"> GENERIC </option>';
+    // contX +='<option value="1"> PUSH NEW LINE </option>';
+    // contX +='<option value="2"> LINE SLOW </option>';
+    // contX +='<option value="3"> GENERIC </option>';
 
     contX +='<option value="4"> ND Prime</option>';
     contX +='<option value="5"> ND Ancestral</option>';
