@@ -662,7 +662,8 @@ $("#btn_finish_booking").click(function(){
   var finish_kits_delivered   = $('#finish_kits_delivered').val();
   var finish_people_refused          = $('#finish_people_refused').val();
   var finish_location_activity       = $('#finish_location_activity').val();
-
+  
+  var finish_people_participe       = $('#finish_how_many_people_participe').val();
   
 
   
@@ -724,7 +725,9 @@ $("#btn_finish_booking").click(function(){
       "Kits-Delivered":((!finish_kits_delivered)? '': finish_kits_delivered),
       "Print-Voruchers":((!finish_print_voruchers)? '': finish_print_voruchers),
       "People-Refused":((!finish_people_refused)? '': finish_people_refused),
-      "Location-Activity":((!finish_location_activity)? '': finish_location_activity) 
+      "Location-Activity":((!finish_location_activity)? '': finish_location_activity),
+      "People-Particpe":((!finish_people_participe)? '': finish_people_participe)
+      
       }
   }
 
@@ -765,6 +768,7 @@ $("#btn_finish_booking").click(function(){
     $('#finish_type_space_out_of_shelves_sim').hide();
     $('#finish_type_seasonal_sticker_sim').hide();
     $('#finish_type_branding_sim').hide();
+    $('#finish_army_which_park_no').hide();
     
     
     if($('.lDate').length > 0){
@@ -906,6 +910,17 @@ $("#btn_finish_booking").click(function(){
       }
      $('#finish_type_seasonal_sticker').val(result['Type Seasonal Sticker'])
      $('#finish_type_branding').val(result['Type Branding'])
+     
+     $('#finish_specific_store').val(result['For Specific Store'])
+     if(result['For Specific Store'] == 2){
+      $('#finish_army_which_park_no').show();
+    }else{
+      $('#finish_army_which_park_no').hide();
+    }
+
+     $('#finish_army_which_park').val(result['In Wich Park'])
+
+     
 
      
 

@@ -309,7 +309,11 @@ $("#btn_login").click(function(){
         $('.lQualTipoMarca').html($.i18n.prop('lQualTipoMarca',lang))
         $('.lViewReportActivity').html($.i18n.prop('lViewReportActivity',lang))
         $('.lEspacoAdicionalPara').html($.i18n.prop('lEspacoAdicionalPara',lang))
-
+        
+        $('.lForSpecificStore').html($.i18n.prop('lForSpecificStore',lang))
+        $('.lInWhicPark').html($.i18n.prop('lInWhicPark',lang))
+        $('.lHowManyPeopleParticipate').html($.i18n.prop('lHowManyPeopleParticipate',lang))
+          
         
 
         
