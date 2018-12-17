@@ -563,7 +563,7 @@
               </div> 
   
               <div class="row">
-                <div class="col-md-6 mb-3" id="finish_date_final_label">
+                <!-- <div class="col-md-6 mb-3" id="finish_date_final_label">
                     <label class="fw-500 lDataFinal">Data Final</label>
                   <div class="timepicker-input input-icon form-group">
                     <div class="input-group">
@@ -573,7 +573,7 @@
                       <input type="text" id="finish_date" class="form-control bdc-grey-200 start-date" placeholder="Date" data-provide="datepicker"  data-date-format='dd/mm/yyyy'>
                     </div>
                   </div>
-                </div>
+                </div>  -->
                 <div class="col-md-6 mb-3">
                     <label class="fw-500 lHoraFinal">Hora Final</label>
                     <input type="time" id="finish_time" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  />
@@ -630,7 +630,7 @@
                   <div class="col-md-6 mb-3">
                       <label class="fw-500 lQuantosClientesEntraramNaLoja">Quantos clientes entraram na loja? </label>      
                     <!-- <input type="text" class="form-control" id="finish_how_many_customers_entered_on_store" placeholder="" value="" required > -->
-                  <input type="number" class="form-control" id="finish_how_many_customers_entered_on_store" placeholder="" value="" required min="1" max="100000">
+                  <input type="number" class="form-control" id="finish_how_many_customers_entered_on_store" placeholder="" value="" required min="1" max="100000" >
                   </div>
                   <div class="col-md-6 mb-3">
                       <label class="fw-500 lQuantosComprovantesForamEntregues">Quantos comprovantes foram entregues? </label>
@@ -1167,7 +1167,8 @@
 
                       </div>
 
-                      <div class="col-md-6 mb-3">
+                      <!-- esse campo nao é para ser monstrado no  relatorio -->
+                      <div class="col-md-6 mb-3" style="display:none;">
                           <label class="fw-500 lSoldOpenBags">Sold open bags? </label>
                           <select id="view_open_bags" class="form-control" disabled>
                               <option value="1" class="lSim">Sim</option>
