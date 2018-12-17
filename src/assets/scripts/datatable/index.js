@@ -1,6 +1,8 @@
 import * as $ from 'jquery';
 import 'datatables';
 import moment from 'moment/src/moment';
+import 'bootstrap-datepicker/dist/js/bootstrap-datepicker';
+import 'bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css';
 import 'bootstrap-notify'
 import 'jquery-i18n-properties'
 export default (function () {
@@ -813,6 +815,7 @@ $("#btn_finish_booking").click(function(){
     //alert('Data:'+result['Estimated Starting Date'])
 
     //$('#finish_starting_date').val(formatDate(result['Starting Date']));
+    $('#finish_starting_date').val('').datepicker('destroy')
     $('#finish_starting_date').datepicker({
       format: 'dd/mm/yyyy', 
       startDate: moment(new Date(result['Estimated Starting Date'])).utc().format("DD/MM/Y"),
@@ -825,9 +828,12 @@ $("#btn_finish_booking").click(function(){
       //calendarWeeks: true,
       autoclose: true,
       todayHighlight: true,
-      toggleActive: true
+      toggleActive: true,
+      beforeShowDay: function(date){
+        toggleActive: true
+      }
     });
-    $('#finish_starting_date').datepicker('update');
+    $('.start-date-finish').datepicker('update');
 
     $('#finish_starting_hour').val(formatHora(result['Starting Time']));
     
@@ -835,6 +841,7 @@ $("#btn_finish_booking").click(function(){
     $('#finish_starting_observation').val(result['Starting Observation']);//no
     // console.log('time> '+formatHora(result['Finish Time']))
     // $('#finish_date').val(formatDate(result['Finish Date']));
+    $('#finish_date').val('').datepicker('destroy')
     $('#finish_date').datepicker({
       format: 'dd/mm/yyyy', 
       startDate: moment(new Date(result['Estimated Starting Date'])).utc().format("DD/MM/Y"),
@@ -849,7 +856,8 @@ $("#btn_finish_booking").click(function(){
       todayHighlight: true,
       toggleActive: true
     });
-    $('#finish_date').datepicker('update');
+    // $('#finish_date').datepicker('update');
+    $('.start-date'+number).datepicker('update');
 
     $('#finish_time').val(formatHora(result['Finish Time']));
 
