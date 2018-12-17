@@ -833,7 +833,7 @@ $("#btn_finish_booking").click(function(){
         toggleActive: true
       }
     });
-    $('.start-date-finish').datepicker('update');
+    $('#finish_starting_date').datepicker('update');
 
     $('#finish_starting_hour').val(formatHora(result['Starting Time']));
     
@@ -856,9 +856,8 @@ $("#btn_finish_booking").click(function(){
       todayHighlight: true,
       toggleActive: true
     });
-    // $('#finish_date').datepicker('update');
-    $('.start-date'+number).datepicker('update');
-
+    $('#finish_date').datepicker('update');
+    
     $('#finish_time').val(formatHora(result['Finish Time']));
 
 
