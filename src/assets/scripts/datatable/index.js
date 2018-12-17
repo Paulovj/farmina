@@ -942,8 +942,8 @@ $("#btn_finish_booking").click(function(){
 
     $('#finish_delivered').val('');
 
-    $('#finish_trainning_type').val('');
-    $('#finish_trainning_comments').val('');
+    //$('#finish_trainning_type').val('');
+    //$('#finish_trainning_comments').val('');
     $('#finish_number_shelves').val('');
     $('#finish_able_to_place_on_better_position').val('');
     $('#finish_able_to_get_more_space').val('');
