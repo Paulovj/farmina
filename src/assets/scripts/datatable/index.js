@@ -788,7 +788,7 @@ $("#btn_finish_booking").click(function(){
     }
     if(result['Service Type'] == 4){
       $('#finish_question_merchandising').show();
-      $('#finish_date_inicio_label').hide();
+      $('#finish_date_inicio_label').show();
       $('#finish_date_final_label').hide();
     }
     if(result['Service Type'] == 5){
