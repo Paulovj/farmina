@@ -13,9 +13,11 @@ export default (function () {
     var urlImgX = ""
     if(paisX == "Brasil"){
       urlX = "http://www.nav.farmina.com.br:3001/api/";
+      urlImgX = 'http://nav.farmina.com.br:3002/';
       
     }else{
       urlX = "http://mkt.farmina.com:3001/api/"
+      urlImgX = 'http://mkt.farmina.com/';
     }
    
 
@@ -1142,7 +1144,7 @@ var chamaFinaliza = function(){
           "columns" : [
             
             { "data" : "name" , "render": function ( data) { 
-              return "<img src='http://nav.farmina.com.br:3002/"+id+"/"+data+"'/ heigth='50px' width='50px'>" 
+              return "<img src='"+urlImgX+id+"/"+data+"'/ heigth='50px' width='50px'>" 
               }
             },
             { "data" : "name" },
