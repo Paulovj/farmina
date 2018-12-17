@@ -7,6 +7,7 @@ import 'bootstrap-notify'
 import 'jquery-i18n-properties'
 export default (function () {
 
+
   var paisX = sessionStorage.Pais
     var urlX = "";
     var urlImgX = ""
