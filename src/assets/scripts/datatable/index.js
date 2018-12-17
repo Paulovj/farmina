@@ -1114,9 +1114,10 @@ var chamaFinaliza = function(){
         //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
         maxImg = 5
       }
+      $("#fileimagemUpload").show();
       if (service_type !=2){
         if (result.length > 0){
-          $("#finished").attr("disabled",false);
+          $("#finished").attr("disabled",false); 
         }else{
           $("#finished").attr("disabled",true);
         }  
@@ -1124,9 +1125,12 @@ var chamaFinaliza = function(){
           $("#fileimagem").attr("disabled",false);
         }else{
           $("#fileimagem").attr("disabled",true);
+          $("#fileimagemUpload").hide();
         }  
       }else{
         $("#fileimagem").attr("disabled",true);
+        $("#fileimagemUpload").hide();
+        
       } 
 
 
