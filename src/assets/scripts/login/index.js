@@ -313,6 +313,7 @@ $("#btn_login").click(function(){
         $('.lForSpecificStore').html($.i18n.prop('lForSpecificStore',lang))
         $('.lInWhicPark').html($.i18n.prop('lInWhicPark',lang))
         $('.lHowManyPeopleParticipate').html($.i18n.prop('lHowManyPeopleParticipate',lang))
+        $('.lViewOrder').html($.i18n.prop('lViewOrder',lang))
           
         
 

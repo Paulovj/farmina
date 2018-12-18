@@ -713,26 +713,34 @@
 
                     <!-- MERCHANDISING 4**************************************************************************************************************************-->
               <fieldset id="finish_question_merchandising" style="display:none;">
+
                   <div class="row">
-                      <div class="col-md-6 mb-3">
+                      <div class="col-md-12 mb-3">
                           <label class="fw-500 lNumeroPrateleirasProdutosFarmina">Número de prateleiras com produtos Farmina? </label>      
                           <!-- <input type="text" class="form-control bdc-grey-200" name="" id="finish_number_shelves"> -->
                         <input type="number" class="form-control NumberPositivo" id="finish_number_shelves" placeholder="" value="" required min="1" max="100000">
 
                       </div>
 
-                      <div class="col-md-6 mb-3">
-                          <label class="fw-500 lConseguiuColocarProdutoFarminaPosicaoMelhor">Você conseguiu colocar os produtos Farmina em uma posição melhor? </label>      
-                        <select id="finish_able_to_place_on_better_position" class="form-control">
-                            <option value="1" class="lSim">Sim</option>
-                            <option value="0" class="lNao">Não</option>
-                            </select>
-                      </div>
+                      
                   </div>
 
+                  <div class="row">
+                    
+                    <div class="col-md-12 mb-3">
+                        <label class="fw-500 lConseguiuColocarProdutoFarminaPosicaoMelhor">Você conseguiu colocar os produtos Farmina em uma posição melhor? </label>      
+                      <select id="finish_able_to_place_on_better_position" class="form-control">
+                          <option value="1" class="lSim">Sim</option>
+                          <option value="0" class="lNao">Não</option>
+                          </select>
+                    </div>
+                </div>
+
+
+                  
                 
                   <div class="row">
-                      <div class="col-md-6 mb-3">
+                      <div class="col-md-12 mb-3">
                           <label class="fw-500 lConseguiuEspacoProduto">Você conseguiu mais espaço para produtos? </label>      
                         <select id="finish_able_to_get_more_space" class="form-control">
                             <option value="1" class="lSim">Sim</option>
@@ -740,24 +748,33 @@
                             </select>
                       </div>
 
-                      <div class="col-md-6 mb-3">
-                          <label class="fw-500 lConseguiuEspacoAdicionalForaPrateleira">Você conseguiu espaço adicional fora das prateleiras? </label>      
-                        <select id="finish_get_additional_space_out" class="form-control">
-                            <option value="1" class="lSim">Sim</option>
-                            <option value="0" class="lNao">Não</option>
-                            </select>
-                      </div>
+                      
                   </div>
-                  
+
                   <!--DISPLAY NONE-->
                   <div class="row" id="finish_many_additional_meters_sim" style="display:none;">
-                      <div class="col-md-12 mb-3">
-                        <label class="fw-500 lQuantosMedidoresAdicionais">Quantos metros adicionais?</label>
-                        <!-- <input type="text" class="form-control bdc-grey-200" name="" id="finish_many_additional_meters"> -->
-                        <input type="number" class="form-control NumberPositivo" id="finish_many_additional_meters" placeholder="" value="" required min="1" max="100000">
+                    <div class="col-md-12 mb-3">
+                      <label class="fw-500 lQuantosMedidoresAdicionais">Quantos metros adicionais?</label>
+                      <!-- <input type="text" class="form-control bdc-grey-200" name="" id="finish_many_additional_meters"> -->
+                      <input type="number" class="form-control NumberPositivo" id="finish_many_additional_meters" placeholder="" value="" required min="1" max="100000">
 
-                      </div>
                     </div>
+                  </div>
+
+
+                  
+                  <div class="row">
+                    
+                    <div class="col-md-12 mb-3">
+                        <label class="fw-500 lConseguiuEspacoAdicionalForaPrateleira">Você conseguiu espaço adicional fora das prateleiras? </label>      
+                      <select id="finish_get_additional_space_out" class="form-control">
+                          <option value="1" class="lSim">Sim</option>
+                          <option value="0" class="lNao">Não</option>
+                          </select>
+                    </div>
+                </div>
+                  
+                  
                   <!--DISPLAY NONE-->  
                     <div class="row" id="finish_type_space_out_of_shelves_sim" style="display:none;">
                         <div class="col-md-12 mb-3">
@@ -773,7 +790,7 @@
 
 
                   <div class="row">
-                      <div class="col-md-6 mb-3">
+                      <div class="col-md-12 mb-3">
                           <label class="fw-500 lImplementouCampanhaAdesivoSazonal">Você já implementou campanha de adesivo sazonal?  </label>      
                         <select id="finish_implemented_seasonal_sticker" class="form-control">
                             <option value="1" class="lSim">Sim</option>
@@ -781,13 +798,7 @@
                             </select>
                       </div>
 
-                      <div class="col-md-6 mb-3">
-                          <label class="fw-500 lImplementouMarca">Você implementou a marca? </label>      
-                        <select id="finish_implemented_branding" class="form-control">
-                            <option value="1" class="lSim">Sim</option>
-                            <option value="0" class="lNao">Não</option>
-                            </select>
-                      </div>
+                      
                   </div>
 
                   <!--DISPLAY NONE-->
@@ -805,6 +816,20 @@
                             </select>
                       </div>
                     </div>
+
+
+                  <div class="row">
+                   
+                    <div class="col-md-12 mb-3">
+                        <label class="fw-500 lImplementouMarca">Você implementou a marca? </label>      
+                      <select id="finish_implemented_branding" class="form-control">
+                          <option value="1" class="lSim">Sim</option>
+                          <option value="0" class="lNao">Não</option>
+                          </select>
+                    </div>
+                </div>
+
+                  
 
                     <!--DISPLAY NONE-->
                     <div class="row" id="finish_type_branding_sim" style="display:none;">
@@ -1232,26 +1257,34 @@
 
                     <!-- MERCHANDISING 4**************************************************************************************************************************-->
               <fieldset id="view_question_merchandising" style="display:none;">
-                  <div class="row">
-                      <div class="col-md-6 mb-3">
+                  
+                <div class="row">
+                      <div class="col-md-12 mb-3">
                           <label class="fw-500 lNumeroPrateleirasProdutosFarmina">Número de prateleiras com produtos Farmina? </label>      
                           <!-- <input type="text" class="form-control bdc-grey-200" name="" id="view_number_shelves"> -->
                         <input type="number" class="form-control" id="view_number_shelves" placeholder="" value="" required min="1" max="100000" disabled>
 
                       </div>
 
-                      <div class="col-md-6 mb-3">
-                          <label class="fw-500 lConseguiuColocarProdutoFarminaPosicaoMelhor">Você conseguiu colocar os produtos Farmina em uma posição melhor? </label>      
-                        <select id="view_able_to_place_on_better_position" class="form-control" disabled>
-                            <option value="1" class="lSim">Sim</option>
-                            <option value="0" class="lNao">Não</option>
-                            </select>
-                      </div>
+                      
                   </div>
+
+
+                  <div class="row">
+                   
+                    
+                    <div class="col-md-12 mb-3">
+                        <label class="fw-500 lConseguiuColocarProdutoFarminaPosicaoMelhor">Você conseguiu colocar os produtos Farmina em uma posição melhor? </label>      
+                      <select id="view_able_to_place_on_better_position" class="form-control" disabled>
+                          <option value="1" class="lSim">Sim</option>
+                          <option value="0" class="lNao">Não</option>
+                          </select>
+                    </div>
+                </div>
 
                 
                   <div class="row">
-                      <div class="col-md-6 mb-3">
+                      <div class="col-md-12 mb-3">
                           <label class="fw-500 lConseguiuEspacoProduto">Você conseguiu mais espaço para produtos? </label>      
                         <select id="view_able_to_get_more_space" class="form-control" disabled>
                             <option value="1" class="lSim">Sim</option>
@@ -1259,24 +1292,31 @@
                             </select>
                       </div>
 
-                      <div class="col-md-6 mb-3">
-                          <label class="fw-500 lConseguiuEspacoAdicionalForaPrateleira">Você conseguiu espaço adicional fora das prateleiras? </label>      
-                        <select id="view_get_additional_space_out" class="form-control" disabled>
-                            <option value="1" class="lSim">Sim</option>
-                            <option value="0" class="lNao">Não</option>
-                            </select>
-                      </div>
+                      
                   </div>
-                  
                   <!--DISPLAY NONE-->
                   <div class="row" id="view_many_additional_meters_sim" style="display:none;">
-                      <div class="col-md-12 mb-3">
-                        <label class="fw-500 lQuantosMedidoresAdicionais">Quantos metros adicionais?</label>
-                        <!-- <input type="text" class="form-control bdc-grey-200" name="" id="view_many_additional_meters"> -->
-                        <input type="number" class="form-control" id="view_many_additional_meters" placeholder="" value="" required min="1" max="100000" disabled>
+                    <div class="col-md-12 mb-3">
+                      <label class="fw-500 lQuantosMedidoresAdicionais">Quantos metros adicionais?</label>
+                      <!-- <input type="text" class="form-control bdc-grey-200" name="" id="view_many_additional_meters"> -->
+                      <input type="number" class="form-control" id="view_many_additional_meters" placeholder="" value="" required min="1" max="100000" disabled>
 
-                      </div>
                     </div>
+                  </div>
+
+
+                  <div class="row">
+                    
+                    <div class="col-md-12 mb-3">
+                        <label class="fw-500 lConseguiuEspacoAdicionalForaPrateleira">Você conseguiu espaço adicional fora das prateleiras? </label>      
+                      <select id="view_get_additional_space_out" class="form-control" disabled>
+                          <option value="1" class="lSim">Sim</option>
+                          <option value="0" class="lNao">Não</option>
+                          </select>
+                    </div>
+                </div>
+                  
+                  
                   <!--DISPLAY NONE-->  
                     <div class="row" id="view_type_space_out_of_shelves_sim" style="display:none;">
                         <div class="col-md-12 mb-3">
@@ -1300,31 +1340,37 @@
                             </select>
                       </div>
 
-                      <div class="col-md-6 mb-3">
-                          <label class="fw-500 lImplementouMarca">Você implementou a marca? </label>      
-                        <select id="view_implemented_branding" class="form-control" disabled>
-                            <option value="1" class="lSim">Sim</option>
-                            <option value="0" class="lNao">Não</option>
-                            </select>
-                      </div>
                   </div>
 
                   <!--DISPLAY NONE-->
                   <div class="row" id="view_type_seasonal_sticker_sim" style="display:none;">
-                      <div class="col-md-12 mb-3">
-                        <label class="fw-500 lCampanhaAdesivoSazonal">A campanha de adesivo sazonal?</label>
-                        <select id="view_type_seasonal_sticker" class="form-control" disabled>
-                            <option value="0" class="lSelecione">Selecione</option>
-                            <option value="1" class="lWinter">Winter</option>
-                            <option value="2" class="lChristmas">Christmas</option>
-                            <option value="3" class="lValentineDay">Valentine Day</option>
-                            <option value="3" class="lSpring">Spring</option>
-                            <option value="3" class="lWomansDay">Woman’s Day</option>
-                            <option value="3" class="lHalloween">Halloween</option>
-                            </select>
-                      </div>
+                    <div class="col-md-12 mb-3">
+                      <label class="fw-500 lCampanhaAdesivoSazonal">A campanha de adesivo sazonal?</label>
+                      <select id="view_type_seasonal_sticker" class="form-control" disabled>
+                          <option value="0" class="lSelecione">Selecione</option>
+                          <option value="1" class="lWinter">Winter</option>
+                          <option value="2" class="lChristmas">Christmas</option>
+                          <option value="3" class="lValentineDay">Valentine Day</option>
+                          <option value="3" class="lSpring">Spring</option>
+                          <option value="3" class="lWomansDay">Woman’s Day</option>
+                          <option value="3" class="lHalloween">Halloween</option>
+                          </select>
                     </div>
+                  </div>
 
+
+                  <div class="row">
+                   
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-500 lImplementouMarca">Você implementou a marca? </label>      
+                      <select id="view_implemented_branding" class="form-control" disabled>
+                          <option value="1" class="lSim">Sim</option>
+                          <option value="0" class="lNao">Não</option>
+                          </select>
+                    </div>
+                </div>
+
+                  
                     <!--DISPLAY NONE-->
                     <div class="row" id="view_type_branding_sim" style="display:none;">
                         <div class="col-md-12 mb-3">
