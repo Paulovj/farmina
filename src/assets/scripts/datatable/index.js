@@ -52,7 +52,7 @@ export default (function () {
       }else if(falta < 0 ){
         texto  = $.i18n.prop('lAtrasado',lang)
         var delay  = $.i18n.prop('lDelay',lang)
-        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">'+ texto +' ' + ((falta-falta-falta)) +' '+ delay + '</span>'
+        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">' + ((falta-falta-falta)) +' '+ delay + '</span>'
       }
     }  
     return result
