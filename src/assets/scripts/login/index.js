@@ -314,20 +314,11 @@ $("#btn_login").click(function(){
         $('.lInWhicPark').html($.i18n.prop('lInWhicPark',lang))
         $('.lHowManyPeopleParticipate').html($.i18n.prop('lHowManyPeopleParticipate',lang))
         $('.lViewOrder').html($.i18n.prop('lViewOrder',lang))
-          
-        
 
-        
-        
-        
+        $('.lSummer').html($.i18n.prop('lSummer',lang))
+        $('.lAutumn').html($.i18n.prop('lAutumn',lang))
 
-
-        
-        
-
-        
-        
-        
+                
       }
     });
 

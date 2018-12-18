@@ -49,11 +49,18 @@ export default (function () {
         texto  = $.i18n.prop('lTarefaDia',lang)
         result =  '<span class="badge badge-pill fl-r badge-success lh-0 p-10">' + texto +'</span>'
         //result = ' chegou o dia'
-      }else if(falta < 0 ){
+      }else if(falta == -1 ){
         texto  = $.i18n.prop('lAtrasado',lang)
         var delay  = $.i18n.prop('lDelay',lang)
-        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">'+ texto +' ' + ((falta-falta-falta)) +' '+ delay + '</span>'
+        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">'+ texto +'</span>'
+        result +=  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">' + ((falta-falta-falta)) +' '+ delay + '</span>'
+      }else if(falta < -1 ){
+        texto  = $.i18n.prop('lAtrasado',lang)
+        var delays  = $.i18n.prop('lDelays',lang)
+        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">'+ texto +'</span>'
+        result +=  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">' + ((falta-falta-falta)) +' '+ delays + '</span>'
       }
+
     }  
     return result
 

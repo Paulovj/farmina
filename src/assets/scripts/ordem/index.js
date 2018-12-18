@@ -519,6 +519,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
             $('#post_welcome5').val(WelcomeKitType5)
             
             
+            
             $('#post_photo_path').val(path)
 
             
