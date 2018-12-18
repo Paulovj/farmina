@@ -262,8 +262,9 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments1').val(data['Trainnig Comments 1']);
               $('#edit_agendamento_army_specific_store1').val(data['For Specific Store 1']);
               $('#edit_agendamento_army_which_park1').val(data['In Wich Park 1']);
-
-              $('#div_edit_agendamento_service_result_army_which_park1').show();
+              if(data['In Wich Park 1'] !=""){
+                $('#div_edit_agendamento_service_result_army_which_park1').show();
+              }  
               
 
               var action ='edit'
@@ -290,8 +291,9 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments2').val(data['Trainnig Comments 2']);
               $('#edit_agendamento_army_specific_store2').val(data['For Specific Store 2']);
               $('#edit_agendamento_army_which_park2').val(data['In Wich Park 2']);
-
-              $('#div_edit_agendamento_service_result_army_which_park2').show();
+              if(data['In Wich Park 2'] !=""){
+                $('#div_edit_agendamento_service_result_army_which_park2').show();
+              }  
 
               var action ='edit'
               PromoterServiceTypeX(2,ServiceType2,action)
@@ -317,7 +319,9 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments3').val(data['Trainnig Comments 3']);
               $('#edit_agendamento_army_specific_store3').val(data['For Specific Store 3']);
               $('#edit_agendamento_army_which_park3').val(data['In Wich Park 3']);
-              $('#div_edit_agendamento_service_result_army_which_park3').show();
+              if(data['In Wich Park 3'] !=""){
+                $('#div_edit_agendamento_service_result_army_which_park3').show();
+              }  
               var action ='edit'
               PromoterServiceTypeX(3,ServiceType3,action)
               //$('#edit_agendamento_service_result3').val(ServicetypeResult3);
@@ -344,7 +348,9 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments4').val(data['Trainnig Comments 4']);
               $('#edit_agendamento_army_specific_store4').val(data['For Specific Store 4']);
               $('#edit_agendamento_army_which_park4').val(data['In Wich Park 4']);
-              $('#div_edit_agendamento_service_result_army_which_park4').show();
+              if(data['In Wich Park 4'] !=""){
+                $('#div_edit_agendamento_service_result_army_which_park4').show();
+              }
               var action ='edit'
               PromoterServiceTypeX(4,ServiceType4,action)
               //$('#edit_agendamento_service_result4').val(ServicetypeResult3);
@@ -370,7 +376,9 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments5').val(data['Trainnig Comments 5']);
               $('#edit_agendamento_army_specific_store5').val(data['For Specific Store 5']);
               $('#edit_agendamento_army_which_park5').val(data['In Wich Park 5']);
-              $('#div_edit_agendamento_service_result_army_which_park5').show();
+              if(data['In Wich Park 5'] !=""){
+                $('#div_edit_agendamento_service_result_army_which_park5').show();
+              }
               var action ='edit'
               PromoterServiceTypeX(5,ServiceType5,action)
               //$('#edit_agendamento_service_result5').val(ServicetypeResult5);
@@ -401,9 +409,9 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments1').val(data['Trainnig Comments 1']);
               $('#edit_agendamento_army_specific_store1').val(data['For Specific Store 1']);
               $('#edit_agendamento_army_which_park1').val(data['In Wich Park 1']);
-
-              $('#div_edit_agendamento_service_result_army_which_park1').show();
-              
+              if(data['In Wich Park 1'] !=""){
+                $('#div_edit_agendamento_service_result_army_which_park1').show();
+              }
               
 
             
@@ -431,8 +439,9 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments2').val(data['Trainnig Comments 2']);
               $('#edit_agendamento_army_specific_store2').val(data['For Specific Store 2']);
               $('#edit_agendamento_army_which_park2').val(data['In Wich Park 2']);
-
-              $('#div_edit_agendamento_service_result_army_which_park2').show();
+              if(data['In Wich Park 2'] !=""){
+                $('#div_edit_agendamento_service_result_army_which_park2').show();
+              }
               
               var action ='edit'
               PromoterServiceTypeX(2,ServiceType2,action)
@@ -457,7 +466,9 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_army_specific_store3').val(data['For Specific Store 3']);
               $('#edit_agendamento_army_which_park3').val(data['In Wich Park 3']);
 
-              $('#div_edit_agendamento_service_result_army_which_park3').show();
+              if(data['In Wich Park 3'] !=""){
+                $('#div_edit_agendamento_service_result_army_which_park3').show();
+              }  
               
 
               var action ='edit'
@@ -484,7 +495,9 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments4').val(data['Trainnig Comments 4']);
               $('#edit_agendamento_army_specific_store4').val(data['For Specific Store 4']);
               $('#edit_agendamento_army_which_park4').val(data['In Wich Park 4']);
-              $('#div_edit_agendamento_service_result_army_which_park4').show();
+              if(data['In Wich Park 4'] !=""){
+                $('#div_edit_agendamento_service_result_army_which_park4').show();
+              } 
               
 
               var action ='edit'
@@ -510,7 +523,9 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments5').val(data['Trainnig Comments 5']);
               $('#edit_agendamento_army_specific_store5').val(data['For Specific Store 5']);
               $('#edit_agendamento_army_which_park5').val(data['In Wich Park 5']);
-              $('#div_edit_agendamento_service_result_army_which_park5').show();
+              if(data['In Wich Park 5'] !=""){
+                $('#div_edit_agendamento_service_result_army_which_park5').show();
+              }
               
               var action ='edit'
               PromoterServiceTypeX(5,ServiceType5,action)
