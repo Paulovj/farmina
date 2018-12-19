@@ -47,6 +47,7 @@ export default (function () {
               var objDatas = {}
               var service_type =''
               var PlannedHours = $.i18n.prop('PlannedHours',lang)
+              var EstimatedFinishTime = $.i18n.prop('lEstimatedFinishTime',lang)
               if(value['Service Type'] == 1){
                 service_type =  $.i18n.prop('lTreinamento',lang)
               }else if(value['Service Type'] == 2){
@@ -59,7 +60,7 @@ export default (function () {
                 service_type =  $.i18n.prop('lArmy',lang)
               }
               var estimatedDate  =  moment(value['Estimated Starting Date']).utc().format("DD/MM/Y")
-              arrayData.push(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+PlannedHours+': ' + value['Horas'] + ' - '+ service_type)
+              arrayData.push(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedFinishTime+': ' + value['Estimated Finish Time'] + ' - '+ service_type)
               objDatas = estimatedDate;
               arrayDias.push(objDatas)
 

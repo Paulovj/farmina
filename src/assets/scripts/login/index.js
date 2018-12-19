@@ -317,6 +317,9 @@ $("#btn_login").click(function(){
 
         $('.lSummer').html($.i18n.prop('lSummer',lang))
         $('.lAutumn').html($.i18n.prop('lAutumn',lang))
+        $('.lEstimatedFinishTime').html($.i18n.prop('lEstimatedFinishTime',lang))
+
+        
 
                 
       }

@@ -528,7 +528,7 @@
                     <input type="text" class="form-control" id="finish_training_for_which_line" placeholder="" value="" required disabled>
                   </div> -->
 
-                  <div class="col-md-6 mb-3">
+                  <div class="col-md-3 mb-3">
                     <label class="fw-500 lDataInicioEstimativa">Data Inicio Estimativa</label>
                   <div class="timepicker-input input-icon form-group">
                     <div class="input-group">
@@ -540,6 +540,14 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="col-md-3 mb-3">
+                  <label class="fw-500 lEstimatedFinishTime">Estimated Finish Time</label>
+                  <input type="time" id="finish_estimated_finish_time" name="appt-time2" min="9:00" max="18:00" class="form-control" placeholder="" value="" required disabled/>
+           <!-- <span class="hours">Office hours: 9AM to 6PM</span> -->
+              </div>
+
+
               </div>
   
                <div class="row">
@@ -576,7 +584,7 @@
                 </div>  -->
                 <div class="col-md-6 mb-3">
                     <label class="fw-500 lHoraFinal">Hora Final</label>
-                    <input type="time" id="finish_time" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  />
+                    <input type="time" id="finish_time" name="appt-time" min="00:00" max="23:59" class="form-control" placeholder="" value="" required  />
                     
                     
                 </div>

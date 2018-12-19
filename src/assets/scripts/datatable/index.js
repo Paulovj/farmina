@@ -205,6 +205,11 @@ function formatHora(date) {
 
                 $('#finish_training_for_which_line').val(TrainingAnswer(result['Trainning Answer Type']));//no
                 $('#finish_estimated_starting_date').val(formatDate(result['Estimated Starting Date']));
+
+                alert(result['Estimated Finish Time'])
+                alert(formatHora(result['Estimated Finish Time']))
+                $('#finish_estimated_finish_time').val(formatHora(result['Estimated Finish Time']));
+
                 $('#finish_starting_date').val(formatDate(result['Starting Date']));
                 $('#finish_starting_hour').val(formatHora(result['Starting Time']));
                 
@@ -293,6 +298,8 @@ function formatHora(date) {
         
             $('#view_training_for_which_line').val(TrainingAnswer(result['Trainning Answer Type']));//no
             $('#view_estimated_starting_date').val(formatDate(result['Estimated Starting Date']));
+
+
             //alert('dkdsjfkdsfjsdkjf'+ result['Starting Date'])
             $('#view_starting_date').val(formatDate(result['Starting Date']));
             $('#view_starting_hour').val(formatHora(result['Starting Time']));
@@ -839,6 +846,8 @@ $("#btn_finish_booking").click(function(){
     $('#finish_training_for_which_line').val(TrainingAnswer(result['Trainning Answer Type']));//no
     $('#finish_estimated_starting_date').val(formatDate(result['Estimated Starting Date']));
     //alert('Data:'+result['Estimated Starting Date'])
+    $('#finish_estimated_finish_time').val(formatHora(result['Estimated Finish Time']));
+
 
     //$('#finish_starting_date').val(formatDate(result['Starting Date']));
     $('#finish_starting_date').val('').datepicker('destroy')
