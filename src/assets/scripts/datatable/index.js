@@ -673,10 +673,10 @@ function formValidacaoActivity(service_type){
       valida = false
     }
 
-    if(start_obsevation == ""){
-      texto += "Comments " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
-      valida = false
-    }
+    // if(start_obsevation == ""){
+    //   texto += "Comments " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+    //   valida = false
+    // }
 
   }
 
@@ -689,10 +689,10 @@ function formValidacaoActivity(service_type){
       valida = false
     }
 
-    if(start_obsevation == ""){
-      texto += "Comments " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
-      valida = false
-    }
+    // if(start_obsevation == ""){
+    //   texto += "Comments " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+    //   valida = false
+    // }
 
   }
 
@@ -744,10 +744,10 @@ function formValidacaoActivity(service_type){
       valida = false
     }
 
-    if(start_obsevation == ""){
-      texto += "Comment " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
-      valida = false
-    }
+    // if(start_obsevation == ""){
+    //   texto += "Comment " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+    //   valida = false
+    // }
 
   }
 
@@ -836,10 +836,10 @@ function formValidacaoActivity(service_type){
     }
 
 
-    if(starting_observation == ""){
-      texto += "Comment " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
-      valida = false
-    }
+    // if(starting_observation == ""){
+    //   texto += "Comment " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+    //   valida = false
+    // }
 
   }
 
@@ -896,10 +896,10 @@ function formValidacaoActivity(service_type){
     }
 
 
-    if(starting_observation == ""){
-      texto += "Comment " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
-      valida = false
-    }
+    // if(starting_observation == ""){
+    //   texto += "Comment " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+    //   valida = false
+    // }
 
   }
 
