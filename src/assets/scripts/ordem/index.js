@@ -104,6 +104,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
           var Professional1 = data['Professional 1'];
           var ServiceType1 = data['Service Type 1'];
           var PlannedDate1 = data['Planned Date 1'];
+          var PlannedStartTime1 = data['Planned Start Time 1'];
+
           var PlannedHour1 = data['Planned Hours 1'];
           
           
@@ -130,6 +132,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
           var Professional2 = data['Professional 2'];
           var ServiceType2 = data['Service Type 2'];
           var PlannedDate2 = data['Planned Date 2'];
+          var PlannedStartTime2 = data['Planned Start Time 2'];
           var PlannedHour2 = data['Planned Hours 2'];
 
           var ISPAnswerType2        = data['ISP Answer Type 2'];
@@ -153,6 +156,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
           var Professional3 = data['Professional 3'];
           var ServiceType3 = data['Service Type 3'];
           var PlannedDate3 = data['Planned Date 3'];
+          var PlannedStartTime3 = data['Planned Start Time 3'];
           var PlannedHour3 = data['Planned Hours 3'];
 
           var ISPAnswerType3        = data['ISP Answer Type 3'];
@@ -174,6 +178,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
           var Professional4 = data['Professional 4'];
           var ServiceType4 = data['Service Type 4'];
           var PlannedDate4 = data['Planned Date 4'];
+          var PlannedStartTime4 = data['Planned Start Time 4'];
           var PlannedHour4 = data['Planned Hours 4'];
 
           var ISPAnswerType4        = data['ISP Answer Type 4'];
@@ -195,6 +200,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
           var Professional5 = data['Professional 5'];
           var ServiceType5 = data['Service Type 5'];
           var PlannedDate5 = data['Planned Date 5'];
+          var PlannedStartTime5 = data['Planned Start Time 5'];
+
           var PlannedHour5 = data['Planned Hours 5'];
 
           var ISPAnswerType5        = data['ISP Answer Type 5'];
@@ -250,6 +257,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_planned_hour1').val(PlannedHour1);
               $('#edit_agendamento_service_type1').val(ServiceType1);
               $('#edit_agendamento_planned_date1').val(formatDate(PlannedDate1));
+              
+              $('#edit_agendamento_planned_start_time1').val(formatHora(PlannedStartTime1));
 
               
               $('#edit_agendamento_trainning_type1').val(data['Trainning Type 1']);
@@ -280,6 +289,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_planned_hour2').val(PlannedHour2);
               $('#edit_agendamento_service_type2').val(ServiceType2);
               $('#edit_agendamento_planned_date2').val(formatDate(PlannedDate2));
+              
+              $('#edit_agendamento_planned_start_time2').val(formatHora(PlannedStartTime2));
 
               $('#edit_agendamento_trainning_type2').val(data['Trainning Type 2']);
               $('#edit_agendamento_food2').val(data['Food Type 2']);
@@ -308,6 +319,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_planned_hour3').val(PlannedHour3);
               $('#edit_agendamento_service_type3').val(ServiceType3);
               $('#edit_agendamento_planned_date3').val(formatDate(PlannedDate3));
+
+              $('#edit_agendamento_planned_start_time3').val(formatHora(PlannedStartTime3));
 
               $('#edit_agendamento_trainning_type3').val(data['Trainning Type 3']);
               $('#edit_agendamento_food3').val(data['Food Type 3']);
@@ -338,6 +351,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_service_type4').val(ServiceType4);
               $('#edit_agendamento_planned_date4').val(formatDate(PlannedDate4));
 
+              $('#edit_agendamento_planned_start_time4').val(formatHora(PlannedStartTime4));
+
               $('#edit_agendamento_trainning_type4').val(data['Trainning Type 4']);
               $('#edit_agendamento_food4').val(data['Food Type 4']);
               $('#edit_agendamento_Promoting4').val(data['Promotion Type 4']);
@@ -365,6 +380,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_planned_hour5').val(PlannedHour5);
               $('#edit_agendamento_service_type5').val(ServiceType5);
               $('#edit_agendamento_planned_date5').val(formatDate(PlannedDate5));
+
+              $('#edit_agendamento_planned_start_time5').val(formatHora(PlannedStartTime5));
 
               $('#edit_agendamento_trainning_type5').val(data['Trainning Type 5']);
               $('#edit_agendamento_food5').val(data['Food Type 5']);
@@ -399,6 +416,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_service_type1').val(ServiceType1);
               $('#edit_agendamento_planned_date1').val(formatDate(PlannedDate1));
 
+              $('#edit_agendamento_planned_start_time1').val(formatHora(PlannedStartTime1));
+
               $('#edit_agendamento_trainning_type1').val(data['Trainning Type 1']);
               $('#edit_agendamento_food1').val(data['Food Type 1']);
               $('#edit_agendamento_Promoting1').val(data['Promotion Type 1']);
@@ -429,6 +448,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_service_type2').val(ServiceType2);
               $('#edit_agendamento_planned_date2').val(formatDate(PlannedDate2));
 
+              $('#edit_agendamento_planned_start_time2').val(formatHora(PlannedStartTime2));
+
               $('#edit_agendamento_trainning_type2').val(data['Trainning Type 2']);
               $('#edit_agendamento_food2').val(data['Food Type 2']);
               $('#edit_agendamento_Promoting2').val(data['Promotion Type 2']);
@@ -454,6 +475,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_planned_hour3').val(PlannedHour3);
               $('#edit_agendamento_service_type3').val(ServiceType3);
               $('#edit_agendamento_planned_date3').val(formatDate(PlannedDate3));
+
+              $('#edit_agendamento_planned_start_time3').val(formatHora(PlannedStartTime3));
 
               $('#edit_agendamento_trainning_type3').val(data['Trainning Type 3']);
               $('#edit_agendamento_food3').val(data['Food Type 3']);
@@ -485,6 +508,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_service_type4').val(ServiceType4);
               $('#edit_agendamento_planned_date4').val(formatDate(PlannedDate4));
 
+              $('#edit_agendamento_planned_start_time4').val(formatHora(PlannedStartTime4));
+
               $('#edit_agendamento_trainning_type4').val(data['Trainning Type 4']);
               $('#edit_agendamento_food4').val(data['Food Type 4']);
               $('#edit_agendamento_Promoting4').val(data['Promotion Type 4']);
@@ -512,6 +537,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_planned_hour5').val(PlannedHour5);
               $('#edit_agendamento_service_type5').val(ServiceType5);
               $('#edit_agendamento_planned_date5').val(formatDate(PlannedDate5));
+
+              $('#edit_agendamento_planned_start_time5').val(formatHora(PlannedStartTime5));
 
               $('#edit_agendamento_trainning_type5').val(data['Trainning Type 5']);
               $('#edit_agendamento_food5').val(data['Food Type 5']);
@@ -1091,81 +1118,81 @@ $("#add_agendamento_service_type5").change(function(){
   PromoterServiceTypeX(promoter,value,action)
 });
 
-function formValidacaoOrdem(){
+function formValidacaoOrdem(promoter){
   var valida =  true;
   var texto = ""
-  var profissional1        = $('#add_agendamento_busca_professional1').val();
-  var planned_date1        = $('#add_agendamento_planned_date1').val();
-  var planned_start_time1  = $('#add_agendamento_planned_start_time1').val();
-  var planned_hour1        = $('#add_agendamento_planned_hour1').val();
-  var service_type1        = $('#add_agendamento_service_type1').val();
+  var profissional1        = $('#add_agendamento_busca_professional'+promoter).val();
+  var planned_date1        = $('#add_agendamento_planned_date'+promoter).val();
+  var planned_start_time1  = $('#add_agendamento_planned_start_time'+promoter).val();
+  var planned_hour1        = $('#add_agendamento_planned_hour'+promoter).val();
+  var service_type1        = $('#add_agendamento_service_type'+promoter).val();
   
   
   if(profissional1 == 0){
-    texto += "Professional1 " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+    texto += "Professional "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
     valida = false
   }
   if(planned_date1 == ""){
-    texto += "Planned date " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+    texto += "Planned date "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
     valida = false
   }
 
   if(planned_start_time1 == ""){
-    texto += "Planned Start Time " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+    texto += "Planned Start Time "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
     valida = false
   }
 
   if(service_type1 != 2){
     if(planned_hour1 == ""){
-      texto += "Planned Hours " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Planned Hours "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
   }  
 
   if(service_type1 == 0){
-    texto += "Service Type " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+    texto += "Service Type "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
     valida = false
   }
 
   /*VALIDAÇÃO TRAINING*/
   if(service_type1 == 1){
-    var trainning_type1       = $('#add_agendamento_trainning_type1').val();
-    var food1                 = $('#add_agendamento_food1').val();
-    var service_result1       = $('#add_agendamento_service_result1').val();
-    var trainning_comments1   = $('#add_agendamento_trainning_comments1').val();
+    var trainning_type1       = $('#add_agendamento_trainning_type'+promoter).val();
+    var food1                 = $('#add_agendamento_food'+promoter).val();
+    var service_result1       = $('#add_agendamento_service_result'+promoter).val();
+    var trainning_comments1   = $('#add_agendamento_trainning_comments'+promoter).val();
     
     if(trainning_type1 == 0){
-      texto += "Training Type " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Training Type "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(food1 == 0){
-      texto += "Type of Food " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Type of Food "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(service_result1 == 0){
-      texto += "Training For a Line " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Training For a Line "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
     if(trainning_comments1 == ""){
-      texto += "Comments " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Comments "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
   }
 
   /*VALIDAÇÃO WELCOME KIT*/
   if(service_type1 == 2){
-    var food1                 = $('#add_agendamento_food1').val();
-    var service_result1       = $('#add_agendamento_service_result1').val();
+    var food1                 = $('#add_agendamento_food'+promoter).val();
+    var service_result1       = $('#add_agendamento_service_result'+promoter).val();
     
     if(food1 == 0){
-      texto += "Type of Food " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Type of Food "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(service_result1 == 0){
-      texto += "Welcome kit for which line " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Welcome kit for which line "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
     
@@ -1173,28 +1200,28 @@ function formValidacaoOrdem(){
 
   /*VALIDAÇÃO ISP*/
   if(service_type1 == 3){
-    var food1            = $('#add_agendamento_food1').val();
-    var Promoting1       = $('#add_agendamento_Promoting1').val();
-    var service_result1  = $('#add_agendamento_service_result1').val();
-    var open_bags        = $('#add_agendamento_open_bags1').val();
+    var food1            = $('#add_agendamento_food'+promoter).val();
+    var Promoting1       = $('#add_agendamento_Promoting'+promoter).val();
+    var service_result1  = $('#add_agendamento_service_result'+promoter).val();
+    var open_bags        = $('#add_agendamento_open_bags'+promoter).val();
 
     if(food1 == 0){
-      texto += "Type of Food " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Type of Food "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(Promoting1 == 0){
-      texto += "Type of promotion " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Type of promotion "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(service_result1 == 0){
-      texto += "Purpose of the promotion " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Purpose of the promotion "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(open_bags == 0){
-      texto += "This store is selling open bags " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "This store is selling open bags "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
     
@@ -1202,21 +1229,21 @@ function formValidacaoOrdem(){
 
   /*VALIDAÇÃO   MERCHANDISSING*/
   if(service_type1 == 4){
-    var how_meter1          = $('#add_agendamento_how_meter1').val();
-    var service_result1     = $('#add_agendamento_service_result1').val();
+    var how_meter1          = $('#add_agendamento_how_meter'+promoter).val();
+    var service_result1     = $('#add_agendamento_service_result'+promoter).val();
     
     if(how_meter1 == ""){
-      texto += "How many meters of Farmina shelves " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "How many meters of Farmina shelves "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(service_result1 == 0){
-      texto += "Purpose of the promotion " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Purpose of the promotion "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(open_bags == 0){
-      texto += "Type of merchandising " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Type of merchandising "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
     
@@ -1224,17 +1251,17 @@ function formValidacaoOrdem(){
 
   /*VALIDAÇÃO   ARMY*/
   if(service_type1 == 5){
-    var specific_store1   = $('#add_agendamento_army_specific_store1').val();
-    var which_park1       = $('#add_agendamento_army_which_park1').val();
+    var specific_store1   = $('#add_agendamento_army_specific_store'+promoter).val();
+    var which_park1       = $('#add_agendamento_army_which_park'+promoter).val();
     
     if(specific_store1 == 0){
-      texto += "For a specific store " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "For a specific store "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(specific_store1 == 2){
       if(which_park1 == ""){
-        texto += "In which park " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+        texto += "In which park "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
         valida = false
       }
     }  
@@ -1263,10 +1290,43 @@ function formValidacaoOrdem(){
 }
 
   $("#btn_add_ordem_agendamento").click(function(){
-    var valida = formValidacaoOrdem();
+    var valida = true
+    
+    valida = formValidacaoOrdem(1);
     if(valida == false){
       return false;
     }
+    var professional2 = $('#add_agendamento_busca_professional2').val();
+    if (professional2 != ""){
+      valida = formValidacaoOrdem(2);
+        if(valida == false){
+          return false;
+        } 
+    }
+    var professional3 = $('#add_agendamento_busca_professional3').val();
+    if (professional3 != ""){
+      valida = formValidacaoOrdem(3);
+        if(valida == false){
+          return false;
+        } 
+    }
+
+    var professional4 = $('#add_agendamento_busca_professional4').val();
+    if (professional4 != ""){
+      valida = formValidacaoOrdem(4);
+        if(valida == false){
+          return false;
+        } 
+    }
+
+    var professional5 = $('#add_agendamento_busca_professional5').val();
+    if (professional5 != ""){
+      valida = formValidacaoOrdem(5);
+        if(valida == false){
+          return false;
+        } 
+    }
+
     
     console.log('entrou na janela');
     var data = new FormData();

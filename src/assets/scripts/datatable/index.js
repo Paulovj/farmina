@@ -208,6 +208,7 @@ function formatHora(date) {
 
                 alert(result['Estimated Finish Time'])
                 alert(formatHora(result['Estimated Finish Time']))
+                $('#finish_estimated_start_time').val(formatHora(result['Estimated Start Time']));
                 $('#finish_estimated_finish_time').val(formatHora(result['Estimated Finish Time']));
 
                 $('#finish_starting_date').val(formatDate(result['Starting Date']));
@@ -298,6 +299,9 @@ function formatHora(date) {
         
             $('#view_training_for_which_line').val(TrainingAnswer(result['Trainning Answer Type']));//no
             $('#view_estimated_starting_date').val(formatDate(result['Estimated Starting Date']));
+            
+            $('#view_estimated_start_time').val(formatHora(result['Estimated Start Time']));
+            $('#view_estimated_finish_time').val(formatHora(result['Estimated Finish Time']));
 
 
             //alert('dkdsjfkdsfjsdkjf'+ result['Starting Date'])
@@ -634,9 +638,299 @@ $("#btn_starting_booking").click(function(){
       }
     });
 });
+function formValidacaoActivity(service_type){
+  var valida =  true;
+  var texto = ""
+  var start_date        = $('#finish_starting_date').val();  
+  var start_hour        = $('#finish_starting_hour').val();  
+  var finish_time       = $('#finish_time').val();
+  
+  if(start_date == ""){
+    texto += "Start Date " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+    valida = false
+  }
+  // alert(start_hour)
+  if(start_hour == "" || start_hour == "00:00"){
+    texto += "Start Hours " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+    valida = false
+  }
 
+  if(finish_time == "" || finish_time == "00:00"){
+    texto += "Finish Time " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+    valida = false
+  }
+    
+  
+  
+  if(service_type == "Training"){
+    var people            = $('#finish_how_many_people_participe').val();  
+    var start_obsevation  = $('#finish_starting_observation').val();  
+    
+    
+
+    if(people == ""){
+      texto += "How Many People Participate " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(start_obsevation == ""){
+      texto += "Comments " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+  }
+
+  if(service_type == "Welcome Kit"){
+    var delivered            = $('#finish_delivered').val();  
+    var start_obsevation  = $('#finish_starting_observation').val();  
+    
+    if(!delivered){
+      texto += "Delivered " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(start_obsevation == ""){
+      texto += "Comments " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+  }
+
+  if(service_type == "ISP"){
+    var many_customers_entered_on_store         = $('#finish_how_many_customers_entered_on_store').val();  
+    var many_voucher_was_delivered              = $('#finish_how_many_voucher_was_delivered').val();  
+    var how_many_products_eas_sold              = $('#finish_how_many_products_eas_sold').val();  
+    var how_many_kits_was_delivered             = $('#finish_how_many_kits_was_delivered').val();  
+    var how_many_national_plans_was_generated   = $('#finish_how_many_national_plans_was_generated').val();  
+    var how_many_bags                           = $('#finish_how_many_bags').val();  
+    var how_many_cans                           = $('#finish_how_many_cans').val();
+    var start_obsevation                        = $('#finish_starting_observation').val();  
+
+    
+    
+    if(many_customers_entered_on_store == ""){
+      texto += "Total number of people entered in store " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(many_voucher_was_delivered == ""){
+      texto += "With how many people you spoke " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+
+    if(how_many_products_eas_sold == ""){
+      texto += "How many dry samples you gave " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(how_many_kits_was_delivered == ""){
+      texto += "How many wet samples you gave " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(how_many_national_plans_was_generated == ""){
+      texto += "How many print vouchers you gave " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(how_many_bags == ""){
+      texto += "How many bags of dry food you sold " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(how_many_cans == ""){
+      texto += "How many cans you sold " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(start_obsevation == ""){
+      texto += "Comment " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+  }
+
+
+  if(service_type == "Merchandising"){
+    var number_shelves                    = $('#finish_number_shelves').val();  
+    var able_to_place_on_better_position  = $('#finish_able_to_place_on_better_position').val();  
+    var able_to_get_more_space            = $('#finish_able_to_get_more_space').val();  
+    //if do yes
+    var many_additional_meters            = $('#finish_many_additional_meters').val();  
+    
+    var get_additional_space_out          = $('#finish_get_additional_space_out').val();  
+    //if do yes
+    var type_space_out_of_shelves         = $('#finish_type_space_out_of_shelves').val();  
+    
+    var implemented_seasonal_sticker      = $('#finish_implemented_seasonal_sticker').val();  
+    //if do yes
+    var type_seasonal_sticker             = $('#finish_type_seasonal_sticker').val();  
+
+    
+    var implemented_branding              = $('#finish_implemented_branding').val();  
+    var type_branding                      = $('#finish_type_branding').val();  
+
+    var starting_observation              = $('#finish_starting_observation').val();  
+    
+
+    
+    
+    if(number_shelves == ""){
+      texto += "Number of shelves with Farmina products " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(!able_to_place_on_better_position){
+      texto += "Have you been able to place Farmina products on a better position " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+
+    if(!able_to_get_more_space){
+      texto += "Have you been able to get more space for products " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(able_to_get_more_space == 1){
+      if(many_additional_meters == ""){
+        texto += "How many additional meters? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+        valida = false
+      }
+    }
+
+    if(!get_additional_space_out){
+      texto += "Did you get additional space out of shelves " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(get_additional_space_out == 1){
+      if(type_space_out_of_shelves == 0){
+        texto += "The additional space is for " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+        valida = false
+      }
+    }
+
+    if(!implemented_seasonal_sticker){
+      texto += "Have you implemented seasonal sticker campaign " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(implemented_seasonal_sticker == 1){
+      if(type_seasonal_sticker == 0){
+        texto += "The seasonal sticker campaign " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+        valida = false
+      }
+    }
+
+    if(!implemented_branding){
+      texto += "Have you implemented branding " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(implemented_branding == 1){
+      if(type_branding == 0){
+        texto += "Which branding you implemented " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+        valida = false
+      }
+    }
+
+
+    if(starting_observation == ""){
+      texto += "Comment " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+  }
+
+
+
+   if(service_type == "Army"){
+    var location_activity   = $('#finish_location_activity').val();  
+    var people_spoke        = $('#finish_people_spoke').val();  
+    var kits_delivered      = $('#finish_kits_delivered').val();  
+    var print_voruchers     = $('#finish_print_voruchers').val();  
+    var dry_samples         = $('#finish_dry_samples').val();  
+    var wet_Samples         = $('#finish_wet_Samples').val();  
+    var people_refused      = $('#finish_people_refused').val();  
+    
+    var starting_observation = $('#finish_starting_observation').val();  
+    
+
+    
+    
+    if(location_activity == ""){
+      texto += "Location of activity " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(people_spoke == ""){
+      texto += "With how many people you spoke " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+
+    if(kits_delivered == ""){
+      texto += "How many kits you delivered " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(print_voruchers == ""){
+      texto += "How many print vouchers you gave " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(dry_samples == ""){
+      texto += "How many dry samples you gave " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(wet_Samples == ""){
+      texto += "How many wet samples you gave " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+    if(people_refused == ""){
+      texto += "How many people refused to speak with you " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+
+    if(starting_observation == ""){
+      texto += "Comment " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      valida = false
+    }
+
+  }
+
+  if(valida == false){
+    $.notify({
+      title: 'Atenção',
+      message: texto
+    },{
+      type: 'pastel-danger',
+      delay: 5000,
+      z_index: 10000,
+      template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+        '<span data-notify="title">{1}</span>' +
+        '<span data-notify="message">{2}</span>' +
+      '</div>'
+    });
+  }
+
+  return valida
+}
 
 $("#btn_finish_booking").click(function(){
+  var service_type = $('#finish_service_type').val()
+  var valida = true
+  
+    valida = formValidacaoActivity(service_type);
+    if(valida == false){
+      return false;
+    }
+
+  
   var valida_finish_date = $('#finish_date').val();
   var valida_starting_date = $('#finish_starting_date').val();
 
@@ -847,6 +1141,7 @@ $("#btn_finish_booking").click(function(){
     $('#finish_estimated_starting_date').val(formatDate(result['Estimated Starting Date']));
     //alert('Data:'+result['Estimated Starting Date'])
     $('#finish_estimated_finish_time').val(formatHora(result['Estimated Finish Time']));
+    $('#finish_estimated_start_time').val(formatHora(result['Estimated Start Time']));
 
 
     //$('#finish_starting_date').val(formatDate(result['Starting Date']));
