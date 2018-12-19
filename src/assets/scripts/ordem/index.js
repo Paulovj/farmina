@@ -1297,14 +1297,14 @@ function formValidacaoOrdem(promoter){
       return false;
     }
     var professional2 = $('#add_agendamento_busca_professional2').val();
-    if (professional2 != ""){
+    if (professional2 != 0){
       valida = formValidacaoOrdem(2);
         if(valida == false){
           return false;
         } 
     }
     var professional3 = $('#add_agendamento_busca_professional3').val();
-    if (professional3 != ""){
+    if (professional3 != 0){
       valida = formValidacaoOrdem(3);
         if(valida == false){
           return false;
@@ -1312,7 +1312,7 @@ function formValidacaoOrdem(promoter){
     }
 
     var professional4 = $('#add_agendamento_busca_professional4').val();
-    if (professional4 != ""){
+    if (professional4 != 0){
       valida = formValidacaoOrdem(4);
         if(valida == false){
           return false;
@@ -1320,7 +1320,7 @@ function formValidacaoOrdem(promoter){
     }
 
     var professional5 = $('#add_agendamento_busca_professional5').val();
-    if (professional5 != ""){
+    if (professional5 != 0){
       valida = formValidacaoOrdem(5);
         if(valida == false){
           return false;
