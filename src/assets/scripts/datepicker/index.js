@@ -61,8 +61,8 @@ export default (function () {
               }
               var estimatedDate  =  moment(value['Estimated Starting Date']).utc().format("DD/MM/Y")
               
-              var EstimatedStartingTime = value['Estimated Starting Time'];
-              var EstimatedFinishTime = value['Estimated Finish Time'];
+              //var EstimatedStartingTime = value['Estimated Starting Time'];
+              //var EstimatedFinishTime = value['Estimated Finish Time'];
 
               arrayData.push(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedFinishTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
               
