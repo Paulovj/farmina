@@ -1129,28 +1129,28 @@ function formValidacaoOrdem(promoter){
   
   
   if(profissional1 == 0){
-    texto += "Professional "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+    texto +=  $.i18n.prop('lProfissional'+promoter,lang) +'<br>';//"Professional "+ promoter +" " +
     valida = false
   }
   if(planned_date1 == ""){
-    texto += "Planned date "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+    texto +=  $.i18n.prop('lDataPlanejada',lang)+ ' ' + promoter +'<br>';//"Planned date "+ promoter +" " +
     valida = false
   }
 
   if(planned_start_time1 == ""){
-    texto += "Planned Start Time "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+    texto +=  $.i18n.prop('lPlannedStartTime',lang)+ ' ' + promoter +'<br>';//"Planned Start Time "+ promoter +" " +
     valida = false
   }
 
   if(service_type1 != 2){
     if(planned_hour1 == ""){
-      texto += "Planned Hours "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto +=  $.i18n.prop('lHoraPlanejada',lang)+ ' ' + promoter +'<br>';//"Planned Hours "+ promoter +" " +
       valida = false
     }
   }  
 
   if(service_type1 == 0){
-    texto += "Service Type "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+    texto +=  $.i18n.prop('lTipoServico',lang)+ ' ' + promoter +'<br>';//"Service Type "+ promoter +" " +
     valida = false
   }
 
@@ -1162,21 +1162,21 @@ function formValidacaoOrdem(promoter){
     var trainning_comments1   = $('#add_agendamento_trainning_comments'+promoter).val();
     
     if(trainning_type1 == 0){
-      texto += "Training Type "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto +=  $.i18n.prop('lTrainningType',lang)+ ' ' + promoter +'<br>';//"Training Type "+ promoter +" " +
       valida = false
     }
 
     if(food1 == 0){
-      texto += "Type of Food "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto +=  $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " +
       valida = false
     }
 
     if(service_result1 == 0){
-      texto += "Training For a Line "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto +=  $.i18n.prop('TreinamentoParaQualLinha',lang)+ ' ' + promoter +'<br>';//"Training For a Line "+ promoter +" " +
       valida = false
     }
     if(trainning_comments1 == ""){
-      texto += "Comments "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto +=  $.i18n.prop('lObservacaoInicial',lang)+ ' ' + promoter +'<br>';//"Comments "+ promoter +" " +
       valida = false
     }
   }
@@ -1187,12 +1187,12 @@ function formValidacaoOrdem(promoter){
     var service_result1       = $('#add_agendamento_service_result'+promoter).val();
     
     if(food1 == 0){
-      texto += "Type of Food "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " + 
       valida = false
     }
 
     if(service_result1 == 0){
-      texto += "Welcome kit for which line "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += $.i18n.prop('ParaQualLinhaVoceGostariaKitDeBoasVindas',lang)+ ' ' + promoter +'<br>';// "Welcome kit for which line "+ promoter +" " +
       valida = false
     }
     
@@ -1206,22 +1206,22 @@ function formValidacaoOrdem(promoter){
     var open_bags        = $('#add_agendamento_open_bags'+promoter).val();
 
     if(food1 == 0){
-      texto += "Type of Food "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto +=  $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " +
       valida = false
     }
 
     if(Promoting1 == 0){
-      texto += "Type of promotion "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += $.i18n.prop('lPromoting',lang)+ ' ' + promoter +'<br>';//"Type of promotion "+ promoter +" " + 
       valida = false
     }
 
     if(service_result1 == 0){
-      texto += "Purpose of the promotion "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto +=  $.i18n.prop('PorQueVoceEstaFazendoIssoISP',lang)+ ' ' + promoter +'<br>';//"Purpose of the promotion "+ promoter +" " +
       valida = false
     }
 
     if(open_bags == 0){
-      texto += "This store is selling open bags "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto +=  $.i18n.prop('lThisStoreIsSellingOpenBags',lang)+ ' ' + promoter +'<br>';//"This store is selling open bags "+ promoter +" " +
       valida = false
     }
     
@@ -1233,17 +1233,17 @@ function formValidacaoOrdem(promoter){
     var service_result1     = $('#add_agendamento_service_result'+promoter).val();
     
     if(how_meter1 == ""){
-      texto += "How many meters of Farmina shelves "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto +=  $.i18n.prop('lCampoObrigatorio',lang)+ ' ' + promoter +'<br>';//"How many meters of Farmina shelves "+ promoter +" " +
       valida = false
     }
 
     if(service_result1 == 0){
-      texto += "Purpose of the promotion "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += $.i18n.prop('lCampoObrigatorio',lang)+ ' ' + promoter +'<br>';// "Purpose of the promotion "+ promoter +" " +
       valida = false
     }
 
     if(open_bags == 0){
-      texto += "Type of merchandising "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto +=  $.i18n.prop('lCampoObrigatorio',lang)+ ' ' + promoter +'<br>';//"Type of merchandising "+ promoter +" " +
       valida = false
     }
     
@@ -1255,13 +1255,13 @@ function formValidacaoOrdem(promoter){
     var which_park1       = $('#add_agendamento_army_which_park'+promoter).val();
     
     if(specific_store1 == 0){
-      texto += "For a specific store "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += $.i18n.prop('lForSpecificStore',lang)+ ' ' + promoter +'<br>';//"For a specific store "+ promoter +" " + 
       valida = false
     }
 
     if(specific_store1 == 2){
       if(which_park1 == ""){
-        texto += "In which park "+ promoter +" " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+        texto += $.i18n.prop('lInWhicPark',lang) + '<br>';//"In which park "+ promoter +" " + 
         valida = false
       }
     }  
@@ -1270,7 +1270,7 @@ function formValidacaoOrdem(promoter){
   }
   if(valida == false){
     $.notify({
-      title: 'Atenção',
+      title: $.i18n.prop('lAttentionMandatory',lang),
       message: texto
     },{
       type: 'pastel-danger',
