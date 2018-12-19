@@ -1252,8 +1252,15 @@ function formValidacaoOrdem(promoter){
   /*VALIDAÇÃO   ARMY*/
   if(service_type1 == 5){
     var specific_store1   = $('#add_agendamento_army_specific_store'+promoter).val();
+    var food1            = $('#add_agendamento_food'+promoter).val();
     var which_park1       = $('#add_agendamento_army_which_park'+promoter).val();
     
+
+    if(food1 == 0){
+      texto +=  $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " +
+      valida = false
+    }
+
     if(specific_store1 == 0){
       texto += $.i18n.prop('lForSpecificStore',lang)+ ' ' + promoter +'<br>';//"For a specific store "+ promoter +" " + 
       valida = false
