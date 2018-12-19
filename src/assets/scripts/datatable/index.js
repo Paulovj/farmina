@@ -669,7 +669,7 @@ function formValidacaoActivity(service_type){
     
 
     if(people == ""){
-      texto += "How Many People Participate " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "How Many People Participate?" + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
@@ -709,38 +709,38 @@ function formValidacaoActivity(service_type){
     
     
     if(many_customers_entered_on_store == ""){
-      texto += "Total number of people entered in store " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Total number of people entered in store? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(many_voucher_was_delivered == ""){
-      texto += "With how many people you spoke " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "With how many people you spoke? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
 
     if(how_many_products_eas_sold == ""){
-      texto += "How many dry samples you gave " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "How many dry samples you gave? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(how_many_kits_was_delivered == ""){
-      texto += "How many wet samples you gave " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "How many wet samples you gave? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(how_many_national_plans_was_generated == ""){
-      texto += "How many print vouchers you gave " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "How many print vouchers you gave? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(how_many_bags == ""){
-      texto += "How many bags of dry food you sold " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "How many bags of dry food you sold? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(how_many_cans == ""){
-      texto += "How many cans you sold " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "How many cans you sold? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
@@ -777,18 +777,18 @@ function formValidacaoActivity(service_type){
     
     
     if(number_shelves == ""){
-      texto += "Number of shelves with Farmina products " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Number of shelves with Farmina products? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(!able_to_place_on_better_position){
-      texto += "Have you been able to place Farmina products on a better position " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Have you been able to place Farmina products on a better position? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
 
     if(!able_to_get_more_space){
-      texto += "Have you been able to get more space for products " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Have you been able to get more space for products? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
@@ -800,37 +800,37 @@ function formValidacaoActivity(service_type){
     }
 
     if(!get_additional_space_out){
-      texto += "Did you get additional space out of shelves " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Did you get additional space out of shelves? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(get_additional_space_out == 1){
       if(type_space_out_of_shelves == 0){
-        texto += "The additional space is for " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+        texto += "The additional space is for? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
         valida = false
       }
     }
 
     if(!implemented_seasonal_sticker){
-      texto += "Have you implemented seasonal sticker campaign " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Have you implemented seasonal sticker campaign? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(implemented_seasonal_sticker == 1){
       if(type_seasonal_sticker == 0){
-        texto += "The seasonal sticker campaign " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+        texto += "The seasonal sticker campaign? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
         valida = false
       }
     }
 
     if(!implemented_branding){
-      texto += "Have you implemented branding " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Have you implemented branding? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(implemented_branding == 1){
       if(type_branding == 0){
-        texto += "Which branding you implemented " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+        texto += "Which branding you implemented? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
         valida = false
       }
     }
@@ -860,38 +860,38 @@ function formValidacaoActivity(service_type){
     
     
     if(location_activity == ""){
-      texto += "Location of activity " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "Location of activity? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(people_spoke == ""){
-      texto += "With how many people you spoke " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "With how many people you spoke? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
 
     if(kits_delivered == ""){
-      texto += "How many kits you delivered " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "How many kits you delivered? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(print_voruchers == ""){
-      texto += "How many print vouchers you gave " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "How many print vouchers you gave? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(dry_samples == ""){
-      texto += "How many dry samples you gave " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "How many dry samples you gave? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(wet_Samples == ""){
-      texto += "How many wet samples you gave " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "How many wet samples you gave? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
     if(people_refused == ""){
-      texto += "How many people refused to speak with you " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
+      texto += "How many people refused to speak with you? " + $.i18n.prop('lCampoObrigatorio',lang) + '<br>';
       valida = false
     }
 
