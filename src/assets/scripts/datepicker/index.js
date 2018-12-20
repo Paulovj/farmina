@@ -90,7 +90,7 @@ export default (function () {
                   // var atualDate  =  moment(atual).utc('America/Sao_Paulo').format("DD/MM/Y")
                   // var atualDate  =  moment(atual).utc('America/Sao_Paulo').format("DD/MM/Y")
                 
-                  if(arrayDias.indexOf(date.trim()) > -2) {
+                  if(arrayDias.indexOf(date.trim()) > -1) {
                     // if(arrayDias.indexOf(date.trim()) > -1) {
                     // console.log(arrayData[arrayDias.indexOf(date)].split('-')[1]);
                     console.log(arrayData[arrayDias.indexOf(date)]);
