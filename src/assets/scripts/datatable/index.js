@@ -458,7 +458,7 @@ function formatHora(date) {
 
         $("#finish_able_to_get_more_space").change(function(){
           var valor      = $(this).val();
-          $('#finish_many_additional_meters').val('0');
+          $('#finish_many_additional_meters').val('');
           if(valor == 1){
             $('#finish_many_additional_meters_sim').show();
           }else{
@@ -704,6 +704,9 @@ function formValidacaoActivity(service_type){
     var how_many_national_plans_was_generated   = $('#finish_how_many_national_plans_was_generated').val();  
     var how_many_bags                           = $('#finish_how_many_bags').val();  
     var how_many_cans                           = $('#finish_how_many_cans').val();
+    var open_bags                               = $('#finish_open_bags').val();  
+    var how_many_kg                             = $('#finish_how_many_kg').val();  
+
     var start_obsevation                        = $('#finish_starting_observation').val();  
 
     
@@ -732,6 +735,12 @@ function formValidacaoActivity(service_type){
     if(how_many_national_plans_was_generated == ""){
       texto +=  $.i18n.prop('lHowManyPrintVouchersYouGave',lang) + '<br>'; //"How many print vouchers you gave? " +
       valida = false
+    }
+    if(open_bags == 1){
+      if(how_many_kg == ""){
+        texto += $.i18n.prop('lQuantosKhVendeuAberto',lang) + '<br>';//"How many KG you sold from the open bags? " + 
+        valida = false
+      }
     }
 
     if(how_many_bags == ""){
