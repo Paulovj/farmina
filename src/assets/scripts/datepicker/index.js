@@ -77,11 +77,11 @@ export default (function () {
                 format: 'dd/mm/yyyy', 
                 // startDate: "27/11/2018",
                 // startDate: moment(new Date()).utc('America/Sao_Paulo').format("DD/MM/Y"),
-                startDate: moment(new Date()).utc().format("DD/MM/Y"),
+                startDate: moment(new Date()).format("DD/MM/Y"),
                 todayBtn: true,
-                defaultDate:+1,
-                firstDay: 1,
-                regional: "it" , 
+                //defaultDate:+1,
+                //firstDay: 1,
+                //regional: "it" , 
                 //language: "pt-BR",
                 //orientation: "auto left",
                 keyboardNavigation: false,
@@ -92,7 +92,7 @@ export default (function () {
                 todayHighlight: true,
                 beforeShowDay: function(date){
             
-                  var date  =  moment(date).utc().format("DD/MM/Y")
+                  var date  =  moment(date).format("DD/MM/Y")
                   var atual = new Date();
                   // var atualDate  =  moment(atual).utc('America/Sao_Paulo').format("DD/MM/Y")
                   // var atualDate  =  moment(atual).utc('America/Sao_Paulo').format("DD/MM/Y")
