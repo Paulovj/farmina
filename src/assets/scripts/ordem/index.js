@@ -1334,7 +1334,6 @@ function formValidacaoOrdem(promoter){
         } 
     }
 
-    return false;
     
     console.log('entrou na janela');
     var data = new FormData();
