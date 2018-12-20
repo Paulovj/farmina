@@ -77,12 +77,7 @@ export default (function () {
     return data;
     }
   
-    function formatDateSql(date) {
-      var data = moment(date, 'DD/MM/YYYY').toDate();
-      data =  moment(data).utc().format("Y-MM-DD")
-      return data;
-      }
-  
+ 
 
 
 function checkZero(data){
