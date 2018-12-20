@@ -72,7 +72,8 @@ export default (function () {
               $('.start-date'+number).datepicker({
                 format: 'dd/mm/yyyy', 
                 // startDate: "27/11/2018",
-                startDate: moment(new Date()).utc('America/Sao_Paulo').format("DD/MM/Y"),
+                // startDate: moment(new Date()).utc('America/Sao_Paulo').format("DD/MM/Y"),
+                startDate: moment(new Date()).utc().format("DD/MM/Y"),
                 todayBtn: true,
                 language: "pt-BR",
                 //orientation: "auto left",
@@ -86,7 +87,8 @@ export default (function () {
             
                   var date  =  moment(date).utc().format("DD/MM/Y")
                   var atual = new Date();
-                  var atualDate  =  moment(atual).utc('America/Sao_Paulo').format("DD/MM/Y")
+                  // var atualDate  =  moment(atual).utc('America/Sao_Paulo').format("DD/MM/Y")
+                  // var atualDate  =  moment(atual).utc('America/Sao_Paulo').format("DD/MM/Y")
                 
                   if(arrayDias.indexOf(date.trim()) > -1) {
                     // console.log(arrayData[arrayDias.indexOf(date)].split('-')[1]);
@@ -107,7 +109,8 @@ export default (function () {
           console.log('nao encontrou')
           $('.start-date'+number).datepicker({
             format: 'dd/mm/yyyy', 
-            startDate: moment(new Date()).utc('America/Sao_Paulo').format("DD/MM/Y"),
+            // startDate: moment(new Date()).utc('America/Sao_Paulo').format("DD/MM/Y"),
+            startDate: moment(new Date()).utc().format("DD/MM/Y"),
             todayBtn: true,
             language: "pt-BR",
             //orientation: "auto left",
