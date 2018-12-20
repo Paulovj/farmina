@@ -50,7 +50,7 @@ function formatDateSql(date) {
   var data = '';
   if (date != ""){
     data = moment(date, 'DD/MM/YYYY').toDate();
-    data =  moment(data).utc().format("Y-MM-DD")
+    data =  moment(data).format("Y-MM-DD")
   }  
   return data;
   }
