@@ -1,5 +1,6 @@
 import * as $ from 'jquery';
 import 'bootstrap-datepicker/dist/js/bootstrap-datepicker';
+import 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.it.min.js';
 import 'bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css';
 import 'jquery-i18n-properties'
 import moment from 'moment/src/moment';
@@ -32,6 +33,8 @@ export default (function () {
     agendamentoX(this.value,2);
   });
   console.log('data de hj : '+ new Date())
+  
+  
   function agendamentoX(recurso,number){
     // $('.start-date').val('').datepicker('update','');
     $('.start-date'+number).val('').datepicker('destroy')
@@ -78,6 +81,7 @@ export default (function () {
                 todayBtn: true,
                 defaultDate:+1,
                 firstDay: 1,
+                regional: "it" , 
                 //language: "pt-BR",
                 //orientation: "auto left",
                 keyboardNavigation: false,
@@ -107,7 +111,7 @@ export default (function () {
               });
               // $(".start-date").data("datepicker").fill()
               $('.start-date'+number).datepicker('update');
-          });
+          })
         }else{
           console.log('nao encontrou')
           $('.start-date'+number).datepicker({
