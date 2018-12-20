@@ -62,7 +62,7 @@ export default (function () {
               }else if(value['Service Type'] == 5){
                 service_type =  $.i18n.prop('lArmy',lang)
               }
-              var estimatedDate  =  moment(value['Estimated Starting Date']).utc().format("DD/MM/Y")
+              var estimatedDate  =  moment(value['Estimated Starting Date']).format("DD/MM/Y")
               
               //var EstimatedStartingTime = value['Estimated Starting Time'];
               //var EstimatedFinishTime = value['Estimated Finish Time'];
@@ -116,7 +116,7 @@ export default (function () {
           $('.start-date'+number).datepicker({
             format: 'dd/mm/yyyy', 
             // startDate: moment(new Date()).utc('America/Sao_Paulo').format("DD/MM/Y"),
-            startDate: moment(new Date()).utc().format("DD/MM/Y"),
+            startDate: moment(new Date()).format("DD/MM/Y"),
             todayBtn: true,
             //locale: 'en-gb',
             //language: "pt-BR",

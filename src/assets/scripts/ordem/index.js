@@ -1334,9 +1334,6 @@ function formValidacaoOrdem(promoter){
         } 
     }
 
-    alert(formatDateSql($("#add_agendamento_planned_date1").val()))
-    alert($("#add_agendamento_planned_date1").val());
-
     return false;
     
     console.log('entrou na janela');
