@@ -73,7 +73,6 @@ export default (function () {
               arrayDias.push(objDatas)
 
               $('.start-date'+number).datepicker({
-                defaultDate: "getDate()",
                 format: 'dd/mm/yyyy', 
                 // startDate: "27/11/2018",
                 // startDate: moment(new Date()).utc('America/Sao_Paulo').format("DD/MM/Y"),
@@ -91,7 +90,7 @@ export default (function () {
                 autoclose: true,
                 todayHighlight: true,
                 beforeShowDay: function(date){
-            
+                  
                   var date  =  moment(date).format("DD/MM/Y")
                   var atual = new Date();
                   // var atualDate  =  moment(atual).utc('America/Sao_Paulo').format("DD/MM/Y")
@@ -119,7 +118,7 @@ export default (function () {
             // startDate: moment(new Date()).utc('America/Sao_Paulo').format("DD/MM/Y"),
             startDate: moment(new Date()).utc().format("DD/MM/Y"),
             todayBtn: true,
-            locale: 'en-gb',
+            //locale: 'en-gb',
             //language: "pt-BR",
             //orientation: "auto left",
             keyboardNavigation: false,
