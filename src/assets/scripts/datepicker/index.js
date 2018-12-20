@@ -70,13 +70,15 @@ export default (function () {
               arrayDias.push(objDatas)
 
               $('.start-date'+number).datepicker({
+                defaultDate: "getDate()",
                 format: 'dd/mm/yyyy', 
                 // startDate: "27/11/2018",
                 // startDate: moment(new Date()).utc('America/Sao_Paulo').format("DD/MM/Y"),
                 startDate: moment(new Date()).utc().format("DD/MM/Y"),
                 todayBtn: true,
+                defaultDate:+1,
+                firstDay: 1,
                 //language: "pt-BR",
-                locale: 'en-gb',
                 //orientation: "auto left",
                 keyboardNavigation: false,
                 //daysOfWeekDisabled: "6",
