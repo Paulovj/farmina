@@ -31,7 +31,7 @@ export default (function () {
   $( "#add_agendamento_busca_professional2" ).change(function() {
     agendamentoX(this.value,2);
   });
-
+  console.log('data de hj : '+ new Date())
   function agendamentoX(recurso,number){
     // $('.start-date').val('').datepicker('update','');
     $('.start-date'+number).val('').datepicker('destroy')
@@ -42,7 +42,7 @@ export default (function () {
           console.log('entrou ' + result.result.length)
           var arrayData = [];
           let arrayDias = new Array()
-  
+          console.log('data de hj 2: '+ new Date())
           $.each( result.result, function( index, value ){
               var objDatas = {}
               var service_type =''
