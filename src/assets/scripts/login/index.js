@@ -320,8 +320,11 @@ $("#btn_login").click(function(){
         $('.lEstimatedStartTime').html($.i18n.prop('lEstimatedStartTime',lang))
         $('.lDryWet').html($.i18n.prop('lDryWet',lang))
 
-        
+        $('.lPortugues').html($.i18n.prop('lPortugues',lang))
+        $('.lIngles').html($.i18n.prop('lIngles',lang))
+        $('.lItaliano').html($.i18n.prop('lItaliano',lang))
 
+        
         
         
                 

@@ -76,7 +76,14 @@ export default (function () {
     return data;
     }
   
- 
+ function formatDateSql(date) {
+  var data = '';
+  if (date != ""){
+    data = moment(date, 'DD/MM/YYYY').toDate();
+    data =  moment(data).format("Y-MM-DD")
+  }  
+  return data;
+  }
 
 
 function checkZero(data){
@@ -389,6 +396,7 @@ function formatHora(date) {
 
             $('#view_army_which_park').val(result['In Wich Park'])
         
+            $('#view_location_activity_training').val(result['Location Activity']);
             $('#view_how_many_people_participe').val(result['How Many People Participate']);
             
 
@@ -657,10 +665,15 @@ function formValidacaoActivity(service_type){
   
   
   if(service_type == "Training"){
+    var location_activity = $('#finish_location_activity_training').val();  
     var people            = $('#finish_how_many_people_participe').val();  
     var start_obsevation  = $('#finish_starting_observation').val();  
     
     
+   if(location_activity == ""){
+      texto +=  $.i18n.prop('lLocationOfActivity',lang) + '<br>';//"Location of activity? " +
+      valida = false
+    }
 
     if(people == ""){
       texto +=  $.i18n.prop('lHowManyPeopleParticipate',lang) + '<br>'; //"How Many People Participate?" +
@@ -986,7 +999,14 @@ $("#btn_finish_booking").click(function(){
 
   var finish_kits_delivered   = $('#finish_kits_delivered').val();
   var finish_people_refused          = $('#finish_people_refused').val();
-  var finish_location_activity       = $('#finish_location_activity').val();
+
+  var finish_location_activity       = ""
+
+  if(service_type == "Training"){
+    finish_location_activity       = $('#finish_location_activity_training').val();
+  }else{
+    finish_location_activity       = $('#finish_location_activity').val();
+  }
   
   var finish_people_participe       = $('#finish_how_many_people_participe').val();
   
@@ -1106,7 +1126,7 @@ $("#btn_finish_booking").click(function(){
       $('#finish_date_final_label').hide();
       $('#finish_date_inicio_label').show();
       $('.labelDataInicio').removeClass('lDataInicio').addClass('lDate');
-      $('.lDate').html($.i18n.prop('lDate',lang))
+      $('.lDate').html($.i18n.prop('lDate',lang))      
     }
     if(result['Service Type'] == 2){
       $('#finish_question_Kit').show();
