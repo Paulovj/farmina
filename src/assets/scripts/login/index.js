@@ -140,10 +140,9 @@ $("#btn_login").click(function(){
       }
     
     var lang = "en";
-    if ((sessionStorage.Language != "") && (sessionStorage.Language != 'undefined')){
+    if (sessionStorage.Language){
       lang = sessionStorage.Language
     }
-    
     
     $.i18n.properties({
        name: 'Messages',

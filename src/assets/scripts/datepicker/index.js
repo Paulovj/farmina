@@ -74,8 +74,6 @@ export default (function () {
 
               $('.start-date'+number).datepicker({
                 format: 'dd/mm/yyyy', 
-                // startDate: "27/11/2018",
-                // startDate: moment(new Date()).utc('America/Sao_Paulo').format("DD/MM/Y"),
                 startDate: moment(new Date()).format("DD/MM/Y"),
                 todayBtn: true,
                 //defaultDate:+1,
@@ -84,32 +82,46 @@ export default (function () {
                 //language: "pt-BR",
                 //orientation: "auto left",
                 keyboardNavigation: false,
-                //daysOfWeekDisabled: "6",
-                // daysOfWeekHighlighted: "6",
-                //calendarWeeks: true,
                 autoclose: true,
                 todayHighlight: true,
+                
                 beforeShowDay: function(date){
                   
                   var date  =  moment(date).format("DD/MM/Y")
                   var atual = new Date();
-                  // var atualDate  =  moment(atual).utc('America/Sao_Paulo').format("DD/MM/Y")
-                  // var atualDate  =  moment(atual).utc('America/Sao_Paulo').format("DD/MM/Y")
-                
+                  $('.datepicker-days').attr( "data-toggle", "tooltip" );
+
                   if(arrayDias.indexOf(date.trim()) > -1) {
                     // console.log(arrayData[arrayDias.indexOf(date)].split('-')[1]);
                     console.log(arrayData[arrayDias.indexOf(date)]);
                     return {
                       tooltip: arrayData[arrayDias.indexOf(date)],
-                      classes: 'disabled highlighted '
+                      classes: 'highlighted disabled',
+                      
+                      
                     };
+                    
                   }
+                  $('[data-toggle="tooltip"]').tooltip(); 
                 },
                 //datesDisabled: ['11/28/2018', '11/30/2018'],
                 toggleActive: true
-              });
+              })//.on('changeDate', function(e){
+               // alert('entrou  data ')
+                //alert('val'+$(this).val());
+                //console.log(e)
+              //})
+
+
               // $(".start-date").data("datepicker").fill()
               $('.start-date'+number).datepicker('update');
+              //data-toggle="tooltip"
+              // $('.datepicker-days').attr( "data-toggle", "tooltip" );
+              //$('.highlighted').tooltip()
+              
+
+
+
           })
         }else{
           console.log('nao encontrou')
@@ -130,11 +142,25 @@ export default (function () {
             toggleActive: true
           });
 
-        }           
+        }  
+        //alert('1')
+        // $('[data-toggle="tooltip"]').on('click',function(){
+        //   alert('1')
+        // }); 
+        $('[data-toggle="tooltip"]').tooltip(); 
+
+        
     });
   }
   //$('.start-date').datepicker();
   $('.end-date').datepicker();
+  
+  
+
+  // $('.highlighted').on("click","td", function() {
+  //   alert('teste');
+  //   //
+  // })
 
 
 }())

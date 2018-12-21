@@ -6,10 +6,9 @@ import 'jquery-i18n-properties'
 export default (function () {
 
   var lang = "en";
-  if ((sessionStorage.Language != "") && (sessionStorage.Language != 'undefined')){
+    if (sessionStorage.Language){
       lang = sessionStorage.Language
     }
-
 
   var paisX = sessionStorage.Pais
   var urlX = "";

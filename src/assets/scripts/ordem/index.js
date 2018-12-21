@@ -9,11 +9,11 @@ export default (function () {
   if(window.location.pathname == '/ordem.html'){
 
     var lang = "en";
-    if ((sessionStorage.Language != "") && (sessionStorage.Language != 'undefined')){
+    if (sessionStorage.Language){
       lang = sessionStorage.Language
     }
 
-
+    
     var paisX = sessionStorage.Pais
     var urlX = "";
     if(paisX == "Brasil"){

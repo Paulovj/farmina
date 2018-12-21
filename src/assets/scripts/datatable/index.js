@@ -21,11 +21,10 @@ export default (function () {
     }
    
 
-  var lang = "en";
-  if ((sessionStorage.Language != "") && (sessionStorage.Language != 'undefined')){
+    var lang = "en";
+    if (sessionStorage.Language){
       lang = sessionStorage.Language
     }
-
   if(window.location.pathname == '/datatable.html'){
 
   //var table = $('#dataTable').DataTable(); 
