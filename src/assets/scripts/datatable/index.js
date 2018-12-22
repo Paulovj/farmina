@@ -670,10 +670,10 @@ function formValidacaoActivity(service_type){
     var start_obsevation  = $('#finish_starting_observation').val();  
     
     
-   if(location_activity == ""){
-      texto +=  $.i18n.prop('lLocationOfActivity',lang) + '<br>';//"Location of activity? " +
-      valida = false
-    }
+  //  if(location_activity == ""){
+  //     texto +=  $.i18n.prop('lLocationOfActivity',lang) + '<br>';//"Location of activity? " +
+  //     valida = false
+  //   }
 
     if(people == ""){
       texto +=  $.i18n.prop('lHowManyPeopleParticipate',lang) + '<br>'; //"How Many People Participate?" +
@@ -1162,6 +1162,7 @@ $("#btn_finish_booking").click(function(){
 
     $('#finish_training_for_which_line').val(TrainingAnswer(result['Trainning Answer Type']));//no
     $('#finish_estimated_starting_date').val(formatDate(result['Estimated Starting Date']));
+    $('#finish_location_activity_training').val(result['Location Activity']);
     //alert('Data:'+result['Estimated Starting Date'])
     $('#finish_estimated_finish_time').val(formatHora(result['Estimated Finish Time']));
     $('#finish_estimated_start_time').val(formatHora(result['Estimated Start Time']));

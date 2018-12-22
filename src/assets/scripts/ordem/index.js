@@ -854,6 +854,7 @@ function PromoterServiceTypeX(promoter,value,action){
   $("#add_agendamento_line_slow_comments"+promoter).val("");  
   $("#add_agendamento_how_meter"+promoter).val("");  
   $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
+  $("#div_"+action+"_agendamento_service_result_location"+promoter).hide();
   
 
   $("#add_agendamento_trainning_type"+promoter).val("0");
@@ -895,6 +896,7 @@ function PromoterServiceTypeX(promoter,value,action){
 
     $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_army_which_park"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_location"+promoter).show();
 
     
 
@@ -1160,7 +1162,13 @@ function formValidacaoOrdem(promoter){
     var food1                 = $('#add_agendamento_food'+promoter).val();
     var service_result1       = $('#add_agendamento_service_result'+promoter).val();
     var trainning_comments1   = $('#add_agendamento_trainning_comments'+promoter).val();
+    var location_activity1    = $('#add_agendamento_location_activity_training'+promoter).val();
     
+    if(location_activity1 == ""){
+      texto +=  $.i18n.prop('lLocation',lang)+ ' ' + promoter +'<br>';//"Training Type "+ promoter +" " +
+      valida = false
+    }
+
     if(trainning_type1 == 0){
       texto +=  $.i18n.prop('lTrainningType',lang)+ ' ' + promoter +'<br>';//"Training Type "+ promoter +" " +
       valida = false
@@ -1376,6 +1384,8 @@ function formValidacaoOrdem(promoter){
 
         "Food1"                    :$("#add_agendamento_food1").val(),
         "TrainningType1"           :$("#add_agendamento_trainning_type1").val(),
+        "LocationActivityTraining1":$("#add_agendamento_location_activity_training1").val(),
+        
         "TrainningComments1"       :$("#add_agendamento_trainning_comments1").val(),
         "PushNewLine1"             :$("#add_agendamento_push_new_line1").val(),
         "LineSlowComments1"        :$("#add_agendamento_line_slow_comments1").val(),
@@ -1398,6 +1408,8 @@ function formValidacaoOrdem(promoter){
 
         "Food2"                    :$("#add_agendamento_food2").val(),
         "TrainningType2"           :$("#add_agendamento_trainning_type2").val(),
+        "LocationActivityTraining2":$("#add_agendamento_location_activity_training2").val(),
+        
         "TrainningComments2"       :$("#add_agendamento_trainning_comments2").val(),
         "PushNewLine2"             :$("#add_agendamento_push_new_line2").val(),
         "LineSlowComments2"        :$("#add_agendamento_line_slow_comments2").val(),
@@ -1419,6 +1431,8 @@ function formValidacaoOrdem(promoter){
 
         "Food3"                    :$("#add_agendamento_food3").val(),
         "TrainningType3"           :$("#add_agendamento_trainning_type3").val(),
+        "LocationActivityTraining3":$("#add_agendamento_location_activity_training3").val(),
+        
         "TrainningComments3"       :$("#add_agendamento_trainning_comments3").val(),
         "PushNewLine3"             :$("#add_agendamento_push_new_line3").val(),
         "LineSlowComments3"        :$("#add_agendamento_line_slow_comments3").val(),
@@ -1440,6 +1454,8 @@ function formValidacaoOrdem(promoter){
 
         "Food4"                    :$("#add_agendamento_food4").val(),
         "TrainningType4"           :$("#add_agendamento_trainning_type4").val(),
+        "LocationActivityTraining4":$("#add_agendamento_location_activity_training4").val(),
+        
         "TrainningComments4"       :$("#add_agendamento_trainning_comments4").val(),
         "PushNewLine4"             :$("#add_agendamento_push_new_line4").val(),
         "LineSlowComments4"        :$("#add_agendamento_line_slow_comments4").val(),
@@ -1458,6 +1474,7 @@ function formValidacaoOrdem(promoter){
 
         "Food5"                    :$("#add_agendamento_food5").val(),
         "TrainningType5"           :$("#add_agendamento_trainning_type5").val(),
+        "LocationActivityTraining5":$("#add_agendamento_location_activity_training5").val(),
         "TrainningComments5"       :$("#add_agendamento_trainning_comments5").val(),
         "PushNewLine5"             :$("#add_agendamento_push_new_line5").val(),
         "LineSlowComments5"        :$("#add_agendamento_line_slow_comments5").val(),

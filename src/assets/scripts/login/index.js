@@ -323,6 +323,11 @@ $("#btn_login").click(function(){
         $('.lPortugues').html($.i18n.prop('lPortugues',lang))
         $('.lIngles').html($.i18n.prop('lIngles',lang))
         $('.lItaliano').html($.i18n.prop('lItaliano',lang))
+        
+        $('.lLocation').html($.i18n.prop('lLocation',lang))
+
+
+
 
         
         
