@@ -274,7 +274,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(data['In Wich Park 1'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park1').show();
               }  
-              
+              $('#edit_agendamento_location_activity_training1').val(data['Training Location 1']);
 
               var action ='edit'
               PromoterServiceTypeX(1,ServiceType1,action)
@@ -304,7 +304,9 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_army_which_park2').val(data['In Wich Park 2']);
               if(data['In Wich Park 2'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park2').show();
-              }  
+              }
+              $('#edit_agendamento_location_activity_training2').val(data['Training Location 2']);  
+              
 
               var action ='edit'
               PromoterServiceTypeX(2,ServiceType2,action)
@@ -340,7 +342,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               //$('#edit_agendamento_service_result3').val(ServicetypeResult3);
               if(ServicetypeResult3 != ""){
                 $('#edit_agendamento_service_result3 option[value='+ServicetypeResult3+']').attr('selected','selected');
-              }  
+              }
+              $('#edit_agendamento_location_activity_training3').val(data['Training Location 3']);
 
               
 
@@ -371,7 +374,10 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               //$('#edit_agendamento_service_result4').val(ServicetypeResult3);
               if(ServicetypeResult4 != ""){
                 $('#edit_agendamento_service_result4 option[value='+ServicetypeResult4+']').attr('selected','selected');
-              }  
+              }
+              
+              $('#edit_agendamento_location_activity_training4').val(data['Training Location 4']);  
+
 
 
               //Profissional 5
@@ -401,7 +407,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               //$('#edit_agendamento_service_result5').val(ServicetypeResult5);
               if(ServicetypeResult5 != ""){
                 $('#edit_agendamento_service_result5 option[value='+ServicetypeResult5+']').attr('selected','selected');
-              }  
+              }
+              $('#edit_agendamento_location_activity_training5').val(data['Training Location 5']);  
                   
 
                  
@@ -431,6 +438,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(data['In Wich Park 1'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park1').show();
               }
+              
+              $('#edit_agendamento_location_activity_training1').val(data['Training Location 1']);
               
 
             
@@ -463,7 +472,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(data['In Wich Park 2'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park2').show();
               }
-              
+              $('#edit_agendamento_location_activity_training2').val(data['Training Location 2']);
               var action ='edit'
               PromoterServiceTypeX(2,ServiceType2,action)
               //$('#edit_agendamento_service_result2').val(ServicetypeResult2);
@@ -492,7 +501,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(data['In Wich Park 3'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park3').show();
               }  
-              
+              $('#edit_agendamento_location_activity_training3').val(data['Training Location 3']);
 
               var action ='edit'
               PromoterServiceTypeX(3,ServiceType3,action)
@@ -523,7 +532,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(data['In Wich Park 4'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park4').show();
               } 
-              
+              $('#edit_agendamento_location_activity_training4').val(data['Training Location 4']);
 
               var action ='edit'
               PromoterServiceTypeX(4,ServiceType4,action)
@@ -553,6 +562,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(data['In Wich Park 5'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park5').show();
               }
+              $('#edit_agendamento_location_activity_training5').val(data['Training Location 5']);
               
               var action ='edit'
               PromoterServiceTypeX(5,ServiceType5,action)

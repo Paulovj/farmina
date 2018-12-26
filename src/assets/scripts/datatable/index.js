@@ -51,12 +51,12 @@ export default (function () {
       }else if(falta == -1 ){
         texto  = $.i18n.prop('lAtrasado',lang)
         var delay  = $.i18n.prop('lDelay',lang)
-        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">'+ texto +'</span>'
+        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10" style="font-size: 14px;">'+ texto +'</span> <br><br>'
         result +=  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">' + ((falta-falta-falta)) +' '+ delay + '</span>'
       }else if(falta < -1 ){
         texto  = $.i18n.prop('lAtrasado',lang)
         var delays  = $.i18n.prop('lDelays',lang)
-        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">'+ texto +'</span>'
+        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10" style="font-size: 14px;">'+ texto +'</span><br><br>'
         result +=  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">' + ((falta-falta-falta)) +' '+ delays + '</span>'
       }
 
