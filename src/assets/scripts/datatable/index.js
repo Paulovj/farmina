@@ -1349,6 +1349,7 @@ var chamaFinaliza = function(){
   $("#fileimagem").change(function(){
     //alert('entrou  no change ')
     var pasta = $('#photo_service_invoice_no').val();
+    var InvoiceNo_ = pasta.replace('///','');
     var service_type  = $("#photo_service_type").val();
   
     var data = new FormData();
@@ -1423,55 +1424,268 @@ var chamaFinaliza = function(){
 
 
 
+  $("#fileimagemBefore").change(function(){
+    var pasta = $('#photo_service_invoice_no').val()+'%5C%5CBefore';
+    var InvoiceNo_ = $('#photo_service_invoice_no').val();
+    var pasta2 = $('#photo_service_invoice_no').val()+'/Before';
+    var service_type  = $("#photo_service_type").val();
+  
+    var data = new FormData();
+    var file = $('#fileimagemBefore').val();
+    if (file == ""){
+      var atencao = $.i18n.prop('lAtencao',lang)
+      var msg = $.i18n.prop('lParaEnviarFoto',lang)
+      $.notify({
+        title: atencao,
+        message: msg
+      },{
+        type: 'pastel-danger',
+        delay: 5000,
+        z_index: 10000,
+        template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+          '<span data-notify="title">{1}</span>' +
+          '<span data-notify="message">{2}</span>' +
+        '</div>'
+      });
+      return false;
+    }
+    var extensao = 'C:/MKT/FOTOS/'+pasta2+'/'+$('#fileimagemBefore')[0].files[0].name
+    data.append('file', $('#fileimagemBefore')[0].files[0]);
+    
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+         "url": urlX+"Containers/"+ pasta +"/upload",
+        "method": "POST",
+        "headers": {
+          "cache-control": "no-cache",
+          "postman-token": "d754895d-5909-8ac8-1e61-b09a9bab5a2b"
+        },
+        "processData": false,
+        "contentType": false,
+        "mimeType": "multipart/form-data",
+        "data": data
+      }
+
+      $.ajax(settings).done(function (response) {
+        console.log('retorno do respose');
+        console.log(response);
+        $('#fileimagemBefore').val('');
+        $('#dataTableImagens').DataTable().destroy();
+        loadImagensX(InvoiceNo_,service_type);
+        salvaEndereco(InvoiceNo_,extensao)
+      });    
+      
+  });
+
+
+
+  $("#fileimagemAfter").change(function(){
+    var pasta = $('#photo_service_invoice_no').val()+'%5C%5CAfter';
+    var InvoiceNo_ = $('#photo_service_invoice_no').val();
+    var pasta2 = $('#photo_service_invoice_no').val()+'/After';
+    var service_type  = $("#photo_service_type").val();
+  
+    var data = new FormData();
+    var file = $('#fileimagemAfter').val();
+    if (file == ""){
+      var atencao = $.i18n.prop('lAtencao',lang)
+      var msg = $.i18n.prop('lParaEnviarFoto',lang)
+      $.notify({
+        title: atencao,
+        message: msg
+      },{
+        type: 'pastel-danger',
+        delay: 5000,
+        z_index: 10000,
+        template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+          '<span data-notify="title">{1}</span>' +
+          '<span data-notify="message">{2}</span>' +
+        '</div>'
+      });
+      return false;
+    }
+    var extensao = 'C:/MKT/FOTOS/'+pasta2+'/'+$('#fileimagemAfter')[0].files[0].name
+    data.append('file', $('#fileimagemAfter')[0].files[0]);
+    
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+         "url": urlX+"Containers/"+ pasta +"/upload",
+        "method": "POST",
+        "headers": {
+          "cache-control": "no-cache",
+          "postman-token": "d754895d-5909-8ac8-1e61-b09a9bab5a2b"
+        },
+        "processData": false,
+        "contentType": false,
+        "mimeType": "multipart/form-data",
+        "data": data
+      }
+
+      $.ajax(settings).done(function (response) {
+        console.log('retorno do respose');
+        console.log(response);
+        $('#fileimagemAfter').val('');
+        $('#dataTableImagens').DataTable().destroy();
+        loadImagensX(InvoiceNo_,service_type);
+        salvaEndereco(InvoiceNo_,extensao)
+      });    
+      
+  });
+
+
+
+
+
 
   function loadImagensX(id,service_type) {
-    $.ajax({url: urlX+"Containers/"+id+"/files", success: function(result){
-    console.log('result ' + result.length)  
+    
 
-       //console.log('welcome kit:'+service_type)
-      var maxImg = 0
-      if (service_type==1 ){
-        //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoTranning',lang));
-        maxImg = 3
-      }
-      if (service_type==2 ){
-        //$("#finished").attr("disabled",false);
-       //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoWelcomeKit',lang));
-      }
-      if (service_type==3 ){
-        //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoISP',lang));
-        maxImg = 5
-      }
-      if (service_type==4 ){
-        $("#btn_save_photo").html($.i18n.prop('lEnviarFotoMerchandising',lang));
-        maxImg = 10
-      }
-      if (service_type==5 ){
-        //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
-        maxImg = 5
-      }
-      $("#fileimagemUpload").show();
-      if (service_type !=2){
-        if (result.length > 0){
-          $("#finished").attr("disabled",false); 
-        }else{
-          $("#finished").attr("disabled",true);
-        }  
-        if (result.length < maxImg ){
-          $("#fileimagem").attr("disabled",false);
+
+      $.ajax({url: urlX+"Containers/"+id+"/files", success: function(result){
+      console.log('result ' + result.length)  
+
+        var maxImg = 0
+        if (service_type==1 ){
+          //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoTranning',lang));
+          maxImg = 3
+        }
+        if (service_type==2 ){
+          //$("#finished").attr("disabled",false);
+        //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoWelcomeKit',lang));
+        }
+        if (service_type==3 ){
+          //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoISP',lang));
+          maxImg = 5
+        }
+        if (service_type==4 ){
+          $("#btn_save_photo").html($.i18n.prop('lEnviarFotoMerchandising',lang));
+          maxImg = 10
+        }
+        if (service_type==5 ){
+          //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
+          maxImg = 5
+        }
+        $("#fileimagemUpload").show();
+        if (service_type !=2){
+          if (result.length > 0){
+            $("#finished").attr("disabled",false); 
+          }else{
+            $("#finished").attr("disabled",true);
+          }  
+          if (result.length < maxImg ){
+            $("#fileimagem").attr("disabled",false);
+          }else{
+            $("#fileimagem").attr("disabled",true);
+            $("#fileimagemUpload").hide();
+          }  
         }else{
           $("#fileimagem").attr("disabled",true);
           $("#fileimagemUpload").hide();
-        }  
-      }else{
-        $("#fileimagem").attr("disabled",true);
-        $("#fileimagemUpload").hide();
+          
+        } 
+
         
-      } 
+
+        
+      
+
+      $.ajax({url: urlX+"Containers/"+id+"%5C%5CBefore/files", success: function(resultBefore){
+        console.log('result ' + resultBefore.length)  
+  
+          var maxImg = 0
+          if (service_type==1 ){
+            //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoTranning',lang));
+            maxImg = 3
+          }
+          if (service_type==2 ){
+            //$("#finished").attr("disabled",false);
+          //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoWelcomeKit',lang));
+          }
+          if (service_type==3 ){
+            //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoISP',lang));
+            maxImg = 5
+          }
+          if (service_type==4 ){
+            $("#btn_save_photo").html($.i18n.prop('lEnviarFotoMerchandising',lang));
+            maxImg = 10
+          }
+          if (service_type==5 ){
+            //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
+            maxImg = 5
+          }
+          $("#fileimagemUpload").show();
+          if (service_type !=2){
+            if (resultBefore.length > 0){
+              $("#finished").attr("disabled",false); 
+            }else{
+              $("#finished").attr("disabled",true);
+            }  
+            if (resultBefore.length < maxImg ){
+              $("#fileimagem").attr("disabled",false);
+            }else{
+              $("#fileimagem").attr("disabled",true);
+              $("#fileimagemUpload").hide();
+            }  
+          }else{
+            $("#fileimagem").attr("disabled",true);
+            $("#fileimagemUpload").hide();
+            
+          } 
 
 
+          $.ajax({url: urlX+"Containers/"+id+"%5C%5CAfter/files", success: function(resultAfter){
+            console.log('result ' + resultAfter.length)  
+      
+              var maxImg = 0
+              if (service_type==1 ){
+                //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoTranning',lang));
+                maxImg = 3
+              }
+              if (service_type==2 ){
+                //$("#finished").attr("disabled",false);
+              //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoWelcomeKit',lang));
+              }
+              if (service_type==3 ){
+                //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoISP',lang));
+                maxImg = 5
+              }
+              if (service_type==4 ){
+                $("#btn_save_photo").html($.i18n.prop('lEnviarFotoMerchandising',lang));
+                maxImg = 10
+              }
+              if (service_type==5 ){
+                //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
+                maxImg = 5
+              }
+              $("#fileimagemUpload").show();
+              if (service_type !=2){
+                if (resultAfter.length > 0){
+                  $("#finished").attr("disabled",false); 
+                }else{
+                  $("#finished").attr("disabled",true);
+                }  
+                if (resultAfter.length < maxImg ){
+                  $("#fileimagem").attr("disabled",false);
+                }else{
+                  $("#fileimagem").attr("disabled",true);
+                  $("#fileimagemUpload").hide();
+                }  
+              }else{
+                $("#fileimagem").attr("disabled",true);
+                $("#fileimagemUpload").hide();
+                
+              } 
+  
+           
+          
+          // resultado +=result
 
-    var jsonString = result 
+        
+
+      var jsonString = $.merge(result,resultBefore)
+      jsonString = $.merge(jsonString,resultAfter)
 
       console.log(jsonString)    
       var datatableImages = $("#dataTableImagens")
@@ -1483,11 +1697,15 @@ var chamaFinaliza = function(){
           "searching": false,
           "columns" : [
             
-            { "data" : "name" , "render": function ( data) { 
-              return "<img src='"+urlImgX+id+"/"+data+"'/ heigth='50px' width='50px'>" 
+            { "data" : null , "render": function ( data) { 
+              var endereco =  data['container'].replace("\\\\","/")
+              // return "<img src='"+urlImgX+id+"/"+data+"'/ heigth='50px' width='50px'>" 
+              return "<img src='"+urlImgX+"/"+endereco+"/"+data['name']+"' heigth='50px' width='50px'>" 
               }
             },
+            { "data" : "container" },
             { "data" : "name" },
+            
 
             { "targets": -1, "data": null, 
               "render": function (a,d){
@@ -1509,11 +1727,23 @@ var chamaFinaliza = function(){
         setTimeout(function(){
           $('#dataTableImagens').DataTable().draw();        
          }, 3000);
-      }
-       
-    });
+
+         
+        }})
+
+      }})
+    }})
+
     
 };
+
+
+
+
+
+
+
+
 
 
 
@@ -1587,11 +1817,13 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
 
     $('#dataTableImagens tbody').on( 'click', 'button', function () {
       var data = $("#dataTableImagens").DataTable().row( $(this).parents('tr') ).data();
-      var pasta = $('#photo_service_invoice_no').val();
+      // var pasta = $('#photo_service_invoice_no').val();
+      var InvoiceNo_ = $('#photo_service_invoice_no').val();
+      var pasta = data.container.replace('\\\\','%5C%5C');
       var service_type  = $("#photo_service_type").val();
       var  file =  data.name
       if($(this).attr('action') == "delete_photo"){
-       
+        console.log(data);
         var settings = {
           "async": true,
           "crossDomain": true,
@@ -1623,7 +1855,7 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
             '</div>'
           });
           $('#dataTableImagens').DataTable().destroy();
-          loadImagensX(pasta,service_type);
+          loadImagensX(InvoiceNo_,service_type);
           
         });    
     }

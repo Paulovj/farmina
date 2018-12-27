@@ -100,7 +100,17 @@ export default (function () {
               }else if(value['Service Type'] == 5){
                 service_type =  $.i18n.prop('lArmy',lang)
               }
-              var estimatedDate  =  moment(value['Estimated Starting Date']).format("DD/MM/Y")
+
+              var teste = value['Estimated Starting Date'].split("-");
+              var dia = teste[2].split('T')
+              var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
+              // var estimatedDate  =  moment(value['Estimated Starting Date']).format("DD/MM/Y")
+              console.log('**************entrouuu data')
+              console.log(estimatedDate)
+              console.log('**************datat certa')
+
+              console.log(teste[0]+'-'+teste[1]+'-'+teste[2])
+              console.log(value['Estimated Starting Date'])
               
               
               arrayData.push(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
