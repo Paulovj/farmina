@@ -1762,10 +1762,10 @@
               <div class="row">
                   
 
-                <!-- <div class="col-md-12 mb-3">
+                <div class="col-md-12 mb-3">
                     <input type="text" class="form-control" id="edit_agendamento_n" placeholder="" value="" required disabled style="display: none;">
-                    <button type="button" class="form-control btn cur-p btn-info lBuscaCliente" id="edit_busca_cliente_agendamento">Busca Cliente</button>
-                </div> -->
+                    <button type="button" class="form-control btn cur-p btn-info lBuscaCliente" id="edit_busca_cliente_agendamento" disabled >Busca Cliente</button>
+                </div>
 
                   
 
@@ -1855,7 +1855,9 @@
                                   <div class="input-group-addon bgc-white bd bdwR-0">
                                     <i class="ti-calendar"></i>
                                   </div>
-                                  <input type="text" id="edit_agendamento_planned_date1" class="form-control bdc-grey-200 start-date" placeholder="" data-provide="datepicker"  data-date-format='dd/mm/yyyy' disabled>
+                                  <!-- <input type="text" id="edit_agendamento_planned_date1" class="form-control bdc-grey-200 start-date" placeholder="" data-provide="datepicker"  data-date-format='dd/mm/yyyy' disabled> -->
+                                  <input type="text" id="edit_agendamento_planned_date1"  class="form-control bdc-grey-200 start-date1" placeholder="Date" data-toggle="tooltip">
+                                  
                                 </div>
                               </div>
                           </div>
@@ -1903,7 +1905,7 @@
                         <div class="col-md-12 mb-3">
                           <label class="fw-500 lTrainningType">Trainning Type</label>
                             <select id="edit_agendamento_trainning_type1" class="form-control" disabled>
-                              <option selected value="0" class="lSelecione">Selecione</option>
+                              <option value="0" class="lSelecione">Selecione</option>
                               <option value="1" class="lGeneralNutrition">General Nutrition</option>
                               <option value="2" class="lRefreshment">Refreshment</option>
                               <option value="3" class="lNewlineStore">New line in the store</option>
@@ -1917,7 +1919,7 @@
                           <div class="col-md-12 mb-3">
                             <label class="fw-500 lTypeFood">Type Food</label>
                               <select id="edit_agendamento_food1" class="form-control" disabled>
-                                <option selected value="0" class="lSelecione">Selecione</option>
+                                <option value="0" class="lSelecione">Selecione</option>
                                 <option value="1" class="lDry">Seca</option>
                                 <option value="2" class="lWet">Molhada</option>
                                 <option value="3" class="lDryWet">Dry + Wet</option>
@@ -2035,7 +2037,7 @@
 
                       <div class="row">
                           <div class="col-md-6 mb-3">
-                              <label class="fw-500 lProfissional1">Profissional 2</label>
+                              <label class="fw-500 lProfissional2">Profissional 2</label>
                               <select id="edit_agendamento_busca_professional2" class="form-control" disabled>
                                   <option selected value="0" class="lSelecione">Selecione o Profissional 2...</option>
                                 </select>
@@ -2049,7 +2051,8 @@
                                   <div class="input-group-addon bgc-white bd bdwR-0">
                                     <i class="ti-calendar"></i>
                                   </div>
-                                  <input type="text" id="edit_agendamento_planned_date2" class="form-control bdc-grey-200 start-date" placeholder="" data-provide="datepicker"  data-date-format='dd/mm/yyyy' disabled>
+                                  <input type="text" id="edit_agendamento_planned_date2" class="form-control bdc-grey-200 start-date2" placeholder="" data-provide="datepicker"  data-date-format='dd/mm/yyyy' disabled>
+                                  
                                 </div>
                               </div>
                           </div>
@@ -2231,7 +2234,7 @@
 
                       <div class="row">
                           <div class="col-md-6 mb-3">
-                              <label class="fw-500 lProfissional">Profissional 3</label>
+                              <label class="fw-500 lProfissional3">Profissional 3</label>
                               <select id="edit_agendamento_busca_professional3" class="form-control" disabled>
                                   <option selected value="0" class="lSelecione">Selecione o Profissional 3...</option>
                                 </select>
@@ -2245,7 +2248,7 @@
                                   <div class="input-group-addon bgc-white bd bdwR-0">
                                     <i class="ti-calendar"></i>
                                   </div>
-                                  <input type="text" id="edit_agendamento_planned_date3" class="form-control bdc-grey-200 start-date" placeholder="" data-provide="datepicker"  data-date-format='dd/mm/yyyy' disabled>
+                                  <input type="text" id="edit_agendamento_planned_date3" class="form-control bdc-grey-200 start-date3" placeholder="" data-provide="datepicker"  data-date-format='dd/mm/yyyy' disabled>
                                 </div>
                               </div>
                           </div>
@@ -2439,7 +2442,7 @@
                                     <div class="input-group-addon bgc-white bd bdwR-0">
                                       <i class="ti-calendar"></i>
                                     </div>
-                                    <input type="text" id="edit_agendamento_planned_date4" class="form-control bdc-grey-200 start-date" placeholder="" data-provide="datepicker"  data-date-format='dd/mm/yyyy' disabled>
+                                    <input type="text" id="edit_agendamento_planned_date4" class="form-control bdc-grey-200 start-date4" placeholder="" data-provide="datepicker"  data-date-format='dd/mm/yyyy' disabled>
                                   </div>
                                 </div>
                             </div>
@@ -2633,7 +2636,7 @@
                                       <div class="input-group-addon bgc-white bd bdwR-0">
                                         <i class="ti-calendar"></i>
                                       </div>
-                                      <input type="text" id="edit_agendamento_planned_date5" class="form-control bdc-grey-200 start-date" placeholder="" data-provide="datepicker"  data-date-format='dd/mm/yyyy' disabled>
+                                      <input type="text" id="edit_agendamento_planned_date5" class="form-control bdc-grey-200 start-date5" placeholder="" data-provide="datepicker"  data-date-format='dd/mm/yyyy' disabled>
                                     </div>
                                   </div>
                               </div>
@@ -2808,9 +2811,10 @@
 
 
 
-            <div class="text-right testedediv">
+            <div class="text-right ">
               <button class="btn btn-danger cur-p" data-dismiss="modal" id="btn_starting_booking_cancel">Cancel </button>
-              <!-- <button class="btn btn-primary cur-p" id="btn_edit_ordem_agendamento">Registrar </button> -->
+              <button class="btn btn-primary cur-p lEdit" id="btn_edit_ordem_agendamento">Edit </button>
+              <button class="btn btn-success cur-p lSave" id="btn_save_ordem_agendamento" disabled>Save </button>
             </div>
           <!-- </form> -->
         </div>

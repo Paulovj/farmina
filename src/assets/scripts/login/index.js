@@ -325,6 +325,10 @@ $("#btn_login").click(function(){
         $('.lItaliano').html($.i18n.prop('lItaliano',lang))
         
         $('.lLocation').html($.i18n.prop('lLocation',lang))
+        
+        $('.lEdit').html($.i18n.prop('lEdit',lang))
+
+        
 
 
 

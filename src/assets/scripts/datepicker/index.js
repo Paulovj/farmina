@@ -32,6 +32,44 @@ export default (function () {
   $( "#add_agendamento_busca_professional2" ).change(function() {
     agendamentoX(this.value,2);
   });
+
+  $( "#add_agendamento_busca_professional3" ).change(function() {
+    agendamentoX(this.value,3);
+  });
+
+  $( "#add_agendamento_busca_professional4" ).change(function() {
+    agendamentoX(this.value,4);
+  });
+
+  $( "#add_agendamento_busca_professional5" ).change(function() {
+    agendamentoX(this.value,5);
+  });
+
+
+
+
+
+
+
+  $( "#edit_agendamento_busca_professional1" ).change(function() {
+    agendamentoX(this.value,1);
+  });
+
+  $( "#edit_agendamento_busca_professional2" ).change(function() {
+    agendamentoX(this.value,2);
+  });
+
+  $( "#edit_agendamento_busca_professional3" ).change(function() {
+    agendamentoX(this.value,3);
+  });
+
+  $( "#edit_agendamento_busca_professional4" ).change(function() {
+    agendamentoX(this.value,4);
+  });
+
+  $( "#edit_agendamento_busca_professional5" ).change(function() {
+    agendamentoX(this.value,5);
+  });
   console.log('data de hj : '+ new Date())
   
   
@@ -64,9 +102,7 @@ export default (function () {
               }
               var estimatedDate  =  moment(value['Estimated Starting Date']).format("DD/MM/Y")
               
-              //var EstimatedStartingTime = value['Estimated Starting Time'];
-              //var EstimatedFinishTime = value['Estimated Finish Time'];
-
+              
               arrayData.push(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
               
               objDatas = estimatedDate;
@@ -106,21 +142,9 @@ export default (function () {
                 },
                 //datesDisabled: ['11/28/2018', '11/30/2018'],
                 toggleActive: true
-              })//.on('changeDate', function(e){
-               // alert('entrou  data ')
-                //alert('val'+$(this).val());
-                //console.log(e)
-              //})
-
-
-              // $(".start-date").data("datepicker").fill()
+              })
               $('.start-date'+number).datepicker('update');
-              //data-toggle="tooltip"
-              // $('.datepicker-days').attr( "data-toggle", "tooltip" );
-              //$('.highlighted').tooltip()
               
-
-
 
           })
         }else{

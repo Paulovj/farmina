@@ -1226,6 +1226,7 @@ $("#btn_finish_booking").click(function(){
     // $('#finish_how_many_kg').val(result['Many KG'])
     
     // $('#finish_delivered').val(result['Delivered'])
+    // alert(result['Trainning Type'])
      $('#finish_trainning_type').val(result['Trainning Type'])
      $('#finish_trainning_comments').val(result['Trainnig Comments'])   
      $('#finish_number_shelves').val(result['Number of Shelves'])
@@ -1268,7 +1269,7 @@ $("#btn_finish_booking").click(function(){
     }
 
     $('#finish_army_which_park').val(result['In Wich Park'])
-    $('#finish_trainning_type').val(result['In Wich Park'])
+    //$('#finish_trainning_type').val(result['In Wich Park'])
      
 
      
