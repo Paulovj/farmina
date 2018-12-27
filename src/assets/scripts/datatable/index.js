@@ -1616,7 +1616,8 @@ var chamaFinaliza = function(){
             maxImg = 5
           }
           $("#fileimagemUpload").show();
-          if (service_type !=2){
+            $("#fileimagemUploadBefore").show();
+          if (service_type ==4){
             if (resultBefore.length > 0){
               $("#finished").attr("disabled",false); 
             }else{
@@ -1626,7 +1627,7 @@ var chamaFinaliza = function(){
               $("#fileimagem").attr("disabled",false);
             }else{
               $("#fileimagem").attr("disabled",true);
-              $("#fileimagemUpload").hide();
+              $("#fileimagemUploadBefore").hide();
             }  
           }else{
             $("#fileimagem").attr("disabled",true);
