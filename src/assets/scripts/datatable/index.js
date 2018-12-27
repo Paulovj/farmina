@@ -1615,9 +1615,10 @@ var chamaFinaliza = function(){
             //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
             maxImg = 5
           }
-          $("#fileimagemUpload").show();
-            $("#fileimagemUploadBefore").show();
+            
           if (service_type ==4){
+            $("#fileimagemUpload").hide();
+            $("#fileimagemUploadBefore").show();
             if (resultBefore.length > 0){
               $("#finished").attr("disabled",false); 
             }else{
@@ -1631,7 +1632,9 @@ var chamaFinaliza = function(){
             }  
           }else{
             $("#fileimagem").attr("disabled",true);
-            $("#fileimagemUpload").hide();
+            //$("#fileimagemUpload").hide();
+            $("#fileimagemUploadBefore").hide();
+            
             
           } 
 
@@ -1660,8 +1663,9 @@ var chamaFinaliza = function(){
                 //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
                 maxImg = 5
               }
-              $("#fileimagemUpload").show();
-              if (service_type !=2){
+              
+              if (service_type ==4){
+                $("#fileimagemUploadAfter").show();
                 if (resultAfter.length > 0){
                   $("#finished").attr("disabled",false); 
                 }else{
@@ -1671,11 +1675,13 @@ var chamaFinaliza = function(){
                   $("#fileimagem").attr("disabled",false);
                 }else{
                   $("#fileimagem").attr("disabled",true);
-                  $("#fileimagemUpload").hide();
+                  $("#fileimagemUploadAfter").hide();
                 }  
               }else{
                 $("#fileimagem").attr("disabled",true);
-                $("#fileimagemUpload").hide();
+                //$("#fileimagemUpload").hide();
+                $("#fileimagemUploadAfter").hide();
+
                 
               } 
   
