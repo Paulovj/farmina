@@ -100,12 +100,10 @@ $("#btn_login").click(function(){
           sessionStorage.setItem("No", result['No_']);
           sessionStorage.setItem("UF", result['Territory Code']);
           sessionStorage.setItem("Language", result['Language Code']);
-
-          if (result['Resource Type'] == 0){
-            window.location = "datatable.html"; 
-          }else if(result['Resource Type'] == 1 || result['Resource Type'] == 2){
-            window.location = "index.html"; 
-          }
+          sessionStorage.setItem("PermissaoEdit", result['Can Edit Order']);
+          
+          window.location = "datatable.html"; 
+          
         }else if(response.result.length < 1){
           var notify = $.notify('Usuário ou Senha Inválido', {
             type: 'danger',
@@ -124,13 +122,13 @@ $("#btn_login").click(function(){
       $('.lbl_login').text(sessionStorage.Name)
       //$('.lbl_login').text(sessionStorage.Type)
       console.log('Nome login:' + sessionStorage.Name)
-      if (sessionStorage.Type ==0){
+      if (sessionStorage.Type ==2 || sessionStorage.Type ==3){
         $('#menu_index').hide();
-        $('#menu_ordem_agendameno').hide();
-        if(window.location.pathname == '/index.html' || window.location.pathname == '/ordem.html'){
-          window.location = "datatable.html"; 
+        //$('#menu_ordem_agendameno').hide();
+        //if(window.location.pathname == '/index.html' || window.location.pathname == '/ordem.html'){
+          //window.location = "datatable.html"; 
         }
-      }
+      //}
       
       } else {
        if(window.location.pathname != '/signin.html'){

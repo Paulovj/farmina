@@ -673,7 +673,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
 
       
 
-      $.ajax({url: urlX+"ServiceHeaders/getServiceHeaderQuery?Pais="+paisX, success: function(result){    
+      $.ajax({url: urlX+"ServiceHeaders/getServiceHeaderQuery?Pais="+paisX+"&No="+sessionStorage.No+"&Type="+sessionStorage.Type, success: function(result){    
         var jsonString = result.data //for testing  
         // console.log('retorno agendamento: ', jsonString)
         var oTblReportAgendamento = $("#dataTableOrdemAgendamento")
@@ -1408,6 +1408,7 @@ function formValidacaoOrdem(promoter,action){
       },
       "data": {        
        "Pais"             : paisX,
+       "CreatedBy"             : sessionStorage.No,
        "DocumentType"             : "0",
        //"No_"                      : $("#add_agendamento_n").val(),
        "CustomerNo_"              : $("#add_agendamento_n_cliente").val(),
