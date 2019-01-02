@@ -325,7 +325,18 @@ $("#btn_login").click(function(){
         $('.lLocation').html($.i18n.prop('lLocation',lang))
         
         $('.lEdit').html($.i18n.prop('lEdit',lang))
-
+        
+        
+        $('.lTotalCustomers').html($.i18n.prop('lTotalCustomers',lang))
+        $('.lTotalProfissionals').html($.i18n.prop('lTotalProfissionals',lang))
+        $('.lTotalScheduling').html($.i18n.prop('lTotalScheduling',lang))
+        $('.lTotalSchedulingActive').html($.i18n.prop('lTotalSchedulingActive',lang))
+        $('.lProfissionalStats').html($.i18n.prop('lProfissionalStats',lang))
+        $('.lCalendarReport').html($.i18n.prop('lCalendarReport',lang))
+        $('.lOctober2018').html($.i18n.prop('lOctober2018',lang))
+        $('.lCustomer').html($.i18n.prop('lCustomer',lang))
+        $('.lProfessionals').html($.i18n.prop('lProfessionals',lang))
+        $('.lFunction').html($.i18n.prop('lFunction',lang))
         
 
 
