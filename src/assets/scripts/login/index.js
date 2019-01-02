@@ -136,11 +136,19 @@ $("#btn_login").click(function(){
        }
         console.log('Nao Logado********************************')
       }
+
+    //Validação SOS 
+    if(sessionStorage.Type == 3){
+      $('.PermissaoSOS').hide();
+    }
     
     var lang = "en";
     if (sessionStorage.Language){
       lang = sessionStorage.Language
     }
+
+    
+    
     
     $.i18n.properties({
        name: 'Messages',
@@ -337,6 +345,11 @@ $("#btn_login").click(function(){
         $('.lCustomer').html($.i18n.prop('lCustomer',lang))
         $('.lProfessionals').html($.i18n.prop('lProfessionals',lang))
         $('.lFunction').html($.i18n.prop('lFunction',lang))
+        
+        $('.lUpload').html($.i18n.prop('lUpload',lang))
+        $('.lUploadBefore').html($.i18n.prop('lUploadBefore',lang))
+        $('.lUploadAfter').html($.i18n.prop('lUploadAfter',lang))
+        $('.lSchedulingThisMonth').html($.i18n.prop('lSchedulingThisMonth',lang))
         
 
 
