@@ -1926,6 +1926,16 @@ function formValidacaoOrdem(promoter,action){
   }
 
   function empetyCampos(){
+    
+    $('#add_agendamento_nome').val('')
+    $('#add_agendamento_n_cliente').val('')
+    $('#add_agendamento_cod_vendendor').val('')
+    $('#add_agendamento_fatura_cidade').val('')
+    $('#add_agendamento_fatura_cep').val('')
+    $('#add_agendamento_fatura_endereco').val('')
+    $('#add_agendamento_fatura_endereco_complemento').val('')
+    
+    
     $('.start-date1').val('').datepicker('destroy')
     $('.start-date2').val('').datepicker('destroy')
     $('.start-date3').val('').datepicker('destroy')
@@ -1933,6 +1943,7 @@ function formValidacaoOrdem(promoter,action){
     $('.start-date5').val('').datepicker('destroy')
 
 
+    $('#add_agendamento_planned_start_time1').val('')
     $('#add_agendamento_busca_professional1').val('0')
     $('#add_agendamento_planned_date1').val('')
     $('#add_agendamento_planned_hour1').val('')
@@ -1944,6 +1955,7 @@ function formValidacaoOrdem(promoter,action){
     $('#add_agendamento_line_slow_comments1').val('')
     $('#div_add_agendamento_service_result1').val('0')
 
+    $('#add_agendamento_planned_start_time2').val('')
     $('#add_agendamento_busca_professional2').val('0')
     $('#add_agendamento_planned_date2').val('')
     $('#add_agendamento_planned_hour2').val('')
@@ -1955,6 +1967,7 @@ function formValidacaoOrdem(promoter,action){
     $('#add_agendamento_line_slow_comments2').val('')
     $('#div_add_agendamento_service_result2').val('0')
 
+    $('#add_agendamento_planned_start_time3').val('')
     $('#add_agendamento_busca_professional3').val('0')
     $('#add_agendamento_planned_date3').val('')
     $('#add_agendamento_planned_hour3').val('')
@@ -1966,6 +1979,7 @@ function formValidacaoOrdem(promoter,action){
     $('#add_agendamento_line_slow_comments3').val('')
     $('#div_add_agendamento_service_result3').val('0')
 
+    $('#add_agendamento_planned_start_time4').val('')
     $('#add_agendamento_busca_professional4').val('0')
     $('#add_agendamento_planned_date4').val('')
     $('#add_agendamento_planned_hour4').val('')
@@ -1977,6 +1991,7 @@ function formValidacaoOrdem(promoter,action){
     $('#add_agendamento_line_slow_comments4').val('')
     $('#div_add_agendamento_service_result4').val('0')
 
+    $('#add_agendamento_planned_start_time5').val('')
     $('#add_agendamento_busca_professional5').val('0')
     $('#add_agendamento_planned_date5').val('')
     $('#add_agendamento_planned_hour5').val('')
@@ -1994,15 +2009,21 @@ function formValidacaoOrdem(promoter,action){
     empetyCampos();
 
     var table = $('#dataTableClienteAgendamento').DataTable();
+    var tableNav = $('#dataTableClienteAgendamentoNav').DataTable();
     var length = table.column(0).data().length;
+    var lengthNav = tableNav.column(0).data().length;
     $('#action_cliente_agendamento').val('i')
-    $('#cliente-agendamento').modal('toggle');  
+    //$('#cliente-agendamento').modal('toggle');  
+    $('#add-agendamento').modal('toggle');  
     
     if (length == 0){
       table.destroy();
       loadClienteX();
-      loadClienteNavX();
      }
+     if (lengthNav == 0){
+      tableNav.destroy();
+      loadClienteNavX();
+     } 
 
      var length1 = $('#add_agendamento_busca_professional1 > option').length;
      console.log('quandadide PROFESSIONAL: ',length)
@@ -2120,7 +2141,7 @@ function formValidacaoOrdem(promoter,action){
     var contact = data['contatto'];
     var city    = data['comune'];
     var address2= data['codice'];
-    var salespersonCode= data['Salesperson Code'];
+    var salespersonCode= data['idsam'];
     
     var action = $('#action_cliente_agendamento').val()
     
@@ -2210,7 +2231,7 @@ function formValidacaoOrdem(promoter,action){
 
 function loadClienteNavX() {  
   
-  $.ajax({url: urlX+"service_booking_resources/get", success: function(result){
+  $.ajax({url: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country, success: function(result){
   var jsonString = result.data //for testing  
   var tableClienteAgendamentoNav = $("#dataTableClienteAgendamentoNav")
   tableClienteAgendamentoNav.DataTable ({
@@ -2228,13 +2249,13 @@ function loadClienteNavX() {
           { "data" : "indirizzo"},
           { "data" : "comune" },
           { "data" : "cap" },
-          { "data" : "codice" },
-          { "data" : "codice" },
+          //{ "data" : "codice" },
+          { "data" : "idsam" },
         ]
         
       });
 
-      $('#dataTableClienteAgendamentoNav').DataTable().draw();        
+      $('#dataTableClienteAgendamentoNav').DataTable().draw();
     }        
      
   });

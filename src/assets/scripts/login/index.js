@@ -362,6 +362,12 @@ $("#btn_login").click(function(){
         $('.lUploadAfter').html($.i18n.prop('lUploadAfter',lang))
         $('.lSchedulingThisMonth').html($.i18n.prop('lSchedulingThisMonth',lang))
         
+        
+        $('.lConsultaClienteNav').html($.i18n.prop('lConsultaClienteNav',lang))
+
+
+        
+        
 
 
 
