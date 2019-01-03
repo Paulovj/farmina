@@ -2008,22 +2008,22 @@ function formValidacaoOrdem(promoter,action){
   $("#btn_cliente_agendamento").click(function(){
     empetyCampos();
 
-    var table = $('#dataTableClienteAgendamento').DataTable();
-    var tableNav = $('#dataTableClienteAgendamentoNav').DataTable();
-    var length = table.column(0).data().length;
-    var lengthNav = tableNav.column(0).data().length;
+    //var table = $('#dataTableClienteAgendamento').DataTable();
+    //var tableNav = $('#dataTableClienteAgendamentoNav').DataTable();
+    //var length = table.column(0).data().length;
+    //var lengthNav = tableNav.column(0).data().length;
     $('#action_cliente_agendamento').val('i')
     //$('#cliente-agendamento').modal('toggle');  
     $('#add-agendamento').modal('toggle');  
     
-    if (length == 0){
-      table.destroy();
-      loadClienteX();
-     }
-     if (lengthNav == 0){
-      tableNav.destroy();
-      loadClienteNavX();
-     } 
+    // if (length == 0){
+    //   table.destroy();
+    //   loadClienteX();
+    //  }
+    //  if (lengthNav == 0){
+    //   tableNav.destroy();
+    //   loadClienteNavX();
+    //  } 
 
      var length1 = $('#add_agendamento_busca_professional1 > option').length;
      console.log('quandadide PROFESSIONAL: ',length)
@@ -2051,12 +2051,36 @@ function formValidacaoOrdem(promoter,action){
   $('#add_busca_cliente_agendamento').click(function(){
     $('#add-agendamento').modal('toggle');
     $('#action_cliente_agendamento').val('i')
+    var table = $('#dataTableClienteAgendamento').DataTable();
+    var length = table.column(0).data().length;
+    if (length == 0){
+      table.destroy();
+      loadClienteX();
+     }
+     setTimeout(function(){
+      $('#dataTableClienteAgendamento').DataTable().draw();
+     }, 3000);
+
+
     setTimeout(chamaCliente, 1000);
   })
 
   $('#add_busca_cliente_agendamento_nav').click(function(){
     $('#add-agendamento').modal('toggle');
     $('#action_cliente_agendamento').val('i')
+
+    var tableNav = $('#dataTableClienteAgendamentoNav').DataTable();
+    var lengthNav = tableNav.column(0).data().length;
+     if (lengthNav == 0){
+      tableNav.destroy();
+      loadClienteNavX();
+     }
+     setTimeout(function(){
+      $('#dataTableClienteAgendamentoNav').DataTable().draw();
+     }, 3000);
+
+     
+
     setTimeout(chamaClienteNav, 1000);
   })
 
@@ -2076,10 +2100,12 @@ function formValidacaoOrdem(promoter,action){
 
   var chamaCliente = function(){
     $('#cliente-agendamento').modal('toggle');  
+    // $('#dataTableClienteAgendamento').DataTable().draw();
   };
 
   var chamaClienteNav = function(){
     $('#cliente-agendamento-Nav').modal('toggle');  
+    //$('#dataTableClienteAgendamentoNav').DataTable().draw();
   };
 
 
@@ -2223,6 +2249,9 @@ function formValidacaoOrdem(promoter,action){
       }        
        
     });
+
+    
+    
 
 };
 
