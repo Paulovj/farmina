@@ -92,8 +92,19 @@ $("#btn_login").click(function(){
         
 
         var result = response.result[0];
-        if(response.result.length > 0){  
+        if(response.result.length > 0){ 
+          var country = "";
+           if(pais =="Brasil"){
+            country = "BR"
+           }
+           if(pais =="Italia"){
+            country = "IT"
+           }
+           if(pais =="Usa"){
+            country = "US"
+           }
           sessionStorage.setItem("Pais", pais);
+          sessionStorage.setItem("Country", country);
           sessionStorage.setItem("Name", result['Name']);
           sessionStorage.setItem("Email", result['e-Mail']);
           sessionStorage.setItem("Type", result['Resource Type']);

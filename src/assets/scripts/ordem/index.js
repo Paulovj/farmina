@@ -1925,8 +1925,7 @@ function formValidacaoOrdem(promoter,action){
   });  
   }
 
-
-  $("#btn_cliente_agendamento").click(function(){
+  function empetyCampos(){
     $('.start-date1').val('').datepicker('destroy')
     $('.start-date2').val('').datepicker('destroy')
     $('.start-date3').val('').datepicker('destroy')
@@ -1989,7 +1988,10 @@ function formValidacaoOrdem(promoter,action){
     $('#add_agendamento_line_slow_comments5').val('')
     $('#div_add_agendamento_service_result5').val('0')
 
-    
+  }
+
+  $("#btn_cliente_agendamento").click(function(){
+    empetyCampos();
 
     var table = $('#dataTableClienteAgendamento').DataTable();
     var length = table.column(0).data().length;
@@ -1999,6 +2001,7 @@ function formValidacaoOrdem(promoter,action){
     if (length == 0){
       table.destroy();
       loadClienteX();
+      loadClienteNavX();
      }
 
      var length1 = $('#add_agendamento_busca_professional1 > option').length;
@@ -2030,6 +2033,12 @@ function formValidacaoOrdem(promoter,action){
     setTimeout(chamaCliente, 1000);
   })
 
+  $('#add_busca_cliente_agendamento_nav').click(function(){
+    $('#add-agendamento').modal('toggle');
+    $('#action_cliente_agendamento').val('i')
+    setTimeout(chamaClienteNav, 1000);
+  })
+
   $('#edit_busca_cliente_agendamento').click(function(){
     var table = $('#dataTableClienteAgendamento').DataTable();
     var length = table.column(0).data().length;
@@ -2046,6 +2055,10 @@ function formValidacaoOrdem(promoter,action){
 
   var chamaCliente = function(){
     $('#cliente-agendamento').modal('toggle');  
+  };
+
+  var chamaClienteNav = function(){
+    $('#cliente-agendamento-Nav').modal('toggle');  
   };
 
 
@@ -2089,6 +2102,57 @@ function formValidacaoOrdem(promoter,action){
   
   
   })
+
+
+
+  $('#dataTableClienteAgendamentoNav tbody').on( 'click', 'td', function () {
+    $('#cliente-agendamento-Nav').modal('toggle');
+    var data = $("#dataTableClienteAgendamentoNav").DataTable().row( $(this).parents('tr') ).data();
+     
+    console.log(data)
+
+    
+    var id      = data['id'];
+    var name    = data['ragsoc'];
+    var address = data['indirizzo'];
+    var post    = data['cap'];
+    var phone   = data['tel'];
+    var contact = data['contatto'];
+    var city    = data['comune'];
+    var address2= data['codice'];
+    var salespersonCode= data['Salesperson Code'];
+    
+    var action = $('#action_cliente_agendamento').val()
+    
+    if (action == 'i'){
+
+      
+      $('#add_agendamento_n_cliente').val(id)
+      $('#add_agendamento_fatura_endereco_complemento').val(address2)
+      $('#add_agendamento_fatura_cidade').val(city)
+      $('#add_agendamento_nome').val(name)
+      $('#add_agendamento_fatura_cep').val(post)
+      $('#add_agendamento_fatura_endereco').val(address)
+      $('#add_agendamento_cod_vendendor').val(salespersonCode)
+      
+      setTimeout(chamaAddAgendamento, 1000);
+    } else if (action == 'u')  {
+      $('#edit_agendamento_n_cliente').val(id)
+      $('#edit_agendamento_fatura_endereco_complemento').val(address2)
+      $('#edit_agendamento_fatura_cidade').val(city)
+      $('#edit_agendamento_nome').val(name)
+      $('#edit_agendamento_fatura_cep').val(post)
+      $('#edit_agendamento_fatura_endereco').val(address)
+      $('#edit_agendamento_cod_vendendor').val(salespersonCode)
+      setTimeout(chamaEditAgendamento, 1000);
+    }
+  
+  
+  })
+
+
+
+
   var chamaAddAgendamento = function(){
     $('#add-agendamento').modal('toggle');  
   };
@@ -2140,6 +2204,43 @@ function formValidacaoOrdem(promoter,action){
     });
 
 };
+
+
+
+
+function loadClienteNavX() {  
+  
+  $.ajax({url: urlX+"service_booking_resources/get", success: function(result){
+  var jsonString = result.data //for testing  
+  var tableClienteAgendamentoNav = $("#dataTableClienteAgendamentoNav")
+  tableClienteAgendamentoNav.DataTable ({
+        "data" : jsonString,
+        rowReorder: {
+          selector: 'td:nth-child(2)'
+      },
+      responsive: true,
+        "scrollX": true,
+        "columns" : [
+          { "data" : "id"},
+          { "data" : "ragsoc"},
+          { "data" : "tel" },
+          { "data" : "contatto" },
+          { "data" : "indirizzo"},
+          { "data" : "comune" },
+          { "data" : "cap" },
+          { "data" : "codice" },
+          { "data" : "codice" },
+        ]
+        
+      });
+
+      $('#dataTableClienteAgendamentoNav').DataTable().draw();        
+    }        
+     
+  });
+
+};
+
 
 
 } 

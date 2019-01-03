@@ -362,9 +362,13 @@
                     </select>
                   </div> -->
 
-                  <div class="col-md-12 mb-3">
+                  <div class="col-md-6 mb-3">
                     <button type="button" class="form-control btn cur-p btn-info lBuscaCliente" id="add_busca_cliente_agendamento">Busca Cliente</button>
                 </div>
+
+                <div class="col-md-6 mb-3">
+                  <button type="button" class="form-control btn cur-p btn-info lBuscaClienteNav" id="add_busca_cliente_agendamento_nav">Search NAV Customer</button>
+              </div>
                     
 
                 </div>
@@ -2862,6 +2866,60 @@
                 
               <table id="dataTableClienteAgendamento" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <input type="text" value="" id="action_cliente_agendamento" disabled style="display:none;">
+                  <thead>
+                    <tr>
+                      <th class="lNCliente">Nº Cliente</th>
+                      <th class="lNomeCliente">Nome Cliente</th>
+                      <th class="lPhone">Telefone</th>
+                      <th class="lContato">Contato</th>
+                      <th class="lAddress">Address</th>
+                      <th class="lCidade">Cidade</th>
+                      <th class="lCep">Cep</th>
+                      <th class="lAddress2">Endereço 2</th>
+                      <th class="lSalespersonCode">Cód Vendedor</th>                      
+                    </tr>
+                  </thead>
+
+                  <tbody>
+
+                  </tbody>
+                </table>
+  
+  
+  
+              
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="modal fade" id="cliente-agendamento-Nav" data-backdrop="static">
+      <div class="modal-dialog modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="m-0 lConsultaClienteNav">Customer Nav Search</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+  
+          <div class="modal-body">
+            
+                
+              <table id="dataTableClienteAgendamentoNav" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <input type="text" value="" id="action_cliente_agendamento_nav" disabled style="display:none;">
                   <thead>
                     <tr>
                       <th class="lNCliente">Nº Cliente</th>
