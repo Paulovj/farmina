@@ -2094,6 +2094,29 @@ function formValidacaoOrdem(promoter,action){
       table.destroy();
       loadClienteX();
      }
+
+     setTimeout(function(){
+      $('#dataTableClienteAgendamento').DataTable().draw();
+     }, 3000);
+
+  })
+
+
+  $('#edit_busca_cliente_agendamento_nav').click(function(){
+    var table = $('#dataTableClienteAgendamentoNav').DataTable();
+    var length = table.column(0).data().length;
+    $('#edit-agendamento').modal('toggle');
+    $('#action_cliente_agendamento').val('u')
+    setTimeout(chamaClienteNav, 1000);
+    if (length == 0){
+      table.destroy();
+      loadClienteNavX();
+     }
+
+     setTimeout(function(){
+      $('#dataTableClienteAgendamentoNav').DataTable().draw();
+     }, 3000);
+
   })
 
   
@@ -2301,6 +2324,7 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
 
 
   $("#edit_busca_cliente_agendamento").attr("disabled",DisabledX);
+  $("#edit_busca_cliente_agendamento_nav").attr("disabled",DisabledX);
   /*Promoter 1 */
   $("#edit_agendamento_busca_professional1").attr("disabled",DisabledX);
   $("#edit_agendamento_planned_date1").attr("disabled",DisabledX);
