@@ -232,6 +232,342 @@ function formatHora(date) {
             $('#finish-service-booking').modal('toggle')
           } 
 
+          
+          if($(this).attr('action') == "viewsEdit"){
+            //alert(id);
+            //EditDisabledX(true,bloqueadoEdit)
+            //var bloqueadoEdit = 0
+            //EditDisabledX(false,bloqueadoEdit)
+            $('#edit-agendamento').modal('toggle');
+            $.ajax({url: urlX+"ServiceHeaders/getServiceHeaderQueryWhere?Pais="+paisX+"&No_="+id+"&Document-Type=", success: function(data){
+              var data = data.result[0]
+              var bloqueadoEdit = data['STATUS_BLOQ']
+              var path = '\\Srv-propay\\fotos\\'+id;
+              var customer_no = data['Customer No_'];
+              var Salesperson = data['Salesperson Code'];
+              var Billto_Address = data['Bill-to Address'];
+              var Billto_Address2 = data['Bill-to Address 2'];
+              var Billto_City     = data['Bill-to City'];
+              var Billto_PostCode = data['Bill-to Post Code'];
+              var Billto_Number = data['Number'];
+              var name = data['Name'];
+              var Professional1 = data['Professional 1'];
+              var ServiceType1 = data['Service Type 1'];
+              var PlannedDate1 = data['Planned Date 1'];
+              var PlannedStartTime1 = data['Planned Start Time 1'];
+              var PlannedHour1 = data['Planned Hours 1'];
+              var ISPAnswerType1        = data['ISP Answer Type 1'];
+              var MerchanAnswerType1    = data['Merchan Answer Type 1'];
+              var TrainningAnswerType1  = data['Trainning Answer Type 1'];
+              var WelcomeKitType1       = data['Welcome Kit Answer Type 1'];
+              var TrainningType1        = data['Trainning Type 1'];
+    
+              var ServicetypeResult1 =""
+              if (ISPAnswerType1!=0 ){
+                ServicetypeResult1 = ISPAnswerType1
+              }else if(MerchanAnswerType1!=0){
+                ServicetypeResult1 = MerchanAnswerType1
+              }else if(TrainningAnswerType1!=0 ){
+                ServicetypeResult1 = TrainningAnswerType1
+              }else if(WelcomeKitType1!=0){
+                ServicetypeResult1 = WelcomeKitType1
+              }
+              var Professional2 = data['Professional 2'];
+              var ServiceType2 = data['Service Type 2'];
+              var PlannedDate2 = data['Planned Date 2'];
+              var PlannedStartTime2 = data['Planned Start Time 2'];
+              var PlannedHour2 = data['Planned Hours 2'];
+    
+              var ISPAnswerType2        = data['ISP Answer Type 2'];
+              var MerchanAnswerType2    = data['Merchan Answer Type 2'];
+              var TrainningAnswerType2  = data['Trainning Answer Type 2'];
+              var WelcomeKitType2       = data['Welcome Kit Answer Type 2'];
+    
+              var ServicetypeResult2 =0
+              if (ISPAnswerType2!=0 ){
+                ServicetypeResult2 = ISPAnswerType2
+              }else if(MerchanAnswerType2!=0){
+                ServicetypeResult2 = MerchanAnswerType2
+              }else if(TrainningAnswerType2!=0 ){
+                ServicetypeResult2 = TrainningAnswerType2
+              }else if(WelcomeKitType2!=0){
+                ServicetypeResult2 = WelcomeKitType2
+              }
+    
+              var Professional3 = data['Professional 3'];
+              var ServiceType3 = data['Service Type 3'];
+              var PlannedDate3 = data['Planned Date 3'];
+              var PlannedStartTime3 = data['Planned Start Time 3'];
+              var PlannedHour3 = data['Planned Hours 3'];
+    
+              var ISPAnswerType3        = data['ISP Answer Type 3'];
+              var MerchanAnswerType3    = data['Merchan Answer Type 3'];
+              var TrainningAnswerType3  = data['Trainning Answer Type 3'];
+              var WelcomeKitType3       = data['Welcome Kit Answer Type 3'];
+    
+              var ServicetypeResult3 =0
+              if (ISPAnswerType3!=0 ){
+                ServicetypeResult3 = ISPAnswerType3
+              }else if(MerchanAnswerType3!=0){
+                ServicetypeResult3 = MerchanAnswerType3
+              }else if(TrainningAnswerType3!=0 ){
+                ServicetypeResult3 = TrainningAnswerType3
+              }else if(WelcomeKitType3!=0){
+                ServicetypeResult3 = WelcomeKitType3
+              }
+    
+              var Professional4 = data['Professional 4'];
+              var ServiceType4 = data['Service Type 4'];
+              var PlannedDate4 = data['Planned Date 4'];
+              var PlannedStartTime4 = data['Planned Start Time 4'];
+              var PlannedHour4 = data['Planned Hours 4'];
+    
+              var ISPAnswerType4        = data['ISP Answer Type 4'];
+              var MerchanAnswerType4    = data['Merchan Answer Type 4'];
+              var TrainningAnswerType4  = data['Trainning Answer Type 4'];
+              var WelcomeKitType4       = data['Welcome Kit Answer Type 4'];
+    
+              var ServicetypeResult4 =0
+              if (ISPAnswerType4!=0 ){
+                ServicetypeResult4 = ISPAnswerType4
+              }else if(MerchanAnswerType4!=0){
+                ServicetypeResult4 = MerchanAnswerType4
+              }else if(TrainningAnswerType4!=0 ){
+                ServicetypeResult4 = TrainningAnswerType4
+              }else if(WelcomeKitType4!=0){
+                ServicetypeResult4 = WelcomeKitType4
+              }
+    
+              var Professional5 = data['Professional 5'];
+              var ServiceType5 = data['Service Type 5'];
+              var PlannedDate5 = data['Planned Date 5'];
+              var PlannedStartTime5 = data['Planned Start Time 5'];
+    
+              var PlannedHour5 = data['Planned Hours 5'];
+    
+              var ISPAnswerType5        = data['ISP Answer Type 5'];
+              var MerchanAnswerType5    = data['Merchan Answer Type 5'];
+              var TrainningAnswerType5  = data['Trainning Answer Type 5'];
+              var WelcomeKitType5       = data['Welcome Kit Answer Type 5'];
+    
+              var ServicetypeResult5 =0
+              if (ISPAnswerType5!=0 ){
+                ServicetypeResult5 = ISPAnswerType5
+              }else if(MerchanAnswerType5!=0){
+                ServicetypeResult5 = MerchanAnswerType5
+              }else if(TrainningAnswerType5!=0 ){
+                ServicetypeResult5 = TrainningAnswerType5
+              }else if(WelcomeKitType5!=0){
+                ServicetypeResult5 = WelcomeKitType5
+              }
+
+              $('#edit_agendamento_n_cliente').val(customer_no)
+            $('#edit_agendamento_fatura_endereco_complemento').val(Billto_Address2)
+            $('#edit_agendamento_fatura_cidade').val(Billto_City)
+            $('#edit_agendamento_nome').val(name)
+            $('#edit_agendamento_fatura_cep').val(Billto_PostCode)
+            $('#edit_agendamento_fatura_endereco').val(Billto_Address)
+            $('#edit_agendamento_n').val(id)
+            
+            $('#edit_agendamento_cod_vendendor').val(Salesperson)
+            
+            
+            $("#edit_agendamento_busca_professional1 option").remove();
+            $("#edit_agendamento_busca_professional2 option").remove();
+            $("#edit_agendamento_busca_professional3 option").remove();
+            $("#edit_agendamento_busca_professional4 option").remove();
+            $("#edit_agendamento_busca_professional5 option").remove();
+            
+            var length1 = $('#edit_agendamento_busca_professional1 > option').length;
+            console.log('Edit quandadide PROFESSIONAL: ',length)
+            //if (length1 == 1){
+              $.ajax({url: urlX+"resourses/getResourseQuery?Pais="+paisX, success: function(obj){
+                var contX = "";
+                  $.each(obj.result, function(index, value){
+                    var val = value.No_ + ' | ' + value.Name;
+                    var optName     = 'optName = "'+value.Name+'"';
+                    contX +='<option value='+ value.No_ +' '+ optName + ' > '+val+' </option>';
+                  })
+                  $("#edit_agendamento_busca_professional1").append(contX)
+                  $("#edit_agendamento_busca_professional2").append(contX)
+                  $("#edit_agendamento_busca_professional3").append(contX)
+                  $("#edit_agendamento_busca_professional4").append(contX)
+                  $("#edit_agendamento_busca_professional5").append(contX)
+                  //$("#edit_agendamento_busca_professional6").append(contX)
+
+                  //Profissional 1
+              console.log('teste profissional 1' + Professional1)
+              $('#edit_agendamento_busca_professional1 option[value='+Professional1+']').attr('selected','selected');
+              $('#edit_agendamento_planned_hour1').val(PlannedHour1);
+              $('#edit_agendamento_service_type1').val(ServiceType1);
+              $('#edit_agendamento_planned_date1').val(formatDate(PlannedDate1));
+              
+              $('#edit_agendamento_planned_start_time1').val(formatHora(PlannedStartTime1));
+                  console.log('console log TrainningType1::::',TrainningType1)
+              $('#edit_agendamento_trainning_type1').val(TrainningType1);
+              $('#edit_agendamento_food1').val(data['Food Type 1']);
+              $('#edit_agendamento_Promoting1').val(data['Promotion Type 1']);
+              $('#edit_agendamento_push_new_line1').val(data['Push New Line Comments 1']);
+              $('#edit_agendamento_line_slow_comments1').val(data['Line Slow Comments 1']);
+              $('#edit_agendamento_how_meter1').val(data['How Mters 1']);
+              $('#edit_agendamento_open_bags1').val(data['Open Bags 1']);
+              $('#edit_agendamento_trainning_comments1').val(data['Trainnig Comments 1']);
+              $('#edit_agendamento_army_specific_store1').val(data['For Specific Store 1']);
+              $('#edit_agendamento_army_which_park1').val(data['In Wich Park 1']);
+              if(data['In Wich Park 1'] !=""){
+                $('#div_edit_agendamento_service_result_army_which_park1').show();
+              }  
+              $('#edit_agendamento_location_activity_training1').val(data['Training Location 1']);
+
+              var action ='edit'
+              PromoterServiceTypeX(1,ServiceType1,action)
+              
+              // $('#edit_agendamento_service_result1').val('ServicetypeResult1');
+              if(ServicetypeResult1 != ""){
+                $('#edit_agendamento_service_result1 option[value='+ServicetypeResult1+']').attr('selected','selected');
+              }  
+              
+              //Profissional 2
+              console.log('teste profissional 2 ' + Professional2)
+              $('#edit_agendamento_busca_professional2 option[value='+Professional2+']').attr('selected','selected');
+              $('#edit_agendamento_planned_hour2').val(PlannedHour2);
+              $('#edit_agendamento_service_type2').val(ServiceType2);
+              $('#edit_agendamento_planned_date2').val(formatDate(PlannedDate2));
+              
+              $('#edit_agendamento_planned_start_time2').val(formatHora(PlannedStartTime2));
+
+              $('#edit_agendamento_trainning_type2').val(data['Trainning Type 2']);
+              $('#edit_agendamento_food2').val(data['Food Type 2']);
+              $('#edit_agendamento_Promoting2').val(data['Promotion Type 2']);
+              $('#edit_agendamento_push_new_line2').val(data['Push New Line Comments 2']);
+              $('#edit_agendamento_line_slow_comments2').val(data['Line Slow Comments 2']);
+              $('#edit_agendamento_how_meter2').val(data['How Mters 2']);
+              $('#edit_agendamento_open_bags2').val(data['Open Bags 2']);
+              $('#edit_agendamento_trainning_comments2').val(data['Trainnig Comments 2']);
+              $('#edit_agendamento_army_specific_store2').val(data['For Specific Store 2']);
+              $('#edit_agendamento_army_which_park2').val(data['In Wich Park 2']);
+              if(data['In Wich Park 2'] !=""){
+                $('#div_edit_agendamento_service_result_army_which_park2').show();
+              }
+              $('#edit_agendamento_location_activity_training2').val(data['Training Location 2']);  
+              
+
+              var action ='edit'
+              PromoterServiceTypeX(2,ServiceType2,action)
+              //$('#edit_agendamento_service_result2').val(ServicetypeResult2);
+              if(ServicetypeResult2 != ""){
+                $('#edit_agendamento_service_result2 option[value='+ServicetypeResult2+']').attr('selected','selected');
+              }  
+
+              //Profissional 3
+              console.log('teste profissional 3 ' + Professional3)
+              $('#edit_agendamento_busca_professional3 option[value='+Professional3+']').attr('selected','selected');
+              $('#edit_agendamento_planned_hour3').val(PlannedHour3);
+              $('#edit_agendamento_service_type3').val(ServiceType3);
+              $('#edit_agendamento_planned_date3').val(formatDate(PlannedDate3));
+
+              $('#edit_agendamento_planned_start_time3').val(formatHora(PlannedStartTime3));
+
+              $('#edit_agendamento_trainning_type3').val(data['Trainning Type 3']);
+              $('#edit_agendamento_food3').val(data['Food Type 3']);
+              $('#edit_agendamento_Promoting3').val(data['Promotion Type 3']);
+              $('#edit_agendamento_push_new_line3').val(data['Push New Line Comments 3']);
+              $('#edit_agendamento_line_slow_comments3').val(data['Line Slow Comments 3']);
+              $('#edit_agendamento_how_meter3').val(data['How Mters 3']);
+              $('#edit_agendamento_open_bags3').val(data['Open Bags 3']);
+              $('#edit_agendamento_trainning_comments3').val(data['Trainnig Comments 3']);
+              $('#edit_agendamento_army_specific_store3').val(data['For Specific Store 3']);
+              $('#edit_agendamento_army_which_park3').val(data['In Wich Park 3']);
+              if(data['In Wich Park 3'] !=""){
+                $('#div_edit_agendamento_service_result_army_which_park3').show();
+              }  
+              var action ='edit'
+              PromoterServiceTypeX(3,ServiceType3,action)
+              //$('#edit_agendamento_service_result3').val(ServicetypeResult3);
+              if(ServicetypeResult3 != ""){
+                $('#edit_agendamento_service_result3 option[value='+ServicetypeResult3+']').attr('selected','selected');
+              }
+              $('#edit_agendamento_location_activity_training3').val(data['Training Location 3']);
+
+              
+
+              //Profissional 4
+              console.log('teste profissional' + Professional4)
+              $('#edit_agendamento_busca_professional4 option[value='+Professional4+']').attr('selected','selected');
+              $('#edit_agendamento_planned_hour4').val(PlannedHour4);
+              $('#edit_agendamento_service_type4').val(ServiceType4);
+              $('#edit_agendamento_planned_date4').val(formatDate(PlannedDate4));
+
+              $('#edit_agendamento_planned_start_time4').val(formatHora(PlannedStartTime4));
+
+              $('#edit_agendamento_trainning_type4').val(data['Trainning Type 4']);
+              $('#edit_agendamento_food4').val(data['Food Type 4']);
+              $('#edit_agendamento_Promoting4').val(data['Promotion Type 4']);
+              $('#add_agendamento_push_new_line4').val(data['Push New Line Comments 4']);
+              $('#edit_agendamento_line_slow_comments4').val(data['Line Slow Comments 4']);
+              $('#edit_agendamento_how_meter4').val(data['How Mters 4']);
+              $('#edit_agendamento_open_bags4').val(data['Open Bags 4']);
+              $('#edit_agendamento_trainning_comments4').val(data['Trainnig Comments 4']);
+              $('#edit_agendamento_army_specific_store4').val(data['For Specific Store 4']);
+              $('#edit_agendamento_army_which_park4').val(data['In Wich Park 4']);
+              if(data['In Wich Park 4'] !=""){
+                $('#div_edit_agendamento_service_result_army_which_park4').show();
+              }
+              var action ='edit'
+              PromoterServiceTypeX(4,ServiceType4,action)
+              //$('#edit_agendamento_service_result4').val(ServicetypeResult3);
+              if(ServicetypeResult4 != ""){
+                $('#edit_agendamento_service_result4 option[value='+ServicetypeResult4+']').attr('selected','selected');
+              }
+              
+              $('#edit_agendamento_location_activity_training4').val(data['Training Location 4']);  
+
+
+
+              //Profissional 5
+              console.log('teste profissional' + Professional5)
+              $('#edit_agendamento_busca_professional5 option[value='+Professional5+']').attr('selected','selected');
+              $('#edit_agendamento_planned_hour5').val(PlannedHour5);
+              $('#edit_agendamento_service_type5').val(ServiceType5);
+              $('#edit_agendamento_planned_date5').val(formatDate(PlannedDate5));
+
+              $('#edit_agendamento_planned_start_time5').val(formatHora(PlannedStartTime5));
+
+              $('#edit_agendamento_trainning_type5').val(data['Trainning Type 5']);
+              $('#edit_agendamento_food5').val(data['Food Type 5']);
+              $('#edit_agendamento_Promoting5').val(data['Promotion Type 5']);
+              $('#add_agendamento_push_new_line5').val(data['Push New Line Comments 5']);
+              $('#edit_agendamento_line_slow_comments5').val(data['Line Slow Comments 5']);
+              $('#edit_agendamento_how_meter5').val(data['How Mters 5']);
+              $('#edit_agendamento_open_bags5').val(data['Open Bags 5']);
+              $('#edit_agendamento_trainning_comments5').val(data['Trainnig Comments 5']);
+              $('#edit_agendamento_army_specific_store5').val(data['For Specific Store 5']);
+              $('#edit_agendamento_army_which_park5').val(data['In Wich Park 5']);
+              if(data['In Wich Park 5'] !=""){
+                $('#div_edit_agendamento_service_result_army_which_park5').show();
+              }
+              var action ='edit'
+              PromoterServiceTypeX(5,ServiceType5,action)
+              //$('#edit_agendamento_service_result5').val(ServicetypeResult5);
+              if(ServicetypeResult5 != ""){
+                $('#edit_agendamento_service_result5 option[value='+ServicetypeResult5+']').attr('selected','selected');
+              }
+              $('#edit_agendamento_location_activity_training5').val(data['Training Location 5']);  
+                  
+
+                }
+              });
+
+           // } 
+
+              //alert(bloqueadoEdit)
+              EditDisabledX(true,bloqueadoEdit)
+                console.log(data)
+              }
+            });  
+          }  
+
+
           if($(this).attr('action') == "views"){
             console.log(data);
             var service_invoice_no = data['Service Invoice No_']
@@ -585,6 +921,8 @@ function formatHora(date) {
                 //   btn += "<button action='finished' type='button' class='btn cur-p btn-info'>Finalizar</button>";
                 // }  
                   //btn += "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Iniciar</button>";
+
+                  btn += "<button action='viewsEdit' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-info lViewsEdit' id='btn_finish_booking_upload'>Edit Order</button>";
                   if (a['Status']==3){
                     btn += "<button action='views' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-info lViews' id='btn_finish_booking_upload'>View</button>";
                   }
@@ -1868,6 +2206,944 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
     }
   });
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function EditDisabledX(DisabledX,bloqueadoEditX){
+
+
+    $("#edit_busca_cliente_agendamento").attr("disabled",DisabledX);
+    $("#edit_busca_cliente_agendamento_nav").attr("disabled",DisabledX);
+    /*Promoter 1 */
+    $("#edit_agendamento_busca_professional1").attr("disabled",DisabledX);
+    $("#edit_agendamento_planned_date1").attr("disabled",DisabledX);
+    $("#edit_agendamento_planned_start_time1").attr("disabled",DisabledX);
+    $("#edit_agendamento_planned_hour1").attr("disabled",DisabledX);
+    $("#edit_agendamento_service_type1").attr("disabled",DisabledX);
+    $("#edit_agendamento_location_activity_training1").attr("disabled",DisabledX);
+    $("#edit_agendamento_trainning_type1").attr("disabled",DisabledX);
+    $("#edit_agendamento_food1").attr("disabled",DisabledX);
+    $("#edit_agendamento_Promoting1").attr("disabled",DisabledX);
+    $("#add_agendamento_push_new_line1").attr("disabled",DisabledX);
+    $("#edit_agendamento_line_slow_comments1").attr("disabled",DisabledX);
+    $("#edit_agendamento_how_meter1").attr("disabled",DisabledX);
+    $("#edit_agendamento_service_result1").attr("disabled",DisabledX);
+    $("#edit_agendamento_open_bags1").attr("disabled",DisabledX);
+    $("#edit_agendamento_trainning_comments1").attr("disabled",DisabledX);
+    $("#edit_agendamento_army_specific_store1").attr("disabled",DisabledX);
+    $("#edit_agendamento_army_which_park1").attr("disabled",DisabledX);
+  
+    /*Promoter 2 */
+    $("#edit_agendamento_busca_professional2").attr("disabled",DisabledX);
+    $("#edit_agendamento_planned_date2").attr("disabled",DisabledX);
+    $("#edit_agendamento_planned_start_time2").attr("disabled",DisabledX);
+    $("#edit_agendamento_planned_hour2").attr("disabled",DisabledX);
+    $("#edit_agendamento_service_type2").attr("disabled",DisabledX);
+    $("#edit_agendamento_location_activity_training2").attr("disabled",DisabledX);
+    $("#edit_agendamento_trainning_type2").attr("disabled",DisabledX);
+    $("#edit_agendamento_food2").attr("disabled",DisabledX);
+    $("#edit_agendamento_Promoting2").attr("disabled",DisabledX);
+    $("#add_agendamento_push_new_line2").attr("disabled",DisabledX);
+    $("#edit_agendamento_line_slow_comments2").attr("disabled",DisabledX);
+    $("#edit_agendamento_how_meter2").attr("disabled",DisabledX);
+    $("#edit_agendamento_service_result2").attr("disabled",DisabledX);
+    $("#edit_agendamento_open_bags2").attr("disabled",DisabledX);
+    $("#edit_agendamento_trainning_comments2").attr("disabled",DisabledX);
+    $("#edit_agendamento_army_specific_store2").attr("disabled",DisabledX);
+    $("#edit_agendamento_army_which_park2").attr("disabled",DisabledX);
+  
+    /*Promoter 3 */
+    $("#edit_agendamento_busca_professional3").attr("disabled",DisabledX);
+    $("#edit_agendamento_planned_date3").attr("disabled",DisabledX);
+    $("#edit_agendamento_planned_start_time3").attr("disabled",DisabledX);
+    $("#edit_agendamento_planned_hour3").attr("disabled",DisabledX);
+    $("#edit_agendamento_service_type3").attr("disabled",DisabledX);
+    $("#edit_agendamento_location_activity_training3").attr("disabled",DisabledX);
+    $("#edit_agendamento_trainning_type3").attr("disabled",DisabledX);
+    $("#edit_agendamento_food3").attr("disabled",DisabledX);
+    $("#edit_agendamento_Promoting3").attr("disabled",DisabledX);
+    $("#add_agendamento_push_new_line3").attr("disabled",DisabledX);
+    $("#edit_agendamento_line_slow_comments3").attr("disabled",DisabledX);
+    $("#edit_agendamento_how_meter3").attr("disabled",DisabledX);
+    $("#edit_agendamento_service_result3").attr("disabled",DisabledX);
+    $("#edit_agendamento_open_bags3").attr("disabled",DisabledX);
+    $("#edit_agendamento_trainning_comments3").attr("disabled",DisabledX);
+    $("#edit_agendamento_army_specific_store3").attr("disabled",DisabledX);
+    $("#edit_agendamento_army_which_park3").attr("disabled",DisabledX);
+  
+  
+    /*Promoter 4 */
+    $("#edit_agendamento_busca_professional4").attr("disabled",DisabledX);
+    $("#edit_agendamento_planned_date4").attr("disabled",DisabledX);
+    $("#edit_agendamento_planned_start_time4").attr("disabled",DisabledX);
+    $("#edit_agendamento_planned_hour4").attr("disabled",DisabledX);
+    $("#edit_agendamento_service_type4").attr("disabled",DisabledX);
+    $("#edit_agendamento_location_activity_training4").attr("disabled",DisabledX);
+    $("#edit_agendamento_trainning_type4").attr("disabled",DisabledX);
+    $("#edit_agendamento_food4").attr("disabled",DisabledX);
+    $("#edit_agendamento_Promoting4").attr("disabled",DisabledX);
+    $("#add_agendamento_push_new_line4").attr("disabled",DisabledX);
+    $("#edit_agendamento_line_slow_comments4").attr("disabled",DisabledX);
+    $("#edit_agendamento_how_meter4").attr("disabled",DisabledX);
+    $("#edit_agendamento_service_result4").attr("disabled",DisabledX);
+    $("#edit_agendamento_open_bags4").attr("disabled",DisabledX);
+    $("#edit_agendamento_trainning_comments4").attr("disabled",DisabledX);
+    $("#edit_agendamento_army_specific_store4").attr("disabled",DisabledX);
+    $("#edit_agendamento_army_which_park4").attr("disabled",DisabledX);
+  
+  
+    /*Promoter 5 */
+    $("#edit_agendamento_busca_professional5").attr("disabled",DisabledX);
+    $("#edit_agendamento_planned_date5").attr("disabled",DisabledX);
+    $("#edit_agendamento_planned_start_time5").attr("disabled",DisabledX);
+    $("#edit_agendamento_planned_hour5").attr("disabled",DisabledX);
+    $("#edit_agendamento_service_type5").attr("disabled",DisabledX);
+    $("#edit_agendamento_location_activity_training5").attr("disabled",DisabledX);
+    $("#edit_agendamento_trainning_type5").attr("disabled",DisabledX);
+    $("#edit_agendamento_food5").attr("disabled",DisabledX);
+    $("#edit_agendamento_Promoting5").attr("disabled",DisabledX);
+    $("#add_agendamento_push_new_line5").attr("disabled",DisabledX);
+    $("#edit_agendamento_line_slow_comments5").attr("disabled",DisabledX);
+    $("#edit_agendamento_how_meter5").attr("disabled",DisabledX);
+    $("#edit_agendamento_service_result5").attr("disabled",DisabledX);
+    $("#edit_agendamento_open_bags5").attr("disabled",DisabledX);
+    $("#edit_agendamento_trainning_comments5").attr("disabled",DisabledX);
+    $("#edit_agendamento_army_specific_store5").attr("disabled",DisabledX);
+    $("#edit_agendamento_army_which_park5").attr("disabled",DisabledX);
+  
+    if(DisabledX === false){
+      $("#btn_edit_ordem_agendamento").attr("disabled",true);
+      $("#btn_save_ordem_agendamento").attr("disabled",false);
+  
+    }else{
+      $("#btn_edit_ordem_agendamento").attr("disabled",false);
+      $("#btn_save_ordem_agendamento").attr("disabled",true);
+    }
+  
+    if(bloqueadoEditX==3){
+      $("#btn_edit_ordem_agendamento").attr("disabled",true);
+      $("#btn_save_ordem_agendamento").attr("disabled",true);
+   
+    }
+    //STATUS_BLOQ
+  
+  
+  }
+
+
+
+
+
+  function PromoterServiceTypeX(promoter,value,action){
+    var contX ="";
+    var lblCont ="";
+    $("#"+action+"_agendamento_service_result"+promoter+ " option").remove();
+    $("#div_"+action+"_agendamento_service_result"+promoter).show()
+    $("#add_agendamento_food"+promoter).val("0");
+    $("#add_agendamento_push_new_line"+promoter).val("");
+    $("#add_agendamento_line_slow_comments"+promoter).val("");  
+    $("#add_agendamento_how_meter"+promoter).val("");  
+    $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
+    $("#div_"+action+"_agendamento_service_result_location"+promoter).hide();
+    
+  
+    $("#add_agendamento_trainning_type"+promoter).val("0");
+    $("#add_agendamento_trainning_comments"+promoter).val("");
+    $("#add_agendamento_Promoting"+promoter).val("0");
+    $("#add_agendamento_open_bags"+promoter).val("0");
+    // $("#add_agendamento_planned_hour"+promoter).val("");
+    $("#div_"+action+"_agendamento_service_result_planned_hour"+promoter).show();
+    $("#add_agendamento_ISP_comments"+promoter).val("");
+    
+    $("#add_agendamento_army_specific_store"+promoter).val("0");
+    $("#add_agendamento_army_which_park"+promoter).val("");
+    
+    
+    if(value==1){
+      //traning
+      
+      lblCont = $.i18n.prop('TreinamentoParaQualLinha',lang);
+  
+      contX +='<option value="0">  </option>';
+      contX +='<option value="1">All ND lines </option>';
+      contX +='<option value="2">ND Prime </option>';
+      contX +='<option value="3">ND Ancestral </option>';
+      contX +='<option value="4">ND Pumpkin </option>';
+      contX +='<option value="5">ND Quinoa </option>';
+      contX +='<option value="6">ND Ocean </option>';
+      contX +='<option value="7">Vet Life </option>';
+      
+      $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
+      $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
+      
+      $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).show();
+      $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).show();
+      $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
+  
+      $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_army_which_park"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_location"+promoter).show();
+  
+      
+  
+     
+  
+      
+    }else if(value==2){
+      //KITS
+      lblCont =$.i18n.prop('ParaQualLinhaVoceGostariaKitDeBoasVindas',lang);
+      
+      contX +='<option value="0">  </option>';
+      contX +='<option value="1"> ND Prime cat </option>';
+      contX +='<option value="2"> ND Ancestral cat </option>';
+      contX +='<option value="3"> ND Pumpkin cat </option>';
+      contX +='<option value="4"> ND Quinoa cat </option>';    
+      contX +='<option value="5"> ND Ocean cat </option>';    
+      contX +='<option value="6"> ND Prime dog </option>';
+      contX +='<option value="7"> ND Ancestral dog </option>';
+      contX +='<option value="8"> ND Pumpkin dog </option>';
+      contX +='<option value="9"> ND Quinoa dog </option>';
+      contX +='<option value="10">ND Ocean dog </option>';
+  
+      
+      $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
+      $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_planned_hour"+promoter).hide();
+      $("#add_agendamento_planned_hour"+promoter).val("");
+      $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
+  
+      $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_army_which_park"+promoter).hide();
+  
+  
+  
+      
+  
+  
+      
+    }else if(value==3){
+      //ISP
+      lblCont =$.i18n.prop('PorQueVoceEstaFazendoIssoISP',lang);
+      contX +='<option value="0">  </option>';
+      // contX +='<option value="1"> PUSH NEW LINE </option>';
+      // contX +='<option value="2"> LINE SLOW </option>';
+      // contX +='<option value="3"> GENERIC </option>';
+  
+      contX +='<option value="4"> ND Prime</option>';
+      contX +='<option value="5"> ND Ancestral</option>';
+      contX +='<option value="6"> ND Pumpkin</option>';
+      contX +='<option value="7"> ND Quinoa</option>';
+      contX +='<option value="8"> ND Ocean</option>';
+      $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
+      $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_promoting"+promoter).show();
+      $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).show();
+      $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).show();
+  
+      $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_army_which_park"+promoter).hide();
+  
+  
+  
+      
+    }else if(value==4){
+      //MERCHANDISSING
+  
+      
+      var PlacingOfProducts = $.i18n.prop('lPlacingOfProducts',lang)
+      var NewShelf = $.i18n.prop('lNewShelf',lang)
+      var PlacingOfFarminaMaterials = $.i18n.prop('lPlacingOfFarminaMaterials',lang)
+  
+      lblCont =$.i18n.prop('QueTipoMmerchandisingVoceQuer',lang);
+      contX +='<option value="0">  </option>';
+      contX +='<option value="1"> '+PlacingOfProducts+'</option>';
+      contX +='<option value="2"> '+NewShelf+'</option>';
+      contX +='<option value="3"> '+PlacingOfFarminaMaterials+'</option>';
+      $("#div_"+action+"_agendamento_service_result_food"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_many_meters"+promoter).show();
+      $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
+      
+      
+      $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_army_which_park"+promoter).hide();
+  
+      
+  
+      
+  
+      
+    }else if(value==5){
+      lblCont =" Army ? ";
+      contX +='<option value="0">  </option>';
+      $("#div_"+action+"_agendamento_service_result"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
+      $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).show();
+      
+  
+  
+      
+    }  
+    
+    $("#lbl_"+action+"_agendamento_service_result"+promoter).html(lblCont)
+    $("#"+action+"_agendamento_service_result"+promoter).append(contX)
+  }
+
+
+
+  $("#btn_edit_ordem_agendamento").click(function(){
+    //alert('teste')
+    var bloqueadoEdit = 0
+    EditDisabledX(false,bloqueadoEdit)
+  }) ;
+
+
+
+  $('#edit_busca_cliente_agendamento').click(function(){
+    var table = $('#dataTableClienteAgendamento').DataTable();
+    var length = table.column(0).data().length;
+    $('#edit-agendamento').modal('toggle');
+    $('#action_cliente_agendamento').val('u')
+    setTimeout(chamaCliente, 1000);
+    if (length == 0){
+      table.destroy();
+      loadClienteX();
+     }
+
+     setTimeout(function(){
+      $('#dataTableClienteAgendamento').DataTable().draw();
+     }, 3000);
+
+  })
+
+
+  $('#edit_busca_cliente_agendamento_nav').click(function(){
+    var table = $('#dataTableClienteAgendamentoNav').DataTable();
+    var length = table.column(0).data().length;
+    $('#edit-agendamento').modal('toggle');
+    $('#action_cliente_agendamento').val('u')
+    setTimeout(chamaClienteNav, 1000);
+    if (length == 0){
+      table.destroy();
+      loadClienteNavX();
+     }
+
+     setTimeout(function(){
+      $('#dataTableClienteAgendamentoNav').DataTable().draw();
+     }, 3000);
+
+  })
+
+  
+
+  var chamaCliente = function(){
+    $('#cliente-agendamento').modal('toggle');  
+  };
+
+  var chamaClienteNav = function(){
+    $('#cliente-agendamento-Nav').modal('toggle');  
+  };
+
+
+
+
+  function loadClienteX() {  
+    // $('#dataKTableClienteAgendamento').DataTable().destroy();
+    var query = "";
+    var queryTerritory =""
+    if(sessionStorage.Type =='0'){
+      //query = '{"where":{"Territory Code": "' + sessionStorage.UF + '"}}';
+      queryTerritory = '&Territory='+sessionStorage.UF;
+    }
+    
+    // $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Customers?filter="+query, success: function(result){
+    $.ajax({url: urlX+"Customers/getCustomerQuery?Pais="+paisX+queryTerritory, success: function(result){
+      
+
+    var jsonString = result.result //for testing  
+    var tableClienteAgendamento = $("#dataTableClienteAgendamento")
+    tableClienteAgendamento.DataTable ({
+          "data" : jsonString,
+          rowReorder: {
+            selector: 'td:nth-child(2)'
+        },
+        responsive: true,
+          "scrollX": true,
+          "columns" : [
+            { "data" : "No_"},
+            { "data" : "Name"},
+            { "data" : "Phone No_" },
+            { "data" : "Contact" },
+            { "data" : "Address",},
+            { "data" : "City" },
+            { "data" : "Post Code" },
+            { "data" : "Address 2" },
+            { "data" : "Salesperson Code" },
+          ]
+          
+        });
+
+        $('#dataTableClienteAgendamento').DataTable().draw();        
+      }        
+       
+    });
+
+    
+    
+
+};
+
+
+
+
+function loadClienteNavX() {  
+  
+  $.ajax({url: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country, success: function(result){
+  var jsonString = result.data //for testing  
+  var tableClienteAgendamentoNav = $("#dataTableClienteAgendamentoNav")
+  tableClienteAgendamentoNav.DataTable ({
+        "data" : jsonString,
+        rowReorder: {
+          selector: 'td:nth-child(2)'
+      },
+      responsive: true,
+        "scrollX": true,
+        "columns" : [
+          { "data" : "id"},
+          { "data" : "ragsoc"},
+          { "data" : "tel" },
+          { "data" : "contatto" },
+          { "data" : "indirizzo"},
+          { "data" : "comune" },
+          { "data" : "cap" },
+          //{ "data" : "codice" },
+          { "data" : "idsam" },
+        ]
+        
+      });
+
+      $('#dataTableClienteAgendamentoNav').DataTable().draw();
+    }        
+     
+  });
+
+};
+
+
+
+
+$('#dataTableClienteAgendamento tbody').on( 'click', 'td', function () {
+  $('#cliente-agendamento').modal('toggle');
+  var data = $("#dataTableClienteAgendamento").DataTable().row( $(this).parents('tr') ).data();
+   
+  console.log(data)
+  var id      = data['No_'];
+  var name    = data['Name'];
+  var address = data['Address'];
+  var post    = data['Post Code'];
+  var phone   = data['Phone No_'];
+  var contact = data['Contact'];
+  var city    = data['City'];
+  var address2= data['Adrress 2'];
+  var salespersonCode= data['Salesperson Code'];
+  
+  var action = $('#action_cliente_agendamento').val()
+  
+  if (action == 'i'){
+    $('#add_agendamento_n_cliente').val(id)
+    $('#add_agendamento_fatura_endereco_complemento').val(address2)
+    $('#add_agendamento_fatura_cidade').val(city)
+    $('#add_agendamento_nome').val(name)
+    $('#add_agendamento_fatura_cep').val(post)
+    $('#add_agendamento_fatura_endereco').val(address)
+    $('#add_agendamento_cod_vendendor').val(salespersonCode)
+    
+    setTimeout(chamaAddAgendamento, 1000);
+  } else if (action == 'u')  {
+    $('#edit_agendamento_n_cliente').val(id)
+    $('#edit_agendamento_fatura_endereco_complemento').val(address2)
+    $('#edit_agendamento_fatura_cidade').val(city)
+    $('#edit_agendamento_nome').val(name)
+    $('#edit_agendamento_fatura_cep').val(post)
+    $('#edit_agendamento_fatura_endereco').val(address)
+    $('#edit_agendamento_cod_vendendor').val(salespersonCode)
+    setTimeout(chamaEditAgendamento, 1000);
+  }
+
+
+})
+
+
+
+$('#dataTableClienteAgendamentoNav tbody').on( 'click', 'td', function () {
+  $('#cliente-agendamento-Nav').modal('toggle');
+  var data = $("#dataTableClienteAgendamentoNav").DataTable().row( $(this).parents('tr') ).data();
+   
+  console.log(data)
+
+  
+  var id      = data['id'];
+  var name    = data['ragsoc'];
+  var address = data['indirizzo'];
+  var post    = data['cap'];
+  var phone   = data['tel'];
+  var contact = data['contatto'];
+  var city    = data['comune'];
+  var address2= data['codice'];
+  var salespersonCode= data['idsam'];
+  
+  var action = $('#action_cliente_agendamento').val()
+  
+  if (action == 'i'){
+
+    
+    $('#add_agendamento_n_cliente').val(id)
+    $('#add_agendamento_fatura_endereco_complemento').val(address2)
+    $('#add_agendamento_fatura_cidade').val(city)
+    $('#add_agendamento_nome').val(name)
+    $('#add_agendamento_fatura_cep').val(post)
+    $('#add_agendamento_fatura_endereco').val(address)
+    $('#add_agendamento_cod_vendendor').val(salespersonCode)
+    
+    setTimeout(chamaAddAgendamento, 1000);
+  } else if (action == 'u')  {
+    $('#edit_agendamento_n_cliente').val(id)
+    $('#edit_agendamento_fatura_endereco_complemento').val(address2)
+    $('#edit_agendamento_fatura_cidade').val(city)
+    $('#edit_agendamento_nome').val(name)
+    $('#edit_agendamento_fatura_cep').val(post)
+    $('#edit_agendamento_fatura_endereco').val(address)
+    $('#edit_agendamento_cod_vendendor').val(salespersonCode)
+    setTimeout(chamaEditAgendamento, 1000);
+  }
+
+
+})
+
+
+var chamaEditAgendamento = function(){
+  $('#edit-agendamento').modal('toggle');  
+};
+
+  
+
+
+
+
+
+
+
+
+
+
+$("#btn_save_ordem_agendamento").click(function(){
+  var valida = true
+
+    valida = formValidacaoOrdem(1,'edit');
+    if(valida == false){
+      return false;
+    }
+    var professional2 = $('#edit_agendamento_busca_professional2').val();
+    if (professional2 != 0){
+      valida = formValidacaoOrdem(2,'edit');
+        if(valida == false){
+          return false;
+        } 
+    }
+    var professional3 = $('#edit_agendamento_busca_professional3').val();
+    if (professional3 != 0){
+      valida = formValidacaoOrdem(3,'edit');
+        if(valida == false){
+          return false;
+        } 
+    }
+
+    var professional4 = $('#edit_agendamento_busca_professional4').val();
+    if (professional4 != 0){
+      valida = formValidacaoOrdem(4,'edit');
+        if(valida == false){
+          return false;
+        } 
+    }
+
+    var professional5 = $('#edit_agendamento_busca_professional5').val();
+    if (professional5 != 0){
+      valida = formValidacaoOrdem(5,'edit');
+        if(valida == false){
+          return false;
+        } 
+    }
+  console.log('entrou na janela');
+  var data = new FormData();
+  
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    // "url": "http://www.nav.farmina.com.br:3001/api/ServiceHeaders/getServiceHeaderUpdate",
+    "url": urlX+"ServiceHeaders/getServiceHeaderUpdate",
+    "method": "POST",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded",
+      "cache-control": "no-cache",
+      "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
+    },
+    "data": {        
+     "Pais"             : paisX,
+     "DocumentType"             : "0",
+     "No_"                      : $("#edit_agendamento_n").val(),
+     "CustomerNo_"              : $("#edit_agendamento_n_cliente").val(),
+     "Bill_toCustomerNo_"       : $("#edit_agendamento_cod_vendendor").val(),
+     "Bill_toName"              : $("#edit_agendamento_nome").val(),
+     "Bill_toName2"             : "",
+     "Bill_toAddress"           : $("#edit_agendamento_fatura_endereco").val(),
+     "Bill_toAddress2"          : "",
+     "Bill_toCity"              : $("#edit_agendamento_fatura_cidade").val(),
+     "Bill_toContact"           : $("#edit_agendamento_nome").val(),
+     "Bill-to Post Code"         : $("#edit_agendamento_fatura_cep").val(),
+     
+     "YourReference"            : "",
+     
+      "Professional1"           :$("#edit_agendamento_busca_professional1").val(),
+      "PlannedStartTime1"       :$("#edit_agendamento_planned_start_time1").val(),
+
+      "PlannedDate1"            :formatDateSql($("#edit_agendamento_planned_date1").val()),
+      "PlannedHours1"           :$("#edit_agendamento_planned_hour1").val(),
+      "ServiceType1"            :$("#edit_agendamento_service_type1").val(),
+      "ProfessionalFunction1"   :$("#edit_agendamento_service_result1").val(),
+
+
+      "Food1"                     :$("#edit_agendamento_food1").val(),
+      "TrainningType1"            :$("#edit_agendamento_trainning_type1").val(),
+      "LocationActivityTraining1" :$("#edit_agendamento_location_activity_training1").val(),
+      "TrainningComments1"        :$("#edit_agendamento_trainning_comments1").val(),
+      "PushNewLine1"              :$("#edit_agendamento_push_new_line1").val(),
+      "LineSlowComments1"         :$("#edit_agendamento_line_slow_comments1").val(),
+      "Promoting1"                :$("#edit_agendamento_Promoting1").val(),
+      "Open-Bags1"                :$("#edit_agendamento_open_bags1").val(),
+      "How-Meter1"                :$("#edit_agendamento_how_meter1").val(),
+      "Specific-Store1"           :$("#edit_agendamento_army_specific_store1").val(),
+      "Which-Park1"               :$("#edit_agendamento_army_which_park1").val(),
+
+      
+      "Professional2"           :$("#edit_agendamento_busca_professional2").val(),
+      "PlannedDate2"            :formatDateSql($("#edit_agendamento_planned_date2").val()),
+      "PlannedHours2"           :$("#edit_agendamento_planned_hour2").val(),
+      "ServiceType2"            :$("#edit_agendamento_service_type2").val(),
+      "ProfessionalFunction2"   :$("#edit_agendamento_service_result2").val(),
+
+      "Food2"                     :$("#edit_agendamento_food2").val(),
+      "TrainningType2"            :$("#edit_agendamento_trainning_type2").val(),
+      "LocationActivityTraining2" :$("#edit_agendamento_location_activity_training2").val(),
+      "TrainningComments2"        :$("#edit_agendamento_trainning_comments2").val(),
+      "PushNewLine2"              :$("#edit_agendamento_push_new_line2").val(),
+      "LineSlowComments2"         :$("#edit_agendamento_line_slow_comments2").val(),
+      "Promoting2"                :$("#edit_agendamento_Promoting2").val(),
+      "Open-Bags2"                :$("#edit_agendamento_open_bags2").val(),
+      "How-Meter2"                :$("#edit_agendamento_how_meter2").val(),
+      "Specific-Store2"           :$("#edit_agendamento_army_specific_store2").val(),
+      "Which-Park2"               :$("#edit_agendamento_army_which_park2").val(),
+      
+      "Professional3"            :$("#edit_agendamento_busca_professional3").val(),
+      "PlannedDate3"            :formatDateSql($("#edit_agendamento_planned_date3").val()),
+      "PlannedHours3"           :$("#edit_agendamento_planned_hour3").val(),
+      "ServiceType3"            :$("#edit_agendamento_service_type3").val(),
+      "ProfessionalFunction3"   :$("#edit_agendamento_service_result3").val(),
+
+
+      "Food3"                     :$("#edit_agendamento_food3").val(),
+      "TrainningType3"            :$("#edit_agendamento_trainning_type3").val(),
+      "LocationActivityTraining3" :$("#edit_agendamento_location_activity_training3").val(),
+      "TrainningComments3"        :$("#edit_agendamento_trainning_comments3").val(),
+      "PushNewLine3"              :$("#edit_agendamento_push_new_line3").val(),
+      "LineSlowComments3"         :$("#edit_agendamento_line_slow_comments3").val(),
+      "Promoting3"                :$("#edit_agendamento_Promoting3").val(),
+      "Open-Bags3"                :$("#edit_agendamento_open_bags3").val(),
+      "How-Meter3"                :$("#edit_agendamento_how_meter3").val(),
+      "Specific-Store3"           :$("#edit_agendamento_army_specific_store3").val(),
+      "Which-Park3"               :$("#edit_agendamento_army_which_park3").val(),
+
+      
+      
+      "Professional4"           :$("#edit_agendamento_busca_professional4").val(),
+      "PlannedDate4"            :formatDateSql($("#edit_agendamento_planned_date4").val()),
+      "PlannedHours4"           :$("#edit_agendamento_planned_hour4").val(),
+      "ServiceType4"            :$("#edit_agendamento_service_type4").val(),
+      "ProfessionalFunction4"   :$("#edit_agendamento_service_result4").val(),
+
+      "Food4"                     :$("#edit_agendamento_food4").val(),
+      "TrainningType4"            :$("#edit_agendamento_trainning_type4").val(),
+      "LocationActivityTraining4" :$("#edit_agendamento_location_activity_training4").val(),
+      "TrainningComments4"        :$("#edit_agendamento_trainning_comments4").val(),
+      "PushNewLine4"              :$("#edit_agendamento_push_new_line4").val(),
+      "LineSlowComments4"         :$("#edit_agendamento_line_slow_comments4").val(),
+      "Promoting4"                :$("#edit_agendamento_Promoting4").val(),
+      "Open-Bags4"                :$("#edit_agendamento_open_bags4").val(),
+      "How-Meter4"                :$("#edit_agendamento_how_meter4").val(),
+      "Specific-Store4"           :$("#edit_agendamento_army_specific_store4").val(),
+      "Which-Park4"               :$("#edit_agendamento_army_which_park4").val(),
+      
+      "Professional5"           :$("#edit_agendamento_busca_professional5").val(),
+      "PlannedDate5"            :formatDateSql($("#edit_agendamento_planned_date5").val()),
+      "PlannedHours5"           :$("#edit_agendamento_planned_hour5").val(),
+      "ServiceType5"            :$("#edit_agendamento_service_type5").val(),
+      "ProfessionalFunction5"   :$("#edit_agendamento_service_result5").val(),
+
+      "Food5"                     :$("#edit_agendamento_food5").val(),
+      "TrainningType5"            :$("#edit_agendamento_trainning_type5").val(),
+      "LocationActivityTraining5" :$("#edit_agendamento_location_activity_training5").val(),
+      "TrainningComments5"        :$("#edit_agendamento_trainning_comments5").val(),
+      "PushNewLine5"              :$("#edit_agendamento_push_new_line5").val(),
+      "LineSlowComments5"         :$("#edit_agendamento_line_slow_comments5").val(),
+      "Promoting5"                :$("#edit_agendamento_Promoting5").val(),
+      "Open-Bags5"                :$("#edit_agendamento_open_bags5").val(),
+      "How-Meter5"                :$("#edit_agendamento_how_meter5").val(),
+      "Specific-Store5"           :$("#edit_agendamento_army_specific_store5").val(),
+      "Which-Park5"               :$("#edit_agendamento_army_which_park5").val(),
+      
+    }
+  }
+
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+      //$('#dataTableOrdemAgendamento').DataTable().destroy();
+      //loadAgendamento();
+      $('#edit-agendamento').modal('toggle');  
+      
+    });
+
+});
+
+
+function formValidacaoOrdem(promoter,action){
+  var valida =  true;
+  var texto = ""
+  var profissional1        = $('#'+action+'_agendamento_busca_professional'+promoter).val();
+  var planned_date1        = $('#'+action+'_agendamento_planned_date'+promoter).val();
+  var planned_start_time1  = $('#'+action+'_agendamento_planned_start_time'+promoter).val();
+  var planned_hour1        = $('#'+action+'_agendamento_planned_hour'+promoter).val();
+  var service_type1        = $('#'+action+'_agendamento_service_type'+promoter).val();
+  
+  
+  if(profissional1 == 0){
+    texto +=  $.i18n.prop('lProfissional'+promoter,lang) +'<br>';//"Professional "+ promoter +" " +
+    valida = false
+  }
+  if(planned_date1 == ""){
+    texto +=  $.i18n.prop('lDataPlanejada',lang)+ ' ' + promoter +'<br>';//"Planned date "+ promoter +" " +
+    valida = false
+  }
+
+  if(planned_start_time1 == ""){
+    texto +=  $.i18n.prop('lPlannedStartTime',lang)+ ' ' + promoter +'<br>';//"Planned Start Time "+ promoter +" " +
+    valida = false
+  }
+
+  if(service_type1 != 2){
+    if(planned_hour1 == ""){
+      texto +=  $.i18n.prop('lHoraPlanejada',lang)+ ' ' + promoter +'<br>';//"Planned Hours "+ promoter +" " +
+      valida = false
+    }
+  }  
+
+  if(service_type1 == 0){
+    texto +=  $.i18n.prop('lTipoServico',lang)+ ' ' + promoter +'<br>';//"Service Type "+ promoter +" " +
+    valida = false
+  }
+
+  /*VALIDAÇÃO TRAINING*/
+  if(service_type1 == 1){
+    var trainning_type1       = $('#'+action+'_agendamento_trainning_type'+promoter).val();
+    var food1                 = $('#'+action+'_agendamento_food'+promoter).val();
+    var service_result1       = $('#'+action+'_agendamento_service_result'+promoter).val();
+    var trainning_comments1   = $('#'+action+'_agendamento_trainning_comments'+promoter).val();
+    var location_activity1    = $('#'+action+'_agendamento_location_activity_training'+promoter).val();
+    
+    if(location_activity1 == ""){
+      texto +=  $.i18n.prop('lLocation',lang)+ ' ' + promoter +'<br>';//"Training Type "+ promoter +" " +
+      valida = false
+    }
+
+    if(trainning_type1 == 0){
+      texto +=  $.i18n.prop('lTrainningType',lang)+ ' ' + promoter +'<br>';//"Training Type "+ promoter +" " +
+      valida = false
+    }
+
+    if(food1 == 0){
+      texto +=  $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " +
+      valida = false
+    }
+
+    if(service_result1 == 0){
+      texto +=  $.i18n.prop('TreinamentoParaQualLinha',lang)+ ' ' + promoter +'<br>';//"Training For a Line "+ promoter +" " +
+      valida = false
+    }
+    if(trainning_comments1 == ""){
+      texto +=  $.i18n.prop('lObservacaoInicial',lang)+ ' ' + promoter +'<br>';//"Comments "+ promoter +" " +
+      valida = false
+    }
+  }
+
+  /*VALIDAÇÃO WELCOME KIT*/
+  if(service_type1 == 2){
+    var food1                 = $('#'+action+'_agendamento_food'+promoter).val();
+    var service_result1       = $('#'+action+'_agendamento_service_result'+promoter).val();
+    
+    if(food1 == 0){
+      texto += $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " + 
+      valida = false
+    }
+
+    if(service_result1 == 0){
+      texto += $.i18n.prop('ParaQualLinhaVoceGostariaKitDeBoasVindas',lang)+ ' ' + promoter +'<br>';// "Welcome kit for which line "+ promoter +" " +
+      valida = false
+    }
+    
+  }
+
+  /*VALIDAÇÃO ISP*/
+  if(service_type1 == 3){
+    var food1            = $('#'+action+'_agendamento_food'+promoter).val();
+    var Promoting1       = $('#'+action+'_agendamento_Promoting'+promoter).val();
+    var service_result1  = $('#'+action+'_agendamento_service_result'+promoter).val();
+    var open_bags        = $('#'+action+'_agendamento_open_bags'+promoter).val();
+
+    if(food1 == 0){
+      texto +=  $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " +
+      valida = false
+    }
+
+    if(Promoting1 == 0){
+      texto += $.i18n.prop('lPromoting',lang)+ ' ' + promoter +'<br>';//"Type of promotion "+ promoter +" " + 
+      valida = false
+    }
+
+    if(service_result1 == 0){
+      texto +=  $.i18n.prop('PorQueVoceEstaFazendoIssoISP',lang)+ ' ' + promoter +'<br>';//"Purpose of the promotion "+ promoter +" " +
+      valida = false
+    }
+
+    if(open_bags == 0){
+      texto +=  $.i18n.prop('lThisStoreIsSellingOpenBags',lang)+ ' ' + promoter +'<br>';//"This store is selling open bags "+ promoter +" " +
+      valida = false
+    }
+    
+  }
+
+  /*VALIDAÇÃO   MERCHANDISSING*/
+  if(service_type1 == 4){
+    var how_meter1          = $('#'+action+'_agendamento_how_meter'+promoter).val();
+    var service_result1     = $('#'+action+'_agendamento_service_result'+promoter).val();
+    
+    if(how_meter1 == ""){
+      texto +=  $.i18n.prop('lCampoObrigatorio',lang)+ ' ' + promoter +'<br>';//"How many meters of Farmina shelves "+ promoter +" " +
+      valida = false
+    }
+
+    if(service_result1 == 0){
+      texto += $.i18n.prop('lCampoObrigatorio',lang)+ ' ' + promoter +'<br>';// "Purpose of the promotion "+ promoter +" " +
+      valida = false
+    }
+
+    if(open_bags == 0){
+      texto +=  $.i18n.prop('lCampoObrigatorio',lang)+ ' ' + promoter +'<br>';//"Type of merchandising "+ promoter +" " +
+      valida = false
+    }
+    
+  }
+
+  /*VALIDAÇÃO   ARMY*/
+  if(service_type1 == 5){
+    var specific_store1   = $('#'+action+'_agendamento_army_specific_store'+promoter).val();
+    var food1            = $('#'+action+'_agendamento_food'+promoter).val();
+    var which_park1       = $('#'+action+'_agendamento_army_which_park'+promoter).val();
+    
+
+    if(food1 == 0){
+      texto +=  $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " +
+      valida = false
+    }
+
+    if(specific_store1 == 0){
+      texto += $.i18n.prop('lForSpecificStore',lang)+ ' ' + promoter +'<br>';//"For a specific store "+ promoter +" " + 
+      valida = false
+    }
+
+    if(specific_store1 == 2){
+      if(which_park1 == ""){
+        texto += $.i18n.prop('lInWhicPark',lang) + '<br>';//"In which park "+ promoter +" " + 
+        valida = false
+      }
+    }  
+
+    
+  }
+  if(valida == false){
+    $.notify({
+      title: $.i18n.prop('lAttentionMandatory',lang),
+      message: texto
+    },{
+      type: 'pastel-danger',
+      delay: 5000,
+      z_index: 10000,
+      template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+        '<span data-notify="title">{1}</span>' +
+        '<span data-notify="message">{2}</span>' +
+      '</div>'
+    });
+  }
+
+
+
+  
+  return valida
+}
+
+
 
 
   }  

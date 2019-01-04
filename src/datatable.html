@@ -1663,6 +1663,1230 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="modal fade" id="edit-agendamento" data-backdrop="static">
+    <div class="modal-dialog modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="m-0 lViewOrder">View Order</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+
+        <div class="modal-body">
+          <!-- <form> -->
+
+              <div class="row">
+                  
+
+                <div class="col-md-6 mb-3">
+                    <input type="text" class="form-control" id="edit_agendamento_n" placeholder="" value="" required disabled style="display: none;">
+                    <button type="button" class="form-control btn cur-p btn-info lConsultaClienteNav" id="edit_busca_cliente_agendamento" disabled >Busca Cliente</button>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <input type="text" class="form-control" id="edit_agendamento_n" placeholder="" value="" required disabled style="display: none;">
+                  <button type="button" class="form-control btn cur-p btn-info lConsultaCliente" id="edit_busca_cliente_agendamento_nav" disabled >Busca Cliente</button>
+              </div>
+
+                  
+
+              </div>
+
+
+              <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label class="fw-500 lName">Nome Cliente</label>
+                    <input type="text" class="form-control" id="edit_agendamento_nome" placeholder="" value="" required disabled>
+                  </div>
+
+                <div class="col-md-3 mb-2">
+                    <label class="fw-500 lNCliente">Nº Cliente</label>
+                    <input type="text" class="form-control" id="edit_agendamento_n_cliente" placeholder="" value="" required disabled>
+                </div>
+
+                <div class="col-md-3 mb-2">
+                  <label class="fw-500 lSalespersonCode">Cód Vendedor</label>
+                <input type="text" class="form-control" id="edit_agendamento_cod_vendendor" placeholder="" value="" required disabled>
+              </div>
+
+
+            </div>
+
+
+
+              <div class="row">
+                  
+
+                <div class="col-md-6 mb-3">
+                  <label class="fw-500 lCidade">Cidade</label>
+                <input type="text" class="form-control" id="edit_agendamento_fatura_cidade" placeholder="" value="" required disabled>
+              </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label class="fw-500 lCep">Cep</label>
+                  <input type="text" class="form-control" id="edit_agendamento_fatura_cep" placeholder="" value="" required disabled>
+                </div>
+              </div>
+
+
+              <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <label class="fw-500 lAddress">Endereço</label>
+                  <input type="text" class="form-control" id="edit_agendamento_fatura_endereco" placeholder="" value="" required disabled>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label class="fw-500 lEnderecoCompleto">Endereço Complemento</label>
+                <input type="text" class="form-control" id="edit_agendamento_fatura_endereco_complemento" placeholder="" value="" required disabled>
+              </div>
+
+            </div>
+
+
+
+
+          <div id="accordion">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link lPromotor1" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Promotor 1
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+
+
+                      <div class="row">
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500 lProfissional1">Profissional 1</label>
+                              <select id="edit_agendamento_busca_professional1" class="form-control" disabled>
+                                  <option selected value="0" class="lSelecione">Selecione o Profissional 1...</option>
+                                </select>
+                          </div>
+
+                          <div class="col-md-3 mb-3">
+                              <label class="fw-500 lDataPlanejada">Data Planejada</label>
+                            <!-- <input type="text" class="form-control" id="edit_agendamento_planned_date1" placeholder="" value="" required > -->
+                            <div class="timepicker-input input-icon form-group">
+                                <div class="input-group">
+                                  <div class="input-group-addon bgc-white bd bdwR-0">
+                                    <i class="ti-calendar"></i>
+                                  </div>
+                                  <!-- <input type="text" id="edit_agendamento_planned_date1" class="form-control bdc-grey-200 start-date" placeholder="" data-provide="datepicker"  data-date-format='dd/mm/yyyy' disabled> -->
+                                  <input type="text" id="edit_agendamento_planned_date1"  class="form-control bdc-grey-200 start-date1" placeholder="Date" data-toggle="tooltip">
+                                  
+                                </div>
+                              </div>
+                          </div>
+
+                          <div class="col-md-3 mb-3">
+                            <label class="fw-500 lPlannedStartTime">Planned Start Time</label>
+                            <input type="time" id="edit_agendamento_planned_start_time1" name="appt-time" min="00:00" max="23:59" class="form-control" placeholder="" value="" required disabled />
+                        </div>
+
+
+                          
+                      </div>
+
+                      <div class="row">
+
+                          <div class="col-md-6 mb-3" id="div_edit_agendamento_service_result_planned_hour1">
+                              <label class="fw-500 lHoraPlanejada">Hora Planejada</label>
+                            <input type="text" class="form-control" id="edit_agendamento_planned_hour1" placeholder="" value="" required disabled>
+                            <!-- <input type="time" id="edit_agendamento_planned_hour1" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                          </div>
+
+                          
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500 lTipoServico">Tipo Serviço</label>
+                              <select id="edit_agendamento_service_type1" class="form-control" disabled>
+                                  <option selected value="0">Selecione tipo serviço ...</option>
+                                  <option value="1" class="lTreinamento">Treinamento</option>
+                                  <option value="2" class="lKitBoasVindas">Kit de boas-vindas</option>
+                                  <option value="3" class="lISP">ISP</option>
+                                  <option value="4" class="lMerchandising">Merchandising</option>
+                                  <option value="5" class="lArmy">Army</option>
+                                </select>
+                          </div>
+                      </div>
+
+                      <div class="row" id="div_edit_agendamento_service_result_location1" style="display:none">
+                        <div class="col-md-6 mb-3">
+                          <label class="fw-500 lLocation">Location </label>      
+                          <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_location_activity_training1" disabled>
+                        </div>
+                      </div>
+
+
+                      <div class="row" id="div_edit_agendamento_service_result_trainning_type1" style="display:none">
+                        <div class="col-md-12 mb-3">
+                          <label class="fw-500 lTrainningType">Trainning Type</label>
+                            <select id="edit_agendamento_trainning_type1" class="form-control" disabled>
+                              <option value="0" class="lSelecione">Selecione</option>
+                              <option value="1" class="lGeneralNutrition">General Nutrition</option>
+                              <option value="2" class="lRefreshment">Refreshment</option>
+                              <option value="3" class="lNewlineStore">New line in the store</option>
+                            </select>
+                        </div>
+                      </div>
+
+                      
+
+                      <div class="row" id="div_edit_agendamento_service_result_food1" style="display:none">
+                          <div class="col-md-12 mb-3">
+                            <label class="fw-500 lTypeFood">Type Food</label>
+                              <select id="edit_agendamento_food1" class="form-control" disabled>
+                                <option value="0" class="lSelecione">Selecione</option>
+                                <option value="1" class="lDry">Seca</option>
+                                <option value="2" class="lWet">Molhada</option>
+                                <option value="3" class="lDryWet">Dry + Wet</option>
+                              </select>
+                          </div>
+                        </div>
+
+                        <div class="row" id="div_edit_agendamento_service_result_promoting1" style="display:none">
+                            <div class="col-md-12 mb-3">
+                              <label class="fw-500 lPromoting">Promoting</label>
+                                <select id="edit_agendamento_Promoting1" class="form-control" disabled>
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lPromotingNewLine">Promoting new line</option>
+                                  <option value="2" class="lPromotingExistingLine">Promoting existing line</option>
+                                </select>
+                            </div>
+                          </div>
+
+
+                        
+                    <div class="row" id="div_edit_agendamento_service_result_push1" style="display:none">
+                      <div class="col-md-12 mb-6">
+                        <label class="fw-500 lPushNewLine">Push New Line Comments </label>
+                        <textarea id='add_agendamento_push_new_line1' class="form-control bdc-grey-200" disabled> </textarea>
+                      </div>
+                    </div>
+
+                    <div class="row" id="div_edit_agendamento_service_result_line1" style="display:none">
+                      <div class="col-md-12 mb-6">
+                        <label class="fw-500 lLineSlowComments">Line Slow Comments </label>
+                        <textarea id='edit_agendamento_line_slow_comments1' class="form-control bdc-grey-200" disabled > </textarea>
+                      </div>
+                    </div>
+
+                    <div class="row" id="div_edit_agendamento_service_many_meters1" style="display:none">
+                        <div class="col-md-12 mb-6">
+                          <label class="fw-500 lHowManyMetersOfFarminaShelves">How many meters of Farmina shelves </label>
+                          <input type="number" id="edit_agendamento_how_meter1" class="form-control bdc-grey-200 NumberPositivo" min="1" max="10000" disabled>
+                        </div>
+                      </div>
+
+                    
+
+                      <div class="row" id="div_edit_agendamento_service_result1" style="display:none">
+                        <div class="col-md-12 mb-3">
+                            <label class="fw-500" id="lbl_edit_agendamento_service_result1"> </label>
+                            <select id="edit_agendamento_service_result1" class="form-control" disabled>
+                                <option selected value="0" class="lSelecione">Selecione ...</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row" id="div_edit_agendamento_service_result_open_bags1" style="display:none">
+                      <div class="col-md-12 mb-3">
+                        <label class="fw-500 lThisStoreIsSellingOpenBags">This store is selling open bags?</label>
+                          <select id="edit_agendamento_open_bags1" class="form-control" disabled>
+                            <option selected value="0" class="lSelecione">Selecione</option>
+                            <option value="1" class="lYes">Yes</option>
+                            <option value="2" class="lNo">No</option>
+                          </select>
+                      </div>
+                    </div>
+                    
+
+                    <div class="row" id="div_edit_agendamento_service_result_tranning_comments1" style="display:none">
+                        <div class="col-md-12 mb-6">
+                          <label class="fw-500 lTrainningComments">Trainning Comments</label>
+                          <textarea id='edit_agendamento_trainning_comments1' maxlength="100" class="form-control bdc-grey-200" disabled> </textarea>
+                        </div>
+                      </div>
+                      
+                     
+
+                      <div class="row" id="div_edit_agendamento_service_result_army_specific_store1" style="display:none">
+                        <div class="col-md-12 mb-3">
+                          <label class="fw-500 lForSpecificStore"> For a specific store</label>
+                            <select id="edit_agendamento_army_specific_store1" class="form-control" disabled>
+                              <option selected value="0" class="lSelecione">Selecione</option>
+                              <option value="1" class="lYes">Yes</option>
+                              <option value="2" class="lNo">No</option>
+                            </select>
+                        </div>
+                      </div>
+
+
+                      
+                      <div class="row" id="div_edit_agendamento_service_result_army_which_park1" style="display:none">
+                        <div class="col-md-12 mb-6">
+                          <label class="fw-500 lInWhicPark">In which park?</label>
+                          <textarea id='edit_agendamento_army_which_park1' maxlength="100" class="form-control bdc-grey-200" disabled> </textarea>
+                        </div>
+                      </div>
+
+
+
+                      
+
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed lPromotor2" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Promotor 2
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+
+
+
+
+                      <div class="row">
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500 lProfissional2">Profissional 2</label>
+                              <select id="edit_agendamento_busca_professional2" class="form-control" disabled>
+                                  <option selected value="0" class="lSelecione">Selecione o Profissional 2...</option>
+                                </select>
+                          </div>
+
+                          <div class="col-md-3 mb-3">
+                              <label class="fw-500 lDataPlanejada">Data Planejada</label>
+                            <!-- <input type="text" class="form-control" id="edit_agendamento_planned_date2" placeholder="" value="" required > -->
+                            <div class="timepicker-input input-icon form-group">
+                                <div class="input-group">
+                                  <div class="input-group-addon bgc-white bd bdwR-0">
+                                    <i class="ti-calendar"></i>
+                                  </div>
+                                  <input type="text" id="edit_agendamento_planned_date2" class="form-control bdc-grey-200 start-date2" placeholder="" data-provide="datepicker"  data-date-format='dd/mm/yyyy' disabled>
+                                  
+                                </div>
+                              </div>
+                          </div>
+
+                          <div class="col-md-3 mb-3">
+                            <label class="fw-500 lPlannedStartTime">Planned Start Time</label>
+                            <input type="time" id="edit_agendamento_planned_start_time2" name="appt-time" min="00:00" max="23:59" class="form-control" placeholder="" value="" required disabled />
+                        </div>
+
+                          
+                      </div>
+
+                      <div class="row">
+                          <div class="col-md-6 mb-3" id="div_edit_agendamento_service_result_planned_hour2">
+                              <label class="fw-500 lHoraPlanejada">Hora Planejada</label>
+                            <input type="text" class="form-control" id="edit_agendamento_planned_hour2" placeholder="" value="" required disabled >
+                            <!-- <input type="time" id="edit_agendamento_planned_hour2" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                          </div>
+
+                          
+
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500 lTipoServico">Tipo Serviço</label>
+                              <select id="edit_agendamento_service_type2" class="form-control" disabled>
+                                  <option selected value="0" class="lSelecione">Selecione tipo serviço ...</option>
+                                  <option value="1" class="lTreinamento">Treinamento</option>
+                                  <option value="2" class="lKitBoasVindas">Kit de boas-vindas</option>
+                                  <option value="3" class="lISP">ISP</option>
+                                  <option value="4" class="lMerchandising">Merchandising</option>
+                                  <option value="5" class="lArmy">Army</option>
+                                </select>
+                          </div>
+                      </div>
+
+                     
+                      <div class="row" id="div_edit_agendamento_service_result_location2" style="display:none">
+                        <div class="col-md-6 mb-3">
+                          <label class="fw-500 lLocation">Location </label>      
+                          <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_location_activity_training2" disabled>
+                        </div>
+                      </div>
+
+
+                      <div class="row" id="div_edit_agendamento_service_result_trainning_type2" style="display:none">
+                        <div class="col-md-12 mb-3">
+                          <label class="fw-500 lTrainningType">Trainning Type</label>
+                            <select id="edit_agendamento_trainning_type2" class="form-control" disabled>
+                              <option selected value="0" class="lSelecione">Selecione</option>
+                              <option value="1" class="lGeneralNutrition">General Nutrition</option>
+                              <option value="2" class="lRefreshment">Refreshment</option>
+                              <option value="3" class="lNewlineStore">New line in the store</option>
+                            </select>
+                        </div>
+                      </div>
+                      
+                      <div class="row" id="div_edit_agendamento_service_result_food2" style="display:none">
+                          <div class="col-md-12 mb-3">
+                            <label class="fw-500 lTypeFood">Type Food</label>
+                              <select id="edit_agendamento_food2" class="form-control" disabled>
+                                <option selected value="0" class="lSelecione">Selecione</option>
+                                <option value="1" class="lDry">Seca</option>
+                                <option value="2" class="lWet">Molhada</option>
+                                <option value="3" class="lDryWet">Dry + Wet</option>
+                              </select>
+                          </div>
+                        </div>
+
+                        <div class="row" id="div_edit_agendamento_service_result_promoting2" style="display:none">
+                            <div class="col-md-12 mb-3">
+                              <label class="fw-500 lPromoting">Promoting</label>
+                                <select id="edit_agendamento_Promoting2" class="form-control" disabled>
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lPromotingNewLine">Promoting new line</option>
+                                  <option value="2" class="lPromotingExistingLine">Promoting existing line</option>
+                                </select>
+                            </div>
+                          </div>
+
+
+                        
+                    <div class="row" id="div_edit_agendamento_service_result_push2" style="display:none">
+                      <div class="col-md-12 mb-6">
+                        <label class="fw-500 lPushNewLine">Push New Line Comments </label>
+                        <textarea id='add_agendamento_push_new_line2' class="form-control bdc-grey-200" disabled> </textarea>
+                      </div>
+                    </div>
+
+                    <div class="row" id="div_edit_agendamento_service_result_line2" style="display:none">
+                      <div class="col-md-12 mb-6">
+                        <label class="fw-500 lLineSlowComments">Line Slow Comments </label>
+                        <textarea id='edit_agendamento_line_slow_comments2' class="form-control bdc-grey-200" disabled > </textarea>
+                      </div>
+                    </div>
+
+                    <div class="row" id="div_edit_agendamento_service_many_meters2" style="display:none">
+                        <div class="col-md-12 mb-6">
+                          <label class="fw-500 lHowManyMetersOfFarminaShelves">How many meters of Farmina shelves </label>
+                          <input type="number" id="edit_agendamento_how_meter2" class="form-control bdc-grey-200 NumberPositivo" min="1" max="10000" disabled>
+                        </div>
+                      </div>
+
+                    
+
+                      <div class="row" id="div_edit_agendamento_service_result2" style="display:none">
+                        <div class="col-md-12 mb-3">
+                            <label class="fw-500" id="lbl_edit_agendamento_service_result2"> </label>
+                            <select id="edit_agendamento_service_result2" class="form-control" disabled>
+                                <option selected value="0" class="lSelecione">Selecione ...</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row" id="div_edit_agendamento_service_result_open_bags2" style="display:none">
+                      <div class="col-md-12 mb-3">
+                        <label class="fw-500 lThisStoreIsSellingOpenBags">This store is selling open bags?</label>
+                          <select id="edit_agendamento_open_bags2" class="form-control" disabled>
+                            <option selected value="0" class="lSelecione">Selecione</option>
+                            <option value="1" class="lYes">Yes</option>
+                            <option value="2" class="lNo">No</option>
+                          </select>
+                      </div>
+                    </div>
+                    
+
+                    <div class="row" id="div_edit_agendamento_service_result_tranning_comments2" style="display:none">
+                        <div class="col-md-12 mb-6">
+                          <label class="fw-500 lTrainningComments">Trainning Comments</label>
+                          <textarea id='edit_agendamento_trainning_comments2' maxlength="100" class="form-control bdc-grey-200" disabled> </textarea>
+                        </div>
+                      </div>
+                      
+                     
+
+                      <div class="row" id="div_edit_agendamento_service_result_army_specific_store2" style="display:none">
+                        <div class="col-md-12 mb-3">
+                          <label class="fw-500 lForSpecificStore"> For a specific store</label>
+                            <select id="edit_agendamento_army_specific_store2" class="form-control" disabled>
+                              <option selected value="0" class="lSelecione">Selecione</option>
+                              <option value="1" class="lYes">Yes</option>
+                              <option value="2" class="lNo">No</option>
+                            </select>
+                        </div>
+                      </div>
+
+
+                      
+                      <div class="row" id="div_edit_agendamento_service_result_army_which_park2" style="display:none">
+                        <div class="col-md-12 mb-6">
+                          <label class="fw-500 lInWhicPark">In which park?</label>
+                          <textarea id='edit_agendamento_army_which_park2' maxlength="100" class="form-control bdc-grey-200" disabled> </textarea>
+                        </div>
+                      </div>
+
+
+
+
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed lPromotor3" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Promotor 3
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+
+
+
+                  <div class="card-body">
+
+                      <div class="row">
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500 lProfissional3">Profissional 3</label>
+                              <select id="edit_agendamento_busca_professional3" class="form-control" disabled>
+                                  <option selected value="0" class="lSelecione">Selecione o Profissional 3...</option>
+                                </select>
+                          </div>
+
+                          <div class="col-md-3 mb-3">
+                              <label class="fw-500 lDataPlanejada">Data Planejada</label>
+                            <!-- <input type="text" class="form-control" id="edit_agendamento_planned_date3" placeholder="" value="" required > -->
+                            <div class="timepicker-input input-icon form-group">
+                                <div class="input-group">
+                                  <div class="input-group-addon bgc-white bd bdwR-0">
+                                    <i class="ti-calendar"></i>
+                                  </div>
+                                  <input type="text" id="edit_agendamento_planned_date3" class="form-control bdc-grey-200 start-date3" placeholder="" data-provide="datepicker"  data-date-format='dd/mm/yyyy' disabled>
+                                </div>
+                              </div>
+                          </div>
+
+                          <div class="col-md-3 mb-3">
+                            <label class="fw-500 lPlannedStartTime">Planned Start Time</label>
+                            <input type="time" id="edit_agendamento_planned_start_time3" name="appt-time" min="00:00" max="23:59" class="form-control" placeholder="" value="" required disabled />
+                        </div>
+
+                          
+                      </div>
+
+                      <div class="row">
+                          <div class="col-md-6 mb-3" id="div_edit_agendamento_service_result_planned_hour3">
+                              <label class="fw-500 lHoraPlanejada">Hora Planejada</label>
+                            <input type="text" class="form-control" id="edit_agendamento_planned_hour3" placeholder="" value="" required disabled>
+                            <!-- <input type="time" id="edit_agendamento_planned_hour3" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                          </div>
+
+                          
+
+                          <div class="col-md-6 mb-3">
+                              <label class="fw-500 lTipoServico">Tipo Serviço</label>
+                              <select id="edit_agendamento_service_type3" class="form-control" disabled>
+                                <option selected value="0" class="lSelecione">Selecione tipo serviço ...</option>
+                                <option value="1" class="lTreinamento">Treinamento</option>
+                                <option value="2" class="lKitBoasVindas">Kit de boas-vindas</option>
+                                <option value="3" class="lISP">ISP</option>
+                                <option value="4" class="lMerchandising">Merchandising</option>
+                                <option value="5" class="lArmy">Army</option>
+                          </div>
+                      </div>
+
+                      <div class="row" id="div_edit_agendamento_service_result_location3" style="display:none">
+                        <div class="col-md-6 mb-3">
+                          <label class="fw-500 lLocation">Location </label>      
+                          <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_location_activity_training3" disabled>
+                        </div>
+                      </div>
+
+                      
+                      <div class="row" id="div_edit_agendamento_service_result_trainning_type3" style="display:none">
+                        <div class="col-md-12 mb-3">
+                          <label class="fw-500 lTrainningType">Trainning Type</label>
+                            <select id="edit_agendamento_trainning_type3" class="form-control" disabled>
+                              <option selected value="0" class="lSelecione">Selecione</option>
+                              <option value="1" class="lGeneralNutrition">General Nutrition</option>
+                              <option value="2" class="lRefreshment">Refreshment</option>
+                              <option value="3" class="lNewlineStore">New line in the store</option>
+                            </select>
+                        </div>
+                      </div>
+
+                      
+
+                      <div class="row" id="div_edit_agendamento_service_result_food3" style="display:none">
+                          <div class="col-md-12 mb-3">
+                            <label class="fw-500 lTypeFood">Type Food</label>
+                              <select id="edit_agendamento_food3" class="form-control" disabled>
+                                <option selected value="0" class="lSelecione">Selecione</option>
+                                <option value="1" class="lDry">Seca</option>
+                                <option value="2" class="lWet">Molhada</option>
+                                <option value="3" class="lDryWet">Dry + Wet</option>
+                              </select>
+                          </div>
+                        </div>
+
+                        <div class="row" id="div_edit_agendamento_service_result_promoting3" style="display:none">
+                            <div class="col-md-12 mb-3">
+                              <label class="fw-500 lPromoting">Promoting</label>
+                                <select id="edit_agendamento_Promoting3" class="form-control" disabled>
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lPromotingNewLine">Promoting new line</option>
+                                  <option value="2" class="lPromotingExistingLine">Promoting existing line</option>
+                                </select>
+                            </div>
+                          </div>
+
+
+                        
+                    <div class="row" id="div_edit_agendamento_service_result_push3" style="display:none">
+                      <div class="col-md-12 mb-6">
+                        <label class="fw-500 lPushNewLine">Push New Line Comments </label>
+                        <textarea id='add_agendamento_push_new_line3' class="form-control bdc-grey-200" disabled> </textarea>
+                      </div>
+                    </div>
+
+                    <div class="row" id="div_edit_agendamento_service_result_line2" style="display:none">
+                      <div class="col-md-12 mb-6">
+                        <label class="fw-500 lLineSlowComments">Line Slow Comments </label>
+                        <textarea id='edit_agendamento_line_slow_comments2' class="form-control bdc-grey-200" disabled > </textarea>
+                      </div>
+                    </div>
+
+                    <div class="row" id="div_edit_agendamento_service_many_meters3" style="display:none">
+                        <div class="col-md-12 mb-6">
+                          <label class="fw-500 lHowManyMetersOfFarminaShelves">How many meters of Farmina shelves </label>
+                          <input type="number" id="edit_agendamento_how_meter3" class="form-control bdc-grey-200 NumberPositivo" min="1" max="10000" disabled>
+                        </div>
+                      </div>
+
+                    
+
+                      <div class="row" id="div_edit_agendamento_service_result3" style="display:none">
+                        <div class="col-md-12 mb-3">
+                            <label class="fw-500" id="lbl_edit_agendamento_service_result3"> </label>
+                            <select id="edit_agendamento_service_result3" class="form-control" disabled>
+                                <option selected value="0" class="lSelecione">Selecione ...</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row" id="div_edit_agendamento_service_result_open_bags3" style="display:none">
+                      <div class="col-md-12 mb-3">
+                        <label class="fw-500 lThisStoreIsSellingOpenBags">This store is selling open bags?</label>
+                          <select id="edit_agendamento_open_bags3" class="form-control" disabled>
+                            <option selected value="0" class="lSelecione">Selecione</option>
+                            <option value="1" class="lYes">Yes</option>
+                            <option value="2" class="lNo">No</option>
+                          </select>
+                      </div>
+                    </div>
+                    
+
+                    <div class="row" id="div_edit_agendamento_service_result_tranning_comments3" style="display:none">
+                        <div class="col-md-12 mb-6">
+                          <label class="fw-500 lTrainningComments">Trainning Comments</label>
+                          <textarea id='edit_agendamento_trainning_comments3' maxlength="100" class="form-control bdc-grey-200" disabled> </textarea>
+                        </div>
+                      </div>
+                      
+                     
+
+                      <div class="row" id="div_edit_agendamento_service_result_army_specific_store3" style="display:none">
+                        <div class="col-md-12 mb-3">
+                          <label class="fw-500 lForSpecificStore"> For a specific store</label>
+                            <select id="edit_agendamento_army_specific_store3" class="form-control" disabled>
+                              <option selected value="0" class="lSelecione">Selecione</option>
+                              <option value="1" class="lYes">Yes</option>
+                              <option value="2" class="lNo">No</option>
+                            </select>
+                        </div>
+                      </div>
+
+
+                      
+                      <div class="row" id="div_edit_agendamento_service_result_army_which_park3" style="display:none">
+                        <div class="col-md-12 mb-6">
+                          <label class="fw-500 lInWhicPark">In which park?</label>
+                          <textarea id='edit_agendamento_army_which_park3' maxlength="100" class="form-control bdc-grey-200" disabled> </textarea>
+                        </div>
+                      </div>
+
+
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+              <div class="card">
+                  <div class="card-header" id="headingFor">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed lPromotor4" data-toggle="collapse" data-target="#collapseFor" aria-expanded="false" aria-controls="collapseThree">
+                        Promotor 4
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseFor" class="collapse" aria-labelledby="headingFor" data-parent="#accordion">
+
+
+
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-500 lProfissional4">Profissional 4</label>
+                                <select id="edit_agendamento_busca_professional4" class="form-control" disabled>
+                                    <option selected value="0">Selecione o Profissional 4...</option>
+                                  </select>
+                            </div>
+
+                            <div class="col-md-3 mb-3">
+                                <label class="fw-500 lDataPlanejada">Data Planejada</label>
+                              <!-- <input type="text" class="form-control" id="edit_agendamento_planned_date4" placeholder="" value="" required > -->
+                              <div class="timepicker-input input-icon form-group">
+                                  <div class="input-group">
+                                    <div class="input-group-addon bgc-white bd bdwR-0">
+                                      <i class="ti-calendar"></i>
+                                    </div>
+                                    <input type="text" id="edit_agendamento_planned_date4" class="form-control bdc-grey-200 start-date4" placeholder="" data-provide="datepicker"  data-date-format='dd/mm/yyyy' disabled>
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 mb-3">
+                              <label class="fw-500 lPlannedStartTime">Planned Start Time</label>
+                              <input type="time" id="edit_agendamento_planned_start_time4" name="appt-time" min="00:00" max="23:59" class="form-control" placeholder="" value="" required disabled />
+                          </div>
+
+                            
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3" id="div_edit_agendamento_service_result_planned_hour4">
+                                <label class="fw-500 lDataPlanejada">Hora Planejada</label>
+                              <input type="text" class="form-control" id="edit_agendamento_planned_hour4" placeholder="" value="" required disabled>
+                              <!-- <input type="time" id="edit_agendamento_planned_hour4" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                            </div>
+
+                            
+
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-500 lTipoServico">Tipo Serviço</label>
+                                <select id="edit_agendamento_service_type4" class="form-control" disabled>
+                                    <option selected value="0" class="lSelecione">Selecione tipo serviço ...</option>
+                                    <option value="1" class="lTreinamento">Treinamento</option>
+                                    <option value="2" class="lKitBoasVindas">Kit de boas-vindas</option>
+                                    <option value="3" class="lISP">ISP</option>
+                                    <option value="4" class="lMerchandising">Merchandising</option>
+                                    <option value="5" class="lArmy">Army</option>
+                                  </select>
+                            </div>
+                        </div>
+
+                        <div class="row" id="div_edit_agendamento_service_result_location4" style="display:none">
+                          <div class="col-md-6 mb-3">
+                            <label class="fw-500 lLocation">Location </label>      
+                            <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_location_activity_training4" disabled>
+                          </div>
+                        </div>
+
+                        
+                      <div class="row" id="div_edit_agendamento_service_result_trainning_type4" style="display:none">
+                        <div class="col-md-12 mb-3">
+                          <label class="fw-500 lTrainningType">Trainning Type</label>
+                            <select id="edit_agendamento_trainning_type4" class="form-control" disabled>
+                              <option selected value="0" class="lSelecione">Selecione</option>
+                              <option value="1" class="lGeneralNutrition">General Nutrition</option>
+                              <option value="2" class="lRefreshment">Refreshment</option>
+                              <option value="3" class="lNewlineStore">New line in the store</option>
+                            </select>
+                        </div>
+                      </div>
+
+                      
+
+                      <div class="row" id="div_edit_agendamento_service_result_food4" style="display:none">
+                          <div class="col-md-12 mb-3">
+                            <label class="fw-500 lTypeFood">Type Food</label>
+                              <select id="edit_agendamento_food4" class="form-control" disabled>
+                                <option selected value="0" class="lSelecione">Selecione</option>
+                                <option value="1" class="lDry">Seca</option>
+                                <option value="2" class="lWet">Molhada</option>
+                                <option value="3" class="lDryWet">Dry + Wet</option>
+                              </select>
+                          </div>
+                        </div>
+
+                        <div class="row" id="div_edit_agendamento_service_result_promoting4" style="display:none">
+                            <div class="col-md-12 mb-3">
+                              <label class="fw-500 lPromoting">Promoting</label>
+                                <select id="edit_agendamento_Promoting4" class="form-control" disabled>
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lPromotingNewLine">Promoting new line</option>
+                                  <option value="2" class="lPromotingExistingLine">Promoting existing line</option>
+                                </select>
+                            </div>
+                          </div>
+
+
+                        
+                    <div class="row" id="div_edit_agendamento_service_result_push4" style="display:none">
+                      <div class="col-md-12 mb-6">
+                        <label class="fw-500 lPushNewLine">Push New Line Comments </label>
+                        <textarea id='add_agendamento_push_new_line4' class="form-control bdc-grey-200" disabled> </textarea>
+                      </div>
+                    </div>
+
+                    <div class="row" id="div_edit_agendamento_service_result_line4" style="display:none">
+                      <div class="col-md-12 mb-6">
+                        <label class="fw-500 lLineSlowComments">Line Slow Comments </label>
+                        <textarea id='edit_agendamento_line_slow_comments4' class="form-control bdc-grey-200" disabled > </textarea>
+                      </div>
+                    </div>
+
+                    <div class="row" id="div_edit_agendamento_service_many_meters4" style="display:none">
+                        <div class="col-md-12 mb-6">
+                          <label class="fw-500 lHowManyMetersOfFarminaShelves">How many meters of Farmina shelves </label>
+                          <input type="number" id="edit_agendamento_how_meter4" class="form-control bdc-grey-200 NumberPositivo" min="1" max="10000" disabled>
+                        </div>
+                      </div>
+
+                    
+
+                      <div class="row" id="div_edit_agendamento_service_result4" style="display:none">
+                        <div class="col-md-12 mb-3">
+                            <label class="fw-500" id="lbl_edit_agendamento_service_result4"> </label>
+                            <select id="edit_agendamento_service_result4" class="form-control" disabled>
+                                <option selected value="0" class="lSelecione">Selecione ...</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row" id="div_edit_agendamento_service_result_open_bags4" style="display:none">
+                      <div class="col-md-12 mb-3">
+                        <label class="fw-500 lThisStoreIsSellingOpenBags">This store is selling open bags?</label>
+                          <select id="edit_agendamento_open_bags4" class="form-control" disabled>
+                            <option selected value="0" class="lSelecione">Selecione</option>
+                            <option value="1" class="lYes">Yes</option>
+                            <option value="2" class="lNo">No</option>
+                          </select>
+                      </div>
+                    </div>
+                    
+
+                    <div class="row" id="div_edit_agendamento_service_result_tranning_comments4" style="display:none">
+                        <div class="col-md-12 mb-6">
+                          <label class="fw-500 lTrainningComments">Trainning Comments</label>
+                          <textarea id='edit_agendamento_trainning_comments4' maxlength="100" class="form-control bdc-grey-200" disabled> </textarea>
+                        </div>
+                      </div>
+                      
+                     
+
+                      <div class="row" id="div_edit_agendamento_service_result_army_specific_store4" style="display:none">
+                        <div class="col-md-12 mb-3">
+                          <label class="fw-500 lForSpecificStore"> For a specific store</label>
+                            <select id="edit_agendamento_army_specific_store4" class="form-control" disabled>
+                              <option selected value="0" class="lSelecione">Selecione</option>
+                              <option value="1" class="lYes">Yes</option>
+                              <option value="2" class="lNo">No</option>
+                            </select>
+                        </div>
+                      </div>
+
+
+                      
+                      <div class="row" id="div_edit_agendamento_service_result_army_which_park4" style="display:none">
+                        <div class="col-md-12 mb-6">
+                          <label class="fw-500 lInWhicPark">In which park?</label>
+                          <textarea id='edit_agendamento_army_which_park4' maxlength="100" class="form-control bdc-grey-200" disabled> </textarea>
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="card">
+                    <div class="card-header" id="headingFive">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed lPromotor5" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
+                          Promotor 5
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+
+
+
+                      <div class="card-body">
+
+                          <div class="row">
+                              <div class="col-md-6 mb-3">
+                                  <label class="fw-500 lProfissional5">Profissional 5</label>
+                                  <select id="edit_agendamento_busca_professional5" class="form-control" disabled>
+                                      <option selected value="0" class="lSelecione">Selecione o Profissional 5...</option>
+                                    </select>
+                              </div>
+                              
+                              <div class="col-md-3 mb-3">
+                                  <label class="fw-500 lDataPlanejada">Data Planejada</label>
+                                <!-- <input type="text" class="form-control" id="edit_agendamento_planned_date5" placeholder="" value="" required > -->
+                                <div class="timepicker-input input-icon form-group">
+                                    <div class="input-group">
+                                      <div class="input-group-addon bgc-white bd bdwR-0">
+                                        <i class="ti-calendar"></i>
+                                      </div>
+                                      <input type="text" id="edit_agendamento_planned_date5" class="form-control bdc-grey-200 start-date5" placeholder="" data-provide="datepicker"  data-date-format='dd/mm/yyyy' disabled>
+                                    </div>
+                                  </div>
+                              </div>
+
+                              <div class="col-md-3 mb-3">
+                                <label class="fw-500 lPlannedStartTime">Planned Start Time</label>
+                                <input type="time" id="edit_agendamento_planned_start_time5" name="appt-time" min="00:00" max="23:59" class="form-control" placeholder="" value="" required disabled />
+                            </div>
+                              
+                          </div>
+
+                          <div class="row">
+                              <div class="col-md-6 mb-3" id="div_edit_agendamento_service_result_planned_hour5">
+                                  <label class="fw-500 lHoraPlanejada">Hora Planejada</label>
+                                <input type="text" class="form-control" id="edit_agendamento_planned_hour5" placeholder="" value="" required disabled>
+                                <!-- <input type="time" id="edit_agendamento_planned_hour5" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
+                              </div>
+
+                              <div class="col-md-6 mb-3">
+                                  <label class="fw-500 lTipoServico">Tipo Serviço</label>
+                                  <select id="edit_agendamento_service_type5" class="form-control" disabled>
+                                    <option selected value="0" class="lSelecione">Selecione tipo serviço ...</option>
+                                    <option value="1" class="lTreinamento">Treinamento</option>
+                                    <option value="2" class="lKitBoasVindas">Kit de boas-vindas</option>
+                                    <option value="3" class="lISP">ISP</option>
+                                    <option value="4" class="lMerchandising">Merchandising</option>
+                                    <option value="5" class="lArmy">Army</option>
+                                  </select>
+                              </div>
+                          </div>
+
+
+                          <div class="row" id="div_edit_agendamento_service_result_location5" style="display:none">
+                            <div class="col-md-6 mb-3">
+                              <label class="fw-500 lLocation">Location </label>      
+                              <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_location_activity_training5" disabled>
+                            </div>
+                          </div>
+  
+
+                          
+                      <div class="row" id="div_edit_agendamento_service_result_trainning_type5" style="display:none">
+                        <div class="col-md-12 mb-3">
+                          <label class="fw-500 lTrainningType">Trainning Type</label>
+                            <select id="edit_agendamento_trainning_type5" class="form-control" disabled>
+                              <option selected value="0" class="lSelecione">Selecione</option>
+                              <option value="1" class="lGeneralNutrition">General Nutrition</option>
+                              <option value="2" class="lRefreshment">Refreshment</option>
+                              <option value="3" class="lNewlineStore">New line in the store</option>
+                            </select>
+                        </div>
+                      </div>
+
+                      
+                      <div class="row" id="div_edit_agendamento_service_result_food5" style="display:none">
+                          <div class="col-md-12 mb-3">
+                            <label class="fw-500 lTypeFood">Type Food</label>
+                              <select id="edit_agendamento_food5" class="form-control" disabled>
+                                <option selected value="0" class="lSelecione">Selecione</option>
+                                <option value="1" class="lDry">Seca</option>
+                                <option value="2" class="lWet">Molhada</option>
+                                <option value="3" class="lDryWet">Dry + Wet</option>
+                              </select>
+                          </div>
+                        </div>
+
+                        <div class="row" id="div_edit_agendamento_service_result_promoting5" style="display:none">
+                            <div class="col-md-12 mb-3">
+                              <label class="fw-500 lPromoting">Promoting</label>
+                                <select id="edit_agendamento_Promoting5" class="form-control" disabled>
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lPromotingNewLine">Promoting new line</option>
+                                  <option value="2" class="lPromotingExistingLine">Promoting existing line</option>
+                                </select>
+                            </div>
+                          </div>
+
+
+                        
+                    <div class="row" id="div_edit_agendamento_service_result_push5" style="display:none">
+                      <div class="col-md-12 mb-6">
+                        <label class="fw-500 lPushNewLine">Push New Line Comments </label>
+                        <textarea id='add_agendamento_push_new_line5' class="form-control bdc-grey-200" disabled> </textarea>
+                      </div>
+                    </div>
+
+                    <div class="row" id="div_edit_agendamento_service_result_line5" style="display:none">
+                      <div class="col-md-12 mb-6">
+                        <label class="fw-500 lLineSlowComments">Line Slow Comments </label>
+                        <textarea id='edit_agendamento_line_slow_comments5' class="form-control bdc-grey-200" disabled > </textarea>
+                      </div>
+                    </div>
+
+                    <div class="row" id="div_edit_agendamento_service_many_meters5" style="display:none">
+                        <div class="col-md-12 mb-6">
+                          <label class="fw-500 lHowManyMetersOfFarminaShelves">How many meters of Farmina shelves </label>
+                          <input type="number" id="edit_agendamento_how_meter5" class="form-control bdc-grey-200 NumberPositivo" min="1" max="10000" disabled>
+                        </div>
+                      </div>
+
+                    
+
+                      <div class="row" id="div_edit_agendamento_service_result5" style="display:none">
+                        <div class="col-md-12 mb-3">
+                            <label class="fw-500" id="lbl_edit_agendamento_service_result5"> </label>
+                            <select id="edit_agendamento_service_result5" class="form-control" disabled>
+                                <option selected value="0" class="lSelecione">Selecione ...</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row" id="div_edit_agendamento_service_result_open_bags5" style="display:none">
+                      <div class="col-md-12 mb-3">
+                        <label class="fw-500 lThisStoreIsSellingOpenBags">This store is selling open bags?</label>
+                          <select id="edit_agendamento_open_bags5" class="form-control" disabled>
+                            <option selected value="0" class="lSelecione">Selecione</option>
+                            <option value="1" class="lYes">Yes</option>
+                            <option value="2" class="lNo">No</option>
+                          </select>
+                      </div>
+                    </div>
+                    
+
+                    <div class="row" id="div_edit_agendamento_service_result_tranning_comments5" style="display:none">
+                        <div class="col-md-12 mb-6">
+                          <label class="fw-500 lTrainningComments">Trainning Comments</label>
+                          <textarea id='edit_agendamento_trainning_comments5' maxlength="100" class="form-control bdc-grey-200" disabled> </textarea>
+                        </div>
+                      </div>
+                      
+                     
+
+                      <div class="row" id="div_edit_agendamento_service_result_army_specific_store5" style="display:none">
+                        <div class="col-md-12 mb-3">
+                          <label class="fw-500 lForSpecificStore"> For a specific store</label>
+                            <select id="edit_agendamento_army_specific_store5" class="form-control" disabled>
+                              <option selected value="0" class="lSelecione">Selecione</option>
+                              <option value="1" class="lYes">Yes</option>
+                              <option value="2" class="lNo">No</option>
+                            </select>
+                        </div>
+                      </div>
+
+
+                      
+                      <div class="row" id="div_edit_agendamento_service_result_army_which_park5" style="display:none">
+                        <div class="col-md-12 mb-6">
+                          <label class="fw-500 lInWhicPark">In which park?</label>
+                          <textarea id='edit_agendamento_army_which_park5' maxlength="100" class="form-control bdc-grey-200" disabled> </textarea>
+                        </div>
+                      </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <div class="text-right ">
+              <button class="btn btn-danger cur-p" data-dismiss="modal" id="btn_starting_booking_cancel">Cancel </button>
+              <button class="btn btn-primary cur-p lEdit" id="btn_edit_ordem_agendamento">Edit </button>
+              <button class="btn btn-success cur-p lSave" id="btn_save_ordem_agendamento" disabled>Save </button>
+            </div>
+          <!-- </form> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="modal fade" id="cliente-agendamento" data-backdrop="static">
+    <div class="modal-dialog modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="m-0 lConsultaClienteNav">Consultar cliente</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+
+        <div class="modal-body">
+          
+              
+            <table id="dataTableClienteAgendamento" class="table table-striped table-bordered" cellspacing="0" width="100%">
+              <input type="text" value="" id="action_cliente_agendamento" disabled style="display:none;">
+                <thead>
+                  <tr>
+                    <th class="lNCliente">Nº Cliente</th>
+                    <th class="lNomeCliente">Nome Cliente</th>
+                    <th class="lPhone">Telefone</th>
+                    <th class="lContato">Contato</th>
+                    <th class="lAddress">Address</th>
+                    <th class="lCidade">Cidade</th>
+                    <th class="lCep">Cep</th>
+                    <th class="lAddress2">Endereço 2</th>
+                    <th class="lSalespersonCode">Cód Vendedor</th>                      
+                  </tr>
+                </thead>
+
+                <tbody>
+
+                </tbody>
+              </table>
+
+
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="modal fade" id="cliente-agendamento-Nav" data-backdrop="static">
+    <div class="modal-dialog modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="m-0 lConsultaCliente">Customer Search</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+
+        <div class="modal-body">
+          
+              
+            <table id="dataTableClienteAgendamentoNav" class="table table-striped table-bordered" cellspacing="0" width="100%">
+              <input type="text" value="" id="action_cliente_agendamento_nav" disabled style="display:none;">
+                <thead>
+                  <tr>
+                    <th class="lNCliente">Nº Cliente</th>
+                    <th class="lNomeCliente">Nome Cliente</th>
+                    <th class="lPhone">Telefone</th>
+                    <th class="lContato">Contato</th>
+                    <th class="lAddress">Address</th>
+                    <th class="lCidade">Cidade</th>
+                    <th class="lCep">Cep</th>
+                    <!-- <th class="lAddress2">Endereço 2</th> -->
+                    <th class="lSalespersonCode">Cód Vendedor</th>                      
+                  </tr>
+                </thead>
+
+                <tbody>
+
+                </tbody>
+              </table>
+
+
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </body>
 </html>
 
