@@ -2284,11 +2284,12 @@ function formValidacaoOrdem(promoter,action){
 
 function loadClienteNavX() {  
   
-  $.ajax({ timeout:10000,url: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country, success: function(result){
+  $.ajax({ timeout:15000,url: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country, success: function(result){
   var jsonString = result.data //for testing  
   var tableClienteAgendamentoNav = $("#dataTableClienteAgendamentoNav")
   tableClienteAgendamentoNav.DataTable ({
         "data" : jsonString,
+        timeout: 60000,
         rowReorder: {
           selector: 'td:nth-child(2)'
       },
