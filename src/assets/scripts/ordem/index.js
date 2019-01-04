@@ -2308,7 +2308,7 @@ function loadClienteNavX() {
         
       });
 
-      $('#dataTableClienteAgendamentoNav').DataTable().draw();
+      //$('#dataTableClienteAgendamentoNav').DataTable().draw();
     }        
      
   });
