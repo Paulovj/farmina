@@ -131,6 +131,7 @@ $("#btn_login").click(function(){
 
     if (sessionStorage.length > 0) {
       $('.lbl_login').text(sessionStorage.Name)
+      $('#menu_index').hide();
       //$('.lbl_login').text(sessionStorage.Type)
       console.log('Nome login:' + sessionStorage.Name)
       if (sessionStorage.Type ==2 || sessionStorage.Type ==3){
