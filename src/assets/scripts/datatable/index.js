@@ -383,6 +383,7 @@ function formatHora(date) {
             //if (length1 == 1){
               $.ajax({url: urlX+"resourses/getResourseQuery?Pais="+paisX, success: function(obj){
                 var contX = "";
+                contX += '<option selected="selected" value="0">Select...</option>'
                   $.each(obj.result, function(index, value){
                     var val = value.No_ + ' | ' + value.Name;
                     var optName     = 'optName = "'+value.Name+'"';
