@@ -1964,14 +1964,13 @@ var chamaFinaliza = function(){
               $("#finished").attr("disabled",true);
             }  
             if (resultBefore.length < maxImg ){
-              $("#fileimagem").attr("disabled",false);
+              $("#fileimagemUploadBefore").attr("disabled",false);
             }else{
-              $("#fileimagem").attr("disabled",true);
+              $("#fileimagemUploadBefore").attr("disabled",true);
               $("#fileimagemUploadBefore").hide();
             }  
           }else{
-            $("#fileimagem").attr("disabled",true);
-            //$("#fileimagemUpload").hide();
+            $("#fileimagemUploadBefore").attr("disabled",true);
             $("#fileimagemUploadBefore").hide();
             
             
@@ -2011,13 +2010,13 @@ var chamaFinaliza = function(){
                   $("#finished").attr("disabled",true);
                 }  
                 if (resultAfter.length < maxImg ){
-                  $("#fileimagem").attr("disabled",false);
+                  $("#fileimagemUploadAfter").attr("disabled",false);
                 }else{
-                  $("#fileimagem").attr("disabled",true);
+                  $("#fileimagemUploadAfter").attr("disabled",true);
                   $("#fileimagemUploadAfter").hide();
                 }  
               }else{
-                $("#fileimagem").attr("disabled",true);
+                $("#fileimagemUploadAfter").attr("disabled",true);
                 //$("#fileimagemUpload").hide();
                 $("#fileimagemUploadAfter").hide();
 
