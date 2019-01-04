@@ -922,7 +922,7 @@ function formatHora(date) {
                 // }  
                   //btn += "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Iniciar</button>";
 
-                  btn += "<button action='viewsEdit' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-info lViewsEdit' id='btn_finish_booking_upload'>Edit Order</button>";
+                  btn += "<button action='viewsEdit' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-info lViewsEdit' id='btn_finish_booking_upload'>View Order</button>";
                   if (a['Status']==3){
                     btn += "<button action='views' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-info lViews' id='btn_finish_booking_upload'>View</button>";
                   }
