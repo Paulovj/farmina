@@ -6,6 +6,9 @@ import 'jquery-i18n-properties'
 
 export default (function () {
 
+  if(window.location.pathname == '/index.html'){
+    window.location = "ordem.html"; 
+  }
 
   $(".NumberPositivo").keydown(function(e) {
     // Allow: backspace, delete, tab, escape, enter and .
@@ -365,6 +368,7 @@ $("#btn_login").click(function(){
         
         
         $('.lConsultaClienteNav').html($.i18n.prop('lConsultaClienteNav',lang))
+        $('.lPlannedStartTime').html($.i18n.prop('lPlannedStartTime',lang))
 
 
         
