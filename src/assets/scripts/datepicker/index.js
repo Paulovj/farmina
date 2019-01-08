@@ -198,12 +198,6 @@ export default (function () {
   $('.end-date').datepicker();
   
 
-  // $('.datepicker-days td.day').tooltip();
-
-  // $('.highlighted').on("click","td", function() {
-  //   alert('teste');
-  //   //
-  // })
 
   $('.start-date1').datepicker().on('changeDate', function(ev){
     var now = moment(new Date(), "YYYY-MM-DD")
@@ -280,5 +274,319 @@ export default (function () {
     
 
   })
+
+
+
+  $('.start-date2').datepicker().on('changeDate', function(ev){
+    var now = moment(new Date(), "YYYY-MM-DD")
+    var data = moment(new Date(ev.date), "YYYY-MM-DD")
+    var dataparam = moment(new Date(ev.date)).format("Y-MM-DD")
+    var calculo = moment.duration(data.diff(now)).asDays();
+    var recurso = $('#add_agendamento_busca_professional2').val()
+    if(calculo <= -1 ){
+      $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) { 
+        if(result.result.length > 0){
+          // alert('existe algo :::')
+          $.each( result.result, function( index, value ){
+            var service_type =''
+              var EstimatedTime = $.i18n.prop('lEstimatedTime',lang)
+              if(value['Service Type'] == 1){
+                service_type =  $.i18n.prop('lTreinamento',lang)
+              }else if(value['Service Type'] == 2){
+                service_type =  $.i18n.prop('lKitBoasVindas',lang)
+              }else if(value['Service Type'] == 3){
+                service_type =  $.i18n.prop('lISP',lang)
+              }else if(value['Service Type'] == 4){
+                service_type =  $.i18n.prop('lMerchandising',lang)
+              }else if(value['Service Type'] == 5){
+                service_type =  $.i18n.prop('lArmy',lang)
+              }
+
+              var teste = value['Estimated Starting Date'].split("-");
+              var dia = teste[2].split('T')
+              var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
+            alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
+            $('.start-date2').val('');
+          })
+
+        }else{
+          //alert('nao existe algo::::')
+          $('.start-date2').val('');
+        }  
+      })  
+
+    }else if( calculo > -1){
+      $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) { 
+        if(result.result.length > 0){
+          // alert('existe algo :::')
+          $.each( result.result, function( index, value ){
+            var service_type =''
+              var EstimatedTime = $.i18n.prop('lEstimatedTime',lang)
+              if(value['Service Type'] == 1){
+                service_type =  $.i18n.prop('lTreinamento',lang)
+              }else if(value['Service Type'] == 2){
+                service_type =  $.i18n.prop('lKitBoasVindas',lang)
+              }else if(value['Service Type'] == 3){
+                service_type =  $.i18n.prop('lISP',lang)
+              }else if(value['Service Type'] == 4){
+                service_type =  $.i18n.prop('lMerchandising',lang)
+              }else if(value['Service Type'] == 5){
+                service_type =  $.i18n.prop('lArmy',lang)
+              }
+
+              var teste = value['Estimated Starting Date'].split("-");
+              var dia = teste[2].split('T')
+              var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
+            alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
+            $('.start-date2').val('');
+          })
+
+        }else{
+          //alert('nao existe algo::::')
+        }  
+      })  
+
+
+      //getRecursoAgendamentoWhere
+    }
+    
+
+  })
+
+
+
+  $('.start-date3').datepicker().on('changeDate', function(ev){
+    var now = moment(new Date(), "YYYY-MM-DD")
+    var data = moment(new Date(ev.date), "YYYY-MM-DD")
+    var dataparam = moment(new Date(ev.date)).format("Y-MM-DD")
+    var calculo = moment.duration(data.diff(now)).asDays();
+    var recurso = $('#add_agendamento_busca_professional3').val()
+    if(calculo <= -1 ){
+      $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) { 
+        if(result.result.length > 0){
+          // alert('existe algo :::')
+          $.each( result.result, function( index, value ){
+            var service_type =''
+              var EstimatedTime = $.i18n.prop('lEstimatedTime',lang)
+              if(value['Service Type'] == 1){
+                service_type =  $.i18n.prop('lTreinamento',lang)
+              }else if(value['Service Type'] == 2){
+                service_type =  $.i18n.prop('lKitBoasVindas',lang)
+              }else if(value['Service Type'] == 3){
+                service_type =  $.i18n.prop('lISP',lang)
+              }else if(value['Service Type'] == 4){
+                service_type =  $.i18n.prop('lMerchandising',lang)
+              }else if(value['Service Type'] == 5){
+                service_type =  $.i18n.prop('lArmy',lang)
+              }
+
+              var teste = value['Estimated Starting Date'].split("-");
+              var dia = teste[2].split('T')
+              var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
+            alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
+            $('.start-date3').val('');
+          })
+
+        }else{
+          //alert('nao existe algo::::')
+          $('.start-date3').val('');
+        }  
+      })  
+
+    }else if( calculo > -1){
+      $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) { 
+        if(result.result.length > 0){
+          // alert('existe algo :::')
+          $.each( result.result, function( index, value ){
+            var service_type =''
+              var EstimatedTime = $.i18n.prop('lEstimatedTime',lang)
+              if(value['Service Type'] == 1){
+                service_type =  $.i18n.prop('lTreinamento',lang)
+              }else if(value['Service Type'] == 2){
+                service_type =  $.i18n.prop('lKitBoasVindas',lang)
+              }else if(value['Service Type'] == 3){
+                service_type =  $.i18n.prop('lISP',lang)
+              }else if(value['Service Type'] == 4){
+                service_type =  $.i18n.prop('lMerchandising',lang)
+              }else if(value['Service Type'] == 5){
+                service_type =  $.i18n.prop('lArmy',lang)
+              }
+
+              var teste = value['Estimated Starting Date'].split("-");
+              var dia = teste[2].split('T')
+              var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
+            alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
+            $('.start-date3').val('');
+          })
+
+        }else{
+          //alert('nao existe algo::::')
+        }  
+      })  
+
+
+      //getRecursoAgendamentoWhere
+    }
+    
+
+  })
+
+
+  $('.start-date4').datepicker().on('changeDate', function(ev){
+    var now = moment(new Date(), "YYYY-MM-DD")
+    var data = moment(new Date(ev.date), "YYYY-MM-DD")
+    var dataparam = moment(new Date(ev.date)).format("Y-MM-DD")
+    var calculo = moment.duration(data.diff(now)).asDays();
+    var recurso = $('#add_agendamento_busca_professional4').val()
+    if(calculo <= -1 ){
+      $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) { 
+        if(result.result.length > 0){
+          // alert('existe algo :::')
+          $.each( result.result, function( index, value ){
+            var service_type =''
+              var EstimatedTime = $.i18n.prop('lEstimatedTime',lang)
+              if(value['Service Type'] == 1){
+                service_type =  $.i18n.prop('lTreinamento',lang)
+              }else if(value['Service Type'] == 2){
+                service_type =  $.i18n.prop('lKitBoasVindas',lang)
+              }else if(value['Service Type'] == 3){
+                service_type =  $.i18n.prop('lISP',lang)
+              }else if(value['Service Type'] == 4){
+                service_type =  $.i18n.prop('lMerchandising',lang)
+              }else if(value['Service Type'] == 5){
+                service_type =  $.i18n.prop('lArmy',lang)
+              }
+
+              var teste = value['Estimated Starting Date'].split("-");
+              var dia = teste[2].split('T')
+              var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
+            alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
+            $('.start-date4').val('');
+          })
+
+        }else{
+          //alert('nao existe algo::::')
+          $('.start-date4').val('');
+        }  
+      })  
+
+    }else if( calculo > -1){
+      $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) { 
+        if(result.result.length > 0){
+          // alert('existe algo :::')
+          $.each( result.result, function( index, value ){
+            var service_type =''
+              var EstimatedTime = $.i18n.prop('lEstimatedTime',lang)
+              if(value['Service Type'] == 1){
+                service_type =  $.i18n.prop('lTreinamento',lang)
+              }else if(value['Service Type'] == 2){
+                service_type =  $.i18n.prop('lKitBoasVindas',lang)
+              }else if(value['Service Type'] == 3){
+                service_type =  $.i18n.prop('lISP',lang)
+              }else if(value['Service Type'] == 4){
+                service_type =  $.i18n.prop('lMerchandising',lang)
+              }else if(value['Service Type'] == 5){
+                service_type =  $.i18n.prop('lArmy',lang)
+              }
+
+              var teste = value['Estimated Starting Date'].split("-");
+              var dia = teste[2].split('T')
+              var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
+            alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
+            $('.start-date4').val('');
+          })
+
+        }else{
+          //alert('nao existe algo::::')
+        }  
+      })  
+
+
+      //getRecursoAgendamentoWhere
+    }
+    
+
+  })
+
+  $('.start-date5').datepicker().on('changeDate', function(ev){
+    var now = moment(new Date(), "YYYY-MM-DD")
+    var data = moment(new Date(ev.date), "YYYY-MM-DD")
+    var dataparam = moment(new Date(ev.date)).format("Y-MM-DD")
+    var calculo = moment.duration(data.diff(now)).asDays();
+    var recurso = $('#add_agendamento_busca_professional5').val()
+    if(calculo <= -1 ){
+      $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) { 
+        if(result.result.length > 0){
+          // alert('existe algo :::')
+          $.each( result.result, function( index, value ){
+            var service_type =''
+              var EstimatedTime = $.i18n.prop('lEstimatedTime',lang)
+              if(value['Service Type'] == 1){
+                service_type =  $.i18n.prop('lTreinamento',lang)
+              }else if(value['Service Type'] == 2){
+                service_type =  $.i18n.prop('lKitBoasVindas',lang)
+              }else if(value['Service Type'] == 3){
+                service_type =  $.i18n.prop('lISP',lang)
+              }else if(value['Service Type'] == 4){
+                service_type =  $.i18n.prop('lMerchandising',lang)
+              }else if(value['Service Type'] == 5){
+                service_type =  $.i18n.prop('lArmy',lang)
+              }
+
+              var teste = value['Estimated Starting Date'].split("-");
+              var dia = teste[2].split('T')
+              var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
+            alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
+            $('.start-date5').val('');
+          })
+
+        }else{
+          //alert('nao existe algo::::')
+          $('.start-date5').val('');
+        }  
+      })  
+
+    }else if( calculo > -1){
+      $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) { 
+        if(result.result.length > 0){
+          // alert('existe algo :::')
+          $.each( result.result, function( index, value ){
+            var service_type =''
+              var EstimatedTime = $.i18n.prop('lEstimatedTime',lang)
+              if(value['Service Type'] == 1){
+                service_type =  $.i18n.prop('lTreinamento',lang)
+              }else if(value['Service Type'] == 2){
+                service_type =  $.i18n.prop('lKitBoasVindas',lang)
+              }else if(value['Service Type'] == 3){
+                service_type =  $.i18n.prop('lISP',lang)
+              }else if(value['Service Type'] == 4){
+                service_type =  $.i18n.prop('lMerchandising',lang)
+              }else if(value['Service Type'] == 5){
+                service_type =  $.i18n.prop('lArmy',lang)
+              }
+
+              var teste = value['Estimated Starting Date'].split("-");
+              var dia = teste[2].split('T')
+              var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
+            alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
+            $('.start-date5').val('');
+          })
+
+        }else{
+          //alert('nao existe algo::::')
+        }  
+      })  
+
+
+      //getRecursoAgendamentoWhere
+    }
+    
+
+  })
+
+
+
+
+
 
 }())
