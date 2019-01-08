@@ -2282,6 +2282,8 @@ function formValidacaoOrdem(promoter,action){
 
 
 
+
+
 function loadClienteNavX() {  
   
   $.ajax({ timeout:15000,url: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country, success: function(result){
