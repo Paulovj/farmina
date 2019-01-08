@@ -853,6 +853,7 @@ function formatHora(date) {
               
               { "data" : "Resource No_" },
               { "data" : "Customer Name" },
+              { "data" : "Name" },
               { "data" : "Service Invoice No_" },
               { "data" : "Service Type" , "render": function ( data) {
                         return ServiceType(data);                
