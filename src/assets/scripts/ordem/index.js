@@ -275,6 +275,13 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments1').val(data['Trainnig Comments 1']);
               $('#edit_agendamento_army_specific_store1').val(data['For Specific Store 1']);
               $('#edit_agendamento_army_which_park1').val(data['In Wich Park 1']);
+                  
+              
+              $('#edit_agendamento_number_workers_train1').val(data['Number Workes to Train 1']);
+              $('#edit_agendamento_projector1').val(data['Projector 1']);
+              $('#edit_agendamento_buffet1').val(data['Buffet 1']);
+
+            
               if(data['In Wich Park 1'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park1').show();
               }  
@@ -307,6 +314,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments2').val(data['Trainnig Comments 2']);
               $('#edit_agendamento_army_specific_store2').val(data['For Specific Store 2']);
               $('#edit_agendamento_army_which_park2').val(data['In Wich Park 2']);
+
+              $('#edit_agendamento_number_workers_train2').val(data['Number Workes to Train 2']);
+              $('#edit_agendamento_projector2').val(data['Projector 2']);
+              $('#edit_agendamento_buffet2').val(data['Buffet 2']);
+
               if(data['In Wich Park 2'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park2').show();
               }
@@ -339,6 +351,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments3').val(data['Trainnig Comments 3']);
               $('#edit_agendamento_army_specific_store3').val(data['For Specific Store 3']);
               $('#edit_agendamento_army_which_park3').val(data['In Wich Park 3']);
+
+              $('#edit_agendamento_number_workers_train3').val(data['Number Workes to Train 3']);
+              $('#edit_agendamento_projector3').val(data['Projector 3']);
+              $('#edit_agendamento_buffet3').val(data['Buffet 3']);
+
               if(data['In Wich Park 3'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park3').show();
               }  
@@ -371,6 +388,10 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments4').val(data['Trainnig Comments 4']);
               $('#edit_agendamento_army_specific_store4').val(data['For Specific Store 4']);
               $('#edit_agendamento_army_which_park4').val(data['In Wich Park 4']);
+
+              $('#edit_agendamento_number_workers_train4').val(data['Number Workes to Train 4']);
+              $('#edit_agendamento_projector4').val(data['Projector 4']);
+              $('#edit_agendamento_buffet4').val(data['Buffet 4']);
               if(data['In Wich Park 4'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park4').show();
               }
@@ -404,6 +425,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments5').val(data['Trainnig Comments 5']);
               $('#edit_agendamento_army_specific_store5').val(data['For Specific Store 5']);
               $('#edit_agendamento_army_which_park5').val(data['In Wich Park 5']);
+
+              $('#edit_agendamento_number_workers_train5').val(data['Number Workes to Train 5']);
+              $('#edit_agendamento_projector5').val(data['Projector 5']);
+              $('#edit_agendamento_buffet5').val(data['Buffet 5']);
+
               if(data['In Wich Park 5'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park5').show();
               }
@@ -440,6 +466,12 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments1').val(data['Trainnig Comments 1']);
               $('#edit_agendamento_army_specific_store1').val(data['For Specific Store 1']);
               $('#edit_agendamento_army_which_park1').val(data['In Wich Park 1']);
+
+              $('#edit_agendamento_number_workers_train1').val(data['Number Workes to Train 1']);
+              $('#edit_agendamento_projector1').val(data['Projector 1']);
+              $('#edit_agendamento_buffet1').val(data['Buffet 1']);
+
+
               if(data['In Wich Park 1'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park1').show();
               }
@@ -474,6 +506,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments2').val(data['Trainnig Comments 2']);
               $('#edit_agendamento_army_specific_store2').val(data['For Specific Store 2']);
               $('#edit_agendamento_army_which_park2').val(data['In Wich Park 2']);
+
+              $('#edit_agendamento_number_workers_train2').val(data['Number Workes to Train 2']);
+              $('#edit_agendamento_projector2').val(data['Projector 2']);
+              $('#edit_agendamento_buffet2').val(data['Buffet 2']);
+
               if(data['In Wich Park 2'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park2').show();
               }
@@ -502,6 +539,10 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments3').val(data['Trainnig Comments 3']);
               $('#edit_agendamento_army_specific_store3').val(data['For Specific Store 3']);
               $('#edit_agendamento_army_which_park3').val(data['In Wich Park 3']);
+
+              $('#edit_agendamento_number_workers_train3').val(data['Number Workes to Train 3']);
+              $('#edit_agendamento_projector3').val(data['Projector 3']);
+              $('#edit_agendamento_buffet3').val(data['Buffet 3']);
 
               if(data['In Wich Park 3'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park3').show();
@@ -534,6 +575,10 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments4').val(data['Trainnig Comments 4']);
               $('#edit_agendamento_army_specific_store4').val(data['For Specific Store 4']);
               $('#edit_agendamento_army_which_park4').val(data['In Wich Park 4']);
+
+              $('#edit_agendamento_number_workers_train4').val(data['Number Workes to Train 4']);
+              $('#edit_agendamento_projector4').val(data['Projector 4']);
+              $('#edit_agendamento_buffet4').val(data['Buffet 4']);
               if(data['In Wich Park 4'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park4').show();
               } 
@@ -564,6 +609,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments5').val(data['Trainnig Comments 5']);
               $('#edit_agendamento_army_specific_store5').val(data['For Specific Store 5']);
               $('#edit_agendamento_army_which_park5').val(data['In Wich Park 5']);
+
+              $('#edit_agendamento_number_workers_train5').val(data['Number Workes to Train 5']);
+              $('#edit_agendamento_projector5').val(data['Projector 5']);
+              $('#edit_agendamento_buffet5').val(data['Buffet 5']);
+
               if(data['In Wich Park 5'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park5').show();
               }
@@ -868,8 +918,13 @@ function PromoterServiceTypeX(promoter,value,action){
   $("#add_agendamento_push_new_line"+promoter).val("");
   $("#add_agendamento_line_slow_comments"+promoter).val("");  
   $("#add_agendamento_how_meter"+promoter).val("");  
+
+  $("#add_agendamento_number_workers_train"+promoter).val("");
+  $("#add_agendamento_agendamento_projector"+promoter).val("");  
+  $("#add_agendamento_agendamento_buffet"+promoter).val("");  
   $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
   $("#div_"+action+"_agendamento_service_result_location"+promoter).hide();
+  $("#div_"+action+"_agendamento_service_result_projector"+promoter).hide();
   
 
   $("#add_agendamento_trainning_type"+promoter).val("0");
@@ -912,6 +967,7 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_army_which_park"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_location"+promoter).show();
+    $("#div_"+action+"_agendamento_service_result_projector"+promoter).show();
 
     
 
@@ -1435,6 +1491,14 @@ function formValidacaoOrdem(promoter,action){
         "Food1"                    :$("#add_agendamento_food1").val(),
         "TrainningType1"           :$("#add_agendamento_trainning_type1").val(),
         "LocationActivityTraining1":$("#add_agendamento_location_activity_training1").val(),
+
+
+        "Number-Works1"            :$("#add_agendamento_number_workers_train1").val(),
+        "Projector1"               :$("#add_agendamento_projector1").val(),
+        "Buffet1"                  :$("#add_agendamento_buffet1").val(),
+
+
+
         
         "TrainningComments1"       :$("#add_agendamento_trainning_comments1").val(),
         "PushNewLine1"             :$("#add_agendamento_push_new_line1").val(),
@@ -1459,6 +1523,10 @@ function formValidacaoOrdem(promoter,action){
         "Food2"                    :$("#add_agendamento_food2").val(),
         "TrainningType2"           :$("#add_agendamento_trainning_type2").val(),
         "LocationActivityTraining2":$("#add_agendamento_location_activity_training2").val(),
+
+        "Number-Works2"             :$("#add_agendamento_number_workers_train2").val(),
+        "Projector2"                :$("#add_agendamento_projector2").val(),
+        "Buffet2"                   :$("#add_agendamento_buffet2").val(),
         
         "TrainningComments2"       :$("#add_agendamento_trainning_comments2").val(),
         "PushNewLine2"             :$("#add_agendamento_push_new_line2").val(),
@@ -1482,6 +1550,10 @@ function formValidacaoOrdem(promoter,action){
         "Food3"                    :$("#add_agendamento_food3").val(),
         "TrainningType3"           :$("#add_agendamento_trainning_type3").val(),
         "LocationActivityTraining3":$("#add_agendamento_location_activity_training3").val(),
+
+        "Number-Works3"             :$("#add_agendamento_number_workers_train3").val(),
+        "Projector3"                :$("#add_agendamento_projector3").val(),
+        "Buffet3"                   :$("#add_agendamento_buffet3").val(),
         
         "TrainningComments3"       :$("#add_agendamento_trainning_comments3").val(),
         "PushNewLine3"             :$("#add_agendamento_push_new_line3").val(),
@@ -1505,6 +1577,11 @@ function formValidacaoOrdem(promoter,action){
         "Food4"                    :$("#add_agendamento_food4").val(),
         "TrainningType4"           :$("#add_agendamento_trainning_type4").val(),
         "LocationActivityTraining4":$("#add_agendamento_location_activity_training4").val(),
+
+        "Number-Works4"             :$("#add_agendamento_number_workers_train4").val(),
+        "Projector4"                :$("#add_agendamento_projector4").val(),
+        "Buffet4"                   :$("#add_agendamento_buffet4").val(),
+
         
         "TrainningComments4"       :$("#add_agendamento_trainning_comments4").val(),
         "PushNewLine4"             :$("#add_agendamento_push_new_line4").val(),
@@ -1525,6 +1602,12 @@ function formValidacaoOrdem(promoter,action){
         "Food5"                    :$("#add_agendamento_food5").val(),
         "TrainningType5"           :$("#add_agendamento_trainning_type5").val(),
         "LocationActivityTraining5":$("#add_agendamento_location_activity_training5").val(),
+
+        "Number-Works5"            :$("#add_agendamento_number_workers_train5").val(),
+        "Projector5"               :$("#add_agendamento_projector5").val(),
+        "Buffet5"                  :$("#add_agendamento_buffet5").val(),
+
+
         "TrainningComments5"       :$("#add_agendamento_trainning_comments5").val(),
         "PushNewLine5"             :$("#add_agendamento_push_new_line5").val(),
         "LineSlowComments5"        :$("#add_agendamento_line_slow_comments5").val(),
@@ -1645,6 +1728,10 @@ function formValidacaoOrdem(promoter,action){
             "How-Meter1"                :$("#edit_agendamento_how_meter1").val(),
             "Specific-Store1"           :$("#edit_agendamento_army_specific_store1").val(),
             "Which-Park1"               :$("#edit_agendamento_army_which_park1").val(),
+            
+            "Number-Works1"               :$("#edit_agendamento_number_workers_train1").val(),
+            "Projector1"                  :$("#edit_agendamento_projector1").val(),
+            "Buffet1"                     :$("#edit_agendamento_buffet1").val(),
 
             
             "Professional2"           :$("#edit_agendamento_busca_professional2").val(),
@@ -1664,6 +1751,10 @@ function formValidacaoOrdem(promoter,action){
             "How-Meter2"                :$("#edit_agendamento_how_meter2").val(),
             "Specific-Store2"           :$("#edit_agendamento_army_specific_store2").val(),
             "Which-Park2"               :$("#edit_agendamento_army_which_park2").val(),
+
+            "Number-Works2"               :$("#edit_agendamento_number_workers_train2").val(),
+            "Projector2"                  :$("#edit_agendamento_projector2").val(),
+            "Buffet2"                     :$("#edit_agendamento_buffet2").val(),
             
             "Professional3"            :$("#edit_agendamento_busca_professional3").val(),
             "PlannedDate3"            :formatDateSql($("#edit_agendamento_planned_date3").val()),
@@ -1684,6 +1775,11 @@ function formValidacaoOrdem(promoter,action){
             "Specific-Store3"           :$("#edit_agendamento_army_specific_store3").val(),
             "Which-Park3"               :$("#edit_agendamento_army_which_park3").val(),
 
+
+            "Number-Works3"               :$("#edit_agendamento_number_workers_train3").val(),
+            "Projector3"                  :$("#edit_agendamento_projector3").val(),
+            "Buffet3"                     :$("#edit_agendamento_buffet3").val(),
+
             
             
             "Professional4"           :$("#edit_agendamento_busca_professional4").val(),
@@ -1703,6 +1799,10 @@ function formValidacaoOrdem(promoter,action){
             "How-Meter4"                :$("#edit_agendamento_how_meter4").val(),
             "Specific-Store4"           :$("#edit_agendamento_army_specific_store4").val(),
             "Which-Park4"               :$("#edit_agendamento_army_which_park4").val(),
+
+            "Number-Works4"               :$("#edit_agendamento_number_workers_train4").val(),
+            "Projector4"                  :$("#edit_agendamento_projector4").val(),
+            "Buffet4"                     :$("#edit_agendamento_buffet4").val(),
             
             "Professional5"           :$("#edit_agendamento_busca_professional5").val(),
             "PlannedDate5"            :formatDateSql($("#edit_agendamento_planned_date5").val()),
@@ -1721,6 +1821,10 @@ function formValidacaoOrdem(promoter,action){
             "How-Meter5"                :$("#edit_agendamento_how_meter5").val(),
             "Specific-Store5"           :$("#edit_agendamento_army_specific_store5").val(),
             "Which-Park5"               :$("#edit_agendamento_army_which_park5").val(),
+
+            "Number-Works5"               :$("#edit_agendamento_number_workers_train5").val(),
+            "Projector5"                  :$("#edit_agendamento_projector5").val(),
+            "Buffet5"                     :$("#edit_agendamento_buffet5").val(),
             
           }
         }
