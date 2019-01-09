@@ -849,6 +849,10 @@ function formatHora(date) {
             "data" : jsonString,
             responsive: true,
              "scrollX": true,
+             columnDefs: [
+              { type: 'date-br', targets: 5 }
+     
+            ],
             "columns" : [
               
               { "data" : "Resource No_" },
@@ -860,7 +864,7 @@ function formatHora(date) {
                 } 
               },
               // { "data" : "Estimated-Total-Time" },
-              { "data" : "Estimated Starting Date" , "render": function ( data) {
+              { "data" : "Estimated Starting Date" , type: 'date-br', "render": function ( data) {
                 return formatDate(data);
                 } 
               },
