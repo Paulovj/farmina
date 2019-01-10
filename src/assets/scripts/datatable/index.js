@@ -928,12 +928,12 @@ function formatHora(date) {
                 // }  
                   //btn += "<button action='starting' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Iniciar</button>";
 
-                  btn += " <button action='viewsEdit' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-info lViewsEdit' id='btn_finish_booking_upload'>"+$.i18n.prop('lViewOrder',lang)+"</button>";
+                  btn += " <button action='viewsEdit' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-info lViewsEdit' id='btn_finish_booking_upload' style='margin:1px;'>"+$.i18n.prop('lViewOrder',lang)+"</button>";
                   if (a['Status']==3){
-                    btn += " <button action='views' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-info lViews' id='btn_finish_booking_upload'>View</button>";
+                    btn += " <button action='views' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-info lViews' id='btn_finish_booking_upload' style='margin:1px;'>View</button>";
                   }
                   if (a['Status']==1 &&  a['Falta']<=0){
-                    btn += " <button action='save_photo' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-success lEnviarFotosFinalizar' id='btn_finish_booking_upload'>"+textoEnviarFoto+"</button>";
+                    btn += " <button action='save_photo' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-success lEnviarFotosFinalizar' id='btn_finish_booking_upload' style='margin:1px;'>"+textoEnviarFoto+"</button>";
                   }
 
                   
