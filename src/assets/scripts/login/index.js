@@ -370,8 +370,10 @@ $("#btn_login").click(function(){
         $('.lConsultaClienteNav').html($.i18n.prop('lConsultaClienteNav',lang))
         $('.lPlannedStartTime').html($.i18n.prop('lPlannedStartTime',lang))
 
+        $('.lNumberOfWorkersToTrain').html($.i18n.prop('lNumberOfWorkersToTrain',lang))
+        $('.lProjector').html($.i18n.prop('lProjector',lang))
+        $('.lBuffet').html($.i18n.prop('lBuffet',lang))
 
-        
         
 
 

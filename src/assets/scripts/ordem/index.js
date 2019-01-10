@@ -2451,6 +2451,11 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#edit_agendamento_trainning_comments1").attr("disabled",DisabledX);
   $("#edit_agendamento_army_specific_store1").attr("disabled",DisabledX);
   $("#edit_agendamento_army_which_park1").attr("disabled",DisabledX);
+  
+  
+  $("#edit_agendamento_number_workers_train1").attr("disabled",DisabledX);
+  $("#edit_agendamento_projector1").attr("disabled",DisabledX);
+  $("#edit_agendamento_buffet1").attr("disabled",DisabledX);
 
   /*Promoter 2 */
   $("#edit_agendamento_busca_professional2").attr("disabled",DisabledX);
@@ -2471,6 +2476,11 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#edit_agendamento_army_specific_store2").attr("disabled",DisabledX);
   $("#edit_agendamento_army_which_park2").attr("disabled",DisabledX);
 
+  $("#edit_agendamento_number_workers_train2").attr("disabled",DisabledX);
+  $("#edit_agendamento_projector2").attr("disabled",DisabledX);
+  $("#edit_agendamento_buffet2").attr("disabled",DisabledX);
+
+  
   /*Promoter 3 */
   $("#edit_agendamento_busca_professional3").attr("disabled",DisabledX);
   $("#edit_agendamento_planned_date3").attr("disabled",DisabledX);
@@ -2489,6 +2499,10 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#edit_agendamento_trainning_comments3").attr("disabled",DisabledX);
   $("#edit_agendamento_army_specific_store3").attr("disabled",DisabledX);
   $("#edit_agendamento_army_which_park3").attr("disabled",DisabledX);
+
+  $("#edit_agendamento_number_workers_train3").attr("disabled",DisabledX);
+  $("#edit_agendamento_projector3").attr("disabled",DisabledX);
+  $("#edit_agendamento_buffet3").attr("disabled",DisabledX);
 
 
   /*Promoter 4 */
@@ -2510,6 +2524,10 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#edit_agendamento_army_specific_store4").attr("disabled",DisabledX);
   $("#edit_agendamento_army_which_park4").attr("disabled",DisabledX);
 
+  $("#edit_agendamento_number_workers_train4").attr("disabled",DisabledX);
+  $("#edit_agendamento_projector4").attr("disabled",DisabledX);
+  $("#edit_agendamento_buffet4").attr("disabled",DisabledX);
+
 
   /*Promoter 5 */
   $("#edit_agendamento_busca_professional5").attr("disabled",DisabledX);
@@ -2529,6 +2547,10 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#edit_agendamento_trainning_comments5").attr("disabled",DisabledX);
   $("#edit_agendamento_army_specific_store5").attr("disabled",DisabledX);
   $("#edit_agendamento_army_which_park5").attr("disabled",DisabledX);
+
+  $("#edit_agendamento_number_workers_train5").attr("disabled",DisabledX);
+  $("#edit_agendamento_projector5").attr("disabled",DisabledX);
+  $("#edit_agendamento_buffet5").attr("disabled",DisabledX);
 
   if(DisabledX === false){
     $("#btn_edit_ordem_agendamento").attr("disabled",true);
