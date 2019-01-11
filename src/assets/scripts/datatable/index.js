@@ -385,8 +385,8 @@ function formatHora(date) {
                 var contX = "";
                 contX += '<option selected="selected" value="0">Select...</option>'
                   $.each(obj.result, function(index, value){
-                    // var val = value.No_ + ' | ' + value.Name;
-                    var val = value.Name;
+                    var val = value.No_ + ' | ' + value.Name;
+                    //var val = value.Name;
                     var optName     = 'optName = "'+value.Name+'"';
                     contX +='<option value='+ value.No_ +' '+ optName + ' > '+val+' </option>';
                   })
@@ -884,7 +884,7 @@ function formatHora(date) {
             ],
             "columns" : [
               
-              { "data" : "Resource No_","visible": false },
+              { "data" : "Resource No_" },
               { "data" : "Customer Name" },
               { "data" : "Name" },
               { "data" : "Service Invoice No_" },
