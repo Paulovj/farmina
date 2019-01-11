@@ -248,7 +248,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
                 var contX = "";
                 //contX += '<option selected="selected" value="0">...</option>'
                   $.each(obj.result, function(index, value){
-                    var val = value.No_ + ' | ' + value.Name;
+                    // var val = value.No_ + ' | ' + value.Name;
+                    var val = value.Name;
                     var optName     = 'optName = "'+value.Name+'"';
                     contX +='<option value='+ value.No_ +' '+ optName + ' > '+val+' </option>';
                   })
@@ -2139,7 +2140,8 @@ function formValidacaoOrdem(promoter,action){
        $.ajax({url: urlX+"resourses/getResourseQuery?Pais="+paisX, success: function(obj){
          var contX = "";
            $.each(obj.result, function(index, value){
-             var val = value.No_ + ' | ' + value.Name;
+            //  var val = value.No_ + ' | ' + value.Name;
+            var val = value.Name;
              var optName     = 'optName = "'+value.Name+'"';
              contX +='<option value='+ value.No_ +' '+ optName + ' > '+val+' </option>';
            })
