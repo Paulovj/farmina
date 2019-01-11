@@ -373,6 +373,9 @@ $("#btn_login").click(function(){
         $('.lNumberOfWorkersToTrain').html($.i18n.prop('lNumberOfWorkersToTrain',lang))
         $('.lProjector').html($.i18n.prop('lProjector',lang))
         $('.lBuffet').html($.i18n.prop('lBuffet',lang))
+        $('.lPolonia').html($.i18n.prop('lPolonia',lang))
+
+        
 
         
 
@@ -401,9 +404,9 @@ $("#btn_login").click(function(){
       }); 
 
 
-      $(".js-example-tags").select2({
-        tags: true
-      });
+      // $(".js-example-tags").select2({
+      //   tags: true
+      // });
 
 
 }());    
