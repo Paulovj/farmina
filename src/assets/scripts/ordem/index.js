@@ -13,6 +13,9 @@ export default (function () {
       lang = sessionStorage.Language
     }
 
+
+    
+
     
     var paisX = sessionStorage.Pais
     var urlX = "";

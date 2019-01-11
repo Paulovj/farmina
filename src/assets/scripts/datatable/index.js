@@ -127,7 +127,7 @@ function formatHora(date) {
         }else if(value==3){
           Service_TypeX =  'ISP';
         }else if(value==4){
-          Service_TypeX =  'div_edit_agendamento_service_result_location';
+          Service_TypeX =  'Merchandising';
         }else if(value==5){
           Service_TypeX =  'Army';
         }
