@@ -1421,7 +1421,10 @@ function formValidacaoOrdem(promoter,action){
       return false;
     }
     var professional2 = $('#add_agendamento_busca_professional2').val();
-    if (professional2 != 0){
+    var hora2         = $('#add_agendamento_planned_hour2').val()
+    var serviceType   = $('#add_agendamento_service_type2')
+    
+    if (professional2 != 0 || hora2 != "" || serviceType != 0 ){
       valida = formValidacaoOrdem(2,'add');
         if(valida == false){
           return false;
