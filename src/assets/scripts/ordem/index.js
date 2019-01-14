@@ -302,11 +302,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               //Profissional 2
               console.log('teste profissional 2 ' + Professional2)
               $('#edit_agendamento_busca_professional2 option[value='+Professional2+']').attr('selected','selected');
-              $('#edit_agendamento_planned_hour2').val(PlannedHour2);
+              ((!Professional2)? $('#edit_agendamento_planned_hour2').val(PlannedHour2) : '');
               $('#edit_agendamento_service_type2').val(ServiceType2);
-              $('#edit_agendamento_planned_date2').val(formatDate(PlannedDate2));
+              ((!Professional2)? $('#edit_agendamento_planned_date2').val(formatDate(PlannedDate2)): '');
               
-              $('#edit_agendamento_planned_start_time2').val(formatHora(PlannedStartTime2));
+              ((!Professional2)? $('#edit_agendamento_planned_start_time2').val(formatHora(PlannedStartTime2)):'');
 
               $('#edit_agendamento_trainning_type2').val(data['Trainning Type 2']);
               $('#edit_agendamento_food2').val(data['Food Type 2']);
@@ -339,11 +339,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               //Profissional 3
               console.log('teste profissional 3 ' + Professional3)
               $('#edit_agendamento_busca_professional3 option[value='+Professional3+']').attr('selected','selected');
-              $('#edit_agendamento_planned_hour3').val(PlannedHour3);
+              ((!Professional3)? $('#edit_agendamento_planned_hour3').val(PlannedHour3) : '');
               $('#edit_agendamento_service_type3').val(ServiceType3);
-              $('#edit_agendamento_planned_date3').val(formatDate(PlannedDate3));
+              ((!Professional3)? $('#edit_agendamento_planned_date3').val(formatDate(PlannedDate3)) :'');
 
-              $('#edit_agendamento_planned_start_time3').val(formatHora(PlannedStartTime3));
+              ((!Professional3)? $('#edit_agendamento_planned_start_time3').val(formatHora(PlannedStartTime3)) : '');
 
               $('#edit_agendamento_trainning_type3').val(data['Trainning Type 3']);
               $('#edit_agendamento_food3').val(data['Food Type 3']);
@@ -376,11 +376,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               //Profissional 4
               console.log('teste profissional' + Professional4)
               $('#edit_agendamento_busca_professional4 option[value='+Professional4+']').attr('selected','selected');
-              $('#edit_agendamento_planned_hour4').val(PlannedHour4);
+              ((!Professional4)? $('#edit_agendamento_planned_hour4').val(PlannedHour4) : '');
               $('#edit_agendamento_service_type4').val(ServiceType4);
-              $('#edit_agendamento_planned_date4').val(formatDate(PlannedDate4));
+              ((!Professional4)? $('#edit_agendamento_planned_date4').val(formatDate(PlannedDate4)): '');
 
-              $('#edit_agendamento_planned_start_time4').val(formatHora(PlannedStartTime4));
+              ((!Professional4)? $('#edit_agendamento_planned_start_time4').val(formatHora(PlannedStartTime4)) : '');
 
               $('#edit_agendamento_trainning_type4').val(data['Trainning Type 4']);
               $('#edit_agendamento_food4').val(data['Food Type 4']);
@@ -413,11 +413,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               //Profissional 5
               console.log('teste profissional' + Professional5)
               $('#edit_agendamento_busca_professional5 option[value='+Professional5+']').attr('selected','selected');
-              $('#edit_agendamento_planned_hour5').val(PlannedHour5);
+              ((!Professional5)? $('#edit_agendamento_planned_hour5').val(PlannedHour5) : '');
               $('#edit_agendamento_service_type5').val(ServiceType5);
-              $('#edit_agendamento_planned_date5').val(formatDate(PlannedDate5));
+              ((!Professional5)? $('#edit_agendamento_planned_date5').val(formatDate(PlannedDate5)) :'');
 
-              $('#edit_agendamento_planned_start_time5').val(formatHora(PlannedStartTime5));
+              ((!Professional5)? $('#edit_agendamento_planned_start_time5').val(formatHora(PlannedStartTime5)) : '');
 
               $('#edit_agendamento_trainning_type5').val(data['Trainning Type 5']);
               $('#edit_agendamento_food5').val(data['Food Type 5']);
@@ -1664,15 +1664,23 @@ function formValidacaoOrdem(promoter,action){
           if(valida == false){
             return false;
           }
+
+          
           var professional2 = $('#edit_agendamento_busca_professional2').val();
-          if (professional2 != 0){
+          var hora2         = $('#edit_agendamento_planned_hour2').val()
+          var serviceType2   = $('#edit_agendamento_service_type2')
+
+          if (professional2 != 0 || hora2 != "" || serviceType2 != 0 ){
             valida = formValidacaoOrdem(2,'edit');
               if(valida == false){
                 return false;
               } 
           }
           var professional3 = $('#edit_agendamento_busca_professional3').val();
-          if (professional3 != 0){
+          var hora3         = $('#edit_agendamento_planned_hour3').val()
+          var serviceType3   = $('#edit_agendamento_service_type3')
+
+          if (professional3 != 0 || hora3 != "" || serviceType3 != 0){
             valida = formValidacaoOrdem(3,'edit');
               if(valida == false){
                 return false;
@@ -1680,7 +1688,10 @@ function formValidacaoOrdem(promoter,action){
           }
 
           var professional4 = $('#edit_agendamento_busca_professional4').val();
-          if (professional4 != 0){
+          var hora4         = $('#edit_agendamento_planned_hour4').val()
+          var serviceType4   = $('#edit_agendamento_service_type4')
+
+          if (professional4 != 0 || hora4 != "" || serviceType4 != 0){
             valida = formValidacaoOrdem(4,'edit');
               if(valida == false){
                 return false;
@@ -1688,7 +1699,10 @@ function formValidacaoOrdem(promoter,action){
           }
 
           var professional5 = $('#edit_agendamento_busca_professional5').val();
-          if (professional5 != 0){
+          var hora5         = $('#edit_agendamento_planned_hour5').val()
+          var serviceType5   = $('#edit_agendamento_service_type5')
+
+          if (professional5 != 0 || hora5 != "" || serviceType5 != 0){
             valida = formValidacaoOrdem(5,'edit');
               if(valida == false){
                 return false;
