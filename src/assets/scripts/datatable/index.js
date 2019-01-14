@@ -2705,6 +2705,7 @@ function loadClienteNavX() {
   $.ajax({timeout:15000, url: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country, success: function(result){
   var jsonString = result.data //for testing  
   var tableClienteAgendamentoNav = $("#dataTableClienteAgendamentoNav")
+  alert('13265')
   tableClienteAgendamentoNav.DataTable ({
         "data" : jsonString,
         timeout: 60000,
@@ -2715,7 +2716,12 @@ function loadClienteNavX() {
         "scrollX": true,
         "columns" : [
           { "data" : "id"},
-          { "data" : "ragsoc"},
+          // { "data" : "ragsoc"},
+          { "data" : "ragsoc" , "render": function ( data) {
+            return data.replace('','');
+          
+            } 
+          },
           { "data" : "tel" },
           { "data" : "contatto" },
           { "data" : "indirizzo"},
