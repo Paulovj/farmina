@@ -884,7 +884,7 @@ function formatHora(date) {
             ],
             "columns" : [
               
-              { "data" : "Resource No_" },
+              { "data" : "Resource No_" ,"visible": false},
               { "data" : "Customer Name" },
               { "data" : "Name" },
               { "data" : "Service Invoice No_" },
