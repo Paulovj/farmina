@@ -1422,16 +1422,19 @@ function formValidacaoOrdem(promoter,action){
     }
     var professional2 = $('#add_agendamento_busca_professional2').val();
     var hora2         = $('#add_agendamento_planned_hour2').val()
-    var serviceType   = $('#add_agendamento_service_type2')
+    var serviceType2   = $('#add_agendamento_service_type2')
     
-    if (professional2 != 0 || hora2 != "" || serviceType != 0 ){
+    if (professional2 != 0 || hora2 != "" || serviceType2 != 0 ){
       valida = formValidacaoOrdem(2,'add');
         if(valida == false){
           return false;
         } 
     }
     var professional3 = $('#add_agendamento_busca_professional3').val();
-    if (professional3 != 0){
+    var hora3         = $('#add_agendamento_planned_hour3').val()
+    var serviceType3   = $('#add_agendamento_service_type3')
+    
+    if (professional3 != 0 || hora3 != "" || serviceType3 != 0 ){
       valida = formValidacaoOrdem(3,'add');
         if(valida == false){
           return false;
@@ -1439,7 +1442,10 @@ function formValidacaoOrdem(promoter,action){
     }
 
     var professional4 = $('#add_agendamento_busca_professional4').val();
-    if (professional4 != 0){
+    var hora4         = $('#add_agendamento_planned_hour4').val()
+    var serviceType4   = $('#add_agendamento_service_type4')
+    
+    if (professional4 != 0 || hora4 != "" || serviceType4 != 0 ){
       valida = formValidacaoOrdem(4,'add');
         if(valida == false){
           return false;
@@ -1447,7 +1453,10 @@ function formValidacaoOrdem(promoter,action){
     }
 
     var professional5 = $('#add_agendamento_busca_professional5').val();
-    if (professional5 != 0){
+    var hora5         = $('#add_agendamento_planned_hour5').val()
+    var serviceType5   = $('#add_agendamento_service_type5')
+    
+    if (professional5 != 0 || hora5 != "" || serviceType5 != 0 ){
       valida = formValidacaoOrdem(5,'add');
         if(valida == false){
           return false;
