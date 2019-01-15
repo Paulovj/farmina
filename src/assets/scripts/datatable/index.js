@@ -439,7 +439,7 @@ function formatHora(date) {
               //   $('#edit_agendamento_service_result1 option[value='+ServicetypeResult1+']').attr('selected','selected');
               // }  
               if(ServicetypeResult1 != ""){
-                var ServicetypeResult1X =  data['Trainning Answer Filter 1'].split(",")               
+                var ServicetypeResult1X =  ServicetypeResult1.split(",")               
                   ServicetypeResult1X.map(function(res){
                     $('#edit_agendamento_service_result1 option[value='+res+']').attr('selected','selected');
                   })  
@@ -487,7 +487,7 @@ function formatHora(date) {
               // }  
 
               if(ServicetypeResult2 != ""){
-                var ServicetypeResult2X =  data['Trainning Answer Filter 2'].split(",")               
+                var ServicetypeResult2X =  ServicetypeResult2.split(",")
                 ServicetypeResult2X.map(function(res){
                   $('#edit_agendamento_service_result2 option[value='+res+']').attr('selected','selected');
                 })  
@@ -530,7 +530,7 @@ function formatHora(date) {
 
               if(ServicetypeResult3 != ""){
 
-                var ServicetypeResult3X =  data['Trainning Answer Filter 3'].split(",")               
+                var ServicetypeResult3X =  ServicetypeResult3.split(",")
                 ServicetypeResult3X.map(function(res){
                   $('#edit_agendamento_service_result3 option[value='+res+']').attr('selected','selected');
                 })  
@@ -578,7 +578,7 @@ function formatHora(date) {
               // }
 
               if(ServicetypeResult4 != ""){
-                var ServicetypeResult4X =  data['Trainning Answer Filter 4'].split(",")               
+                var ServicetypeResult4X =  ServicetypeResult4.split(",")
                 ServicetypeResult4X.map(function(res){
                   $('#edit_agendamento_service_result4 option[value='+res+']').attr('selected','selected');
                 })  
@@ -624,7 +624,7 @@ function formatHora(date) {
               // }
 
               if(ServicetypeResult5 != ""){
-                var ServicetypeResult5X =  data['Trainning Answer Filter 5'].split(",")
+                var ServicetypeResult5X =  ServicetypeResult5.split(",")
                 ServicetypeResult5X.map(function(res){
                   $('#edit_agendamento_service_result5 option[value='+res+']').attr('selected','selected');
                 })  
