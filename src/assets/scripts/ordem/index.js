@@ -1726,7 +1726,7 @@ function formValidacaoOrdem(promoter,action){
 
           var professional2 = $('#edit_agendamento_busca_professional2').val();
           var hora2         = $('#edit_agendamento_planned_hour2').val()
-          var serviceType2   = $('#edit_agendamento_service_type2')
+          var serviceType2   = $('#edit_agendamento_service_type2').val()
 
           if (professional2 != 0 || hora2 != "" || serviceType2 != 0 ){
             valida = formValidacaoOrdem(2,'edit');
@@ -1736,7 +1736,7 @@ function formValidacaoOrdem(promoter,action){
           }
           var professional3 = $('#edit_agendamento_busca_professional3').val();
           var hora3         = $('#edit_agendamento_planned_hour3').val()
-          var serviceType3   = $('#edit_agendamento_service_type3')
+          var serviceType3   = $('#edit_agendamento_service_type3').val()
 
           if (professional3 != 0 || hora3 != "" || serviceType3 != 0){
             valida = formValidacaoOrdem(3,'edit');
@@ -1747,7 +1747,7 @@ function formValidacaoOrdem(promoter,action){
 
           var professional4 = $('#edit_agendamento_busca_professional4').val();
           var hora4         = $('#edit_agendamento_planned_hour4').val()
-          var serviceType4   = $('#edit_agendamento_service_type4')
+          var serviceType4   = $('#edit_agendamento_service_type4').val()
 
           if (professional4 != 0 || hora4 != "" || serviceType4 != 0){
             valida = formValidacaoOrdem(4,'edit');
@@ -1758,7 +1758,7 @@ function formValidacaoOrdem(promoter,action){
 
           var professional5 = $('#edit_agendamento_busca_professional5').val();
           var hora5         = $('#edit_agendamento_planned_hour5').val()
-          var serviceType5   = $('#edit_agendamento_service_type5')
+          var serviceType5   = $('#edit_agendamento_service_type5').val()
 
           if (professional5 != 0 || hora5 != "" || serviceType5 != 0){
             valida = formValidacaoOrdem(5,'edit');
@@ -1801,6 +1801,7 @@ function formValidacaoOrdem(promoter,action){
           },
           "data": {
            "Pais"             : paisX,
+           "CreatedBy"             : sessionStorage.No,
            "DocumentType"             : "0",
            "No_"                      : $("#edit_agendamento_n").val(),
            "CustomerNo_"              : $("#edit_agendamento_n_cliente").val(),
