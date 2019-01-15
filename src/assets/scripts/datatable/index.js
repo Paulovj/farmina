@@ -2750,13 +2750,13 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
 
 function loadClienteNavX() {  
   
-  $.ajax({timeout:15000, url: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country, success: function(result){
-  var jsonString = result.data //for testing  
+  //$.ajax({timeout:15000, url: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country, success: function(result){
+  //var jsonString = result.data //for testing  
   var tableClienteAgendamentoNav = $("#dataTableClienteAgendamentoNav")
-  alert('13265')
   tableClienteAgendamentoNav.DataTable ({
-        "data" : jsonString,
-        timeout: 60000,
+        // "data" : jsonString,
+        // timeout: 60000,
+        ajax: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country,
         rowReorder: {
           selector: 'td:nth-child(2)'
       },
@@ -2784,9 +2784,9 @@ function loadClienteNavX() {
       //$('#dataTableClienteAgendamentoNav').DataTable().draw();
     }        
      
-  });
+//   });
 
-};
+// };
 
 
 
