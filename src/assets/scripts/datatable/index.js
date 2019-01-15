@@ -941,7 +941,7 @@ function formatHora(date) {
                 } 
               },
               // { "data" : "Estimated-Total-Time" },
-              { "data" : "Estimated Starting Date" , type: 'date-br', "render": function ( data) {
+              { "data" : "Estimated Starting Date" , "type": "date-eu", "render": function ( data) {
                 return formatDate(data);
                 } 
               },
@@ -950,7 +950,7 @@ function formatHora(date) {
               //   return formatDate(data);
               //   } 
               // },
-              { "data" : "Starting Date" ,"visible": false , "render": function (data) {
+              { "data" : "Starting Date" ,"type": "date-eu" ,"visible": false , "render": function (data) {
                 return formatDate(data);
                 } 
               },
@@ -958,11 +958,11 @@ function formatHora(date) {
                 return formatHora(data);
                 } 
               },
-              { "data" : "Finish Date" , "render": function ( data) {
+              { "data" : "Finish Date" , "type": "date-eu", "render": function ( data) {
                 return formatDate(data);
                 } 
               },
-              { "data" : "Finish Time" ,"visible": false , "render": function ( data) {
+              { "data" : "Finish Time" ,"visible": false , "type": "date-eu", "render": function ( data) {
                 return formatHora(data);
                 } 
               },

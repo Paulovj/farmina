@@ -838,7 +838,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
                 return StatusX(data);
               }
             },
-              { "data" : "Order Date", "render": function ( data) {
+              { "data" : "Order Date", "type": "date-eu", "render": function ( data) {
                 return formatDate(data);
                 }
               } ,
