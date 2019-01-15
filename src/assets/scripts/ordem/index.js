@@ -2536,13 +2536,16 @@ function formValidacaoOrdem(promoter,action){
 
 
 function loadClienteNavX() {
-
-  $.ajax({ timeout:20000,url: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country, success: function(result){
-  var jsonString = result.data //for testing
+//alert('nav')
+  //$.ajax({ url: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country, success: function(result){
+  //var jsonString = result.data //for testing
   var tableClienteAgendamentoNav = $("#dataTableClienteAgendamentoNav")
   tableClienteAgendamentoNav.DataTable ({
-        "data" : jsonString,
-        timeout: 150000,
+        //"data" : jsonString,
+        //timeout: 150000,
+        ajax: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country,
+        //processing: true,
+        //serverSide: true,
         rowReorder: {
           selector: 'td:nth-child(2)'
       },
@@ -2568,9 +2571,11 @@ function loadClienteNavX() {
       });
 
       //$('#dataTableClienteAgendamentoNav').DataTable().draw();
-    }
+   
+   
+      // }
 
-  });
+ // });
 
 };
 
