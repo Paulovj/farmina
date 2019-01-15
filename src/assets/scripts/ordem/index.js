@@ -293,16 +293,16 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
 
               var action ='edit'
               PromoterServiceTypeX(1,ServiceType1,action)
-
               // $('#edit_agendamento_service_result1').val('ServicetypeResult1');
-              if(ServicetypeResult1 != ""){
-                var ServicetypeResult1X = ServicetypeResult1.split(",")
-                console.log(ServicetypeResult1X)
-                ServicetypeResult1X.map(function(){
-                  alert(this) 
-                  $('#edit_agendamento_service_result1 option[value='+ServicetypeResult1+']').attr('selected','selected');
+             // if(ServicetypeResult1 != ""){
+
+              var ServicetypeResult1X =  data['Trainning Answer Filter 1'].split(",")
+               
+                ServicetypeResult1X.map(function(res){
+                  console.log('esye feta??? :',res) 
+                  $('#edit_agendamento_service_result1 option[value='+res+']').attr('selected','selected');
                 })  
-              }
+             //}
 
 
 
@@ -494,9 +494,17 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               var action ='edit'
               PromoterServiceTypeX(1,ServiceType1,action)
               // $('#edit_agendamento_service_result1').val(ServicetypeResult1);
-              if(ServicetypeResult1 != ""){
-                $('#edit_agendamento_service_result1 option[value='+ServicetypeResult1+']').attr('selected','selected');
-              }
+
+              var ServicetypeResult1X =  data['Trainning Answer Filter 1'].split(",")
+               
+              ServicetypeResult1X.map(function(res){
+                console.log('esye feta??? :',res) 
+                $('#edit_agendamento_service_result1 option[value='+res+']').attr('selected','selected');
+              })  
+
+              // if(ServicetypeResult1 != ""){
+              //   $('#edit_agendamento_service_result1 option[value='+ServicetypeResult1+']').attr('selected','selected');
+              // }
 
               //Profissional 2
               console.log('teste profissional 2 ' + Professional2)
