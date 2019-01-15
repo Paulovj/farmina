@@ -14,9 +14,9 @@ export default (function () {
     }
 
 
-    
 
-    
+
+
     var paisX = sessionStorage.Pais
     var urlX = "";
     if(paisX == "Brasil"){
@@ -24,7 +24,7 @@ export default (function () {
     }else{
       urlX = "http://mkt.farmina.com:3001/api/"
     }
-   
+
 
   //   $("#add_agendamento_planned_date1").datepicker({
   //     dateFormat: 'dd/mm/yy',
@@ -34,7 +34,7 @@ export default (function () {
   // });
 
   //$('.day').attr('data-toggle="tooltip"')
-  
+
   var lDemographicItems ="";
   function formatDate(date) {
     var data =  moment(date).utc().format("DD/MM/Y")
@@ -44,17 +44,17 @@ export default (function () {
         return data
       }
     return data;
-    }    
+    }
 function formatHora(date) {
   var data =  moment(date).utc().format("HH:mm")
-    return data; 
+    return data;
 }
 function formatDateSql(date) {
   var data = '';
   if (date != ""){
     data = moment(date, 'DD/MM/YYYY').toDate();
     data =  moment(data).format("Y-MM-DD")
-  }  
+  }
   return data;
   }
 
@@ -62,7 +62,7 @@ function StatusX(value){
   var StatusPendente = $.i18n.prop('lStatusPendente',lang)
   var StatusIniciado = $.i18n.prop('lStatusIniciado',lang)
 var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
-  
+
   var valueX = "";
       if (value == 0){
         valueX =  StatusPendente;
@@ -74,13 +74,13 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
         // valueX =  'Started';
         valueX =  'Iniciado';
       }else if(value==3){
-      // valueX =  'Accomplished';            
-      valueX =  StatusFinalizado;            
+      // valueX =  'Accomplished';
+      valueX =  StatusFinalizado;
       }
       return valueX;
 }
-  
-  
+
+
 
 
   $('#dataTableOrdemAgendamento tbody').on( 'click', 'button', function () {
@@ -101,26 +101,26 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
           var Billto_City     = data['Bill-to City'];
           var Billto_PostCode = data['Bill-to Post Code'];
           var Billto_Number = data['Number'];
-          
+
           var name = data['Name'];
-          
+
           var Professional1 = data['Professional 1'];
           var ServiceType1 = data['Service Type 1'];
           var PlannedDate1 = data['Planned Date 1'];
           var PlannedStartTime1 = data['Planned Start Time 1'];
 
           var PlannedHour1 = data['Planned Hours 1'];
-          
-          
-          
+
+
+
           var ISPAnswerType1        = data['ISP Answer Type 1'];
           var MerchanAnswerType1    = data['Merchan Answer Type 1'];
           var TrainningAnswerType1  = data['Trainning Answer Type 1'];
           var WelcomeKitType1       = data['Welcome Kit Answer Type 1'];
           var TrainningType1        = data['Trainning Type 1'];
 
-          
-          
+
+
 
           var ServicetypeResult1 =""
           if (ISPAnswerType1!=0 ){
@@ -229,7 +229,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
           var bloqueadoEdit = data['STATUS_BLOQ']
           if ($(this).attr('action')=="edit"){
             EditDisabledX(true,bloqueadoEdit)
-            
+
             $('#edit_agendamento_n_cliente').val(customer_no)
             $('#edit_agendamento_fatura_endereco_complemento').val(Billto_Address2)
             $('#edit_agendamento_fatura_cidade').val(Billto_City)
@@ -237,10 +237,10 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
             $('#edit_agendamento_fatura_cep').val(Billto_PostCode)
             $('#edit_agendamento_fatura_endereco').val(Billto_Address)
             $('#edit_agendamento_n').val(id)
-            
+
             $('#edit_agendamento_cod_vendendor').val(Salesperson)
-            
-            
+
+
             var length1 = $('#edit_agendamento_busca_professional1 > option').length;
             console.log('Edit quandadide PROFESSIONAL: ',length)
             if (length1 == 1){
@@ -266,7 +266,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_planned_hour1').val(PlannedHour1);
               $('#edit_agendamento_service_type1').val(ServiceType1);
               $('#edit_agendamento_planned_date1').val(formatDate(PlannedDate1));
-              
+
               $('#edit_agendamento_planned_start_time1').val(formatHora(PlannedStartTime1));
                   console.log('console log TrainningType1::::',TrainningType1)
               $('#edit_agendamento_trainning_type1').val(TrainningType1);
@@ -279,33 +279,40 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_trainning_comments1').val(data['Trainnig Comments 1']);
               $('#edit_agendamento_army_specific_store1').val(data['For Specific Store 1']);
               $('#edit_agendamento_army_which_park1').val(data['In Wich Park 1']);
-                  
-              
+
+
               $('#edit_agendamento_number_workers_train1').val(data['Number Workes to Train 1']);
               $('#edit_agendamento_projector1').val(data['Projector 1']);
               $('#edit_agendamento_buffet1').val(data['Buffet 1']);
 
-            
+
               if(data['In Wich Park 1'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park1').show();
-              }  
+              }
               $('#edit_agendamento_location_activity_training1').val(data['Training Location 1']);
 
               var action ='edit'
               PromoterServiceTypeX(1,ServiceType1,action)
-              
+
               // $('#edit_agendamento_service_result1').val('ServicetypeResult1');
               if(ServicetypeResult1 != ""){
-                $('#edit_agendamento_service_result1 option[value='+ServicetypeResult1+']').attr('selected','selected');
-              }  
-              
+                var ServicetypeResult1X = ServicetypeResult1.split(",")
+                console.log(ServicetypeResult1X)
+                ServicetypeResult1X.map(function(){
+                  alert(this) 
+                  $('#edit_agendamento_service_result1 option[value='+ServicetypeResult1+']').attr('selected','selected');
+                })  
+              }
+
+
+
               //Profissional 2
               console.log('teste profissional 2 ' + Professional2)
               $('#edit_agendamento_busca_professional2 option[value='+Professional2+']').attr('selected','selected');
               ((!Professional2)? $('#edit_agendamento_planned_hour2').val(PlannedHour2) : '');
               $('#edit_agendamento_service_type2').val(ServiceType2);
               ((!Professional2)? $('#edit_agendamento_planned_date2').val(formatDate(PlannedDate2)): '');
-              
+
               ((!Professional2)? $('#edit_agendamento_planned_start_time2').val(formatHora(PlannedStartTime2)):'');
 
               $('#edit_agendamento_trainning_type2').val(data['Trainning Type 2']);
@@ -326,15 +333,15 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(data['In Wich Park 2'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park2').show();
               }
-              $('#edit_agendamento_location_activity_training2').val(data['Training Location 2']);  
-              
+              $('#edit_agendamento_location_activity_training2').val(data['Training Location 2']);
+
 
               var action ='edit'
               PromoterServiceTypeX(2,ServiceType2,action)
               //$('#edit_agendamento_service_result2').val(ServicetypeResult2);
               if(ServicetypeResult2 != ""){
                 $('#edit_agendamento_service_result2 option[value='+ServicetypeResult2+']').attr('selected','selected');
-              }  
+              }
 
               //Profissional 3
               console.log('teste profissional 3 ' + Professional3)
@@ -362,7 +369,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
 
               if(data['In Wich Park 3'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park3').show();
-              }  
+              }
               var action ='edit'
               PromoterServiceTypeX(3,ServiceType3,action)
               //$('#edit_agendamento_service_result3').val(ServicetypeResult3);
@@ -371,7 +378,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               }
               $('#edit_agendamento_location_activity_training3').val(data['Training Location 3']);
 
-              
+
 
               //Profissional 4
               console.log('teste profissional' + Professional4)
@@ -405,8 +412,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(ServicetypeResult4 != ""){
                 $('#edit_agendamento_service_result4 option[value='+ServicetypeResult4+']').attr('selected','selected');
               }
-              
-              $('#edit_agendamento_location_activity_training4').val(data['Training Location 4']);  
+
+              $('#edit_agendamento_location_activity_training4').val(data['Training Location 4']);
 
 
 
@@ -443,14 +450,14 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(ServicetypeResult5 != ""){
                 $('#edit_agendamento_service_result5 option[value='+ServicetypeResult5+']').attr('selected','selected');
               }
-              $('#edit_agendamento_location_activity_training5').val(data['Training Location 5']);  
-                  
+              $('#edit_agendamento_location_activity_training5').val(data['Training Location 5']);
 
-                 
+
+
                 }
               });
             }else{
-             
+
               //Profissional 1
               console.log('teste profissional 1' + Professional1)
               $('#edit_agendamento_busca_professional1 option[value='+Professional1+']').attr('selected','selected');
@@ -479,18 +486,18 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(data['In Wich Park 1'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park1').show();
               }
-              
-              $('#edit_agendamento_location_activity_training1').val(data['Training Location 1']);
-              
 
-            
+              $('#edit_agendamento_location_activity_training1').val(data['Training Location 1']);
+
+
+
               var action ='edit'
               PromoterServiceTypeX(1,ServiceType1,action)
               // $('#edit_agendamento_service_result1').val(ServicetypeResult1);
               if(ServicetypeResult1 != ""){
                 $('#edit_agendamento_service_result1 option[value='+ServicetypeResult1+']').attr('selected','selected');
-              }  
-              
+              }
+
               //Profissional 2
               console.log('teste profissional 2 ' + Professional2)
               $('#edit_agendamento_busca_professional2 option[value='+Professional2+']').attr('selected','selected');
@@ -550,7 +557,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
 
               if(data['In Wich Park 3'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park3').show();
-              }  
+              }
               $('#edit_agendamento_location_activity_training3').val(data['Training Location 3']);
 
               var action ='edit'
@@ -558,7 +565,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               //$('#edit_agendamento_service_result3').val(ServicetypeResult3);
               $('#edit_agendamento_service_result3 option[value='+ServicetypeResult3+']').attr('selected','selected');
 
-              
+
 
               //Profissional 4
               console.log('teste profissional' + Professional4)
@@ -585,7 +592,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_buffet4').val(data['Buffet 4']);
               if(data['In Wich Park 4'] !=""){
                 $('#div_edit_agendamento_service_result_army_which_park4').show();
-              } 
+              }
               $('#edit_agendamento_location_activity_training4').val(data['Training Location 4']);
 
               var action ='edit'
@@ -622,22 +629,22 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
                 $('#div_edit_agendamento_service_result_army_which_park5').show();
               }
               $('#edit_agendamento_location_activity_training5').val(data['Training Location 5']);
-              
+
               var action ='edit'
               PromoterServiceTypeX(5,ServiceType5,action)
               //$('#edit_agendamento_service_result5').val(ServicetypeResult5);
               $('#edit_agendamento_service_result5 option[value='+ServicetypeResult5+']').attr('selected','selected');
-              
+
             }
-            $('#edit-agendamento').modal('toggle');  
+            $('#edit-agendamento').modal('toggle');
           }
 
 
 
-          
 
-          
-          
+
+
+
           if ($(this).attr('action')=="postando_agendamento"){
             $('#post_agendamento_no').val(id)
             $('#post_service_invoce_no').val(service_invoce_no)
@@ -650,21 +657,21 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
             $('#post_customer_name').val(name)
             $('#post_customer_address').val(Billto_Address)
             $('#post_customer_number').val(Billto_Number)
-          
+
             $('#post_salesperson_code').val(Salesperson)
-            
+
             $('#post_resource_no1').val(Professional1)
             $('#post_service_type1').val(ServiceType1)
             $('#post_service_type1_exibir option[value='+ServiceType1+']').attr('selected','selected');
             $('#post_planned_date1_exibir').val(formatDate(PlannedDate1))
             $('#post_planned_date1').val(PlannedDate1)
-            
-            
+
+
             $('#post_isp1').val(ISPAnswerType1)
             $('#post_merchan1').val(MerchanAnswerType1)
             $('#post_trainning1').val(TrainningAnswerType1)
             $('#post_welcome1').val(WelcomeKitType1)
-            
+
             $('#post_resource_no2').val(Professional2)
             $('#post_service_type2').val(ServiceType2)
             $('#post_planned_date2').val(PlannedDate2)
@@ -675,7 +682,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
             $('#post_merchan2').val(MerchanAnswerType2)
             $('#post_trainning2').val(TrainningAnswerType2)
             $('#post_welcome2').val(WelcomeKitType2)
-            
+
 
             $('#post_resource_no3').val(Professional3)
             $('#post_service_type3').val(ServiceType3)
@@ -687,7 +694,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
             $('#post_merchan3').val(MerchanAnswerType3)
             $('#post_trainning3').val(TrainningAnswerType3)
             $('#post_welcome3').val(WelcomeKitType3)
-            
+
             $('#post_resource_no4').val(Professional4)
             $('#post_service_type4').val(ServiceType4)
             $('#post_planned_date4').val(PlannedDate4)
@@ -698,7 +705,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
             $('#post_merchan4').val(MerchanAnswerType4)
             $('#post_trainning4').val(TrainningAnswerType4)
             $('#post_welcome4').val(WelcomeKitType4)
-            
+
             $('#post_resource_no5').val(Professional5)
             $('#post_service_type5').val(ServiceType5)
             $('#post_planned_date5').val(PlannedDate5)
@@ -709,30 +716,30 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
             $('#post_merchan5').val(MerchanAnswerType5)
             $('#post_trainning5').val(TrainningAnswerType5)
             $('#post_welcome5').val(WelcomeKitType5)
-            
-            
-            
+
+
+
             $('#post_photo_path').val(path)
 
-            
+
             $('#lbl_post_agendamento').text(' '+ id + ' ?');
             $('#post-agendamento-modal').modal('toggle')
-            
-          } 
-            
+
+          }
+
         });
 
 
-    
+
     function loadAgendamento() {
 
-      
 
-      $.ajax({url: urlX+"ServiceHeaders/getServiceHeaderQuery?Pais="+paisX+"&No="+sessionStorage.No+"&Type="+sessionStorage.Type, success: function(result){    
-        var jsonString = result.data //for testing  
+
+      $.ajax({url: urlX+"ServiceHeaders/getServiceHeaderQuery?Pais="+paisX+"&No="+sessionStorage.No+"&Type="+sessionStorage.Type, success: function(result){
+        var jsonString = result.data //for testing
         // console.log('retorno agendamento: ', jsonString)
         var oTblReportAgendamento = $("#dataTableOrdemAgendamento")
-        
+
         oTblReportAgendamento.DataTable ({
             "data" : jsonString,
             "scrollX": true,
@@ -755,31 +762,31 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
           //     { "title": $.i18n.prop('lDocumenttType',lang), "targets": 8 },
           //     { "title": $.i18n.prop('lDocumenttType',lang), "targets": 9 },
           //     { "title": $.i18n.prop('lDocumenttType',lang), "targets": 10 }
-              
+
           // ],
             "columns" : [
               { "data" : "Document Type", "title" : "teste","visible": false},
               { "data" : "Salesperson Code","visible": false},
               { "data" : "Bill-to Address","visible": false},
-        
+
               { "data" : "No_" },
               { "data" : "Document Status", "visible": false, "render": function (data) {
                 return StatusX(data);
               }
-            }, 
+            },
               { "data" : "Order Date", "render": function ( data) {
                 return formatDate(data);
-                } 
+                }
               } ,
               { "data" : "Order Time", "render": function ( data) {
                 return formatHora(data);
-                } 
+                }
               },
               { "data" : "Customer No_" },
               { "data" : "Name" },
               { "data" : "Professional 1" },
               { "data" : "NameProfissional" },
-               { "targets": -1, "data": null, 
+               { "targets": -1, "data": null,
                 "render": function (a,d){
                   var btn =""
                     //btn += "<button action='postando_agendamento' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Registrar</button>" ;
@@ -788,27 +795,27 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               }
             }
           ]
-            
+
           });
 
           setTimeout(function(){
              $('#dataTableOrdemAgendamento').DataTable().draw();
             }, 3000);
 
-          
-          
-        } 
-         
+
+
+        }
+
       });
 
-      
-      
+
+
 
   };
   loadAgendamento();
-  
 
-  
+
+
 
 $("#add_agendamento_busca_cliente").change(function(){
   var id      = $(this).val();
@@ -820,7 +827,7 @@ $("#add_agendamento_busca_cliente").change(function(){
   var city    = $('option:selected', this).attr("optCity");
   var address2= $('option:selected', this).attr("optAddress2");
   var salespersonCode= $('option:selected', this).attr("optSalespersonCode");
-  
+
 
   $('#add_agendamento_n_cliente').val(id)
   $('#add_agendamento_fatura_endereco_complemento').val(address2)
@@ -829,7 +836,7 @@ $("#add_agendamento_busca_cliente").change(function(){
   $('#add_agendamento_fatura_cep').val(post)
   $('#add_agendamento_fatura_endereco').val(address)
   $('#add_agendamento_cod_vendendor').val(salespersonCode)
-  
+
 
   console.log('resultado combo on change: ' + name + ' id '+ id )
 });
@@ -845,7 +852,7 @@ $("#edit_agendamento_busca_cliente").change(function(){
   var city    = $('option:selected', this).attr("optCity");
   var address2= $('option:selected', this).attr("optAddress2");
   var salespersonCode= $('option:selected', this).attr("optSalespersonCode");
-  
+
 
   $('#edit_agendamento_n_cliente').val(id)
   $('#edit_agendamento_fatura_endereco_complemento').val(address2)
@@ -854,7 +861,7 @@ $("#edit_agendamento_busca_cliente").change(function(){
   $('#edit_agendamento_fatura_cep').val(post)
   $('#edit_agendamento_fatura_endereco').val(address)
   $('#edit_agendamento_cod_vendendor').val(salespersonCode)
-  
+
 
   console.log('resultado combo on change: ' + name + ' id '+ id )
 });
@@ -877,7 +884,7 @@ $("#edit_agendamento_busca_cliente").change(function(){
 //           var optCity     = 'optCity = "'+value.City+'"';
 //           var optAddress2 = 'optAddress2 = "'+value['Address 2']+'"';
 //           var optSalespersonCode = 'optSalespersonCode = "'+value['Salesperson Code']+'"';
-          
+
 
 //             contX +='<option value='+ value.No_ +' '+ optSalespersonCode + ' '+ optCity +' '+ optName +' '+ optAddress2 +' '+ optAddress +' '+ optPost +' '+ optPhone +' '+ optContact +' > '+val+' </option>';
 //         })
@@ -886,7 +893,7 @@ $("#edit_agendamento_busca_cliente").change(function(){
 //       }
 //     });
 //   }
-  
+
 //   var length1 = $('#add_agendamento_busca_professional1 > option').length;
 //   console.log('quandadide PROFESSIONAL: ',length)
 //   if (length1 == 1){
@@ -909,7 +916,7 @@ $("#edit_agendamento_busca_cliente").change(function(){
 //     });
 //   }
 
-//   $('#add-agendamento').modal('toggle');  
+//   $('#add-agendamento').modal('toggle');
 // })
 
 
@@ -920,16 +927,16 @@ function PromoterServiceTypeX(promoter,value,action){
   $("#div_"+action+"_agendamento_service_result"+promoter).show()
   $("#add_agendamento_food"+promoter).val("0");
   $("#add_agendamento_push_new_line"+promoter).val("");
-  $("#add_agendamento_line_slow_comments"+promoter).val("");  
-  $("#add_agendamento_how_meter"+promoter).val("");  
+  $("#add_agendamento_line_slow_comments"+promoter).val("");
+  $("#add_agendamento_how_meter"+promoter).val("");
 
   $("#add_agendamento_number_workers_train"+promoter).val("");
-  $("#add_agendamento_agendamento_projector"+promoter).val("");  
-  $("#add_agendamento_agendamento_buffet"+promoter).val("");  
+  $("#add_agendamento_agendamento_projector"+promoter).val("");
+  $("#add_agendamento_agendamento_buffet"+promoter).val("");
   $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
   $("#div_"+action+"_agendamento_service_result_location"+promoter).hide();
   $("#div_"+action+"_agendamento_service_result_projector"+promoter).hide();
-  
+
 
   $("#add_agendamento_trainning_type"+promoter).val("0");
   $("#add_agendamento_trainning_comments"+promoter).val("");
@@ -938,14 +945,14 @@ function PromoterServiceTypeX(promoter,value,action){
   // $("#add_agendamento_planned_hour"+promoter).val("");
   $("#div_"+action+"_agendamento_service_result_planned_hour"+promoter).show();
   $("#add_agendamento_ISP_comments"+promoter).val("");
-  
+
   $("#add_agendamento_army_specific_store"+promoter).val("0");
   $("#add_agendamento_army_which_park"+promoter).val("");
-  
-  
+
+
   if(value==1){
     //traning
-    
+
     lblCont = $.i18n.prop('TreinamentoParaQualLinha',lang);
 
     contX +='<option value="0">  </option>';
@@ -956,11 +963,11 @@ function PromoterServiceTypeX(promoter,value,action){
     contX +='<option value="5">ND Quinoa </option>';
     contX +='<option value="6">ND Ocean </option>';
     contX +='<option value="7">Vet Life </option>';
-    
+
     $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
-    
+
     $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
@@ -973,28 +980,28 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_location"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_projector"+promoter).show();
 
-    
 
-   
 
-    
+
+
+
   }else if(value==2){
     //KITS
     lblCont =$.i18n.prop('ParaQualLinhaVoceGostariaKitDeBoasVindas',lang);
-    
+
     contX +='<option value="0">  </option>';
     contX +='<option value="1"> ND Prime cat </option>';
     contX +='<option value="2"> ND Ancestral cat </option>';
     contX +='<option value="3"> ND Pumpkin cat </option>';
-    contX +='<option value="4"> ND Quinoa cat </option>';    
-    contX +='<option value="5"> ND Ocean cat </option>';    
+    contX +='<option value="4"> ND Quinoa cat </option>';
+    contX +='<option value="5"> ND Ocean cat </option>';
     contX +='<option value="6"> ND Prime dog </option>';
     contX +='<option value="7"> ND Ancestral dog </option>';
     contX +='<option value="8"> ND Pumpkin dog </option>';
     contX +='<option value="9"> ND Quinoa dog </option>';
     contX +='<option value="10">ND Ocean dog </option>';
 
-    
+
     $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
@@ -1012,10 +1019,10 @@ function PromoterServiceTypeX(promoter,value,action){
 
 
 
-    
 
 
-    
+
+
   }else if(value==3){
     //ISP
     lblCont =$.i18n.prop('PorQueVoceEstaFazendoIssoISP',lang);
@@ -1044,11 +1051,11 @@ function PromoterServiceTypeX(promoter,value,action){
 
 
 
-    
+
   }else if(value==4){
     //MERCHANDISSING
 
-    
+
     var PlacingOfProducts = $.i18n.prop('lPlacingOfProducts',lang)
     var NewShelf = $.i18n.prop('lNewShelf',lang)
     var PlacingOfFarminaMaterials = $.i18n.prop('lPlacingOfFarminaMaterials',lang)
@@ -1067,16 +1074,16 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
     $("#div_"+action+"_agendamento_service_many_meters"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
-    
-    
+
+
     $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_army_which_park"+promoter).hide();
 
-    
 
-    
 
-    
+
+
+
   }else if(value==5){
     lblCont =" Army ? ";
     contX +='<option value="0">  </option>';
@@ -1090,12 +1097,12 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).show();
-    
 
 
-    
-  }  
-  
+
+
+  }
+
   $("#lbl_"+action+"_agendamento_service_result"+promoter).html(lblCont)
   $("#"+action+"_agendamento_service_result"+promoter).append(contX)
 }
@@ -1237,8 +1244,8 @@ function formValidacaoOrdem(promoter,action){
   var planned_start_time1  = $('#'+action+'_agendamento_planned_start_time'+promoter).val();
   var planned_hour1        = $('#'+action+'_agendamento_planned_hour'+promoter).val();
   var service_type1        = $('#'+action+'_agendamento_service_type'+promoter).val();
-  
-  
+
+
   if(profissional1 == 0){
     texto +=  $.i18n.prop('lProfissional'+promoter,lang) +'<br>';//"Professional "+ promoter +" " +
     valida = false
@@ -1258,7 +1265,7 @@ function formValidacaoOrdem(promoter,action){
       texto +=  $.i18n.prop('lHoraPlanejada',lang)+ ' ' + promoter +'<br>';//"Planned Hours "+ promoter +" " +
       valida = false
     }
-  }  
+  }
 
   if(service_type1 == 0){
     texto +=  $.i18n.prop('lTipoServico',lang)+ ' ' + promoter +'<br>';//"Service Type "+ promoter +" " +
@@ -1272,7 +1279,7 @@ function formValidacaoOrdem(promoter,action){
     var service_result1       = $('#'+action+'_agendamento_service_result'+promoter).val();
     var trainning_comments1   = $('#'+action+'_agendamento_trainning_comments'+promoter).val();
     var location_activity1    = $('#'+action+'_agendamento_location_activity_training'+promoter).val();
-    
+
     if(location_activity1 == ""){
       texto +=  $.i18n.prop('lLocation',lang)+ ' ' + promoter +'<br>';//"Training Type "+ promoter +" " +
       valida = false
@@ -1302,9 +1309,9 @@ function formValidacaoOrdem(promoter,action){
   if(service_type1 == 2){
     var food1                 = $('#'+action+'_agendamento_food'+promoter).val();
     var service_result1       = $('#'+action+'_agendamento_service_result'+promoter).val();
-    
+
     if(food1 == 0){
-      texto += $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " + 
+      texto += $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " +
       valida = false
     }
 
@@ -1312,7 +1319,7 @@ function formValidacaoOrdem(promoter,action){
       texto += $.i18n.prop('ParaQualLinhaVoceGostariaKitDeBoasVindas',lang)+ ' ' + promoter +'<br>';// "Welcome kit for which line "+ promoter +" " +
       valida = false
     }
-    
+
   }
 
   /*VALIDAÇÃO ISP*/
@@ -1328,7 +1335,7 @@ function formValidacaoOrdem(promoter,action){
     }
 
     if(Promoting1 == 0){
-      texto += $.i18n.prop('lPromoting',lang)+ ' ' + promoter +'<br>';//"Type of promotion "+ promoter +" " + 
+      texto += $.i18n.prop('lPromoting',lang)+ ' ' + promoter +'<br>';//"Type of promotion "+ promoter +" " +
       valida = false
     }
 
@@ -1341,14 +1348,14 @@ function formValidacaoOrdem(promoter,action){
       texto +=  $.i18n.prop('lThisStoreIsSellingOpenBags',lang)+ ' ' + promoter +'<br>';//"This store is selling open bags "+ promoter +" " +
       valida = false
     }
-    
+
   }
 
   /*VALIDAÇÃO   MERCHANDISSING*/
   if(service_type1 == 4){
     var how_meter1          = $('#'+action+'_agendamento_how_meter'+promoter).val();
     var service_result1     = $('#'+action+'_agendamento_service_result'+promoter).val();
-    
+
     if(how_meter1 == ""){
       texto +=  $.i18n.prop('lCampoObrigatorio',lang)+ ' ' + promoter +'<br>';//"How many meters of Farmina shelves "+ promoter +" " +
       valida = false
@@ -1363,7 +1370,7 @@ function formValidacaoOrdem(promoter,action){
       texto +=  $.i18n.prop('lCampoObrigatorio',lang)+ ' ' + promoter +'<br>';//"Type of merchandising "+ promoter +" " +
       valida = false
     }
-    
+
   }
 
   /*VALIDAÇÃO   ARMY*/
@@ -1371,7 +1378,7 @@ function formValidacaoOrdem(promoter,action){
     var specific_store1   = $('#'+action+'_agendamento_army_specific_store'+promoter).val();
     var food1            = $('#'+action+'_agendamento_food'+promoter).val();
     var which_park1       = $('#'+action+'_agendamento_army_which_park'+promoter).val();
-    
+
 
     if(food1 == 0){
       texto +=  $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " +
@@ -1379,18 +1386,18 @@ function formValidacaoOrdem(promoter,action){
     }
 
     if(specific_store1 == 0){
-      texto += $.i18n.prop('lForSpecificStore',lang)+ ' ' + promoter +'<br>';//"For a specific store "+ promoter +" " + 
+      texto += $.i18n.prop('lForSpecificStore',lang)+ ' ' + promoter +'<br>';//"For a specific store "+ promoter +" " +
       valida = false
     }
 
     if(specific_store1 == 2){
       if(which_park1 == ""){
-        texto += $.i18n.prop('lInWhicPark',lang) + '<br>';//"In which park "+ promoter +" " + 
+        texto += $.i18n.prop('lInWhicPark',lang) + '<br>';//"In which park "+ promoter +" " +
         valida = false
       }
-    }  
+    }
 
-    
+
   }
   if(valida == false){
     $.notify({
@@ -1409,77 +1416,86 @@ function formValidacaoOrdem(promoter,action){
 
 
 
-  
+
   return valida
 }
 
   $("#btn_add_ordem_agendamento").click(function(){
     var valida = true
+
     
+
+
     valida = formValidacaoOrdem(1,'add');
     if(valida == false){
       return false;
     }
     var professional2 = $('#add_agendamento_busca_professional2').val();
     var hora2         = $('#add_agendamento_planned_hour2').val()
-    var serviceType2   = $('#add_agendamento_service_type2')
-    
+    var serviceType2  = $('#add_agendamento_service_type2').val()
+
     if (professional2 != 0 || hora2 != "" || serviceType2 != 0 ){
       valida = formValidacaoOrdem(2,'add');
         if(valida == false){
           return false;
-        } 
+        }
     }
     var professional3 = $('#add_agendamento_busca_professional3').val();
     var hora3         = $('#add_agendamento_planned_hour3').val()
-    var serviceType3   = $('#add_agendamento_service_type3')
-    
+    var serviceType3   = $('#add_agendamento_service_type3').val()
+
     if (professional3 != 0 || hora3 != "" || serviceType3 != 0 ){
       valida = formValidacaoOrdem(3,'add');
         if(valida == false){
           return false;
-        } 
+        }
     }
 
     var professional4 = $('#add_agendamento_busca_professional4').val();
     var hora4         = $('#add_agendamento_planned_hour4').val()
-    var serviceType4   = $('#add_agendamento_service_type4')
-    
+    var serviceType4   = $('#add_agendamento_service_type4').val()
+
     if (professional4 != 0 || hora4 != "" || serviceType4 != 0 ){
       valida = formValidacaoOrdem(4,'add');
         if(valida == false){
           return false;
-        } 
+        }
     }
 
     var professional5 = $('#add_agendamento_busca_professional5').val();
     var hora5         = $('#add_agendamento_planned_hour5').val()
-    var serviceType5   = $('#add_agendamento_service_type5')
-    
+    var serviceType5   = $('#add_agendamento_service_type5').val()
+
     if (professional5 != 0 || hora5 != "" || serviceType5 != 0 ){
       valida = formValidacaoOrdem(5,'add');
         if(valida == false){
           return false;
-        } 
+        }
     }
 
     
+    var service_result1 = $("#add_agendamento_service_result1 option:selected").map(function(){ 
+      return this.value }).get().join(", ");
+
+      
+
+
     console.log('entrou na janela');
     var data = new FormData();
-    
+
     var settings = {
       "async": true,
       "crossDomain": true,
       // "url": "http://www.nav.farmina.com.br:3001/api/funcoes/FunctionNewOrdem",
        "url": urlX+"funcoes/FunctionNewOrdem",
-      
+
       "method": "POST",
       "headers": {
         "content-type": "application/x-www-form-urlencoded",
         "cache-control": "no-cache",
         "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
       },
-      "data": {        
+      "data": {
        "Pais"             : paisX,
        "CreatedBy"             : sessionStorage.No,
        "DocumentType"             : "0",
@@ -1493,16 +1509,18 @@ function formValidacaoOrdem(promoter,action){
        "Bill_toCity"              : $("#add_agendamento_fatura_cidade").val(),
        "Bill_toContact"           : $("#add_agendamento_nome").val(),
        "Bill-to Post Code"         : $("#add_agendamento_fatura_cep").val(),
-       
+
        "YourReference"            : "",
-       
+
         "Professional1"           :$("#add_agendamento_busca_professional1").val(),
         "PlannedDate1"            :formatDateSql($("#add_agendamento_planned_date1").val()),
         "PlannedStartTime1"       :$("#add_agendamento_planned_start_time1").val(),
 
         "PlannedHours1"           :$("#add_agendamento_planned_hour1").val(),
         "ServiceType1"            :$("#add_agendamento_service_type1").val(),
-        "ProfessionalFunction1"   :$("#add_agendamento_service_result1").val(),
+        "ProfessionalFunction1"   :service_result1,
+
+
 
         "Food1"                    :$("#add_agendamento_food1").val(),
         "TrainningType1"           :$("#add_agendamento_trainning_type1").val(),
@@ -1515,20 +1533,20 @@ function formValidacaoOrdem(promoter,action){
 
 
 
-        
+
         "TrainningComments1"       :$("#add_agendamento_trainning_comments1").val(),
         "PushNewLine1"             :$("#add_agendamento_push_new_line1").val(),
         "LineSlowComments1"        :$("#add_agendamento_line_slow_comments1").val(),
-        
+
         "Promoting1"              :$("#add_agendamento_Promoting1").val(),
         "Open-Bags1"              :$("#add_agendamento_open_bags1").val(),
-        
+
         "How-Meter1"              :$("#add_agendamento_how_meter1").val(),
-        
+
         "Specific-Store1"         :$("#add_agendamento_army_specific_store1").val(),
         "Which-Park1"              :$("#add_agendamento_army_which_park1").val(),
-        
-        
+
+
         "Professional2"           :$("#add_agendamento_busca_professional2").val(),
         "PlannedDate2"            :formatDateSql($("#add_agendamento_planned_date2").val()),
         "PlannedStartTime2"       :$("#add_agendamento_planned_start_time2").val(),
@@ -1543,7 +1561,7 @@ function formValidacaoOrdem(promoter,action){
         "Number-Works2"             :$("#add_agendamento_number_workers_train2").val(),
         "Projector2"                :$("#add_agendamento_projector2").val(),
         "Buffet2"                   :$("#add_agendamento_buffet2").val(),
-        
+
         "TrainningComments2"       :$("#add_agendamento_trainning_comments2").val(),
         "PushNewLine2"             :$("#add_agendamento_push_new_line2").val(),
         "LineSlowComments2"        :$("#add_agendamento_line_slow_comments2").val(),
@@ -1555,7 +1573,7 @@ function formValidacaoOrdem(promoter,action){
 
         "Specific-Store2"         :$("#add_agendamento_army_specific_store2").val(),
         "Which-Park2"              :$("#add_agendamento_army_which_park2").val(),
-        
+
         "Professional3"            :$("#add_agendamento_busca_professional3").val(),
         "PlannedDate3"            :formatDateSql($("#add_agendamento_planned_date3").val()),
         "PlannedStartTime3"       :$("#add_agendamento_planned_start_time3").val(),
@@ -1570,7 +1588,7 @@ function formValidacaoOrdem(promoter,action){
         "Number-Works3"             :$("#add_agendamento_number_workers_train3").val(),
         "Projector3"                :$("#add_agendamento_projector3").val(),
         "Buffet3"                   :$("#add_agendamento_buffet3").val(),
-        
+
         "TrainningComments3"       :$("#add_agendamento_trainning_comments3").val(),
         "PushNewLine3"             :$("#add_agendamento_push_new_line3").val(),
         "LineSlowComments3"        :$("#add_agendamento_line_slow_comments3").val(),
@@ -1582,7 +1600,7 @@ function formValidacaoOrdem(promoter,action){
 
         "Specific-Store4"         :$("#add_agendamento_army_specific_store4").val(),
         "Which-Park4"              :$("#add_agendamento_army_which_park4").val(),
-        
+
         "Professional4"           :$("#add_agendamento_busca_professional4").val(),
         "PlannedDate4"            :formatDateSql($("#add_agendamento_planned_date4").val()),
         "PlannedStartTime4"       :$("#add_agendamento_planned_start_time4").val(),
@@ -1598,7 +1616,7 @@ function formValidacaoOrdem(promoter,action){
         "Projector4"                :$("#add_agendamento_projector4").val(),
         "Buffet4"                   :$("#add_agendamento_buffet4").val(),
 
-        
+
         "TrainningComments4"       :$("#add_agendamento_trainning_comments4").val(),
         "PushNewLine4"             :$("#add_agendamento_push_new_line4").val(),
         "LineSlowComments4"        :$("#add_agendamento_line_slow_comments4").val(),
@@ -1607,7 +1625,7 @@ function formValidacaoOrdem(promoter,action){
         "Open-Bags4"              :$("#add_agendamento_open_bags4").val(),
 
         "How-Meter4"              :$("#add_agendamento_how_meter4").val(),
-        
+
         "Professional5"           :$("#add_agendamento_busca_professional5").val(),
         "PlannedDate5"            :formatDateSql($("#add_agendamento_planned_date5").val()),
         "PlannedStartTime5"       :$("#add_agendamento_planned_start_time5").val(),
@@ -1635,7 +1653,7 @@ function formValidacaoOrdem(promoter,action){
 
         "Specific-Store5"         :$("#add_agendamento_army_specific_store5").val(),
         "Which-Park5"              :$("#add_agendamento_army_which_park5").val(),
-        
+
       }
     }
 
@@ -1643,13 +1661,13 @@ function formValidacaoOrdem(promoter,action){
         console.log(response);
         $('#dataTableOrdemAgendamento').DataTable().destroy();
         loadAgendamento();
-        $('#add-agendamento').modal('toggle');  
-        
+        $('#add-agendamento').modal('toggle');
+
       });
 
     });
-      
-      
+
+
     $("#btn_edit_ordem_agendamento").click(function(){
       //alert('teste')
       var bloqueadoEdit = 0
@@ -1659,13 +1677,13 @@ function formValidacaoOrdem(promoter,action){
 
       $("#btn_save_ordem_agendamento").click(function(){
         var valida = true
-    
+
           valida = formValidacaoOrdem(1,'edit');
           if(valida == false){
             return false;
           }
 
-          
+
           var professional2 = $('#edit_agendamento_busca_professional2').val();
           var hora2         = $('#edit_agendamento_planned_hour2').val()
           var serviceType2   = $('#edit_agendamento_service_type2')
@@ -1674,7 +1692,7 @@ function formValidacaoOrdem(promoter,action){
             valida = formValidacaoOrdem(2,'edit');
               if(valida == false){
                 return false;
-              } 
+              }
           }
           var professional3 = $('#edit_agendamento_busca_professional3').val();
           var hora3         = $('#edit_agendamento_planned_hour3').val()
@@ -1684,7 +1702,7 @@ function formValidacaoOrdem(promoter,action){
             valida = formValidacaoOrdem(3,'edit');
               if(valida == false){
                 return false;
-              } 
+              }
           }
 
           var professional4 = $('#edit_agendamento_busca_professional4').val();
@@ -1695,7 +1713,7 @@ function formValidacaoOrdem(promoter,action){
             valida = formValidacaoOrdem(4,'edit');
               if(valida == false){
                 return false;
-              } 
+              }
           }
 
           var professional5 = $('#edit_agendamento_busca_professional5').val();
@@ -1706,11 +1724,11 @@ function formValidacaoOrdem(promoter,action){
             valida = formValidacaoOrdem(5,'edit');
               if(valida == false){
                 return false;
-              } 
+              }
           }
         console.log('entrou na janela');
         var data = new FormData();
-        
+
         var settings = {
           "async": true,
           "crossDomain": true,
@@ -1722,7 +1740,7 @@ function formValidacaoOrdem(promoter,action){
             "cache-control": "no-cache",
             "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
           },
-          "data": {        
+          "data": {
            "Pais"             : paisX,
            "DocumentType"             : "0",
            "No_"                      : $("#edit_agendamento_n").val(),
@@ -1735,9 +1753,9 @@ function formValidacaoOrdem(promoter,action){
            "Bill_toCity"              : $("#edit_agendamento_fatura_cidade").val(),
            "Bill_toContact"           : $("#edit_agendamento_nome").val(),
            "Bill-to Post Code"         : $("#edit_agendamento_fatura_cep").val(),
-           
+
            "YourReference"            : "",
-           
+
             "Professional1"           :$("#edit_agendamento_busca_professional1").val(),
             "PlannedStartTime1"       :$("#edit_agendamento_planned_start_time1").val(),
 
@@ -1758,12 +1776,12 @@ function formValidacaoOrdem(promoter,action){
             "How-Meter1"                :$("#edit_agendamento_how_meter1").val(),
             "Specific-Store1"           :$("#edit_agendamento_army_specific_store1").val(),
             "Which-Park1"               :$("#edit_agendamento_army_which_park1").val(),
-            
+
             "Number-Works1"               :$("#edit_agendamento_number_workers_train1").val(),
             "Projector1"                  :$("#edit_agendamento_projector1").val(),
             "Buffet1"                     :$("#edit_agendamento_buffet1").val(),
 
-            
+
             "Professional2"           :$("#edit_agendamento_busca_professional2").val(),
             "PlannedDate2"            :formatDateSql($("#edit_agendamento_planned_date2").val()),
             "PlannedHours2"           :$("#edit_agendamento_planned_hour2").val(),
@@ -1785,7 +1803,7 @@ function formValidacaoOrdem(promoter,action){
             "Number-Works2"               :$("#edit_agendamento_number_workers_train2").val(),
             "Projector2"                  :$("#edit_agendamento_projector2").val(),
             "Buffet2"                     :$("#edit_agendamento_buffet2").val(),
-            
+
             "Professional3"            :$("#edit_agendamento_busca_professional3").val(),
             "PlannedDate3"            :formatDateSql($("#edit_agendamento_planned_date3").val()),
             "PlannedHours3"           :$("#edit_agendamento_planned_hour3").val(),
@@ -1810,8 +1828,8 @@ function formValidacaoOrdem(promoter,action){
             "Projector3"                  :$("#edit_agendamento_projector3").val(),
             "Buffet3"                     :$("#edit_agendamento_buffet3").val(),
 
-            
-            
+
+
             "Professional4"           :$("#edit_agendamento_busca_professional4").val(),
             "PlannedDate4"            :formatDateSql($("#edit_agendamento_planned_date4").val()),
             "PlannedHours4"           :$("#edit_agendamento_planned_hour4").val(),
@@ -1833,7 +1851,7 @@ function formValidacaoOrdem(promoter,action){
             "Number-Works4"               :$("#edit_agendamento_number_workers_train4").val(),
             "Projector4"                  :$("#edit_agendamento_projector4").val(),
             "Buffet4"                     :$("#edit_agendamento_buffet4").val(),
-            
+
             "Professional5"           :$("#edit_agendamento_busca_professional5").val(),
             "PlannedDate5"            :formatDateSql($("#edit_agendamento_planned_date5").val()),
             "PlannedHours5"           :$("#edit_agendamento_planned_hour5").val(),
@@ -1855,16 +1873,16 @@ function formValidacaoOrdem(promoter,action){
             "Number-Works5"               :$("#edit_agendamento_number_workers_train5").val(),
             "Projector5"                  :$("#edit_agendamento_projector5").val(),
             "Buffet5"                     :$("#edit_agendamento_buffet5").val(),
-            
+
           }
         }
-    
+
           $.ajax(settings).done(function (response) {
             console.log(response);
             $('#dataTableOrdemAgendamento').DataTable().destroy();
             loadAgendamento();
-            $('#edit-agendamento').modal('toggle');  
-            
+            $('#edit-agendamento').modal('toggle');
+
           });
 
   });
@@ -1877,7 +1895,7 @@ function formValidacaoOrdem(promoter,action){
 
   $("#btn_save_post_agendamento").click(function(){
     var data = new FormData();
-    
+
     var settings = {
       "async": true,
       "crossDomain": true,
@@ -1889,7 +1907,7 @@ function formValidacaoOrdem(promoter,action){
         "cache-control": "no-cache",
         "postman-token": "cbc5f035-bd06-e229-08db-b3866ff0fd0d"
       },
-      "data": {        
+      "data": {
         "Pais"   :paisX,
         "No_"   :$("#post_agendamento_no").val(),
       }
@@ -1901,7 +1919,7 @@ function formValidacaoOrdem(promoter,action){
           allow_dismiss: false,
           showProgressbar: true
         });
-        
+
         console.log(response);
         //$('#dataTableOrdemAgendamento').DataTable().destroy();
         //loadAgendamento();
@@ -1929,17 +1947,17 @@ function formValidacaoOrdem(promoter,action){
         SalvaBookingCriaPastaX(notify)
         $('#dataTableOrdemAgendamento').DataTable().destroy();
         loadAgendamento();
-        $('#post-agendamento-modal').modal('toggle');  
+        $('#post-agendamento-modal').modal('toggle');
 
 
-       // $('#post-agendamento-modal').modal('toggle');  
-       
+       // $('#post-agendamento-modal').modal('toggle');
+
 
       });
-      
+
 
   });
-  
+
   function SalvaBookingProfissonalX(Profissional1,notify){
 
     var settings1 = {
@@ -1972,12 +1990,12 @@ function formValidacaoOrdem(promoter,action){
         }
   }
   $.ajax(settings1).done(function (response) {
-    console.log(response);   
+    console.log(response);
     setTimeout(function() {
       notify.update('message', '<strong>Salvando</strong> Profissional '+ $('#post_resource_no'+Profissional1).val());
     }, 2000);
-        
-  });  
+
+  });
   }
 
   function SalvaBookingCriaPastaX(notify){
@@ -1997,16 +2015,16 @@ function formValidacaoOrdem(promoter,action){
         }
   }
   $.ajax(settings1).done(function (response) {
-    console.log(response);   
+    console.log(response);
     setTimeout(function() {
       notify.update('message', '<strong>Salvando</strong> Pasta.');
     }, 3000);
-        
-  });  
+
+  });
   }
 
 
-  
+
   function EnviaEmailX(prof,notify){
     var typeX = $('#post_service_type'+prof).val()
     var res = "";
@@ -2024,7 +2042,7 @@ function formValidacaoOrdem(promoter,action){
     }
     if(typeX == 5){
       res = 'Army'
-    }  
+    }
 
     var settings1 = {
       "async": true,
@@ -2045,23 +2063,23 @@ function formValidacaoOrdem(promoter,action){
         "data_estimada":formatDate($('#post_planned_date'+prof).val()),
         "endereco_loja":$('#post_customer_address').val() + ', '+ $('#post_customer_number').val(),
         "profissional1":$('#post_resource_no'+prof).val(),
-        "type_service": res                
+        "type_service": res
         }
   }
   $.ajax(settings1).done(function (response) {
-    console.log(response);   
+    console.log(response);
     setTimeout(function() {
       notify.update('message', '<strong>Enviando</strong> emails.');
     }, 4000);
 
     setTimeout(function() {
       notify.update('message', '<strong>Serviço</strong> Ordem de agendamento '+$('#post_service_invoce_no').val() + ', criada com sucesso');
-    }, 4000);  
-  });  
+    }, 4000);
+  });
   }
 
   function empetyCampos(){
-    
+
     $('#add_agendamento_nome').val('')
     $('#add_agendamento_n_cliente').val('')
     $('#add_agendamento_cod_vendendor').val('')
@@ -2069,8 +2087,8 @@ function formValidacaoOrdem(promoter,action){
     $('#add_agendamento_fatura_cep').val('')
     $('#add_agendamento_fatura_endereco').val('')
     $('#add_agendamento_fatura_endereco_complemento').val('')
-    
-    
+
+
     $('.start-date1').val('').datepicker('destroy')
     $('.start-date2').val('').datepicker('destroy')
     $('.start-date3').val('').datepicker('destroy')
@@ -2148,9 +2166,9 @@ function formValidacaoOrdem(promoter,action){
     //var length = table.column(0).data().length;
     //var lengthNav = tableNav.column(0).data().length;
     $('#action_cliente_agendamento').val('i')
-    //$('#cliente-agendamento').modal('toggle');  
-    $('#add-agendamento').modal('toggle');  
-    
+    //$('#cliente-agendamento').modal('toggle');
+    $('#add-agendamento').modal('toggle');
+
     // if (length == 0){
     //   table.destroy();
     //   loadClienteX();
@@ -2158,7 +2176,7 @@ function formValidacaoOrdem(promoter,action){
     //  if (lengthNav == 0){
     //   tableNav.destroy();
     //   loadClienteNavX();
-    //  } 
+    //  }
 
      var length1 = $('#add_agendamento_busca_professional1 > option').length;
      console.log('quandadide PROFESSIONAL: ',length)
@@ -2177,8 +2195,8 @@ function formValidacaoOrdem(promoter,action){
            $("#add_agendamento_busca_professional4").append(contX)
            $("#add_agendamento_busca_professional5").append(contX)
            $("#add_agendamento_busca_professional6").append(contX)
-   
-   
+
+
          }
        });
      }
@@ -2215,7 +2233,7 @@ function formValidacaoOrdem(promoter,action){
       $('#dataTableClienteAgendamentoNav').DataTable().draw();
      }, 3000);
 
-     
+
 
     setTimeout(chamaClienteNav, 1000);
   })
@@ -2255,15 +2273,15 @@ function formValidacaoOrdem(promoter,action){
 
   })
 
-  
+
 
   var chamaCliente = function(){
-    $('#cliente-agendamento').modal('toggle');  
+    $('#cliente-agendamento').modal('toggle');
     // $('#dataTableClienteAgendamento').DataTable().draw();
   };
 
   var chamaClienteNav = function(){
-    $('#cliente-agendamento-Nav').modal('toggle');  
+    $('#cliente-agendamento-Nav').modal('toggle');
     //$('#dataTableClienteAgendamentoNav').DataTable().draw();
   };
 
@@ -2271,7 +2289,7 @@ function formValidacaoOrdem(promoter,action){
   $('#dataTableClienteAgendamento tbody').on( 'click', 'td', function () {
     $('#cliente-agendamento').modal('toggle');
     var data = $("#dataTableClienteAgendamento").DataTable().row( $(this).parents('tr') ).data();
-     
+
     console.log(data)
     var id      = data['No_'];
     var name    = data['Name'];
@@ -2282,9 +2300,9 @@ function formValidacaoOrdem(promoter,action){
     var city    = data['City'];
     var address2= data['Adrress 2'];
     var salespersonCode= data['Salesperson Code'];
-    
+
     var action = $('#action_cliente_agendamento').val()
-    
+
     if (action == 'i'){
       $('#add_agendamento_n_cliente').val(id)
       $('#add_agendamento_fatura_endereco_complemento').val(address2)
@@ -2293,7 +2311,7 @@ function formValidacaoOrdem(promoter,action){
       $('#add_agendamento_fatura_cep').val(post)
       $('#add_agendamento_fatura_endereco').val(address)
       $('#add_agendamento_cod_vendendor').val(salespersonCode)
-      
+
       setTimeout(chamaAddAgendamento, 1000);
     } else if (action == 'u')  {
       $('#edit_agendamento_n_cliente').val(id)
@@ -2305,8 +2323,8 @@ function formValidacaoOrdem(promoter,action){
       $('#edit_agendamento_cod_vendendor').val(salespersonCode)
       setTimeout(chamaEditAgendamento, 1000);
     }
-  
-  
+
+
   })
 
 
@@ -2314,10 +2332,10 @@ function formValidacaoOrdem(promoter,action){
   $('#dataTableClienteAgendamentoNav tbody').on( 'click', 'td', function () {
     $('#cliente-agendamento-Nav').modal('toggle');
     var data = $("#dataTableClienteAgendamentoNav").DataTable().row( $(this).parents('tr') ).data();
-     
+
     console.log(data)
 
-    
+
     var id      = data['id'];
     var name    = data['ragsoc'];
     var address = data['indirizzo'];
@@ -2327,12 +2345,12 @@ function formValidacaoOrdem(promoter,action){
     var city    = data['comune'];
     var address2= data['codice'];
     var salespersonCode= data['idsam'];
-    
+
     var action = $('#action_cliente_agendamento').val()
-    
+
     if (action == 'i'){
 
-      
+
       $('#add_agendamento_n_cliente').val(id)
       $('#add_agendamento_fatura_endereco_complemento').val(address2)
       $('#add_agendamento_fatura_cidade').val(city)
@@ -2340,7 +2358,7 @@ function formValidacaoOrdem(promoter,action){
       $('#add_agendamento_fatura_cep').val(post)
       $('#add_agendamento_fatura_endereco').val(address)
       $('#add_agendamento_cod_vendendor').val(salespersonCode)
-      
+
       setTimeout(chamaAddAgendamento, 1000);
     } else if (action == 'u')  {
       $('#edit_agendamento_n_cliente').val(id)
@@ -2352,23 +2370,23 @@ function formValidacaoOrdem(promoter,action){
       $('#edit_agendamento_cod_vendendor').val(salespersonCode)
       setTimeout(chamaEditAgendamento, 1000);
     }
-  
-  
+
+
   })
 
 
 
 
   var chamaAddAgendamento = function(){
-    $('#add-agendamento').modal('toggle');  
+    $('#add-agendamento').modal('toggle');
   };
   var chamaEditAgendamento = function(){
-    $('#edit-agendamento').modal('toggle');  
+    $('#edit-agendamento').modal('toggle');
   };
 
-  
-  
-  function loadClienteX() {  
+
+
+  function loadClienteX() {
     // $('#dataKTableClienteAgendamento').DataTable().destroy();
     var query = "";
     var queryTerritory =""
@@ -2376,12 +2394,12 @@ function formValidacaoOrdem(promoter,action){
       //query = '{"where":{"Territory Code": "' + sessionStorage.UF + '"}}';
       queryTerritory = '&Territory='+sessionStorage.UF;
     }
-    
+
     // $.ajax({url: "http://www.nav.farmina.com.br:3001/api/Customers?filter="+query, success: function(result){
     $.ajax({url: urlX+"Customers/getCustomerQuery?Pais="+paisX+queryTerritory, success: function(result){
-      
 
-    var jsonString = result.result //for testing  
+
+    var jsonString = result.result //for testing
     var tableClienteAgendamento = $("#dataTableClienteAgendamento")
     tableClienteAgendamento.DataTable ({
           "data" : jsonString,
@@ -2401,16 +2419,16 @@ function formValidacaoOrdem(promoter,action){
             { "data" : "Address 2" },
             { "data" : "Salesperson Code" },
           ]
-          
+
         });
 
-        $('#dataTableClienteAgendamento').DataTable().draw();        
-      }        
-       
+        $('#dataTableClienteAgendamento').DataTable().draw();
+      }
+
     });
 
-    
-    
+
+
 
 };
 
@@ -2419,10 +2437,10 @@ function formValidacaoOrdem(promoter,action){
 
 
 
-function loadClienteNavX() {  
-  
+function loadClienteNavX() {
+
   $.ajax({ timeout:20000,url: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country, success: function(result){
-  var jsonString = result.data //for testing  
+  var jsonString = result.data //for testing
   var tableClienteAgendamentoNav = $("#dataTableClienteAgendamentoNav")
   tableClienteAgendamentoNav.DataTable ({
         "data" : jsonString,
@@ -2437,9 +2455,9 @@ function loadClienteNavX() {
           // { "data" : "ragsoc"},
           { "data" : "ragsoc" , "render": function ( data) {
             return data.replace('','').replace('','');
-          
+
             }
-          },   
+          },
           { "data" : "tel" },
           { "data" : "contatto" },
           { "data" : "indirizzo"},
@@ -2448,19 +2466,19 @@ function loadClienteNavX() {
           //{ "data" : "codice" },
           { "data" : "idsam" },
         ]
-        
+
       });
 
       //$('#dataTableClienteAgendamentoNav').DataTable().draw();
-    }        
-     
+    }
+
   });
 
 };
 
 
 
-} 
+}
 
 
 
@@ -2487,8 +2505,8 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#edit_agendamento_trainning_comments1").attr("disabled",DisabledX);
   $("#edit_agendamento_army_specific_store1").attr("disabled",DisabledX);
   $("#edit_agendamento_army_which_park1").attr("disabled",DisabledX);
-  
-  
+
+
   $("#edit_agendamento_number_workers_train1").attr("disabled",DisabledX);
   $("#edit_agendamento_projector1").attr("disabled",DisabledX);
   $("#edit_agendamento_buffet1").attr("disabled",DisabledX);
@@ -2516,7 +2534,7 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#edit_agendamento_projector2").attr("disabled",DisabledX);
   $("#edit_agendamento_buffet2").attr("disabled",DisabledX);
 
-  
+
   /*Promoter 3 */
   $("#edit_agendamento_busca_professional3").attr("disabled",DisabledX);
   $("#edit_agendamento_planned_date3").attr("disabled",DisabledX);
@@ -2600,7 +2618,7 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   if(bloqueadoEditX==3){
     $("#btn_edit_ordem_agendamento").attr("disabled",true);
     $("#btn_save_ordem_agendamento").attr("disabled",true);
- 
+
   }
   //STATUS_BLOQ
 
