@@ -113,14 +113,13 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
 
 
 
-          var ISPAnswerType1        = data['ISP Answer Type 1'];
-          var MerchanAnswerType1    = data['Merchan Answer Type 1'];
-          var TrainningAnswerType1  = data['Trainning Answer Type 1'];
-          var WelcomeKitType1       = data['Welcome Kit Answer Type 1'];
-          var TrainningType1        = data['Trainning Type 1'];
+          var ISPAnswerType1        = data['ISP Answer Type Filter 1'];
+          var MerchanAnswerType1    = data['Merchan Answer Type Filter 1'];
+          var TrainningAnswerType1  = data['Trainning Answer Filter 1'];
+          var WelcomeKitType1       = data['Wellcome Kit Answer Filter 1'];
+          var TrainningType1        = data['Trainning Answer Filter 1'];
 
-
-
+          
 
           var ServicetypeResult1 =""
           if (ISPAnswerType1!=0 ){
@@ -141,10 +140,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
           var PlannedStartTime2 = data['Planned Start Time 2'];
           var PlannedHour2 = data['Planned Hours 2'];
 
-          var ISPAnswerType2        = data['ISP Answer Type 2'];
-          var MerchanAnswerType2    = data['Merchan Answer Type 2'];
-          var TrainningAnswerType2  = data['Trainning Answer Type 2'];
-          var WelcomeKitType2       = data['Welcome Kit Answer Type 2'];
+          var ISPAnswerType2        = data['ISP Answer Type Filter 2'];
+          var MerchanAnswerType2    = data['Merchan Answer Type Filter 2'];
+          var TrainningAnswerType2  = data['Trainning Answer Filter 2'];
+          var WelcomeKitType2       = data['Wellcome Kit Answer Filter 2'];
+          
 
           var ServicetypeResult2 =0
           if (ISPAnswerType2!=0 ){
@@ -165,10 +165,12 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
           var PlannedStartTime3 = data['Planned Start Time 3'];
           var PlannedHour3 = data['Planned Hours 3'];
 
-          var ISPAnswerType3        = data['ISP Answer Type 3'];
-          var MerchanAnswerType3    = data['Merchan Answer Type 3'];
-          var TrainningAnswerType3  = data['Trainning Answer Type 3'];
-          var WelcomeKitType3       = data['Welcome Kit Answer Type 3'];
+          
+          var ISPAnswerType3        = data['ISP Answer Type Filter 3'];
+          var MerchanAnswerType3    = data['Merchan Answer Type Filter 3'];
+          var TrainningAnswerType3  = data['Trainning Answer Filter 3'];
+          var WelcomeKitType3       = data['Wellcome Kit Answer Filter 3'];
+          
 
           var ServicetypeResult3 =0
           if (ISPAnswerType3!=0 ){
@@ -187,10 +189,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
           var PlannedStartTime4 = data['Planned Start Time 4'];
           var PlannedHour4 = data['Planned Hours 4'];
 
-          var ISPAnswerType4        = data['ISP Answer Type 4'];
-          var MerchanAnswerType4    = data['Merchan Answer Type 4'];
-          var TrainningAnswerType4  = data['Trainning Answer Type 4'];
-          var WelcomeKitType4       = data['Welcome Kit Answer Type 4'];
+          var ISPAnswerType4        = data['ISP Answer Type Filter 4'];
+          var MerchanAnswerType4    = data['Merchan Answer Type Filter 4'];
+          var TrainningAnswerType4  = data['Trainning Answer Filter 4'];
+          var WelcomeKitType4       = data['Wellcome Kit Answer Filter 4'];
+
 
           var ServicetypeResult4 =0
           if (ISPAnswerType4!=0 ){
@@ -210,10 +213,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
 
           var PlannedHour5 = data['Planned Hours 5'];
 
-          var ISPAnswerType5        = data['ISP Answer Type 5'];
-          var MerchanAnswerType5    = data['Merchan Answer Type 5'];
-          var TrainningAnswerType5  = data['Trainning Answer Type 5'];
-          var WelcomeKitType5       = data['Welcome Kit Answer Type 5'];
+          var ISPAnswerType5        = data['ISP Answer Type Filter 5'];
+          var MerchanAnswerType5    = data['Merchan Answer Type Filter 5'];
+          var TrainningAnswerType5  = data['Trainning Answer Filter 5'];
+          var WelcomeKitType5       = data['Wellcome Kit Answer Filter 5'];
+
 
           var ServicetypeResult5 =0
           if (ISPAnswerType5!=0 ){
@@ -294,13 +298,13 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               var action ='edit'
               PromoterServiceTypeX(1,ServiceType1,action)
               // $('#edit_agendamento_service_result1').val('ServicetypeResult1');
-             // if(ServicetypeResult1 != ""){
+              if(ServicetypeResult1 != ""){
 
-              var ServicetypeResult1X =  data['Trainning Answer Filter 1'].split(",")               
+              var ServicetypeResult1X =  ServicetypeResult1.split(",")
                 ServicetypeResult1X.map(function(res){
                   $('#edit_agendamento_service_result1 option[value='+res+']').attr('selected','selected');
                 })  
-             //}
+             }
 
 
 
@@ -341,10 +345,12 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               //   $('#edit_agendamento_service_result2 option[value='+ServicetypeResult2+']').attr('selected','selected');
               // }
 
-              var ServicetypeResult2X =  data['Trainning Answer Filter 2'].split(",")               
-                ServicetypeResult2X.map(function(res){
-                  $('#edit_agendamento_service_result2 option[value='+res+']').attr('selected','selected');
-                })  
+              if(ServicetypeResult2 != ""){
+                var ServicetypeResult2X =  ServicetypeResult2.split(",")
+                  ServicetypeResult2X.map(function(res){
+                    $('#edit_agendamento_service_result2 option[value='+res+']').attr('selected','selected');
+                  })  
+                }    
 
               //Profissional 3
               console.log('teste profissional 3 ' + Professional3)
@@ -379,11 +385,12 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               // if(ServicetypeResult3 != ""){
               //   $('#edit_agendamento_service_result3 option[value='+ServicetypeResult3+']').attr('selected','selected');
               // }
-
-              var ServicetypeResult3X =  data['Trainning Answer Filter 3'].split(",")               
-                ServicetypeResult3X.map(function(res){
-                  $('#edit_agendamento_service_result3 option[value='+res+']').attr('selected','selected');
-                })  
+              if(ServicetypeResult3 != ""){
+                var ServicetypeResult3X =  ServicetypeResult3.split(",")
+                  ServicetypeResult3X.map(function(res){
+                    $('#edit_agendamento_service_result3 option[value='+res+']').attr('selected','selected');
+                  })  
+                }    
 
               $('#edit_agendamento_location_activity_training3').val(data['Training Location 3']);
 
@@ -421,11 +428,12 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               // if(ServicetypeResult4 != ""){
               //   $('#edit_agendamento_service_result4 option[value='+ServicetypeResult4+']').attr('selected','selected');
               // }
-
-              var ServicetypeResult4X =  data['Trainning Answer Filter 4'].split(",")
-                ServicetypeResult4X.map(function(res){
-                  $('#edit_agendamento_service_result4 option[value='+res+']').attr('selected','selected');
-                })  
+              if(ServicetypeResult4 != ""){
+                var ServicetypeResult4X =  ServicetypeResult4.split(",")
+                  ServicetypeResult4X.map(function(res){
+                    $('#edit_agendamento_service_result4 option[value='+res+']').attr('selected','selected');
+                  })  
+                }   
 
               $('#edit_agendamento_location_activity_training4').val(data['Training Location 4']);
 
@@ -465,10 +473,12 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               //   $('#edit_agendamento_service_result5 option[value='+ServicetypeResult5+']').attr('selected','selected');
               // }
 
-              var ServicetypeResult5X =  data['Trainning Answer Filter 5'].split(",")               
-                ServicetypeResult5X.map(function(res){
-                  $('#edit_agendamento_service_result5 option[value='+res+']').attr('selected','selected');
-                })  
+              if(ServicetypeResult5 != ""){
+                var ServicetypeResult5X =  ServicetypeResult5.split(",")
+                  ServicetypeResult5X.map(function(res){
+                    $('#edit_agendamento_service_result5 option[value='+res+']').attr('selected','selected');
+                  })  
+                }    
 
               $('#edit_agendamento_location_activity_training5').val(data['Training Location 5']);
 
@@ -515,12 +525,14 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               PromoterServiceTypeX(1,ServiceType1,action)
               // $('#edit_agendamento_service_result1').val(ServicetypeResult1);
 
-              var ServicetypeResult1X =  data['Trainning Answer Filter 1'].split(",")
-               
-              ServicetypeResult1X.map(function(res){
-                console.log('esye feta??? :',res) 
-                $('#edit_agendamento_service_result1 option[value='+res+']').attr('selected','selected');
-              })  
+
+              if(ServicetypeResult1 != ""){
+                var ServicetypeResult1X =  ServicetypeResult1.split(",")
+                ServicetypeResult1X.map(function(res){
+                  //console.log('esye feta??? :',res) 
+                  $('#edit_agendamento_service_result1 option[value='+res+']').attr('selected','selected');
+                })  
+              }  
 
               // if(ServicetypeResult1 != ""){
               //   $('#edit_agendamento_service_result1 option[value='+ServicetypeResult1+']').attr('selected','selected');
@@ -557,7 +569,13 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               var action ='edit'
               PromoterServiceTypeX(2,ServiceType2,action)
               //$('#edit_agendamento_service_result2').val(ServicetypeResult2);
-              $('#edit_agendamento_service_result2 option[value='+ServicetypeResult2+']').attr('selected','selected');
+              //$('#edit_agendamento_service_result2 option[value='+ServicetypeResult2+']').attr('selected','selected');
+              if(ServicetypeResult2 != ""){
+                var ServicetypeResult2X =  ServicetypeResult2.split(",")
+                ServicetypeResult2X.map(function(res){
+                  $('#edit_agendamento_service_result2 option[value='+res+']').attr('selected','selected');
+                })  
+              }  
 
               //Profissional 3
               console.log('teste profissional 3 ' + Professional3)
@@ -591,7 +609,13 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               var action ='edit'
               PromoterServiceTypeX(3,ServiceType3,action)
               //$('#edit_agendamento_service_result3').val(ServicetypeResult3);
-              $('#edit_agendamento_service_result3 option[value='+ServicetypeResult3+']').attr('selected','selected');
+              // $('#edit_agendamento_service_result3 option[value='+ServicetypeResult3+']').attr('selected','selected');
+              if(ServicetypeResult3 != ""){
+                var ServicetypeResult3X =  ServicetypeResult3.split(",")
+                ServicetypeResult3X.map(function(res){
+                  $('#edit_agendamento_service_result3 option[value='+res+']').attr('selected','selected');
+                })  
+              }  
 
 
 
@@ -626,7 +650,13 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               var action ='edit'
               PromoterServiceTypeX(4,ServiceType4,action)
               //$('#edit_agendamento_service_result4').val(ServicetypeResult3);
-              $('#edit_agendamento_service_result4 option[value='+ServicetypeResult4+']').attr('selected','selected');
+              // $('#edit_agendamento_service_result4 option[value='+ServicetypeResult4+']').attr('selected','selected');
+              if(ServicetypeResult4 != ""){
+                var ServicetypeResult4X =  ServicetypeResult4.split(",")
+                ServicetypeResult4X.map(function(res){
+                  $('#edit_agendamento_service_result4 option[value='+res+']').attr('selected','selected');
+                })  
+              }  
 
 
               //Profissional 5
@@ -661,7 +691,13 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               var action ='edit'
               PromoterServiceTypeX(5,ServiceType5,action)
               //$('#edit_agendamento_service_result5').val(ServicetypeResult5);
-              $('#edit_agendamento_service_result5 option[value='+ServicetypeResult5+']').attr('selected','selected');
+              // $('#edit_agendamento_service_result5 option[value='+ServicetypeResult5+']').attr('selected','selected');
+              if(ServicetypeResult5 != ""){
+                var ServicetypeResult5X =  ServicetypeResult5.split(",")
+                ServicetypeResult5X.map(function(res){
+                  $('#edit_agendamento_service_result5 option[value='+res+']').attr('selected','selected');
+                })  
+              }  
 
             }
             $('#edit-agendamento').modal('toggle');
