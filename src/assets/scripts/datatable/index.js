@@ -2757,6 +2757,8 @@ function loadClienteNavX() {
         // "data" : jsonString,
         // timeout: 60000,
         ajax: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country,
+        processing: true,
+        serverSide: true,
         rowReorder: {
           selector: 'td:nth-child(2)'
       },
