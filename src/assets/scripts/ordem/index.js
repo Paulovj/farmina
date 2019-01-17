@@ -1358,7 +1358,10 @@ function formValidacaoOrdem(promoter,action){
   if(service_type1 == 1){
     var trainning_type1       = $('#'+action+'_agendamento_trainning_type'+promoter).val();
     var food1                 = $('#'+action+'_agendamento_food'+promoter).val();
-    var service_result1       = $('#'+action+'_agendamento_service_result'+promoter).val();
+    // var service_result1    = $('#'+action+'_agendamento_service_result'+promoter).val();
+    var service_result1    = $('input[name="'+action+'_agendamento_service_result'+promoter+'"]').is(':checked') 
+    
+
     var trainning_comments1   = $('#'+action+'_agendamento_trainning_comments'+promoter).val();
     var location_activity1    = $('#'+action+'_agendamento_location_activity_training'+promoter).val();
 
@@ -1377,7 +1380,9 @@ function formValidacaoOrdem(promoter,action){
       valida = false
     }
 
-    if(service_result1 == 0){
+    
+
+    if(service_result1 == false){
       texto +=  $.i18n.prop('TreinamentoParaQualLinha',lang)+ ' ' + promoter +'<br>';//"Training For a Line "+ promoter +" " +
       valida = false
     }
@@ -1390,14 +1395,15 @@ function formValidacaoOrdem(promoter,action){
   /*VALIDAÇÃO WELCOME KIT*/
   if(service_type1 == 2){
     var food1                 = $('#'+action+'_agendamento_food'+promoter).val();
-    var service_result1       = $('#'+action+'_agendamento_service_result'+promoter).val();
+    // var service_result1       = $('#'+action+'_agendamento_service_result'+promoter).val();
+    var service_result1       = $('input[name="'+action+'_agendamento_service_result'+promoter+'"]').is(':checked') 
 
     if(food1 == 0){
       texto += $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " +
       valida = false
     }
 
-    if(service_result1 == 0){
+    if(service_result1 == false){
       texto += $.i18n.prop('ParaQualLinhaVoceGostariaKitDeBoasVindas',lang)+ ' ' + promoter +'<br>';// "Welcome kit for which line "+ promoter +" " +
       valida = false
     }
@@ -1407,7 +1413,8 @@ function formValidacaoOrdem(promoter,action){
   /*VALIDAÇÃO ISP*/
   if(service_type1 == 3){
     var food1            = $('#'+action+'_agendamento_food'+promoter).val();
-    var Promoting1       = $('#'+action+'_agendamento_Promoting'+promoter).val();
+    // var Promoting1       = $('#'+action+'_agendamento_Promoting'+promoter).val();
+    var service_result1  = $('input[name="'+action+'_agendamento_service_result'+promoter+'"]').is(':checked') 
     var service_result1  = $('#'+action+'_agendamento_service_result'+promoter).val();
     var open_bags        = $('#'+action+'_agendamento_open_bags'+promoter).val();
 
@@ -1421,7 +1428,7 @@ function formValidacaoOrdem(promoter,action){
       valida = false
     }
 
-    if(service_result1 == 0){
+    if(service_result1 == false){
       texto +=  $.i18n.prop('PorQueVoceEstaFazendoIssoISP',lang)+ ' ' + promoter +'<br>';//"Purpose of the promotion "+ promoter +" " +
       valida = false
     }
@@ -1436,14 +1443,15 @@ function formValidacaoOrdem(promoter,action){
   /*VALIDAÇÃO   MERCHANDISSING*/
   if(service_type1 == 4){
     var how_meter1          = $('#'+action+'_agendamento_how_meter'+promoter).val();
-    var service_result1     = $('#'+action+'_agendamento_service_result'+promoter).val();
+    // var service_result1     = $('#'+action+'_agendamento_service_result'+promoter).val();
+    var service_result1       = $('input[name="'+action+'_agendamento_service_result'+promoter+'"]').is(':checked') 
 
     if(how_meter1 == ""){
       texto +=  $.i18n.prop('lCampoObrigatorio',lang)+ ' ' + promoter +'<br>';//"How many meters of Farmina shelves "+ promoter +" " +
       valida = false
     }
 
-    if(service_result1 == 0){
+    if(service_result1 == false){
       texto += $.i18n.prop('lCampoObrigatorio',lang)+ ' ' + promoter +'<br>';// "Purpose of the promotion "+ promoter +" " +
       valida = false
     }
