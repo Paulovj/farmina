@@ -274,7 +274,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_planned_start_time1').val(formatHora(PlannedStartTime1));
                   console.log('console log TrainningType1::::',TrainningType1)
               $('#edit_agendamento_trainning_type1').val(TrainningType1);
-              $('#edit_agendamento_food1').val(data['Food Type 1']);
+              
               $('#edit_agendamento_Promoting1').val(data['Promotion Type 1']);
               $('#edit_agendamento_push_new_line1').val(data['Push New Line Comments 1']);
               $('#edit_agendamento_line_slow_comments1').val(data['Line Slow Comments 1']);
@@ -297,6 +297,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
 
               var action ='edit'
               PromoterServiceTypeX(1,ServiceType1,action)
+              $('#edit_agendamento_food1').val(data['Food Type 1']);
               // $('#edit_agendamento_service_result1').val('ServicetypeResult1');
               if(ServicetypeResult1 != ""){
 
@@ -321,7 +322,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               ((!Professional2)? $('#edit_agendamento_planned_start_time2').val(formatHora(PlannedStartTime2)):'');
 
               $('#edit_agendamento_trainning_type2').val(data['Trainning Type 2']);
-              $('#edit_agendamento_food2').val(data['Food Type 2']);
+              
               $('#edit_agendamento_Promoting2').val(data['Promotion Type 2']);
               $('#edit_agendamento_push_new_line2').val(data['Push New Line Comments 2']);
               $('#edit_agendamento_line_slow_comments2').val(data['Line Slow Comments 2']);
@@ -343,6 +344,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
 
               var action ='edit'
               PromoterServiceTypeX(2,ServiceType2,action)
+              $('#edit_agendamento_food2').val(data['Food Type 2']);
               //$('#edit_agendamento_service_result2').val(ServicetypeResult2);
               // if(ServicetypeResult2 != ""){
               //   $('#edit_agendamento_service_result2 option[value='+ServicetypeResult2+']').attr('selected','selected');
@@ -368,7 +370,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               ((!Professional3)? $('#edit_agendamento_planned_start_time3').val(formatHora(PlannedStartTime3)) : '');
 
               $('#edit_agendamento_trainning_type3').val(data['Trainning Type 3']);
-              $('#edit_agendamento_food3').val(data['Food Type 3']);
+              
               $('#edit_agendamento_Promoting3').val(data['Promotion Type 3']);
               $('#edit_agendamento_push_new_line3').val(data['Push New Line Comments 3']);
               $('#edit_agendamento_line_slow_comments3').val(data['Line Slow Comments 3']);
@@ -387,6 +389,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               }
               var action ='edit'
               PromoterServiceTypeX(3,ServiceType3,action)
+              $('#edit_agendamento_food3').val(data['Food Type 3']);
               //$('#edit_agendamento_service_result3').val(ServicetypeResult3);
               // if(ServicetypeResult3 != ""){
               //   $('#edit_agendamento_service_result3 option[value='+ServicetypeResult3+']').attr('selected','selected');
@@ -414,7 +417,6 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               ((!Professional4)? $('#edit_agendamento_planned_start_time4').val(formatHora(PlannedStartTime4)) : '');
 
               $('#edit_agendamento_trainning_type4').val(data['Trainning Type 4']);
-              $('#edit_agendamento_food4').val(data['Food Type 4']);
               $('#edit_agendamento_Promoting4').val(data['Promotion Type 4']);
               $('#add_agendamento_push_new_line4').val(data['Push New Line Comments 4']);
               $('#edit_agendamento_line_slow_comments4').val(data['Line Slow Comments 4']);
@@ -432,6 +434,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               }
               var action ='edit'
               PromoterServiceTypeX(4,ServiceType4,action)
+              $('#edit_agendamento_food4').val(data['Food Type 4']);
+
               //$('#edit_agendamento_service_result4').val(ServicetypeResult3);
               // if(ServicetypeResult4 != ""){
               //   $('#edit_agendamento_service_result4 option[value='+ServicetypeResult4+']').attr('selected','selected');
@@ -458,7 +462,6 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               ((!Professional5)? $('#edit_agendamento_planned_start_time5').val(formatHora(PlannedStartTime5)) : '');
 
               $('#edit_agendamento_trainning_type5').val(data['Trainning Type 5']);
-              $('#edit_agendamento_food5').val(data['Food Type 5']);
               $('#edit_agendamento_Promoting5').val(data['Promotion Type 5']);
               $('#add_agendamento_push_new_line5').val(data['Push New Line Comments 5']);
               $('#edit_agendamento_line_slow_comments5').val(data['Line Slow Comments 5']);
@@ -477,6 +480,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               }
               var action ='edit'
               PromoterServiceTypeX(5,ServiceType5,action)
+              $('#edit_agendamento_food5').val(data['Food Type 5']);
+
               //$('#edit_agendamento_service_result5').val(ServicetypeResult5);
               // if(ServicetypeResult5 != ""){
               //   $('#edit_agendamento_service_result5 option[value='+ServicetypeResult5+']').attr('selected','selected');
@@ -508,7 +513,6 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_planned_start_time1').val(formatHora(PlannedStartTime1));
 
               $('#edit_agendamento_trainning_type1').val(data['Trainning Type 1']);
-              $('#edit_agendamento_food1').val(data['Food Type 1']);
               $('#edit_agendamento_Promoting1').val(data['Promotion Type 1']);
               $('#edit_agendamento_push_new_line1').val(data['Push New Line Comments 1']);
               $('#edit_agendamento_line_slow_comments1').val(data['Line Slow Comments 1']);
@@ -533,6 +537,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
 
               var action ='edit'
               PromoterServiceTypeX(1,ServiceType1,action)
+              $('#edit_agendamento_food1').val(data['Food Type 1']);
+
               // $('#edit_agendamento_service_result1').val(ServicetypeResult1);
 
 
@@ -559,7 +565,6 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_planned_start_time2').val(formatHora(PlannedStartTime2));
 
               $('#edit_agendamento_trainning_type2').val(data['Trainning Type 2']);
-              $('#edit_agendamento_food2').val(data['Food Type 2']);
               $('#edit_agendamento_Promoting2').val(data['Promotion Type 2']);
               $('#add_agendamento_push_new_line2').val(data['Push New Line Comments 2']);
               $('#edit_agendamento_line_slow_comments2').val(data['Line Slow Comments 2']);
@@ -579,6 +584,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_location_activity_training2').val(data['Training Location 2']);
               var action ='edit'
               PromoterServiceTypeX(2,ServiceType2,action)
+              $('#edit_agendamento_food2').val(data['Food Type 2']);
+
               //$('#edit_agendamento_service_result2').val(ServicetypeResult2);
               //$('#edit_agendamento_service_result2 option[value='+ServicetypeResult2+']').attr('selected','selected');
               if(ServicetypeResult2 != ""){
@@ -599,7 +606,6 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_planned_start_time3').val(formatHora(PlannedStartTime3));
 
               $('#edit_agendamento_trainning_type3').val(data['Trainning Type 3']);
-              $('#edit_agendamento_food3').val(data['Food Type 3']);
               $('#edit_agendamento_Promoting3').val(data['Promotion Type 3']);
               $('#add_agendamento_push_new_line3').val(data['Push New Line Comments 3']);
               $('#edit_agendamento_line_slow_comments3').val(data['Line Slow Comments 3']);
@@ -620,6 +626,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
 
               var action ='edit'
               PromoterServiceTypeX(3,ServiceType3,action)
+              $('#edit_agendamento_food3').val(data['Food Type 3']);
+
               //$('#edit_agendamento_service_result3').val(ServicetypeResult3);
               // $('#edit_agendamento_service_result3 option[value='+ServicetypeResult3+']').attr('selected','selected');
               if(ServicetypeResult3 != ""){
@@ -642,7 +650,6 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_planned_start_time4').val(formatHora(PlannedStartTime4));
 
               $('#edit_agendamento_trainning_type4').val(data['Trainning Type 4']);
-              $('#edit_agendamento_food4').val(data['Food Type 4']);
               $('#edit_agendamento_Promoting4').val(data['Promotion Type 4']);
               $('#add_agendamento_push_new_line4').val(data['Push New Line Comments 4']);
               $('#edit_agendamento_line_slow_comments4').val(data['Line Slow Comments 4']);
@@ -662,6 +669,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
 
               var action ='edit'
               PromoterServiceTypeX(4,ServiceType4,action)
+              $('#edit_agendamento_food4').val(data['Food Type 4']);
+
               //$('#edit_agendamento_service_result4').val(ServicetypeResult3);
               // $('#edit_agendamento_service_result4 option[value='+ServicetypeResult4+']').attr('selected','selected');
               if(ServicetypeResult4 != ""){
@@ -683,7 +692,6 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_planned_start_time5').val(formatHora(PlannedStartTime5));
 
               $('#edit_agendamento_trainning_type5').val(data['Trainning Type 5']);
-              $('#edit_agendamento_food5').val(data['Food Type 5']);
               $('#edit_agendamento_Promoting5').val(data['Promotion Type 5']);
               $('#add_agendamento_push_new_line5').val(data['Push New Line Comments 5']);
               $('#edit_agendamento_line_slow_comments5').val(data['Line Slow Comments 5']);
@@ -704,6 +712,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
 
               var action ='edit'
               PromoterServiceTypeX(5,ServiceType5,action)
+              $('#edit_agendamento_food5').val(data['Food Type 5']);
+
               //$('#edit_agendamento_service_result5').val(ServicetypeResult5);
               // $('#edit_agendamento_service_result5 option[value='+ServicetypeResult5+']').attr('selected','selected');
               if(ServicetypeResult5 != ""){
@@ -1001,6 +1011,8 @@ $("#edit_agendamento_busca_cliente").change(function(){
 
 function PromoterServiceTypeX(promoter,value,action){
   var contX ="";
+  var contTypeFoodX ="";
+
   var lblCont ="";
   $("#"+action+"_agendamento_service_result"+promoter+ " option").remove();
   $("#div_"+action+"_agendamento_service_result"+promoter).show()
@@ -1029,19 +1041,28 @@ function PromoterServiceTypeX(promoter,value,action){
   $("#add_agendamento_army_which_park"+promoter).val("");
 
   $('.'+action+'_p_checkbox'+promoter).remove();
+
+  $("#"+action+"_agendamento_food"+promoter+ " option").remove();
   if(value==1){
     //traning
 
     lblCont = $.i18n.prop('TreinamentoParaQualLinha',lang);
 
+    
+    contTypeFoodX +='<option selected value="0" class="lSelecione">'+$.i18n.prop('lSelecione',lang)+'</option>';
+    contTypeFoodX +='<option value="1" class="lDry">'+$.i18n.prop('lDry',lang)+'</option>'
+    contTypeFoodX +='<option value="2" class="lWet">'+$.i18n.prop('lWet',lang)+'</option>'
+    contTypeFoodX +='<option value="3" class="lDryWet">'+$.i18n.prop('lDryWet',lang)+'</option>'
+
+
     //contX +='<option value="0">  </option>';
-    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="1">All ND lines  </p>';
-    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="2">ND Prime      </p>';
-    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="3">ND Ancestral  </p>';
-    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="4">ND Pumpkin    </p>';
-    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="5">ND Quinoa     </p>';
-    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="6">ND Ocean      </p>';
-    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="7">Vet Life      </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="1"> All ND lines  </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="2"> ND Prime      </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="3"> ND Ancestral  </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="4"> ND Pumpkin    </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="5"> ND Quinoa     </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="6"> ND Ocean      </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="7"> Vet Life      </p>';
     
 
     $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
@@ -1069,6 +1090,11 @@ function PromoterServiceTypeX(promoter,value,action){
     //KITS
     lblCont =$.i18n.prop('ParaQualLinhaVoceGostariaKitDeBoasVindas',lang);
 
+    contTypeFoodX +='<option selected value="0" class="lSelecione">'+$.i18n.prop('lSelecione',lang)+'</option>';
+    contTypeFoodX +='<option value="1" class="lDry">'+$.i18n.prop('lDry',lang)+'</option>'
+    contTypeFoodX +='<option value="2" class="lWet">'+$.i18n.prop('lWet',lang)+'</option>'
+    // contTypeFoodX +='<option value="3" class="lDryWet">'+$.i18n.prop('lDryWet',lang)+'</option>'
+    
     //contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="0">  </p>';
     contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="1"> ND Prime cat </p>';
     contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="2"> ND Ancestral cat </p>';
@@ -1079,7 +1105,7 @@ function PromoterServiceTypeX(promoter,value,action){
     contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="7"> ND Ancestral dog </p>';
     contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="8"> ND Pumpkin dog </p>';
     contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="9"> ND Quinoa dog </p>';
-    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="10">ND Ocean dog </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="10"> ND Ocean dog </p>';
 
 
     $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
@@ -1111,6 +1137,11 @@ function PromoterServiceTypeX(promoter,value,action){
     // contX +='<option value="2"> LINE SLOW </option>';
     // contX +='<option value="3"> GENERIC </option>';
 
+    contTypeFoodX +='<option selected value="0" class="lSelecione">'+$.i18n.prop('lSelecione',lang)+'</option>';
+    contTypeFoodX +='<option value="1" class="lDry">'+$.i18n.prop('lDry',lang)+'</option>'
+    contTypeFoodX +='<option value="2" class="lWet">'+$.i18n.prop('lWet',lang)+'</option>'
+    // contTypeFoodX +='<option value="3" class="lDryWet">'+$.i18n.prop('lDryWet',lang)+'</option>'
+    
     contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="4"> ND Prime</p>';
     contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="5"> ND Ancestral</p>';
     contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="6"> ND Pumpkin</p>';
@@ -1168,6 +1199,14 @@ function PromoterServiceTypeX(promoter,value,action){
   }else if(value==5){
     lblCont =" Army ? ";
     contX +='<option value="0">  </option>';
+
+    contTypeFoodX +='<option selected value="0" class="lSelecione">'+$.i18n.prop('lSelecione',lang)+'</option>';
+    contTypeFoodX +='<option value="1" class="lDry">'+$.i18n.prop('lDry',lang)+'</option>'
+    contTypeFoodX +='<option value="2" class="lWet">'+$.i18n.prop('lWet',lang)+'</option>'
+    // contTypeFoodX +='<option value="3" class="lDryWet">'+$.i18n.prop('lDryWet',lang)+'</option>'
+    
+
+
     $("#div_"+action+"_agendamento_service_result"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
@@ -1187,6 +1226,9 @@ function PromoterServiceTypeX(promoter,value,action){
   $("#lbl_"+action+"_agendamento_service_result"+promoter).html(lblCont)
   // $("#"+action+"_agendamento_service_result"+promoter).append(contX)
   $("#lbl_"+action+"_agendamento_service_result"+promoter).after(contX)
+
+  $("#"+action+"_agendamento_food"+promoter).append(contTypeFoodX)
+
 }
 
 $("#add_agendamento_army_specific_store1").change(function(){
