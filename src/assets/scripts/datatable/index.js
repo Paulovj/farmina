@@ -1076,6 +1076,13 @@ function formValidacaoActivity(service_type){
   var start_date        = $('#finish_starting_date').val();  
   var start_hour        = $('#finish_starting_hour').val();  
   var finish_time       = $('#finish_time').val();
+
+  var start_hour_array = start_hour.split(':')
+  var finish_time_array = finish_time.split(':')
+
+  var start_hour_second = ((start_hour_array[0] * 60 *60) + (start_hour_array[1] + 60))
+  var finish_time_second = ((finish_time_array[0] * 60 *60) + (finish_time_array[1] + 60))
+  var total = (finish_time_second - start_hour_second)
   
   if(start_date == ""){
     texto +=  $.i18n.prop('lDataInicio',lang) + '<br>';//"Start Date " +
@@ -1091,7 +1098,11 @@ function formValidacaoActivity(service_type){
     texto += $.i18n.prop('lHoraFinal',lang) + '<br>'; // "Finish Time " +
     valida = false
   }
-    
+  
+  if(total < 0){
+    texto += $.i18n.prop('lHoraFinal',lang) +' < '+  $.i18n.prop('lHoraInicio',lang) +'<br>'; // "Finish Time " +
+    valida = false
+  }
   
   
   if(service_type == "Training"){
