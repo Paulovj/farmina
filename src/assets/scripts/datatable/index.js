@@ -441,7 +441,8 @@ function formatHora(date) {
               if(ServicetypeResult1 != ""){
                 var ServicetypeResult1X =  ServicetypeResult1.split(",")               
                   ServicetypeResult1X.map(function(res){
-                    $('#edit_agendamento_service_result1 option[value='+res+']').attr('selected','selected');
+                    // $('#edit_agendamento_service_result1 option[value='+res+']').attr('selected','selected');
+                    $('input[name="edit_agendamento_service_result1"][value='+res+']').attr('checked',true);
                   })  
                 }    
 
@@ -489,7 +490,8 @@ function formatHora(date) {
               if(ServicetypeResult2 != ""){
                 var ServicetypeResult2X =  ServicetypeResult2.split(",")
                 ServicetypeResult2X.map(function(res){
-                  $('#edit_agendamento_service_result2 option[value='+res+']').attr('selected','selected');
+                  // $('#edit_agendamento_service_result2 option[value='+res+']').attr('selected','selected');
+                  $('input[name="edit_agendamento_service_result2"][value='+res+']').attr('checked',true);
                 })  
               }  
 
@@ -532,7 +534,8 @@ function formatHora(date) {
 
                 var ServicetypeResult3X =  ServicetypeResult3.split(",")
                 ServicetypeResult3X.map(function(res){
-                  $('#edit_agendamento_service_result3 option[value='+res+']').attr('selected','selected');
+                  // $('#edit_agendamento_service_result3 option[value='+res+']').attr('selected','selected');
+                  $('input[name="edit_agendamento_service_result3"][value='+res+']').attr('checked',true);
                 })  
 
               }
@@ -580,7 +583,8 @@ function formatHora(date) {
               if(ServicetypeResult4 != ""){
                 var ServicetypeResult4X =  ServicetypeResult4.split(",")
                 ServicetypeResult4X.map(function(res){
-                  $('#edit_agendamento_service_result4 option[value='+res+']').attr('selected','selected');
+                  // $('#edit_agendamento_service_result4 option[value='+res+']').attr('selected','selected');
+                  $('input[name="edit_agendamento_service_result5"][value='+res+']').attr('checked',true);
                 })  
               }  
               
@@ -626,7 +630,8 @@ function formatHora(date) {
               if(ServicetypeResult5 != ""){
                 var ServicetypeResult5X =  ServicetypeResult5.split(",")
                 ServicetypeResult5X.map(function(res){
-                  $('#edit_agendamento_service_result5 option[value='+res+']').attr('selected','selected');
+                  // $('#edit_agendamento_service_result5 option[value='+res+']').attr('selected','selected');
+                  $('input[name="edit_agendamento_service_result5"][value='+res+']').attr('checked',true);
                 })  
               }  
 
@@ -2483,20 +2488,20 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
     $("#add_agendamento_army_specific_store"+promoter).val("0");
     $("#add_agendamento_army_which_park"+promoter).val("");
     
-    
+    $('.'+action+'_p_checkbox'+promoter).remove();
     if(value==1){
       //traning
       
       lblCont = $.i18n.prop('TreinamentoParaQualLinha',lang);
   
-      contX +='<option value="0">  </option>';
-      contX +='<option value="1">All ND lines </option>';
-      contX +='<option value="2">ND Prime </option>';
-      contX +='<option value="3">ND Ancestral </option>';
-      contX +='<option value="4">ND Pumpkin </option>';
-      contX +='<option value="5">ND Quinoa </option>';
-      contX +='<option value="6">ND Ocean </option>';
-      contX +='<option value="7">Vet Life </option>';
+    // contX +='<option value="0">  </option>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="1">All ND lines  </p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="2">ND Prime      </p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="3">ND Ancestral  </p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="4">ND Pumpkin    </p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="5">ND Quinoa     </p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="6">ND Ocean      </p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="7">Vet Life      </p>';
       
       $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
       $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
@@ -2523,17 +2528,17 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
       //KITS
       lblCont =$.i18n.prop('ParaQualLinhaVoceGostariaKitDeBoasVindas',lang);
       
-      contX +='<option value="0">  </option>';
-      contX +='<option value="1"> ND Prime cat </option>';
-      contX +='<option value="2"> ND Ancestral cat </option>';
-      contX +='<option value="3"> ND Pumpkin cat </option>';
-      contX +='<option value="4"> ND Quinoa cat </option>';    
-      contX +='<option value="5"> ND Ocean cat </option>';    
-      contX +='<option value="6"> ND Prime dog </option>';
-      contX +='<option value="7"> ND Ancestral dog </option>';
-      contX +='<option value="8"> ND Pumpkin dog </option>';
-      contX +='<option value="9"> ND Quinoa dog </option>';
-      contX +='<option value="10">ND Ocean dog </option>';
+      // contX +='<option value="0">  </option>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="1"> ND Prime cat </p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="2"> ND Ancestral cat </p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="3"> ND Pumpkin cat </p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="4"> ND Quinoa cat </p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="5"> ND Ocean cat </p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="6"> ND Prime dog </p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="7"> ND Ancestral dog </p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="8"> ND Pumpkin dog </p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="9"> ND Quinoa dog </p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="10">ND Ocean dog </p>';
   
       
       $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
@@ -2560,16 +2565,17 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
     }else if(value==3){
       //ISP
       lblCont =$.i18n.prop('PorQueVoceEstaFazendoIssoISP',lang);
-      contX +='<option value="0">  </option>';
+      // contX +='<option value="0">  </option>';
       // contX +='<option value="1"> PUSH NEW LINE </option>';
       // contX +='<option value="2"> LINE SLOW </option>';
       // contX +='<option value="3"> GENERIC </option>';
   
-      contX +='<option value="4"> ND Prime</option>';
-      contX +='<option value="5"> ND Ancestral</option>';
-      contX +='<option value="6"> ND Pumpkin</option>';
-      contX +='<option value="7"> ND Quinoa</option>';
-      contX +='<option value="8"> ND Ocean</option>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="4"> ND Prime</p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="5"> ND Ancestral</p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="6"> ND Pumpkin</p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="7"> ND Quinoa</p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="8"> ND Ocean</p>';
+
       $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
       $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
       $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
@@ -2595,10 +2601,11 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
       var PlacingOfFarminaMaterials = $.i18n.prop('lPlacingOfFarminaMaterials',lang)
   
       lblCont =$.i18n.prop('QueTipoMmerchandisingVoceQuer',lang);
-      contX +='<option value="0">  </option>';
-      contX +='<option value="1"> '+PlacingOfProducts+'</option>';
-      contX +='<option value="2"> '+NewShelf+'</option>';
-      contX +='<option value="3"> '+PlacingOfFarminaMaterials+'</option>';
+      // contX +='<option value="0">  </option>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="1"> '+PlacingOfProducts+'</p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="2"> '+NewShelf+'</p>';
+      contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="3"> '+PlacingOfFarminaMaterials+'</p>';
+
       $("#div_"+action+"_agendamento_service_result_food"+promoter).hide();
       $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
       $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
@@ -2638,7 +2645,8 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
     }  
     
     $("#lbl_"+action+"_agendamento_service_result"+promoter).html(lblCont)
-    $("#"+action+"_agendamento_service_result"+promoter).append(contX)
+    // $("#"+action+"_agendamento_service_result"+promoter).append(contX)
+    $("#lbl_"+action+"_agendamento_service_result"+promoter).after(contX)
   }
 
 
@@ -2949,6 +2957,22 @@ $("#btn_save_ordem_agendamento").click(function(){
     }
   console.log('entrou na janela');
   var data = new FormData();
+
+  var edit_service_result1 = $('input[name="edit_agendamento_service_result1"]:checked').map(function(){
+    return this.value }).get().join(", ");
+
+  var edit_service_result2 = $('input[name="edit_agendamento_service_result2"]:checked').map(function(){
+    return this.value }).get().join(", ");
+
+  var edit_service_result3 = $('input[name="edit_agendamento_service_result3"]:checked').map(function(){
+    return this.value }).get().join(", ");          
+
+  var edit_service_result4 = $('input[name="edit_agendamento_service_result4"]:checked').map(function(){
+    return this.value }).get().join(", ");
+
+  var edit_service_result5 = $('input[name="edit_agendamento_service_result5"]:checked').map(function(){
+    return this.value }).get().join(", ");
+
   
   var settings = {
     "async": true,
@@ -2984,7 +3008,7 @@ $("#btn_save_ordem_agendamento").click(function(){
       "PlannedDate1"            :formatDateSql($("#edit_agendamento_planned_date1").val()),
       "PlannedHours1"           :$("#edit_agendamento_planned_hour1").val(),
       "ServiceType1"            :$("#edit_agendamento_service_type1").val(),
-      "ProfessionalFunction1"   :$("#edit_agendamento_service_result1").val(),
+      "ProfessionalFunction1"   :edit_service_result1,
 
 
       "Food1"                     :$("#edit_agendamento_food1").val(),
@@ -3008,7 +3032,7 @@ $("#btn_save_ordem_agendamento").click(function(){
       "PlannedDate2"            :formatDateSql($("#edit_agendamento_planned_date2").val()),
       "PlannedHours2"           :$("#edit_agendamento_planned_hour2").val(),
       "ServiceType2"            :$("#edit_agendamento_service_type2").val(),
-      "ProfessionalFunction2"   :$("#edit_agendamento_service_result2").val(),
+      "ProfessionalFunction2"   :edit_service_result2,
 
       "Food2"                     :$("#edit_agendamento_food2").val(),
       "TrainningType2"            :$("#edit_agendamento_trainning_type2").val(),
@@ -3026,7 +3050,7 @@ $("#btn_save_ordem_agendamento").click(function(){
       "PlannedDate3"            :formatDateSql($("#edit_agendamento_planned_date3").val()),
       "PlannedHours3"           :$("#edit_agendamento_planned_hour3").val(),
       "ServiceType3"            :$("#edit_agendamento_service_type3").val(),
-      "ProfessionalFunction3"   :$("#edit_agendamento_service_result3").val(),
+      "ProfessionalFunction3"   :edit_service_result3,
 
       "Number-Works2"               :$("#edit_agendamento_number_workers_train2").val(),
       "Projector2"                  :$("#edit_agendamento_projector2").val(),
@@ -3055,7 +3079,7 @@ $("#btn_save_ordem_agendamento").click(function(){
       "PlannedDate4"            :formatDateSql($("#edit_agendamento_planned_date4").val()),
       "PlannedHours4"           :$("#edit_agendamento_planned_hour4").val(),
       "ServiceType4"            :$("#edit_agendamento_service_type4").val(),
-      "ProfessionalFunction4"   :$("#edit_agendamento_service_result4").val(),
+      "ProfessionalFunction4"   :edit_service_result4,
 
       "Food4"                     :$("#edit_agendamento_food4").val(),
       "TrainningType4"            :$("#edit_agendamento_trainning_type4").val(),
@@ -3078,7 +3102,7 @@ $("#btn_save_ordem_agendamento").click(function(){
       "PlannedDate5"            :formatDateSql($("#edit_agendamento_planned_date5").val()),
       "PlannedHours5"           :$("#edit_agendamento_planned_hour5").val(),
       "ServiceType5"            :$("#edit_agendamento_service_type5").val(),
-      "ProfessionalFunction5"   :$("#edit_agendamento_service_result5").val(),
+      "ProfessionalFunction5"   :edit_service_result5,
 
       "Food5"                     :$("#edit_agendamento_food5").val(),
       "TrainningType5"            :$("#edit_agendamento_trainning_type5").val(),

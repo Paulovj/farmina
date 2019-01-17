@@ -302,7 +302,10 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
 
               var ServicetypeResult1X =  ServicetypeResult1.split(",")
                 ServicetypeResult1X.map(function(res){
-                  $('#edit_agendamento_service_result1 option[value='+res+']').attr('selected','selected');
+                  // $('#edit_agendamento_service_result1 option[value='+res+']').attr('selected','selected');
+                  // $('input[type="checkbox"][value='+res+']').attr('checked',true);
+                  $('input[name="edit_agendamento_service_result1"][value='+res+']').attr('checked',true);
+                  
                 })  
              }
 
@@ -348,7 +351,10 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(ServicetypeResult2 != ""){
                 var ServicetypeResult2X =  ServicetypeResult2.split(",")
                   ServicetypeResult2X.map(function(res){
-                    $('#edit_agendamento_service_result2 option[value='+res+']').attr('selected','selected');
+                    // $('#edit_agendamento_service_result2 option[value='+res+']').attr('selected','selected');
+                    // $('input[type="checkbox"][value='+kres+']').attr('checked',true);
+                    $('input[name="edit_agendamento_service_result2"][value='+res+']').attr('checked',true);
+                    
                   })  
                 }    
 
@@ -388,7 +394,9 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(ServicetypeResult3 != ""){
                 var ServicetypeResult3X =  ServicetypeResult3.split(",")
                   ServicetypeResult3X.map(function(res){
-                    $('#edit_agendamento_service_result3 option[value='+res+']').attr('selected','selected');
+                    // $('#edit_agendamento_service_result3 option[value='+res+']').attr('selected','selected');
+                    // $('input[type="checkbox"][value='+res+']').attr('checked',true);
+                    $('input[name="edit_agendamento_service_result3"][value='+res+']').attr('checked',true);
                   })  
                 }    
 
@@ -431,7 +439,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(ServicetypeResult4 != ""){
                 var ServicetypeResult4X =  ServicetypeResult4.split(",")
                   ServicetypeResult4X.map(function(res){
-                    $('#edit_agendamento_service_result4 option[value='+res+']').attr('selected','selected');
+                    // $('#edit_agendamento_service_result4 option[value='+res+']').attr('selected','selected');
+                    $('input[name="edit_agendamento_service_result4"][value='+res+']').attr('checked',true);
                   })  
                 }   
 
@@ -476,7 +485,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(ServicetypeResult5 != ""){
                 var ServicetypeResult5X =  ServicetypeResult5.split(",")
                   ServicetypeResult5X.map(function(res){
-                    $('#edit_agendamento_service_result5 option[value='+res+']').attr('selected','selected');
+                    // $('#edit_agendamento_service_result5 option[value='+res+']').attr('selected','selected');
+                    $('input[name="edit_agendamento_service_result5"][value='+res+']').attr('checked',true);
                   })  
                 }    
 
@@ -530,7 +540,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
                 var ServicetypeResult1X =  ServicetypeResult1.split(",")
                 ServicetypeResult1X.map(function(res){
                   //console.log('esye feta??? :',res) 
-                  $('#edit_agendamento_service_result1 option[value='+res+']').attr('selected','selected');
+                  // $('#edit_agendamento_service_result1 option[value='+res+']').attr('selected','selected');
+                  $('input[name="edit_agendamento_service_result1"][value='+res+']').attr('checked',true);
                 })  
               }  
 
@@ -573,7 +584,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(ServicetypeResult2 != ""){
                 var ServicetypeResult2X =  ServicetypeResult2.split(",")
                 ServicetypeResult2X.map(function(res){
-                  $('#edit_agendamento_service_result2 option[value='+res+']').attr('selected','selected');
+                  // $('#edit_agendamento_service_result2 option[value='+res+']').attr('selected','selected');
+                  $('input[name="edit_agendamento_service_result2"][value='+res+']').attr('checked',true);
                 })  
               }  
 
@@ -613,7 +625,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(ServicetypeResult3 != ""){
                 var ServicetypeResult3X =  ServicetypeResult3.split(",")
                 ServicetypeResult3X.map(function(res){
-                  $('#edit_agendamento_service_result3 option[value='+res+']').attr('selected','selected');
+                  // $('#edit_agendamento_service_result3 option[value='+res+']').attr('selected','selected');
+                  $('input[name="edit_agendamento_service_result3"][value='+res+']').attr('checked',true);
                 })  
               }  
 
@@ -654,7 +667,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(ServicetypeResult4 != ""){
                 var ServicetypeResult4X =  ServicetypeResult4.split(",")
                 ServicetypeResult4X.map(function(res){
-                  $('#edit_agendamento_service_result4 option[value='+res+']').attr('selected','selected');
+                  // $('#edit_agendamento_service_result4 option[value='+res+']').attr('selected','selected');
+                  $('input[name="edit_agendamento_service_result4"][value='+res+']').attr('checked',true);
                 })  
               }  
 
@@ -695,7 +709,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               if(ServicetypeResult5 != ""){
                 var ServicetypeResult5X =  ServicetypeResult5.split(",")
                 ServicetypeResult5X.map(function(res){
-                  $('#edit_agendamento_service_result5 option[value='+res+']').attr('selected','selected');
+                  // $('#edit_agendamento_service_result5 option[value='+res+']').attr('selected','selected');
+                  $('input[name="edit_agendamento_service_result5"][value='+res+']').attr('checked',true);
                 })  
               }  
 
@@ -1013,20 +1028,21 @@ function PromoterServiceTypeX(promoter,value,action){
   $("#add_agendamento_army_specific_store"+promoter).val("0");
   $("#add_agendamento_army_which_park"+promoter).val("");
 
-
+  $('.'+action+'_p_checkbox'+promoter).remove();
   if(value==1){
     //traning
 
     lblCont = $.i18n.prop('TreinamentoParaQualLinha',lang);
 
-    contX +='<option value="0">  </option>';
-    contX +='<option value="1">All ND lines </option>';
-    contX +='<option value="2">ND Prime </option>';
-    contX +='<option value="3">ND Ancestral </option>';
-    contX +='<option value="4">ND Pumpkin </option>';
-    contX +='<option value="5">ND Quinoa </option>';
-    contX +='<option value="6">ND Ocean </option>';
-    contX +='<option value="7">Vet Life </option>';
+    //contX +='<option value="0">  </option>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="1">All ND lines  </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="2">ND Prime      </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="3">ND Ancestral  </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="4">ND Pumpkin    </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="5">ND Quinoa     </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="6">ND Ocean      </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="7">Vet Life      </p>';
+    
 
     $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
@@ -1053,17 +1069,17 @@ function PromoterServiceTypeX(promoter,value,action){
     //KITS
     lblCont =$.i18n.prop('ParaQualLinhaVoceGostariaKitDeBoasVindas',lang);
 
-    contX +='<option value="0">  </option>';
-    contX +='<option value="1"> ND Prime cat </option>';
-    contX +='<option value="2"> ND Ancestral cat </option>';
-    contX +='<option value="3"> ND Pumpkin cat </option>';
-    contX +='<option value="4"> ND Quinoa cat </option>';
-    contX +='<option value="5"> ND Ocean cat </option>';
-    contX +='<option value="6"> ND Prime dog </option>';
-    contX +='<option value="7"> ND Ancestral dog </option>';
-    contX +='<option value="8"> ND Pumpkin dog </option>';
-    contX +='<option value="9"> ND Quinoa dog </option>';
-    contX +='<option value="10">ND Ocean dog </option>';
+    //contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="0">  </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="1"> ND Prime cat </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="2"> ND Ancestral cat </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="3"> ND Pumpkin cat </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="4"> ND Quinoa cat </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="5"> ND Ocean cat </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="6"> ND Prime dog </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="7"> ND Ancestral dog </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="8"> ND Pumpkin dog </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="9"> ND Quinoa dog </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="10">ND Ocean dog </p>';
 
 
     $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
@@ -1090,16 +1106,17 @@ function PromoterServiceTypeX(promoter,value,action){
   }else if(value==3){
     //ISP
     lblCont =$.i18n.prop('PorQueVoceEstaFazendoIssoISP',lang);
-    contX +='<option value="0">  </option>';
+    //contX +='<option value="0">  </option>';
     // contX +='<option value="1"> PUSH NEW LINE </option>';
     // contX +='<option value="2"> LINE SLOW </option>';
     // contX +='<option value="3"> GENERIC </option>';
 
-    contX +='<option value="4"> ND Prime</option>';
-    contX +='<option value="5"> ND Ancestral</option>';
-    contX +='<option value="6"> ND Pumpkin</option>';
-    contX +='<option value="7"> ND Quinoa</option>';
-    contX +='<option value="8"> ND Ocean</option>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="4"> ND Prime</p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="5"> ND Ancestral</p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="6"> ND Pumpkin</p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="7"> ND Quinoa</p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="8"> ND Ocean</p>';
+
     $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
@@ -1125,10 +1142,10 @@ function PromoterServiceTypeX(promoter,value,action){
     var PlacingOfFarminaMaterials = $.i18n.prop('lPlacingOfFarminaMaterials',lang)
 
     lblCont =$.i18n.prop('QueTipoMmerchandisingVoceQuer',lang);
-    contX +='<option value="0">  </option>';
-    contX +='<option value="1"> '+PlacingOfProducts+'</option>';
-    contX +='<option value="2"> '+NewShelf+'</option>';
-    contX +='<option value="3"> '+PlacingOfFarminaMaterials+'</option>';
+    //contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="0">  </p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="1"> '+PlacingOfProducts+'</p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="2"> '+NewShelf+'</p>';
+    contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="3"> '+PlacingOfFarminaMaterials+'</p>';
     $("#div_"+action+"_agendamento_service_result_food"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
@@ -1168,7 +1185,8 @@ function PromoterServiceTypeX(promoter,value,action){
   }
 
   $("#lbl_"+action+"_agendamento_service_result"+promoter).html(lblCont)
-  $("#"+action+"_agendamento_service_result"+promoter).append(contX)
+  // $("#"+action+"_agendamento_service_result"+promoter).append(contX)
+  $("#lbl_"+action+"_agendamento_service_result"+promoter).after(contX)
 }
 
 $("#add_agendamento_army_specific_store1").change(function(){
@@ -1498,7 +1516,7 @@ function formValidacaoOrdem(promoter,action){
     var hora2         = $('#add_agendamento_planned_hour2').val()
     var serviceType2  = $('#add_agendamento_service_type2').val()
 
-    if (professional2 != 0 || hora2 != "" || serviceType2 != 0 ){
+    if (professional2 != 0 || (hora2 != "" && hora2 != "0") || serviceType2 != 0 ){
       valida = formValidacaoOrdem(2,'add');
         if(valida == false){
           return false;
@@ -1508,7 +1526,7 @@ function formValidacaoOrdem(promoter,action){
     var hora3         = $('#add_agendamento_planned_hour3').val()
     var serviceType3   = $('#add_agendamento_service_type3').val()
 
-    if (professional3 != 0 || hora3 != "" || serviceType3 != 0 ){
+    if (professional3 != 0 || (hora3 != "" && hora3 != "0") || serviceType3 != 0 ){
       valida = formValidacaoOrdem(3,'add');
         if(valida == false){
           return false;
@@ -1519,7 +1537,7 @@ function formValidacaoOrdem(promoter,action){
     var hora4         = $('#add_agendamento_planned_hour4').val()
     var serviceType4   = $('#add_agendamento_service_type4').val()
 
-    if (professional4 != 0 || hora4 != "" || serviceType4 != 0 ){
+    if (professional4 != 0 || (hora4 != "" && hora4 != "0") || serviceType4 != 0 ){
       valida = formValidacaoOrdem(4,'add');
         if(valida == false){
           return false;
@@ -1530,7 +1548,7 @@ function formValidacaoOrdem(promoter,action){
     var hora5         = $('#add_agendamento_planned_hour5').val()
     var serviceType5   = $('#add_agendamento_service_type5').val()
 
-    if (professional5 != 0 || hora5 != "" || serviceType5 != 0 ){
+    if (professional5 != 0 || (hora5 != "" && hora5 != "0") || serviceType5 != 0 ){
       valida = formValidacaoOrdem(5,'add');
         if(valida == false){
           return false;
@@ -1538,19 +1556,23 @@ function formValidacaoOrdem(promoter,action){
     }
 
     
-    var add_service_result1 = $("#add_agendamento_service_result1 option:selected").map(function(){ 
+    // var add_service_result1 = $("#add_agendamento_service_result1 option:selected").map(function(){ 
+    //   $('input[name="edit_agendamento_service_result1"][value='+res+']').attr('checked',true)
+    //   return this.value }).get().join(", ");
+
+    var add_service_result1 = $('input[name="add_agendamento_service_result1"]:checked').map(function(){ 
       return this.value }).get().join(", ");
 
-    var add_service_result2 = $("#add_agendamento_service_result2 option:selected").map(function(){ 
+    var add_service_result2 = $('input[name="add_agendamento_service_result2"]:checked').map(function(){ 
       return this.value }).get().join(", ");
 
-    var add_service_result3 = $("#add_agendamento_service_result3 option:selected").map(function(){ 
+    var add_service_result3 = $('input[name="add_agendamento_service_result3"]:checked').map(function(){ 
       return this.value }).get().join(", ");
 
-    var add_service_result4 = $("#add_agendamento_service_result4 option:selected").map(function(){ 
+    var add_service_result4 = $('input[name="add_agendamento_service_result4"]:checked').map(function(){ 
       return this.value }).get().join(", ");
 
-    var add_service_result5 = $("#add_agendamento_service_result5 option:selected").map(function(){ 
+    var add_service_result5 = $('input[name="add_agendamento_service_result5"]:checked').map(function(){ 
       return this.value }).get().join(", ");
 
       
@@ -1764,7 +1786,7 @@ function formValidacaoOrdem(promoter,action){
           var hora2         = $('#edit_agendamento_planned_hour2').val()
           var serviceType2   = $('#edit_agendamento_service_type2').val()
 
-          if (professional2 != 0 || hora2 != "" || serviceType2 != 0 ){
+          if (professional2 != 0 || (hora2 != "" && hora2 != "0") || serviceType2 != 0 ){
             valida = formValidacaoOrdem(2,'edit');
               if(valida == false){
                 return false;
@@ -1774,7 +1796,7 @@ function formValidacaoOrdem(promoter,action){
           var hora3         = $('#edit_agendamento_planned_hour3').val()
           var serviceType3   = $('#edit_agendamento_service_type3').val()
 
-          if (professional3 != 0 || hora3 != "" || serviceType3 != 0){
+          if (professional3 != 0 || (hora3 != "" && hora3 != "0") || serviceType3 != 0){
             valida = formValidacaoOrdem(3,'edit');
               if(valida == false){
                 return false;
@@ -1785,7 +1807,7 @@ function formValidacaoOrdem(promoter,action){
           var hora4         = $('#edit_agendamento_planned_hour4').val()
           var serviceType4   = $('#edit_agendamento_service_type4').val()
 
-          if (professional4 != 0 || hora4 != "" || serviceType4 != 0){
+          if (professional4 != 0 || (hora4 != "" && hora4 != "0") || serviceType4 != 0){
             valida = formValidacaoOrdem(4,'edit');
               if(valida == false){
                 return false;
@@ -1796,7 +1818,7 @@ function formValidacaoOrdem(promoter,action){
           var hora5         = $('#edit_agendamento_planned_hour5').val()
           var serviceType5   = $('#edit_agendamento_service_type5').val()
 
-          if (professional5 != 0 || hora5 != "" || serviceType5 != 0){
+          if (professional5 != 0 || (hora5 != "" && hora5 != "0") || serviceType5 != 0){
             valida = formValidacaoOrdem(5,'edit');
               if(valida == false){
                 return false;
@@ -1806,19 +1828,21 @@ function formValidacaoOrdem(promoter,action){
         var data = new FormData();
         
 
-        var edit_service_result1 = $("#edit_agendamento_service_result1 option:selected").map(function(){ 
+        // var edit_service_result1 = $("#edit_agendamento_service_result1 option:selected").map(function(){ 
+        //   return this.value }).get().join(", ");
+        var edit_service_result1 = $('input[name="edit_agendamento_service_result1"]:checked').map(function(){
           return this.value }).get().join(", ");
 
-        var edit_service_result2 = $("#edit_agendamento_service_result2 option:selected").map(function(){ 
+        var edit_service_result2 = $('input[name="edit_agendamento_service_result2"]:checked').map(function(){
           return this.value }).get().join(", ");
 
-        var edit_service_result3 = $("#edit_agendamento_service_result3 option:selected").map(function(){ 
+        var edit_service_result3 = $('input[name="edit_agendamento_service_result3"]:checked').map(function(){
           return this.value }).get().join(", ");          
 
-        var edit_service_result4 = $("#edit_agendamento_service_result4 option:selected").map(function(){ 
+        var edit_service_result4 = $('input[name="edit_agendamento_service_result4"]:checked').map(function(){
           return this.value }).get().join(", ");
 
-        var edit_service_result5 = $("#edit_agendamento_service_result5 option:selected").map(function(){ 
+        var edit_service_result5 = $('input[name="edit_agendamento_service_result5"]:checked').map(function(){
           return this.value }).get().join(", ");
 
           
@@ -2546,7 +2570,6 @@ function loadClienteNavX() {
         ajax: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country,
         processing: true,
         serverSide: true,
-        search:true,
         rowReorder: {
           selector: 'td:nth-child(2)'
       },
@@ -2604,7 +2627,8 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#add_agendamento_push_new_line1").attr("disabled",DisabledX);
   $("#edit_agendamento_line_slow_comments1").attr("disabled",DisabledX);
   $("#edit_agendamento_how_meter1").attr("disabled",DisabledX);
-  $("#edit_agendamento_service_result1").attr("disabled",DisabledX);
+  //$("#edit_agendamento_service_result1").attr("disabled",DisabledX);
+  //$('input[name="edit_agendamento_service_result1"]').attr("disabled",DisabledX);
   $("#edit_agendamento_open_bags1").attr("disabled",DisabledX);
   $("#edit_agendamento_trainning_comments1").attr("disabled",DisabledX);
   $("#edit_agendamento_army_specific_store1").attr("disabled",DisabledX);
