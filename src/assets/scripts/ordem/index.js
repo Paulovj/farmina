@@ -1413,9 +1413,9 @@ function formValidacaoOrdem(promoter,action){
   /*VALIDAÇÃO ISP*/
   if(service_type1 == 3){
     var food1            = $('#'+action+'_agendamento_food'+promoter).val();
-    // var Promoting1       = $('#'+action+'_agendamento_Promoting'+promoter).val();
+    var Promoting1       = $('#'+action+'_agendamento_Promoting'+promoter).val();
     var service_result1  = $('input[name="'+action+'_agendamento_service_result'+promoter+'"]').is(':checked') 
-    var service_result1  = $('#'+action+'_agendamento_service_result'+promoter).val();
+    // var service_result1  = $('#'+action+'_agendamento_service_result'+promoter).val();
     var open_bags        = $('#'+action+'_agendamento_open_bags'+promoter).val();
 
     if(food1 == 0){
