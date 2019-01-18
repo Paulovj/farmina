@@ -2617,7 +2617,7 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
       $.ajax({url: urlX+"/Customers/getItem?Pais=Usa", success: function(data){ 
         contItenWelcomeKitX +='<option selected value="0" class="lSelecione">'+$.i18n.prop('lSelecione',lang)+'</option>';
           $.each(data.result, function(index, value){
-              contItenWelcomeKitX +='<option value="'+ value.No_ +'"> '+ value.No_ +' - '+ value.Description +' - '+ value["Description 2"] +'</option>'
+              contItenWelcomeKitX +='<option value="'+ value.No_ +'"> '+ value.No_ +' - '+ value.Description +'  '+ value["Description 2"] +'</option>'
           })
           $("#"+action+"_agendamento_service_welcome_kit"+promoter).append(contItenWelcomeKitX)
         }     
