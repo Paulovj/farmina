@@ -374,6 +374,7 @@ $("#btn_login").click(function(){
         $('.lProjector').html($.i18n.prop('lProjector',lang))
         $('.lBuffet').html($.i18n.prop('lBuffet',lang))
         $('.lPolonia').html($.i18n.prop('lPolonia',lang))
+        $('.lItem').html($.i18n.prop('lItem',lang))
 
         
 
