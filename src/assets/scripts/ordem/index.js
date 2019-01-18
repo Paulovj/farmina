@@ -1012,6 +1012,7 @@ $("#edit_agendamento_busca_cliente").change(function(){
 function PromoterServiceTypeX(promoter,value,action){
   var contX ="";
   var contTypeFoodX ="";
+  var contItenWelcomeKitX = "";
 
   var lblCont ="";
   $("#"+action+"_agendamento_service_result"+promoter+ " option").remove();
@@ -1027,6 +1028,7 @@ function PromoterServiceTypeX(promoter,value,action){
   $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
   $("#div_"+action+"_agendamento_service_result_location"+promoter).hide();
   $("#div_"+action+"_agendamento_service_result_projector"+promoter).hide();
+  
 
 
   $("#add_agendamento_trainning_type"+promoter).val("0");
@@ -1043,6 +1045,10 @@ function PromoterServiceTypeX(promoter,value,action){
   $('.'+action+'_p_checkbox'+promoter).remove();
 
   $("#"+action+"_agendamento_food"+promoter+ " option").remove();
+
+  $("#div_"+action+"_agendamento_service_welcome_kit"+promoter).hide();
+  $("#"+action+"_agendamento_service_welcome_kit"+promoter+ " option").remove();
+  
   if(value==1){
     //traning
 
@@ -1122,6 +1128,20 @@ function PromoterServiceTypeX(promoter,value,action){
 
     $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_army_which_park"+promoter).hide();
+
+    $("#div_"+action+"_agendamento_service_welcome_kit"+promoter).show();
+
+    
+    $.ajax({url: urlX+"/Customers/getItem?Pais=Usa", success: function(data){ 
+      contItenWelcomeKitX +='<option selected value="0" class="lSelecione">'+$.i18n.prop('lSelecione',lang)+'</option>';
+        $.each(data.result, function(index, value){
+            contItenWelcomeKitX +='<option value="'+ value.Description +'"> '+ value.Description +'</option>'
+        })
+        $("#"+action+"_agendamento_service_welcome_kit"+promoter).append(contItenWelcomeKitX)
+      }     
+    })            
+
+
 
 
 
@@ -1228,6 +1248,7 @@ function PromoterServiceTypeX(promoter,value,action){
   $("#lbl_"+action+"_agendamento_service_result"+promoter).after(contX)
 
   $("#"+action+"_agendamento_food"+promoter).append(contTypeFoodX)
+  
 
 }
 

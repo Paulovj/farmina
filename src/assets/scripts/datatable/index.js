@@ -2479,6 +2479,7 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
   function PromoterServiceTypeX(promoter,value,action){
     var contX ="";
     var contTypeFoodX ="";
+    var contItenWelcomeKitX ="";
 
     var lblCont ="";
     $("#"+action+"_agendamento_service_result"+promoter+ " option").remove();
@@ -2507,6 +2508,11 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
     
     $("#"+action+"_agendamento_food"+promoter+ " option").remove();
     $('.'+action+'_p_checkbox'+promoter).remove();
+
+    $("#div_"+action+"_agendamento_service_welcome_kit"+promoter).hide();
+    $("#"+action+"_agendamento_service_welcome_kit"+promoter+ " option").remove();
+
+
     if(value==1){
       //traning
       
@@ -2583,6 +2589,17 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
   
       $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
       $("#div_"+action+"_agendamento_service_result_army_which_park"+promoter).hide();
+
+    $("#div_"+action+"_agendamento_service_welcome_kit"+promoter).show();
+
+      $.ajax({url: urlX+"/Customers/getItem?Pais=Usa", success: function(data){ 
+        contItenWelcomeKitX +='<option selected value="0" class="lSelecione">'+$.i18n.prop('lSelecione',lang)+'</option>';
+          $.each(data.result, function(index, value){
+              contItenWelcomeKitX +='<option value="'+ value.Description +'"> '+ value.Description +'</option>'
+          })
+          $("#"+action+"_agendamento_service_welcome_kit"+promoter).append(contItenWelcomeKitX)
+        }     
+      }) 
   
   
   
