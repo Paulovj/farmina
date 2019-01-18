@@ -298,6 +298,13 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               var action ='edit'
               PromoterServiceTypeX(1,ServiceType1,action)
               $('#edit_agendamento_food1').val(data['Food Type 1']);
+              // alert(data['Item Welcome Kit 1'])
+
+              setTimeout(function(){
+                $('#edit_agendamento_service_welcome_kit1 option[value='+data['Item Welcome Kit 1']+']').attr('selected','selected');
+               }, 3000);
+              
+
               // $('#edit_agendamento_service_result1').val('ServicetypeResult1');
               if(ServicetypeResult1 != ""){
 
@@ -345,6 +352,9 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               var action ='edit'
               PromoterServiceTypeX(2,ServiceType2,action)
               $('#edit_agendamento_food2').val(data['Food Type 2']);
+              setTimeout(function(){
+                $('#edit_agendamento_service_welcome_kit2 option[value='+data['Item Welcome Kit 2']+']').attr('selected','selected');
+               }, 3000);
               //$('#edit_agendamento_service_result2').val(ServicetypeResult2);
               // if(ServicetypeResult2 != ""){
               //   $('#edit_agendamento_service_result2 option[value='+ServicetypeResult2+']').attr('selected','selected');
@@ -390,6 +400,10 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               var action ='edit'
               PromoterServiceTypeX(3,ServiceType3,action)
               $('#edit_agendamento_food3').val(data['Food Type 3']);
+
+              setTimeout(function(){
+                $('#edit_agendamento_service_welcome_kit3 option[value='+data['Item Welcome Kit 3']+']').attr('selected','selected');
+               }, 3000);
               //$('#edit_agendamento_service_result3').val(ServicetypeResult3);
               // if(ServicetypeResult3 != ""){
               //   $('#edit_agendamento_service_result3 option[value='+ServicetypeResult3+']').attr('selected','selected');
@@ -436,6 +450,10 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               PromoterServiceTypeX(4,ServiceType4,action)
               $('#edit_agendamento_food4').val(data['Food Type 4']);
 
+              setTimeout(function(){
+                $('#edit_agendamento_service_welcome_kit4 option[value='+data['Item Welcome Kit 4']+']').attr('selected','selected');
+               }, 3000);
+
               //$('#edit_agendamento_service_result4').val(ServicetypeResult3);
               // if(ServicetypeResult4 != ""){
               //   $('#edit_agendamento_service_result4 option[value='+ServicetypeResult4+']').attr('selected','selected');
@@ -481,6 +499,10 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               var action ='edit'
               PromoterServiceTypeX(5,ServiceType5,action)
               $('#edit_agendamento_food5').val(data['Food Type 5']);
+
+              setTimeout(function(){
+                $('#edit_agendamento_service_welcome_kit5 option[value='+data['Item Welcome Kit 5']+']').attr('selected','selected');
+               }, 3000);
 
               //$('#edit_agendamento_service_result5').val(ServicetypeResult5);
               // if(ServicetypeResult5 != ""){
@@ -533,11 +555,17 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
 
               $('#edit_agendamento_location_activity_training1').val(data['Training Location 1']);
 
+              
+
 
 
               var action ='edit'
               PromoterServiceTypeX(1,ServiceType1,action)
               $('#edit_agendamento_food1').val(data['Food Type 1']);
+
+              setTimeout(function(){
+                $('#edit_agendamento_service_welcome_kit1 option[value='+data['Item Welcome Kit 1']+']').attr('selected','selected');
+               }, 3000);
 
               // $('#edit_agendamento_service_result1').val(ServicetypeResult1);
 
@@ -586,6 +614,10 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               PromoterServiceTypeX(2,ServiceType2,action)
               $('#edit_agendamento_food2').val(data['Food Type 2']);
 
+              setTimeout(function(){
+                $('#edit_agendamento_service_welcome_kit2 option[value='+data['Item Welcome Kit 2']+']').attr('selected','selected');
+               }, 3000);
+
               //$('#edit_agendamento_service_result2').val(ServicetypeResult2);
               //$('#edit_agendamento_service_result2 option[value='+ServicetypeResult2+']').attr('selected','selected');
               if(ServicetypeResult2 != ""){
@@ -627,6 +659,10 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               var action ='edit'
               PromoterServiceTypeX(3,ServiceType3,action)
               $('#edit_agendamento_food3').val(data['Food Type 3']);
+
+              setTimeout(function(){
+                $('#edit_agendamento_service_welcome_kit3 option[value='+data['Item Welcome Kit 3']+']').attr('selected','selected');
+               }, 3000);
 
               //$('#edit_agendamento_service_result3').val(ServicetypeResult3);
               // $('#edit_agendamento_service_result3 option[value='+ServicetypeResult3+']').attr('selected','selected');
@@ -671,6 +707,10 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               PromoterServiceTypeX(4,ServiceType4,action)
               $('#edit_agendamento_food4').val(data['Food Type 4']);
 
+              setTimeout(function(){
+                $('#edit_agendamento_service_welcome_kit4 option[value='+data['Item Welcome Kit 4']+']').attr('selected','selected');
+               }, 3000);
+
               //$('#edit_agendamento_service_result4').val(ServicetypeResult3);
               // $('#edit_agendamento_service_result4 option[value='+ServicetypeResult4+']').attr('selected','selected');
               if(ServicetypeResult4 != ""){
@@ -713,6 +753,10 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               var action ='edit'
               PromoterServiceTypeX(5,ServiceType5,action)
               $('#edit_agendamento_food5').val(data['Food Type 5']);
+
+              setTimeout(function(){
+                $('#edit_agendamento_service_welcome_kit5 option[value='+data['Item Welcome Kit 5']+']').attr('selected','selected');
+               }, 3000);
 
               //$('#edit_agendamento_service_result5').val(ServicetypeResult5);
               // $('#edit_agendamento_service_result5 option[value='+ServicetypeResult5+']').attr('selected','selected');
@@ -891,7 +935,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
              $('#dataTableOrdemAgendamento').DataTable().draw();
             }, 3000);
 
-
+            
 
         }
 
@@ -1132,10 +1176,10 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_welcome_kit"+promoter).show();
 
     
-    $.ajax({url: urlX+"/Customers/getItem?Pais=Usa", success: function(data){ 
+    $.ajax({url: urlX+"/Customers/getItem?Pais="+paisX, success: function(data){ 
       contItenWelcomeKitX +='<option selected value="0" class="lSelecione">'+$.i18n.prop('lSelecione',lang)+'</option>';
         $.each(data.result, function(index, value){
-            contItenWelcomeKitX +='<option value="'+ value.Description +'"> '+ value.Description +'</option>'
+            contItenWelcomeKitX +='<option value="'+ value.No_ +'"> '+ value.Description +'</option>'
         })
         $("#"+action+"_agendamento_service_welcome_kit"+promoter).append(contItenWelcomeKitX)
       }     
@@ -1713,7 +1757,10 @@ function formValidacaoOrdem(promoter,action){
         "How-Meter1"              :$("#add_agendamento_how_meter1").val(),
 
         "Specific-Store1"         :$("#add_agendamento_army_specific_store1").val(),
-        "Which-Park1"              :$("#add_agendamento_army_which_park1").val(),
+        "Which-Park1"             :$("#add_agendamento_army_which_park1").val(),
+        
+        
+        "Item-Welcome-Kit1"       :$("#add_agendamento_service_welcome_kit1").val(),
 
 
         "Professional2"           :$("#add_agendamento_busca_professional2").val(),
@@ -1743,6 +1790,8 @@ function formValidacaoOrdem(promoter,action){
         "Specific-Store2"         :$("#add_agendamento_army_specific_store2").val(),
         "Which-Park2"              :$("#add_agendamento_army_which_park2").val(),
 
+        "Item-Welcome-Kit2"       :$("#add_agendamento_service_welcome_kit2").val(),
+
         "Professional3"            :$("#add_agendamento_busca_professional3").val(),
         "PlannedDate3"            :formatDateSql($("#add_agendamento_planned_date3").val()),
         "PlannedStartTime3"       :$("#add_agendamento_planned_start_time3").val(),
@@ -1767,8 +1816,13 @@ function formValidacaoOrdem(promoter,action){
 
         "How-Meter3"              :$("#add_agendamento_how_meter3").val(),
 
+        "Item-Welcome-Kit3"       :$("#add_agendamento_service_welcome_kit3").val(),
+
+
         "Specific-Store4"         :$("#add_agendamento_army_specific_store4").val(),
         "Which-Park4"              :$("#add_agendamento_army_which_park4").val(),
+
+        
 
         "Professional4"           :$("#add_agendamento_busca_professional4").val(),
         "PlannedDate4"            :formatDateSql($("#add_agendamento_planned_date4").val()),
@@ -1794,6 +1848,9 @@ function formValidacaoOrdem(promoter,action){
         "Open-Bags4"              :$("#add_agendamento_open_bags4").val(),
 
         "How-Meter4"              :$("#add_agendamento_how_meter4").val(),
+
+        "Item-Welcome-Kit4"       :$("#add_agendamento_service_welcome_kit4").val(),
+
 
         "Professional5"           :$("#add_agendamento_busca_professional5").val(),
         "PlannedDate5"            :formatDateSql($("#add_agendamento_planned_date5").val()),
@@ -1822,6 +1879,9 @@ function formValidacaoOrdem(promoter,action){
 
         "Specific-Store5"         :$("#add_agendamento_army_specific_store5").val(),
         "Which-Park5"              :$("#add_agendamento_army_which_park5").val(),
+
+        "Item-Welcome-Kit5"       :$("#add_agendamento_service_welcome_kit5").val(),
+
 
       }
     }
@@ -2066,6 +2126,13 @@ function formValidacaoOrdem(promoter,action){
             "Number-Works5"               :$("#edit_agendamento_number_workers_train5").val(),
             "Projector5"                  :$("#edit_agendamento_projector5").val(),
             "Buffet5"                     :$("#edit_agendamento_buffet5").val(),
+
+
+            "Item-Welcome-Kit1"       :$("#edit_agendamento_service_welcome_kit1").val(),
+            "Item-Welcome-Kit2"       :$("#edit_agendamento_service_welcome_kit2").val(),
+            "Item-Welcome-Kit3"       :$("#edit_agendamento_service_welcome_kit3").val(),
+            "Item-Welcome-Kit4"       :$("#edit_agendamento_service_welcome_kit4").val(),
+            "Item-Welcome-Kit5"       :$("#edit_agendamento_service_welcome_kit5").val(),
 
           }
         }
@@ -2704,6 +2771,9 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#edit_agendamento_trainning_comments1").attr("disabled",DisabledX);
   $("#edit_agendamento_army_specific_store1").attr("disabled",DisabledX);
   $("#edit_agendamento_army_which_park1").attr("disabled",DisabledX);
+  $("#edit_agendamento_service_welcome_kit1").attr("disabled",DisabledX);
+
+  
 
 
   $("#edit_agendamento_number_workers_train1").attr("disabled",DisabledX);
@@ -2732,6 +2802,8 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#edit_agendamento_number_workers_train2").attr("disabled",DisabledX);
   $("#edit_agendamento_projector2").attr("disabled",DisabledX);
   $("#edit_agendamento_buffet2").attr("disabled",DisabledX);
+  $("#edit_agendamento_service_welcome_kit2").attr("disabled",DisabledX);
+
 
 
   /*Promoter 3 */
@@ -2756,6 +2828,8 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#edit_agendamento_number_workers_train3").attr("disabled",DisabledX);
   $("#edit_agendamento_projector3").attr("disabled",DisabledX);
   $("#edit_agendamento_buffet3").attr("disabled",DisabledX);
+  $("#edit_agendamento_service_welcome_kit3").attr("disabled",DisabledX);
+
 
 
   /*Promoter 4 */
@@ -2780,6 +2854,8 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#edit_agendamento_number_workers_train4").attr("disabled",DisabledX);
   $("#edit_agendamento_projector4").attr("disabled",DisabledX);
   $("#edit_agendamento_buffet4").attr("disabled",DisabledX);
+  $("#edit_agendamento_service_welcome_kit4").attr("disabled",DisabledX);
+
 
 
   /*Promoter 5 */
@@ -2804,6 +2880,8 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#edit_agendamento_number_workers_train5").attr("disabled",DisabledX);
   $("#edit_agendamento_projector5").attr("disabled",DisabledX);
   $("#edit_agendamento_buffet5").attr("disabled",DisabledX);
+  $("#edit_agendamento_service_welcome_kit5").attr("disabled",DisabledX);
+
 
   if(DisabledX === false){
     $("#btn_edit_ordem_agendamento").attr("disabled",true);

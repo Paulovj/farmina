@@ -433,6 +433,9 @@ function formatHora(date) {
               var action ='edit'
               PromoterServiceTypeX(1,ServiceType1,action)
               $('#edit_agendamento_food1').val(data['Food Type 1']);
+              setTimeout(function(){
+                $('#edit_agendamento_service_welcome_kit1 option[value='+data['Item Welcome Kit 1']+']').attr('selected','selected');
+               }, 3000);
               
               // $('#edit_agendamento_service_result1').val('ServicetypeResult1');
               // if(ServicetypeResult1 != ""){
@@ -482,6 +485,9 @@ function formatHora(date) {
               var action ='edit'
               PromoterServiceTypeX(2,ServiceType2,action)
               $('#edit_agendamento_food2').val(data['Food Type 2']);
+              setTimeout(function(){
+                $('#edit_agendamento_service_welcome_kit2 option[value='+data['Item Welcome Kit 2']+']').attr('selected','selected');
+               }, 3000);
 
               //$('#edit_agendamento_service_result2').val(ServicetypeResult2);
               // if(ServicetypeResult2 != ""){
@@ -526,6 +532,9 @@ function formatHora(date) {
               var action ='edit'
               PromoterServiceTypeX(3,ServiceType3,action)
               $('#edit_agendamento_food3').val(data['Food Type 3']);
+              setTimeout(function(){
+                $('#edit_agendamento_service_welcome_kit3 option[value='+data['Item Welcome Kit 3']+']').attr('selected','selected');
+               }, 3000);
 
               //$('#edit_agendamento_service_result3').val(ServicetypeResult3);
               // if(ServicetypeResult3 != ""){
@@ -577,6 +586,9 @@ function formatHora(date) {
               var action ='edit'
               PromoterServiceTypeX(4,ServiceType4,action)
               $('#edit_agendamento_food4').val(data['Food Type 4']);
+              setTimeout(function(){
+                $('#edit_agendamento_service_welcome_kit4 option[value='+data['Item Welcome Kit 4']+']').attr('selected','selected');
+               }, 3000);
 
               //$('#edit_agendamento_service_result4').val(ServicetypeResult3);
               // if(ServicetypeResult4 != ""){
@@ -625,6 +637,9 @@ function formatHora(date) {
               var action ='edit'
               PromoterServiceTypeX(5,ServiceType5,action)
               $('#edit_agendamento_food5').val(data['Food Type 5']);
+              setTimeout(function(){
+                $('#edit_agendamento_service_welcome_kit5 option[value='+data['Item Welcome Kit 5']+']').attr('selected','selected');
+               }, 3000);
 
               //$('#edit_agendamento_service_result5').val(ServicetypeResult5);
               // if(ServicetypeResult5 != ""){
@@ -2452,6 +2467,13 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
     $("#edit_agendamento_number_workers_train5").attr("disabled",DisabledX);
     $("#edit_agendamento_projector5").attr("disabled",DisabledX);
     $("#edit_agendamento_buffet5").attr("disabled",DisabledX);
+
+
+    $("#edit_agendamento_service_welcome_kit1").attr("disabled",DisabledX);
+    $("#edit_agendamento_service_welcome_kit2").attr("disabled",DisabledX);
+    $("#edit_agendamento_service_welcome_kit3").attr("disabled",DisabledX);
+    $("#edit_agendamento_service_welcome_kit4").attr("disabled",DisabledX);
+    $("#edit_agendamento_service_welcome_kit5").attr("disabled",DisabledX);
   
     if(DisabledX === false){
       $("#btn_edit_ordem_agendamento").attr("disabled",true);
@@ -2595,7 +2617,7 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
       $.ajax({url: urlX+"/Customers/getItem?Pais=Usa", success: function(data){ 
         contItenWelcomeKitX +='<option selected value="0" class="lSelecione">'+$.i18n.prop('lSelecione',lang)+'</option>';
           $.each(data.result, function(index, value){
-              contItenWelcomeKitX +='<option value="'+ value.Description +'"> '+ value.Description +'</option>'
+              contItenWelcomeKitX +='<option value="'+ value.No_ +'"> '+ value.Description +'</option>'
           })
           $("#"+action+"_agendamento_service_welcome_kit"+promoter).append(contItenWelcomeKitX)
         }     
@@ -3176,6 +3198,12 @@ $("#btn_save_ordem_agendamento").click(function(){
       "Number-Works5"               :$("#edit_agendamento_number_workers_train5").val(),
       "Projector5"                  :$("#edit_agendamento_projector5").val(),
       "Buffet5"                     :$("#edit_agendamento_buffet5").val(),
+
+      "Item-Welcome-Kit1"       :$("#edit_agendamento_service_welcome_kit1").val(),
+      "Item-Welcome-Kit2"       :$("#edit_agendamento_service_welcome_kit2").val(),
+      "Item-Welcome-Kit3"       :$("#edit_agendamento_service_welcome_kit3").val(),
+      "Item-Welcome-Kit4"       :$("#edit_agendamento_service_welcome_kit4").val(),
+      "Item-Welcome-Kit5"       :$("#edit_agendamento_service_welcome_kit5").val(),
       
     }
   }
