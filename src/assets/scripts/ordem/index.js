@@ -301,9 +301,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               $('#edit_agendamento_food1').val(data['Food Type 1']);
               // alert(data['Item Welcome Kit 1'])
 
-              setTimeout(function(){
-                $('#edit_agendamento_service_welcome_kit1 option[value='+data['Item Welcome Kit 1']+']').attr('selected','selected');
-               }, 3000);
+              if(data['Item Welcome Kit 1'] != ""){
+                setTimeout(function(){
+                  $('#edit_agendamento_service_welcome_kit1 option[value='+data['Item Welcome Kit 1']+']').attr('selected','selected');
+                }, 3000);
+              }  
               
 
               // $('#edit_agendamento_service_result1').val('ServicetypeResult1');
@@ -314,7 +316,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
                   // $('#edit_agendamento_service_result1 option[value='+res+']').attr('selected','selected');
                   // $('input[type="checkbox"][value='+res+']').attr('checked',true);
                   $('input[name="edit_agendamento_service_result1"][value='+res+']').attr('checked',true);
-                  
+                  $('input[name="edit_agendamento_service_result1"]').attr("disabled",true);
                 })  
              }
 
@@ -353,9 +355,12 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               var action ='edit'
               PromoterServiceTypeX(2,ServiceType2,action)
               $('#edit_agendamento_food2').val(data['Food Type 2']);
-              setTimeout(function(){
-                $('#edit_agendamento_service_welcome_kit2 option[value='+data['Item Welcome Kit 2']+']').attr('selected','selected');
-               }, 3000);
+              
+              if(data['Item Welcome Kit 2'] != ""){
+                setTimeout(function(){
+                  $('#edit_agendamento_service_welcome_kit2 option[value='+data['Item Welcome Kit 2']+']').attr('selected','selected');
+                }, 3000);
+              }  
               //$('#edit_agendamento_service_result2').val(ServicetypeResult2);
               // if(ServicetypeResult2 != ""){
               //   $('#edit_agendamento_service_result2 option[value='+ServicetypeResult2+']').attr('selected','selected');
@@ -367,6 +372,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
                     // $('#edit_agendamento_service_result2 option[value='+res+']').attr('selected','selected');
                     // $('input[type="checkbox"][value='+kres+']').attr('checked',true);
                     $('input[name="edit_agendamento_service_result2"][value='+res+']').attr('checked',true);
+                    $('input[name="edit_agendamento_service_result2"]').attr("disabled",true);
                     
                   })  
                 }    
@@ -402,9 +408,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               PromoterServiceTypeX(3,ServiceType3,action)
               $('#edit_agendamento_food3').val(data['Food Type 3']);
 
-              setTimeout(function(){
-                $('#edit_agendamento_service_welcome_kit3 option[value='+data['Item Welcome Kit 3']+']').attr('selected','selected');
-               }, 3000);
+              if(data['Item Welcome Kit 3'] != ""){
+                setTimeout(function(){
+                  $('#edit_agendamento_service_welcome_kit3 option[value='+data['Item Welcome Kit 3']+']').attr('selected','selected');
+                }, 3000);
+              }
               //$('#edit_agendamento_service_result3').val(ServicetypeResult3);
               // if(ServicetypeResult3 != ""){
               //   $('#edit_agendamento_service_result3 option[value='+ServicetypeResult3+']').attr('selected','selected');
@@ -415,6 +423,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
                     // $('#edit_agendamento_service_result3 option[value='+res+']').attr('selected','selected');
                     // $('input[type="checkbox"][value='+res+']').attr('checked',true);
                     $('input[name="edit_agendamento_service_result3"][value='+res+']').attr('checked',true);
+                    $('input[name="edit_agendamento_service_result3"]').attr("disabled",true);
                   })  
                 }    
 
@@ -451,9 +460,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               PromoterServiceTypeX(4,ServiceType4,action)
               $('#edit_agendamento_food4').val(data['Food Type 4']);
 
-              setTimeout(function(){
-                $('#edit_agendamento_service_welcome_kit4 option[value='+data['Item Welcome Kit 4']+']').attr('selected','selected');
-               }, 3000);
+              if(data['Item Welcome Kit 4'] != ""){
+                setTimeout(function(){
+                  $('#edit_agendamento_service_welcome_kit4 option[value='+data['Item Welcome Kit 4']+']').attr('selected','selected');
+                }, 3000);
+              } 
 
               //$('#edit_agendamento_service_result4').val(ServicetypeResult3);
               // if(ServicetypeResult4 != ""){
@@ -464,6 +475,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
                   ServicetypeResult4X.map(function(res){
                     // $('#edit_agendamento_service_result4 option[value='+res+']').attr('selected','selected');
                     $('input[name="edit_agendamento_service_result4"][value='+res+']').attr('checked',true);
+                    $('input[name="edit_agendamento_service_result4"]').attr("disabled",true);
                   })  
                 }   
 
@@ -501,9 +513,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               PromoterServiceTypeX(5,ServiceType5,action)
               $('#edit_agendamento_food5').val(data['Food Type 5']);
 
-              setTimeout(function(){
-                $('#edit_agendamento_service_welcome_kit5 option[value='+data['Item Welcome Kit 5']+']').attr('selected','selected');
-               }, 3000);
+              if(data['Item Welcome Kit 5'] != ""){
+                setTimeout(function(){
+                  $('#edit_agendamento_service_welcome_kit5 option[value='+data['Item Welcome Kit 5']+']').attr('selected','selected');
+                }, 3000);
+              } 
 
               //$('#edit_agendamento_service_result5').val(ServicetypeResult5);
               // if(ServicetypeResult5 != ""){
@@ -515,6 +529,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
                   ServicetypeResult5X.map(function(res){
                     // $('#edit_agendamento_service_result5 option[value='+res+']').attr('selected','selected');
                     $('input[name="edit_agendamento_service_result5"][value='+res+']').attr('checked',true);
+                    $('input[name="edit_agendamento_service_result5"]').attr("disabled",true);
                   })  
                 }    
 
@@ -564,9 +579,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               PromoterServiceTypeX(1,ServiceType1,action)
               $('#edit_agendamento_food1').val(data['Food Type 1']);
 
-              setTimeout(function(){
-                $('#edit_agendamento_service_welcome_kit1 option[value='+data['Item Welcome Kit 1']+']').attr('selected','selected');
-               }, 3000);
+              if(data['Item Welcome Kit 1'] != ""){
+                setTimeout(function(){
+                  $('#edit_agendamento_service_welcome_kit1 option[value='+data['Item Welcome Kit 1']+']').attr('selected','selected');
+                }, 3000);
+              }  
 
               // $('#edit_agendamento_service_result1').val(ServicetypeResult1);
 
@@ -577,6 +594,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
                   //console.log('esye feta??? :',res) 
                   // $('#edit_agendamento_service_result1 option[value='+res+']').attr('selected','selected');
                   $('input[name="edit_agendamento_service_result1"][value='+res+']').attr('checked',true);
+                  $('input[name="edit_agendamento_service_result1"]').attr("disabled",true);
                 })  
               }  
 
@@ -615,9 +633,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               PromoterServiceTypeX(2,ServiceType2,action)
               $('#edit_agendamento_food2').val(data['Food Type 2']);
 
-              setTimeout(function(){
-                $('#edit_agendamento_service_welcome_kit2 option[value='+data['Item Welcome Kit 2']+']').attr('selected','selected');
-               }, 3000);
+              if(data['Item Welcome Kit 2'] != ""){
+                setTimeout(function(){
+                  $('#edit_agendamento_service_welcome_kit2 option[value='+data['Item Welcome Kit 2']+']').attr('selected','selected');
+                }, 3000);
+              } 
 
               //$('#edit_agendamento_service_result2').val(ServicetypeResult2);
               //$('#edit_agendamento_service_result2 option[value='+ServicetypeResult2+']').attr('selected','selected');
@@ -626,6 +646,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
                 ServicetypeResult2X.map(function(res){
                   // $('#edit_agendamento_service_result2 option[value='+res+']').attr('selected','selected');
                   $('input[name="edit_agendamento_service_result2"][value='+res+']').attr('checked',true);
+                  $('input[name="edit_agendamento_service_result2"]').attr("disabled",true);
                 })  
               }  
 
@@ -661,9 +682,13 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               PromoterServiceTypeX(3,ServiceType3,action)
               $('#edit_agendamento_food3').val(data['Food Type 3']);
 
-              setTimeout(function(){
-                $('#edit_agendamento_service_welcome_kit3 option[value='+data['Item Welcome Kit 3']+']').attr('selected','selected');
-               }, 3000);
+              if(data['Item Welcome Kit 3'] != ""){
+                setTimeout(function(){
+                  $('#edit_agendamento_service_welcome_kit3 option[value='+data['Item Welcome Kit 3']+']').attr('selected','selected');
+                }, 3000);
+              }
+
+               
 
               //$('#edit_agendamento_service_result3').val(ServicetypeResult3);
               // $('#edit_agendamento_service_result3 option[value='+ServicetypeResult3+']').attr('selected','selected');
@@ -672,6 +697,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
                 ServicetypeResult3X.map(function(res){
                   // $('#edit_agendamento_service_result3 option[value='+res+']').attr('selected','selected');
                   $('input[name="edit_agendamento_service_result3"][value='+res+']').attr('checked',true);
+                  $('input[name="edit_agendamento_service_result3"]').attr("disabled",true);
                 })  
               }  
 
@@ -708,9 +734,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               PromoterServiceTypeX(4,ServiceType4,action)
               $('#edit_agendamento_food4').val(data['Food Type 4']);
 
-              setTimeout(function(){
-                $('#edit_agendamento_service_welcome_kit4 option[value='+data['Item Welcome Kit 4']+']').attr('selected','selected');
-               }, 3000);
+              if(data['Item Welcome Kit 4'] != ""){
+                setTimeout(function(){
+                  $('#edit_agendamento_service_welcome_kit4 option[value='+data['Item Welcome Kit 4']+']').attr('selected','selected');
+                }, 3000);
+              } 
 
               //$('#edit_agendamento_service_result4').val(ServicetypeResult3);
               // $('#edit_agendamento_service_result4 option[value='+ServicetypeResult4+']').attr('selected','selected');
@@ -719,6 +747,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
                 ServicetypeResult4X.map(function(res){
                   // $('#edit_agendamento_service_result4 option[value='+res+']').attr('selected','selected');
                   $('input[name="edit_agendamento_service_result4"][value='+res+']').attr('checked',true);
+                  $('input[name="edit_agendamento_service_result4"]').attr("disabled",true);
                 })  
               }  
 
@@ -755,9 +784,11 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
               PromoterServiceTypeX(5,ServiceType5,action)
               $('#edit_agendamento_food5').val(data['Food Type 5']);
 
-              setTimeout(function(){
-                $('#edit_agendamento_service_welcome_kit5 option[value='+data['Item Welcome Kit 5']+']').attr('selected','selected');
-               }, 3000);
+              if(data['Item Welcome Kit 5'] != ""){
+                setTimeout(function(){
+                  $('#edit_agendamento_service_welcome_kit5 option[value='+data['Item Welcome Kit 5']+']').attr('selected','selected');
+                }, 3000);
+              }  
 
               //$('#edit_agendamento_service_result5').val(ServicetypeResult5);
               // $('#edit_agendamento_service_result5 option[value='+ServicetypeResult5+']').attr('selected','selected');
@@ -766,6 +797,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
                 ServicetypeResult5X.map(function(res){
                   // $('#edit_agendamento_service_result5 option[value='+res+']').attr('selected','selected');
                   $('input[name="edit_agendamento_service_result5"][value='+res+']').attr('checked',true);
+                  $('input[name="edit_agendamento_service_result5"]').attr("disabled",true);
                 })  
               }  
 
@@ -2800,7 +2832,8 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#edit_agendamento_line_slow_comments1").attr("disabled",DisabledX);
   $("#edit_agendamento_how_meter1").attr("disabled",DisabledX);
   //$("#edit_agendamento_service_result1").attr("disabled",DisabledX);
-  //$('input[name="edit_agendamento_service_result1"]').attr("disabled",DisabledX);
+  
+  $('input[name="edit_agendamento_service_result1"]').attr("disabled",DisabledX);
   $("#edit_agendamento_open_bags1").attr("disabled",DisabledX);
   $("#edit_agendamento_trainning_comments1").attr("disabled",DisabledX);
   $("#edit_agendamento_army_specific_store1").attr("disabled",DisabledX);
@@ -2838,7 +2871,7 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#edit_agendamento_buffet2").attr("disabled",DisabledX);
   $("#edit_agendamento_service_welcome_kit2").attr("disabled",DisabledX);
 
-
+  $('input[name="edit_agendamento_service_result2"]').attr("disabled",DisabledX);
 
   /*Promoter 3 */
   $("#edit_agendamento_busca_professional3").attr("disabled",DisabledX);
@@ -2864,6 +2897,7 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#edit_agendamento_buffet3").attr("disabled",DisabledX);
   $("#edit_agendamento_service_welcome_kit3").attr("disabled",DisabledX);
 
+  $('input[name="edit_agendamento_service_result3"]').attr("disabled",DisabledX);
 
 
   /*Promoter 4 */
@@ -2890,7 +2924,7 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#edit_agendamento_buffet4").attr("disabled",DisabledX);
   $("#edit_agendamento_service_welcome_kit4").attr("disabled",DisabledX);
 
-
+  $('input[name="edit_agendamento_service_result4"]').attr("disabled",DisabledX);
 
   /*Promoter 5 */
   $("#edit_agendamento_busca_professional5").attr("disabled",DisabledX);
@@ -2916,6 +2950,7 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   $("#edit_agendamento_buffet5").attr("disabled",DisabledX);
   $("#edit_agendamento_service_welcome_kit5").attr("disabled",DisabledX);
 
+  $('input[name="edit_agendamento_service_result5"]').attr("disabled",DisabledX);
 
   if(DisabledX === false){
     $("#btn_edit_ordem_agendamento").attr("disabled",true);

@@ -434,9 +434,12 @@ function formatHora(date) {
               var action ='edit'
               PromoterServiceTypeX(1,ServiceType1,action)
               $('#edit_agendamento_food1').val(data['Food Type 1']);
-              setTimeout(function(){
-                $('#edit_agendamento_service_welcome_kit1 option[value='+data['Item Welcome Kit 1']+']').attr('selected','selected');
-               }, 3000);
+
+              if(data['Item Welcome Kit 1'] != ""){
+                setTimeout(function(){
+                  $('#edit_agendamento_service_welcome_kit1 option[value='+data['Item Welcome Kit 1']+']').attr('selected','selected');
+                }, 3000);
+              }  
               
               // $('#edit_agendamento_service_result1').val('ServicetypeResult1');
               // if(ServicetypeResult1 != ""){
@@ -447,6 +450,7 @@ function formatHora(date) {
                   ServicetypeResult1X.map(function(res){
                     // $('#edit_agendamento_service_result1 option[value='+res+']').attr('selected','selected');
                     $('input[name="edit_agendamento_service_result1"][value='+res+']').attr('checked',true);
+                    $('input[name="edit_agendamento_service_result1"]').attr("disabled",true);
                   })  
                 }    
 
@@ -486,9 +490,12 @@ function formatHora(date) {
               var action ='edit'
               PromoterServiceTypeX(2,ServiceType2,action)
               $('#edit_agendamento_food2').val(data['Food Type 2']);
-              setTimeout(function(){
-                $('#edit_agendamento_service_welcome_kit2 option[value='+data['Item Welcome Kit 2']+']').attr('selected','selected');
-               }, 3000);
+
+              if(data['Item Welcome Kit 2'] != ""){
+                setTimeout(function(){
+                  $('#edit_agendamento_service_welcome_kit2 option[value='+data['Item Welcome Kit 2']+']').attr('selected','selected');
+                }, 3000);
+              }
 
               //$('#edit_agendamento_service_result2').val(ServicetypeResult2);
               // if(ServicetypeResult2 != ""){
@@ -500,6 +507,7 @@ function formatHora(date) {
                 ServicetypeResult2X.map(function(res){
                   // $('#edit_agendamento_service_result2 option[value='+res+']').attr('selected','selected');
                   $('input[name="edit_agendamento_service_result2"][value='+res+']').attr('checked',true);
+                  $('input[name="edit_agendamento_service_result2"]').attr("disabled",true);
                 })  
               }  
 
@@ -533,9 +541,11 @@ function formatHora(date) {
               var action ='edit'
               PromoterServiceTypeX(3,ServiceType3,action)
               $('#edit_agendamento_food3').val(data['Food Type 3']);
-              setTimeout(function(){
-                $('#edit_agendamento_service_welcome_kit3 option[value='+data['Item Welcome Kit 3']+']').attr('selected','selected');
-               }, 3000);
+              if(data['Item Welcome Kit 3'] != ""){
+                setTimeout(function(){
+                  $('#edit_agendamento_service_welcome_kit3 option[value='+data['Item Welcome Kit 3']+']').attr('selected','selected');
+                  }, 3000);
+                }    
 
               //$('#edit_agendamento_service_result3').val(ServicetypeResult3);
               // if(ServicetypeResult3 != ""){
@@ -548,6 +558,7 @@ function formatHora(date) {
                 ServicetypeResult3X.map(function(res){
                   // $('#edit_agendamento_service_result3 option[value='+res+']').attr('selected','selected');
                   $('input[name="edit_agendamento_service_result3"][value='+res+']').attr('checked',true);
+                  $('input[name="edit_agendamento_service_result3"]').attr("disabled",true);
                 })  
 
               }
@@ -587,9 +598,11 @@ function formatHora(date) {
               var action ='edit'
               PromoterServiceTypeX(4,ServiceType4,action)
               $('#edit_agendamento_food4').val(data['Food Type 4']);
-              setTimeout(function(){
-                $('#edit_agendamento_service_welcome_kit4 option[value='+data['Item Welcome Kit 4']+']').attr('selected','selected');
-               }, 3000);
+              if(data['Item Welcome Kit 4'] != ""){
+                setTimeout(function(){
+                  $('#edit_agendamento_service_welcome_kit4 option[value='+data['Item Welcome Kit 4']+']').attr('selected','selected');
+                }, 3000);
+              }  
 
               //$('#edit_agendamento_service_result4').val(ServicetypeResult3);
               // if(ServicetypeResult4 != ""){
@@ -600,7 +613,8 @@ function formatHora(date) {
                 var ServicetypeResult4X =  ServicetypeResult4.split(",")
                 ServicetypeResult4X.map(function(res){
                   // $('#edit_agendamento_service_result4 option[value='+res+']').attr('selected','selected');
-                  $('input[name="edit_agendamento_service_result5"][value='+res+']').attr('checked',true);
+                  $('input[name="edit_agendamento_service_result4"][value='+res+']').attr('checked',true);
+                  $('input[name="edit_agendamento_service_result4"]').attr("disabled",true);
                 })  
               }  
               
@@ -638,9 +652,12 @@ function formatHora(date) {
               var action ='edit'
               PromoterServiceTypeX(5,ServiceType5,action)
               $('#edit_agendamento_food5').val(data['Food Type 5']);
-              setTimeout(function(){
-                $('#edit_agendamento_service_welcome_kit5 option[value='+data['Item Welcome Kit 5']+']').attr('selected','selected');
-               }, 3000);
+
+              if(data['Item Welcome Kit 5'] != ""){
+                setTimeout(function(){
+                  $('#edit_agendamento_service_welcome_kit5 option[value='+data['Item Welcome Kit 5']+']').attr('selected','selected');
+                }, 3000);
+              }  
 
               //$('#edit_agendamento_service_result5').val(ServicetypeResult5);
               // if(ServicetypeResult5 != ""){
@@ -652,6 +669,7 @@ function formatHora(date) {
                 ServicetypeResult5X.map(function(res){
                   // $('#edit_agendamento_service_result5 option[value='+res+']').attr('selected','selected');
                   $('input[name="edit_agendamento_service_result5"][value='+res+']').attr('checked',true);
+                  $('input[name="edit_agendamento_service_result5"]').attr("disabled",true);
                 })  
               }  
 
@@ -937,6 +955,40 @@ function formatHora(date) {
             $('#finish_type_branding_sim').hide();
           }
         });
+
+
+        /*Editar */
+
+$("#edit_agendamento_service_type1").change(function(){
+  var promoter = 1;
+  var value = $(this).val();
+  var action = 'edit'
+  PromoterServiceTypeX(promoter,value,action)
+});
+$("#edit_agendamento_service_type2").change(function(){
+  var promoter = 2;
+  var value = $(this).val();
+  var action = 'edit'
+  PromoterServiceTypeX(promoter,value,action)
+});
+$("#edit_agendamento_service_type3").change(function(){
+  var promoter = 3;
+  var value = $(this).val();
+  var action = 'edit'
+  PromoterServiceTypeX(promoter,value,action)
+});
+$("#edit_agendamento_service_type4").change(function(){
+  var promoter = 4;
+  var value = $(this).val();
+  var action = 'edit'
+  PromoterServiceTypeX(promoter,value,action)
+});
+$("#edit_agendamento_service_type5").change(function(){
+  var promoter = 5;
+  var value = $(this).val();
+  var action = 'edit'
+  PromoterServiceTypeX(promoter,value,action)
+});
         
 
 
@@ -2374,6 +2426,8 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
     $("#edit_agendamento_projector1").attr("disabled",DisabledX);
     $("#edit_agendamento_buffet1").attr("disabled",DisabledX);
 
+    $('input[name="edit_agendamento_service_result1"]').attr("disabled",DisabledX);
+
   
     /*Promoter 2 */
     $("#edit_agendamento_busca_professional2").attr("disabled",DisabledX);
@@ -2397,6 +2451,8 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
     $("#edit_agendamento_number_workers_train2").attr("disabled",DisabledX);
     $("#edit_agendamento_projector2").attr("disabled",DisabledX);
     $("#edit_agendamento_buffet2").attr("disabled",DisabledX);
+
+    $('input[name="edit_agendamento_service_result2"]').attr("disabled",DisabledX);
   
     /*Promoter 3 */
     $("#edit_agendamento_busca_professional3").attr("disabled",DisabledX);
@@ -2420,6 +2476,8 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
     $("#edit_agendamento_number_workers_train3").attr("disabled",DisabledX);
     $("#edit_agendamento_projector3").attr("disabled",DisabledX);
     $("#edit_agendamento_buffet3").attr("disabled",DisabledX);
+
+    $('input[name="edit_agendamento_service_result3"]').attr("disabled",DisabledX);
   
   
     /*Promoter 4 */
@@ -2444,7 +2502,8 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
     $("#edit_agendamento_number_workers_train4").attr("disabled",DisabledX);
     $("#edit_agendamento_projector4").attr("disabled",DisabledX);
     $("#edit_agendamento_buffet4").attr("disabled",DisabledX);
-  
+    
+    $('input[name="edit_agendamento_service_result4"]').attr("disabled",DisabledX);
   
     /*Promoter 5 */
     $("#edit_agendamento_busca_professional5").attr("disabled",DisabledX);
@@ -2469,12 +2528,15 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
     $("#edit_agendamento_projector5").attr("disabled",DisabledX);
     $("#edit_agendamento_buffet5").attr("disabled",DisabledX);
 
+    $('input[name="edit_agendamento_service_result5"]').attr("disabled",DisabledX);
 
     $("#edit_agendamento_service_welcome_kit1").attr("disabled",DisabledX);
     $("#edit_agendamento_service_welcome_kit2").attr("disabled",DisabledX);
     $("#edit_agendamento_service_welcome_kit3").attr("disabled",DisabledX);
     $("#edit_agendamento_service_welcome_kit4").attr("disabled",DisabledX);
     $("#edit_agendamento_service_welcome_kit5").attr("disabled",DisabledX);
+
+    
   
     if(DisabledX === false){
       $("#btn_edit_ordem_agendamento").attr("disabled",true);
