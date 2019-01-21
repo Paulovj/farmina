@@ -2441,7 +2441,7 @@ function formValidacaoOrdem(promoter,action){
 
      var length1 = $('#add_agendamento_busca_professional1 > option').length;
      console.log('quandadide PROFESSIONAL: ',length)
-     alert(sessionStorage.No)
+    //  alert(sessionStorage.No)
      if (length1 == 1){
        $.ajax({url: urlX+"resourses/getResourseQuery?Pais="+paisX+"&Resource="+sessionStorage.No+"&Type="+sessionStorage.Type, success: function(obj){
          var contX = "";
