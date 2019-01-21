@@ -2341,10 +2341,36 @@ function formValidacaoOrdem(promoter,action){
 
   function empetyCampos(){
 
+  //$("#div_"+action+"_agendamento_service_result_food"+promoter).show();
+  $("#div_add_agendamento_service_result_location1").hide();
+  $("#div_add_agendamento_service_result_projector1").hide();
+  $("#div_add_agendamento_service_welcome_kit1").hide();
+  $("#div_add_agendamento_service_result_promoting1").hide();
+  $("#div_add_agendamento_service_result_food1").hide();
+  $("#div_add_agendamento_service_result1").hide();
+  $("#div_add_agendamento_service_result_open_bags1").hide();
+  $("#div_add_agendamento_service_result_trainning_type1").hide();
+  $("#div_add_agendamento_service_result_tranning_comments1").hide();
+  $("#div_add_agendamento_service_many_meters1").hide();
+  $("#div_add_agendamento_service_result_army_specific_store1").hide();
+  $("#div_add_agendamento_service_result_planned_hour1").show();
+
+  
+
+  
+  
+
+  
+  
+
+
+
+
     $('#add_agendamento_nome').val('')
     $('#add_agendamento_n_cliente').val('')
     $('#add_agendamento_cod_vendendor').val('')
     $('#add_agendamento_fatura_cidade').val('')
+    $('#add_agendamento_fatura_country').val('')
     $('#add_agendamento_fatura_cep').val('')
     $('#add_agendamento_fatura_endereco').val('')
     $('#add_agendamento_fatura_endereco_complemento').val('')
@@ -2418,6 +2444,8 @@ function formValidacaoOrdem(promoter,action){
     $('#div_add_agendamento_service_result5').val('0')
 
   }
+
+ 
 
   $("#btn_cliente_agendamento").click(function(){
     empetyCampos();
@@ -2598,14 +2626,15 @@ function formValidacaoOrdem(promoter,action){
     console.log(data)
 
 
-    var id      = data['id'];
-    var name    = data['ragsoc'];
-    var address = data['indirizzo'];
-    var post    = data['cap'];
-    var phone   = data['tel'];
-    var contact = data['contatto'];
-    var city    = data['comune'];
-    var address2= data['codice'];
+    var id        = data['id'];
+    var name      = data['ragsoc'];
+    var address   = data['indirizzo'];
+    var post      = data['cap'];
+    var phone     = data['tel'];
+    var contact   = data['contatto'];
+    var city      = data['comune'];
+    var provincia = data['provincia'];
+    var address2  = data['codice'];
     var salespersonCode= data['idsam'];
 
     var action = $('#action_cliente_agendamento').val()
@@ -2620,6 +2649,7 @@ function formValidacaoOrdem(promoter,action){
       $('#add_agendamento_fatura_cep').val(post)
       $('#add_agendamento_fatura_endereco').val(address)
       $('#add_agendamento_cod_vendendor').val(salespersonCode)
+      $('#add_agendamento_country').val(provincia)
 
       setTimeout(chamaAddAgendamento, 1000);
     } else if (action == 'u')  {
@@ -2630,6 +2660,7 @@ function formValidacaoOrdem(promoter,action){
       $('#edit_agendamento_fatura_cep').val(post)
       $('#edit_agendamento_fatura_endereco').val(address)
       $('#edit_agendamento_cod_vendendor').val(salespersonCode)
+      $('#edit_agendamento_country').val(provincia)
       setTimeout(chamaEditAgendamento, 1000);
     }
 
@@ -2727,6 +2758,7 @@ function loadClienteNavX() {
           { "data" : "contatto" },
           { "data" : "indirizzo"},
           { "data" : "comune" },
+          { "data" : "provincia" },          
           { "data" : "cap" },
           //{ "data" : "codice" },
           { "data" : "idsam" },
