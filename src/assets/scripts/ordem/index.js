@@ -248,7 +248,8 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
             var length1 = $('#edit_agendamento_busca_professional1 > option').length;
             console.log('Edit quandadide PROFESSIONAL: ',length)
             if (length1 == 1){
-              $.ajax({url: urlX+"resourses/getResourseQuery?Pais="+paisX, success: function(obj){
+              // $.ajax({url: urlX+"resourses/getResourseQuery?Pais="+paisX, success: function(obj){
+                $.ajax({url: urlX+"resourses/getResourseQuery?Pais="+paisX+"&Resource="+sessionStorage.No+"&Type="+sessionStorage.Type, success: function(obj){
                 var contX = "";
                 //contX += '<option selected="selected" value="0">...</option>'
                   $.each(obj.result, function(index, value){
@@ -2440,8 +2441,9 @@ function formValidacaoOrdem(promoter,action){
 
      var length1 = $('#add_agendamento_busca_professional1 > option').length;
      console.log('quandadide PROFESSIONAL: ',length)
+     alert(sessionStorage.No)
      if (length1 == 1){
-       $.ajax({url: urlX+"resourses/getResourseQuery?Pais="+paisX+"&Resource="+sessionStorage.No, success: function(obj){
+       $.ajax({url: urlX+"resourses/getResourseQuery?Pais="+paisX+"&Resource="+sessionStorage.No+"&Type="+sessionStorage.Type, success: function(obj){
          var contX = "";
            $.each(obj.result, function(index, value){
              var val = value.No_ + ' | ' + value.Name;
