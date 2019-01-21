@@ -385,7 +385,8 @@ function formatHora(date) {
             var length1 = $('#edit_agendamento_busca_professional1 > option').length;
             console.log('Edit quandadide PROFESSIONAL: ',length)
             //if (length1 == 1){
-              $.ajax({url: urlX+"resourses/getResourseQuery?Pais="+paisX, success: function(obj){
+              // $.ajax({url: urlX+"resourses/getResourseQuery?Pais="+paisX, success: function(obj){
+                 $.ajax({url: urlX+"resourses/getResourseQuery?Pais="+paisX+"&Resource="+sessionStorage.No+"&Type="+sessionStorage.Type, success: function(obj){
                 var contX = "";
                 contX += '<option selected="selected" value="0">Select...</option>'
                   $.each(obj.result, function(index, value){
