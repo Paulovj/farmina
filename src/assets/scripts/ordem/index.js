@@ -1191,7 +1191,7 @@ function PromoterServiceTypeX(promoter,value,action){
     contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="10"> ND Ocean dog </p>';
 
 
-    $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
+    $("#div_"+action+"_agendamento_service_result_food"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
@@ -1245,7 +1245,7 @@ function PromoterServiceTypeX(promoter,value,action){
     contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="7"> ND Quinoa</p>';
     contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="8"> ND Ocean</p>';
 
-    $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
+    $("#div_"+action+"_agendamento_service_result_food"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
@@ -1303,7 +1303,7 @@ function PromoterServiceTypeX(promoter,value,action){
     // contTypeFoodX +='<option value="3" class="lDryWet">'+$.i18n.prop('lDryWet',lang)+'</option>'
     
 
-
+    $("#div_"+action+"_agendamento_service_result_food"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
@@ -1534,14 +1534,14 @@ function formValidacaoOrdem(promoter,action){
 
   /*VALIDAÇÃO WELCOME KIT*/
   if(service_type1 == 2){
-    var food1                 = $('#'+action+'_agendamento_food'+promoter).val();
+    // var food1                 = $('#'+action+'_agendamento_food'+promoter).val();
     // var service_result1       = $('#'+action+'_agendamento_service_result'+promoter).val();
     var service_result1       = $('input[name="'+action+'_agendamento_service_result'+promoter+'"]').is(':checked') 
 
-    if(food1 == 0){
-      texto += $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " +
-      valida = false
-    }
+    // if(food1 == 0){
+    //   texto += $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " +
+    //   valida = false
+    // }
 
     if(service_result1 == false){
       texto += $.i18n.prop('ParaQualLinhaVoceGostariaKitDeBoasVindas',lang)+ ' ' + promoter +'<br>';// "Welcome kit for which line "+ promoter +" " +
@@ -1552,16 +1552,16 @@ function formValidacaoOrdem(promoter,action){
 
   /*VALIDAÇÃO ISP*/
   if(service_type1 == 3){
-    var food1            = $('#'+action+'_agendamento_food'+promoter).val();
+    // var food1            = $('#'+action+'_agendamento_food'+promoter).val();
     var Promoting1       = $('#'+action+'_agendamento_Promoting'+promoter).val();
     var service_result1  = $('input[name="'+action+'_agendamento_service_result'+promoter+'"]').is(':checked') 
     // var service_result1  = $('#'+action+'_agendamento_service_result'+promoter).val();
     var open_bags        = $('#'+action+'_agendamento_open_bags'+promoter).val();
 
-    if(food1 == 0){
-      texto +=  $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " +
-      valida = false
-    }
+    // if(food1 == 0){
+    //   texto +=  $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " +
+    //   valida = false
+    // }
 
     if(Promoting1 == 0){
       texto += $.i18n.prop('lPromoting',lang)+ ' ' + promoter +'<br>';//"Type of promotion "+ promoter +" " +
@@ -1606,14 +1606,14 @@ function formValidacaoOrdem(promoter,action){
   /*VALIDAÇÃO   ARMY*/
   if(service_type1 == 5){
     var specific_store1   = $('#'+action+'_agendamento_army_specific_store'+promoter).val();
-    var food1            = $('#'+action+'_agendamento_food'+promoter).val();
+    // var food1            = $('#'+action+'_agendamento_food'+promoter).val();
     var which_park1       = $('#'+action+'_agendamento_army_which_park'+promoter).val();
 
 
-    if(food1 == 0){
-      texto +=  $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " +
-      valida = false
-    }
+    // if(food1 == 0){
+    //   texto +=  $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " +
+    //   valida = false
+    // }
 
     if(specific_store1 == 0){
       texto += $.i18n.prop('lForSpecificStore',lang)+ ' ' + promoter +'<br>';//"For a specific store "+ promoter +" " +
