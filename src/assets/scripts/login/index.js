@@ -154,7 +154,7 @@ $("#btn_login").click(function(){
       }
 
     //Validação SOS 
-    if(sessionStorage.Type == 3){
+    if(sessionStorage.Type == 3 || sessionStorage.Type == 4){
       $('.PermissaoSOS').hide();
     }
     
