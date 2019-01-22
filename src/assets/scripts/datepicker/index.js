@@ -2,12 +2,14 @@ import * as $ from 'jquery';
 // import 'bootstrap-datepicker/dist/js/bootstrap-datepicker';
 // import 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.it.min.js';
 // import 'bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css';
+import 'bootstrap-notify'
 import 'jquery-i18n-properties'
 import moment from 'moment/src/moment';
 // import { Array } from 'core-js';
 
 
 export default (function () {
+  var max = 8
 
   var lang = "en";
   if ((sessionStorage.Language != "") && (sessionStorage.Language != 'undefined')){
@@ -83,6 +85,7 @@ export default (function () {
           console.log('entrou ' + result.result.length)
           var arrayData = [];
           let arrayDias = new Array()
+          var texte = ""
           console.log('data de hj 2: '+ new Date())
           $.each( result.result, function( index, value ){
               var objDatas = {}
@@ -115,8 +118,12 @@ export default (function () {
               
               arrayData.push(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
               
+              
+              
               objDatas = estimatedDate;
               arrayDias.push(objDatas)
+
+             
 
               $('.start-date'+number).datepicker({
                 format: 'dd/mm/yyyy', 
@@ -137,11 +144,18 @@ export default (function () {
                   var atual = new Date();
                   $('.datepicker-days').attr( "data-toggle", "tooltip" );
 
+                
+
                   if(arrayDias.indexOf(date.trim()) > -1) {
+
+
                     // console.log(arrayData[arrayDias.indexOf(date)].split('-')[1]);
                     // console.log('click', arrayData[arrayDias.indexOf(date)]);
+
+                    
                     return {
-                      tooltip: arrayData[arrayDias.indexOf(date)],
+                      // tooltip: arrayData[arrayDias.indexOf(date)],
+                      tooltip: '',
                       // classes: 'highlighted disabled',
                       classes: 'highlighted',
                       
@@ -165,8 +179,9 @@ export default (function () {
               
 
           })
+          
         }else{
-          console.log('nao encontrou')
+         // console.log('nao encontrou')
           $('.start-date'+number).datepicker({
             format: 'dd/mm/yyyy', 
             // startDate: moment(new Date()).utc('America/Sao_Paulo').format("DD/MM/Y"),
@@ -196,7 +211,12 @@ export default (function () {
   }
   //$('.start-date').datepicker();
   $('.end-date').datepicker();
-  
+  var arrayValidaHora1=[]
+  var arrayValidaHora2=[]
+  var arrayValidaHora3=[]
+  var arrayValidaHora4=[]
+  var arrayValidaHora5=[]
+
 
 
   $('.start-date1').datepicker().on('changeDate', function(ev){
@@ -228,12 +248,21 @@ export default (function () {
               var dia = teste[2].split('T')
               var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
             alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
+            // alert('Entrou certo')
             $('.start-date1').val('');
+            
+            $('#add_agendamento_planned_start_time1').attr('disabled',true)
+            $('#add_agendamento_planned_hour1').attr('disabled',true)
+            $('#add_agendamento_planned_hour1').attr('max',max)
           })
 
         }else{
           //alert('nao existe algo::::')
+          arrayValidaHora1 = []
           $('.start-date1').val('');
+          $('#add_agendamento_planned_start_time1').attr('disabled',true)
+          $('#add_agendamento_planned_hour1').attr('disabled',true)
+          $('#add_agendamento_planned_hour1').attr('max',max)
         }  
       })  
 
@@ -241,6 +270,9 @@ export default (function () {
       $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) { 
         if(result.result.length > 0){
           // alert('existe algo :::')
+          var msg =""
+          var hhmm = 0
+          arrayValidaHora1 = [];
           $.each( result.result, function( index, value ){
             var service_type =''
               var EstimatedTime = $.i18n.prop('lEstimatedTime',lang)
@@ -259,12 +291,36 @@ export default (function () {
               var teste = value['Estimated Starting Date'].split("-");
               var dia = teste[2].split('T')
               var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
-            alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
-            $('.start-date1').val('');
-          })
+              msg += estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type +'\n'
+              
+              var hour_inicio = value['Estimated Starting Time'];
+              var hour_fim = value['Estimated Finish Time'];
+              
+              arrayValidaHora1.push({'hora_ini':hour_inicio, 'hora_fim':hour_fim})
 
+              const segent = (hmToMins(value['Estimated Starting Time']))
+              const segsai = (hmToMins(value['Estimated Finish Time']))
+
+               const diff = segsai - segent;
+               hhmm = hhmm + diff/60
+                // alert(hhmm)
+          })
+          var resta = max-hhmm
+          // alert(msg+"restam:"+ (resta) +' horas')
+          alert(msg)
+          if(resta > 0){
+          $('#add_agendamento_planned_start_time1').attr('disabled',false)
+          $('#add_agendamento_planned_hour1').attr('disabled',false)
+          $('#add_agendamento_planned_hour1').attr('max',resta)
+           console.log(arrayValidaHora1);
+          }
+          //alert('Total:'+hhmm)
         }else{
           //alert('nao existe algo::::')
+          arrayValidaHora1 = []
+          $('#add_agendamento_planned_start_time1').attr('disabled',false)
+          $('#add_agendamento_planned_hour1').attr('disabled',false)
+          $('#add_agendamento_planned_hour1').attr('max',max)
         }  
       })  
 
@@ -274,7 +330,6 @@ export default (function () {
     
 
   })
-
 
 
   $('.start-date2').datepicker().on('changeDate', function(ev){
@@ -306,12 +361,21 @@ export default (function () {
               var dia = teste[2].split('T')
               var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
             alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
+            // alert('Entrou certo')
             $('.start-date2').val('');
+            
+            $('#add_agendamento_planned_start_time2').attr('disabled',true)
+            $('#add_agendamento_planned_hour2').attr('disabled',true)
+            $('#add_agendamento_planned_hour2').attr('max',max)
           })
 
         }else{
           //alert('nao existe algo::::')
+          arrayValidaHora2 = []
           $('.start-date2').val('');
+          $('#add_agendamento_planned_start_time2').attr('disabled',true)
+          $('#add_agendamento_planned_hour2').attr('disabled',true)
+          $('#add_agendamento_planned_hour2').attr('max',max)
         }  
       })  
 
@@ -319,6 +383,9 @@ export default (function () {
       $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) { 
         if(result.result.length > 0){
           // alert('existe algo :::')
+          var msg =""
+          var hhmm = 0
+          arrayValidaHora1 = [];
           $.each( result.result, function( index, value ){
             var service_type =''
               var EstimatedTime = $.i18n.prop('lEstimatedTime',lang)
@@ -337,12 +404,36 @@ export default (function () {
               var teste = value['Estimated Starting Date'].split("-");
               var dia = teste[2].split('T')
               var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
-            alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
-            $('.start-date2').val('');
-          })
+              msg += estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type +'\n'
+              
+              var hour_inicio = value['Estimated Starting Time'];
+              var hour_fim = value['Estimated Finish Time'];
+              
+              arrayValidaHora2.push({'hora_ini':hour_inicio, 'hora_fim':hour_fim})
 
+              const segent = (hmToMins(value['Estimated Starting Time']))
+              const segsai = (hmToMins(value['Estimated Finish Time']))
+
+               const diff = segsai - segent;
+               hhmm = hhmm + diff/60
+                // alert(hhmm)
+          })
+          var resta = max-hhmm
+          // alert(msg+"restam:"+ (resta) +' horas')
+          alert(msg)
+          if(resta > 0){
+          $('#add_agendamento_planned_start_time2').attr('disabled',false)
+          $('#add_agendamento_planned_hour2').attr('disabled',false)
+          $('#add_agendamento_planned_hour2').attr('max',resta)
+           console.log(arrayValidaHora2);
+          }
+          //alert('Total:'+hhmm)
         }else{
           //alert('nao existe algo::::')
+          arrayValidaHora1 = []
+          $('#add_agendamento_planned_start_time2').attr('disabled',false)
+          $('#add_agendamento_planned_hour2').attr('disabled',false)
+          $('#add_agendamento_planned_hour2').attr('max',max)
         }  
       })  
 
@@ -352,8 +443,6 @@ export default (function () {
     
 
   })
-
-
 
   $('.start-date3').datepicker().on('changeDate', function(ev){
     var now = moment(new Date(), "YYYY-MM-DD")
@@ -384,12 +473,21 @@ export default (function () {
               var dia = teste[2].split('T')
               var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
             alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
+            // alert('Entrou certo')
             $('.start-date3').val('');
+            
+            $('#add_agendamento_planned_start_time3').attr('disabled',true)
+            $('#add_agendamento_planned_hour3').attr('disabled',true)
+            $('#add_agendamento_planned_hour3').attr('max',max)
           })
 
         }else{
           //alert('nao existe algo::::')
+          arrayValidaHora3 = []
           $('.start-date3').val('');
+          $('#add_agendamento_planned_start_time3').attr('disabled',true)
+          $('#add_agendamento_planned_hour3').attr('disabled',true)
+          $('#add_agendamento_planned_hour3').attr('max',max)
         }  
       })  
 
@@ -397,6 +495,9 @@ export default (function () {
       $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) { 
         if(result.result.length > 0){
           // alert('existe algo :::')
+          var msg =""
+          var hhmm = 0
+          arrayValidaHora3 = [];
           $.each( result.result, function( index, value ){
             var service_type =''
               var EstimatedTime = $.i18n.prop('lEstimatedTime',lang)
@@ -415,12 +516,36 @@ export default (function () {
               var teste = value['Estimated Starting Date'].split("-");
               var dia = teste[2].split('T')
               var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
-            alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
-            $('.start-date3').val('');
-          })
+              msg += estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type +'\n'
+              
+              var hour_inicio = value['Estimated Starting Time'];
+              var hour_fim = value['Estimated Finish Time'];
+              
+              arrayValidaHora3.push({'hora_ini':hour_inicio, 'hora_fim':hour_fim})
 
+              const segent = (hmToMins(value['Estimated Starting Time']))
+              const segsai = (hmToMins(value['Estimated Finish Time']))
+
+               const diff = segsai - segent;
+               hhmm = hhmm + diff/60
+                // alert(hhmm)
+          })
+          var resta = max-hhmm
+          //alert(msg+"restam:"+ (resta) +' horas')
+          alert(msg)
+          if(resta > 0){
+          $('#add_agendamento_planned_start_time3').attr('disabled',false)
+          $('#add_agendamento_planned_hour3').attr('disabled',false)
+          $('#add_agendamento_planned_hour3').attr('max',resta)
+           console.log(arrayValidaHora3);
+          }
+          //alert('Total:'+hhmm)
         }else{
           //alert('nao existe algo::::')
+          arrayValidaHora3 = []
+          $('#add_agendamento_planned_start_time3').attr('disabled',false)
+          $('#add_agendamento_planned_hour3').attr('disabled',false)
+          $('#add_agendamento_planned_hour3').attr('max',max)
         }  
       })  
 
@@ -430,7 +555,6 @@ export default (function () {
     
 
   })
-
 
   $('.start-date4').datepicker().on('changeDate', function(ev){
     var now = moment(new Date(), "YYYY-MM-DD")
@@ -461,12 +585,21 @@ export default (function () {
               var dia = teste[2].split('T')
               var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
             alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
+            // alert('Entrou certo')
             $('.start-date4').val('');
+            
+            $('#add_agendamento_planned_start_time4').attr('disabled',true)
+            $('#add_agendamento_planned_hour4').attr('disabled',true)
+            $('#add_agendamento_planned_hour4').attr('max',max)
           })
 
         }else{
           //alert('nao existe algo::::')
+          arrayValidaHora4 = []
           $('.start-date4').val('');
+          $('#add_agendamento_planned_start_time4').attr('disabled',true)
+          $('#add_agendamento_planned_hour4').attr('disabled',true)
+          $('#add_agendamento_planned_hour4').attr('max',max)
         }  
       })  
 
@@ -474,6 +607,9 @@ export default (function () {
       $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) { 
         if(result.result.length > 0){
           // alert('existe algo :::')
+          var msg =""
+          var hhmm = 0
+          arrayValidaHora4 = [];
           $.each( result.result, function( index, value ){
             var service_type =''
               var EstimatedTime = $.i18n.prop('lEstimatedTime',lang)
@@ -492,12 +628,36 @@ export default (function () {
               var teste = value['Estimated Starting Date'].split("-");
               var dia = teste[2].split('T')
               var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
-            alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
-            $('.start-date4').val('');
-          })
+              msg += estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type +'\n'
+              
+              var hour_inicio = value['Estimated Starting Time'];
+              var hour_fim = value['Estimated Finish Time'];
+              
+              arrayValidaHora1.push({'hora_ini':hour_inicio, 'hora_fim':hour_fim})
 
+              const segent = (hmToMins(value['Estimated Starting Time']))
+              const segsai = (hmToMins(value['Estimated Finish Time']))
+
+               const diff = segsai - segent;
+               hhmm = hhmm + diff/60
+                // alert(hhmm)
+          })
+          var resta = max-hhmm
+          // alert(msg+"restam:"+ (resta) +' horas')
+          alert(msg)
+          if(resta > 0){
+          $('#add_agendamento_planned_start_time4').attr('disabled',false)
+          $('#add_agendamento_planned_hour4').attr('disabled',false)
+          $('#add_agendamento_planned_hour4').attr('max',resta)
+           console.log(arrayValidaHora4);
+          }
+          //alert('Total:'+hhmm)
         }else{
           //alert('nao existe algo::::')
+          arrayValidaHora4 = []
+          $('#add_agendamento_planned_start_time4').attr('disabled',false)
+          $('#add_agendamento_planned_hour4').attr('disabled',false)
+          $('#add_agendamento_planned_hour4').attr('max',max)
         }  
       })  
 
@@ -537,12 +697,21 @@ export default (function () {
               var dia = teste[2].split('T')
               var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
             alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
+            // alert('Entrou certo')
             $('.start-date5').val('');
+            
+            $('#add_agendamento_planned_start_time5').attr('disabled',true)
+            $('#add_agendamento_planned_hour5').attr('disabled',true)
+            $('#add_agendamento_planned_hour5').attr('max',max)
           })
 
         }else{
           //alert('nao existe algo::::')
-          $('.start-date5').val('');
+          arrayValidaHora1 = []
+          $('.start-date1').val('');
+          $('#add_agendamento_planned_start_time5').attr('disabled',true)
+          $('#add_agendamento_planned_hour5').attr('disabled',true)
+          $('#add_agendamento_planned_hour5').attr('max',max)
         }  
       })  
 
@@ -550,6 +719,9 @@ export default (function () {
       $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) { 
         if(result.result.length > 0){
           // alert('existe algo :::')
+          var msg =""
+          var hhmm = 0
+          arrayValidaHora1 = [];
           $.each( result.result, function( index, value ){
             var service_type =''
               var EstimatedTime = $.i18n.prop('lEstimatedTime',lang)
@@ -568,12 +740,36 @@ export default (function () {
               var teste = value['Estimated Starting Date'].split("-");
               var dia = teste[2].split('T')
               var estimatedDate  = dia[0]+'/'+teste[1]+'/'+teste[0]
-            alert(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
-            $('.start-date5').val('');
-          })
+              msg += estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type +'\n'
+              
+              var hour_inicio = value['Estimated Starting Time'];
+              var hour_fim = value['Estimated Finish Time'];
+              
+              arrayValidaHora5.push({'hora_ini':hour_inicio, 'hora_fim':hour_fim})
 
+              const segent = (hmToMins(value['Estimated Starting Time']))
+              const segsai = (hmToMins(value['Estimated Finish Time']))
+
+               const diff = segsai - segent;
+               hhmm = hhmm + diff/60
+                // alert(hhmm)
+          })
+          var resta = max-hhmm
+          // alert(msg+"restam:"+ (resta) +' horas')
+          alert(msg)
+          if(resta > 0){
+          $('#add_agendamento_planned_start_time5').attr('disabled',false)
+          $('#add_agendamento_planned_hour5').attr('disabled',false)
+          $('#add_agendamento_planned_hour5').attr('max',resta)
+           console.log(arrayValidaHora5);
+          }
+          //alert('Total:'+hhmm)
         }else{
           //alert('nao existe algo::::')
+          arrayValidaHora5 = []
+          $('#add_agendamento_planned_start_time5').attr('disabled',false)
+          $('#add_agendamento_planned_hour5').attr('disabled',false)
+          $('#add_agendamento_planned_hour5').attr('max',max)
         }  
       })  
 
@@ -584,6 +780,194 @@ export default (function () {
 
   })
 
+
+
+  function hmToMins(str) {
+    const [hh, mm] = str.split(':').map(nr => Number(nr) || 0);
+    return hh * 60 + mm;
+  }
+
+  $("#add_agendamento_planned_start_time1").blur(function(){
+    var hora = hmToMins($(this).val());
+    var valida = false;
+    // alert('quantidade array: ' + arrayValidaHora1.length)
+    arrayValidaHora1.map(function(value) {
+      // alert(hmToMins(value.hora_ini) + ' > ' + hora)
+      // alert(hmToMins(value.hora_fim) + ' < ' + hora)
+      if(hora.between(hmToMins(value.hora_ini), hmToMins(value.hora_fim)) == true){
+        //bloquei nao deixa continuar
+        valida = true
+      }
+    })
+    if(valida == true){
+      $(this).val('');
+      $('#add_agendamento_planned_start_time1').attr('disabled',true)
+      $('#add_agendamento_planned_hour1').attr('disabled',true)
+      //alert("Hora inválida!")
+      var texto = "Planned Start Time 1 invalid"
+      $.notify({
+        title: $.i18n.prop('lAttentionMandatory',lang),
+        message: texto
+      },{
+        type: 'pastel-danger',
+        delay: 5000,
+        z_index: 10000,
+        template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+          '<span data-notify="title">{1}</span>' +
+          '<span data-notify="message">{2}</span>' +
+        '</div>'
+      });
+
+    }
+  })
+
+
+  $("#add_agendamento_planned_start_time2").blur(function(){
+    var hora = hmToMins($(this).val());
+    var valida = false;
+    // alert('quantidade array: ' + arrayValidaHora1.length)
+    arrayValidaHora2.map(function(value) {
+      // alert(hmToMins(value.hora_ini) + ' > ' + hora)
+      // alert(hmToMins(value.hora_fim) + ' < ' + hora)
+      if(hora.between(hmToMins(value.hora_ini), hmToMins(value.hora_fim)) == true){
+        //bloquei nao deixa continuar
+        valida = true
+      }
+    })
+    if(valida == true){
+      $(this).val('');
+      $('#add_agendamento_planned_start_time2').attr('disabled',true)
+      $('#add_agendamento_planned_hour2').attr('disabled',true)
+      //alert("Hora inválida!")
+      var texto = "Planned Start Time 2 invalid"
+      $.notify({
+        title: $.i18n.prop('lAttentionMandatory',lang),
+        message: texto
+      },{
+        type: 'pastel-danger',
+        delay: 5000,
+        z_index: 10000,
+        template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+          '<span data-notify="title">{1}</span>' +
+          '<span data-notify="message">{2}</span>' +
+        '</div>'
+      });
+
+    }
+  })
+
+
+  $("#add_agendamento_planned_start_time3").blur(function(){
+    var hora = hmToMins($(this).val());
+    var valida = false;
+    // alert('quantidade array: ' + arrayValidaHora1.length)
+    arrayValidaHora3.map(function(value) {
+      // alert(hmToMins(value.hora_ini) + ' > ' + hora)
+      // alert(hmToMins(value.hora_fim) + ' < ' + hora)
+      if(hora.between(hmToMins(value.hora_ini), hmToMins(value.hora_fim)) == true){
+        //bloquei nao deixa continuar
+        valida = true
+      }
+    })
+    if(valida == true){
+      $(this).val('');
+      $('#add_agendamento_planned_start_time3').attr('disabled',true)
+      $('#add_agendamento_planned_hour3').attr('disabled',true)
+      //alert("Hora inválida!")
+      var texto = "Planned Start Time 3 invalid"
+      $.notify({
+        title: $.i18n.prop('lAttentionMandatory',lang),
+        message: texto
+      },{
+        type: 'pastel-danger',
+        delay: 5000,
+        z_index: 10000,
+        template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+          '<span data-notify="title">{1}</span>' +
+          '<span data-notify="message">{2}</span>' +
+        '</div>'
+      });
+
+    }
+  })
+
+
+  $("#add_agendamento_planned_start_time4").blur(function(){
+    var hora = hmToMins($(this).val());
+    var valida = false;
+    // alert('quantidade array: ' + arrayValidaHora1.length)
+    arrayValidaHora4.map(function(value) {
+      // alert(hmToMins(value.hora_ini) + ' > ' + hora)
+      // alert(hmToMins(value.hora_fim) + ' < ' + hora)
+      if(hora.between(hmToMins(value.hora_ini), hmToMins(value.hora_fim)) == true){
+        //bloquei nao deixa continuar
+        valida = true
+      }
+    })
+    if(valida == true){
+      $(this).val('');
+      $('#add_agendamento_planned_start_time4').attr('disabled',true)
+      $('#add_agendamento_planned_hour4').attr('disabled',true)
+      //alert("Hora inválida!")
+      var texto = "Planned Start Time 4 invalid"
+      $.notify({
+        title: $.i18n.prop('lAttentionMandatory',lang),
+        message: texto
+      },{
+        type: 'pastel-danger',
+        delay: 5000,
+        z_index: 10000,
+        template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+          '<span data-notify="title">{1}</span>' +
+          '<span data-notify="message">{2}</span>' +
+        '</div>'
+      });
+
+    }
+  })
+
+
+  $("#add_agendamento_planned_start_time5").blur(function(){
+    var hora = hmToMins($(this).val());
+    var valida = false;
+    // alert('quantidade array: ' + arrayValidaHora1.length)
+    arrayValidaHora5.map(function(value) {
+      // alert(hmToMins(value.hora_ini) + ' > ' + hora)
+      // alert(hmToMins(value.hora_fim) + ' < ' + hora)
+      if(hora.between(hmToMins(value.hora_ini), hmToMins(value.hora_fim)) == true){
+        //bloquei nao deixa continuar
+        valida = true
+      }
+    })
+    if(valida == true){
+      $(this).val('');
+      $('#add_agendamento_planned_start_time5').attr('disabled',true)
+      $('#add_agendamento_planned_hour5').attr('disabled',true)
+      //alert("Hora inválida!")
+      var texto = "Planned Start Time 5 invalid"
+      $.notify({
+        title: $.i18n.prop('lAttentionMandatory',lang),
+        message: texto
+      },{
+        type: 'pastel-danger',
+        delay: 5000,
+        z_index: 10000,
+        template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+          '<span data-notify="title">{1}</span>' +
+          '<span data-notify="message">{2}</span>' +
+        '</div>'
+      });
+
+    }
+  })
+
+
+
+  Number.prototype.between  = function (a, b) {
+    var min = Math.min(a,b),
+        max = Math.max(a,b);
+    return this >= min && this <= max;
+};
 
 
 

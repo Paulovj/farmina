@@ -2387,6 +2387,23 @@ function formValidacaoOrdem(promoter,action){
   $("#div_add_agendamento_service_result_army_specific_store1").hide();
   $("#div_add_agendamento_service_result_planned_hour1").show();
 
+
+  $('#add_agendamento_planned_start_time1').attr('disabled',true)
+  $('#add_agendamento_planned_hour1').attr('disabled',true)
+  
+  $('#add_agendamento_planned_start_time2').attr('disabled',true)
+  $('#add_agendamento_planned_hour2').attr('disabled',true)  
+
+  $('#add_agendamento_planned_start_time3').attr('disabled',true)
+  $('#add_agendamento_planned_hour3').attr('disabled',true)
+  
+  $('#add_agendamento_planned_start_time4').attr('disabled',true)
+  $('#add_agendamento_planned_hour4').attr('disabled',true)
+  
+  $('#add_agendamento_planned_start_time5').attr('disabled',true)
+  $('#add_agendamento_planned_hour5').attr('disabled',true)
+  
+
   
 
   
