@@ -237,6 +237,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
             $('#edit_agendamento_n_cliente').val(customer_no)
             $('#edit_agendamento_fatura_endereco_complemento').val(Billto_Address2)
             $('#edit_agendamento_fatura_cidade').val(Billto_City)
+            $('#edit_agendamento_country').val(data["Bill-to County"])
             $('#edit_agendamento_nome').val(name)
             $('#edit_agendamento_fatura_cep').val(Billto_PostCode)
             $('#edit_agendamento_fatura_endereco').val(Billto_Address)
@@ -1753,6 +1754,8 @@ function formValidacaoOrdem(promoter,action){
        "Bill_toAddress"           : $("#add_agendamento_fatura_endereco").val(),
        "Bill_toAddress2"          : "",
        "Bill_toCity"              : $("#add_agendamento_fatura_cidade").val(),
+       "Bill_toCountry"           : $("#add_agendamento_country").val(),
+       
        "Bill_toContact"           : $("#add_agendamento_nome").val(),
        "Bill-to Post Code"         : $("#add_agendamento_fatura_cep").val(),
 
@@ -2035,6 +2038,8 @@ function formValidacaoOrdem(promoter,action){
            "Bill_toAddress"           : $("#edit_agendamento_fatura_endereco").val(),
            "Bill_toAddress2"          : "",
            "Bill_toCity"              : $("#edit_agendamento_fatura_cidade").val(),
+           "Bill_toCountry"           : $("#edit_agendamento_country").val(),
+           
            "Bill_toContact"           : $("#edit_agendamento_nome").val(),
            "Bill-to Post Code"         : $("#edit_agendamento_fatura_cep").val(),
 
@@ -2655,6 +2660,7 @@ function formValidacaoOrdem(promoter,action){
     } else if (action == 'u')  {
       $('#edit_agendamento_n_cliente').val(id)
       $('#edit_agendamento_fatura_endereco_complemento').val(address2)
+      
       $('#edit_agendamento_fatura_cidade').val(city)
       $('#edit_agendamento_nome').val(name)
       $('#edit_agendamento_fatura_cep').val(post)

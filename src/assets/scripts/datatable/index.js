@@ -368,6 +368,7 @@ function formatHora(date) {
               $('#edit_agendamento_n_cliente').val(customer_no)
             $('#edit_agendamento_fatura_endereco_complemento').val(Billto_Address2)
             $('#edit_agendamento_fatura_cidade').val(Billto_City)
+            $('#edit_agendamento_country').val(data["Bill-to County"])
             $('#edit_agendamento_nome').val(name)
             $('#edit_agendamento_fatura_cep').val(Billto_PostCode)
             $('#edit_agendamento_fatura_endereco').val(Billto_Address)
@@ -2926,6 +2927,7 @@ function loadClienteNavX() {
           { "data" : "contatto" },
           { "data" : "indirizzo"},
           { "data" : "comune" },
+          { "data" : "provincia" },
           { "data" : "cap" },
           //{ "data" : "codice" },
           { "data" : "idsam" },
@@ -3143,6 +3145,8 @@ $("#btn_save_ordem_agendamento").click(function(){
      "Bill_toAddress"           : $("#edit_agendamento_fatura_endereco").val(),
      "Bill_toAddress2"          : "",
      "Bill_toCity"              : $("#edit_agendamento_fatura_cidade").val(),
+     "Bill_toCountry"           : $("#edit_agendamento_country").val(),
+
      "Bill_toContact"           : $("#edit_agendamento_nome").val(),
      "Bill-to Post Code"         : $("#edit_agendamento_fatura_cep").val(),
      
