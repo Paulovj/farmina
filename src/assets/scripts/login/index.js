@@ -138,7 +138,7 @@ $("#btn_login").click(function(){
       //$('.lbl_login').text(sessionStorage.Type)
       console.log('Nome login:' + sessionStorage.Name)
       console.log('Resource Type:' + sessionStorage.Type)
-      if (sessionStorage.Type ==2 || sessionStorage.Type ==3 || sessionStorage.Type ==4){
+      if (sessionStorage.Type ==2 || sessionStorage.Type ==3){
         $('#menu_index').hide();
         //$('#menu_ordem_agendameno').hide();
         //if(window.location.pathname == '/index.html' || window.location.pathname == '/ordem.html'){
