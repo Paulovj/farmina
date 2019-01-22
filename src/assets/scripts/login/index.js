@@ -150,7 +150,7 @@ $("#btn_login").click(function(){
             //window.location = "datatable.html"; 
           
 
-      //}
+        }
       
       } else {
        if(window.location.pathname != '/signin.html'){
