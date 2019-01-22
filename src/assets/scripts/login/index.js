@@ -143,7 +143,13 @@ $("#btn_login").click(function(){
         //$('#menu_ordem_agendameno').hide();
         //if(window.location.pathname == '/index.html' || window.location.pathname == '/ordem.html'){
           //window.location = "datatable.html"; 
-        }
+        }else if ( sessionStorage.Type ==4){
+          $('#menu_index').hide();
+          $('#menu_ordem_agendameno').hide();
+          //if(window.location.pathname == '/index.html' || window.location.pathname == '/ordem.html'){
+            //window.location = "datatable.html"; 
+          
+
       //}
       
       } else {
