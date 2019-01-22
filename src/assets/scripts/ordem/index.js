@@ -996,11 +996,11 @@ $("#add_agendamento_busca_cliente").change(function(){
 
 
   $('#add_agendamento_n_cliente').val(id)
-  $('#add_agendamento_fatura_endereco_complemento').val(address2)
-  $('#add_agendamento_fatura_cidade').val(city)
-  $('#add_agendamento_nome').val(name.replace('','').replace('',''))
+  $('#add_agendamento_fatura_endereco_complemento').val(address2.replace("'",""))
+  $('#add_agendamento_fatura_cidade').val(city.replace("'",""))
+  $('#add_agendamento_nome').val(name.replace('','').replace('','').replace("'",""))
   $('#add_agendamento_fatura_cep').val(post)
-  $('#add_agendamento_fatura_endereco').val(address)
+  $('#add_agendamento_fatura_endereco').val(address.replace("'",""))
   $('#add_agendamento_cod_vendendor').val(salespersonCode)
 
 
@@ -1021,11 +1021,11 @@ $("#edit_agendamento_busca_cliente").change(function(){
 
 
   $('#edit_agendamento_n_cliente').val(id)
-  $('#edit_agendamento_fatura_endereco_complemento').val(address2)
-  $('#edit_agendamento_fatura_cidade').val(city)
-  $('#edit_agendamento_nome').val(name.replace('','').replace('',''))
+  $('#edit_agendamento_fatura_endereco_complemento').val(address2.replace("'",""))
+  $('#edit_agendamento_fatura_cidade').val(city.replace("'",""))
+  $('#edit_agendamento_nome').val(name.replace('','').replace('','').replace("'",""))
   $('#edit_agendamento_fatura_cep').val(post)
-  $('#edit_agendamento_fatura_endereco').val(address)
+  $('#edit_agendamento_fatura_endereco').val(address.replace("'",""))
   $('#edit_agendamento_cod_vendendor').val(salespersonCode)
 
 
@@ -2692,22 +2692,22 @@ function formValidacaoOrdem(promoter,action){
 
 
       $('#add_agendamento_n_cliente').val(id)
-      $('#add_agendamento_fatura_endereco_complemento').val(address2)
-      $('#add_agendamento_fatura_cidade').val(city)
-      $('#add_agendamento_nome').val(name.replace('','').replace('',''))
+      $('#add_agendamento_fatura_endereco_complemento').val(address2.replace("'",""))
+      $('#add_agendamento_fatura_cidade').val(city.replace("'",""))
+      $('#add_agendamento_nome').val(name.replace('','').replace('','').replace("'",""))
       $('#add_agendamento_fatura_cep').val(post)
-      $('#add_agendamento_fatura_endereco').val(address)
+      $('#add_agendamento_fatura_endereco').val(address.replace("'",""))
       $('#add_agendamento_cod_vendendor').val(salespersonCode)
       $('#add_agendamento_country').val(provincia)
 
       setTimeout(chamaAddAgendamento, 1000);
     } else if (action == 'u')  {
       $('#edit_agendamento_n_cliente').val(id)
-      $('#edit_agendamento_fatura_endereco_complemento').val(address2)
-      $('#edit_agendamento_fatura_cidade').val(city)
-      $('#edit_agendamento_nome').val(name.replace('','').replace('',''))
+      $('#edit_agendamento_fatura_endereco_complemento').val(address2.replace("'",""))
+      $('#edit_agendamento_fatura_cidade').val(city.replace("'",""))
+      $('#edit_agendamento_nome').val(name.replace('','').replace('','').replace("'",""))
       $('#edit_agendamento_fatura_cep').val(post)
-      $('#edit_agendamento_fatura_endereco').val(address)
+      $('#edit_agendamento_fatura_endereco').val(address.replace("'",""))
       $('#edit_agendamento_cod_vendendor').val(salespersonCode)
       $('#edit_agendamento_country').val(provincia)
       setTimeout(chamaEditAgendamento, 1000);
@@ -2799,7 +2799,7 @@ function loadClienteNavX() {
           { "data" : "id"},
           // { "data" : "ragsoc"},
           { "data" : "ragsoc" , "render": function ( data) {
-            return data.replace('','').replace('','');
+            return data.replace('','').replace('','').replace("'","");
 
             }
           },
