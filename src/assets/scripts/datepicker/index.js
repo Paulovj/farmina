@@ -327,7 +327,7 @@ export default (function () {
 
                     // console.log(arrayData[arrayDias.indexOf(date)].split('-')[1]);
                     // console.log('click', arrayData[arrayDias.indexOf(date)]);
-                    if(arrayData[arrayDias.indexOf(date)] >=8){
+                    if(arrayData[arrayDias.indexOf(date)] >=max){
                       return {
                         //tooltip: arrayData[arrayDias.indexOf(date)],
                         // tooltip: '',
@@ -1227,7 +1227,7 @@ function edit_agendamentoX(recurso,number){
 
                 if(arrayDias.indexOf(date.trim()) > -1) {
                   
-                  if(arrayData[arrayDias.indexOf(date)] >=8){
+                  if(arrayData[arrayDias.indexOf(date)] >=max){
                     return {
                       //tooltip: arrayData[arrayDias.indexOf(date)],
                       // tooltip: '',
