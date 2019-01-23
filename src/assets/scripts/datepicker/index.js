@@ -11,6 +11,70 @@ import moment from 'moment/src/moment';
 export default (function () {
   var max = 8
 
+
+  $(document).on('click','[name="edit_agendamento_service_result1"]',function(){
+    var valor = $('#edit_agendamento_service_type1').val()
+    if(valor==2){
+      if($(this).is(":checked")){
+        $('[name="edit_agendamento_service_result1"]').attr('disabled',true);
+        $(this).removeAttr('disabled');
+      }else{
+          $('[name="edit_agendamento_service_result1"]').removeAttr('disabled');
+      }
+    }  
+  });
+
+  
+  $(document).on('click','[name="edit_agendamento_service_result2"]',function(){
+    var valor = $('#edit_agendamento_service_type2').val()
+    if(valor==2){
+      if($(this).is(":checked")){
+        $('[name="edit_agendamento_service_result2"]').attr('disabled',true);
+        $(this).removeAttr('disabled');
+      }else{
+          $('[name="edit_agendamento_service_result2"]').removeAttr('disabled');
+      }
+    }  
+  });
+
+  $(document).on('click','[name="edit_agendamento_service_result3"]',function(){
+    var valor = $('#edit_agendamento_service_type3').val()
+    if(valor==2){
+      if($(this).is(":checked")){
+        $('[name="edit_agendamento_service_result3"]').attr('disabled',true);
+        $(this).removeAttr('disabled');
+      }else{
+          $('[name="edit_agendamento_service_result3"]').removeAttr('disabled');
+      }
+    }  
+  });
+
+  $(document).on('click','[name="edit_agendamento_service_result4"]',function(){
+    var valor = $('#edit_agendamento_service_type4').val()
+    if(valor==2){
+      if($(this).is(":checked")){
+        $('[name="edit_agendamento_service_result4"]').attr('disabled',true);
+        $(this).removeAttr('disabled');
+      }else{
+          $('[name="edit_agendamento_service_result4"]').removeAttr('disabled');
+      }
+    }  
+  });
+
+
+  $(document).on('click','[name="edit_agendamento_service_result5"]',function(){
+    var valor = $('#edit_agendamento_service_type5').val()
+    if(valor==2){
+      if($(this).is(":checked")){
+        $('[name="edit_agendamento_service_result5"]').attr('disabled',true);
+        $(this).removeAttr('disabled');
+      }else{
+          $('[name="edit_agendamento_service_result5"]').removeAttr('disabled');
+      }
+    }  
+  });
+
+
   var lang = "en";
   if ((sessionStorage.Language != "") && (sessionStorage.Language != 'undefined')){
       lang = sessionStorage.Language
