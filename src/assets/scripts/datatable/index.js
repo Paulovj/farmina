@@ -393,7 +393,8 @@ function formatHora(date) {
                   $.each(obj.result, function(index, value){
                     var val = value.No_ + ' | ' + value.Name;
                     //var val = value.Name;
-                    var optName     = 'optName = "'+value.Name+'"';
+                    // var optName     = 'optName = "'+value.Name+'"';
+                    var optName     = 'optName = "'+value.Name+'" opttype = "'+value['Resource Type']+'"';
                     contX +='<option value='+ value.No_ +' '+ optName + ' > '+val+' </option>';
                   })
                   $("#edit_agendamento_busca_professional1").append(contX)

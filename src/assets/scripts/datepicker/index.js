@@ -93,22 +93,78 @@ export default (function () {
 
   $( "#add_agendamento_busca_professional1" ).change(function() {
     agendamentoX(this.value,1);
+    var number = 1
+    var type =  $(this).find('option:selected').attr('opttype')
+    if(sessionStorage.Type != 3 && type == 4){
+        $('#add_agendamento_service_type'+number+' .PermissaoTraning').hide();
+        $('#add_agendamento_service_type'+number+' .PermissaoWelcome').hide();
+        $('#add_agendamento_service_type'+number+' .PermissaoMerchandising').hide();
+    }else if(sessionStorage.Type != 3 && type != 4){
+        $('#add_agendamento_service_type'+number+' .PermissaoTraning').show();
+        $('#add_agendamento_service_type'+number+' .PermissaoWelcome').show();
+        $('#add_agendamento_service_type'+number+' .PermissaoMerchandising').show();
+    }
+    
   });
 
   $( "#add_agendamento_busca_professional2" ).change(function() {
     agendamentoX(this.value,2);
+    var number = 2
+    var type =  $(this).find('option:selected').attr('opttype')
+    if(sessionStorage.Type != 3 && type == 4){
+        $('#add_agendamento_service_type'+number+' .PermissaoTraning').hide();
+        $('#add_agendamento_service_type'+number+' .PermissaoWelcome').hide();
+        $('#add_agendamento_service_type'+number+' .PermissaoMerchandising').hide();
+    }else if(sessionStorage.Type != 3 && type != 4){
+        $('#add_agendamento_service_type'+number+' .PermissaoTraning').show();
+        $('#add_agendamento_service_type'+number+' .PermissaoWelcome').show();
+        $('#add_agendamento_service_type'+number+' .PermissaoMerchandising').show();
+    }
   });
 
   $( "#add_agendamento_busca_professional3" ).change(function() {
     agendamentoX(this.value,3);
+    var number = 3
+    var type =  $(this).find('option:selected').attr('opttype')
+    if(sessionStorage.Type != 3 && type == 4){
+        $('#add_agendamento_service_type'+number+' .PermissaoTraning').hide();
+        $('#add_agendamento_service_type'+number+' .PermissaoWelcome').hide();
+        $('#add_agendamento_service_type'+number+' .PermissaoMerchandising').hide();
+    }else if(sessionStorage.Type != 3 && type != 4){
+        $('#add_agendamento_service_type'+number+' .PermissaoTraning').show();
+        $('#add_agendamento_service_type'+number+' .PermissaoWelcome').show();
+        $('#add_agendamento_service_type'+number+' .PermissaoMerchandising').show();
+    }
   });
 
   $( "#add_agendamento_busca_professional4" ).change(function() {
     agendamentoX(this.value,4);
+    var number = 4
+    var type =  $(this).find('option:selected').attr('opttype')
+    if(sessionStorage.Type != 3 && type == 4){
+        $('#add_agendamento_service_type'+number+' .PermissaoTraning').hide();
+        $('#add_agendamento_service_type'+number+' .PermissaoWelcome').hide();
+        $('#add_agendamento_service_type'+number+' .PermissaoMerchandising').hide();
+    }else if(sessionStorage.Type != 3 && type != 4){
+        $('#add_agendamento_service_type'+number+' .PermissaoTraning').show();
+        $('#add_agendamento_service_type'+number+' .PermissaoWelcome').show();
+        $('#add_agendamento_service_type'+number+' .PermissaoMerchandising').show();
+    }
   });
 
   $( "#add_agendamento_busca_professional5" ).change(function() {
     agendamentoX(this.value,5);
+    var number = 5
+    var type =  $(this).find('option:selected').attr('opttype')
+    if(sessionStorage.Type != 3 && type == 4){
+        $('#add_agendamento_service_type'+number+' .PermissaoTraning').hide();
+        $('#add_agendamento_service_type'+number+' .PermissaoWelcome').hide();
+        $('#add_agendamento_service_type'+number+' .PermissaoMerchandising').hide();
+    }else if(sessionStorage.Type != 3 && type != 4){
+        $('#add_agendamento_service_type'+number+' .PermissaoTraning').show();
+        $('#add_agendamento_service_type'+number+' .PermissaoWelcome').show();
+        $('#add_agendamento_service_type'+number+' .PermissaoMerchandising').show();
+    }
   });
 
 
@@ -119,22 +175,77 @@ export default (function () {
 
   $( "#edit_agendamento_busca_professional1" ).change(function() {
     edit_agendamentoX(this.value,1);
+    var number = 1
+    var type =  $(this).find('option:selected').attr('opttype')
+    if(sessionStorage.Type != 3 && type == 4){
+        $('#edit_agendamento_service_type'+number+' .PermissaoTraning').hide();
+        $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').hide();
+        $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').hide();
+    }else if(sessionStorage.Type != 3 && type != 4){
+        $('#edit_agendamento_service_type'+number+' .PermissaoTraning').show();
+        $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').show();
+        $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').show();
+    }
   });
 
   $( "#edit_agendamento_busca_professional2" ).change(function() {
     edit_agendamentoX(this.value,2);
+    var number = 2
+    var type =  $(this).find('option:selected').attr('opttype')
+    if(sessionStorage.Type != 3 && type == 4){
+        $('#edit_agendamento_service_type'+number+' .PermissaoTraning').hide();
+        $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').hide();
+        $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').hide();
+    }else if(sessionStorage.Type != 3 && type != 4){
+        $('#edit_agendamento_service_type'+number+' .PermissaoTraning').show();
+        $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').show();
+        $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').show();
+    }
   });
 
   $( "#edit_agendamento_busca_professional3" ).change(function() {
     edit_agendamentoX(this.value,3);
+    var number = 3
+    var type =  $(this).find('option:selected').attr('opttype')
+    if(sessionStorage.Type != 3 && type == 4){
+        $('#edit_agendamento_service_type'+number+' .PermissaoTraning').hide();
+        $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').hide();
+        $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').hide();
+    }else if(sessionStorage.Type != 3 && type != 4){
+        $('#edit_agendamento_service_type'+number+' .PermissaoTraning').show();
+        $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').show();
+        $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').show();
+    }
   });
 
   $( "#edit_agendamento_busca_professional4" ).change(function() {
     edit_agendamentoX(this.value,4);
+    var number = 4
+    var type =  $(this).find('option:selected').attr('opttype')
+    if(sessionStorage.Type != 3 && type == 4){
+        $('#edit_agendamento_service_type'+number+' .PermissaoTraning').hide();
+        $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').hide();
+        $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').hide();
+    }else if(sessionStorage.Type != 3 && type != 4){
+        $('#edit_agendamento_service_type'+number+' .PermissaoTraning').show();
+        $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').show();
+        $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').show();
+    }
   });
 
   $( "#edit_agendamento_busca_professional5" ).change(function() {
     edit_agendamentoX(this.value,5);
+    var number = 5
+    var type =  $(this).find('option:selected').attr('opttype')
+    if(sessionStorage.Type != 3 && type == 4){
+        $('#edit_agendamento_service_type'+number+' .PermissaoTraning').hide();
+        $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').hide();
+        $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').hide();
+    }else if(sessionStorage.Type != 3 && type != 4){
+        $('#edit_agendamento_service_type'+number+' .PermissaoTraning').show();
+        $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').show();
+        $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').show();
+    }
   });
   console.log('data de hj : '+ new Date())
 

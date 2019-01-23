@@ -146,9 +146,9 @@ $("#btn_login").click(function(){
         }else if ( sessionStorage.Type ==4){
           $('#menu_index').hide();
           $('#menu_ordem_agendameno').hide();
-          $('.PermissaoTraning').hide();
-          $('.PermissaoWelcome').hide();
-          $('.PermissaoMerchandising').hide();
+          // $('.PermissaoTraning').hide();
+          // $('.PermissaoWelcome').hide();
+          // $('.PermissaoMerchandising').hide();
           //if(window.location.pathname == '/index.html' || window.location.pathname == '/ordem.html'){
             //window.location = "datatable.html"; 
           
