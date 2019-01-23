@@ -9,7 +9,7 @@ import moment from 'moment/src/moment';
 
 
 export default (function () {
-  var max = 8
+  var max = 10
 
 
   $(document).on('click','[name="edit_agendamento_service_result1"]',function(){
