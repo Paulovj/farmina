@@ -8,6 +8,66 @@ export default (function () {
 
   if(window.location.pathname == '/ordem.html'){
 
+  $(document).on('click','[name="add_agendamento_service_result1"]',function(){
+    var valor = $('#add_agendamento_service_type1').val()
+    if(valor==2){
+      if($(this).is(":checked")){
+        $('[name="add_agendamento_service_result1"]').attr('disabled',true);
+        $(this).removeAttr('disabled');
+      }else{
+          $('[name="add_agendamento_service_result1"]').removeAttr('disabled');
+      }
+    }  
+  });
+
+  $(document).on('click','[name="add_agendamento_service_result2"]',function(){
+    var valor = $('#add_agendamento_service_type2').val()
+    if(valor==2){
+      if($(this).is(":checked")){
+        $('[name="add_agendamento_service_result2"]').attr('disabled',true);
+        $(this).removeAttr('disabled');
+      }else{
+          $('[name="add_agendamento_service_result2"]').removeAttr('disabled');
+      }
+    }  
+  });
+
+  $(document).on('click','[name="add_agendamento_service_result3"]',function(){
+    var valor = $('#add_agendamento_service_type3').val()
+    if(valor==2){
+      if($(this).is(":checked")){
+        $('[name="add_agendamento_service_result3"]').attr('disabled',true);
+        $(this).removeAttr('disabled');
+      }else{
+          $('[name="add_agendamento_service_result3"]').removeAttr('disabled');
+      }
+    }  
+  });
+
+  $(document).on('click','[name="add_agendamento_service_result4"]',function(){
+    var valor = $('#add_agendamento_service_type4').val()
+    if(valor==2){
+      if($(this).is(":checked")){
+        $('[name="add_agendamento_service_result4"]').attr('disabled',true);
+        $(this).removeAttr('disabled');
+      }else{
+          $('[name="add_agendamento_service_result4"]').removeAttr('disabled');
+      }
+    }  
+  });
+
+  $(document).on('click','[name="add_agendamento_service_result5"]',function(){
+    var valor = $('#add_agendamento_service_type5').val()
+    if(valor==2){
+      if($(this).is(":checked")){
+        $('[name="add_agendamento_service_result5"]').attr('disabled',true);
+        $(this).removeAttr('disabled');
+      }else{
+          $('[name="add_agendamento_service_result5"]').removeAttr('disabled');
+      }
+    }  
+  });
+
     var lang = "en";
     if (sessionStorage.Language){
       lang = sessionStorage.Language
@@ -45,23 +105,23 @@ export default (function () {
       }
     return data;
     }
-function formatHora(date) {
-  var data =  moment(date).utc().format("HH:mm")
-    return data;
-}
-function formatDateSql(date) {
-  var data = '';
-  if (date != ""){
-    data = moment(date, 'DD/MM/YYYY').toDate();
-    data =  moment(data).format("Y-MM-DD")
+  function formatHora(date) {
+    var data =  moment(date).utc().format("HH:mm")
+      return data;
   }
-  return data;
+  function formatDateSql(date) {
+    var data = '';
+    if (date != ""){
+      data = moment(date, 'DD/MM/YYYY').toDate();
+      data =  moment(data).format("Y-MM-DD")
+    }
+    return data;
   }
 
-function StatusX(value){
-  var StatusPendente = $.i18n.prop('lStatusPendente',lang)
-  var StatusIniciado = $.i18n.prop('lStatusIniciado',lang)
-var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
+  function StatusX(value){
+    var StatusPendente = $.i18n.prop('lStatusPendente',lang)
+    var StatusIniciado = $.i18n.prop('lStatusIniciado',lang)
+  var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
 
   var valueX = "";
       if (value == 0){
@@ -78,7 +138,7 @@ var StatusFinalizado = $.i18n.prop('lStatusFinalizado',lang)
       valueX =  StatusFinalizado;
       }
       return valueX;
-}
+  }
 
 
 
@@ -1651,6 +1711,10 @@ function formValidacaoOrdem(promoter,action){
   return valida
 }
 
+
+
+
+
   $("#btn_add_ordem_agendamento").click(function(){
     var valida = true
 
@@ -1708,6 +1772,8 @@ function formValidacaoOrdem(promoter,action){
     // var add_service_result1 = $("#add_agendamento_service_result1 option:selected").map(function(){ 
     //   $('input[name="edit_agendamento_service_result1"][value='+res+']').attr('checked',true)
     //   return this.value }).get().join(", ");
+
+    
 
     var add_service_result1 = $('input[name="add_agendamento_service_result1"]:checked').map(function(){ 
       return this.value }).get().join(", ");
@@ -2992,7 +3058,12 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
   //STATUS_BLOQ
 
 
+
+
 }
+
+
+
 
 
 }());

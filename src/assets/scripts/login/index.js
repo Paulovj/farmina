@@ -146,6 +146,9 @@ $("#btn_login").click(function(){
         }else if ( sessionStorage.Type ==4){
           $('#menu_index').hide();
           $('#menu_ordem_agendameno').hide();
+          $('.PermissaoTraning').hide();
+          $('.PermissaoWelcome').hide();
+          $('.PermissaoMerchandising').hide();
           //if(window.location.pathname == '/index.html' || window.location.pathname == '/ordem.html'){
             //window.location = "datatable.html"; 
           
@@ -160,7 +163,7 @@ $("#btn_login").click(function(){
       }
 
     //Validação SOS 
-    if(sessionStorage.Type == 3 || sessionStorage.Type == 4){
+    if(sessionStorage.Type == 3){
       $('.PermissaoSOS').hide();
     }
     
@@ -460,5 +463,10 @@ $("#btn_login").click(function(){
         }
       } );
 
+
+      
+      
+      
+   
 
 }());    
