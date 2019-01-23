@@ -1031,7 +1031,8 @@ function edit_agendamentoX(recurso,number){
             console.log(value['Estimated Starting Date'])
 
 
-            arrayData.push(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
+            // arrayData.push(estimatedDate + ' - '+ value['Service Invoice No_'] + ' - '+EstimatedTime+': ' + value['Estimated Starting Time'] + ' - '+ value['Estimated Finish Time'] +' - '+service_type)
+            arrayData.push(value['Horas'])
 
             objDatas = estimatedDate;
             arrayDias.push(objDatas)
@@ -1050,10 +1051,22 @@ function edit_agendamentoX(recurso,number){
                 $('.datepicker-days').attr( "data-toggle", "tooltip" );
 
                 if(arrayDias.indexOf(date.trim()) > -1) {
-                  return {
-                    tooltip: '',
-                    classes: 'highlighted',
-                  };
+                  
+                  if(arrayData[arrayDias.indexOf(date)] >=8){
+                    return {
+                      //tooltip: arrayData[arrayDias.indexOf(date)],
+                      // tooltip: '',
+                      classes: 'highlighted',
+                    };
+                  }else{
+                    return {
+                      //tooltip: arrayData[arrayDias.indexOf(date)],
+                      // tooltip: '',
+                      // classes: 'highlighted disabled',
+                      classes: 'event',
+                    };
+                  }  
+
                 }
                 $('[data-toggle="tooltip"]').tooltip();
               },
