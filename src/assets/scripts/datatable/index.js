@@ -209,7 +209,7 @@ function formatHora(date) {
 
                 alert(result['Estimated Finish Time'])
                 alert(formatHora(result['Estimated Finish Time']))
-                $('#finish_estimated_start_time').val(formatHora(result['Estimated Start Time']));
+                $('#finish_estimated_start_time').val(formatHora(result['Estimated Starting Time']));
                 $('#finish_estimated_finish_time').val(formatHora(result['Estimated Finish Time']));
 
                 $('#finish_starting_date').val(formatDate(result['Starting Date']));
@@ -815,7 +815,7 @@ function formatHora(date) {
             $('#view_training_for_which_line').val(TrainingAnswer(result['Trainning Answer Type']));//no
             $('#view_estimated_starting_date').val(formatDate(result['Estimated Starting Date']));
             
-            $('#view_estimated_start_time').val(formatHora(result['Estimated Start Time']));
+            $('#view_estimated_start_time').val(formatHora(result['Estimated Starting Time']));
             $('#view_estimated_finish_time').val(formatHora(result['Estimated Finish Time']));
 
 
@@ -1731,7 +1731,7 @@ $("#btn_finish_booking").click(function(){
     $('#finish_location_activity_training').val(result['Location Activity']);
     //alert('Data:'+result['Estimated Starting Date'])
     $('#finish_estimated_finish_time').val(formatHora(result['Estimated Finish Time']));
-    $('#finish_estimated_start_time').val(formatHora(result['Estimated Start Time']));
+    $('#finish_estimated_start_time').val(formatHora(result['Estimated Starting Time']));
 
 
     //$('#finish_starting_date').val(formatDate(result['Starting Date']));
