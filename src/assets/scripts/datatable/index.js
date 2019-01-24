@@ -3441,7 +3441,7 @@ function formValidacaoOrdem(promoter,action){
     var Promoting1       = $('#'+action+'_agendamento_Promoting'+promoter).val();
     // var service_result1  = $('#'+action+'_agendamento_service_result'+promoter).val();
     var service_result1       = $('input[name="'+action+'_agendamento_service_result'+promoter+'"]').is(':checked') 
-    var open_bags        = $('#'+action+'_agendamento_open_bags'+promoter).val();
+    // var open_bags        = $('#'+action+'_agendamento_open_bags'+promoter).val();
 
     // if(food1 == 0){
     //   texto +=  $.i18n.prop('lTypeFood',lang)+ ' ' + promoter +'<br>';//"Type of Food "+ promoter +" " +
@@ -3458,10 +3458,10 @@ function formValidacaoOrdem(promoter,action){
       valida = false
     }
 
-    if(open_bags == 0){
-      texto +=  $.i18n.prop('lThisStoreIsSellingOpenBags',lang)+ ' ' + promoter +'<br>';//"This store is selling open bags "+ promoter +" " +
-      valida = false
-    }
+    // if(open_bags == 0){
+    //   texto +=  $.i18n.prop('lThisStoreIsSellingOpenBags',lang)+ ' ' + promoter +'<br>';//"This store is selling open bags "+ promoter +" " +
+    //   valida = false
+    // }
     
   }
 
