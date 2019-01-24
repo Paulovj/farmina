@@ -3021,7 +3021,7 @@ $('#dataTableClienteAgendamento tbody').on( 'click', 'td', function () {
   
   if (action == 'i'){
     $('#add_agendamento_n_cliente').val(id)
-    $('#add_agendamento_fatura_endereco_complemento').val(address2.replace("'",""))
+    $('#add_agendamento_fatura_endereco_complemento').val(address2)
     $('#add_agendamento_fatura_cidade').val(city.replace("'",""))
     $('#add_agendamento_nome').val(name.replace('','').replace('','').replace("'",""))
     $('#add_agendamento_fatura_cep').val(post)
@@ -3032,7 +3032,7 @@ $('#dataTableClienteAgendamento tbody').on( 'click', 'td', function () {
     setTimeout(chamaAddAgendamento, 1000);
   } else if (action == 'u')  {
     $('#edit_agendamento_n_cliente').val(id)
-    $('#edit_agendamento_fatura_endereco_complemento').val(address2.replace("'",""))
+    $('#edit_agendamento_fatura_endereco_complemento').val(address2)
     $('#edit_agendamento_fatura_cidade').val(city.replace("'",""))
     $('#edit_agendamento_nome').val(name.replace('','').replace('','').replace("'",""))
     $('#edit_agendamento_fatura_cep').val(post)
@@ -3070,7 +3070,7 @@ $('#dataTableClienteAgendamentoNav tbody').on( 'click', 'td', function () {
   if (action == 'i'){
 
     $('#add_agendamento_n_cliente').val(id)
-    $('#add_agendamento_fatura_endereco_complemento').val(address2.replace("'",""))
+    $('#add_agendamento_fatura_endereco_complemento').val(address2)
     $('#add_agendamento_fatura_cidade').val(city.replace("'",""))
     $('#add_agendamento_nome').val(name.replace('','').replace('','').replace("'",""))
     $('#add_agendamento_fatura_cep').val(post)
@@ -3081,7 +3081,7 @@ $('#dataTableClienteAgendamentoNav tbody').on( 'click', 'td', function () {
     setTimeout(chamaAddAgendamento, 1000);
   } else if (action == 'u')  {
     $('#edit_agendamento_n_cliente').val(id)
-    $('#edit_agendamento_fatura_endereco_complemento').val(address2.replace("'",""))
+    $('#edit_agendamento_fatura_endereco_complemento').val(address2)
     $('#edit_agendamento_fatura_cidade').val(city.replace("'",""))
     $('#edit_agendamento_nome').val(name.replace('','').replace('','').replace("'",""))
     $('#edit_agendamento_fatura_cep').val(post)
