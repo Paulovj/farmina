@@ -3481,10 +3481,10 @@ function formValidacaoOrdem(promoter,action){
       valida = false
     }
 
-    if(open_bags == 0){
-      texto +=  $.i18n.prop('lCampoObrigatorio',lang)+ ' ' + promoter +'<br>';//"Type of merchandising "+ promoter +" " +
-      valida = false
-    }
+    // if(open_bags == 0){
+    //   texto +=  $.i18n.prop('lCampoObrigatorio',lang)+ ' ' + promoter +'<br>';//"Type of merchandising "+ promoter +" " +
+    //   valida = false
+    // }
     
   }
 
