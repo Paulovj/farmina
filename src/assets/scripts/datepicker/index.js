@@ -331,7 +331,7 @@ export default (function () {
                       return {
                         //tooltip: arrayData[arrayDias.indexOf(date)],
                         // tooltip: '',
-                        classes: 'highlighted',
+                        classes: 'full',
                       };
                     }else{
                       return {
@@ -1231,7 +1231,7 @@ function edit_agendamentoX(recurso,number){
                     return {
                       //tooltip: arrayData[arrayDias.indexOf(date)],
                       // tooltip: '',
-                      classes: 'highlighted',
+                      classes: 'full',
                     };
                   }else{
                     return {
