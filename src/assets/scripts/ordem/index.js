@@ -1483,7 +1483,7 @@ function PromoterServiceTypeX(promoter,value,action){
     contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="7"> ND Quinoa</p>';
     contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="8"> ND Ocean</p>';
 
-    $("#div_"+action+"_agendamento_service_result_food"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_food"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
