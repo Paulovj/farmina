@@ -8,6 +8,7 @@ export default (function () {
 
   if(window.location.pathname == '/ordem.html'){
 
+
   $(document).on('click','[name="add_agendamento_service_result1"]',function(){
     var valor = $('#add_agendamento_service_type1').val()
     if(valor==2){
@@ -1474,7 +1475,7 @@ function PromoterServiceTypeX(promoter,value,action){
     contTypeFoodX +='<option selected value="0" class="lSelecione">'+$.i18n.prop('lSelecione',lang)+'</option>';
     contTypeFoodX +='<option value="1" class="lDry">'+$.i18n.prop('lDry',lang)+'</option>'
     contTypeFoodX +='<option value="2" class="lWet">'+$.i18n.prop('lWet',lang)+'</option>'
-    // contTypeFoodX +='<option value="3" class="lDryWet">'+$.i18n.prop('lDryWet',lang)+'</option>'
+    contTypeFoodX +='<option value="3" class="lDryWet">'+$.i18n.prop('lDryWet',lang)+'</option>'
     
     contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="4"> ND Prime</p>';
     contX +='<p class="'+action+'_p_checkbox'+promoter+'" style="margin:2px; padding:0px;"><input type="checkbox" name="'+action+'_agendamento_service_result'+promoter+'" value="5"> ND Ancestral</p>';
