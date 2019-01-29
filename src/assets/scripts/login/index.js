@@ -106,6 +106,9 @@ $("#btn_login").click(function(){
            if(pais =="Usa"){
             country = "US"
            }
+           if(pais =="Servia"){
+            country = "SE"
+           }
           sessionStorage.setItem("Pais", pais);
           sessionStorage.setItem("Country", country);
           sessionStorage.setItem("Name", result['Name']);

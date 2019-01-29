@@ -3,10 +3,16 @@ import 'datatables';
 import 'bootstrap-notify'
 import 'jquery-i18n-properties'
 import moment from 'moment/src/moment';
+import 'popper.js';
 
 export default (function () {
 
   if(window.location.pathname == '/ordem.html'){
+
+
+
+
+    
 
 
   $(document).on('click','[name="add_agendamento_service_result1"]',function(){
