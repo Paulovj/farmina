@@ -362,7 +362,7 @@ export default (function () {
           }
 
           var bloqueadoEdit = data['STATUS_BLOQ']
-          if ($(this).attr('action')=="edit"){
+            if ($(this).attr('action')=="edit"){
             EditDisabledX(true,bloqueadoEdit)
 
             $('#edit_agendamento_n_cliente').val(customer_no)
@@ -1200,7 +1200,8 @@ export default (function () {
                 "render": function (a,d){
                   var btn =""
                     //btn += "<button action='postando_agendamento' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Registrar</button>" ;
-                    btn += "<button action='edit' type='button' class='btn cur-p btn-info'>"+$.i18n.prop('lViewOrder',lang)+"</button>";
+                    btn += "<button action='edit' type='button' class='btn cur-p btn-info' style='margin:1px;'>"+$.i18n.prop('lViewOrder',lang)+"</button>";
+                    
                     return btn;
               }
             }

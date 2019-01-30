@@ -960,6 +960,11 @@ function formatHora(date) {
 
             }
 
+
+            if ($(this).attr('action')=="facebook"){
+              $('#post-facebook').modal('toggle'); 
+            }
+
         });
 
         $("#finish_open_bags").change(function(){
@@ -1146,6 +1151,7 @@ $("#edit_agendamento_service_type5").change(function(){
                   if (a['Status']==1 &&  a['Falta']<=0){
                     btn += " <button action='save_photo' code="+a['Service Invoice No_']+" type='button' class='btn cur-p btn-success lEnviarFotosFinalizar' id='btn_finish_booking_upload' style='margin:1px;'>"+textoEnviarFoto+"</button>";
                   }
+                  // btn += "<button action='facebook' type='button' class='btn cur-p btn-info' style='margin:1px;'>Publish Facebook </button>";
 
                   
                   $('.lEnviarFotosFinalizar').html($.i18n.prop('lEnviarFotosFinalizar',lang))
