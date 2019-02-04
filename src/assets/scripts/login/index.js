@@ -388,6 +388,12 @@ $("#btn_login").click(function(){
         $('.lBuffet').html($.i18n.prop('lBuffet',lang))
         $('.lPolonia').html($.i18n.prop('lPolonia',lang))
         $('.lItem').html($.i18n.prop('lItem',lang))
+        $('.lselecioneRecurso').html($.i18n.prop('lselecioneRecurso',lang))
+        $('.lWithHowManyPeopleYouSpoke').html($.i18n.prop('lWithHowManyPeopleYouSpoke',lang))
+
+        
+
+        
 
         
 
