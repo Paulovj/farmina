@@ -117,6 +117,28 @@
    }(document, 'script', 'facebook-jssdk'));
 
     </script>
+
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '376338493192120',
+      xfbml      : true,
+      version    : 'v3.2'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
     <div class="peers ai-s fxw-nw h-100vh">
       <div class="d-n@sm- peer peer-greed h-100 pos-r bgr-n bgpX-c bgpY-c bgsz-cv" style='background-image: url("assets/static/images/bg.jpg")'>
         <div class="pos-a centerXY">
