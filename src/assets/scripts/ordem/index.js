@@ -3036,19 +3036,31 @@ function formValidacaoOrdem(promoter,action){
 
 
 function loadClienteNavX() {
-//alert('nav')
+
+// alert('nav')
   //$.ajax({ url: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country, success: function(result){
   //var jsonString = result.data //for testing
   var tableClienteAgendamentoNav = $("#dataTableClienteAgendamentoNav")
   tableClienteAgendamentoNav.DataTable ({
         //"data" : jsonString,
         //timeout: 150000,
-        ajax: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country,
         processing: true,
         serverSide: true,
-        rowReorder: {
-          selector: 'td:nth-child(2)'
+        ajax: { 
+          url: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country,
+          dataFilter: function(data){
+              var json = jQuery.parseJSON( data );
+               json.recordsTotal = data.length;
+               json.recordsFiltered = data.length;
+               //json.data = json.list;
+               console.log(json)
+              return JSON.stringify( json ); // return JSON string
+          }
+            
       },
+      //   rowReorder: {
+      //     selector: 'td:nth-child(2)'
+      // },
       responsive: true,
         "scrollX": true,
         "columns" : [
