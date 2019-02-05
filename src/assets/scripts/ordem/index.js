@@ -3050,8 +3050,10 @@ function loadClienteNavX() {
           url: urlX+"service_booking_resources/get?Pais="+sessionStorage.Country,
           dataFilter: function(data){
               var json = jQuery.parseJSON( data );
-               json.recordsTotal = data.data.length;
-               json.recordsFiltered = data.data.length;
+              // console.log()
+              // console.log(data.data[0])
+               json.recordsTotal = json.data[0].total;
+               json.recordsFiltered = json.data[0].total;
                //json.data = json.list;
                console.log(json)
               return JSON.stringify( json ); // return JSON string
