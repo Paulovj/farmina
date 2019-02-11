@@ -318,13 +318,11 @@ export default (function () {
 
                   var date  =  moment(date).format("DD/MM/Y")
                   var atual = new Date();
+                  
                   $('.datepicker-days').attr( "data-toggle", "tooltip" );
 
-
-
                   if(arrayDias.indexOf(date.trim()) > -1) {
-
-
+                  
                     // console.log(arrayData[arrayDias.indexOf(date)].split('-')[1]);
                     // console.log('click', arrayData[arrayDias.indexOf(date)]);
                     if(arrayData[arrayDias.indexOf(date)] >=max){
@@ -404,6 +402,29 @@ export default (function () {
     var data = moment(new Date(ev.date), "YYYY-MM-DD")
     var dataparam = moment(new Date(ev.date)).format("Y-MM-DD")
     var calculo = moment.duration(data.diff(now)).asDays();
+
+    var service = $('#add_agendamento_service_type1').val()
+    var dia_service = 0
+    if(service == 1){
+      dia_service = sessionStorage.LimitDaysWelcomeKit
+    }else if(service == 2){
+      dia_service = sessionStorage.LimitDaysTraining
+    }else if(service == 3){
+      dia_service = sessionStorage.LimitDaysISP
+    }else if(service == 4){
+      dia_service = sessionStorage.LimitDaysMerchand
+    }else if(service == 5){
+      dia_service = sessionStorage.LimitDaysArmy
+    }
+
+    var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
+    var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
+    
+    if(resultado_config <= -1){
+      alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
+      $('.start-date1').val('');
+    }
+    
     var recurso = $('#add_agendamento_busca_professional1').val()
     if(calculo <= -1 ){
       $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) {
@@ -523,6 +544,30 @@ export default (function () {
     var dataparam = moment(new Date(ev.date)).format("Y-MM-DD")
     var calculo = moment.duration(data.diff(now)).asDays();
     var recurso = $('#add_agendamento_busca_professional2').val()
+
+    var service = $('#add_agendamento_service_type2').val()
+    var dia_service = 0
+    if(service == 1){
+      dia_service = sessionStorage.LimitDaysWelcomeKit
+    }else if(service == 2){
+      dia_service = sessionStorage.LimitDaysTraining
+    }else if(service == 3){
+      dia_service = sessionStorage.LimitDaysISP
+    }else if(service == 4){
+      dia_service = sessionStorage.LimitDaysMerchand
+    }else if(service == 5){
+      dia_service = sessionStorage.LimitDaysArmy
+    }
+
+    var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
+    var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
+    
+    if(resultado_config <= -1){
+      alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
+      $('.start-date2').val('');
+    }
+
+
     if(calculo <= -1 ){
       $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) {
         if(result.result.length > 0){
@@ -637,6 +682,30 @@ export default (function () {
     var data = moment(new Date(ev.date), "YYYY-MM-DD")
     var dataparam = moment(new Date(ev.date)).format("Y-MM-DD")
     var calculo = moment.duration(data.diff(now)).asDays();
+
+    var service = $('#add_agendamento_service_type3').val()
+    var dia_service = 0
+    if(service == 1){
+      dia_service = sessionStorage.LimitDaysWelcomeKit
+    }else if(service == 2){
+      dia_service = sessionStorage.LimitDaysTraining
+    }else if(service == 3){
+      dia_service = sessionStorage.LimitDaysISP
+    }else if(service == 4){
+      dia_service = sessionStorage.LimitDaysMerchand
+    }else if(service == 5){
+      dia_service = sessionStorage.LimitDaysArmy
+    }
+
+    var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
+    var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
+    
+    if(resultado_config <= -1){
+      alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
+      $('.start-date3').val('');
+    }
+
+
     var recurso = $('#add_agendamento_busca_professional3').val()
     if(calculo <= -1 ){
       $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) {
@@ -752,6 +821,30 @@ export default (function () {
     var data = moment(new Date(ev.date), "YYYY-MM-DD")
     var dataparam = moment(new Date(ev.date)).format("Y-MM-DD")
     var calculo = moment.duration(data.diff(now)).asDays();
+
+    var service = $('#add_agendamento_service_type4').val()
+    var dia_service = 0
+    if(service == 1){
+      dia_service = sessionStorage.LimitDaysWelcomeKit
+    }else if(service == 2){
+      dia_service = sessionStorage.LimitDaysTraining
+    }else if(service == 3){
+      dia_service = sessionStorage.LimitDaysISP
+    }else if(service == 4){
+      dia_service = sessionStorage.LimitDaysMerchand
+    }else if(service == 5){
+      dia_service = sessionStorage.LimitDaysArmy
+    }
+
+    var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
+    var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
+    
+    if(resultado_config <= -1){
+      alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
+      $('.start-date4').val('');
+    }
+
+
     var recurso = $('#add_agendamento_busca_professional4').val()
     if(calculo <= -1 ){
       $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) {
@@ -867,6 +960,30 @@ export default (function () {
     var data = moment(new Date(ev.date), "YYYY-MM-DD")
     var dataparam = moment(new Date(ev.date)).format("Y-MM-DD")
     var calculo = moment.duration(data.diff(now)).asDays();
+
+    var service = $('#add_agendamento_service_type5').val()
+    var dia_service = 0
+    if(service == 1){
+      dia_service = sessionStorage.LimitDaysWelcomeKit
+    }else if(service == 2){
+      dia_service = sessionStorage.LimitDaysTraining
+    }else if(service == 3){
+      dia_service = sessionStorage.LimitDaysISP
+    }else if(service == 4){
+      dia_service = sessionStorage.LimitDaysMerchand
+    }else if(service == 5){
+      dia_service = sessionStorage.LimitDaysArmy
+    }
+
+    var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
+    var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
+    
+    if(resultado_config <= -1){
+      alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
+      $('.start-date5').val('');
+    }
+
+
     var recurso = $('#add_agendamento_busca_professional5').val()
     if(calculo <= -1 ){
       $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) {
@@ -1280,6 +1397,30 @@ $('.edit-start-date1').datepicker().on('changeDate', function(ev){
   var data = moment(new Date(ev.date), "YYYY-MM-DD")
   var dataparam = moment(new Date(ev.date)).format("Y-MM-DD")
   var calculo = moment.duration(data.diff(now)).asDays();
+
+  var service = $('#edit_agendamento_service_type1').val()
+    var dia_service = 0
+    if(service == 1){
+      dia_service = sessionStorage.LimitDaysWelcomeKit
+    }else if(service == 2){
+      dia_service = sessionStorage.LimitDaysTraining
+    }else if(service == 3){
+      dia_service = sessionStorage.LimitDaysISP
+    }else if(service == 4){
+      dia_service = sessionStorage.LimitDaysMerchand
+    }else if(service == 5){
+      dia_service = sessionStorage.LimitDaysArmy
+    }
+
+    var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
+    var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
+    
+    if(resultado_config <= -1){
+      alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
+      $('.edit-start-date1').val('');
+    }
+
+
   var recurso = $('#edit_agendamento_busca_professional1').val()
   if(calculo <= -1 ){
     $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) {
@@ -1397,6 +1538,30 @@ $('.edit-start-date2').datepicker().on('changeDate', function(ev){
   var data = moment(new Date(ev.date), "YYYY-MM-DD")
   var dataparam = moment(new Date(ev.date)).format("Y-MM-DD")
   var calculo = moment.duration(data.diff(now)).asDays();
+
+  var service = $('#edit_agendamento_service_type2').val()
+    var dia_service = 0
+    if(service == 1){
+      dia_service = sessionStorage.LimitDaysWelcomeKit
+    }else if(service == 2){
+      dia_service = sessionStorage.LimitDaysTraining
+    }else if(service == 3){
+      dia_service = sessionStorage.LimitDaysISP
+    }else if(service == 4){
+      dia_service = sessionStorage.LimitDaysMerchand
+    }else if(service == 5){
+      dia_service = sessionStorage.LimitDaysArmy
+    }
+
+    var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
+    var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
+    
+    if(resultado_config <= -1){
+      alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
+      $('.edit-start-date2').val('');
+    }
+
+
   var recurso = $('#edit_agendamento_busca_professional2').val()
   if(calculo <= -1 ){
     $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) {
@@ -1520,6 +1685,31 @@ $('.edit-start-date3').datepicker().on('changeDate', function(ev){
   var data = moment(new Date(ev.date), "YYYY-MM-DD")
   var dataparam = moment(new Date(ev.date)).format("Y-MM-DD")
   var calculo = moment.duration(data.diff(now)).asDays();
+
+  var service = $('#edit_agendamento_service_type3').val()
+    var dia_service = 0
+    if(service == 1){
+      dia_service = sessionStorage.LimitDaysWelcomeKit
+    }else if(service == 2){
+      dia_service = sessionStorage.LimitDaysTraining
+    }else if(service == 3){
+      dia_service = sessionStorage.LimitDaysISP
+    }else if(service == 4){
+      dia_service = sessionStorage.LimitDaysMerchand
+    }else if(service == 5){
+      dia_service = sessionStorage.LimitDaysArmy
+    }
+
+    var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
+    var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
+    
+    if(resultado_config <= -1){
+      alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
+      $('.edit-start-date3').val('');
+    }
+
+
+
   var recurso = $('#edit_agendamento_busca_professional3').val()
   if(calculo <= -1 ){
     $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) {
@@ -1638,6 +1828,30 @@ $('.edit-start-date4').datepicker().on('changeDate', function(ev){
   var data = moment(new Date(ev.date), "YYYY-MM-DD")
   var dataparam = moment(new Date(ev.date)).format("Y-MM-DD")
   var calculo = moment.duration(data.diff(now)).asDays();
+
+  var service = $('#edit_agendamento_service_type4').val()
+    var dia_service = 0
+    if(service == 1){
+      dia_service = sessionStorage.LimitDaysWelcomeKit
+    }else if(service == 2){
+      dia_service = sessionStorage.LimitDaysTraining
+    }else if(service == 3){
+      dia_service = sessionStorage.LimitDaysISP
+    }else if(service == 4){
+      dia_service = sessionStorage.LimitDaysMerchand
+    }else if(service == 5){
+      dia_service = sessionStorage.LimitDaysArmy
+    }
+
+    var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
+    var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
+    
+    if(resultado_config <= -1){
+      alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
+      $('.edit-start-date4').val('');
+    }
+
+
   var recurso = $('#edit_agendamento_busca_professional4').val()
   if(calculo <= -1 ){
     $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) {
@@ -1757,6 +1971,32 @@ $('.edit-start-date5').datepicker().on('changeDate', function(ev){
   var dataparam = moment(new Date(ev.date)).format("Y-MM-DD")
   var calculo = moment.duration(data.diff(now)).asDays();
   var recurso = $('#edit_agendamento_busca_professional5').val()
+
+
+  var service = $('#edit_agendamento_service_type5').val()
+    var dia_service = 0
+    if(service == 1){
+      dia_service = sessionStorage.LimitDaysWelcomeKit
+    }else if(service == 2){
+      dia_service = sessionStorage.LimitDaysTraining
+    }else if(service == 3){
+      dia_service = sessionStorage.LimitDaysISP
+    }else if(service == 4){
+      dia_service = sessionStorage.LimitDaysMerchand
+    }else if(service == 5){
+      dia_service = sessionStorage.LimitDaysArmy
+    }
+
+    var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
+    var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
+    
+    if(resultado_config <= -1){
+      alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
+      $('.edit-start-date5').val('');
+    }
+
+
+
   if(calculo <= -1 ){
     $.getJSON(urlX+"resourses/getRecursoAgendamentoWhere?Pais="+paisX+"&recurso="+recurso+"&data="+dataparam, function(result) {
       if(result.result.length > 0){

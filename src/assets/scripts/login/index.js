@@ -119,6 +119,12 @@ $("#btn_login").click(function(){
           sessionStorage.setItem("Language", result['Language Code']);
           sessionStorage.setItem("PermissaoEdit", result['Can Edit Order']);
           
+          sessionStorage.setItem("LimitDaysWelcomeKit", result['Limit Days Before Wellcome Kit']);
+          sessionStorage.setItem("LimitDaysTraining", result['Limit Days Before Training']);
+          sessionStorage.setItem("LimitDaysISP", result['Limit Days Before ISP']);
+          sessionStorage.setItem("LimitDaysMerchand", result['Limit Days Before Merchand']);
+          sessionStorage.setItem("LimitDaysArmy", result['Limit Days Before Army']);
+          
           window.location = "datatable.html"; 
           
         }else if(response.result.length < 1){
@@ -134,7 +140,7 @@ $("#btn_login").click(function(){
       });
 
     });
-
+    console.log(sessionStorage)
     if (sessionStorage.length > 0) {
       $('.lbl_login').text(sessionStorage.Name)
       $('#menu_index').hide();

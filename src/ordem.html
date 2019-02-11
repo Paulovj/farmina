@@ -97,6 +97,12 @@
             background-image :none !important;
             color: #ffffff !important;
         }
+
+        .config {
+            background-color: sienna !important;
+            background-image :none !important;
+            color: #ffffff !important;
+        }
     </style>
   </head>
   <body class="app">
@@ -472,6 +478,29 @@
                                   </select>
                             </div>
 
+                            <div class="col-md-6 mb-3">
+                              <label class="fw-500 lTipoServico">Tipo Serviço</label>
+                              <select id="add_agendamento_service_type1" class="form-control" >
+                                <option selected value="0" class="lSelecione">Selecione</option>
+                                <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
+                                <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
+                                <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
+                                <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
+                                <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                </select>
+                          </div>
+
+
+                            
+                             
+
+
+
+                        </div>
+
+
+
+                        <div class="row">
 
                             <div class="col-md-3 mb-3">
                                 <!-- <label class ="fw-500 lDataPlanejada" data-toggle="popover" data-placement="right" title="Legend" data-content="Red Ful  Blue tessre">Data Planejada</label> -->
@@ -497,20 +526,16 @@
                                 </div>
                             </div>
 
-                              <div class="col-md-3 mb-3">
-                                  <label class="fw-500 lPlannedStartTime">Planned Start Time</label>
-                                  <input type="time" id="add_agendamento_planned_start_time1" name="appt-time" min="00:00" max="23:59" class="form-control" placeholder="" value="" required />
-
-
-                              </div>
 
 
 
-                        </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="fw-500 lPlannedStartTime">Planned Start Time</label>
+                                <input type="time" id="add_agendamento_planned_start_time1" name="appt-time" min="00:00" max="23:59" class="form-control" placeholder="" value="" required />
 
 
+                            </div>
 
-                        <div class="row">
 
                             <div class="col-md-6 mb-3" id="div_add_agendamento_service_result_planned_hour1">
                                 <label class="fw-500 lHoraPlanejada">Hora Planejada</label>
@@ -519,17 +544,7 @@
                               <!-- <input type="time" id="add_agendamento_planned_hour1" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
                             </div>
 
-                            <div class="col-md-6 mb-3">
-                                <label class="fw-500 lTipoServico">Tipo Serviço</label>
-                                <select id="add_agendamento_service_type1" class="form-control" >
-                                  <option selected value="0" class="lSelecione">Selecione</option>
-                                  <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
-                                  <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
-                                  <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
-                                  <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
-                                  <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
-                                  </select>
-                            </div>
+                            
                         </div>
 
                         <div class="row" id="div_add_agendamento_service_result_location1" style="display:none">
@@ -721,6 +736,24 @@
                                   </select>
                             </div>
 
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-500 lTipoServico">Tipo Serviço</label>
+                                <select id="add_agendamento_service_type2" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                    <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
+                                    <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
+                                    <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
+                                    <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
+                                    <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                  </select>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="row">
+
                             <div class="col-md-3 mb-3">
                                 <label class="fw-500 lDataPlanejada">Data Planejada</label>
                               <!-- <input type="text" class="form-control" id="add_agendamento_planned_date2" placeholder="" value="" required > -->
@@ -741,12 +774,6 @@
 
                           </div>
 
-
-
-                        </div>
-
-                        <div class="row">
-
                             <div class="col-md-6 mb-3">
                                 <label class="fw-500 lHoraPlanejada">Hora Planejada</label>
                               <!-- <input type="text" class="form-control" id="add_agendamento_planned_hour2" placeholder="" value="" required > -->
@@ -755,17 +782,7 @@
                             </div>
 
 
-                            <div class="col-md-6 mb-3">
-                                <label class="fw-500 lTipoServico">Tipo Serviço</label>
-                                <select id="add_agendamento_service_type2" class="form-control">
-                                  <option selected value="0" class="lSelecione">Selecione</option>
-                                    <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
-                                    <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
-                                    <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
-                                    <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
-                                    <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
-                                  </select>
-                            </div>
+                            
                         </div>
 
                         <div class="row" id="div_add_agendamento_service_result_location2" style="display:none">
@@ -957,6 +974,23 @@
                                   </select>
                             </div>
 
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-500 lTipoServico">Tipo Serviço</label>
+                                <select id="add_agendamento_service_type3" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
+                                  <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
+                                  <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
+                                  <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
+                                  <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                  </select>
+                            </div>
+
+                            
+                        </div>
+
+                        <div class="row">
+
                             <div class="col-md-3 mb-3">
                                 <label class="fw-500 lDataPlanejada">Data Planejada</label>
                               <!-- <input type="text" class="form-control" id="add_agendamento_planned_date3" placeholder="" value="" required > -->
@@ -977,9 +1011,6 @@
 
                           </div>
 
-                        </div>
-
-                        <div class="row">
 
                             <div class="col-md-6 mb-3">
                                 <label class="fw-500 lHoraPlanejada">Hora Planejada</label>
@@ -990,17 +1021,7 @@
 
 
 
-                            <div class="col-md-6 mb-3">
-                                <label class="fw-500 lTipoServico">Tipo Serviço</label>
-                                <select id="add_agendamento_service_type3" class="form-control">
-                                  <option selected value="0" class="lSelecione">Selecione</option>
-                                  <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
-                                  <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
-                                  <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
-                                  <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
-                                  <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
-                                  </select>
-                            </div>
+                            
                         </div>
 
 
@@ -1193,6 +1214,23 @@
                                     </select>
                               </div>
 
+                              <div class="col-md-6 mb-3">
+                                  <label class="fw-500 lTipoServico">Tipo Serviço</label>
+                                  <select id="add_agendamento_service_type4" class="form-control">
+                                    <option selected value="0" class="lSelecione">Selecione</option>
+                                    <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
+                                    <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
+                                    <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
+                                    <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
+                                    <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                    </select>
+                              </div>
+
+
+                          </div>
+
+                          <div class="row">
+
                               <div class="col-md-3 mb-3">
                                   <label class="fw-500 lDataPlanejada">Data Planejada</label>
                                 <!-- <input type="text" class="form-control" id="add_agendamento_planned_date4" placeholder="" value="" required > -->
@@ -1214,10 +1252,6 @@
                             </div>
 
 
-
-                          </div>
-
-                          <div class="row">
                               <div class="col-md-6 mb-3">
                                   <label class="fw-500 lHoraPlanejada">Hora Planejada</label>
                                 <!-- <input type="text" class="form-control" id="add_agendamento_planned_hour4" placeholder="" value="" required > -->
@@ -1226,17 +1260,7 @@
                               </div>
 
 
-                              <div class="col-md-6 mb-3">
-                                  <label class="fw-500 lTipoServico">Tipo Serviço</label>
-                                  <select id="add_agendamento_service_type4" class="form-control">
-                                    <option selected value="0" class="lSelecione">Selecione</option>
-                                    <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
-                                    <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
-                                    <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
-                                    <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
-                                    <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
-                                    </select>
-                              </div>
+                              
                           </div>
 
 
@@ -1425,6 +1449,23 @@
                                       </select>
                                 </div>
 
+                                <div class="col-md-6 mb-3">
+                                    <label class="fw-500 lTipoServico">Tipo Serviço</label>
+                                    <select id="add_agendamento_service_type5" class="form-control">
+                                      <option selected value="0" class="lSelecione">Selecione</option>
+                                      <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
+                                      <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
+                                      <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
+                                      <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
+                                      <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                      </select>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row">
+
                                 <div class="col-md-3 mb-3">
                                     <label class="fw-500 lDataPlanejada">Data Planejada</label>
                                   <!-- <input type="text" class="form-control" id="add_agendamento_planned_date5" placeholder="" value="" required > -->
@@ -1445,12 +1486,6 @@
 
                               </div>
 
-
-
-                            </div>
-
-                            <div class="row">
-
                                 <div class="col-md-6 mb-3">
                                     <label class="fw-500 lHoraPlanejada">Hora Planejada</label>
                                   <!-- <input type="text" class="form-control" id="add_agendamento_planned_hour5" placeholder="" value="" required > -->
@@ -1459,17 +1494,7 @@
                                 </div>
 
 
-                                <div class="col-md-6 mb-3">
-                                    <label class="fw-500 lTipoServico">Tipo Serviço</label>
-                                    <select id="add_agendamento_service_type5" class="form-control">
-                                      <option selected value="0" class="lSelecione">Selecione</option>
-                                      <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
-                                      <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
-                                      <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
-                                      <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
-                                      <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
-                                      </select>
-                                </div>
+                                
                             </div>
 
                             <div class="row" id="div_add_agendamento_service_result_location5" style="display:none">
