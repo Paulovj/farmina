@@ -119,7 +119,7 @@
 
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '376338493192120',
+      appId      : '654187938348234',
       xfbml      : true,
       version    : 'v3.2'
     });
@@ -133,6 +133,8 @@
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+
+
 </script>
 
 
@@ -155,6 +157,11 @@
         data-width="450"
         data-show-faces="true">
       </div> -->
+      
+<fb:login-button 
+scope="public_profile,email"
+onlogin="checkLoginState();">
+</fb:login-button>
         <!-- <form> -->
             <div class="form-group">
                 <label class="text-normal text-dark lPais">Pais</label>
