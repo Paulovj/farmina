@@ -403,6 +403,15 @@ $("#btn_login").click(function(){
         $('.lselecioneRecurso').html($.i18n.prop('lselecioneRecurso',lang))
         $('.lWithHowManyPeopleYouSpoke').html($.i18n.prop('lWithHowManyPeopleYouSpoke',lang))
 
+        $('.lLegendFull').html($.i18n.prop('lLegendFull',lang))
+        $('.lLegendNotFull').html($.i18n.prop('lLegendNotFull',lang))
+        $('.lLimitDaysBeforeWellcomeKit').html($.i18n.prop('lLimitDaysBeforeWellcomeKit',lang))
+        $('.lLimitDaysBeforeTraining').html($.i18n.prop('lLimitDaysBeforeWellcomeKit',lang))
+        $('.lLimitDaysBeforeISP').html($.i18n.prop('lLimitDaysBeforeISP',lang))
+        $('.lLimitDaysBeforeMerchand').html($.i18n.prop('lLimitDaysBeforeMerchand',lang))
+        $('.lLimitDaysBeforeArmy').html($.i18n.prop('lLimitDaysBeforeArmy',lang))
+        $('.lLegend').html($.i18n.prop('lLegend',lang))
+
         
 
         
