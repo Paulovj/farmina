@@ -3261,6 +3261,16 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
 }
 
 
+$(".btn-help-date-janela").click(function(){
+   $('#help-date-janela').modal('toggle');
+   $('.DaysBeforeWellcomeKit').text(sessionStorage.LimitDaysWelcomeKit)
+   $('.DaysBeforeTraining').text(sessionStorage.LimitDaysTraining)
+   $('.DaysBeforeISP').text(sessionStorage.LimitDaysISP)
+   $('.DaysBeforeMerchand').text(sessionStorage.LimitDaysMerchand)
+   $('.DaysBeforeArmy').text(sessionStorage.LimitDaysArmy)
+})
+
+// 
 
 
 
