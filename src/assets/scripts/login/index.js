@@ -414,7 +414,8 @@ $("#btn_login").click(function(){
         $('.lLimitDaysBeforeMerchand').html($.i18n.prop('lLimitDaysBeforeMerchand',lang))
         $('.lLimitDaysBeforeArmy').html($.i18n.prop('lLimitDaysBeforeArmy',lang))
         $('.lLegend').html($.i18n.prop('lLegend',lang))
-
+        $('.lCountry').html($.i18n.prop('lCountry',lang))
+        
         
 
         
