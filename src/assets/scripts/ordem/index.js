@@ -3263,7 +3263,12 @@ function EditDisabledX(DisabledX,bloqueadoEditX){
 
 $(".btn-help-date-janela").click(function(){
   //  $('#help-date-janela').modal('hide');
+  
+  //$(this).css('z-index', 1040 );
+
    $('#help-date-janela').modal('toggle');
+
+   
    $('.DaysBeforeWellcomeKit').text(sessionStorage.LimitDaysWelcomeKit)
    $('.DaysBeforeTraining').text(sessionStorage.LimitDaysTraining)
    $('.DaysBeforeISP').text(sessionStorage.LimitDaysISP)
