@@ -207,6 +207,7 @@ function formatHora(date) {
                 $('#finish_training_for_which_line').val(TrainingAnswer(result['Trainning Answer Type']));//no
                 $('#finish_estimated_starting_date').val(formatDate(result['Estimated Starting Date']));
                 $('#finish_starting_hour').val(formatDate(result['Estimated Starting Date']));
+                
 
                 alert(result['Estimated Finish Time'])
                 alert(formatHora(result['Estimated Finish Time']))
@@ -1762,7 +1763,17 @@ $("#btn_finish_booking").click(function(){
     });
     $('#finish_starting_date').datepicker('update');
 
-    $('#finish_starting_hour').val(formatHora(result['Starting Time']));
+    // $('#finish_starting_hour').val(formatHora(result['Starting Time']));
+    if(result['Service Type'] == 2){
+    $('#finish_starting_hour').val(formatHora(result['Estimated Starting Time']));
+    var x =  moment(result['Estimated Starting Time']).add(30, 'm').toDate()
+    $('#finish_time').val(formatHora(x));
+
+    }else{
+      $('#finish_starting_hour').val(formatHora(result['Starting Time']));
+      $('#finish_time').val(formatHora(result['Finish Time']));
+    }
+    
     
     $('#finish_estimated_total_time').val(formatHora(result['Estimated Total Time']));
     $('#finish_starting_observation').val(result['Starting Observation']);//no
@@ -1785,7 +1796,7 @@ $("#btn_finish_booking").click(function(){
     });
     $('#finish_date').datepicker('update');
     
-    $('#finish_time').val(formatHora(result['Finish Time']));
+    
 
 
     // $('#finish_how_many_customers_entered_on_store').val(result['Many Customers'])//no

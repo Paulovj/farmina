@@ -409,7 +409,7 @@ $("#btn_login").click(function(){
         $('.lLegendFull').html($.i18n.prop('lLegendFull',lang))
         $('.lLegendNotFull').html($.i18n.prop('lLegendNotFull',lang))
         $('.lLimitDaysBeforeWellcomeKit').html($.i18n.prop('lLimitDaysBeforeWellcomeKit',lang))
-        $('.lLimitDaysBeforeTraining').html($.i18n.prop('lLimitDaysBeforeWellcomeKit',lang))
+        $('.lLimitDaysBeforeTraining').html($.i18n.prop('lLimitDaysBeforeTraining',lang))
         $('.lLimitDaysBeforeISP').html($.i18n.prop('lLimitDaysBeforeISP',lang))
         $('.lLimitDaysBeforeMerchand').html($.i18n.prop('lLimitDaysBeforeMerchand',lang))
         $('.lLimitDaysBeforeArmy').html($.i18n.prop('lLimitDaysBeforeArmy',lang))
