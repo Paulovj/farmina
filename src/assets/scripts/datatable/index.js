@@ -206,14 +206,15 @@ function formatHora(date) {
 
                 $('#finish_training_for_which_line').val(TrainingAnswer(result['Trainning Answer Type']));//no
                 $('#finish_estimated_starting_date').val(formatDate(result['Estimated Starting Date']));
+                $('#finish_starting_hour').val(formatDate(result['Estimated Starting Date']));
 
                 alert(result['Estimated Finish Time'])
                 alert(formatHora(result['Estimated Finish Time']))
                 $('#finish_estimated_start_time').val(formatHora(result['Estimated Starting Time']));
                 $('#finish_estimated_finish_time').val(formatHora(result['Estimated Finish Time']));
 
-                $('#finish_starting_date').val(formatDate(result['Starting Date']));
-                $('#finish_starting_hour').val(formatHora(result['Starting Time']));
+                // $('#finish_starting_date').val(formatDate(result['Starting Date']));
+                // $('#finish_starting_hour').val(formatHora(result['Starting Time']));
                 
                 $('#finish_estimated_total_time').val(formatHora(result['Estimated Total Time']));
                 $('#finish_starting_observation').val(result['Starting Observation']);//no
@@ -3542,13 +3543,17 @@ function formValidacaoOrdem(promoter,action){
 }
 
 $(".btn-help-date-janela").click(function(){
-  $('#help-date-janela').modal('toggle');
+  // $('#help-date-janela').modal('toggle');
+  $('#help-date-janela').modal('show');
   $('.DaysBeforeWellcomeKit').text(sessionStorage.LimitDaysWelcomeKit)
   $('.DaysBeforeTraining').text(sessionStorage.LimitDaysTraining)
   $('.DaysBeforeISP').text(sessionStorage.LimitDaysISP)
   $('.DaysBeforeMerchand').text(sessionStorage.LimitDaysMerchand)
   $('.DaysBeforeArmy').text(sessionStorage.LimitDaysArmy)
 })
+
+
+
 
 
   }  
