@@ -1196,6 +1196,20 @@ export default (function () {
               { "data" : "Name" },
               { "data" : "Professional 1" },
               { "data" : "NameProfissional" },
+              // { "data" : "ULTIMO_STATUS" },
+              { "data" : "ULTIMO_STATUS", "render": function ( data) {
+                var texto = ''
+                 if(data==1){
+                  texto = $.i18n.prop('lToDo',lang)
+                    //return 'To Do';
+                    return '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">'+texto+'</span>'
+                }else if(data==0){
+                  texto = $.i18n.prop('lAccomplished',lang)
+                    ///return 'Accomplished';
+                    return '<span class="badge badge-pill fl-r badge-info lh-0 p-10">'+ texto+'</span>'
+                  }
+                } 
+              },
                { "targets": -1, "data": null,
                 "render": function (a,d){
                   var btn =""
