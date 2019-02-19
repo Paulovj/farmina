@@ -2792,8 +2792,17 @@ function formValidacaoOrdem(promoter,action){
        $.ajax({url: urlX+"resourses/getResourseQuery?Pais="+paisX+"&Resource="+sessionStorage.No+"&Type="+sessionStorage.Type, success: function(obj){
          var contX = "";
            $.each(obj.result, function(index, value){
-             var val = value.No_ + ' | ' + value.Name;
             //var val = value.Name;
+            var name_resource_type = ""
+            if(value['Resource Type'] ==4){
+              name_resource_type = "Army"
+            }else if(value['Resource Type'] ==3){
+              name_resource_type = "SOS"
+            }else if(value['Resource Type'] ==2){
+              name_resource_type = "Sales Rep"
+            }
+            var val = value.No_ + ' | ' + value.Name + ' | ' + name_resource_type;
+
              var optName     = 'optName = "'+value.Name+'" opttype = "'+value['Resource Type']+'"';
              contX +='<option value='+ value.No_ +' '+ optName + ' > '+val+' </option>';
            })
