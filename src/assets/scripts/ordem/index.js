@@ -1510,7 +1510,11 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_promoting"+promoter).show();
+    if(sessionStorage.Country == "PL"){
     $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).show();
+    }else{
+    $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
+    }
     $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).show();
 
