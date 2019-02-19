@@ -393,7 +393,15 @@ function formatHora(date) {
                 var contX = "";
                 contX += '<option selected="selected" value="0">Select...</option>'
                   $.each(obj.result, function(index, value){
-                    var val = value.No_ + ' | ' + value.Name;
+                    var name_resource_type = ""
+                    if(value['Resource Type'] ==4){
+                      name_resource_type = "Army"
+                    }else if(value['Resource Type'] ==3){
+                      name_resource_type = "SOS"
+                    }else if(value['Resource Type'] ==2){
+                      name_resource_type = "Sales Rep"
+                    }
+                    var val = value.No_ + ' | ' + value.Name + ' | ' + name_resource_type;
                     //var val = value.Name;
                     // var optName     = 'optName = "'+value.Name+'"';
                     var optName     = 'optName = "'+value.Name+'" opttype = "'+value['Resource Type']+'"';
@@ -2791,8 +2799,12 @@ function salvaEndereco(InvoiceNo_,PhotoFile){
       $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
       $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
       $("#div_"+action+"_agendamento_service_result_promoting"+promoter).show();
-      $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).show();
-      $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
+      if(sessionStorage.Country == "PL"){
+        $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).show();
+        }else{
+        $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
+        }
+        $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
       $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).show();
   
       $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
