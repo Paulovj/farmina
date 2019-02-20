@@ -3566,8 +3566,8 @@ function formValidacaoOrdem(promoter,action){
 }
 
 $(".btn-help-date-janela").click(function(){
-  // $('#help-date-janela').modal('toggle');
-  $('#help-date-janela').modal('show');
+  $('#help-date-janela').modal('toggle');
+  
   $('.DaysBeforeWellcomeKit').text(sessionStorage.LimitDaysWelcomeKit)
   $('.DaysBeforeTraining').text(sessionStorage.LimitDaysTraining)
   $('.DaysBeforeISP').text(sessionStorage.LimitDaysISP)
@@ -3576,6 +3576,13 @@ $(".btn-help-date-janela").click(function(){
 })
 
 
+
+
+
+$("#btn-help-date-janela-close").click(function(){
+   $('#help-date-janela').hide('slow');  
+})
+// 
 
 
 
