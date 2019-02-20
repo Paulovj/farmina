@@ -186,7 +186,7 @@ $("#btn_login").click(function(){
     }
     
     var lang = "en";
-    if (sessionStorage.Language){
+    if (sessionStorage.Language && sessionStorage.Language != 'undefined'){
       lang = sessionStorage.Language
     }
 
