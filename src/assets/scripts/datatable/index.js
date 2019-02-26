@@ -3574,15 +3574,14 @@ $(".btn-help-date-janela").click(function(){
   $('.DaysBeforeMerchand').text(sessionStorage.LimitDaysMerchand)
   $('.DaysBeforeArmy').text(sessionStorage.LimitDaysArmy)
 
-
-  if (sessionStorage.country != "IT"){
+  if (sessionStorage.Country != "IT"){
     $('.divlLimitDaysBeforeTraining').hide();
     $('.divlLimitDaysBeforeWellcomeKit').hide();
     $('.divlLimitDaysBeforeISP').hide();
     $('.divlLimitDaysBeforeMerchand').hide();
     $('.divlLimitDaysBeforeArmy').hide();
    } 
-   
+
 })
 
 
