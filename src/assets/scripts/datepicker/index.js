@@ -421,7 +421,8 @@ export default (function () {
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
     if(resultado_config <= -1){
-      if(sessionStorage.Language == 'Italia' ){
+      
+      if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }  
       $('.start-date1').val('');
@@ -565,7 +566,7 @@ export default (function () {
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
     if(resultado_config <= -1){
-      if(sessionStorage.Language == 'Italia' ){
+      if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }  
       $('.start-date2').val('');
@@ -705,7 +706,7 @@ export default (function () {
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
     if(resultado_config <= -1){
-      if(sessionStorage.Language == 'Italia' ){
+      if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }  
       $('.start-date3').val('');
@@ -846,7 +847,7 @@ export default (function () {
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
     if(resultado_config <= -1){
-      if(sessionStorage.Language == 'Italia' ){
+      if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }
       $('.start-date4').val('');
@@ -987,7 +988,7 @@ export default (function () {
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
     if(resultado_config <= -1){
-      if(sessionStorage.Language == 'Italia' ){
+      if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }
       $('.start-date5').val('');
@@ -1426,7 +1427,7 @@ $('.edit-start-date1').datepicker().on('changeDate', function(ev){
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
     if(resultado_config <= -1){
-      if(sessionStorage.Language == 'Italia' ){
+      if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }  
       $('.edit-start-date1').val('');
@@ -1569,7 +1570,7 @@ $('.edit-start-date2').datepicker().on('changeDate', function(ev){
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
     if(resultado_config <= -1){
-      if(sessionStorage.Language == 'Italia' ){
+      if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }  
       $('.edit-start-date2').val('');
@@ -1718,7 +1719,7 @@ $('.edit-start-date3').datepicker().on('changeDate', function(ev){
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
     if(resultado_config <= -1){
-      if(sessionStorage.Language == 'Italia'){
+      if(sessionStorage.Pais == 'Italia'){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }  
       $('.edit-start-date3').val('');
@@ -1863,7 +1864,7 @@ $('.edit-start-date4').datepicker().on('changeDate', function(ev){
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
     if(resultado_config <= -1){
-      if(sessionStorage.Language == 'Italia' ){
+      if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }  
       $('.edit-start-date4').val('');
@@ -2009,7 +2010,7 @@ $('.edit-start-date5').datepicker().on('changeDate', function(ev){
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
     if(resultado_config <= -1){
-      if(sessionStorage.Language == 'Italia' ){
+      if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }  
       $('.edit-start-date5').val('');
