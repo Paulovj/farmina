@@ -3573,6 +3573,16 @@ $(".btn-help-date-janela").click(function(){
   $('.DaysBeforeISP').text(sessionStorage.LimitDaysISP)
   $('.DaysBeforeMerchand').text(sessionStorage.LimitDaysMerchand)
   $('.DaysBeforeArmy').text(sessionStorage.LimitDaysArmy)
+
+
+  if (sessionStorage.country != "IT"){
+    $('.divlLimitDaysBeforeTraining').hide();
+    $('.divlLimitDaysBeforeWellcomeKit').hide();
+    $('.divlLimitDaysBeforeISP').hide();
+    $('.divlLimitDaysBeforeMerchand').hide();
+    $('.divlLimitDaysBeforeArmy').hide();
+   } 
+   
 })
 
 
