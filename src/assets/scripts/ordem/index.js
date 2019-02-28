@@ -12,6 +12,19 @@ export default (function () {
 
 
 
+// 
+$('#btn_confirm_ordem_cancelamento').click(function(){
+  var ordem = $(this).attr('idcancel')
+  // alert(ordem)
+  $('#cancelamento-ordem-janela').modal('toggle');
+  $.ajax({url: urlX+"ServiceHeaders/getDeleteOrder?Pais="+paisX+"&No="+ordem, success: function(obj){
+    
+    $('#dataTableOrdemAgendamento').DataTable().destroy();
+    loadAgendamento();
+    
+  }})
+
+})
     
 
 
@@ -362,7 +375,29 @@ export default (function () {
           }
 
           var bloqueadoEdit = data['STATUS_BLOQ']
-            if ($(this).attr('action')=="edit"){
+          
+          
+          /************************************************************************************
+           * JANELA DE CANCELAMENTO ORDEM DE SERVIÇO
+          *************************************************************************************/
+
+          if ($(this).attr('action')=="Cancel"){        
+            // alert(sessionStorage.No +' - '+ data['Created By'])
+            // alert('entrou no cancelamento')
+            $('#ordem_canclemaneto_text').html($.i18n.prop('LDesejaMesmoFazerCancelamentoServiceOrdem',lang)+ ' <b>'+ id + '</b> ?')
+            $('#btn_confirm_ordem_cancelamento').attr('idCancel',id)
+            //
+            $('#cancelamento-ordem-janela').modal('toggle');
+
+          }    
+
+
+           /************************************************************************************
+           * JANELA DE EDITAR ORDERM DE SERVIÇO
+          *************************************************************************************/
+
+          if ($(this).attr('action')=="edit"){
+
             EditDisabledX(true,bloqueadoEdit)
 
             $('#edit_agendamento_n_cliente').val(customer_no)
@@ -1214,7 +1249,11 @@ export default (function () {
                 "render": function (a,d){
                   var btn =""
                     //btn += "<button action='postando_agendamento' href='javascript:void(0);' type='button' class='btn cur-p btn-danger'>Registrar</button>" ;
-                    btn += "<button action='edit' type='button' class='btn cur-p btn-info' style='margin:1px;'>"+$.i18n.prop('lViewOrder',lang)+"</button>";
+                    btn += "<button action='edit' type='button' class='btn cur-p btn-info' style='margin:1px;'>"+$.i18n.prop('lViewOrder',lang)+"</button> ";
+                    //alert(sessionStorage.No +' - '+ data['Created By'])
+                    if((sessionStorage.No == a['Created By']) && (a['ULTIMO_STATUS'] == 1)){
+                      btn += " <button action='Cancel' type='button' class='btn cur-p btn-danger' style='margin:1px;'>Cancel</button>";
+                    }  
                     
                     return btn;
               }
@@ -3317,8 +3356,6 @@ $(".btn-help-date-janela").click(function(){
 $("#btn-help-date-janela-close").click(function(){
    $('#help-date-janela').hide('slow');  
 })
-// 
-
 
 
 }());
