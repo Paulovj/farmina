@@ -439,15 +439,17 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
               $('#edit_agendamento_busca_professional1 option[value='+Professional1+']').attr('selected','selected');
               var number = 1
               var type =  $('#edit_agendamento_busca_professional1').find('option:selected').attr('opttype')
+                if(sessionStorage.Pais != 'Usa'){  
                   if(sessionStorage.Type != 3 && type == 4){
-                      $('#edit_agendamento_service_type'+number+' .PermissaoTraning').hide();
-                      $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').hide();
-                      $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').hide();
-                  }else if(sessionStorage.Type != 3 && type != 4){
-                      $('#edit_agendamento_service_type'+number+' .PermissaoTraning').show();
-                      $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').show();
-                      $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').show();
-                  }
+                        $('#edit_agendamento_service_type'+number+' .PermissaoTraning').hide();
+                        $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').hide();
+                        $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').hide();
+                    }else if(sessionStorage.Type != 3 && type != 4){
+                        $('#edit_agendamento_service_type'+number+' .PermissaoTraning').show();
+                        $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').show();
+                        $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').show();
+                    }
+                } 
               $('#edit_agendamento_planned_hour1').val(PlannedHour1);
               $('#edit_agendamento_service_type1').val(ServiceType1);
               $('#edit_agendamento_planned_date1').val(formatDate(PlannedDate1));
@@ -507,6 +509,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
               $('#edit_agendamento_busca_professional2 option[value='+Professional2+']').attr('selected','selected');
               var number = 2
               var type =  $('#edit_agendamento_busca_professional2').find('option:selected').attr('opttype')
+              if(sessionStorage.Pais != 'Usa'){  
                   if(sessionStorage.Type != 3 && type == 4){
                       $('#edit_agendamento_service_type'+number+' .PermissaoTraning').hide();
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').hide();
@@ -516,6 +519,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').show();
                       $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').show();
                   }
+                }   
               ((!Professional2)? $('#edit_agendamento_planned_hour2').val(PlannedHour2) : '');
               $('#edit_agendamento_service_type2').val(ServiceType2);
               ((!Professional2)? $('#edit_agendamento_planned_date2').val(formatDate(PlannedDate2)): '');
@@ -573,6 +577,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
               $('#edit_agendamento_busca_professional3 option[value='+Professional3+']').attr('selected','selected');
               var number = 3
               var type =  $('#edit_agendamento_busca_professional3').find('option:selected').attr('opttype')
+              if(sessionStorage.Pais != 'Usa'){  
                   if(sessionStorage.Type != 3 && type == 4){
                       $('#edit_agendamento_service_type'+number+' .PermissaoTraning').hide();
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').hide();
@@ -582,6 +587,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').show();
                       $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').show();
                   }
+              }
               ((!Professional3)? $('#edit_agendamento_planned_hour3').val(PlannedHour3) : '');
               $('#edit_agendamento_service_type3').val(ServiceType3);
               ((!Professional3)? $('#edit_agendamento_planned_date3').val(formatDate(PlannedDate3)) :'');
@@ -638,6 +644,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
               $('#edit_agendamento_busca_professional4 option[value='+Professional4+']').attr('selected','selected');
               var number = 4
               var type =  $('#edit_agendamento_busca_professional4').find('option:selected').attr('opttype')
+              if(sessionStorage.Pais != 'Usa'){  
                   if(sessionStorage.Type != 3 && type == 4){
                       $('#edit_agendamento_service_type'+number+' .PermissaoTraning').hide();
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').hide();
@@ -647,6 +654,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').show();
                       $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').show();
                   }
+                } 
               ((!Professional4)? $('#edit_agendamento_planned_hour4').val(PlannedHour4) : '');
               $('#edit_agendamento_service_type4').val(ServiceType4);
               ((!Professional4)? $('#edit_agendamento_planned_date4').val(formatDate(PlannedDate4)): '');
@@ -701,6 +709,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
               $('#edit_agendamento_busca_professional5 option[value='+Professional5+']').attr('selected','selected');
               var number = 5
               var type =  $('#edit_agendamento_busca_professional5').find('option:selected').attr('opttype')
+              if(sessionStorage.Pais != 'Usa'){  
                   if(sessionStorage.Type != 3 && type == 4){
                       $('#edit_agendamento_service_type'+number+' .PermissaoTraning').hide();
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').hide();
@@ -710,6 +719,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').show();
                       $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').show();
                   }
+                }
               ((!Professional5)? $('#edit_agendamento_planned_hour5').val(PlannedHour5) : '');
               $('#edit_agendamento_service_type5').val(ServiceType5);
               ((!Professional5)? $('#edit_agendamento_planned_date5').val(formatDate(PlannedDate5)) :'');
@@ -770,6 +780,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
               $('#edit_agendamento_busca_professional1 option[value='+Professional1+']').attr('selected','selected');
               var number = 1
               var type =  $('#edit_agendamento_busca_professional1').find('option:selected').attr('opttype')
+              if(sessionStorage.Pais != 'Usa'){  
                   if(sessionStorage.Type != 3 && type == 4){
                       $('#edit_agendamento_service_type'+number+' .PermissaoTraning').hide();
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').hide();
@@ -779,6 +790,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').show();
                       $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').show();
                   }
+                }
               $('#edit_agendamento_planned_hour1').val(PlannedHour1);
               $('#edit_agendamento_service_type1').val(ServiceType1);
               $('#edit_agendamento_planned_date1').val(formatDate(PlannedDate1));
@@ -842,6 +854,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
               $('#edit_agendamento_busca_professional2 option[value='+Professional2+']').attr('selected','selected');
               var number = 2
               var type =  $('#edit_agendamento_busca_professional2').find('option:selected').attr('opttype')
+              if(sessionStorage.Pais != 'Usa'){  
                   if(sessionStorage.Type != 3 && type == 4){
                       $('#edit_agendamento_service_type'+number+' .PermissaoTraning').hide();
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').hide();
@@ -851,6 +864,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').show();
                       $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').show();
                   }
+                }
               $('#edit_agendamento_planned_hour2').val(PlannedHour2);
               $('#edit_agendamento_service_type2').val(ServiceType2);
               $('#edit_agendamento_planned_date2').val(formatDate(PlannedDate2));
@@ -901,6 +915,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
               $('#edit_agendamento_busca_professional3 option[value='+Professional3+']').attr('selected','selected');
               var number = 3
               var type =  $('#edit_agendamento_busca_professional3').find('option:selected').attr('opttype')
+              if(sessionStorage.Pais != 'Usa'){  
                   if(sessionStorage.Type != 3 && type == 4){
                       $('#edit_agendamento_service_type'+number+' .PermissaoTraning').hide();
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').hide();
@@ -910,6 +925,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').show();
                       $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').show();
                   }
+                }
               $('#edit_agendamento_planned_hour3').val(PlannedHour3);
               $('#edit_agendamento_service_type3').val(ServiceType3);
               $('#edit_agendamento_planned_date3').val(formatDate(PlannedDate3));
@@ -965,6 +981,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
               $('#edit_agendamento_busca_professional4 option[value='+Professional4+']').attr('selected','selected');
               var number = 4
               var type =  $('#edit_agendamento_busca_professional4').find('option:selected').attr('opttype')
+              if(sessionStorage.Pais != 'Usa'){  
                   if(sessionStorage.Type != 3 && type == 4){
                       $('#edit_agendamento_service_type'+number+' .PermissaoTraning').hide();
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').hide();
@@ -974,6 +991,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').show();
                       $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').show();
                   }
+                }
               $('#edit_agendamento_planned_hour4').val(PlannedHour4);
               $('#edit_agendamento_service_type4').val(ServiceType4);
               $('#edit_agendamento_planned_date4').val(formatDate(PlannedDate4));
@@ -1025,6 +1043,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
               $('#edit_agendamento_busca_professional5 option[value='+Professional5+']').attr('selected','selected');
               var number = 5
               var type =  $('#edit_agendamento_busca_professional5').find('option:selected').attr('opttype')
+              if(sessionStorage.Pais != 'Usa'){  
                   if(sessionStorage.Type != 3 && type == 4){
                       $('#edit_agendamento_service_type'+number+' .PermissaoTraning').hide();
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').hide();
@@ -1034,6 +1053,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
                       $('#edit_agendamento_service_type'+number+' .PermissaoWelcome').show();
                       $('#edit_agendamento_service_type'+number+' .PermissaoMerchandising').show();
                   }
+                }
               $('#edit_agendamento_planned_hour5').val(PlannedHour5);
               $('#edit_agendamento_service_type5').val(ServiceType5);
               $('#edit_agendamento_planned_date5').val(formatDate(PlannedDate5));
