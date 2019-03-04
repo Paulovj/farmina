@@ -417,6 +417,9 @@ $("#btn_login").click(function(){
         $('.lLegend').html($.i18n.prop('lLegend',lang))
         $('.lCountry').html($.i18n.prop('lCountry',lang))
         
+        $('.lTurco').html($.i18n.prop('lTurco',lang))
+        $('.lAlemao').html($.i18n.prop('lAlemao',lang))
+        $('.lTurco').html($.i18n.prop('lTurco',lang))
         
 
         
