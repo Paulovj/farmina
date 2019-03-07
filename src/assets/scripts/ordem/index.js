@@ -2901,7 +2901,7 @@ function formValidacaoOrdem(promoter,action){
             if(value['Resource Type'] ==4){
               name_resource_type = "Army"
             }else if(value['Resource Type'] ==3){
-              name_resource_type = "SOS"
+              name_resource_type = "NC"
             }else if(value['Resource Type'] ==2){
               name_resource_type = "Sales Rep"
             }
