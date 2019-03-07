@@ -1077,11 +1077,11 @@ $("#edit_agendamento_service_type5").change(function(){
             var title = $(this).text();
             console.log('teste 123 entrou ::::::' + title)  
           //console.log('teste 123 entrou ::::::')  
-            $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+            $(this).html( '<input type="text" placeholder="'+title+'" />' );
     
             $( 'input', this ).on( 'keyup change', function () {
-                if ( oTblReport.column(i).search() !== this.value ) {
-                  oTblReport
+                if ( $("#dataTable").DataTable().column(i).search() !== this.value ) {
+                  $("#dataTable").DataTable()
                         .column(i)
                         .search( this.value )
                         .draw();

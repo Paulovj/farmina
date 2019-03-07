@@ -1226,24 +1226,19 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
         var jsonString = result.data //for testing
         // console.log('retorno agendamento: ', jsonString)
         var oTblReportAgendamento = $("#dataTableOrdemAgendamento")
-
+        
         $('#dataTableOrdemAgendamento thead tr').clone(true).appendTo( '#dataTableOrdemAgendamento thead' );
         $('#dataTableOrdemAgendamento thead tr:eq(1) th').each( function (i) {
             var title = $(this).text();
-            console.log('teste 123 entrou ::::::' + title)  
-          //console.log('teste 123 entrou ::::::')  
-            $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+            $(this).html( '<input type="text" placeholder="'+title+'" />' );
     
             $( 'input', this ).on( 'keyup change', function () {
-                if ( oTblReportAgendamento.column(i).search() !== this.value ) {
-                  oTblReportAgendamento
-                        .column(i)
-                        .search( this.value )
-                        .draw();
+                if ( $('#dataTableOrdemAgendamento').DataTable().column(i).search() !== this.value ) {
+                  $('#dataTableOrdemAgendamento').DataTable().column(i).search( this.value ).draw();
                 }
             } );
         } );
- 
+        
 
         oTblReportAgendamento.DataTable ({
             "data" : jsonString,
@@ -1322,9 +1317,11 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
           ]
 
           });
+           
 
           setTimeout(function(){
-             $('#dataTableOrdemAgendamento').DataTable().draw();
+             $('#dataTableOrdemAgendamento').DataTable().draw();            
+              
             }, 3000);
 
             
@@ -1332,9 +1329,6 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
         }
 
       });
-
-
-
 
   };
   loadAgendamento();
