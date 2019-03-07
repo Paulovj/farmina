@@ -226,6 +226,28 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
 
 
 
+  // $('#dataTableOrdemAgendamento thead tr').clone(true).appendTo( '#dataTableOrdemAgendamento thead' );
+  //   $('#dataTableOrdemAgendamento thead tr:eq(1) th').each( function (i) {
+  //       var title = $(this).text();
+  //       $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+ 
+  //       $( 'input', this ).on( 'keyup change', function () {
+  //           if ( table.column(i).search() !== this.value ) {
+  //               table
+  //                   .column(i)
+  //                   .search( this.value )
+  //                   .draw();
+  //           }
+  //       } );
+  //   } );
+
+
+
+
+    
+    
+
+    
 
   $('#dataTableOrdemAgendamento tbody').on( 'click', 'button', function () {
           var data = $("#dataTableOrdemAgendamento").DataTable().row( $(this).parents('tr') ).data();
@@ -1205,10 +1227,29 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
         // console.log('retorno agendamento: ', jsonString)
         var oTblReportAgendamento = $("#dataTableOrdemAgendamento")
 
+        $('#dataTableOrdemAgendamento thead tr').clone(true).appendTo( '#dataTableOrdemAgendamento thead' );
+        $('#dataTableOrdemAgendamento thead tr:eq(1) th').each( function (i) {
+            var title = $(this).text();
+            console.log('teste 123 entrou ::::::' + title)  
+          //console.log('teste 123 entrou ::::::')  
+            $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    
+            $( 'input', this ).on( 'keyup change', function () {
+                if ( oTblReportAgendamento.column(i).search() !== this.value ) {
+                  oTblReportAgendamento
+                        .column(i)
+                        .search( this.value )
+                        .draw();
+                }
+            } );
+        } );
+ 
+
         oTblReportAgendamento.DataTable ({
             "data" : jsonString,
             "scrollX": true,
             "responsive":true,
+            orderCellsTop: true,
             //"ajax":jsonString,
             fixedHeader: {
               header: true,

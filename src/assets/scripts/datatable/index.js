@@ -1071,10 +1071,34 @@ $("#edit_agendamento_service_type5").change(function(){
         console.log(jsonString)    
         //Load  datatable
         var oTblReport = $("#dataTable")
+
+        $('#dataTable thead tr').clone(true).appendTo( '#dataTable thead' );
+        $('#dataTable thead tr:eq(1) th').each( function (i) {
+            var title = $(this).text();
+            console.log('teste 123 entrou ::::::' + title)  
+          //console.log('teste 123 entrou ::::::')  
+            $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    
+            $( 'input', this ).on( 'keyup change', function () {
+                if ( oTblReport.column(i).search() !== this.value ) {
+                  oTblReport
+                        .column(i)
+                        .search( this.value )
+                        .draw();
+                }
+            } );
+        } );
+
+
         oTblReport.DataTable ({
             "data" : jsonString,
             responsive: true,
              "scrollX": true,
+             orderCellsTop: true,
+            fixedHeader: {
+              header: true,
+              footer: true
+          },
              columnDefs: [
               { type: 'date-br', targets: 5 }
      
