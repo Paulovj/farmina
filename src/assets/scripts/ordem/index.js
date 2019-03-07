@@ -2905,7 +2905,7 @@ function formValidacaoOrdem(promoter,action){
             }else if(value['Resource Type'] ==2){
               name_resource_type = "Sales Rep"
             }
-            var val = value.No_ + ' | ' + value.Name + ' | ' + name_resource_type;
+            var val = name_resource_type + ' | ' + value.No_ + ' | ' + value.Name;
 
              var optName     = 'optName = "'+value.Name+'" opttype = "'+value['Resource Type']+'"';
              contX +='<option value='+ value.No_ +' '+ optName + ' > '+val+' </option>';

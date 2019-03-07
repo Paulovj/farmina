@@ -397,11 +397,11 @@ function formatHora(date) {
                     if(value['Resource Type'] ==4){
                       name_resource_type = "Army"
                     }else if(value['Resource Type'] ==3){
-                      name_resource_type = "SOS"
+                      name_resource_type = "NC"
                     }else if(value['Resource Type'] ==2){
                       name_resource_type = "Sales Rep"
                     }
-                    var val = value.No_ + ' | ' + value.Name + ' | ' + name_resource_type;
+                    var val = name_resource_type + ' | ' + value.No_ + ' | ' + value.Name;
                     //var val = value.Name;
                     // var optName     = 'optName = "'+value.Name+'"';
                     var optName     = 'optName = "'+value.Name+'" opttype = "'+value['Resource Type']+'"';
