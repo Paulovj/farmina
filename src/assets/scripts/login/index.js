@@ -118,6 +118,9 @@ $("#btn_login").click(function(){
            if(pais =="Polonia"){
             country = "PL" 
            }
+           if(pais =="Alemanha"){
+            country = "DE" 
+           }
           sessionStorage.setItem("Pais", pais);
           sessionStorage.setItem("Country", country);
           sessionStorage.setItem("Name", result['Name']);
@@ -420,6 +423,9 @@ $("#btn_login").click(function(){
         $('.lTurco').html($.i18n.prop('lTurco',lang))
         $('.lAlemao').html($.i18n.prop('lAlemao',lang))
         $('.lTurco').html($.i18n.prop('lTurco',lang))
+        
+        
+        $('.lAlemanha').html($.i18n.prop('lAlemanha',lang))
         
 
         
