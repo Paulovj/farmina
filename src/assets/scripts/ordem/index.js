@@ -20,7 +20,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
   $.ajax({url: urlX+"ServiceHeaders/getDeleteOrder?Pais="+paisX+"&No="+ordem, success: function(obj){
     
     $('#dataTableOrdemAgendamento').DataTable().destroy();
-    loadAgendamento();
+    loadAgendamento(true);
     
   }})
 
@@ -1218,7 +1218,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
 
 
 
-    function loadAgendamento() {
+    function loadAgendamento(tableExisteX) {
 
 
 
@@ -1227,17 +1227,21 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
         // console.log('retorno agendamento: ', jsonString)
         var oTblReportAgendamento = $("#dataTableOrdemAgendamento")
         
-        $('#dataTableOrdemAgendamento thead tr').clone(true).appendTo( '#dataTableOrdemAgendamento thead' );
-        $('#dataTableOrdemAgendamento thead tr:eq(1) th').each( function (i) {
-            var title = $(this).text();
-            $(this).html( '<input type="text" placeholder="'+title+'" />' );
-    
-            $( 'input', this ).on( 'keyup change', function () {
-                if ( $('#dataTableOrdemAgendamento').DataTable().column(i).search() !== this.value ) {
-                  $('#dataTableOrdemAgendamento').DataTable().column(i).search( this.value ).draw();
-                }
+        if(tableExisteX==false){
+            $('#dataTableOrdemAgendamento thead tr').clone(true).appendTo( '#dataTableOrdemAgendamento thead' );
+            $('#dataTableOrdemAgendamento thead tr:eq(1) th').each( function (i) {
+                var title = $(this).text();
+                $(this).html( '<input type="text" placeholder="'+title+'" />' );
+        
+                $( 'input', this ).on( 'keyup change', function () {
+                    if ( $('#dataTableOrdemAgendamento').DataTable().column(i).search() !== this.value ) {
+                      $('#dataTableOrdemAgendamento').DataTable().column(i).search( this.value ).draw();
+                    }
+                } );
             } );
-        } );
+
+          }  
+
         
 
         oTblReportAgendamento.DataTable ({
@@ -1331,7 +1335,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
       });
 
   };
-  loadAgendamento();
+  loadAgendamento(false);
 
 
 
@@ -2287,7 +2291,7 @@ function formValidacaoOrdem(promoter,action){
       $.ajax(settings).done(function (response) {
         console.log(response);
         $('#dataTableOrdemAgendamento').DataTable().destroy();
-        loadAgendamento();
+        loadAgendamento(true);
         $('#add-agendamento').modal('toggle');
 
       });
@@ -2540,7 +2544,7 @@ function formValidacaoOrdem(promoter,action){
           $.ajax(settings).done(function (response) {
             console.log(response);
             $('#dataTableOrdemAgendamento').DataTable().destroy();
-            loadAgendamento();
+            loadAgendamento(true);
             $('#edit-agendamento').modal('toggle');
 
           });
@@ -2606,7 +2610,7 @@ function formValidacaoOrdem(promoter,action){
         //cria pasta
         SalvaBookingCriaPastaX(notify)
         $('#dataTableOrdemAgendamento').DataTable().destroy();
-        loadAgendamento();
+        loadAgendamento(true);
         $('#post-agendamento-modal').modal('toggle');
 
 
