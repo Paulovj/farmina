@@ -1231,7 +1231,7 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
             $('#dataTableOrdemAgendamento thead tr').clone(true).appendTo( '#dataTableOrdemAgendamento thead' );
             $('#dataTableOrdemAgendamento thead tr:eq(1) th').each( function (i) {
                 var title = $(this).text();
-                $(this).html( '<input type="text" placeholder="'+title+'" />' );
+                $(this).html( '<input type="text" placeholder="'+title+'" style="width:120px;" />' );
         
                 $( 'input', this ).on( 'keyup change', function () {
                     if ( $('#dataTableOrdemAgendamento').DataTable().column(i).search() !== this.value ) {

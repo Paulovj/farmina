@@ -1065,29 +1065,31 @@ $("#edit_agendamento_service_type5").change(function(){
 
 
     
-    function load() {       
+    function load(tableExisteX) {       
       $.ajax({url: urlX+"Farmina-1-Service-Booking-Resources/ServiceQueryStatus?Pais="+paisX+"&type="+ sessionStorage.Type +"&no="+ sessionStorage.No, success: function(result){    
         var jsonString = result.rowDataPacket //for testing  
         console.log(jsonString)    
         //Load  datatable
         var oTblReport = $("#dataTable")
 
-        $('#dataTable thead tr').clone(true).appendTo( '#dataTable thead' );
-        $('#dataTable thead tr:eq(1) th').each( function (i) {
-            var title = $(this).text();
-            console.log('teste 123 entrou ::::::' + title)  
-          //console.log('teste 123 entrou ::::::')  
-            $(this).html( '<input type="text" placeholder="'+title+'" />' );
-    
-            $( 'input', this ).on( 'keyup change', function () {
-                if ( $("#dataTable").DataTable().column(i).search() !== this.value ) {
-                  $("#dataTable").DataTable()
-                        .column(i)
-                        .search( this.value )
-                        .draw();
-                }
+        if(tableExisteX==false){
+            $('#dataTable thead tr').clone(true).appendTo( '#dataTable thead' );
+            $('#dataTable thead tr:eq(1) th').each( function (i) {
+                var title = $(this).text();
+                //console.log('teste 123 entrou ::::::' + title)  
+              //console.log('teste 123 entrou ::::::')  
+                $(this).html( '<input type="text" placeholder="'+title+'" style="width:120px;"/> ' );
+        
+                $( 'input', this ).on( 'keyup change', function () {
+                    if ( $("#dataTable").DataTable().column(i).search() !== this.value ) {
+                      $("#dataTable").DataTable()
+                            .column(i)
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
             } );
-        } );
+          }
 
 
         oTblReport.DataTable ({
@@ -1212,7 +1214,7 @@ $("#edit_agendamento_service_type5").change(function(){
       
       
   };
-load();
+load(false);
 
   
 $("#btn_starting_booking").click(function(){
@@ -1230,7 +1232,7 @@ $("#btn_starting_booking").click(function(){
 
       $('#starting-service-booking').modal('toggle');
       var oTblReport = $('#dataTable').DataTable().destroy();
-      load();
+      load(true);
       
       }
     });
@@ -1686,7 +1688,7 @@ $("#btn_finish_booking").click(function(){
     $('#finish-service-booking').modal('toggle');
     var oTblReport = $('#dataTable').DataTable().destroy();
 
-    load();
+    load(true);
   }); 
 
 
