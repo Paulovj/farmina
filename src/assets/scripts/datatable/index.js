@@ -51,12 +51,12 @@ export default (function () {
       }else if(falta == -1 ){
         texto  = $.i18n.prop('lAtrasado',lang)
         var delay  = $.i18n.prop('lDelay',lang)
-        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10" style="font-size: 14px;">'+ texto +'</span> <br><br>'
+        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10" style="font-size: 14px; margin:2px;">'+ texto +'</span> <br>'
         result +=  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">' + ((falta-falta-falta)) +' '+ delay + '</span>'
       }else if(falta < -1 ){
         texto  = $.i18n.prop('lAtrasado',lang)
         var delays  = $.i18n.prop('lDelays',lang)
-        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10" style="font-size: 14px;">'+ texto +'</span><br><br>'
+        result =  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10" style="font-size: 14px; margin:2px;">'+ texto +'</span><br>'
         result +=  '<span class="badge badge-pill fl-r badge-danger lh-0 p-10">' + ((falta-falta-falta)) +' '+ delays + '</span>'
       }
 
@@ -1108,9 +1108,9 @@ $("#edit_agendamento_service_type5").change(function(){
             "columns" : [
               
               { "data" : "Resource No_" ,"visible": false},
-              { "data" : "Customer Name" },
-              { "data" : "Name" },
               { "data" : "Service Invoice No_" },
+              { "data" : "Customer Name" },
+              { "data" : "Name" },              
               { "data" : "Service Type" , "render": function ( data) {
                         return ServiceType(data);                
                 } 
@@ -1133,7 +1133,7 @@ $("#edit_agendamento_service_type5").change(function(){
                 return formatHora(data);
                 } 
               },
-              { "data" : "Finish Date" , "type": "date-eu", "render": function ( data) {
+              { "data" : "Finish Date" , "type": "date-eu","visible": false, "render": function ( data) {
                 return formatDate(data);
                 } 
               },
