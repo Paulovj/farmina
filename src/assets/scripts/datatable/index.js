@@ -1074,11 +1074,18 @@ $("#edit_agendamento_service_type5").change(function(){
 
         if(tableExisteX==false){
             $('#dataTable thead tr').clone(true).appendTo( '#dataTable thead' );
+            var conta = 1;
+          var widthX = "";
             $('#dataTable thead tr:eq(1) th').each( function (i) {
                 var title = $(this).text();
-                //console.log('teste 123 entrou ::::::' + title)  
-              //console.log('teste 123 entrou ::::::')  
-                $(this).html( '<input type="text" placeholder="'+title+'" style="width:120px;"/> ' );
+                if(conta == 2 || conta == 5 || conta == 6 || conta == 7 ||  conta == 11 || conta == 12 || conta == 13){
+                  console.log('entrou:'+conta)
+                  widthX = "width:80px;"
+                }else{
+                  console.log('fora:'+conta)
+                  widthX = "width:130px;"
+                }
+                  $(this).html( '<input type="text" placeholder="'+title+'" style="'+widthX+'" /> ' );
         
                 $( 'input', this ).on( 'keyup change', function () {
                     if ( $("#dataTable").DataTable().column(i).search() !== this.value ) {
@@ -1088,6 +1095,7 @@ $("#edit_agendamento_service_type5").change(function(){
                             .draw();
                     }
                 } );
+                conta  += 1 
             } );
           }
 
