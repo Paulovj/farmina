@@ -429,6 +429,7 @@ $("#btn_login").click(function(){
         
         
         $('.lAlemanha').html($.i18n.prop('lAlemanha',lang))
+        $('.lStartDate').html($.i18n.prop('lStartDate',lang))
         
 
         
