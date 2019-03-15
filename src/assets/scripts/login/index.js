@@ -75,6 +75,8 @@ $("#btn_login").click(function(){
     var url = "";
     if(pais == "Brasil"){
       url = "http://www.nav.farmina.com.br:3001/api/"
+    }else if(pais == "Russia"){
+      url = "http://localhost:3001/api/"
     }else{
       url = "http://mkt.farmina.com:3001/api/"
     }
