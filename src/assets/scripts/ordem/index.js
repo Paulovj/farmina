@@ -1482,6 +1482,10 @@ function PromoterServiceTypeX(promoter,value,action){
 
   $("#div_"+action+"_agendamento_service_welcome_kit"+promoter).hide();
   $("#"+action+"_agendamento_service_welcome_kit"+promoter+ " option").remove();
+
+  $("#div_"+action+"_agendamento_service_result_event"+promoter).hide();
+  $("#div_"+action+"_agendamento_service_result_office_work"+promoter).hide();
+
   
   if(value==1){
     //traning
@@ -1520,6 +1524,9 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_result_army_which_park"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_location"+promoter).show();
     $("#div_"+action+"_agendamento_service_result_projector"+promoter).show();
+    $("#div_"+action+"_agendamento_service_result_event"+promoter).hide();
+
+    $("#div_"+action+"_agendamento_service_result_office_work"+promoter).hide();
 
 
 
@@ -1574,6 +1581,9 @@ function PromoterServiceTypeX(promoter,value,action){
         $("#"+action+"_agendamento_service_welcome_kit"+promoter).append(contItenWelcomeKitX)
       }     
     })            
+    $("#div_"+action+"_agendamento_service_result_event"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_office_work"+promoter).hide();
+
 
 
 
@@ -1618,6 +1628,9 @@ function PromoterServiceTypeX(promoter,value,action){
 
     $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_army_which_park"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_event"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_office_work"+promoter).hide();
+
 
 
 
@@ -1648,6 +1661,9 @@ function PromoterServiceTypeX(promoter,value,action){
 
     $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_army_which_park"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_event"+promoter).hide();
+
+    $("#div_"+action+"_agendamento_service_result_office_work"+promoter).hide();
 
 
 
@@ -1675,11 +1691,61 @@ function PromoterServiceTypeX(promoter,value,action){
     $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
     $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).show();
+    $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).show();
+    
+    
+    $("#div_"+action+"_agendamento_service_result_event"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_office_work"+promoter).hide();
 
 
 
 
-  }
+
+  }else if(value==6){
+
+    $("#div_"+action+"_agendamento_service_result_event"+promoter).show();
+
+
+    $("#div_"+action+"_agendamento_service_result_food"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_office_work"+promoter).hide();
+    
+
+
+  }else if(value==7){
+    $("#div_"+action+"_agendamento_service_result_event"+promoter).hide();
+
+
+    $("#div_"+action+"_agendamento_service_result_food"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_push"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_line"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_trainning_type"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_tranning_comments"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_promoting"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_open_bags"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_many_meters"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_ISP_comments"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
+    $("#div_"+action+"_agendamento_service_result_army_specific_store"+promoter).hide();
+    
+    
+    $("#div_"+action+"_agendamento_service_result_office_work"+promoter).show();
+
+
+    
+    
+  }  
 
   $("#lbl_"+action+"_agendamento_service_result"+promoter).html(lblCont)
   // $("#"+action+"_agendamento_service_result"+promoter).append(contX)

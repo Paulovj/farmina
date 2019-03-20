@@ -968,12 +968,14 @@ table.dataTable td {
                                 <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
                                 <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
                                 <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                <!-- <option value="6" class="lEvent">Event</option>
+                                <option value="7" class="lOfficeWork">Office Work</option> -->
                                 </select>
                           </div>
 
 
-                            
-                             
+
+
 
 
 
@@ -985,16 +987,16 @@ table.dataTable td {
 
                             <div class="col-md-3 mb-3">
                                 <!-- <label class ="fw-500 lDataPlanejada" data-toggle="popover" data-placement="right" title="Legend" data-content="Red Ful  Blue tessre">Data Planejada</label> -->
-                              
+
                               <label class="peers peer-greed  fw-500">
-                                <span class="peer peer-greed lDataPlanejada" >Planned Date</span> 
+                                <span class="peer peer-greed lDataPlanejada" >Planned Date</span>
                                 <span class="peer">
                                   <span class="badge badge-pill fl-r badge-success lh-0 p-10 btn-help-date-janela">?</span>
                                 </span>
                               </label>
-                            
+
                               <!-- <label class="fw-500 lDataPlanejada"> Data Planejada</label> -->
-                              
+
                               <!-- <input type="text" class="form-control" id="add_agendamento_planned_date1" placeholder="" value="" required > -->
                               <div class="timepicker-input input-icon form-group">
                                   <div class="input-group">
@@ -1025,7 +1027,7 @@ table.dataTable td {
                               <!-- <input type="time" id="add_agendamento_planned_hour1" name="appt-time" min="9:00" max="18:00" class="form-control" placeholder="" value="" required  /> -->
                             </div>
 
-                            
+
                         </div>
 
                         <div class="row" id="div_add_agendamento_service_result_location1" style="display:none">
@@ -1192,6 +1194,172 @@ table.dataTable td {
                           </div>
 
 
+
+
+                          <div class="row" id="div_add_agendamento_service_result_event1" style="display:none">
+                          <!-- <div class="row" id="div_add_agendamento_service_result_event1"> -->
+                            <div class="col-md-12 mb-6">
+                              <label class="fw-500 lEventCity">Event City </label>
+                              <input type="text" class="form-control bdc-grey-200" name="" id="add_agendamento_event_city1">
+                            </div>
+
+                            <div class="col-md-12 mb-6">
+                              <label class="fw-500 lEventLocation">Event Location </label>
+                              <select id="add_agendamento_event_location1" class="form-control">
+                                <option selected value="0" class="lSelecione">Selecione</option>
+                                <option value="1" class="lFair">Fair</option>
+                                <option value="2" class="lHotel">Hotel</option>
+                                <option value="3" class="lOpen">Open</option>
+                                <option value="4" class="lSpace">Space</option>
+                                <option value="5" class="lBeach">Beach</option>
+                                <option value="6" class="lOther">Other</option>
+                              </select>
+                            </div>
+
+
+                            <!-- <div class="row" id="div_add_agendamento_service_result_event_where_location1" style="display:none"> -->
+                            <!-- <div class="row" id="div_add_agendamento_service_result_event_where_location1"> -->
+                              <div class="col-md-12 mb-6">
+                                <label class="fw-500 lWhereLocation">Where Location </label>
+                                <input type="text" class="form-control bdc-grey-200" name="" id="add_agendamento_event_where_location1">
+                              </div>
+                            <!-- </div>   -->
+
+
+                            <div class="col-md-12 mb-6">
+                              <label class="fw-500 lTypeEvent">Type Event </label>
+                              <select id="add_agendamento_event_type_event1" class="form-control">
+                                <option selected value="0" class="lSelecione">Selecione</option>
+                                <option value="1" class="lBreeder">Breeder</option>
+                                <option value="2" class="lEvent">Event</option>
+                                <option value="3" class="lVetEvent">Vet Event</option>
+                                <option value="4" class="lFinalConsumerEvent">Final Consume Event</option>
+                                <option value="5" class="lBusinessEvent">Business Event</option>
+                              </select>
+                            </div>
+
+
+                            <!-- <div class="row" id="div_add_agendamento_service_result_event_where_location1" style="display:none"> -->
+                              <div class="col-md-12 mb-6">
+                                <label class="fw-500 lBreederEventType">Breeder Event Type 1 </label>
+                                <select id="add_agendamento_event_breeder_event_type1" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lNational">National</option>
+                                  <option value="3" class="lLocal">Local</option>
+                                  <option value="4" class="lSportActivity">Sport Activity</option>
+                                  <option value="5" class="lHybridEvent">Hybrid Event</option>
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+                             <!-- <div class="row" id="div_add_agendamento_service_result_event_where_location1" style="display:none"> -->
+                              <div class="col-md-12 mb-6">
+                                <label class="fw-500 lVerEventType">Vet Event Type 1</label>
+                                <select id="add_agendamento_event_vet_event_type1" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lEuropean">European</option>
+                                  <option value="3" class="lNational">National</option>
+                                  <option value="4" class="lRegioanl">Regioanl</option>
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+
+                             <!-- <div class="row" id="div_add_agendamento_service_result_event_where_location1" style="display:none"> -->
+                              <div class="col-md-12 mb-6">
+                                <label class="fw-500 lFinalConsumerEventType">Final Consumer Event Type 1</label>
+                                <select id="add_agendamento_event_final_consumer_event_type1" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lNational">National</option>
+                                  <option value="2" class="lRegioanl">Regioanl</option>
+                                  <option value="3" class="lEventConnectedWithAPetShop">Event Connected With a Pet Shop</option>
+
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+                             <!-- <div class="row" id="div_add_agendamento_service_result_event_where_location1" style="display:none"> -->
+                              <div class="col-md-12 mb-6">
+                                <label class="fw-500 lBusinessEvent">Business Event</label>
+                                <select id="add_agendamento_event_Business_Event1" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lNational">National</option>
+                                  <option value="3" class="lRegioanl">Regioanl</option>
+
+
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+                          </div>
+
+
+                          <div class="row" id="div_add_agendamento_service_result_office_work1" style="display:none">
+                            <!-- <div class="row" id="div_add_agendamento_service_result_event1"> -->
+                             
+                              <div class="col-md-12 mb-6">
+                                <label class="fw-500 lOfficeWorkLocation">Office Work Location</label>
+                                <select id="add_agendamento_office_work1" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lHome">Home</option>
+                                  <option value="2" class="lWork">Work</option>
+                                  </select>
+                              </div>
+
+
+                              <div class="col-md-12 mb-6">
+                                <label class="fw-500 lPurposeOfTheOfficeDay">Purpose of the office day</label>
+                                <select id="add_agendamento_office_purpose_office_day" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  ,internal training,internal meeting,other
+
+                                  <option value="1" class="lInternal">Internal</option>
+                                  <option value="2" class="lTraining">Training</option>
+                                  <option value="2" class="lInternalMeeting">Internal Meeting</option>
+                                  <option value="2" class="lOther">Other</option>
+                                  </select>
+                              </div>
+
+
+
+                              <div class="col-md-12 mb-6">
+                                <label class="fw-500 lExplanation">Explanation </label>
+                                <input type="text" class="form-control bdc-grey-200" name="" id="add_agendamento_office_Explanation">
+                              </div>
+  
+
+
+                              </div>
+
+
+
                     </div>
                   </div>
                 </div>
@@ -1226,6 +1394,8 @@ table.dataTable td {
                                     <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
                                     <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
                                     <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                    <option value="6" class="lEvent">Event</option>
+                                    <option value="7" class="lOfficeWork">Office Work</option>
                                   </select>
                             </div>
 
@@ -1238,7 +1408,7 @@ table.dataTable td {
                             <div class="col-md-3 mb-3">
                                 <!-- <label class="fw-500 lDataPlanejada">Data Planejada</label> -->
                                 <label class="peers peer-greed  fw-500">
-                                    <span class="peer peer-greed lDataPlanejada" >Planned Date</span> 
+                                    <span class="peer peer-greed lDataPlanejada" >Planned Date</span>
                                     <span class="peer">
                                       <span class="badge badge-pill fl-r badge-success lh-0 p-10 btn-help-date-janela">?</span>
                                     </span>
@@ -1269,7 +1439,7 @@ table.dataTable td {
                             </div>
 
 
-                            
+
                         </div>
 
                         <div class="row" id="div_add_agendamento_service_result_location2" style="display:none">
@@ -1470,10 +1640,12 @@ table.dataTable td {
                                   <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
                                   <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
                                   <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                  <option value="6" class="lEvent">Event</option>
+                                  <option value="7" class="lOfficeWork">Office Work</option>
                                   </select>
                             </div>
 
-                            
+
                         </div>
 
                         <div class="row">
@@ -1481,7 +1653,7 @@ table.dataTable td {
                             <div class="col-md-3 mb-3">
                                 <!-- <label class="fw-500 lDataPlanejada">Data Planejada</label> -->
                                 <label class="peers peer-greed  fw-500">
-                                    <span class="peer peer-greed lDataPlanejada" >Planned Date</span> 
+                                    <span class="peer peer-greed lDataPlanejada" >Planned Date</span>
                                     <span class="peer">
                                       <span class="badge badge-pill fl-r badge-success lh-0 p-10 btn-help-date-janela">?</span>
                                     </span>
@@ -1514,7 +1686,7 @@ table.dataTable td {
 
 
 
-                            
+
                         </div>
 
 
@@ -1716,6 +1888,8 @@ table.dataTable td {
                                     <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
                                     <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
                                     <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                    <option value="6" class="lEvent">Event</option>
+                                    <option value="7" class="lOfficeWork">Office Work</option>
                                     </select>
                               </div>
 
@@ -1727,7 +1901,7 @@ table.dataTable td {
                               <div class="col-md-3 mb-3">
                                   <!-- <label class="fw-500 lDataPlanejada">Data Planejada</label> -->
                                   <label class="peers peer-greed  fw-500">
-                                      <span class="peer peer-greed lDataPlanejada" >Planned Date</span> 
+                                      <span class="peer peer-greed lDataPlanejada" >Planned Date</span>
                                       <span class="peer">
                                         <span class="badge badge-pill fl-r badge-success lh-0 p-10 btn-help-date-janela">?</span>
                                       </span>
@@ -1759,7 +1933,7 @@ table.dataTable td {
                               </div>
 
 
-                              
+
                           </div>
 
 
@@ -1957,6 +2131,8 @@ table.dataTable td {
                                       <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
                                       <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
                                       <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                      <option value="6" class="lEvent">Event</option>
+                                      <option value="7" class="lOfficeWork">Office Work</option>
                                       </select>
                                 </div>
 
@@ -1968,7 +2144,7 @@ table.dataTable td {
                                 <div class="col-md-3 mb-3">
                                     <!-- <label class="fw-500 lDataPlanejada">Data Planejada</label> -->
                                     <label class="peers peer-greed  fw-500">
-                                        <span class="peer peer-greed lDataPlanejada" >Planned Date</span> 
+                                        <span class="peer peer-greed lDataPlanejada" >Planned Date</span>
                                         <span class="peer">
                                           <span class="badge badge-pill fl-r badge-success lh-0 p-10 btn-help-date-janela">?</span>
                                         </span>
@@ -1999,7 +2175,7 @@ table.dataTable td {
                                 </div>
 
 
-                                
+
                             </div>
 
                             <div class="row" id="div_add_agendamento_service_result_location5" style="display:none">
@@ -2609,7 +2785,7 @@ table.dataTable td {
                           <div class="col-md-3 mb-3">
                               <!-- <label class="fw-500 lDataPlanejada">Data Planejada</label> -->
                               <label class="peers peer-greed  fw-500">
-                                  <span class="peer peer-greed lDataPlanejada" >Planned Date</span> 
+                                  <span class="peer peer-greed lDataPlanejada" >Planned Date</span>
                                   <span class="peer">
                                     <span class="badge badge-pill fl-r badge-success lh-0 p-10 btn-help-date-janela">?</span>
                                   </span>
@@ -2822,6 +2998,10 @@ table.dataTable td {
 
 
 
+
+
+
+
                   </div>
                 </div>
               </div>
@@ -2850,7 +3030,7 @@ table.dataTable td {
                           <div class="col-md-3 mb-3">
                               <!-- <label class="fw-500 lDataPlanejada">Data Planejada</label> -->
                               <label class="peers peer-greed  fw-500">
-                                  <span class="peer peer-greed lDataPlanejada" >Planned Date</span> 
+                                  <span class="peer peer-greed lDataPlanejada" >Planned Date</span>
                                   <span class="peer">
                                     <span class="badge badge-pill fl-r badge-success lh-0 p-10 btn-help-date-janela">?</span>
                                   </span>
@@ -3090,7 +3270,7 @@ table.dataTable td {
                           <div class="col-md-3 mb-3">
                               <!-- <label class="fw-500 lDataPlanejada">Data Planejada</label> -->
                               <label class="peers peer-greed  fw-500">
-                                  <span class="peer peer-greed lDataPlanejada" >Planned Date</span> 
+                                  <span class="peer peer-greed lDataPlanejada" >Planned Date</span>
                                   <span class="peer">
                                     <span class="badge badge-pill fl-r badge-success lh-0 p-10 btn-help-date-janela">?</span>
                                   </span>
@@ -3326,7 +3506,7 @@ table.dataTable td {
                             <div class="col-md-3 mb-3">
                                 <!-- <label class="fw-500 lDataPlanejada">Data Planejada</label> -->
                                 <label class="peers peer-greed  fw-500">
-                                    <span class="peer peer-greed lDataPlanejada" >Planned Date</span> 
+                                    <span class="peer peer-greed lDataPlanejada" >Planned Date</span>
                                     <span class="peer">
                                       <span class="badge badge-pill fl-r badge-success lh-0 p-10 btn-help-date-janela">?</span>
                                     </span>
@@ -3355,7 +3535,7 @@ table.dataTable td {
                             <div class="col-md-6 mb-3" id="div_edit_agendamento_service_result_planned_hour4">
                                 <!-- <label class="fw-500 lDataPlanejada">Hora Planejada</label> -->
                                 <label class="peers peer-greed  fw-500">
-                                    <span class="peer peer-greed lDataPlanejada" >Planned Date</span> 
+                                    <span class="peer peer-greed lDataPlanejada" >Planned Date</span>
                                     <span class="peer">
                                       <span class="badge badge-pill fl-r badge-success lh-0 p-10 btn-help-date-janela">?</span>
                                     </span>
@@ -3570,7 +3750,7 @@ table.dataTable td {
                               <div class="col-md-3 mb-3">
                                   <!-- <label class="fw-500 lDataPlanejada">Data Planejada</label> -->
                                   <label class="peers peer-greed  fw-500">
-                                      <span class="peer peer-greed lDataPlanejada" >Planned Date</span> 
+                                      <span class="peer peer-greed lDataPlanejada" >Planned Date</span>
                                       <span class="peer">
                                         <span class="badge badge-pill fl-r badge-success lh-0 p-10 btn-help-date-janela">?</span>
                                       </span>
@@ -3940,7 +4120,7 @@ table.dataTable td {
                   <h5 class="m-0 lLegend">Legend</h5>
                   <button type="button" class="close" id="btn-help-date-janela-close" aria-label="Close"><span aria-hidden="false">&times;</span></button>
                 </div>
-  
+
             <div class="modal-body">
               <!-- <form> -->
                   <div class="row">
@@ -3951,64 +4131,64 @@ table.dataTable td {
                               <tr>
                                 <th class="lLegendFull">Full</th>
                                 <th class="" style="background:red"></th>
-                                
+
                               </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                   <th class="lLegendNotFull">Not Full</th>
                                   <th class="" style="background:#42B373"></th>
-                                
+
                                 </tr>
 
                                 <tr class="divlLimitDaysBeforeTraining">
                                     <th class="lLimitDaysBeforeTraining">Limit Days Before Training</th>
                                     <th class="DaysBeforeTraining"></th>
-                                
+
                                   </tr>
 
                                 <tr class="divlLimitDaysBeforeWellcomeKit">
                                     <th class="lLimitDaysBeforeWellcomeKit">Limit Days Before Wellcome Kit</th>
                                     <th class="DaysBeforeWellcomeKit"></th>
-                                
+
                                   </tr>
 
-                                  
+
 
                                     <tr class="divlLimitDaysBeforeISP">
                                         <th class="lLimitDaysBeforeISP">Limit Days Before ISP</th>
                                         <th class="DaysBeforeISP"></th>
-                                    
+
                                       </tr>
 
                                       <tr class="divlLimitDaysBeforeMerchand">
                                           <th class="lLimitDaysBeforeMerchand">Limit Days Before Merchand</th>
                                           <th class="DaysBeforeMerchand"></th>
-                                      
+
                                         </tr>
                                         <tr class="divlLimitDaysBeforeArmy">
                                             <th class="lLimitDaysBeforeArmy">Limit Days Before Army</th>
                                             <th class="DaysBeforeArmy"></th>
-                                        
+
                                           </tr>
 
                               </tbody>
 
 
-                                
-          
-                            
+
+
+
                           </table>
 
                     </div>
 
             </div>
 
-            
-            
+
+
 
           </div>
-          
+
         </div>
       </div>
 
@@ -4037,7 +4217,7 @@ table.dataTable td {
 
 
 
-      
+
     <div class="modal fade" id="cancelamento-ordem-janela" data-backdrop="static" role="dialog">
       <div class="modal-dialog modal-ls" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
         <div class="modal-content">
@@ -4048,14 +4228,14 @@ table.dataTable td {
 
           <div class="modal-body">
             <!-- <form> -->
-                
+
                   <p id="ordem_canclemaneto_text">Deseja mesmo fazer o cancelamento do Service Ordem <b>USA0001</b> </p>
 
-                
-          
 
-          
-          
+
+
+
+
 
 
         <div class="text-right ">

@@ -440,7 +440,7 @@ export default (function () {
     var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
-    if(resultado_config <= -1){
+    if((resultado_config <= -1) && (sessionStorage.Type !=3)){
       
       if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
@@ -585,7 +585,7 @@ export default (function () {
     var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
-    if(resultado_config <= -1){
+    if((resultado_config <= -1) && (sessionStorage.Type !=3)){
       if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }  
@@ -725,7 +725,7 @@ export default (function () {
     var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
-    if(resultado_config <= -1){
+    if((resultado_config <= -1) && (sessionStorage.Type !=3)){
       if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }  
@@ -866,7 +866,7 @@ export default (function () {
     var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
-    if(resultado_config <= -1){
+    if((resultado_config <= -1) && (sessionStorage.Type !=3)){
       if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }
@@ -1007,7 +1007,7 @@ export default (function () {
     var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
-    if(resultado_config <= -1){
+    if((resultado_config <= -1) && (sessionStorage.Type !=3)){
       if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }
@@ -1446,7 +1446,7 @@ $('.edit-start-date1').datepicker().on('changeDate', function(ev){
     var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
-    if(resultado_config <= -1){
+    if((resultado_config <= -1) && (sessionStorage.Type !=3)){
       if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }  
@@ -1589,7 +1589,7 @@ $('.edit-start-date2').datepicker().on('changeDate', function(ev){
     var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
-    if(resultado_config <= -1){
+    if((resultado_config <= -1) && (sessionStorage.Type !=3)){
       if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }  
@@ -1738,7 +1738,7 @@ $('.edit-start-date3').datepicker().on('changeDate', function(ev){
     var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
-    if(resultado_config <= -1){
+    if((resultado_config <= -1) && (sessionStorage.Type !=3)){
       if(sessionStorage.Pais == 'Italia'){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }  
@@ -1883,7 +1883,7 @@ $('.edit-start-date4').datepicker().on('changeDate', function(ev){
     var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
-    if(resultado_config <= -1){
+    if((resultado_config <= -1) && (sessionStorage.Type !=3)){
       if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }  
@@ -2029,7 +2029,7 @@ $('.edit-start-date5').datepicker().on('changeDate', function(ev){
     var data_atual_config = moment(new Date(), "YYYY-MM-DD").add("days", dia_service);
     var resultado_config  = moment.duration(data.diff(data_atual_config)).asDays();
     
-    if(resultado_config <= -1){
+    if((resultado_config <= -1) && (sessionStorage.Type !=3)){
       if(sessionStorage.Pais == 'Italia' ){
         alert($.i18n.prop('msg_data_config',lang) + " " + dia_service)
       }  
