@@ -526,6 +526,22 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
 
 
 
+
+
+              $("#edit_agendamento_event_city1").val(data["Event City 1"]);
+              $("#edit_agendamento_event_location1").val(data["Event Location 1"]);
+              $("#edit_agendamento_event_where_location1").val(data["Were Location 1"]);
+              $("#edit_agendamento_event_type_event1").val(data["Type Event 1"]);
+              $("#edit_agendamento_event_breeder_event_type1").val(data["Breeder Event Type 1"]);
+              $("#edit_agendamento_event_vet_event_type1").val(data["Vet Event Type 1"]);
+              $("#edit_agendamento_event_final_consumer_event_type1").val(data["Final Consumer Event Type 1"]);
+              $("#edit_agendamento_event_Business_Event1").val(data["Business Event 1"]);
+              $("#edit_agendamento_office_work1").val(data["Office Work Location 1"]);
+              $("#edit_agendamento_office_purpose_office_day1").val(data["Purpose of the office day 1"]);
+              $("#edit_agendamento_office_Explanation1").val(data["Explanation 1"]);
+
+
+
               //Profissional 2
               console.log('teste profissional 2 ' + Professional2)
               $('#edit_agendamento_busca_professional2 option[value='+Professional2+']').attr('selected','selected');
@@ -1485,7 +1501,7 @@ function PromoterServiceTypeX(promoter,value,action){
 
   $("#div_"+action+"_agendamento_service_result_event"+promoter).hide();
   $("#div_"+action+"_agendamento_service_result_office_work"+promoter).hide();
-
+  
   
   if(value==1){
     //traning
@@ -2351,6 +2367,63 @@ function formValidacaoOrdem(promoter,action){
         "Item-Welcome-Kit5"       :$("#add_agendamento_service_welcome_kit5").val(),
 
 
+        "Event-City-1"  : $("#add_agendamento_event_city1").val(),
+        "Event-City-2"  : $("#add_agendamento_event_city2").val(),
+        "Event-City-3"  : $("#add_agendamento_event_city3").val(),
+        "Event-City-4"  : $("#add_agendamento_event_city4").val(),
+        "Event-City-5"  : $("#add_agendamento_event_city5").val(),
+        "Event-Location-1"  : $("#add_agendamento_event_location1").val(),
+        "Event-Location-2"  : $("#add_agendamento_event_location2").val(),
+        "Event-Location-3"  : $("#add_agendamento_event_location3").val(),
+        "Event-Location-4"  : $("#add_agendamento_event_location4").val(),
+        "Event-Location-5"  : $("#add_agendamento_event_location5").val(),
+        "Were-Location-1" : $("#add_agendamento_event_where_location1").val(),
+        "Were-Location-2" : $("#add_agendamento_event_where_location2").val(),
+        "Were-Location-3" : $("#add_agendamento_event_where_location3").val(),
+        "Were-Location-4" : $("#add_agendamento_event_where_location4").val(),
+        "Were-Location-5" : $("#add_agendamento_event_where_location5").val(),
+        "Type-Event-1"  : $("#add_agendamento_event_type_event1").val(),
+        "Type-Event-2"  : $("#add_agendamento_event_type_event2").val(),
+        "Type-Event-3"  : $("#add_agendamento_event_type_event3").val(),
+        "Type-Event-4"  : $("#add_agendamento_event_type_event4").val(),
+        "Type-Event-5"  : $("#add_agendamento_event_type_event5").val(),
+        "Breeder-Event-Type-1"  : $("#add_agendamento_event_breeder_event_type1").val(),
+        "Breeder-Event-Type-2"  : $("#add_agendamento_event_breeder_event_type2").val(),
+        "Breeder-Event-Type-3"  : $("#add_agendamento_event_breeder_event_type3").val(),
+        "Breeder-Event-Type-4"  : $("#add_agendamento_event_breeder_event_type4").val(),
+        "Breeder-Event-Type-5"  : $("#add_agendamento_event_breeder_event_type5").val(),
+        "Vet-Event-Type-1"  : $("#add_agendamento_event_vet_event_type1").val(),
+        "Vet-Event-Type-2"  : $("#add_agendamento_event_vet_event_type2").val(),
+        "Vet-Event-Type-3"  : $("#add_agendamento_event_vet_event_type3").val(),
+        "Vet-Event-Type-4"  : $("#add_agendamento_event_vet_event_type4").val(),
+        "Vet-Event-Type-5"  : $("#add_agendamento_event_vet_event_type5").val(),
+        "Final-Consumer-Event-Type-1" : $("#add_agendamento_event_final_consumer_event_type1").val(),
+        "Final-Consumer-Event-Type-2" : $("#add_agendamento_event_final_consumer_event_type2").val(),
+        "Final-Consumer-Event-Type-3" : $("#add_agendamento_event_final_consumer_event_type3").val(),
+        "Final-Consumer-Event-Type-4" : $("#add_agendamento_event_final_consumer_event_type4").val(),
+        "Final-Consumer-Event-Type-5" : $("#add_agendamento_event_final_consumer_event_type5").val(),
+        "Business-Event-1"  : $("#add_agendamento_event_Business_Event1").val(),
+        "Business-Event-2"  : $("#add_agendamento_event_Business_Event2").val(),
+        "Business-Event-3"  : $("#add_agendamento_event_Business_Event3").val(),
+        "Business-Event-4"  : $("#add_agendamento_event_Business_Event4").val(),
+        "Business-Event-5"  : $("#add_agendamento_event_Business_Event5").val(),
+        "Office-Work-Location-1"  : $("#add_agendamento_office_work1").val(),
+        "Office-Work-Location-2"  : $("#add_agendamento_office_work2").val(),
+        "Office-Work-Location-3"  : $("#add_agendamento_office_work3").val(),
+        "Office-Work-Location-4"  : $("#add_agendamento_office_work4").val(),
+        "Office-Work-Location-5"  : $("#add_agendamento_office_work5").val(),
+        "Purpose-of-the-office-day-1" : $("#add_agendamento_office_purpose_office_day1").val(),
+        "Purpose-of-the-office-day-2" : $("#add_agendamento_office_purpose_office_day2").val(),
+        "Purpose-of-the-office-day-3" : $("#add_agendamento_office_purpose_office_day3").val(),
+        "Purpose-of-the-office-day-4" : $("#add_agendamento_office_purpose_office_day4").val(),
+        "Purpose-of-the-office-day-5" : $("#add_agendamento_office_purpose_office_day5").val(),
+        "Explanation-1" : $("#add_agendamento_office_Explanation1").val(),
+        "Explanation-2" : $("#add_agendamento_office_Explanation2").val(),
+        "Explanation-3" : $("#add_agendamento_office_Explanation3").val(),
+        "Explanation-4" : $("#add_agendamento_office_Explanation4").val(),
+        "Explanation-5" : $("#add_agendamento_office_Explanation5").val()
+
+
       }
     }
 
@@ -2604,6 +2677,67 @@ function formValidacaoOrdem(promoter,action){
             "Item-Welcome-Kit4"       :$("#edit_agendamento_service_welcome_kit4").val(),
             "Item-Welcome-Kit5"       :$("#edit_agendamento_service_welcome_kit5").val(),
 
+
+
+
+            
+            
+            "Event-City-1"  : $("#edit_agendamento_event_city1").val(),
+            "Event-City-2"  : $("#edit_agendamento_event_city2").val(),
+            "Event-City-3"  : $("#edit_agendamento_event_city3").val(),
+            "Event-City-4"  : $("#edit_agendamento_event_city4").val(),
+            "Event-City-5"  : $("#edit_agendamento_event_city5").val(),
+            "Event-Location-1"  : $("#edit_agendamento_event_location1").val(),
+            "Event-Location-2"  : $("#edit_agendamento_event_location2").val(),
+            "Event-Location-3"  : $("#edit_agendamento_event_location3").val(),
+            "Event-Location-4"  : $("#edit_agendamento_event_location4").val(),
+            "Event-Location-5"  : $("#edit_agendamento_event_location5").val(),
+            "Were-Location-1" : $("#edit_agendamento_event_where_location1").val(),
+            "Were-Location-2" : $("#edit_agendamento_event_where_location2").val(),
+            "Were-Location-3" : $("#edit_agendamento_event_where_location3").val(),
+            "Were-Location-4" : $("#edit_agendamento_event_where_location4").val(),
+            "Were-Location-5" : $("#edit_agendamento_event_where_location5").val(),
+            "Type-Event-1"  : $("#edit_agendamento_event_type_event1").val(),
+            "Type-Event-2"  : $("#edit_agendamento_event_type_event2").val(),
+            "Type-Event-3"  : $("#edit_agendamento_event_type_event3").val(),
+            "Type-Event-4"  : $("#edit_agendamento_event_type_event4").val(),
+            "Type-Event-5"  : $("#edit_agendamento_event_type_event5").val(),
+            "Breeder-Event-Type-1"  : $("#edit_agendamento_event_breeder_event_type1").val(),
+            "Breeder-Event-Type-2"  : $("#edit_agendamento_event_breeder_event_type2").val(),
+            "Breeder-Event-Type-3"  : $("#edit_agendamento_event_breeder_event_type3").val(),
+            "Breeder-Event-Type-4"  : $("#edit_agendamento_event_breeder_event_type4").val(),
+            "Breeder-Event-Type-5"  : $("#edit_agendamento_event_breeder_event_type5").val(),
+            "Vet-Event-Type-1"  : $("#edit_agendamento_event_vet_event_type1").val(),
+            "Vet-Event-Type-2"  : $("#edit_agendamento_event_vet_event_type2").val(),
+            "Vet-Event-Type-3"  : $("#edit_agendamento_event_vet_event_type3").val(),
+            "Vet-Event-Type-4"  : $("#edit_agendamento_event_vet_event_type4").val(),
+            "Vet-Event-Type-5"  : $("#edit_agendamento_event_vet_event_type5").val(),
+            "Final-Consumer-Event-Type-1" : $("#edit_agendamento_event_final_consumer_event_type1").val(),
+            "Final-Consumer-Event-Type-2" : $("#edit_agendamento_event_final_consumer_event_type2").val(),
+            "Final-Consumer-Event-Type-3" : $("#edit_agendamento_event_final_consumer_event_type3").val(),
+            "Final-Consumer-Event-Type-4" : $("#edit_agendamento_event_final_consumer_event_type4").val(),
+            "Final-Consumer-Event-Type-5" : $("#edit_agendamento_event_final_consumer_event_type5").val(),
+            "Business-Event-1"  : $("#edit_agendamento_event_Business_Event1").val(),
+            "Business-Event-2"  : $("#edit_agendamento_event_Business_Event2").val(),
+            "Business-Event-3"  : $("#edit_agendamento_event_Business_Event3").val(),
+            "Business-Event-4"  : $("#edit_agendamento_event_Business_Event4").val(),
+            "Business-Event-5"  : $("#edit_agendamento_event_Business_Event5").val(),
+            "Office-Work-Location-1"  : $("#edit_agendamento_office_work1").val(),
+            "Office-Work-Location-2"  : $("#edit_agendamento_office_work2").val(),
+            "Office-Work-Location-3"  : $("#edit_agendamento_office_work3").val(),
+            "Office-Work-Location-4"  : $("#edit_agendamento_office_work4").val(),
+            "Office-Work-Location-5"  : $("#edit_agendamento_office_work5").val(),
+            "Purpose-of-the-office-day-1" : $("#edit_agendamento_office_purpose_office_day1").val(),
+            "Purpose-of-the-office-day-2" : $("#edit_agendamento_office_purpose_office_day2").val(),
+            "Purpose-of-the-office-day-3" : $("#edit_agendamento_office_purpose_office_day3").val(),
+            "Purpose-of-the-office-day-4" : $("#edit_agendamento_office_purpose_office_day4").val(),
+            "Purpose-of-the-office-day-5" : $("#edit_agendamento_office_purpose_office_day5").val(),
+            "Explanation-1" : $("#edit_agendamento_office_Explanation1").val(),
+            "Explanation-2" : $("#edit_agendamento_office_Explanation2").val(),
+            "Explanation-3" : $("#edit_agendamento_office_Explanation3").val(),
+            "Explanation-4" : $("#edit_agendamento_office_Explanation4").val(),
+            "Explanation-5" : $("#edit_agendamento_office_Explanation5").val()
+
           }
         }
 
@@ -2823,6 +2957,10 @@ function formValidacaoOrdem(promoter,action){
   $("#div_add_agendamento_service_many_meters1").hide();
   $("#div_add_agendamento_service_result_army_specific_store1").hide();
   $("#div_add_agendamento_service_result_planned_hour1").show();
+  
+  $("#div_add_agendamento_service_result_event1").hide();
+  $("#div_add_agendamento_service_result_office_work1").hide();
+
 
 
   $('#add_agendamento_planned_start_time1').attr('disabled',true)
@@ -3472,7 +3610,17 @@ $(".btn-help-date-janela").click(function(){
     $('.divlLimitDaysBeforeISP').hide();
     $('.divlLimitDaysBeforeMerchand').hide();
     $('.divlLimitDaysBeforeArmy').hide();
-   } 
+   }
+   
+   
+   if ((sessionStorage.Country == "IT" && sessionStorage.Type == 3)){
+   $('.DaysBeforeWellcomeKit').text(0)
+   $('.DaysBeforeTraining').text(0)
+   $('.DaysBeforeISP').text(0)
+   $('.DaysBeforeMerchand').text(0)
+   $('.DaysBeforeArmy').text(0)
+   
+   }
    
 
 })

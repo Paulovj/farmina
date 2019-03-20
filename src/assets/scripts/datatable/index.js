@@ -130,6 +130,10 @@ function formatHora(date) {
           Service_TypeX =  'Merchandising';
         }else if(value==5){
           Service_TypeX =  'Army';
+        }else if(value==6){
+          Service_TypeX =  'Event';
+        }else if(value==7){
+          Service_TypeX =  'Office Work';
         }
         return Service_TypeX
   }
@@ -956,6 +960,14 @@ function formatHora(date) {
                 }
                 if (Service_type==2 ){
                   textoService = $.i18n.prop('lEnviarFotoWelcomeKit',lang);
+                }
+
+                if (Service_type==6 ){
+                  textoService = $.i18n.prop('lEnviarFotoEvent',lang);
+                }
+
+                if (Service_type==7 ){
+                  textoService = $.i18n.prop('lEnviarFotoOfficeWork',lang);
                 }
                 
                 $('#photo_service_invoice_line_no').val(Service_Invoice_Line_No);
@@ -2193,6 +2205,16 @@ var chamaFinaliza = function(){
           //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
           maxImg = 5
         }
+
+        if (service_type==6 ){
+          //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
+          maxImg = 5
+        }
+
+        if (service_type==7 ){
+          //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
+          maxImg = 5
+        }
         $("#fileimagemUpload").show();
         if (service_type !=2){
           if (result.length > 0){
@@ -2241,6 +2263,16 @@ var chamaFinaliza = function(){
             //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
             maxImg = 5
           }
+
+          if (service_type==6 ){
+            //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
+            maxImg = 5
+          }
+  
+          if (service_type==7 ){
+            //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
+            maxImg = 5
+          }
             
           if (service_type ==4){
             $("#fileimagemUpload").hide();
@@ -2285,6 +2317,17 @@ var chamaFinaliza = function(){
                 maxImg = 10
               }
               if (service_type==5 ){
+                //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
+                maxImg = 5
+              }
+
+
+              if (service_type==6 ){
+                //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
+                maxImg = 5
+              }
+      
+              if (service_type==7 ){
                 //$("#btn_save_photo").html($.i18n.prop('lEnviarFotoArmy',lang));
                 maxImg = 5
               }
