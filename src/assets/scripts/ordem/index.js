@@ -2189,6 +2189,103 @@ function formValidacaoOrdem(promoter,action){
 
 
   }
+
+
+
+  if(service_type1 == 6){
+    var event_city            = $('#'+action+'_agendamento_event_city'+promoter).val();
+    var event_location        = $('#'+action+'_agendamento_event_location'+promoter).val();
+    var event_where_location  = $('#'+action+'_agendamento_event_where_location'+promoter).val();
+    var event_type_event      = $('#'+action+'_agendamento_event_type_event'+promoter).val();
+    
+    if(event_city == ""){
+      texto += $.i18n.prop('lEventCity',lang)+ ' ' + promoter +'<br>';//"For a specific store "+ promoter +" " +
+      valida = false
+    }
+
+    if(event_location == 0){
+      texto += $.i18n.prop('lEventLocation',lang)+ ' ' + promoter +'<br>';
+      valida = false
+    }
+
+    if(event_location == 6){
+      if(event_where_location == ""){
+        texto += $.i18n.prop('lWhereLocation',lang) + '<br>';
+        valida = false
+      }
+    }
+
+    if(event_type_event == 0){
+      texto += $.i18n.prop('lTypeEvent',lang)+ ' ' + promoter +'<br>';
+      valida = false
+    }
+
+    var event_breeder = $('#'+action+'_agendamento_event_breeder_event_type'+promoter).val();
+    var event_vet     = $('#'+action+'_agendamento_event_vet_event_type'+promoter).val();
+    var event_final   = $('#'+action+'_agendamento_event_final_consumer_event_type'+promoter).val();
+    var event_business= $('#'+action+'_agendamento_event_Business_Event'+promoter).val();
+
+    if(event_type_event == 1){
+      if(event_breeder == 0){
+        texto += $.i18n.prop('lBreederEventType',lang) + '<br>';
+        valida = false
+      }
+    }
+
+    if(event_type_event == 2){
+      if(event_vet == 0){
+        texto += $.i18n.prop('lVerEventType',lang) + '<br>';
+        valida = false
+      }
+    }
+
+    if(event_type_event == 3){
+      if(event_final == 0){
+        texto += $.i18n.prop('lFinalConsumerEventType',lang) + '<br>';
+        valida = false
+      }
+    }
+
+
+    if(event_type_event == 4){
+      if(event_business == 0){
+        texto += $.i18n.prop('lBusinessEvent',lang) + '<br>';
+        valida = false
+      }
+    }
+
+
+
+
+  }
+
+
+  
+  if(service_type1 == 7){
+    var workt_office      = $('#'+action+'_agendamento_office_work1'+promoter).val();
+    var work_purpose      = $('#'+action+'_agendamento_office_purpose_office_day'+promoter).val();
+    var work_Explanation  = $('#'+action+'_agendamento_office_Explanation'+promoter).val();
+    
+    
+    if(workt_office == 0){
+      texto += $.i18n.prop('lEventCity',lang)+ ' ' + promoter +'<br>';//"For a specific store "+ promoter +" " +
+      valida = false
+    }
+
+    if(work_purpose == 0){
+      texto += $.i18n.prop('lEventLocation',lang)+ ' ' + promoter +'<br>';//"For a specific store "+ promoter +" " +
+      valida = false
+    }
+    
+    if(work_Explanation == ""){
+      texto += $.i18n.prop('lTypeEvent',lang)+ ' ' + promoter +'<br>';//"For a specific store "+ promoter +" " +
+      valida = false
+    }
+
+
+  }
+
+
   if(valida == false){
     $.notify({
       title: $.i18n.prop('lAttentionMandatory',lang),
