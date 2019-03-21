@@ -1701,6 +1701,7 @@ $("#btn_finish_booking").click(function(){
   
   
   var finish_event_people   = $('#finish_no_people_event').val();
+  var finish_no_vets_contacts  = $('#finish_no_vets_contacts').val();
   var finish_event_breeder  = $('#finish_no_breeder_contacts_event').val();
   var finish_event_buyers   = $('#finish_no_buyers_retilers_event').val();
   var finish_event_final    = $('#finish_no_final_consumer_event').val();
@@ -1769,6 +1770,9 @@ $("#btn_finish_booking").click(function(){
       "Location-Activity":((!finish_location_activity)? '': finish_location_activity),
       "People-Particpe":((!finish_people_participe)? '': finish_people_participe),
 
+        
+  
+
       "Event-People-Event": ((!finish_event_people)? '': finish_event_people) ,
       "Event-Vets-Contact": ((!finish_no_vets_contacts)? '': finish_no_vets_contacts),
       "Event-Breeder-Contact": ((!finish_event_breeder)? '': finish_event_breeder),
@@ -1804,7 +1808,7 @@ $("#btn_finish_booking").click(function(){
       var result = result.result[0] ;
       console.log('Enmtroou no formmmmmm')
       console.log(result)
-    // $("#btn_finish_booking_upload").attr("code",result['Service-Invoice-No_']);
+      // $("#btn_finish_booking_upload").attr("code",result['Service-Invoice-No_']);
     $('#finish_question_Isp').hide();
     $('#finish_question_Kit').hide();
     $('#finish_question_trainning').hide();
@@ -1856,6 +1860,9 @@ $("#btn_finish_booking").click(function(){
 
     if(result['Service Type'] == 6){
       $('#finish_question_event').show();
+      }
+
+    if(result['Service Type'] == 7){
       $('#finish_question_work').show();
     }
 
