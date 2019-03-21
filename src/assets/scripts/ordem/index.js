@@ -608,7 +608,24 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
                     $('input[name="edit_agendamento_service_result2"]').attr("disabled",true);
                     
                   })  
-                }    
+                }
+                
+                
+
+
+
+              $("#edit_agendamento_event_city2").val(data["Event City 2"]);
+              $("#edit_agendamento_event_location2").val(data["Event Location 2"]);
+              $("#edit_agendamento_event_where_location2").val(data["Were Location 2"]);
+              $("#edit_agendamento_event_type_event2").val(data["Type Event 2"]);
+              $("#edit_agendamento_event_breeder_event_type2").val(data["Breeder Event Type 2"]);
+              $("#edit_agendamento_event_vet_event_type2").val(data["Vet Event Type 2"]);
+              $("#edit_agendamento_event_final_consumer_event_type2").val(data["Final Consumer Event Type 2"]);
+              $("#edit_agendamento_event_Business_Event2").val(data["Business Event 2"]);
+              $("#edit_agendamento_office_work2").val(data["Office Work Location 2"]);
+              $("#edit_agendamento_office_purpose_office_day2").val(data["Purpose of the office day 2"]);
+              $("#edit_agendamento_office_Explanation2").val(data["Explanation 2"]);
+
 
               //Profissional 3
               console.log('teste profissional 3 ' + Professional3)
@@ -676,6 +693,18 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
               $('#edit_agendamento_location_activity_training3').val(data['Training Location 3']);
 
 
+              $("#edit_agendamento_event_city3").val(data["Event City 3"]);
+              $("#edit_agendamento_event_location3").val(data["Event Location 3"]);
+              $("#edit_agendamento_event_where_location3").val(data["Were Location 3"]);
+              $("#edit_agendamento_event_type_event3").val(data["Type Event 3"]);
+              $("#edit_agendamento_event_breeder_event_type3").val(data["Breeder Event Type 3"]);
+              $("#edit_agendamento_event_vet_event_type3").val(data["Vet Event Type 3"]);
+              $("#edit_agendamento_event_final_consumer_event_type3").val(data["Final Consumer Event Type 3"]);
+              $("#edit_agendamento_event_Business_Event3").val(data["Business Event 3"]);
+              $("#edit_agendamento_office_work3").val(data["Office Work Location 3"]);
+              $("#edit_agendamento_office_purpose_office_day3").val(data["Purpose of the office day 3"]);
+              $("#edit_agendamento_office_Explanation3").val(data["Explanation 3"]);
+
 
               //Profissional 4
               console.log('teste profissional' + Professional4)
@@ -740,7 +769,17 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
 
               $('#edit_agendamento_location_activity_training4').val(data['Training Location 4']);
 
-
+              $("#edit_agendamento_event_city4").val(data["Event City 4"]);
+              $("#edit_agendamento_event_location4").val(data["Event Location 4"]);
+              $("#edit_agendamento_event_where_location4").val(data["Were Location 4"]);
+              $("#edit_agendamento_event_type_event4").val(data["Type Event 4"]);
+              $("#edit_agendamento_event_breeder_event_type4").val(data["Breeder Event Type 4"]);
+              $("#edit_agendamento_event_vet_event_type4").val(data["Vet Event Type 4"]);
+              $("#edit_agendamento_event_final_consumer_event_type4").val(data["Final Consumer Event Type 4"]);
+              $("#edit_agendamento_event_Business_Event4").val(data["Business Event 4"]);
+              $("#edit_agendamento_office_work4").val(data["Office Work Location 4"]);
+              $("#edit_agendamento_office_purpose_office_day4").val(data["Purpose of the office day 4"]);
+              $("#edit_agendamento_office_Explanation4").val(data["Explanation 4"]);
 
               //Profissional 5
               console.log('teste profissional' + Professional5)
@@ -807,6 +846,18 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
 
               $('#edit_agendamento_location_activity_training5').val(data['Training Location 5']);
 
+              $("#edit_agendamento_event_city5").val(data["Event City 5"]);
+              $("#edit_agendamento_event_location5").val(data["Event Location 5"]);
+              $("#edit_agendamento_event_where_location5").val(data["Were Location 5"]);
+              $("#edit_agendamento_event_type_event5").val(data["Type Event 5"]);
+              $("#edit_agendamento_event_breeder_event_type5").val(data["Breeder Event Type 5"]);
+              $("#edit_agendamento_event_vet_event_type5").val(data["Vet Event Type 5"]);
+              $("#edit_agendamento_event_final_consumer_event_type5").val(data["Final Consumer Event Type 5"]);
+              $("#edit_agendamento_event_Business_Event5").val(data["Business Event 5"]);
+              $("#edit_agendamento_office_work5").val(data["Office Work Location 5"]);
+              $("#edit_agendamento_office_purpose_office_day5").val(data["Purpose of the office day 5"]);
+              $("#edit_agendamento_office_Explanation5").val(data["Explanation 5"]);
+
 
 
                 }
@@ -856,6 +907,9 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
 
               $('#edit_agendamento_location_activity_training1').val(data['Training Location 1']);
 
+
+
+
               
 
 
@@ -886,6 +940,19 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
               // if(ServicetypeResult1 != ""){
               //   $('#edit_agendamento_service_result1 option[value='+ServicetypeResult1+']').attr('selected','selected');
               // }
+
+              $("#edit_agendamento_event_city1").val(data["Event City 1"]);
+                $("#edit_agendamento_event_location1").val(data["Event Location 1"]);
+                $("#edit_agendamento_event_where_location1").val(data["Were Location 1"]);
+                $("#edit_agendamento_event_type_event1").val(data["Type Event 1"]);
+                $("#edit_agendamento_event_breeder_event_type1").val(data["Breeder Event Type 1"]);
+                $("#edit_agendamento_event_vet_event_type1").val(data["Vet Event Type 1"]);
+                $("#edit_agendamento_event_final_consumer_event_type1").val(data["Final Consumer Event Type 1"]);
+                $("#edit_agendamento_event_Business_Event1").val(data["Business Event 1"]);
+                $("#edit_agendamento_office_work1").val(data["Office Work Location 1"]);
+                $("#edit_agendamento_office_purpose_office_day1").val(data["Purpose of the office day 1"]);
+                $("#edit_agendamento_office_Explanation1").val(data["Explanation 1"]);
+
 
               //Profissional 2
               console.log('teste profissional 2 ' + Professional2)
@@ -947,6 +1014,19 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
                   $('input[name="edit_agendamento_service_result2"]').attr("disabled",true);
                 })  
               }  
+
+
+              $("#edit_agendamento_event_city2").val(data["Event City 2"]);
+              $("#edit_agendamento_event_location2").val(data["Event Location 2"]);
+              $("#edit_agendamento_event_where_location2").val(data["Were Location 2"]);
+              $("#edit_agendamento_event_type_event2").val(data["Type Event 2"]);
+              $("#edit_agendamento_event_breeder_event_type2").val(data["Breeder Event Type 2"]);
+              $("#edit_agendamento_event_vet_event_type2").val(data["Vet Event Type 2"]);
+              $("#edit_agendamento_event_final_consumer_event_type2").val(data["Final Consumer Event Type 2"]);
+              $("#edit_agendamento_event_Business_Event2").val(data["Business Event 2"]);
+              $("#edit_agendamento_office_work2").val(data["Office Work Location 2"]);
+              $("#edit_agendamento_office_purpose_office_day2").val(data["Purpose of the office day 2"]);
+              $("#edit_agendamento_office_Explanation2").val(data["Explanation 2"]);
 
               //Profissional 3
               console.log('teste profissional 3 ' + Professional3)
@@ -1012,6 +1092,17 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
                 })  
               }  
 
+              $("#edit_agendamento_event_city3").val(data["Event City 3"]);
+              $("#edit_agendamento_event_location3").val(data["Event Location 3"]);
+              $("#edit_agendamento_event_where_location3").val(data["Were Location 3"]);
+              $("#edit_agendamento_event_type_event3").val(data["Type Event 3"]);
+              $("#edit_agendamento_event_breeder_event_type3").val(data["Breeder Event Type 3"]);
+              $("#edit_agendamento_event_vet_event_type3").val(data["Vet Event Type 3"]);
+              $("#edit_agendamento_event_final_consumer_event_type3").val(data["Final Consumer Event Type 3"]);
+              $("#edit_agendamento_event_Business_Event3").val(data["Business Event 3"]);
+              $("#edit_agendamento_office_work3").val(data["Office Work Location 3"]);
+              $("#edit_agendamento_office_purpose_office_day3").val(data["Purpose of the office day 3"]);
+              $("#edit_agendamento_office_Explanation3").val(data["Explanation 3"]);
 
 
               //Profissional 4
@@ -1076,6 +1167,19 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
               }  
 
 
+              $("#edit_agendamento_event_city4").val(data["Event City 4"]);
+              $("#edit_agendamento_event_location4").val(data["Event Location 4"]);
+              $("#edit_agendamento_event_where_location4").val(data["Were Location 4"]);
+              $("#edit_agendamento_event_type_event4").val(data["Type Event 4"]);
+              $("#edit_agendamento_event_breeder_event_type4").val(data["Breeder Event Type 4"]);
+              $("#edit_agendamento_event_vet_event_type4").val(data["Vet Event Type 4"]);
+              $("#edit_agendamento_event_final_consumer_event_type4").val(data["Final Consumer Event Type 4"]);
+              $("#edit_agendamento_event_Business_Event4").val(data["Business Event 4"]);
+              $("#edit_agendamento_office_work4").val(data["Office Work Location 4"]);
+              $("#edit_agendamento_office_purpose_office_day4").val(data["Purpose of the office day 4"]);
+              $("#edit_agendamento_office_Explanation4").val(data["Explanation 4"]);
+
+
               //Profissional 5
               console.log('teste profissional' + Professional5)
               $('#edit_agendamento_busca_professional5 option[value='+Professional5+']').attr('selected','selected');
@@ -1137,6 +1241,19 @@ $('#btn_confirm_ordem_cancelamento').click(function(){
                   $('input[name="edit_agendamento_service_result5"]').attr("disabled",true);
                 })  
               }  
+
+              $("#edit_agendamento_event_city5").val(data["Event City 5"]);
+              $("#edit_agendamento_event_location5").val(data["Event Location 5"]);
+              $("#edit_agendamento_event_where_location5").val(data["Were Location 5"]);
+              $("#edit_agendamento_event_type_event5").val(data["Type Event 5"]);
+              $("#edit_agendamento_event_breeder_event_type5").val(data["Breeder Event Type 5"]);
+              $("#edit_agendamento_event_vet_event_type5").val(data["Vet Event Type 5"]);
+              $("#edit_agendamento_event_final_consumer_event_type5").val(data["Final Consumer Event Type 5"]);
+              $("#edit_agendamento_event_Business_Event5").val(data["Business Event 5"]);
+              $("#edit_agendamento_office_work5").val(data["Office Work Location 5"]);
+              $("#edit_agendamento_office_purpose_office_day5").val(data["Purpose of the office day 5"]);
+              $("#edit_agendamento_office_Explanation5").val(data["Explanation 5"]);
+                  
 
             }
             $('#edit-agendamento').modal('toggle');
@@ -3067,6 +3184,90 @@ function formValidacaoOrdem(promoter,action){
     $('#add_agendamento_line_slow_comments5').val('')
     $('#div_add_agendamento_service_result5').val('0')
 
+
+
+    $("#add_agendamento_event_where_location1").val("");
+    $("#div_add_agendamento_service_result_event_where_location1").hide();
+    $("#add_agendamento_event_where_location2").val("");
+    $("#div_add_agendamento_service_result_event_where_location2").hide();
+    $("#add_agendamento_event_where_location3").val("");
+    $("#div_add_agendamento_service_result_event_where_location3").hide();
+    $("#add_agendamento_event_where_location4").val("");
+    $("#div_add_agendamento_service_result_event_where_location4").hide();
+    $("#add_agendamento_event_where_location5").val("");
+    $("#div_add_agendamento_service_result_event_where_location5").hide();
+
+    $("#add_agendamento_event_breeder_event_type1").val(0);
+    $("#div_add_agendamento_service_result_event_breeder1").hide();
+    $("#add_agendamento_event_vet_event_type1").val(0);
+    $("#div_add_agendamento_service_result_event_vet1").hide();
+    $("#add_agendamento_event_final_consumer_event_type1").val(0);
+    $("#div_add_agendamento_service_result_event_final1").hide();
+    $("#add_agendamento_event_Business_Event1").val(0);
+    $("#div_add_agendamento_service_result_event_business1").hide();
+
+
+    $("#add_agendamento_event_breeder_event_type2").val(0);
+    $("#div_add_agendamento_service_result_event_breeder2").hide();
+    $("#add_agendamento_event_vet_event_type2").val(0);
+    $("#div_add_agendamento_service_result_event_vet2").hide();
+    $("#add_agendamento_event_final_consumer_event_type2").val(0);
+    $("#div_add_agendamento_service_result_event_final2").hide();
+    $("#add_agendamento_event_Business_Event2").val(0);
+    $("#div_add_agendamento_service_result_event_business2").hide();
+
+
+    $("#add_agendamento_event_breeder_event_type3").val(0);
+    $("#div_add_agendamento_service_result_event_breeder3").hide();
+    $("#add_agendamento_event_vet_event_type3").val(0);
+    $("#div_add_agendamento_service_result_event_vet3").hide();
+    $("#add_agendamento_event_final_consumer_event_type3").val(0);
+    $("#div_add_agendamento_service_result_event_final3").hide();
+    $("#add_agendamento_event_Business_Event3").val(0);
+    $("#div_add_agendamento_service_result_event_business3").hide();
+
+
+    $("#add_agendamento_event_breeder_event_type4").val(0);
+    $("#div_add_agendamento_service_result_event_breeder4").hide();
+    $("#add_agendamento_event_vet_event_type4").val(0);
+    $("#div_add_agendamento_service_result_event_vet4").hide();
+    $("#add_agendamento_event_final_consumer_event_type4").val(0);
+    $("#div_add_agendamento_service_result_event_final4").hide();
+    $("#add_agendamento_event_Business_Event4").val(0);
+    $("#div_add_agendamento_service_result_event_business4").hide();
+
+
+    $("#add_agendamento_event_breeder_event_type5").val(0);
+    $("#div_add_agendamento_service_result_event_breeder5").hide();
+    $("#add_agendamento_event_vet_event_type5").val(0);
+    $("#div_add_agendamento_service_result_event_vet5").hide();
+    $("#add_agendamento_event_final_consumer_event_type5").val(0);
+    $("#div_add_agendamento_service_result_event_final5").hide();
+    $("#add_agendamento_event_Business_Event5").val(0);
+    $("#div_add_agendamento_service_result_event_business5").hide();
+
+
+    $("#div_add_agendamento_service_result_event1").hide();
+    $("#div_add_agendamento_service_result_office_work1").hide();
+    $("#div_add_agendamento_service_result_event2").hide();
+    $("#div_add_agendamento_service_result_office_work2").hide();
+    $("#div_add_agendamento_service_result_event3").hide();
+    $("#div_add_agendamento_service_result_office_work3").hide();
+    $("#div_add_agendamento_service_result_event4").hide();
+    $("#div_add_agendamento_service_result_office_work4").hide();
+    $("#div_add_agendamento_service_result_event5").hide();
+    $("#div_add_agendamento_service_result_office_work5").hide();
+
+  
+
+
+
+
+
+
+    
+    
+
   }
 
  
@@ -3629,6 +3830,404 @@ $(".btn-help-date-janela").click(function(){
 $("#btn-help-date-janela-close").click(function(){
    $('#help-date-janela').hide('slow');  
 })
+
+
+
+
+  $("#add_agendamento_event_location1").change(function(){
+    var value = $(this).val();
+    $("#add_agendamento_event_where_location1").val("");
+    $("#div_add_agendamento_service_result_event_where_location1").hide();
+    
+    if(value == 6 ){
+      $("#div_add_agendamento_service_result_event_where_location1").show();
+    }else{
+      $("#div_add_agendamento_service_result_event_where_location1").hide();
+    }
+
+  });
+
+  $("#add_agendamento_event_location2").change(function(){
+    var value = $(this).val();
+    $("#add_agendamento_event_where_location2").val("");
+    $("#div_add_agendamento_service_result_event_where_location2").hide();
+    
+    if(value == 6 ){
+      $("#div_add_agendamento_service_result_event_where_location2").show();
+    }else{
+      $("#div_add_agendamento_service_result_event_where_location2").hide();
+    }
+
+  });
+
+  $("#add_agendamento_event_location3").change(function(){
+    var value = $(this).val();
+    $("#add_agendamento_event_where_location3").val("");
+    $("#div_add_agendamento_service_result_event_where_location3").hide();
+    
+    if(value == 6 ){
+      $("#div_add_agendamento_service_result_event_where_location3").show();
+    }else{
+      $("#div_add_agendamento_service_result_event_where_location3").hide();
+    }
+
+  });
+
+  $("#add_agendamento_event_location4").change(function(){
+    var value = $(this).val();
+    $("#add_agendamento_event_where_location4").val("");
+    $("#div_add_agendamento_service_result_event_where_location4").hide();
+    
+    if(value == 6 ){
+      $("#div_add_agendamento_service_result_event_where_location4").show();
+    }else{
+      $("#div_add_agendamento_service_result_event_where_location4").hide();
+    }
+
+  });
+
+  $("#add_agendamento_event_location5").change(function(){
+    var value = $(this).val();
+    $("#add_agendamento_event_where_location5").val("");
+    $("#div_add_agendamento_service_result_event_where_location5").hide();
+    
+    if(value == 6 ){
+      $("#div_add_agendamento_service_result_event_where_location5").show();
+    }else{
+      $("#div_add_agendamento_service_result_event_where_location5").hide();
+    }
+
+  });
+
+
+
+
+
+  $("#add_agendamento_event_type_event1").change(function(){
+    var value = $(this).val();
+
+    $("#add_agendamento_event_breeder_event_type1").val(0);
+    $("#div_add_agendamento_service_result_event_breeder1").hide();
+    $("#add_agendamento_event_vet_event_type1").val(0);
+    $("#div_add_agendamento_service_result_event_vet1").hide();
+    $("#add_agendamento_event_final_consumer_event_type1").val(0);
+    $("#div_add_agendamento_service_result_event_final1").hide();
+    $("#add_agendamento_event_Business_Event1").val(0);
+    $("#div_add_agendamento_service_result_event_business1").hide();
+    
+    if(value == 1 ){
+      $("#div_add_agendamento_service_result_event_breeder1").show();
+    }else if(value == 2){
+      $("#div_add_agendamento_service_result_event_vet1").show();
+    }else if(value == 3){
+      $("#div_add_agendamento_service_result_event_final1").show();
+    }else if(value == 4){
+      $("#div_add_agendamento_service_result_event_business1").show();
+    }
+
+  });
+
+
+  $("#add_agendamento_event_type_event2").change(function(){
+    var value = $(this).val();
+
+    $("#add_agendamento_event_breeder_event_type2").val(0);
+    $("#div_add_agendamento_service_result_event_breeder2").hide();
+    $("#add_agendamento_event_vet_event_type2").val(0);
+    $("#div_add_agendamento_service_result_event_vet2").hide();
+    $("#add_agendamento_event_final_consumer_event_type2").val(0);
+    $("#div_add_agendamento_service_result_event_final2").hide();
+    $("#add_agendamento_event_Business_Event2").val(0);
+    $("#div_add_agendamento_service_result_event_business2").hide();
+    
+    if(value == 1 ){
+      $("#div_add_agendamento_service_result_event_breeder2").show();
+    }else if(value == 2){
+      $("#div_add_agendamento_service_result_event_vet2").show();
+    }else if(value == 3){
+      $("#div_add_agendamento_service_result_event_final2").show();
+    }else if(value == 4){
+      $("#div_add_agendamento_service_result_event_business2").show();
+    }
+
+  });
+
+
+
+  $("#add_agendamento_event_type_event3").change(function(){
+    var value = $(this).val();
+
+    $("#add_agendamento_event_breeder_event_type3").val(0);
+    $("#div_add_agendamento_service_result_event_breeder3").hide();
+    $("#add_agendamento_event_vet_event_type3").val(0);
+    $("#div_add_agendamento_service_result_event_vet3").hide();
+    $("#add_agendamento_event_final_consumer_event_type3").val(0);
+    $("#div_add_agendamento_service_result_event_final3").hide();
+    $("#add_agendamento_event_Business_Event3").val(0);
+    $("#div_add_agendamento_service_result_event_business3").hide();
+    
+    if(value == 1 ){
+      $("#div_add_agendamento_service_result_event_breeder3").show();
+    }else if(value == 2){
+      $("#div_add_agendamento_service_result_event_vet3").show();
+    }else if(value == 3){
+      $("#div_add_agendamento_service_result_event_final3").show();
+    }else if(value == 4){
+      $("#div_add_agendamento_service_result_event_business3").show();
+    }
+
+  });
+
+
+  $("#add_agendamento_event_type_event4").change(function(){
+    var value = $(this).val();
+
+    $("#add_agendamento_event_breeder_event_type4").val(0);
+    $("#div_add_agendamento_service_result_event_breeder4").hide();
+    $("#add_agendamento_event_vet_event_type4").val(0);
+    $("#div_add_agendamento_service_result_event_vet4").hide();
+    $("#add_agendamento_event_final_consumer_event_type4").val(0);
+    $("#div_add_agendamento_service_result_event_final4").hide();
+    $("#add_agendamento_event_Business_Event4").val(0);
+    $("#div_add_agendamento_service_result_event_business4").hide();
+    
+    if(value == 1 ){
+      $("#div_add_agendamento_service_result_event_breeder4").show();
+    }else if(value == 2){
+      $("#div_add_agendamento_service_result_event_vet4").show();
+    }else if(value == 3){
+      $("#div_add_agendamento_service_result_event_final4").show();
+    }else if(value == 4){
+      $("#div_add_agendamento_service_result_event_business4").show();
+    }
+
+  });
+
+
+  $("#add_agendamento_event_type_event5").change(function(){
+    var value = $(this).val();
+
+    $("#add_agendamento_event_breeder_event_type5").val(0);
+    $("#div_add_agendamento_service_result_event_breeder5").hide();
+    $("#add_agendamento_event_vet_event_type5").val(0);
+    $("#div_add_agendamento_service_result_event_vet5").hide();
+    $("#add_agendamento_event_final_consumer_event_type5").val(0);
+    $("#div_add_agendamento_service_result_event_final5").hide();
+    $("#add_agendamento_event_Business_Event5").val(0);
+    $("#div_add_agendamento_service_result_event_business5").hide();
+    
+    if(value == 1 ){
+      $("#div_add_agendamento_service_result_event_breeder5").show();
+    }else if(value == 2){
+      $("#div_add_agendamento_service_result_event_vet5").show();
+    }else if(value == 3){
+      $("#div_add_agendamento_service_result_event_final5").show();
+    }else if(value == 4){
+      $("#div_add_agendamento_service_result_event_business5").show();
+    }
+
+  });
+
+/***************************************************************************** */
+
+
+
+
+$("#edit_agendamento_event_location1").change(function(){
+  var value = $(this).val();
+  $("#edit_agendamento_event_where_location1").val("");
+  $("#div_edit_agendamento_service_result_event_where_location1").hide();
+  
+  if(value == 6 ){
+    $("#div_edit_agendamento_service_result_event_where_location1").show();
+  }else{
+    $("#div_edit_agendamento_service_result_event_where_location1").hide();
+  }
+
+});
+
+$("#edit_agendamento_event_location2").change(function(){
+  var value = $(this).val();
+  $("#edit_agendamento_event_where_location2").val("");
+  $("#div_edit_agendamento_service_result_event_where_location2").hide();
+  
+  if(value == 6 ){
+    $("#div_edit_agendamento_service_result_event_where_location2").show();
+  }else{
+    $("#div_edit_agendamento_service_result_event_where_location2").hide();
+  }
+
+});
+
+$("#edit_agendamento_event_location3").change(function(){
+  var value = $(this).val();
+  $("#edit_agendamento_event_where_location3").val("");
+  $("#div_edit_agendamento_service_result_event_where_location3").hide();
+  
+  if(value == 6 ){
+    $("#div_edit_agendamento_service_result_event_where_location3").show();
+  }else{
+    $("#div_edit_agendamento_service_result_event_where_location3").hide();
+  }
+
+});
+
+$("#edit_agendamento_event_location4").change(function(){
+  var value = $(this).val();
+  $("#edit_agendamento_event_where_location4").val("");
+  $("#div_edit_agendamento_service_result_event_where_location4").hide();
+  
+  if(value == 6 ){
+    $("#div_edit_agendamento_service_result_event_where_location4").show();
+  }else{
+    $("#div_edit_agendamento_service_result_event_where_location4").hide();
+  }
+
+});
+
+$("#edit_agendamento_event_location5").change(function(){
+  var value = $(this).val();
+  $("#edit_agendamento_event_where_location5").val("");
+  $("#div_edit_agendamento_service_result_event_where_location5").hide();
+  
+  if(value == 6 ){
+    $("#div_edit_agendamento_service_result_event_where_location5").show();
+  }else{
+    $("#div_edit_agendamento_service_result_event_where_location5").hide();
+  }
+
+});
+
+
+
+
+
+$("#edit_agendamento_event_type_event1").change(function(){
+  var value = $(this).val();
+
+  $("#edit_agendamento_event_breeder_event_type1").val(0);
+  $("#div_edit_agendamento_service_result_event_breeder1").hide();
+  $("#edit_agendamento_event_vet_event_type1").val(0);
+  $("#div_edit_agendamento_service_result_event_vet1").hide();
+  $("#edit_agendamento_event_final_consumer_event_type1").val(0);
+  $("#div_edit_agendamento_service_result_event_final1").hide();
+  $("#edit_agendamento_event_Business_Event1").val(0);
+  $("#div_edit_agendamento_service_result_event_business1").hide();
+  
+  if(value == 1 ){
+    $("#div_edit_agendamento_service_result_event_breeder1").show();
+  }else if(value == 2){
+    $("#div_edit_agendamento_service_result_event_vet1").show();
+  }else if(value == 3){
+    $("#div_edit_agendamento_service_result_event_final1").show();
+  }else if(value == 4){
+    $("#div_edit_agendamento_service_result_event_business1").show();
+  }
+
+});
+
+
+$("#edit_agendamento_event_type_event2").change(function(){
+  var value = $(this).val();
+
+  $("#edit_agendamento_event_breeder_event_type2").val(0);
+  $("#div_edit_agendamento_service_result_event_breeder2").hide();
+  $("#edit_agendamento_event_vet_event_type2").val(0);
+  $("#div_edit_agendamento_service_result_event_vet2").hide();
+  $("#edit_agendamento_event_final_consumer_event_type2").val(0);
+  $("#div_edit_agendamento_service_result_event_final2").hide();
+  $("#edit_agendamento_event_Business_Event2").val(0);
+  $("#div_edit_agendamento_service_result_event_business2").hide();
+  
+  if(value == 1 ){
+    $("#div_edit_agendamento_service_result_event_breeder2").show();
+  }else if(value == 2){
+    $("#div_edit_agendamento_service_result_event_vet2").show();
+  }else if(value == 3){
+    $("#div_edit_agendamento_service_result_event_final2").show();
+  }else if(value == 4){
+    $("#div_edit_agendamento_service_result_event_business2").show();
+  }
+
+});
+
+
+
+$("#edit_agendamento_event_type_event3").change(function(){
+  var value = $(this).val();
+
+  $("#edit_agendamento_event_breeder_event_type3").val(0);
+  $("#div_edit_agendamento_service_result_event_breeder3").hide();
+  $("#edit_agendamento_event_vet_event_type3").val(0);
+  $("#div_edit_agendamento_service_result_event_vet3").hide();
+  $("#edit_agendamento_event_final_consumer_event_type3").val(0);
+  $("#div_edit_agendamento_service_result_event_final3").hide();
+  $("#edit_agendamento_event_Business_Event3").val(0);
+  $("#div_edit_agendamento_service_result_event_business3").hide();
+  
+  if(value == 1 ){
+    $("#div_edit_agendamento_service_result_event_breeder3").show();
+  }else if(value == 2){
+    $("#div_edit_agendamento_service_result_event_vet3").show();
+  }else if(value == 3){
+    $("#div_edit_agendamento_service_result_event_final3").show();
+  }else if(value == 4){
+    $("#div_edit_agendamento_service_result_event_business3").show();
+  }
+
+});
+
+
+$("#edit_agendamento_event_type_event4").change(function(){
+  var value = $(this).val();
+
+  $("#edit_agendamento_event_breeder_event_type4").val(0);
+  $("#div_edit_agendamento_service_result_event_breeder4").hide();
+  $("#edit_agendamento_event_vet_event_type4").val(0);
+  $("#div_edit_agendamento_service_result_event_vet4").hide();
+  $("#edit_agendamento_event_final_consumer_event_type4").val(0);
+  $("#div_edit_agendamento_service_result_event_final4").hide();
+  $("#edit_agendamento_event_Business_Event4").val(0);
+  $("#div_edit_agendamento_service_result_event_business4").hide();
+  
+  if(value == 1 ){
+    $("#div_edit_agendamento_service_result_event_breeder4").show();
+  }else if(value == 2){
+    $("#div_edit_agendamento_service_result_event_vet4").show();
+  }else if(value == 3){
+    $("#div_edit_agendamento_service_result_event_final4").show();
+  }else if(value == 4){
+    $("#div_edit_agendamento_service_result_event_business4").show();
+  }
+
+});
+
+
+$("#edit_agendamento_event_type_event5").change(function(){
+  var value = $(this).val();
+
+  $("#edit_agendamento_event_breeder_event_type5").val(0);
+  $("#div_edit_agendamento_service_result_event_breeder5").hide();
+  $("#edit_agendamento_event_vet_event_type5").val(0);
+  $("#div_edit_agendamento_service_result_event_vet5").hide();
+  $("#edit_agendamento_event_final_consumer_event_type5").val(0);
+  $("#div_edit_agendamento_service_result_event_final5").hide();
+  $("#edit_agendamento_event_Business_Event5").val(0);
+  $("#div_edit_agendamento_service_result_event_business5").hide();
+  
+  if(value == 1 ){
+    $("#div_edit_agendamento_service_result_event_breeder5").show();
+  }else if(value == 2){
+    $("#div_edit_agendamento_service_result_event_vet5").show();
+  }else if(value == 3){
+    $("#div_edit_agendamento_service_result_event_final5").show();
+  }else if(value == 4){
+    $("#div_edit_agendamento_service_result_event_business5").show();
+  }
+
+});
+
+
 
 
 }());

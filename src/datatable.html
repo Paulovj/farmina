@@ -2382,12 +2382,14 @@ table.dataTable td {
                           <div class="col-md-6 mb-3">
                               <label class="fw-500 lTipoServico">Tipo Serviço</label>
                               <select id="edit_agendamento_service_type1" class="form-control" disabled>
-                                <option selected value="0" class="lSelecione">Selecione</option>
-                                <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
-                                <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
-                                <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
-                                <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
-                                <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
+                                  <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
+                                  <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
+                                  <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
+                                  <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                  <option value="6" class="lEvent">Event</option>
+                                  <option value="7" class="lOfficeWork">Office Work</option>
                                 </select>
                           </div>
                       </div>
@@ -2552,6 +2554,168 @@ table.dataTable td {
 
 
 
+                      <div class="row" id="div_edit_agendamento_service_result_event1" style="display:none">
+                          <!-- <div class="row" id="div_edit_agendamento_service_result_event1"> -->
+                            <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                              <label class="fw-500 lEventCity">Event City </label>
+                              <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_event_city1">
+                            </div>
+
+                            <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                              <label class="fw-500 lEventLocation">Event Location </label>
+                              <select id="edit_agendamento_event_location1" class="form-control">
+                                <option selected value="0" class="lSelecione">Selecione</option>
+                                <option value="1" class="lFair">Fair</option>
+                                <option value="2" class="lHotel">Hotel</option>
+                                <option value="3" class="lOpen">Open</option>
+                                <option value="4" class="lSpace">Space</option>
+                                <option value="5" class="lBeach">Beach</option>
+                                <option value="6" class="lOther">Other</option>
+                              </select>
+                            </div>
+
+
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_where_location1" style="margin-top: 10px; display:none;">
+                                <label class="fw-500 lWhereLocation">Where Location </label>
+                                <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_event_where_location1">
+                              </div>
+                            <!-- </div>   -->
+
+
+                            <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                              <label class="fw-500 lTypeEvent">Type Event </label>
+                              <select id="edit_agendamento_event_type_event1" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lBreeder">Breeder</option>
+                                  <option value="2" class="lVetEvent">Vet Event</option>
+                                  <option value="3" class="lFinalConsumerEvent">Final Consume Event</option>
+                                  <option value="4" class="lBusinessEvent">Business Event</option>
+                              </select>
+                            </div>
+
+
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_breeder1" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lBreederEventType">Breeder Event Type</label>
+                                <select id="edit_agendamento_event_breeder_event_type1" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lNational">National</option>
+                                  <option value="3" class="lLocal">Local</option>
+                                  <option value="4" class="lSportActivity">Sport Activity</option>
+                                  <option value="5" class="lHybridEvent">Hybrid Event</option>
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+                             <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_vet1" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lVerEventType">Vet Event Type </label>
+                                <select id="edit_agendamento_event_vet_event_type1" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lEuropean">European</option>
+                                  <option value="3" class="lNational">National</option>
+                                  <option value="4" class="lRegioanl">Regioanl</option>
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+
+                             <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_final1" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lFinalConsumerEventType">Final Consumer Event Type</label>
+                                <select id="edit_agendamento_event_final_consumer_event_type1" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lNational">National</option>
+                                  <option value="2" class="lRegioanl">Regioanl</option>
+                                  <option value="3" class="lEventConnectedWithAPetShop">Event Connected With a Pet Shop</option>
+
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+                             <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_business1" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lBusinessEvent">Business Event</label>
+                                <select id="edit_agendamento_event_Business_Event1" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lNational">National</option>
+                                  <option value="3" class="lRegioanl">Regioanl</option>
+
+
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+                          </div>
+
+
+                          <div class="row" id="div_edit_agendamento_service_result_office_work1" style="display:none">
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event1"> -->
+                             
+                              <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                                <label class="fw-500 lOfficeWorkLocation">Office Work Location</label>
+                                <select id="edit_agendamento_office_work1" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lHome">Home</option>
+                                  <option value="2" class="lWork">Work</option>
+                                  </select>
+                              </div>
+
+
+                              <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                                <label class="fw-500 lPurposeOfTheOfficeDay">Purpose of the office day</label>
+                                <select id="edit_agendamento_office_purpose_office_day1" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lInternal">Internal</option>
+                                  <option value="2" class="lTraining">Training</option>
+                                  <option value="3" class="lInternalMeeting">Internal Meeting</option>
+                                  <option value="4" class="lOther">Other</option>
+                                  </select>
+                              </div>
+
+
+
+                              <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                                <label class="fw-500 lExplanation">Explanation </label>
+                                <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_office_Explanation1">
+                              </div>
+  
+
+
+                              </div>
+
+
+
+
                       
 
                   </div>
@@ -2619,12 +2783,14 @@ table.dataTable td {
                           <div class="col-md-6 mb-3">
                               <label class="fw-500 lTipoServico">Tipo Serviço</label>
                               <select id="edit_agendamento_service_type2" class="form-control" disabled>
-                                <option selected value="0" class="lSelecione">Selecione</option>
-                                <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
-                                <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
-                                <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
-                                <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
-                                <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
+                                  <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
+                                  <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
+                                  <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
+                                  <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                  <option value="6" class="lEvent">Event</option>
+                                  <option value="7" class="lOfficeWork">Office Work</option>
                                 </select>
                           </div>
                       </div>
@@ -2788,6 +2954,168 @@ table.dataTable td {
 
 
 
+                      <div class="row" id="div_edit_agendamento_service_result_event2" style="display:none">
+                          <!-- <div class="row" id="div_edit_agendamento_service_result_event1"> -->
+                            <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                              <label class="fw-500 lEventCity">Event City </label>
+                              <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_event_city2">
+                            </div>
+
+                            <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                              <label class="fw-500 lEventLocation">Event Location </label>
+                              <select id="edit_agendamento_event_location2" class="form-control">
+                                <option selected value="0" class="lSelecione">Selecione</option>
+                                <option value="1" class="lFair">Fair</option>
+                                <option value="2" class="lHotel">Hotel</option>
+                                <option value="3" class="lOpen">Open</option>
+                                <option value="4" class="lSpace">Space</option>
+                                <option value="5" class="lBeach">Beach</option>
+                                <option value="6" class="lOther">Other</option>
+                              </select>
+                            </div>
+
+
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_where_location2" style="margin-top: 10px; display:none;">
+                                <label class="fw-500 lWhereLocation">Where Location </label>
+                                <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_event_where_location2">
+                              </div>
+                            <!-- </div>   -->
+
+
+                            <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                              <label class="fw-500 lTypeEvent">Type Event </label>
+                              <select id="edit_agendamento_event_type_event2" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lBreeder">Breeder</option>
+                                  <option value="2" class="lVetEvent">Vet Event</option>
+                                  <option value="3" class="lFinalConsumerEvent">Final Consume Event</option>
+                                  <option value="4" class="lBusinessEvent">Business Event</option>
+                              </select>
+                            </div>
+
+
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_breeder2" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lBreederEventType">Breeder Event Type</label>
+                                <select id="edit_agendamento_event_breeder_event_type2" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lNational">National</option>
+                                  <option value="3" class="lLocal">Local</option>
+                                  <option value="4" class="lSportActivity">Sport Activity</option>
+                                  <option value="5" class="lHybridEvent">Hybrid Event</option>
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+                             <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_vet2" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lVerEventType">Vet Event Type </label>
+                                <select id="edit_agendamento_event_vet_event_type2" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lEuropean">European</option>
+                                  <option value="3" class="lNational">National</option>
+                                  <option value="4" class="lRegioanl">Regioanl</option>
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+
+                             <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_final2" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lFinalConsumerEventType">Final Consumer Event Type</label>
+                                <select id="edit_agendamento_event_final_consumer_event_type2" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lNational">National</option>
+                                  <option value="2" class="lRegioanl">Regioanl</option>
+                                  <option value="3" class="lEventConnectedWithAPetShop">Event Connected With a Pet Shop</option>
+
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+                             <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_business2" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lBusinessEvent">Business Event</label>
+                                <select id="edit_agendamento_event_Business_Event2" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lNational">National</option>
+                                  <option value="3" class="lRegioanl">Regioanl</option>
+
+
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+                          </div>
+
+
+                          <div class="row" id="div_edit_agendamento_service_result_office_work2" style="display:none">
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event1"> -->
+                             
+                              <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                                <label class="fw-500 lOfficeWorkLocation">Office Work Location</label>
+                                <select id="edit_agendamento_office_work2" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lHome">Home</option>
+                                  <option value="2" class="lWork">Work</option>
+                                  </select>
+                              </div>
+
+
+                              <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                                <label class="fw-500 lPurposeOfTheOfficeDay">Purpose of the office day</label>
+                                <select id="edit_agendamento_office_purpose_office_day2" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lInternal">Internal</option>
+                                  <option value="2" class="lTraining">Training</option>
+                                  <option value="3" class="lInternalMeeting">Internal Meeting</option>
+                                  <option value="4" class="lOther">Other</option>
+                                  </select>
+                              </div>
+
+
+
+                              <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                                <label class="fw-500 lExplanation">Explanation </label>
+                                <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_office_Explanation2">
+                              </div>
+  
+
+
+                              </div>
+
+
+
+
 
                   </div>
                 </div>
@@ -2858,12 +3186,15 @@ table.dataTable td {
                           <div class="col-md-6 mb-3">
                               <label class="fw-500 lTipoServico">Tipo Serviço</label>
                               <select id="edit_agendamento_service_type3" class="form-control" disabled>
-                                <option selected value="0" class="lSelecione">Selecione</option>
-                                <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
-                                <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
-                                <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
-                                <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
-                                <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
+                                  <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
+                                  <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
+                                  <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
+                                  <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                  <option value="6" class="lEvent">Event</option>
+                                  <option value="7" class="lOfficeWork">Office Work</option>
+                                  </select>
                           </div>
                       </div>
 
@@ -3029,6 +3360,168 @@ table.dataTable td {
                       </div>
 
 
+
+
+                      <div class="row" id="div_edit_agendamento_service_result_event3" style="display:none">
+                          <!-- <div class="row" id="div_edit_agendamento_service_result_event1"> -->
+                            <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                              <label class="fw-500 lEventCity">Event City </label>
+                              <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_event_city3">
+                            </div>
+
+                            <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                              <label class="fw-500 lEventLocation">Event Location </label>
+                              <select id="edit_agendamento_event_location3" class="form-control">
+                                <option selected value="0" class="lSelecione">Selecione</option>
+                                <option value="1" class="lFair">Fair</option>
+                                <option value="2" class="lHotel">Hotel</option>
+                                <option value="3" class="lOpen">Open</option>
+                                <option value="4" class="lSpace">Space</option>
+                                <option value="5" class="lBeach">Beach</option>
+                                <option value="6" class="lOther">Other</option>
+                              </select>
+                            </div>
+
+
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_where_location3" style="margin-top: 10px; display:none;">
+                                <label class="fw-500 lWhereLocation">Where Location </label>
+                                <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_event_where_location3">
+                              </div>
+                            <!-- </div>   -->
+
+
+                            <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                              <label class="fw-500 lTypeEvent">Type Event </label>
+                              <select id="edit_agendamento_event_type_event3" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lBreeder">Breeder</option>
+                                  <option value="2" class="lVetEvent">Vet Event</option>
+                                  <option value="3" class="lFinalConsumerEvent">Final Consume Event</option>
+                                  <option value="4" class="lBusinessEvent">Business Event</option>
+                              </select>
+                            </div>
+
+
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_breeder3" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lBreederEventType">Breeder Event Type</label>
+                                <select id="edit_agendamento_event_breeder_event_type3" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lNational">National</option>
+                                  <option value="3" class="lLocal">Local</option>
+                                  <option value="4" class="lSportActivity">Sport Activity</option>
+                                  <option value="5" class="lHybridEvent">Hybrid Event</option>
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+                             <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_vet3" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lVerEventType">Vet Event Type </label>
+                                <select id="edit_agendamento_event_vet_event_type3" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lEuropean">European</option>
+                                  <option value="3" class="lNational">National</option>
+                                  <option value="4" class="lRegioanl">Regioanl</option>
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+
+                             <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_final3" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lFinalConsumerEventType">Final Consumer Event Type</label>
+                                <select id="edit_agendamento_event_final_consumer_event_type3" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lNational">National</option>
+                                  <option value="2" class="lRegioanl">Regioanl</option>
+                                  <option value="3" class="lEventConnectedWithAPetShop">Event Connected With a Pet Shop</option>
+
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+                             <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_business3" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lBusinessEvent">Business Event</label>
+                                <select id="edit_agendamento_event_Business_Event3" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lNational">National</option>
+                                  <option value="3" class="lRegioanl">Regioanl</option>
+
+
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+                          </div>
+
+
+                          <div class="row" id="div_edit_agendamento_service_result_office_work3" style="display:none">
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event1"> -->
+                             
+                              <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                                <label class="fw-500 lOfficeWorkLocation">Office Work Location</label>
+                                <select id="edit_agendamento_office_work3" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lHome">Home</option>
+                                  <option value="2" class="lWork">Work</option>
+                                  </select>
+                              </div>
+
+
+                              <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                                <label class="fw-500 lPurposeOfTheOfficeDay">Purpose of the office day</label>
+                                <select id="edit_agendamento_office_purpose_office_day3" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lInternal">Internal</option>
+                                  <option value="2" class="lTraining">Training</option>
+                                  <option value="3" class="lInternalMeeting">Internal Meeting</option>
+                                  <option value="4" class="lOther">Other</option>
+                                  </select>
+                              </div>
+
+
+
+                              <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                                <label class="fw-500 lExplanation">Explanation </label>
+                                <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_office_Explanation3">
+                              </div>
+  
+
+
+                              </div>
+
+
                   </div>
                 </div>
               </div>
@@ -3105,12 +3598,14 @@ table.dataTable td {
                             <div class="col-md-6 mb-3">
                                 <label class="fw-500 lTipoServico">Tipo Serviço</label>
                                 <select id="edit_agendamento_service_type4" class="form-control" disabled>
-                                  <option selected value="0" class="lSelecione">Selecione</option>
-                                  <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
-                                  <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
-                                  <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
-                                  <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
-                                  <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                    <option selected value="0" class="lSelecione">Selecione</option>
+                                    <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
+                                    <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
+                                    <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
+                                    <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
+                                    <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                    <option value="6" class="lEvent">Event</option>
+                                    <option value="7" class="lOfficeWork">Office Work</option>
                                   </select>
                             </div>
                         </div>
@@ -3275,6 +3770,169 @@ table.dataTable td {
                       </div>
 
 
+
+
+
+                      <div class="row" id="div_edit_agendamento_service_result_event4" style="display:none">
+                          <!-- <div class="row" id="div_edit_agendamento_service_result_event1"> -->
+                            <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                              <label class="fw-500 lEventCity">Event City </label>
+                              <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_event_city4">
+                            </div>
+
+                            <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                              <label class="fw-500 lEventLocation">Event Location </label>
+                              <select id="edit_agendamento_event_location4" class="form-control">
+                                <option selected value="0" class="lSelecione">Selecione</option>
+                                <option value="1" class="lFair">Fair</option>
+                                <option value="2" class="lHotel">Hotel</option>
+                                <option value="3" class="lOpen">Open</option>
+                                <option value="4" class="lSpace">Space</option>
+                                <option value="5" class="lBeach">Beach</option>
+                                <option value="6" class="lOther">Other</option>
+                              </select>
+                            </div>
+
+
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_where_location4" style="margin-top: 10px; display:none;">
+                                <label class="fw-500 lWhereLocation">Where Location </label>
+                                <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_event_where_location4">
+                              </div>
+                            <!-- </div>   -->
+
+
+                            <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                              <label class="fw-500 lTypeEvent">Type Event </label>
+                              <select id="edit_agendamento_event_type_event4" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lBreeder">Breeder</option>
+                                  <option value="2" class="lVetEvent">Vet Event</option>
+                                  <option value="3" class="lFinalConsumerEvent">Final Consume Event</option>
+                                  <option value="4" class="lBusinessEvent">Business Event</option>
+                              </select>
+                            </div>
+
+
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_breeder4" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lBreederEventType">Breeder Event Type</label>
+                                <select id="edit_agendamento_event_breeder_event_type4" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lNational">National</option>
+                                  <option value="3" class="lLocal">Local</option>
+                                  <option value="4" class="lSportActivity">Sport Activity</option>
+                                  <option value="5" class="lHybridEvent">Hybrid Event</option>
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+                             <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_vet4" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lVerEventType">Vet Event Type </label>
+                                <select id="edit_agendamento_event_vet_event_type4" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lEuropean">European</option>
+                                  <option value="3" class="lNational">National</option>
+                                  <option value="4" class="lRegioanl">Regioanl</option>
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+
+                             <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_final4" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lFinalConsumerEventType">Final Consumer Event Type</label>
+                                <select id="edit_agendamento_event_final_consumer_event_type4" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lNational">National</option>
+                                  <option value="2" class="lRegioanl">Regioanl</option>
+                                  <option value="3" class="lEventConnectedWithAPetShop">Event Connected With a Pet Shop</option>
+
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+                             <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_business4" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lBusinessEvent">Business Event</label>
+                                <select id="edit_agendamento_event_Business_Event4" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lNational">National</option>
+                                  <option value="3" class="lRegioanl">Regioanl</option>
+
+
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+                          </div>
+
+
+                          <div class="row" id="div_edit_agendamento_service_result_office_work4" style="display:none">
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event1"> -->
+                             
+                              <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                                <label class="fw-500 lOfficeWorkLocation">Office Work Location</label>
+                                <select id="edit_agendamento_office_work4" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lHome">Home</option>
+                                  <option value="2" class="lWork">Work</option>
+                                  </select>
+                              </div>
+
+
+                              <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                                <label class="fw-500 lPurposeOfTheOfficeDay">Purpose of the office day</label>
+                                <select id="edit_agendamento_office_purpose_office_day4" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lInternal">Internal</option>
+                                  <option value="2" class="lTraining">Training</option>
+                                  <option value="3" class="lInternalMeeting">Internal Meeting</option>
+                                  <option value="4" class="lOther">Other</option>
+                                  </select>
+                              </div>
+
+
+
+                              <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                                <label class="fw-500 lExplanation">Explanation </label>
+                                <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_office_Explanation4">
+                              </div>
+  
+
+
+                              </div>
+
+
                     </div>
                   </div>
                 </div>
@@ -3339,12 +3997,14 @@ table.dataTable td {
                               <div class="col-md-6 mb-3">
                                   <label class="fw-500 lTipoServico">Tipo Serviço</label>
                                   <select id="edit_agendamento_service_type5" class="form-control" disabled>
-                                    <option selected value="0" class="lSelecione">Selecione</option>
-                                    <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
-                                    <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
-                                    <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
-                                    <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
-                                    <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                      <option selected value="0" class="lSelecione">Selecione</option>
+                                      <option value="1" class="lTreinamento PermissaoSOS PermissaoTraning">Treinamento</option>
+                                      <option value="2" class="lKitBoasVindas PermissaoWelcome">Kit de boas-vindas</option>
+                                      <option value="3" class="lISP PermissaoSOS PermissaoISP">ISP</option>
+                                      <option value="4" class="lMerchandising PermissaoSOS PermissaoMerchandising">Merchandising</option>
+                                      <option value="5" class="lArmy PermissaoSOS PermissaoArmy">Army</option>
+                                      <option value="6" class="lEvent">Event</option>
+                                      <option value="7" class="lOfficeWork">Office Work</option>
                                   </select>
                               </div>
                           </div>
@@ -3508,6 +4168,171 @@ table.dataTable td {
                           <textarea id='edit_agendamento_army_which_park5' maxlength="100" class="form-control bdc-grey-200" disabled> </textarea>
                         </div>
                       </div>
+
+
+
+
+                      
+
+                      <div class="row" id="div_edit_agendamento_service_result_event5" style="display:none">
+                          <!-- <div class="row" id="div_edit_agendamento_service_result_event1"> -->
+                            <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                              <label class="fw-500 lEventCity">Event City </label>
+                              <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_event_city5">
+                            </div>
+
+                            <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                              <label class="fw-500 lEventLocation">Event Location </label>
+                              <select id="edit_agendamento_event_location5" class="form-control">
+                                <option selected value="0" class="lSelecione">Selecione</option>
+                                <option value="1" class="lFair">Fair</option>
+                                <option value="2" class="lHotel">Hotel</option>
+                                <option value="3" class="lOpen">Open</option>
+                                <option value="4" class="lSpace">Space</option>
+                                <option value="5" class="lBeach">Beach</option>
+                                <option value="6" class="lOther">Other</option>
+                              </select>
+                            </div>
+
+
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_where_location5" style="margin-top: 10px; display:none;">
+                                <label class="fw-500 lWhereLocation">Where Location </label>
+                                <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_event_where_location5">
+                              </div>
+                            <!-- </div>   -->
+
+
+                            <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                              <label class="fw-500 lTypeEvent">Type Event </label>
+                              <select id="edit_agendamento_event_type_event5" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lBreeder">Breeder</option>
+                                  <option value="2" class="lVetEvent">Vet Event</option>
+                                  <option value="3" class="lFinalConsumerEvent">Final Consume Event</option>
+                                  <option value="4" class="lBusinessEvent">Business Event</option>
+                              </select>
+                            </div>
+
+
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_breeder5" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lBreederEventType">Breeder Event Type</label>
+                                <select id="edit_agendamento_event_breeder_event_type5" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lNational">National</option>
+                                  <option value="3" class="lLocal">Local</option>
+                                  <option value="4" class="lSportActivity">Sport Activity</option>
+                                  <option value="5" class="lHybridEvent">Hybrid Event</option>
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+                             <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_vet5" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lVerEventType">Vet Event Type </label>
+                                <select id="edit_agendamento_event_vet_event_type5" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lEuropean">European</option>
+                                  <option value="3" class="lNational">National</option>
+                                  <option value="4" class="lRegioanl">Regioanl</option>
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+
+                             <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_final5" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lFinalConsumerEventType">Final Consumer Event Type</label>
+                                <select id="edit_agendamento_event_final_consumer_event_type5" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lNational">National</option>
+                                  <option value="2" class="lRegioanl">Regioanl</option>
+                                  <option value="3" class="lEventConnectedWithAPetShop">Event Connected With a Pet Shop</option>
+
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+                             <!-- <div class="row" id="div_edit_agendamento_service_result_event_where_location1" style="display:none"> -->
+                                <div class="col-md-12 mb-6" id="div_edit_agendamento_service_result_event_business5" style="margin-top: 10px; display: none;">
+                                <label class="fw-500 lBusinessEvent">Business Event</label>
+                                <select id="edit_agendamento_event_Business_Event5" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+
+                                  <option value="1" class="lInternational">International</option>
+                                  <option value="2" class="lNational">National</option>
+                                  <option value="3" class="lRegioanl">Regioanl</option>
+
+
+                                </select>
+                              </div>
+                            <!-- </div>   -->
+
+
+
+
+
+
+
+                          </div>
+
+
+                          <div class="row" id="div_edit_agendamento_service_result_office_work5" style="display:none">
+                            <!-- <div class="row" id="div_edit_agendamento_service_result_event1"> -->
+                             
+                              <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                                <label class="fw-500 lOfficeWorkLocation">Office Work Location</label>
+                                <select id="edit_agendamento_office_work5" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lHome">Home</option>
+                                  <option value="2" class="lWork">Work</option>
+                                  </select>
+                              </div>
+
+
+                              <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                                <label class="fw-500 lPurposeOfTheOfficeDay">Purpose of the office day</label>
+                                <select id="edit_agendamento_office_purpose_office_day5" class="form-control">
+                                  <option selected value="0" class="lSelecione">Selecione</option>
+                                  <option value="1" class="lInternal">Internal</option>
+                                  <option value="2" class="lTraining">Training</option>
+                                  <option value="3" class="lInternalMeeting">Internal Meeting</option>
+                                  <option value="4" class="lOther">Other</option>
+                                  </select>
+                              </div>
+
+
+
+                              <div class="col-md-12 mb-6" style="margin-top: 10px;">
+                                <label class="fw-500 lExplanation">Explanation </label>
+                                <input type="text" class="form-control bdc-grey-200" name="" id="edit_agendamento_office_Explanation5">
+                              </div>
+  
+
+
+                              </div>
+
 
 
                       </div>
