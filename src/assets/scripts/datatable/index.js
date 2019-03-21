@@ -1697,6 +1697,15 @@ $("#btn_finish_booking").click(function(){
   
   var finish_people_participe       = $('#finish_how_many_people_participe').val();
   
+  
+  
+  
+  var finish_event_people   = $('#finish_no_people_event').val();
+  var finish_event_breeder  = $('#finish_no_breeder_contacts_event').val();
+  var finish_event_buyers   = $('#finish_no_buyers_retilers_event').val();
+  var finish_event_final    = $('#finish_no_final_consumer_event').val();
+  var finish_bags_sold      = $('#finish_bags_sold_event').val();
+  
 
   
 
@@ -1758,7 +1767,14 @@ $("#btn_finish_booking").click(function(){
       "Print-Voruchers":((!finish_print_voruchers)? '': finish_print_voruchers),
       "People-Refused":((!finish_people_refused)? '': finish_people_refused),
       "Location-Activity":((!finish_location_activity)? '': finish_location_activity),
-      "People-Particpe":((!finish_people_participe)? '': finish_people_participe)
+      "People-Particpe":((!finish_people_participe)? '': finish_people_participe),
+
+      "Event-People-Event": ((!finish_event_people)? '': finish_event_people) ,
+      "Event-Vets-Contact": ((!finish_no_vets_contacts)? '': finish_no_vets_contacts),
+      "Event-Breeder-Contact": ((!finish_event_breeder)? '': finish_event_breeder),
+      "Event-Buyers": ((!finish_event_buyers)? '': finish_event_buyers),
+      "Event-Final": ((!finish_event_final)? '': finish_event_final),
+      "Event-Bags": ((!finish_bags_sold)? '': finish_bags_sold)
       
       }
   }
@@ -3833,7 +3849,7 @@ function formValidacaoOrdem(promoter,action){
 
   }
 
-  
+
   if(valida == false){
     $.notify({
       title: $.i18n.prop('lAttentionMandatory',lang),
