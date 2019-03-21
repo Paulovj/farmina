@@ -1810,6 +1810,8 @@ $("#btn_finish_booking").click(function(){
     $('#finish_question_trainning').hide();
     $('#finish_question_merchandising').hide();
     $('#finish_question_army').hide();
+    $('#finish_question_event').hide();
+    $('#finish_question_work').hide();
     
     
     $('#finish_many_additional_meters_sim').hide();
@@ -1851,6 +1853,13 @@ $("#btn_finish_booking").click(function(){
       $('#finish_date_inicio_label').show();
       $('#finish_date_final_label').show();
     }
+
+    if(result['Service Type'] == 6){
+      $('#finish_question_event').show();
+      $('#finish_question_work').show();
+    }
+
+    
     
     
     
